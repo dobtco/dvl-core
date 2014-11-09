@@ -1,0 +1,7 @@
+general:
+  artifacts:
+    - "screenshots"
+
+test:
+  override:
+    - script/cibuild

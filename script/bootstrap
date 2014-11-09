@@ -1,0 +1,45 @@
+#! /bin/bash
+
+## Make sure we're in the project root
+cd $(dirname "$0")/..
+
+## Check dependencies
+printf "Checking dependencies... "
+
+deps=(
+  ruby
+  bundler
+  git
+)
+
+for i in "${deps[@]}"
+do
+  :
+  if [ ! $(which $i) ]; then
+    printf "\nDependency check failed, file not in PATH: $i\n"
+    exit 1
+  fi
+done
+
+if [ -d ~/.rvm ]; then
+  ## Create .ruby-gemset if it doesn't exist
+  printf "Checking for .ruby-gemset... "
+
+  if [ ! -f .ruby-gemset ]; then
+    printf "\nWriting .ruby-gemset..."
+    printf 'dvl-core' >> .ruby-gemset
+  fi
+
+  printf "OK\n"
+
+  ## Ensure RVM is using our ruby + gemset
+  source ~/.rvm/scripts/rvm
+  rvm use `cat .ruby-version`
+  rvm gemset use --create `cat .ruby-gemset`
+fi
+
+## Bundle
+printf "Bundling...\n"
+bundle install
+
+printf "\n\nSuccess!\n\n"
