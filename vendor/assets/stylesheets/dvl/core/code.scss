@@ -1,0 +1,31 @@
+// Code
+
+// Correct `font-family` set oddly in Safari 5 and Chrome
+
+code, pre {
+  color: $darkestGray;
+  @include monospace;
+}
+
+code {
+  padding: 0 0.5rem;
+  border: 1px solid $lightGray;
+  border-radius: $radius;
+  background: $lightestGray;
+  white-space: nowrap;
+  // Increase `padding` at larger viewport widths
+  @media only screen and (min-width: 480px) {
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+pre {
+  position: relative;
+  overflow: auto;
+  padding: 1rem;
+  background: $black;
+  color: $gray;
+  white-space: pre;
+  word-wrap: normal;
+  word-break: normal;
+}

@@ -1,0 +1,87 @@
+// Bootstrap tooltips
+
+.tooltip {
+  position: absolute;
+  z-index: 1030;
+  display: block;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0;
+  visibility: visible;
+  min-width: 40px;
+  transition: transform 0.25s $ease_out_back, opacity 120ms ease-out;
+  &.top, &.bottom {
+    padding: 5px 0;
+  }
+  &.right, &.left {
+    padding: 0 5px;
+  }
+  &.top {
+    margin-top: -3px;
+    transform: translateY(5px) translateZ(0);
+  }
+  &.right {
+    margin-left: 3px;
+    transform: translateX(-5px) translateZ(0);
+  }
+  &.bottom {
+    margin-top: 3px;
+    transform: translateY(-5px) translateZ(0);
+  }
+  &.left {
+    margin-left: -3px;
+    transform: translateX(5px) translateZ(0);
+  }
+  &.in {
+    opacity: 0.9;
+    transform: translate(0,0);
+  }
+}
+
+.tooltip-inner {
+  max-width: 200px;
+  padding: 0.25rem 0.5rem;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  background-color: #000;
+  border-radius: $radius;
+}
+
+.tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  .tooltip.top &,
+  .tooltip.bottom & {
+    left: 50%;
+    margin-left: -5px;
+  }
+  .tooltip.right &,
+  .tooltip.left & {
+    top: 50%;
+    margin-top: -5px;
+  }
+  .tooltip.top & {
+    bottom: 0;
+    border-top-color: #000;
+    border-width: 5px 5px 0;
+  }
+  .tooltip.right & {
+    left: 0;
+    border-right-color: #000;
+    border-width: 5px 5px 5px 0;
+  }
+  .tooltip.left & {
+    right: 0;
+    border-left-color: #000;
+    border-width: 5px 0 5px 5px;
+  }
+  .tooltip.bottom & {
+    top: 0;
+    border-bottom-color: #000;
+    border-width: 0 5px 5px;
+  }
+}

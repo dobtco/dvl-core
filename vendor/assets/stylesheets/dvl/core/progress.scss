@@ -1,0 +1,16 @@
+// Progress bar
+
+.progress {
+  border: 1px solid $darkGray;
+  margin: 0.25rem 0;
+  padding: 2px;
+  background: #fff;
+  font-size: 0;
+  color: transparent;
+}
+
+.progress_inner {
+  background: $purpleBlue;
+  height: 1.1rem;
+  max-width: 100%;
+}

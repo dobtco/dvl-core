@@ -1,0 +1,309 @@
+.dropdown {
+  position: relative;
+}
+span.dropdown {
+  display: inline-block;
+}
+.dropdown-toggle:focus {
+  outline: 0;
+}
+
+// The dropdown menu (ul)
+.dropdown_menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  margin-top: 3px;
+  background-color: #fff;
+  box-shadow: 0 1px 0 rgba(#000,0.14);
+  border: 1px solid #dadada;
+  border-radius: $radius;
+  background-clip: padding-box;
+  // Right-aligns menu
+  &.dropdown_right {
+    right: 0;
+    left: auto;
+  }
+  h3 {
+    margin: 0;
+    background: #efefef;
+    text-align: center;
+    min-height: 2.5rem;
+    line-height: 1.25rem;
+    padding: 0.625rem 0.5rem;
+    @include border_top_radius($radius - 1);
+    color: #444;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03rem;
+  }
+}
+
+// Links
+.dropdown_body {
+  max-height: 350px;
+  overflow: scroll;
+  > li {
+    > a,
+    > span {
+      display: block;
+      height: 2.5rem;
+      font-size: 0.9rem;
+      line-height: 2.5rem;
+      padding: 0 0.5rem;
+      clear: both;
+    }
+    a {
+      color: #333;
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        color: #fff;
+        background-color: #428bca;
+      }
+    }
+  }
+  // Active state
+  > .active {
+    > a,
+    > a:hover,
+    > a:focus {
+      color: #fff;
+      text-decoration: none;
+      outline: 0;
+      background-color: #428bca;
+    }
+  }
+  // Disabled state
+  > .disabled {
+    > a,
+    > a:hover,
+    > a:focus {
+      color: #ccc;
+    }
+    // Override hover/focus effects
+    > a:hover,
+    > a:focus {
+      text-decoration: none;
+      background-color: transparent;
+      background-image: none;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.dropdown_menu_form li {
+  label {
+    font-weight: normal;
+    padding: 0.25rem 0.5rem;
+    display: block;
+  }
+}
+
+.dropdown_header {
+  padding: 0.5rem;
+  color: $darkGray;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+// Open state for the dropdown
+.open {
+  // Show the menu
+  > .dropdown_menu {
+    display: block;
+  }
+  // Remove the outline when :focus is triggered
+  > a {
+    outline: 0;
+  }
+}
+
+// Backdrop to catch body clicks on mobile, etc.
+.dropdown_backdrop {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 990;
+}
+
+li.dropdown_more a {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+// Enhanced dropdowns:
+// Multiple lines of text, images, etc.
+
+.dropdown_toggle_button {
+  position: relative;
+  padding: 0.25rem 2rem 0.25rem 1rem;
+  background-color: #fff;
+  color: $darkestGray;
+  border: 1px solid $gray;
+  font-weight: 600;
+  font-size: 0.875rem;
+  display: inline-block;
+  margin: 0;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: $radius - 1;
+  &.disabled {
+    opacity: 0.7;
+    cursor: default;
+  }
+  &:hover {
+    text-decoration: none;
+    background-color: $lightestGray;
+  }
+  &:after {
+    font-family: 'FontAwesome';
+    content: '\f0d7';
+    position: absolute;
+    top: 0;
+    line-height: 1.875rem;
+    right: 0.75rem;
+    color: $darkerGray;
+    pointer-events: none;
+  }
+  &.gray {
+    background-color: $lighterGray;
+    color: $darkestGray;
+    &:hover {
+      background-color: $lightGray;
+      &.disabled {
+        background-color: $lighterGray;
+      }
+    }
+  }
+  .open & {
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
+    background-color: #e2e2e2;
+    &.gray {
+      background-color: $lightGray;
+    }
+  }
+}
+
+// ## Dropdown list styles
+
+
+// Single line
+
+.drop_sng {
+  @include ellipses;
+}
+
+// Master / detail:
+// Square item (checkbox, color legend, image) on left,
+// description on right
+
+.drop_master,
+.drop_master_multiline,
+.drop_detail,
+.drop_detail_multiline {
+  float: left;
+}
+
+.drop_master,
+.drop_master_multiline {
+  width: 1.5rem;
+  margin-right: 0.5rem;
+  img,
+  span {
+    border-radius: 50%;
+  }
+  i {
+    font-size: 1.25rem;
+    line-height: 2.5rem;
+    color: #888;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    .active &,
+    a:hover & {
+      color: #fff;
+    }
+  }
+}
+
+.drop_detail,
+.drop_detail_multiline {
+  width: 80%;
+}
+
+.drop_detail {
+  @include ellipses;
+  label {
+    font-weight: normal;
+  }
+}
+
+.drop_master_multiline {
+  line-height: 1;
+  i {
+    line-height: 1;
+  }
+}
+
+.drop_detail_multiline {
+  line-height: 1.25rem;
+}
+
+.drop_master_color {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-top: 0.5rem;
+  float: left;
+}
+
+
+// Dropdown item with arrow at right
+
+.drop_rt_item,
+.drop_rt_arrow {
+  float: left;
+}
+.drop_rt_item {
+  width: 87%;
+  margin-right: 3%;
+  float: left;
+  @include ellipses;
+}
+.drop_rt_arrow {
+  width: 10%;
+  text-align: center;
+}
+
+// Nav dropdowns
+
+.dropdown_nav {
+  li a,
+  .drop_sng {
+    padding: 0 1.5rem;
+    line-height: 3rem;
+    height: 3rem;
+    @include cf;
+  }
+  .all {
+    .drop_rt_item,
+    .drop_rt_arrow {
+      width: auto;
+      float: none;
+    }
+    .drop_rt_item {
+      max-width: 87%;
+    }
+    .drop_rt_arrow {
+      max-width: 10%;
+    }
+  }
+}

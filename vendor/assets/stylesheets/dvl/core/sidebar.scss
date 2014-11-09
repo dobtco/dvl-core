@@ -1,0 +1,101 @@
+// Sidebar
+
+.sidebar_box {
+  background-color: $lighterGray;
+  border: 1px solid #d8d8d8;
+  padding: 1rem;
+  hr {
+    margin: 0.75rem 0;
+  }
+}
+.sidebar_section {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  @include cf();
+  h4 {
+    font-size: 1rem;
+    line-height: 1;
+    color: $darkestGray;
+    margin-bottom: 0.35rem;
+  }
+}
+
+// Sidebar sections with icons on the left
+
+.sidebar_data {
+  padding: 0 1rem;
+  li {
+    border-bottom: 1px solid $lightGray;
+    padding: 0.75rem 0;
+    &:first-of-type {
+      padding-top: 0;
+    }
+    &:last-of-type {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.sidebar_data_icon {
+  float: left;
+  width: 2rem;
+  padding-top: 0.5rem;
+  text-align: center;
+  i {
+    font-size: 26px;
+    color: $darkerGray;
+  }
+}
+
+.sidebar_data_text {
+  margin-left: 3.5rem;
+}
+
+.sidebar_data_label {
+  font-size: 0.9rem;
+}
+
+.sidebar_data_value {
+  font-size: 1.1rem;
+  color: #999;
+  font-weight: 600;
+}
+
+.sidebar_data_details {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+// List of items in
+.sidebar_data_list {
+  a, span {
+    float: left;
+    @include ellipses;
+  }
+  a {
+    width: 46%;
+    margin-right: 4%;
+  }
+  span {
+    width: 50%;
+  }
+}
+
+.sidebar_social {
+  padding: 1rem 1rem 0;
+  @include cf;
+}
+
+.sidebar_submit {
+  padding-bottom: 1rem;
+  .button {
+    width: 100%;
+  }
+}
+
+.sidebar_submit_hint {
+  text-align: center;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}

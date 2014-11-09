@@ -1,0 +1,30 @@
+/* Nested `list-style` types for ordered lists */
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rendered_from_wysiwyg,
+.wysiwyg_wrapper {
+  ul, ol {
+    list-style-position: inside;
+    margin-left: 1rem;
+  }
+  ul {
+    list-style-type: disc;
+  }
+  ol {
+    list-style: decimal;
+    ol {
+      list-style: upper-alpha;
+      ol {
+        list-style: lower-roman;
+        ol {
+          list-style: lower-alpha;
+        }
+      }
+    }
+  }
+}

@@ -19,6 +19,8 @@ gem 'dvl-core'
 
 ## Screenshots
 
+![all_760](http://artifinder.herokuapp.com/gh/dobtco/dvl-core/x/artifacts/0/home/ubuntu/dvl-core/screenshots/all_760.png)
+
 ## Development
 
 1. `script/bootstrap`
