@@ -29,7 +29,7 @@ gem 'dvl-core'
 
 ## License
 
-MIT
+[MIT](http://dobtco.mit-license.org/)
 
 [version]: https://img.shields.io/gem/v/dvl-core.svg
 [build_status]: https://circleci-badges.herokuapp.com/dobtco/dvl-core/87144b68eadac365d9368f5c62e68d3dfcad14bb
