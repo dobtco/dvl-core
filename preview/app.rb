@@ -233,6 +233,11 @@ class App < Sinatra::Base
             h5 'Heading 5'
             h6 'Heading 6'
             p 'Lorem ipsum.'
+
+            p.microcopy {
+              text 'This is some awesome .microcopy.'
+              a.microcopy_action 'Microcopy action'
+            }
           end
 
           script src: '//code.jquery.com/jquery-1.11.1.min.js'
