@@ -164,3 +164,8 @@ sub {
   border-radius: $radius;
   max-width: 22rem;
 }
+
+// Actionable links within .microcopy
+.microcopy_action {
+  display: block;
+}
