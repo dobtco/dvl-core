@@ -108,8 +108,13 @@ h4 {
 }
 
 h5 {
-  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $darkerGray;
+  font-size: 0.9rem;
+  letter-spacing: 0.06rem;
 }
+
 
 h6 {
   font-size: 0.75rem;
@@ -147,14 +152,6 @@ sup {
 
 sub {
   bottom: -0.25em;
-}
-
-.caps {
-  font-weight: 600;
-  text-transform: uppercase;
-  color: $darkerGray;
-  font-size: 0.96rem;
-  letter-spacing: 0.06rem;
 }
 
 .microcopy {

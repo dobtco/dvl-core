@@ -12,24 +12,4 @@
 //    - Even better, create an issue where you can allocate
 //      some time for it.
 //
-// App-specific hacks are located in app/stylesheets/shame.scss
-
-
-// Need to consolidate this with a.uppercase
-// and .caps within the next few weeks.
-//
-// See issue #700.
-//
-// —Josh
-
-button.uppercase {
-  text-transform: uppercase;
-  color: $darkGray;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.04rem;
-  &:hover {
-    text-decoration: none;
-    color: $darkerGray;
-  }
-}
+// App-specific hacks are located in app/stylesheets/shame.scss within their respective repo

@@ -134,6 +134,18 @@
   }
 }
 
+.button_uppercase {
+  text-transform: uppercase;
+  color: $darkGray;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.04rem;
+  &:hover {
+    text-decoration: none;
+    color: $darkerGray;
+  }
+}
+
 // Link-styled buttons
 
 .button_link {
