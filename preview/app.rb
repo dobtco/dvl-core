@@ -91,6 +91,12 @@ class App < Sinatra::Base
                 input type: 'checkbox'
                 text 'Foo'
               }
+              div.input_sub {
+                label.checkbox {
+                  input type: 'checkbox'
+                  text 'This is a sub-option of foo.'
+                }
+              }
               div.form_actions {
                 button.button.primary 'Submit'
               }
