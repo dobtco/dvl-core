@@ -60,15 +60,13 @@ ul {
   margin: 0 0 1rem;
 }
 
-dl {
-  dt {
-    color: $black;
-    font-weight: 700;
-  }
+dt {
+  color: #888;
+  font-size: 0.9rem;
+}
 
-  dd {
-    margin: 0 0 1rem;
-  }
+dd {
+  margin: 0 0 1.5rem;
 }
 
 em,
