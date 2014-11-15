@@ -60,6 +60,8 @@ class App < Sinatra::Base
             a.button.success 'Success'
             text ' '
             a.button.white 'White'
+            text ' '
+            a.button_uppercase 'Uppercase'
           end
 
           docs 'Code' do
