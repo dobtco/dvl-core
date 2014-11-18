@@ -202,7 +202,7 @@ class App < Sinatra::Base
           end
 
           docs 'Tables' do
-            table.stripes {
+            table {
               thead {
                 tr {
                   th 'ID'
