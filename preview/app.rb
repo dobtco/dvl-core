@@ -3,11 +3,27 @@ require 'sinatra/assetpack'
 require 'active_support/all'
 require 'erector'
 require 'dvl/core'
+require 'yaml'
 
 module AppHelpers
   def docs(name, &block)
     div.section_header name, id: name.downcase
     yield
+  end
+
+  def translations
+    @translations ||= YAML::load(File.read("#{File.dirname(__FILE__)}/../config/locales/en.yml"))['en']
+  end
+
+  def t(key)
+    pieces = key.split('.')
+    found = translations.dup
+
+    while pieces.length > 0
+      found = found[pieces.shift] || {}
+    end
+
+    found
   end
 end
 
@@ -16,7 +32,7 @@ Erector::HTMLWidget.send(:include, AppHelpers)
 class App < Sinatra::Base
 
   set :root, File.dirname(__FILE__)
-  set :scss, { load_paths: [ "#{self.root}/../vendor/assets/stylesheets/dvl" ] }
+  set :scss, { load_paths: [ "#{self.root}/../vendor/assets/stylesheets", "#{self.root}/../vendor/assets/stylesheets/dvl" ] }
 
   register Sinatra::AssetPack
 
@@ -33,6 +49,7 @@ class App < Sinatra::Base
           link href: '//fonts.googleapis.com/css?family=Open+Sans:400,300,700,600', rel: 'stylesheet', type: 'text/css'
 
           link href: '/css/dvl/core.css', rel: 'stylesheet', type: 'text/css', media: 'all'
+          link href: '/css/dvl/components/footer.css', rel: 'stylesheet', type: 'text/css', media: 'all'
           style(type: 'text/css') {
             rawtext %{
               body {
@@ -247,6 +264,8 @@ class App < Sinatra::Base
               a.microcopy_action 'Microcopy action'
             }
           end
+
+          widget Dvl::Core::Components::Footer.new(application_name: 'dvl-core')
 
           script src: '//code.jquery.com/jquery-1.11.1.min.js'
           script src: '/js/dvl/core/modals.js'

@@ -9,3 +9,12 @@ if defined?(Rails)
     end
   end
 end
+
+module Dvl
+  module Core
+    module Components
+    end
+  end
+end
+
+require 'dvl/core/components/footer'
