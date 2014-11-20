@@ -46,7 +46,7 @@ span.dropdown {
 // Links
 .dropdown_body {
   max-height: 350px;
-  overflow: scroll;
+  overflow: auto;
   > li {
     > a,
     > span {
