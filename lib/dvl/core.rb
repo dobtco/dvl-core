@@ -18,3 +18,4 @@ module Dvl
 end
 
 require 'dvl/core/components/footer'
+require 'dvl/core/components/flashes'

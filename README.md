@@ -19,7 +19,19 @@ gem 'dvl-core'
 
 ## Screenshots
 
-![all_760](http://artifinder.herokuapp.com/gh/dobtco/dvl-core/x/artifacts/0/home/ubuntu/dvl-core/screenshots/all_760.png)
+### Core
+
+![core_760](http://artifinder.herokuapp.com/gh/dobtco/dvl-core/x/artifacts/0/home/ubuntu/dvl-core/screenshots/core_760.png)
+
+### Footer
+
+![footer](http://artifinder.herokuapp.com/gh/dobtco/dvl-core/x/artifacts/0/home/ubuntu/dvl-core/screenshots/footer.png)
+
+### Flashes
+
+![flash_error](http://artifinder.herokuapp.com/gh/dobtco/dvl-core/x/artifacts/0/home/ubuntu/dvl-core/screenshots/flash_error.png)
+![flash_success](http://artifinder.herokuapp.com/gh/dobtco/dvl-core/x/artifacts/0/home/ubuntu/dvl-core/screenshots/flash_success.png)
+![flash_info](http://artifinder.herokuapp.com/gh/dobtco/dvl-core/x/artifacts/0/home/ubuntu/dvl-core/screenshots/flash_info.png)
 
 ## Development
 

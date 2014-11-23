@@ -1,5 +1,6 @@
 require 'capybara/rspec'
 require 'capybara/poltergeist'
+require 'rspec-html-matchers'
 require 'active_support/all'
 require 'erector'
 require 'dvl/core'
@@ -21,10 +22,17 @@ def take_screenshot(path, name, res_x = 900, res_y = 150, opts = {})
   end
 end
 
-describe Dvl::Core do
-  describe 'Screenshots', type: :feature, js: true do
-    take_screenshot '/', 'all_1200', 1200, 1000, full: true
-    take_screenshot '/', 'all_760', 760, 1000, full: true
-    take_screenshot '/', 'all_400', 400, 1000, full: true
+def take_flash_screenshot(type, name, res_x = 900, res_y = 150, opts = {})
+  describe "taking flash screenshot: #{name}.png" do
+    before do
+      page.driver.resize(res_x, res_y)
+    end
+
+    it 'works' do
+      visit '/flashes'
+      click_link type
+      page.save_screenshot "screenshots/#{name}.png", opts
+    end
   end
 end
+
