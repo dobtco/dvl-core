@@ -1,4 +1,4 @@
-class Dvl::Core::Components::Flashes < Erector::Widget
+class Dvl::Components::Flashes < Erector::Widget
   needs :flash
 
   def content

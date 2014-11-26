@@ -1,4 +1,4 @@
-class Dvl::Core::Components::Footer < Erector::Widget
+class Dvl::Components::Footer < Erector::Widget
   needs :application_name
 
   def content

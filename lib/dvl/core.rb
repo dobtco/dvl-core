@@ -1,21 +1,17 @@
 require 'dvl/core/version'
 
-if defined?(Rails)
-  module Dvl
-    module Core
+module Dvl
+  module Core
+    if defined?(Rails)
       class Engine < ::Rails::Engine
-        # nada
       end
     end
   end
-end
 
-module Dvl
-  module Core
-    module Components
-    end
+  module Components
   end
 end
 
-require 'dvl/core/components/footer'
-require 'dvl/core/components/flashes'
+require 'dvl/components/footer'
+require 'dvl/components/flashes'
+require 'dvl/components/modal'

@@ -169,24 +169,27 @@ module Views
 
       docs 'Modals' do
         a 'Open modal', 'data-toggle' => 'modal', href: '#modal'
-        div(class: 'modal', tabindex: '-1', id: 'modal') {
-          div.modal_dialog {
-            div.modal_content {
-              div.modal_header {
-                a.close '&times;'.html_safe, 'data-dismiss' => 'modal'
-                h3 'Awesome modal'.html_safe
-              }
-
-              div.modal_body {
-                text 'This is the modal body!'
-              }
-
-              div.modal_footer {
-                text 'This is the modal footer!'
-              }
-            }
+        widget Dvl::Components::Modal.new(title: 'Awesome modal', id: 'modal') do
+          div.modal_body {
+            text 'This is the modal body!'
           }
-        }
+        end
+
+        br
+
+        a 'Confirmation modal', 'data-toggle' => 'modal', href: '#confirmModal'
+        widget Dvl::Components::Modal.new(
+          title: 'Are you sure?',
+          id: 'confirmModal',
+          html_opts: { class: 'modal_confirm' }
+        ) do
+          div.modal_body {
+            text 'Are you sure?'
+          }
+          div.modal_footer {
+            a.button.error 'OK'
+          }
+        end
       end
 
       docs 'Pagination' do
@@ -295,7 +298,7 @@ module Views
     def main
       br
       br
-      widget Dvl::Core::Components::Footer.new(application_name: 'dvl-core')
+      widget Dvl::Components::Footer.new(application_name: 'dvl-core')
     end
   end
 end

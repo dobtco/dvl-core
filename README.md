@@ -33,6 +33,11 @@ gem 'dvl-core'
 ![flash_success](http://artifinder.herokuapp.com/gh/dobtco/dvl-core/x/artifacts/0/home/ubuntu/dvl-core/screenshots/flash_success.png)
 ![flash_info](http://artifinder.herokuapp.com/gh/dobtco/dvl-core/x/artifacts/0/home/ubuntu/dvl-core/screenshots/flash_info.png)
 
+### Modals
+
+![modal](http://artifinder.herokuapp.com/gh/dobtco/dvl-core/x/artifacts/0/home/ubuntu/dvl-core/screenshots/modal.png)
+![confirm_modal](http://artifinder.herokuapp.com/gh/dobtco/dvl-core/x/artifacts/0/home/ubuntu/dvl-core/screenshots/confirm_modal.png)
+
 ## Development
 
 1. `script/bootstrap`

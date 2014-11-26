@@ -9,30 +9,16 @@ require_relative '../preview/app'
 Capybara.app = App
 Capybara.javascript_driver = :poltergeist
 
-def take_screenshot(path, name, res_x = 900, res_y = 150, opts = {})
+def take_screenshot(path, name, opts = {})
   describe "taking screenshot: #{name}.png" do
     before do
-      page.driver.resize(res_x, res_y)
+      page.driver.resize(opts[:res_x] || 900, opts[:res_y] || 500)
     end
 
     it 'works' do
       visit path
-      page.save_screenshot "screenshots/#{name}.png", opts
+      self.instance_eval(&opts[:before]) if opts[:before]
+      page.save_screenshot "screenshots/#{name}.png", opts.slice(:full)
     end
   end
 end
-
-def take_flash_screenshot(type, name, res_x = 900, res_y = 150, opts = {})
-  describe "taking flash screenshot: #{name}.png" do
-    before do
-      page.driver.resize(res_x, res_y)
-    end
-
-    it 'works' do
-      visit '/flashes'
-      click_link type
-      page.save_screenshot "screenshots/#{name}.png", opts
-    end
-  end
-end
-

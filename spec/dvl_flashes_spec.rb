@@ -11,7 +11,7 @@ describe 'Flashes' do
     end
   end
 
-  describe Dvl::Core::Components::Flashes do
+  describe Dvl::Components::Flashes do
     let!(:success_html) do
       described_class.new(
         flash: { 'success' => 'Yeah!' }
