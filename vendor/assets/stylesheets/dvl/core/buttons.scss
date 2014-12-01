@@ -77,7 +77,7 @@
     @include dark_button_color($errorColor);
   }
   &.info {
-    @include dark_button_color(#1fa3ec);
+    @include dark_button_color($darkBlue);
   }
   &.white {
     @include light_button_color(#fff);
