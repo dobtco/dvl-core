@@ -101,7 +101,7 @@ module Views
           div.dropdown_menu {
             ul.dropdown_body {
               li {
-                a 'Hey!'
+                a 'Hey! This is some really long dropdown text, yo.'
               }
               li {
                 a 'No!'
