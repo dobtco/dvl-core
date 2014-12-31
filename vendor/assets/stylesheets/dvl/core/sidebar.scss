@@ -24,7 +24,7 @@
 
 .sidebar_data {
   padding: 0 1rem;
-  li {
+  > li {
     border-bottom: 1px solid $lightGray;
     padding: 0.75rem 0;
     &:first-of-type {
