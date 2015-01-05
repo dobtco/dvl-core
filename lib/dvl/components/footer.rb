@@ -5,8 +5,12 @@ class Dvl::Components::Footer < Erector::Widget
     footer.footer {
       div.footer_inner {
         span {
-          text @application_name
-          rawtext t('dvl_core.footer.about')
+          if @application_name
+            text @application_name
+            rawtext t('dvl_core.footer.about')
+          else
+            rawtext t('dvl_core.footer.about_no_app')
+          end
         }
 
         ul {

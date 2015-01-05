@@ -2,6 +2,7 @@ en:
   dvl_core:
     footer:
       about: " is an application by <a href='http://www.dobt.co' target='_blank'>The Department of Better Technology</a>."
+      about_no_app: "Built by <a href='http://www.dobt.co' target='_blank'>The Department of Better Technology</a>."
       status: Service Status
       legal: Legal
       help: Get Help
