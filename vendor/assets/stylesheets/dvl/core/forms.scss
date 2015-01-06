@@ -104,14 +104,9 @@ input[type="radio"] {
   padding: 0; /* 2 */
 }
 /**
- * 1. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
- *    (include `-moz` to future-proof)
  * 2. Address `appearance` set to `searchfield` in Safari 5 and Chrome
  */
 input[type="search"] {
-  -webkit-box-sizing: content-box; /* 1 */
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
   -webkit-appearance: textfield; /* 2 */
 }
 /* Remove decoration & cancel button in Safari 5 and Chrome on OS X */
