@@ -9,7 +9,7 @@
   opacity: 0;
   visibility: visible;
   min-width: 40px;
-  transition: transform 0.25s $ease_out_back, opacity 120ms ease-out;
+  transition: transform 0.25s $easeOutBack, opacity 120ms ease-out;
   &.top, &.bottom {
     padding: 5px 0;
   }
