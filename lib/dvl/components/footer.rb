@@ -1,3 +1,5 @@
+require 'erector'
+
 class Dvl::Components::Footer < Erector::Widget
   needs :application_name
 

@@ -1,3 +1,5 @@
+require 'erector'
+
 class Dvl::Components::Flashes < Erector::Widget
   needs :flash
 

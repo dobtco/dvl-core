@@ -2,3 +2,5 @@
 Gemfile.lock
 *.gem
 screenshots/
+spec/dummy/tmp
+spec/dummy/log

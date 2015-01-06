@@ -1,3 +1,5 @@
+require 'erector'
+
 class Dvl::Components::Modal < Erector::Widget
   needs :title,
         id: nil,

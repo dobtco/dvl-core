@@ -1,12 +1,15 @@
+ENV["RAILS_ENV"] = "test"
+require File.expand_path("../dummy/config/environment.rb",  __FILE__)
+
+Rails.backtrace_cleaner.remove_silencers!
+
+require 'rspec/rails'
 require 'capybara/rspec'
 require 'capybara/poltergeist'
 require 'rspec-html-matchers'
 require 'active_support/all'
-require 'erector'
 require 'dvl/core'
-require_relative '../preview/app'
 
-Capybara.app = App
 Capybara.javascript_driver = :poltergeist
 
 def take_screenshot(path, name, opts = {})
