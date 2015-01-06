@@ -192,6 +192,43 @@ li.dropdown_more a {
   }
 }
 
+.dropdown_menu_sub {
+  display: none;
+}
+
+.dropdown_menu_sub_trigger {
+    position: relative;
+    &:after {
+      content: "\f105";
+      font-family: 'FontAwesome';
+      color: #bbb;
+      position: absolute;
+      right: 1rem;
+      top: 0;
+      line-height: 2.5rem;
+      font-size: 1.5rem;
+    }
+    &.is_open{
+      &:after {
+        content: "\f107";
+      }
+      & + li .dropdown_menu_sub {
+        display: block;
+      }
+    }
+}
+
+.dropdown_menu_sub li a {
+  font-size: 0.85rem;
+  padding: 0.375rem 0.5rem;
+  padding-left: 1.5rem;
+  display: block;
+  line-height: 1rem;
+  color: #777;
+  max-height: 3rem;
+  @include font_smoothing;
+}
+
 // ## Dropdown list styles
 
 
