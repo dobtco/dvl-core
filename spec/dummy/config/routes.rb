@@ -3,5 +3,6 @@ Rails.application.routes.draw do
     get '', action: :index
     get 'flashes'
     get 'footer'
+    get 'forms'
   end
 end
