@@ -21,11 +21,9 @@ Gem::Specification.new do |s|
   s.add_dependency 'erector-rails4'
   s.add_dependency 'sass'
 
-  s.add_development_dependency 'capybara', '2.4.2'
+  s.add_development_dependency 'capybara', '2.4.4'
   s.add_development_dependency 'poltergeist', '1.5.1'
-  s.add_development_dependency 'rerun', '0.10.0'
-  s.add_development_dependency 'rspec', '3.1.0'
+  s.add_development_dependency 'rails', '4.2.0'
+  s.add_development_dependency 'rspec-rails', '3.1.0'
   s.add_development_dependency 'rspec-html-matchers', '0.6.1'
-  s.add_development_dependency 'sinatra', '1.4.5'
-  s.add_development_dependency 'sinatra-assetpack', '0.3.3'
 end
