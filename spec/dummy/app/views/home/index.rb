@@ -28,6 +28,22 @@ class Views::Home::Index < Views::Base
             li {
               a 'Hey! This is some really long dropdown text, yo.'
             }
+            li.dropdown_menu_sub_trigger {
+              a 'View more...'
+            }
+            li {
+              ul.dropdown_menu_sub {
+                li {
+                  a 'This is one option'
+                }
+                li {
+                  a 'This is another'
+                }
+                li {
+                  a 'This is a third option'
+                }
+              }
+            }
             li {
               a 'No!'
             }
