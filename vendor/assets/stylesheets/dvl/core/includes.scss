@@ -141,3 +141,9 @@ $easeInOutBack:  cubic-bezier(0.680, -0.550, 0.265, 1.550);
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+@mixin word_break {
+  word-break: break-all;
+  word-break: break-word; // Webkit non-standard
+  hyphens: auto;
+}
