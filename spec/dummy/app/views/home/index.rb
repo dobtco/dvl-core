@@ -32,6 +32,12 @@ class Views::Home::Index < Views::Base
               a 'View more...'
             }
             li {
+              a {
+                i(class: 'fa fa-star')
+                text ' With an icon!'
+              }
+            }
+            li {
               ul.dropdown_menu_sub {
                 li {
                   a 'This is one option'

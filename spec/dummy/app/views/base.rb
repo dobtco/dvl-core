@@ -4,6 +4,7 @@ class Views::Base < Erector::Widget
     html {
       head {
         link href: '//fonts.googleapis.com/css?family=Open+Sans:400,300,700,600', rel: 'stylesheet', type: 'text/css'
+        link href: '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', rel: 'stylesheet', type: 'text/css'
         stylesheet_link_tag 'application', media: 'all'
         style(type: 'text/css') {
           rawtext %{
