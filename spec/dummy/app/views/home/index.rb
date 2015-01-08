@@ -65,6 +65,10 @@ class Views::Home::Index < Views::Base
             text 'This is a sub-option of foo.'
           }
         }
+        div.input_group {
+          input type: 'text', placeholder: 'I am an input-group'
+          a.button.small '✓'
+        }
         div.form_actions {
           button.button.primary 'Submit'
         }
