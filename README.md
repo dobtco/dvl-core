@@ -23,6 +23,10 @@ gem 'dvl-core'
 
 ![core_760](http://artifinder.herokuapp.com/gh/dobtco/dvl-core/x/artifacts/0/home/ubuntu/dvl-core/screenshots/core_760.png)
 
+### Forms
+
+![forms_1200](http://artifinder.herokuapp.com/gh/dobtco/dvl-core/x/artifacts/0/home/ubuntu/dvl-core/screenshots/forms_1200.png)
+
 ### Footer
 
 ![footer](http://artifinder.herokuapp.com/gh/dobtco/dvl-core/x/artifacts/0/home/ubuntu/dvl-core/screenshots/footer.png)

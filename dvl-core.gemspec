@@ -24,7 +24,10 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'autoprefixer-rails', '4.0.2.2'
   s.add_development_dependency 'capybara', '2.4.4'
   s.add_development_dependency 'poltergeist', '1.5.1'
+  s.add_development_dependency 'pry'
+  s.add_development_dependency 'pry-remote'
   s.add_development_dependency 'rails', '4.2.0'
   s.add_development_dependency 'rspec-rails', '3.1.0'
   s.add_development_dependency 'rspec-html-matchers', '0.6.1'
+  s.add_development_dependency 'simple_form', '3.1.0'
 end

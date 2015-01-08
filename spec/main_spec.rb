@@ -5,6 +5,8 @@ describe 'Main' do
     take_screenshot '/', 'core_1200', res_x: 1200, res_y: 1000, full: true
     take_screenshot '/', 'core_760', res_x: 760, res_y: 1000, full: true
     take_screenshot '/', 'core_400', res_x: 400, res_y: 1000, full: true
+    take_screenshot '/forms', 'forms_1200', res_x: 1200, res_y: 1000, full: true
+    take_screenshot '/forms', 'forms_400', res_x: 400, res_y: 1000, full: true
     take_screenshot '/footer', 'footer', res_x: 1000, res_y: 200
     take_screenshot '/flashes', 'flash_error', res_y: 100, before: Proc.new { click_link('Error') }
     take_screenshot '/flashes', 'flash_success', res_y: 100, before: Proc.new { click_link('Success') }
