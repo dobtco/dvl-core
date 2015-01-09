@@ -9,6 +9,7 @@ require 'capybara/poltergeist'
 require 'rspec-html-matchers'
 require 'active_support/all'
 require 'dvl/core'
+require 'simple_form'
 
 Capybara.javascript_driver = :poltergeist
 

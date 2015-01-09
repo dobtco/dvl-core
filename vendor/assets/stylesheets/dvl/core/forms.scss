@@ -69,6 +69,10 @@ textarea {
   &.error {
     border-color: $errorColor;
   }
+  &:focus {
+    outline: 0;
+    border-color: $darkBlue;
+  }
   &[readonly] {
     border-color: #ccc;
     background-color: $lightestGray;
@@ -366,38 +370,59 @@ form {
   }
 }
 
-.select_wrapper {
-  max-width: 100%;
-  height: 28px;
-  background-color: #fff;
-  border: 1px solid $gray;
-  border-radius: $radius;
+$styledSelectHeight: 2.25rem;
+
+.styled_select_wrapper {
   position: relative;
-  vertical-align: middle;
+  display: inline-block;
+  height: $styledSelectHeight;
+  width: 17rem; // around 240px
+  &.auto {
+    width: auto;
+  }
+  &.full {
+    width: 100%;
+  }
+  select {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $styledSelectHeight;
+    opacity: 0;
+    z-index: 2;
+    &:focus + div {
+      border-color: $darkBlue;
+      &:after {
+        color: $darkBlue;
+      }
+    }
+    &.error + div {
+      border-color: $errorColor;
+    }
+  }
+}
+
+.styled_select {
+  height: $styledSelectHeight;
+  border: 1px solid #bbb;
+  border-radius: $radius;
+  @include ellipses;
+  font-size: 0.95rem;
+  padding-right: 2rem;
+  padding-left: 0.75rem;
+  line-height: $styledSelectHeight;
+  color: #333;
   &:after {
     font-family: 'FontAwesome';
     content: '\f0d7';
     position: absolute;
-    top: 3px;
-    right: 10px;
+    top: 50%;
+    height: 1rem;
+    margin-top: -0.5rem;
+    line-height: 1;
+    right: 0.75rem;
     color: $darkerGray;
-    pointer-events: none;
-  }
-  select {
-    background: transparent;
-    width: 100%;
-    padding: 2px 28px 0px 14px;
-    margin: 0;
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 18px;
-    border: 1px solid transparent;
-    border-radius: 0;
-    height: 26px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    text-indent: 0.01px;
-    text-overflow: '';
   }
 }
 

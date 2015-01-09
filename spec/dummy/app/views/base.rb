@@ -29,6 +29,7 @@ class Views::Base < Erector::Widget
         javascript_include_tag 'application'
         script %{
           $('[data-toggle="tooltip"]').tooltip()
+          $('body').styledSelect()
           $('body').styledControls()
         }.html_safe
       }

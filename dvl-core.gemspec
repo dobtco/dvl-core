@@ -30,4 +30,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rspec-rails', '3.1.0'
   s.add_development_dependency 'rspec-html-matchers', '0.6.1'
   s.add_development_dependency 'simple_form', '3.1.0'
+  s.add_development_dependency 'simple_form-dropdown_select', '0.2.0'
 end
