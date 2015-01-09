@@ -11,4 +11,5 @@
  *= require dvl/core
  *= require dvl/components/flashes
  *= require dvl/components/footer
+ *= require simple_form/dropdown_select
  */

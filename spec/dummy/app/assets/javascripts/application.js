@@ -12,3 +12,4 @@
 //
 //= require dvl/core
 //= require dvl/components/flashes
+//= require simple_form/dropdown_select
