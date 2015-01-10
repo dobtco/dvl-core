@@ -32,12 +32,6 @@ class Views::Home::Index < Views::Base
               a 'View more...'
             }
             li {
-              a {
-                i(class: 'fa fa-star')
-                text ' With an icon!'
-              }
-            }
-            li {
               ul.dropdown_menu_sub {
                 li {
                   a 'This is one option'
@@ -48,6 +42,12 @@ class Views::Home::Index < Views::Base
                 li {
                   a 'This is a third option'
                 }
+              }
+            }
+            li {
+              a {
+                i(class: 'fa fa-star')
+                text ' With an icon!'
               }
             }
             li {
@@ -62,32 +62,7 @@ class Views::Home::Index < Views::Base
         div.dropdown_menu {
           ul.dropdown_body {
             li {
-              a 'Hey! This is some really long dropdown text, yo.'
-            }
-            li.dropdown_menu_sub_trigger {
-              a 'View more...'
-            }
-            li {
-              a {
-                i(class: 'fa fa-star')
-                text ' With an icon!'
-              }
-            }
-            li {
-              ul.dropdown_menu_sub {
-                li {
-                  a 'This is one option'
-                }
-                li {
-                  a 'This is another'
-                }
-                li {
-                  a 'This is a third option'
-                }
-              }
-            }
-            li {
-              a 'No!'
+              a 'This was triggered by a dropdown_toggle_button'
             }
           }
         }
