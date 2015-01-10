@@ -374,8 +374,6 @@ form {
 $styledSelectHeight: 2.25rem;
 
 .styled_select_wrapper {
-  position: relative;
-  display: inline-block;
   height: $styledSelectHeight;
   width: 17rem; // around 240px
   vertical-align: middle;
@@ -419,19 +417,19 @@ $styledSelectHeight: 2.25rem;
       }
     }
   }
-}
-
-.styled_select {
-  height: $styledSelectHeight;
-  background: #fff;
-  border: 1px solid #bbb;
-  border-radius: $radius;
-
+  &:hover .styled_select {
+    background: #fcfcfc;
+  }
+  &:active .styled_select,
+  &.open .styled_select {
+    background: #f7f7f7;
+  }
 }
 
 .styled_select_wrapper,
 .dropdown_toggle_button {
-
+  position: relative;
+  display: inline-block; 
 }
 
 .styled_select,
@@ -441,11 +439,11 @@ $styledSelectHeight: 2.25rem;
   border: 1px solid #bbb;
   border-radius: $radius;
   @include ellipses;
+  font-size: 0.95rem;
   padding-right: 2rem;
   padding-left: 0.75rem;
   line-height: $styledSelectHeight;
   color: #333;
-  font-size: 0.95rem;
   &:after {
     font-family: 'FontAwesome';
     content: '\f0d7';

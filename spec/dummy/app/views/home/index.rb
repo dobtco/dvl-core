@@ -20,8 +20,44 @@ class Views::Home::Index < Views::Base
     end
 
     docs 'Dropdowns' do
-      span.dropdown {
+      div.dropdown {
         a.dropdown_toggle 'Click me',
+                          'data-toggle' => 'dropdown'
+        div.dropdown_menu {
+          ul.dropdown_body {
+            li {
+              a 'Hey! This is some really long dropdown text, yo.'
+            }
+            li.dropdown_menu_sub_trigger {
+              a 'View more...'
+            }
+            li {
+              a {
+                i(class: 'fa fa-star')
+                text ' With an icon!'
+              }
+            }
+            li {
+              ul.dropdown_menu_sub {
+                li {
+                  a 'This is one option'
+                }
+                li {
+                  a 'This is another'
+                }
+                li {
+                  a 'This is a third option'
+                }
+              }
+            }
+            li {
+              a 'No!'
+            }
+          }
+        }
+      }
+      div.dropdown {
+        a.dropdown_toggle_button.gray 'Click me',
                           'data-toggle' => 'dropdown'
         div.dropdown_menu {
           ul.dropdown_body {
