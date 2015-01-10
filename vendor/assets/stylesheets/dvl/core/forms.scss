@@ -429,7 +429,7 @@ $styledSelectHeight: 2.25rem;
 .styled_select_wrapper,
 .dropdown_toggle_button {
   position: relative;
-  display: inline-block; 
+  display: inline-block;
 }
 
 .styled_select,
@@ -444,6 +444,7 @@ $styledSelectHeight: 2.25rem;
   padding-left: 0.75rem;
   line-height: $styledSelectHeight;
   color: #333;
+  font-weight: normal;
   &:after {
     font-family: 'FontAwesome';
     content: '\f0d7';

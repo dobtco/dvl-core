@@ -56,6 +56,9 @@ class Views::Home::Index < Views::Base
           }
         }
       }
+
+      br
+
       div.dropdown {
         a.dropdown_toggle_button.gray 'Click me',
                           'data-toggle' => 'dropdown'
@@ -162,6 +165,21 @@ class Views::Home::Index < Views::Base
               div.sidebar_data_label 'Label'
               div.sidebar_data_value 'Value'
               div.sidebar_data_details 'Details'
+            }
+          }
+          li {
+            div.sidebar_data_icon {
+              i '✓'
+            }
+            div.sidebar_data_text {
+              div.sidebar_data_label 'Dropdowns'
+              div.sidebar_data_value {
+                simple_form_for :foo do |f|
+                  f.input_field :blah, as: :select, collection: ['Bar'], selected: 'Bar'
+                  br
+                  f.input_field :blah, as: :dropdown_select, collection: [['Bar', 'Bar', 'Bar']], selected: 'Bar'
+                end
+              }
             }
           }
         }
