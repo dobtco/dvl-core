@@ -48,13 +48,14 @@ class Views::Home::Forms < Views::Base
         end
 
         f.input :select,
-                      as: :select,
-                      collection: [
-                        'I am a regular select',
-                        'I am another option',
-                        'I am another longer option that is really long and stuff'
-                      ],
-                      selected: 'I am a regular select'
+                as: :select,
+                collection: [
+                  ['I am a regular select', 1],
+                  ['I am another option', 2],
+                  ['I am another longer option that is really long and stuff', 3]
+                ],
+                selected: 'I am a regular select',
+                include_blank: true
 
         f.input :bar,
                       as: :dropdown_select,

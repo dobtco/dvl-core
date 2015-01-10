@@ -29,7 +29,7 @@ class StyledSelect
       @$wrapper.width(@options.width)
 
   _change: ->
-    @$span.text(@$el.val())
+    @$span.text(@$el.find('option:selected').text())
 
 $.fn.extend styledSelect: ->
   $(@).find('select:not(.datetime)').each ->
