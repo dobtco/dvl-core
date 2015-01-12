@@ -153,6 +153,11 @@ label {
   cursor: pointer;
   font-weight: 600;
   font-size: 0.9rem;
+  &.sub_label {
+    color: #666;
+    font-weight: normal;
+    display: block;
+  }
 }
 
 /**
