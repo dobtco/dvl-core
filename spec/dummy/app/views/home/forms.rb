@@ -5,6 +5,13 @@ class Views::Home::Forms < Views::Base
         f.input :string,
                 as: :string
 
+        f.input :this_is_a_sub_label,
+                as: :string,
+                required: false,
+                label_html: {
+                  class: 'sub_label'
+                }
+
         f.input :radio,
                 as: :radio_buttons,
                 collection: ['Foo', 'Bar'],
