@@ -32,12 +32,6 @@ class Views::Home::Index < Views::Base
               a 'View more...'
             }
             li {
-              a {
-                i(class: 'fa fa-star')
-                text ' With an icon!'
-              }
-            }
-            li {
               ul.dropdown_menu_sub {
                 li {
                   a 'This is one option'
@@ -48,6 +42,12 @@ class Views::Home::Index < Views::Base
                 li {
                   a 'This is a third option'
                 }
+              }
+            }
+            li {
+              a {
+                i(class: 'fa fa-star')
+                text ' With an icon!'
               }
             }
             li {
@@ -56,38 +56,16 @@ class Views::Home::Index < Views::Base
           }
         }
       }
+
+      br
+
       div.dropdown {
         a.dropdown_toggle_button.gray 'Click me',
                           'data-toggle' => 'dropdown'
         div.dropdown_menu {
           ul.dropdown_body {
             li {
-              a 'Hey! This is some really long dropdown text, yo.'
-            }
-            li.dropdown_menu_sub_trigger {
-              a 'View more...'
-            }
-            li {
-              a {
-                i(class: 'fa fa-star')
-                text ' With an icon!'
-              }
-            }
-            li {
-              ul.dropdown_menu_sub {
-                li {
-                  a 'This is one option'
-                }
-                li {
-                  a 'This is another'
-                }
-                li {
-                  a 'This is a third option'
-                }
-              }
-            }
-            li {
-              a 'No!'
+              a 'This was triggered by a dropdown_toggle_button'
             }
           }
         }
@@ -187,6 +165,21 @@ class Views::Home::Index < Views::Base
               div.sidebar_data_label 'Label'
               div.sidebar_data_value 'Value'
               div.sidebar_data_details 'Details'
+            }
+          }
+          li {
+            div.sidebar_data_icon {
+              i '✓'
+            }
+            div.sidebar_data_text {
+              div.sidebar_data_label 'Dropdowns'
+              div.sidebar_data_value {
+                simple_form_for :foo do |f|
+                  f.input_field :blah, as: :select, collection: ['Bar'], selected: 'Bar'
+                  br
+                  f.input_field :blah, as: :dropdown_select, collection: [['Bar', 'Bar', 'Bar']], selected: 'Bar'
+                end
+              }
             }
           }
         }
