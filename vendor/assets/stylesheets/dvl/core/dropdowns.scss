@@ -1,7 +1,5 @@
 .dropdown {
   position: relative;
-}
-span.dropdown {
   display: inline-block;
 }
 .dropdown-toggle:focus {
@@ -148,7 +146,7 @@ li.dropdown_more a {
 
 .dropdown_toggle_button {
   position: relative;
-  display: inline-block;
+  display: block;
   text-decoration: none;
   font-weight: normal;
   cursor: pointer;
