@@ -64,7 +64,6 @@ textarea {
   vertical-align: middle;
   border: 1px solid #ddd;
   font-size: 0.9rem;
-  line-height: 1.5rem;
   padding: 0.3rem;
   border-radius: $radius;
   &.error {
@@ -150,19 +149,10 @@ input::-moz-focus-inner {
   border: 0;
 }
 /* Give labels a pointer cursor by default */
-label, legend {
+label {
   cursor: pointer;
   font-weight: 600;
   font-size: 0.9rem;
-  &.required > abbr {
-    color: $errorColor;
-    font-size: 0.8rem;
-  }
-}
-
-legend {
-  margin: 0;
-  padding: 0;
 }
 
 /**
@@ -174,6 +164,11 @@ textarea {
   overflow: auto; /* 1 */
   vertical-align: top; /* 2 */
   resize: vertical; /* 3 */
+}
+
+label.required > abbr {
+  color: $errorColor;
+  font-size: 0.8rem;
 }
 
 select.datetime {
