@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+
+require File.expand_path("../../spec/dummy/config/environment.rb",  __FILE__)
+require 'sass'
+
+stylesheets = [
+  'core',
+  'components/flashes',
+  'components/footer'
+]
+
+stylesheets.each do |x|
+  asset = Rails.application.assets.find_asset("dvl/#{x}.scss")
+
+  compiled = ::Sass::Engine.new(
+    asset.body,
+    syntax: :scss,
+    cache: false,
+    read_cache: false,
+    style: :nested
+  ).render
+
+  File.write "dist/#{x.gsub('/', '-')}.css", compiled
+end

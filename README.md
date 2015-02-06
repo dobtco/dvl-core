@@ -48,6 +48,10 @@ gem 'dvl-core'
 2. `script/preview`
 3. Open [http://localhost:4567](http://localhost:4567) in your web browser
 
+## Usage outside of Ruby/Rails
+
+We include compiled CSS in the `dist/` directory for use outside of a Sprockets environment. Occasionally these stylesheets may get out of sync -- if so, running `script/compile` will rebuild them, and you can commit the result as well.
+
 ## License
 
 [MIT](http://dobtco.mit-license.org/)

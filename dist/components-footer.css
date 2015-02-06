@@ -1,0 +1,13 @@
+.footer {
+  font-size: 0.85rem;
+  color: #aaa;
+  padding: 1rem 0;
+  line-height: 22px;
+  border-top: 1px solid #f2f2f2; }
+
+.footer li {
+  display: inline;
+  margin-right: 0.75rem; }
+
+.footer li:last-child {
+  margin-right: 0; }
