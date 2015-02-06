@@ -1,0 +1,3 @@
+#! /bin/bash
+
+bundle exec thin start --chdir spec/dummy --socket $BOXEN_SOCKET_DIR/dvl-core
