@@ -143,7 +143,6 @@ $easeInOutBack:  cubic-bezier(0.680, -0.550, 0.265, 1.550);
 }
 
 @mixin word_break {
-  word-break: break-all;
-  word-break: break-word; // Webkit non-standard
+  word-wrap: break-word;
   hyphens: auto;
 }
