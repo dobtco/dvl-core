@@ -47,6 +47,15 @@ class Views::Home::Forms < Views::Base
           }
         end
 
+        f.input :input_group_with_text do
+          div.input_group {
+            f.input_field :input_group,
+                          as: :string,
+                          placeholder: 'I am an input-group'
+            span.input_group_text 'things'
+          }
+        end
+
         f.input :select,
                 as: :select,
                 collection: [

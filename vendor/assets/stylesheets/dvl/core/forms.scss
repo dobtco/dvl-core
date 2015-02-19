@@ -336,7 +336,7 @@ input[type="text"].large {
   position: relative;
   display: table;
   border-collapse: separate;
-  > .button {
+  > .button, > .input_group_text {
     width: 1%;
     display: table-cell;
   }
@@ -352,6 +352,20 @@ input[type="text"].large {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
+}
+
+.input_group_text {
+  display: inline-block;
+  margin: 0;
+  padding: 0 0.5rem;
+  background: $lightGray;
+  width: 100%;
+  color: $darkestGray;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: normal;
+  border-radius: $radius;
+  white-space: nowrap;
 }
 
 form {
