@@ -24,6 +24,25 @@ class Views::Base < Erector::Widget
         }
       }
       body {
+        nav {
+          ul {
+            li {
+              a 'Home', href: root_path
+            }
+            li {
+              a 'Footer', href: footer_path
+            }
+            li {
+              a 'Flashes', href: flashes_path
+            }
+            li {
+              a 'Forms', href: forms_path
+            }
+          }
+        }
+
+        hr
+
         main
         script src: '//code.jquery.com/jquery-1.11.1.min.js'
         javascript_include_tag 'application'
