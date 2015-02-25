@@ -46,9 +46,10 @@ class Views::Base < Erector::Widget
     nav {
       ul {
         test_views.each do |x|
+          route = x.split('/').last.split('.').first
+
           li {
-            a x.split('/').last,
-              href: x.split('/').last.split('.').first
+            a route, href: route
           }
         end
       }
