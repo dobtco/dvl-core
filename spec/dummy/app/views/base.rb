@@ -57,23 +57,17 @@ class Views::Base < Erector::Widget
     div.section_header name, id: name.downcase
 
     div.grid {
-      if opts[:full]
-        div.item {
-          pre codeString.strip_heredoc.strip
-        }
-
-        div.item {
+      div(class: "item #{opts[:full] ? '' : 'six_columns'}") {
+        div.docs_preview {
           eval(codeString)
         }
-      else
-        div.item.six_columns {
-          eval(codeString)
-        }
+      }
 
-        div.item.six_columns {
+      div(class: "item code_item #{opts[:full] ? '' : 'six_columns'}") {
+        div.docs_code {
           pre codeString.strip_heredoc.strip
         }
-      end
+      }
     }
   end
 end

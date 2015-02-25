@@ -36,9 +36,8 @@
 }
 
 .footer_inner {
-  width: 90%;
+  @include ninety_wrapper;
   max-width: 50rem;
-  margin: 0 auto;
 }
 
 .footer_links {
@@ -111,7 +110,6 @@
 
 .newsletter_form {
   margin-bottom: $line_height * 2;
-  @include cf;
   p {
     margin-bottom: $line_height;
   }
@@ -128,7 +126,7 @@
 }
 
 .newsletter_email {
-  height: $line_height * 1.5;
+  height: $line_height * 2;
   border-radius: $radius;
   border: 0;
   width: 100%;
@@ -142,16 +140,12 @@
   padding: 0 2rem;
 }
 
-@media screen and (min-width: 45em) {
+@media screen and (min-width: 640px) {
   .footer {
     padding: ($line_height * 3) 0;
     ul {
       padding-left: 0;
     }
-  }
-
-  .newsletter_email {
-    height: $line_height * 2;
   }
 
   .newsletter_subscribe {
