@@ -30,13 +30,13 @@ class Views::Base < Erector::Widget
               a 'Home', href: root_path
             }
             li {
-              a 'Footer', href: footer_path
+              a 'Footer', href: '/footer'
             }
             li {
-              a 'Flashes', href: flashes_path
+              a 'Flashes', href: '/flashes'
             }
             li {
-              a 'Forms', href: forms_path
+              a 'Forms', href: '/forms'
             }
           }
         }
