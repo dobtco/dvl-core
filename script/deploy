@@ -1,0 +1,11 @@
+#!/bin/sh
+# Tag and push a release.
+
+set -e
+
+git checkout deploy
+git merge master
+bundle install
+git commit -am 'Deploy to Heroku'
+git push heroku deploy:master
+git checkout master
