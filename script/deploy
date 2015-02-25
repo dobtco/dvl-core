@@ -3,9 +3,11 @@
 
 set -e
 
-git checkout deploy
-git merge master -m 'Merge master -> deploy'
+git checkout -b tmp-deploy
+sed -i '' "/Gemfile.lock/d" .gitignore
 bundle install
+git add .
 git commit -am 'Deploy to Heroku'
-git push heroku deploy:master
+git push heroku tmp-deploy:master --force
 git checkout master
+git branch -D tmp-deploy
