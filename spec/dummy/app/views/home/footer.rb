@@ -1,7 +1,7 @@
 class Views::Home::Footer < Views::Base
   def main
-    br
-    br
-    widget Dvl::Components::Footer.new(application_name: 'dvl-core')
+    docs 'Footer', %{
+      widget Dvl::Components::Footer.new(application_name: 'dvl-core')
+    }, full: true
   end
 end

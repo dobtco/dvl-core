@@ -57,8 +57,27 @@ class Views::Base < Erector::Widget
 
   private
 
-  def docs(name, &block)
+  def docs(name, codeString, opts = {})
     div.section_header name, id: name.downcase
-    yield
+
+    div.grid {
+      if opts[:full]
+        div.item {
+          pre codeString.strip_heredoc.strip
+        }
+
+        div.item {
+          eval(codeString)
+        }
+      else
+        div.item.six_columns {
+          eval(codeString)
+        }
+
+        div.item.six_columns {
+          pre codeString.strip_heredoc.strip
+        }
+      end
+    }
   end
 end
