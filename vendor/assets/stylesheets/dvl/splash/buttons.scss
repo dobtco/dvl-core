@@ -1,0 +1,28 @@
+$buttonColor: #0084B8;
+
+.button {
+  background: $buttonColor;
+  border-radius: $radius;
+  color: #fff;
+  display: inline-block;
+  border: 0;
+  text-decoration: none;
+
+  &:hover, &:focus {
+    background: darken($buttonColor, 5%);
+  }
+
+  &:active {
+    background: darken($buttonColor, 7.5%);
+  }
+
+  &[disabled],
+  &.disabled,
+  &.disabled:active {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=65)";
+    opacity: 0.65;
+    cursor: default !important;
+  }
+}

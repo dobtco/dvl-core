@@ -1,0 +1,181 @@
+// Footer
+
+.footer_links {
+  li {
+    margin-bottom: $line_height;
+  }
+}
+
+.footer_status {
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -1.5rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-top: -0.25rem;
+    border-radius: 50%;
+  }
+  &.is_up:before {
+    background: #90E92F;
+  }
+  &.is_partial:before {
+    background: #fff200;
+  }
+  &.is_down:before {
+    background: #e80000;
+  }
+}
+
+.footer {
+  padding-top: $line_height * 2;
+  background: #080F1F;
+  ul {
+    list-style: none;
+    padding-left: 2rem;
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+  }
+  dl {
+    @include cf;
+    margin: 0;
+  }
+
+  dt, dd {
+    float: left;
+  }
+
+  dt {
+    font-weight: 600;
+    clear: left;
+    width: 6em;
+    color: rgba(#fff,0.8);
+    text-transform: uppercase;
+    font-size: 0.8em;
+    line-height: 1.5em / 0.8;
+    letter-spacing: 0.05em;
+    @include font-smoothing;
+  }
+}
+
+.footer_contact {
+  padding-left: 3em;
+  li {
+    position: relative;
+    margin-bottom: $line_height;
+  }
+  li:before {
+    position: absolute;
+    left: (-3em / 1.2);
+    color: rgba(#fff,0.5);
+    font-family: 'FontAwesome';
+    font-size: 1.2em;
+    width: (3em / 1.2);
+    text-align: center;
+    display: block;
+    @include font-smoothing;
+  }
+}
+
+.footer_phone:before {
+  content: "\f095";
+  top: 0.125em;
+}
+
+.footer_email:before {
+  content: "\f003";
+}
+
+.footer_fb:before {
+  content: "\f09a";
+}
+
+.footer_gplus:before {
+  content: "\f0d5";
+}
+
+.footer_twitter:before {
+  content: "\f099";
+}
+
+.newsletter_form {
+  margin-bottom: $line_height * 2;
+  @include cf;
+  p {
+    margin-bottom: $line_height;
+  }
+  input {
+    &:focus {
+      box-shadow: inset 0 0 3px 1px #0084B8;
+    }
+  }
+  label {
+    font-size: 0;
+    color: transparent;
+    position: absolute;
+  }
+}
+
+.newsletter_email {
+  height: $line_height * 1.5;
+  border-radius: $radius;
+  border: 0;
+  width: 15rem;
+  padding: ($line_height * 0.25) 1em;
+  color: #444;
+}
+
+.newsletter_subscribe {
+  height: $line_height * 2;
+  margin-top: 1.5rem;
+  padding: 0 2rem;
+}
+
+@media screen and (min-width: 45em) {
+  .footer {
+    padding: $line_height * 3 0;
+    ul {
+      padding: 0;
+    }
+  }
+
+  .footer_status {
+    &:before {
+      left: -1rem;
+    }
+  }
+
+  .footer_links, .footer_contact {
+    @include col;
+    @include col5;
+  }
+
+  .footer_contact {
+    @include push1;
+  }
+
+  .newsletter_form p {
+    @include col;
+    @include col12;
+    margin-bottom: 1.5em;
+  }
+
+  .newsletter_email {
+    @include col;
+    @include col7;
+  }
+
+  .newsletter_subscribe {
+    @include col;
+    @include col3;
+  }
+}

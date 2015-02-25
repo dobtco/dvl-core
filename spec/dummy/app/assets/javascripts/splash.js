@@ -10,7 +10,7 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require dvl/core
-//= require dvl/components/flashes
+//= require dvl/helpers/flash_placeholder
+//= require dvl/components/newsletter_form
+//= require dvl/components/splash_footer
 //= require dvl/components/dynamic_email
-//= require simple_form/dropdown_select
