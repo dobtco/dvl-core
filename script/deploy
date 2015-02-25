@@ -4,7 +4,7 @@
 set -e
 
 git checkout deploy
-git merge master
+git merge master -m 'Merge master -> deploy'
 bundle install
 git commit -am 'Deploy to Heroku'
 git push heroku deploy:master
