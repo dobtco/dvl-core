@@ -1,4 +1,45 @@
-// Footer
+.footer {
+  padding-top: $line_height * 2;
+  background: #080F1F;
+  ul {
+    list-style: none;
+    padding-left: 2rem;
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+  }
+  dl {
+    @include cf;
+    margin: 0;
+  }
+
+  dt, dd {
+    float: left;
+  }
+
+  dt {
+    font-weight: 600;
+    clear: left;
+    width: 6em;
+    color: rgba(#fff,0.8);
+    text-transform: uppercase;
+    font-size: 0.8em;
+    line-height: 1.5em / 0.8;
+    letter-spacing: 0.05em;
+    @include font-smoothing;
+  }
+}
+
+.footer_inner {
+  width: 90%;
+  max-width: 50rem;
+  margin: 0 auto;
+}
 
 .footer_links {
   li {
@@ -29,46 +70,7 @@
   }
 }
 
-.footer {
-  padding-top: $line_height * 2;
-  background: #080F1F;
-  ul {
-    list-style: none;
-    padding-left: 2rem;
-    a {
-      color: #fff;
-      text-decoration: none;
-    }
-
-    a:hover,
-    a:focus {
-      text-decoration: underline;
-    }
-  }
-  dl {
-    @include cf;
-    margin: 0;
-  }
-
-  dt, dd {
-    float: left;
-  }
-
-  dt {
-    font-weight: 600;
-    clear: left;
-    width: 6em;
-    color: rgba(#fff,0.8);
-    text-transform: uppercase;
-    font-size: 0.8em;
-    line-height: 1.5em / 0.8;
-    letter-spacing: 0.05em;
-    @include font-smoothing;
-  }
-}
-
 .footer_contact {
-  padding-left: 3em;
   li {
     position: relative;
     margin-bottom: $line_height;
@@ -129,53 +131,36 @@
   height: $line_height * 1.5;
   border-radius: $radius;
   border: 0;
-  width: 15rem;
+  width: 100%;
   padding: ($line_height * 0.25) 1em;
   color: #444;
 }
 
 .newsletter_subscribe {
-  height: $line_height * 2;
   margin-top: 1.5rem;
+  height: $line_height * 2;
   padding: 0 2rem;
 }
 
 @media screen and (min-width: 45em) {
   .footer {
-    padding: $line_height * 3 0;
+    padding: ($line_height * 3) 0;
     ul {
-      padding: 0;
+      padding-left: 0;
     }
+  }
+
+  .newsletter_email {
+    height: $line_height * 2;
+  }
+
+  .newsletter_subscribe {
+    margin-top: 0;
   }
 
   .footer_status {
     &:before {
       left: -1rem;
     }
-  }
-
-  .footer_links, .footer_contact {
-    @include col;
-    @include col5;
-  }
-
-  .footer_contact {
-    @include push1;
-  }
-
-  .newsletter_form p {
-    @include col;
-    @include col12;
-    margin-bottom: 1.5em;
-  }
-
-  .newsletter_email {
-    @include col;
-    @include col7;
-  }
-
-  .newsletter_subscribe {
-    @include col;
-    @include col3;
   }
 }
