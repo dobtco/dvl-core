@@ -4,9 +4,9 @@
 set -e
 
 git checkout -b tmp-deploy
-sed -i '' "/Gemfile.lock/d" .gitignore
-bundle install
-git add .
+sed -e "/Gemfile.lock/d" .gitignore > .gitignore_edited
+mv .gitignore_edited .gitignore
+git add Gemfile.lock
 git commit -am 'Deploy to Heroku'
 git push heroku tmp-deploy:master --force
 git checkout master
