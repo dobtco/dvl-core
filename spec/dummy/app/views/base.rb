@@ -24,22 +24,7 @@ class Views::Base < Erector::Widget
         }
       }
       body {
-        nav {
-          ul {
-            li {
-              a 'Home', href: root_path
-            }
-            li {
-              a 'Footer', href: '/footer'
-            }
-            li {
-              a 'Flashes', href: '/flashes'
-            }
-            li {
-              a 'Forms', href: '/forms'
-            }
-          }
-        }
+        render_nav
 
         hr
 
@@ -56,6 +41,23 @@ class Views::Base < Erector::Widget
   end
 
   private
+
+  def render_nav
+    nav {
+      ul {
+        test_views.each do |x|
+          li {
+            a x.split('/').last,
+              href: x.split('/').last.split('.').first
+          }
+        end
+      }
+    }
+  end
+
+  def test_views
+    Dir["#{Rails.root}/app/views/home/*.rb"]
+  end
 
   def docs(name, codeString, opts = {})
     div.section_header name, id: name.downcase
