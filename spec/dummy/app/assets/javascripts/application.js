@@ -11,6 +11,9 @@
 // about supported directives.
 //
 //= require dvl/core
+//= require dvl/helpers/flash_placeholder
 //= require dvl/components/flashes
 //= require dvl/components/dynamic_email
+//= require dvl/components/newsletter_form
+//= require dvl/components/splash_footer
 //= require simple_form/dropdown_select

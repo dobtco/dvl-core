@@ -1,8 +1,9 @@
 // Override the max font size to make things bigger
 $maxFontSize: 100%;
 
-@import "core";
-@import "components/splash_footer";
+@import "dvl/core";
+@import "dvl/components/splash_footer";
+@import "preview";
 
 // Give buttons a nice blue color by default
 .button {

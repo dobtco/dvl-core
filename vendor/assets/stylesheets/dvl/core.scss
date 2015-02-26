@@ -1,21 +1,18 @@
+// The "core" manifest contains the minimum-necessary styles to get
+// started with. They're extremely flexible -- if you want to use
+// them out-of-the-box, that's fine, but you can also override them
+// to your heart's content.
+
 @import "core/includes";
 @import "core/resets";
 @import "core/links";
 @import "core/typography";
-@import "core/labels";
 @import "core/lists";
-@import "core/pagination";
 @import "core/code";
 @import "core/media";
 @import "core/forms";
 @import "core/tables";
-@import "core/sidebar";
-@import "core/dropdowns";
-@import "core/modals";
-@import "core/progress";
 @import "core/grid";
 @import "core/buttons";
-@import "core/tooltips";
-@import "core/legacy";
 @import "core/shame";
 @import "core/print";

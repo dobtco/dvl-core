@@ -1,0 +1,13 @@
+// The "app" manifest is for a typical DOBT app. It includes the core
+// styles, as well as common components that will most likely exist
+// in the app.
+
+@import "core";
+
+@import "components/labels";
+@import "components/pagination";
+@import "components/sidebar";
+@import "components/dropdowns";
+@import "components/modals";
+@import "components/progress";
+@import "components/tooltips";
