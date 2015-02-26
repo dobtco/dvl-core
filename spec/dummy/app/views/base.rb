@@ -26,8 +26,57 @@ class Views::Base < Erector::Widget
         javascripts
       }
       body {
-        div.preview_wrap {
-          nav.preview_nav {
+        nav.navbar {
+          div.container {
+            div.navbar_header {
+              a.navbar_brand 'DOBT Style Guide', href: '#'
+              a.navbar_toggle(
+                "<i class='fa fa-reorder'></i>".html_safe,
+                'data-toggle-class' => 'open',
+                'data-target' => '.navbar'
+              )
+            }
+
+            div.navbar_content.navbar_content_primary {
+              ul {
+                li.active {
+                  a 'Main styles'
+                }
+                li {
+                  a 'Something else'
+                }
+              }
+            }
+
+            div.navbar_content.navbar_content_secondary {
+              form {
+                input type: 'text', placeholder: 'Search...'
+              }
+              ul {
+                li {
+                  a 'Link One'
+                }
+                li {
+                  a 'Link Two'
+                }
+                li.dropdown {
+                  a "My account <i class='fa fa-caret-down'></i>".html_safe,
+                    'data-toggle' => 'dropdown'
+
+                  div.dropdown_menu {
+                    ul.dropdown_body {
+                      li { a 'Edit profile', href: '#' }
+                      li { a 'Sign out', href: '#' }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        div.container {
+          div.preview_sidebar {
             ul {
               pages.each do |name, path|
                 li(class: url_for == path ? 'active' : nil) {

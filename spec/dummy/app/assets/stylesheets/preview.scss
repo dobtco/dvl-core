@@ -2,14 +2,16 @@
 
 body {
   background: white;
+  padding-top: $navHeight + 1.5rem;
 }
 
-.preview_wrap {
-  width: 95%;
-  margin: 2rem auto;
+.container {
+  width: 90%;
+  max-width: 1140px;
+  margin: 0 auto;
 }
 
-.preview_nav {
+.preview_sidebar {
   float: left;
   width: 300px;
 

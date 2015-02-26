@@ -1,0 +1,139 @@
+$navBackground: #0074D9;
+$navText: #eee;
+$navHeight: 3.75rem;
+$navZ: 1000;
+$navHoverBackground: darken($navBackground, 5%);
+
+// Make it a bit more condensed when collapsed
+$navCollapsedLineHeight: $navHeight * 0.8;
+
+// might want to adjust this based on how many items are in your nav
+$navBreakpoint: 800px;
+
+// (height / input height) / 2
+@mixin navInputMargin($navHeight) {
+  margin-top: ($navHeight - 2.1rem) / 2;
+  margin-bottom: ($navHeight - 2.1rem) / 2;
+}
+
+.navbar {
+  background-color: $navBackground;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  line-height: $navCollapsedLineHeight;
+  z-index: $navZ;
+
+  // Specify links directly so that we don't mess up any other
+  // child elements (e.g. dropdowns)
+  .navbar_brand,
+  .navbar_toggle,
+  .navbar_content > ul > li > a {
+    color: $navText;
+    text-decoration: none;
+
+    &:hover {
+      color: lighten($navText, 10%);
+    }
+  }
+}
+
+.navbar_brand {
+  float: left;
+  font-size: 1.5rem;
+  line-height: $navHeight;
+}
+
+// The "hamburger" button
+.navbar_toggle {
+  float: right;
+  font-size: 2rem;
+  line-height: $navHeight;
+}
+
+.navbar_content {
+  clear: both;
+  display: none;
+
+  .open & {
+    display: block;
+  }
+
+  input[type=text] {
+    @include navInputMargin($navCollapsedLineHeight);
+    background: rgba(0, 0, 0, 0.5);
+    border-color: $black;
+    color: $navText;
+
+    &:focus {
+      border-color: $darkBlue;
+    }
+  }
+}
+
+@media only screen and (min-width: $navBreakpoint) {
+  .navbar {
+    line-height: $navHeight;
+  }
+
+  // Float almost everything. Can't use inline-block because it
+  // gets messed up with line-height
+  .navbar_header,
+  .navbar_content,
+  .navbar_content > ul,
+  .navbar_content > ul > li,
+  .navbar_content form {
+    float: left;
+  }
+
+  // Margin between brand and items
+  .navbar_brand {
+    margin-right: 1rem;
+  }
+
+  .navbar_toggle {
+    display: none;
+  }
+
+  // Show the content
+  .navbar_content {
+    display: block;
+    clear: none;
+
+    // Add X padding to nav items
+    > ul > li > a,
+    form {
+      padding: 0 0.75rem;
+    }
+
+    form {
+      width: auto;
+    }
+
+    input[type=text] {
+      @include navInputMargin($navHeight);
+    }
+
+    // Ensure links take up the full height
+    > ul > li > a {
+      display: block;
+    }
+
+    // Hover styles
+    > ul > li > a:hover,
+    > ul > li.active > a {
+      background-color: $navHoverBackground;
+    }
+  }
+
+  // Float the secondary content to the right and handle dropdowns
+  .navbar_content_secondary {
+    float: right;
+
+    .dropdown_menu {
+      right: 0;
+      left: auto;
+    }
+  }
+}
