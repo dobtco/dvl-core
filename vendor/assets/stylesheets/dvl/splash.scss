@@ -1,14 +1,10 @@
-@import "core/includes";
-@import "core/resets";
-@import "core/links";
-@import "core/typography";
-@import "core/grid";
-@import "core/code";
-@import "splash/buttons";
+// Override the max font size to make things bigger
+$maxFontSize: 100%;
+
+@import "core";
 @import "splash/footer";
 
-html, body, button, input, textarea, select {
-  font-family: 'Open Sans', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-  font-size: 100% !important;
-  line-height: $lineHeight;
+// Give buttons a nice blue color by default
+.button {
+  @include dark_button_color(#0084B8);
 }
