@@ -1,6 +1,14 @@
 @import "core/includes";
-@import "splash/normalize";
+@import "core/resets";
+@import "core/links";
+@import "core/typography";
 @import "core/grid";
 @import "core/code";
 @import "splash/buttons";
 @import "splash/footer";
+
+html, body, button, input, textarea, select {
+  font-family: 'Open Sans', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+  font-size: 100% !important;
+  line-height: $lineHeight;
+}
