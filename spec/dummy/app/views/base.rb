@@ -29,9 +29,9 @@ class Views::Base < Erector::Widget
         div.preview_wrap {
           nav.preview_nav {
             ul {
-              test_routes.each do |route|
-                li {
-                  a route, href: route
+              pages.each do |name, path|
+                li(class: url_for == path ? 'active' : nil) {
+                  a name, href: path
                 }
               end
             }
@@ -46,6 +46,16 @@ class Views::Base < Erector::Widget
   end
 
   private
+
+  def pages
+    {
+      'Index' => '/',
+      'Forms' => '/forms',
+      'Flashes' => '/flashes',
+      'Footer' => '/footer',
+      'Splash' => '/splash'
+    }
+  end
 
   def test_routes
     test_views.map do |x|
