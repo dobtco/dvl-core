@@ -1,14 +1,14 @@
-$navBackground: #0074D9;
-$navText: #eee;
-$navHeight: 3.75rem;
-$navZ: 1000;
-$navHoverBackground: darken($navBackground, 5%);
+$navBackground: #0074D9 !default;
+$navText: #eee !default;
+$navHeight: 3.75rem !default;
+$navZ: 1000 !default;
+$navHoverBackground: darken($navBackground, 5%) !default;
 
 // Make it a bit more condensed when collapsed
-$navCollapsedLineHeight: $navHeight * 0.8;
+$navCollapsedLineHeight: $navHeight * 0.8 !default;
 
 // might want to adjust this based on how many items are in your nav
-$navBreakpoint: 800px;
+$navBreakpoint: 800px !default;
 
 // (height / input height) / 2
 @mixin navItemMargin($navHeight) {
