@@ -114,8 +114,11 @@
 
 .newsletter_form {
   margin-bottom: $lineHeight * 2;
-  p {
+  p,
+  strong {
     color: #fff;
+  }
+  p {
     margin-bottom: $lineHeight;
   }
   input {
