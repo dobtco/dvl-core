@@ -10,9 +10,11 @@ class Views::Base < Erector::Widget
     script src: '//code.jquery.com/jquery-1.11.1.min.js'
     javascript_include_tag 'application'
     script %{
-      $('[data-toggle="tooltip"]').tooltip()
-      $('body').styledSelect()
-      $('body').styledControls()
+      $(function(){
+        $('[data-toggle="tooltip"]').tooltip()
+        $('body').styledSelect()
+        $('body').styledControls()
+      });
     }.html_safe
   end
 
@@ -21,32 +23,34 @@ class Views::Base < Erector::Widget
     html {
       head {
         stylesheets
+        javascripts
       }
       body {
-        render_nav
+        div.preview_wrap {
+          nav.preview_nav {
+            ul {
+              test_routes.each do |route|
+                li {
+                  a route, href: route
+                }
+              end
+            }
+          }
 
-        hr
-
-        main
-        javascripts
+          div.preview_main {
+            main
+          }
+        }
       }
     }
   end
 
   private
 
-  def render_nav
-    nav {
-      ul {
-        test_views.each do |x|
-          route = x.split('/').last.split('.').first
-
-          li {
-            a route, href: route
-          }
-        end
-      }
-    }
+  def test_routes
+    test_views.map do |x|
+      x.split('/').last.split('.').first
+    end
   end
 
   def test_views
@@ -56,7 +60,7 @@ class Views::Base < Erector::Widget
   def docs(name, codeString, opts = {})
     div.section_header name, id: name.downcase
 
-    div.grid {
+    div.grid.gutter_none.docs_preview_grid {
       div(class: "item #{opts[:full] ? '' : 'six_columns'}") {
         div.docs_preview {
           eval(codeString)

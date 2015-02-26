@@ -1,7 +1,37 @@
 body {
-  padding: 0 1rem 1rem;
   background: white;
 }
+
+.preview_wrap {
+  width: 95%;
+  margin: 2rem auto;
+}
+
+.preview_nav {
+  float: left;
+  width: 300px;
+
+  a {
+    display: block;
+    background-color: $blueHighlight;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+    color: $black;
+    border-radius: $radius;
+    text-decoration: none;
+
+    &:hover {
+      background-color: darken($blueHighlight, 10%);
+    }
+  }
+}
+
+.preview_main {
+  margin-left: 340px;
+}
+
+// .preview_main
+// .preview_nav
 
 .section_header {
   font-size: 1.6rem;
@@ -9,17 +39,19 @@ body {
   color: #222;
 }
 
-.docs_preview,
-.docs_code {
-  margin-bottom: 1rem;
+.docs_preview_grid {
+  border: 1px solid #ccc;
+  border-radius: $radius;
 }
 
 .docs_preview {
   padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 3px;
 }
 
 .docs_code {
-  // nada
+  padding: 1rem;
+
+  pre {
+    margin: 0;
+  }
 }
