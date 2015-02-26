@@ -1,9 +1,9 @@
 class Views::Base < Erector::Widget
-  def stylesheets
+  def stylesheets(manifest = 'application')
     link href: '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', rel: 'stylesheet'
     link href: '//fonts.googleapis.com/css?family=Open+Sans:400,300,700,600', rel: 'stylesheet'
     link href: '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', rel: 'stylesheet'
-    stylesheet_link_tag 'application', media: 'all'
+    stylesheet_link_tag manifest, media: 'all'
   end
 
   def javascripts
@@ -57,15 +57,15 @@ class Views::Base < Erector::Widget
     }
   end
 
-  def test_routes
-    test_views.map do |x|
-      x.split('/').last.split('.').first
-    end
-  end
+  # def test_routes
+  #   test_views.map do |x|
+  #     x.split('/').last.split('.').first
+  #   end
+  # end
 
-  def test_views
-    Dir["#{Rails.root}/app/views/home/*.rb"]
-  end
+  # def test_views
+  #   Dir["#{Rails.root}/app/views/home/*.rb"]
+  # end
 
   def docs(name, codeString, opts = {})
     div.section_header name, id: name.downcase
