@@ -64,6 +64,10 @@
         background-color: #428bca;
       }
     }
+
+    &.divider {
+      border-bottom: 1px solid $gray;
+    }
   }
   // Active state
   > .active {

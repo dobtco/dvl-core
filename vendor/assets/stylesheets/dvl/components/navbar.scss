@@ -11,7 +11,7 @@ $navCollapsedLineHeight: $navHeight * 0.8;
 $navBreakpoint: 800px;
 
 // (height / input height) / 2
-@mixin navInputMargin($navHeight) {
+@mixin navItemMargin($navHeight) {
   margin-top: ($navHeight - 2.1rem) / 2;
   margin-bottom: ($navHeight - 2.1rem) / 2;
 }
@@ -61,7 +61,7 @@ $navBreakpoint: 800px;
   }
 
   input[type=text] {
-    @include navInputMargin($navCollapsedLineHeight);
+    @include navItemMargin($navCollapsedLineHeight);
     background: rgba(0, 0, 0, 0.5);
     border-color: $black;
     color: $navText;
@@ -70,6 +70,14 @@ $navBreakpoint: 800px;
       border-color: $darkBlue;
     }
   }
+}
+
+.nav_avatar {
+  @include navItemMargin($navCollapsedLineHeight);
+  display: inline;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
 }
 
 @media only screen and (min-width: $navBreakpoint) {
@@ -112,7 +120,7 @@ $navBreakpoint: 800px;
     }
 
     input[type=text] {
-      @include navInputMargin($navHeight);
+      @include navItemMargin($navHeight);
     }
 
     // Ensure links take up the full height
@@ -135,5 +143,9 @@ $navBreakpoint: 800px;
       right: 0;
       left: auto;
     }
+  }
+
+  .dropdown_header {
+    text-align: center;
   }
 }
