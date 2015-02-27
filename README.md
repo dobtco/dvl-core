@@ -33,7 +33,7 @@ We include compiled CSS in the `dist/` directory for use outside of a Sprockets 
 
 1. `script/bootstrap`
 2. `script/server`
-3. Open [http://localhost:4567](http://localhost:4567) in your web browser
+3. Open [http://dvlcore.dev](http://dvlcore.dev) in your web browser (assuming you have [dobtco/our-boxen](https://github.com/dobtco/our-boxen) installed)
 
 ## Deployment
 
