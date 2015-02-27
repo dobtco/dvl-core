@@ -12,11 +12,11 @@ class Views::Home::Splash < Views::Base
               strong 'Subscribe to our newsletter!'
               text " We'll email you around once a month with updates."
             }
-            div.item.lap_seven_columns {
+            div.item.lap_eight_columns {
               label 'Enter your email address', for: 'newsletter_email'
               input type: 'email', id: 'newsletter_email', placeholder: 'Enter your email address here', class: 'newsletter_email'
             }
-            div.item.lap_five_columns {
+            div.item.lap_four_columns {
               input type: 'submit', value: 'Subscribe', class: 'button newsletter_subscribe'
             }
           }
