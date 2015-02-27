@@ -62,6 +62,8 @@ $navBreakpoint: 800px !default;
 
   input[type=text] {
     @include navItemMargin($navCollapsedLineHeight);
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
     background: rgba(0, 0, 0, 0.5);
     border-color: $black;
     color: $navText;
