@@ -1,6 +1,6 @@
 class Views::Home::Forms < Views::Base
   def main
-    docs 'Forms' do
+    docs 'Forms', %{
       simple_form_for :foo do |f|
         f.input :string,
                 as: :string
@@ -95,6 +95,6 @@ class Views::Home::Forms < Views::Base
           f.button :button, 'Submit', class: 'primary'
         }
       end
-    end
+    }
   end
 end

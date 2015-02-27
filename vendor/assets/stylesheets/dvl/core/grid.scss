@@ -2,6 +2,9 @@
    Grids ($grids)
 \* ================================================================== */
 
+$columnWidth: 8.333%;
+$gutterWidth: 2rem;
+
 /**
  * Grid container
  * 1. Default gutter width, change if desired
@@ -9,40 +12,12 @@
  * 3. Hack to remove `inline-block` whitespace - http://cbrac.co/16xcjcl
  */
 
-.grid {
+@mixin grid() {
   margin: 0;
-  margin-left: -2rem; /* 1 */
+  margin-left: - $gutterWidth; /* 1 */
   padding: 0;
   list-style: none; /* 2 */
   font-size: 0; /* 3 */
-}
-
-.grid.gutter_none {
-  margin-left: 0;
-  > .item {
-    padding-left: 0;
-  }
-}
-
-.grid.gutter_quarter {
-  margin-left: -0.5rem;
-  > .item {
-    padding-left: 0.5rem;
-  }
-}
-
-.grid.gutter_half {
-  margin-left: -1rem;
-  > .item {
-    padding-left: 1rem;
-  }
-}
-
-.grid.gutter_double {
-  margin-left: -4rem;
-  > .item {
-    padding-left: 4rem;
-  }
 }
 
 /**
@@ -52,28 +27,89 @@
  * 3. Reset `font-size` back to normal
  */
 
-.item {
+@mixin col() {
   display: inline-block;
-  padding-left: 2rem;  /* 1 */
+  padding-left: $gutterWidth;  /* 1 */
   vertical-align: top; /* 2 */
   font-size: 1rem;   /* 3 */
   width: 100%;
 }
 
+@mixin col1() { width: $columnWidth * 1; }
+@mixin col2() { width: $columnWidth * 2; }
+@mixin col3() { width: $columnWidth * 3; }
+@mixin col4() { width: $columnWidth * 4; }
+@mixin col5() { width: $columnWidth * 5; }
+@mixin col6() { width: $columnWidth * 6; }
+@mixin col7() { width: $columnWidth * 7; }
+@mixin col8() { width: $columnWidth * 8; }
+@mixin col9() { width: $columnWidth * 9; }
+@mixin col10() { width: $columnWidth * 10; }
+@mixin col11() { width: $columnWidth * 11; }
+@mixin col12() { width: $columnWidth * 12; }
+
+@mixin push1 { margin-left: $columnWidth * 1; }
+@mixin push2 { margin-left: $columnWidth * 2; }
+@mixin push3 { margin-left: $columnWidth * 3; }
+@mixin push4 { margin-left: $columnWidth * 4; }
+@mixin push5 { margin-left: $columnWidth * 5; }
+@mixin push6 { margin-left: $columnWidth * 6; }
+@mixin push7 { margin-left: $columnWidth * 7; }
+@mixin push8 { margin-left: $columnWidth * 8; }
+@mixin push9 { margin-left: $columnWidth * 9; }
+@mixin push10 { margin-left: $columnWidth * 10; }
+@mixin push11 { margin-left: $columnWidth * 11; }
+
+.grid {
+  @include grid;
+
+  &.gutter_none {
+    margin-left: 0;
+    > .item {
+      padding-left: 0;
+    }
+  }
+
+  &.gutter_quarter {
+    margin-left: - ($gutterWidth / 4);
+    > .item {
+      padding-left: ($gutterWidth / 4);
+    }
+  }
+
+  &.gutter_half {
+    margin-left: - ($gutterWidth / 2);
+    > .item {
+      padding-left: ($gutterWidth / 2);
+    }
+  }
+
+  &.gutter_double {
+    margin-left: - ($gutterWidth * 2);
+    > .item {
+      padding-left: ($gutterWidth * 2);
+    }
+  }
+}
+
+.item {
+  @include col;
+}
+
 /* Widths */
-@mixin build_grid($x: "") {
-  .#{$x}one_column {width: 8.333% };
-  .#{$x}two_columns {width: (8.333% * 2)};
-  .#{$x}three_columns {width: (8.333% * 3)};
-  .#{$x}four_columns {width: (8.333% * 4)};
-  .#{$x}five_columns {width: (8.333% * 5)};
-  .#{$x}six_columns {width: (8.333% * 6)};
-  .#{$x}seven_columns {width: (8.333% * 7)};
-  .#{$x}eight_columns {width: (8.333% * 8)};
-  .#{$x}nine_columns {width: (8.333% * 9)};
-  .#{$x}ten_columns {width: (8.333% * 10)};
-  .#{$x}eleven_columns {width: (8.333% * 11)};
-  .#{$x}twelve_columns {width: (8.333% * 12)};
+@mixin build_grid($prefix: "") {
+  .#{$prefix}one_column     { @include col1; }
+  .#{$prefix}two_columns    { @include col2; }
+  .#{$prefix}three_columns  { @include col3; }
+  .#{$prefix}four_columns   { @include col4; }
+  .#{$prefix}five_columns   { @include col5; }
+  .#{$prefix}six_columns    { @include col6; }
+  .#{$prefix}seven_columns  { @include col7; }
+  .#{$prefix}eight_columns  { @include col8; }
+  .#{$prefix}nine_columns   { @include col9; }
+  .#{$prefix}ten_columns    { @include col10; }
+  .#{$prefix}eleven_columns { @include col11; }
+  .#{$prefix}twelve_columns { @include col12; }
 }
 
 @include build_grid();

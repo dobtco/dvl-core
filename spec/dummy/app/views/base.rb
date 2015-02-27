@@ -1,45 +1,144 @@
 class Views::Base < Erector::Widget
+  def stylesheets(manifest = 'application')
+    link href: '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', rel: 'stylesheet'
+    link href: '//fonts.googleapis.com/css?family=Open+Sans:400,300,700,600', rel: 'stylesheet'
+    link href: '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', rel: 'stylesheet'
+    stylesheet_link_tag manifest, media: 'all'
+  end
+
+  def javascripts
+    script src: '//code.jquery.com/jquery-1.11.1.min.js'
+    javascript_include_tag 'application'
+    script %{
+      $(function(){
+        $('[data-toggle="tooltip"]').tooltip()
+        $('body').styledSelect()
+        $('body').styledControls()
+      });
+    }.html_safe
+  end
+
   def content
     rawtext '<!doctype html>'
     html {
       head {
-        link href: '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', rel: 'stylesheet'
-        link href: '//fonts.googleapis.com/css?family=Open+Sans:400,300,700,600', rel: 'stylesheet', type: 'text/css'
-        link href: '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', rel: 'stylesheet', type: 'text/css'
-        stylesheet_link_tag 'application', media: 'all'
-        style(type: 'text/css') {
-          rawtext %{
-            body {
-              padding: 0 1rem 1rem;
-              background: white;
-            }
-
-            .section_header {
-              font-size: 1.6rem;
-              padding: 1rem 0 0.25rem;
-              margin-bottom: 1rem;
-              border-bottom: 1px solid #eee;
-            }
-          }
-        }
+        stylesheets
+        javascripts
       }
       body {
-        main
-        script src: '//code.jquery.com/jquery-1.11.1.min.js'
-        javascript_include_tag 'application'
-        script %{
-          $('[data-toggle="tooltip"]').tooltip()
-          $('body').styledSelect()
-          $('body').styledControls()
-        }.html_safe
+        render_navbar
+
+        div.container {
+          div.preview_sidebar {
+            ul {
+              pages.each do |name, path|
+                li(class: url_for == path ? 'active' : nil) {
+                  a name, href: path
+                }
+              end
+            }
+          }
+
+          div.preview_main {
+            main
+          }
+        }
       }
     }
   end
 
   private
 
-  def docs(name, &block)
+  def pages
+    {
+      'Index' => '/',
+      'Forms' => '/forms',
+      'Flashes' => '/flashes',
+      'Footer' => '/footer',
+      'Splash' => '/splash'
+    }
+  end
+
+  def render_navbar
+    nav.navbar {
+      div.container {
+        div.navbar_header {
+          a.navbar_brand 'DOBT Style Guide', href: '#'
+          a.navbar_toggle(
+            "<i class='fa fa-reorder'></i>".html_safe,
+            'data-toggle-class' => 'open',
+            'data-target' => '.navbar'
+          )
+        }
+
+        div.navbar_content.navbar_content_primary {
+          ul {
+            li.active {
+              a 'Main styles'
+            }
+            li {
+              a 'Something else'
+            }
+          }
+        }
+
+        div.navbar_content.navbar_content_secondary {
+          form {
+            input type: 'text', placeholder: 'Search...'
+          }
+          ul {
+            li {
+              a 'Link One'
+            }
+            li {
+              a 'Link Two'
+            }
+            li.dropdown {
+              a(
+                'data-toggle' => 'dropdown'
+              ) {
+                img.nav_avatar src: '//dobt-misc.s3.amazonaws.com/headshots/adam.jpg'
+              }
+
+              div.dropdown_menu {
+                ul.dropdown_body {
+                  li.dropdown_header 'My account'
+                  li { a 'Edit profile', href: '#' }
+                  li { a 'Sign out', href: '#' }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  end
+
+  # def test_routes
+  #   test_views.map do |x|
+  #     x.split('/').last.split('.').first
+  #   end
+  # end
+
+  # def test_views
+  #   Dir["#{Rails.root}/app/views/home/*.rb"]
+  # end
+
+  def docs(name, codeString, opts = {})
     div.section_header name, id: name.downcase
-    yield
+
+    div.grid.gutter_none.docs_preview_grid {
+      div(class: "item #{opts[:full] ? '' : 'six_columns'}") {
+        div.docs_preview {
+          eval(codeString)
+        }
+      }
+
+      div(class: "item code_item #{opts[:full] ? '' : 'six_columns'}") {
+        div.docs_code {
+          pre codeString.strip_heredoc.strip
+        }
+      }
+    }
   end
 end

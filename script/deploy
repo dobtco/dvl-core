@@ -1,0 +1,19 @@
+#!/bin/sh
+
+set -e
+
+# Create a temporary branch for the deploy
+git checkout -b tmp-deploy
+
+# Remove "Gemfile.lock" from .gitignore and add it to git
+sed -e "/Gemfile.lock/d" .gitignore > .gitignore_edited
+mv .gitignore_edited .gitignore
+git add Gemfile.lock
+
+# Deploy to heroku with a force push
+git commit -am 'Deploy to Heroku'
+git push heroku tmp-deploy:master --force
+
+# Clean things up...
+git checkout master
+git branch -D tmp-deploy

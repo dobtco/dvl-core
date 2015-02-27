@@ -1,3 +1,0 @@
-#! /bin/sh
-
-cd spec/dummy && bundle exec rails s --port 4567

@@ -5,3 +5,12 @@ general:
 test:
   override:
     - script/cibuild
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - git config --global user.email "ops@dobt.co"
+      - git config --global user.name "CircleCI"
+      - git remote add heroku git@heroku.com:dvlcore.git
+      - script/deploy

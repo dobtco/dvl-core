@@ -1,60 +1,46 @@
-dvl-core [![version]](http://rubygems.org/gems/dvl-core) [![build_status]](https://circleci.com/gh/dobtco/dvl-core)
+dvl-core [![build_status]](https://circleci.com/gh/dobtco/dvl-core)
 ====
 
-Base styles for the DOBT View Layer.
+DOBT"s base styles. [Live demo](https://dvlcore.herokuapp.com/)
 
 ## Usage
 
-### Gemfile
+#### Rails (or any Sprockets environment)
 
 ```
-gem 'dvl-core'
+# Gemfile
+gem 'dvl-core', github: 'dobtco/dvl-core'
+
+# assets/stylesheets/application.css
+/*
+*= require dvl/core
+*= require dvl/components/flashes
+*= require dvl/components/footer
+*= require simple_form/dropdown_select
+*/
+
+# assets/javascripts/application.js
+//= require dvl/core
+//= require dvl/components/flashes
+//= require simple_form/dropdown_select
 ```
 
-### assets/javascripts/application.css.scss
+#### Without Rails
 
-```
-@import 'dvl/core';
-```
-
-## Screenshots
-
-### Core
-
-![core_760](http://artifinder.herokuapp.com/gh/dobtco/dvl-core/x/artifacts/0/home/ubuntu/dvl-core/screenshots/core_760.png)
-
-### Forms
-
-![forms_1200](http://artifinder.herokuapp.com/gh/dobtco/dvl-core/x/artifacts/0/home/ubuntu/dvl-core/screenshots/forms_1200.png)
-
-### Footer
-
-![footer](http://artifinder.herokuapp.com/gh/dobtco/dvl-core/x/artifacts/0/home/ubuntu/dvl-core/screenshots/footer.png)
-
-### Flashes
-
-![flash_error](http://artifinder.herokuapp.com/gh/dobtco/dvl-core/x/artifacts/0/home/ubuntu/dvl-core/screenshots/flash_error.png)
-![flash_success](http://artifinder.herokuapp.com/gh/dobtco/dvl-core/x/artifacts/0/home/ubuntu/dvl-core/screenshots/flash_success.png)
-![flash_info](http://artifinder.herokuapp.com/gh/dobtco/dvl-core/x/artifacts/0/home/ubuntu/dvl-core/screenshots/flash_info.png)
-
-### Modals
-
-![modal](http://artifinder.herokuapp.com/gh/dobtco/dvl-core/x/artifacts/0/home/ubuntu/dvl-core/screenshots/modal.png)
-![confirm_modal](http://artifinder.herokuapp.com/gh/dobtco/dvl-core/x/artifacts/0/home/ubuntu/dvl-core/screenshots/confirm_modal.png)
+We include compiled CSS in the `dist/` directory for use outside of a Sprockets environment. Occasionally these stylesheets may get out of sync -- if so, running `script/compile` will rebuild them, and you can commit the result as well.
 
 ## Development
 
 1. `script/bootstrap`
-2. `script/preview`
+2. `script/server`
 3. Open [http://localhost:4567](http://localhost:4567) in your web browser
 
-## Usage outside of Ruby/Rails
+## Deployment
 
-We include compiled CSS in the `dist/` directory for use outside of a Sprockets environment. Occasionally these stylesheets may get out of sync -- if so, running `script/compile` will rebuild them, and you can commit the result as well.
+Push to `master` and the demo site will be deployed.
 
 ## License
 
 [MIT](http://dobtco.mit-license.org/)
 
-[version]: https://img.shields.io/gem/v/dvl-core.svg
 [build_status]: https://circleci-badges.herokuapp.com/dobtco/dvl-core/87144b68eadac365d9368f5c62e68d3dfcad14bb

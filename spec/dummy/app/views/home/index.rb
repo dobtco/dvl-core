@@ -1,6 +1,6 @@
 class Views::Home::Index < Views::Base
   def main
-    docs 'Buttons' do
+    docs 'Buttons', %{
       a.button 'Yo!'
       text ' '
       a.button.info 'Info'
@@ -12,14 +12,14 @@ class Views::Home::Index < Views::Base
       a.button.white 'White'
       text ' '
       a.button_uppercase 'Uppercase'
-    end
+    }
 
-    docs 'Code' do
+    docs 'Code', %{
       pre %{<p>This is some awesome code</p>}
       p %{This is a paragraph with <code>code</code>.}.html_safe
-    end
+    }
 
-    docs 'Dropdowns' do
+    docs 'Dropdowns', %{
       div.dropdown {
         a.dropdown_toggle 'Click me',
                           'data-toggle' => 'dropdown'
@@ -70,9 +70,9 @@ class Views::Home::Index < Views::Base
           }
         }
       }
-    end
+    }
 
-    docs 'Grid' do
+    docs 'Grid', %{
       div.grid {
         div.item.six_columns 'six_columns'
         div.item.six_columns 'six_columns'
@@ -83,9 +83,9 @@ class Views::Home::Index < Views::Base
         div.item.three_columns 'three_columns (gutter_none)'
         div.item.three_columns 'three_columns (gutter_none)'
       }
-    end
+    }
 
-    docs 'Labels' do
+    docs 'Labels', %{
       span.label.label_error 'Error'
       text ' '
       span.label.label_success 'Success'
@@ -93,23 +93,23 @@ class Views::Home::Index < Views::Base
       span.label.label_info 'Info'
       text ' '
       span.label.label_warning 'Warning'
-    end
+    }
 
-    docs 'Links' do
+    docs 'Links', %{
       a.uppercase 'Uppercase'
       text ' '
       a.smallbold 'Smallbold'
-    end
+    }
 
-    docs 'Lists' do
+    docs 'Lists', %{
       ul {
         li 'This'
         li 'is a'
         li 'list!'
       }
-    end
+    }
 
-    docs 'Modals' do
+    docs 'Modals', %{
       a 'Open modal', 'data-toggle' => 'modal', href: '#modal'
       widget Dvl::Components::Modal.new(title: 'Awesome modal', id: 'modal') do
         div.modal_body {
@@ -132,9 +132,9 @@ class Views::Home::Index < Views::Base
           a.button.error 'OK'
         }
       end
-    end
+    }
 
-    docs 'Pagination' do
+    docs 'Pagination', %{
       div(class: 'pagination-wrapper') {
         ul {
           li { a '‹' }
@@ -144,17 +144,17 @@ class Views::Home::Index < Views::Base
           li { a '›' }
         }
       }
-    end
+    }
 
-    docs 'Progress' do
+    docs 'Progress', %{
       div.progress {
         div.progress_inner(style: "width: 30%") {
           text '30%'
         }
       }
-    end
+    }
 
-    docs 'Sidebar' do
+    docs 'Sidebar', %{
       div.sidebar_box {
         ul.sidebar_data {
           li {
@@ -184,9 +184,9 @@ class Views::Home::Index < Views::Base
           }
         }
       }
-    end
+    }
 
-    docs 'Tables' do
+    docs 'Tables', %{
       table {
         thead {
           tr {
@@ -205,20 +205,21 @@ class Views::Home::Index < Views::Base
           }
         }
       }
-    end
+    }
 
-    docs 'Tooltips' do
+    docs 'Tooltips', %{
       %w(top right bottom left).each do |x|
         a x.capitalize,
           'data-toggle' => 'tooltip',
           'data-placement' => x,
           'data-container' => 'body',
-          title: "Tooltip on the #{x}!"
+          title: "Tooltip on the " + x + "!"
+
         text ' '
       end
-    end
+    }
 
-    docs 'Typography' do
+    docs 'Typography', %{
       h1 'Heading 1'
       h2 'Heading 2'
       h3 'Heading 3'
@@ -231,6 +232,6 @@ class Views::Home::Index < Views::Base
         text 'This is some awesome .microcopy.'
         a.microcopy_action 'Microcopy action'
       }
-    end
+    }
   end
 end
