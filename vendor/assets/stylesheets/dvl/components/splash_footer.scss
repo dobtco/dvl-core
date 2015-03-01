@@ -1,6 +1,8 @@
+$footerBackground: #080F1F !default;
+
 .footer {
   padding-top: $lineHeight * 2;
-  background: #080F1F;
+  background: $footerBackground;
   ul {
     list-style: none;
     padding-left: 2rem;
