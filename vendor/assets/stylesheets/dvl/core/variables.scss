@@ -1,6 +1,6 @@
-// #### VARIABLES ####
+//// Customer-facing pages
 
-// Grayscale
+// Grayscale colors
 $black: #222;
 $darkestGray: #444;
 $blankStateGray: #666;
@@ -13,7 +13,7 @@ $lighterGray: #efefef;
 $lightestGray: #f7f7f7;
 $white: #fff;
 
-// Blues
+// Blue colors
 $logoBlue: #009ade;
 $blueGray: #6a6e75;
 $lighterBlueGray: #6a6e75;
@@ -22,7 +22,7 @@ $linkColor: #2e8ad0;
 $bodyFontColor: $darkestGray;
 $darkBlue: #1fa3ec;
 
-// Other Colors
+// Other colors
 $successColor: #2aa828;
 $errorColor: #c12f2e;
 $alertColor: $errorColor;
@@ -34,66 +34,38 @@ $purpleBlue: #6188f5;
 // Corner radius
 $radius: 3px;
 
-// Bold font weight
+// Font weights
 $bold: 600;
 
 // Typography
-$lineHeight: 1.5rem;
+$line_height: 1.5rem;
 $maxFontSize: 87.5% !default;
 
-// #### MIXINS ####
 
-@mixin font-smoothing() {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-@mixin ninety_wrapper() {
-  margin: 0 auto;
-  width: 90%;
-  max-width: 1150px;
-  position: relative;
-}
+//// Public-facing pages
 
-@mixin icon($unicode_id) {
-  content: $unicode_id;
-  font-family: 'FontAwesome';
-}
+// Layout and ypography
+$pub_rhythm: 0.5rem; // 8px
+$pub_line_height: $pub_rhythm * 4;
+$pub_ratio: 1.25;
+$pub_font_size: 1.125rem;
+$pub_font_size_small: 0.777777777rem;
+$pub_font_size_sub_label: $pub_font_size_small;
+$pub_input_height: $pub_rhythm * 6;
 
-@mixin user_pic($size: 25) {
-  width: $size * 1px;
-  border-radius: 50%;
-  border: 1px solid $gray;
-}
+// Font weights
+$pub_thin: 200;
+$pub_normal: 300;
+$pub_bold: 500;
 
-@mixin border_top_radius($radius) {
-  border-top-left-radius: $radius;
-  border-top-right-radius: $radius;
-}
 
-@mixin border_right_radius($radius) {
-  border-top-right-radius: $radius;
-  border-bottom-right-radius: $radius;
-}
+// Corner radius
+$pub_radius: 4px;
 
-@mixin border_bottom_radius($radius) {
-  border-bottom-left-radius: $radius;
-  border-bottom-right-radius: $radius;
-}
 
-@mixin border_left_radius($radius) {
-  border-top-left-radius: $radius;
-  border-bottom-left-radius: $radius;
-}
 
-@mixin social_button_color($base_color) {
-  background: $base_color;
-  &:hover {
-    background: darken($base_color, 7%);
-  }
-}
-
-// Animation mixins
+//// Animation easing curves
 
 $easeInQuad:      cubic-bezier(0.550,  0.085, 0.680, 0.530);
 $easeInCubic:     cubic-bezier(0.550,  0.055, 0.675, 0.190);
@@ -121,29 +93,3 @@ $easeInOutSine:  cubic-bezier(0.445,  0.050, 0.550, 0.950);
 $easeInOutExpo:  cubic-bezier(1.000,  0.000, 0.000, 1.000);
 $easeInOutCirc:  cubic-bezier(0.785,  0.135, 0.150, 0.860);
 $easeInOutBack:  cubic-bezier(0.680, -0.550, 0.265, 1.550);
-
-
-@mixin cf() {
-  &:before, &:after {
-    display: table;
-    content: " ";
-  }
-  &:after {
-    clear: both;
-  }
-}
-
-@mixin monospace() {
-  font-family: "Lucida Console", monospace;
-}
-
-@mixin ellipses {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-@mixin word_break {
-  word-wrap: break-word;
-  hyphens: auto;
-}

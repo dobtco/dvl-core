@@ -1,0 +1,142 @@
+// Utility mixins
+
+@mixin font-smoothing() {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin border_top_radius($radius) {
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+}
+
+@mixin border_right_radius($radius) {
+  border-top-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+}
+
+@mixin border_bottom_radius($radius) {
+  border-bottom-left-radius: $radius;
+  border-bottom-right-radius: $radius;
+}
+
+@mixin border_left_radius($radius) {
+  border-top-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+}
+
+@mixin social_button_color($base_color) {
+  background: $base_color;
+  &:hover {
+    background: darken($base_color, 7%);
+  }
+}
+
+@mixin cf() {
+  &:before, &:after {
+    display: table;
+    content: " ";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin monospace() {
+  font-family: "Lucida Console", monospace;
+}
+
+@mixin ellipses {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin word_break {
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+//// Element / appearance mixins
+
+// Customer-facing pages
+
+@mixin ninety_wrapper() {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1150px;
+  position: relative;
+}
+
+@mixin icon($unicode_id) {
+  content: $unicode_id;
+  font-family: 'FontAwesome';
+}
+
+@mixin user_pic($size: 25) {
+  width: $size * 1px;
+  border-radius: 50%;
+  border: 1px solid $gray;
+}
+
+
+// Public-facing pages
+
+@mixin pub_h2_style {
+  font-weight: $pub_normal;
+  font-size: $pub_ratio * $pub_font_size;
+  line-height: $pub_rhythm * 5;
+  letter-spacing: 0.027rem;
+}
+
+@mixin pub_h3_style {
+  font-weight: $pub_bold;
+  font-size: $pub_font_size;
+  letter-spacing: 0.0172rem;
+  opacity: 0.7;
+}
+
+@mixin pub_h4_style {
+  font-weight: $pub_bold;
+  font-size: $pub_font_size_small;
+  line-height: $pub_rhythm * 3;
+  letter-spacing: 0.06666rem;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+@mixin pub_button {
+  border-radius: $radius;
+  display: block;
+  padding: 0 $pub_font_size;
+  @include ellipses;
+  &:hover,
+  &:focus,
+  &:active {
+    outline: 0;
+  }
+}
+
+@mixin pub_button_prime {
+  font-size: $pub_font_size * 3;
+  font-weight: $pub_thin;
+  height: $pub_rhythm * 14;
+  line-height: $pub_rhythm * 14;
+  margin-bottom: $pub_line_height;
+}
+
+@mixin pub_button_prime_long {
+  font-size: $pub_ratio * $pub_font_size;
+}
+
+@mixin pub_button_secondary {
+  font-weight: $pub_normal;
+  line-height: $pub_rhythm * 5;
+  margin-bottom: $pub_rhythm * 3;
+}
+
+@mixin pub_sub_label {
+  font-size: $pub_font_size_sub_label;
+  font-weight: $pub_normal;
+  opacity: 0.65;
+}
