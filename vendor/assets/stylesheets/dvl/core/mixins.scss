@@ -119,7 +119,7 @@
 
 @mixin pub_button_prime {
   font-size: $pub_font_size * 3;
-  font-weight: $pub_thin;
+  font-weight: $pub_normal;
   height: $pub_rhythm * 14;
   line-height: $pub_rhythm * 14;
   margin-bottom: $pub_line_height;
