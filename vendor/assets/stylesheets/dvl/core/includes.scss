@@ -38,7 +38,8 @@ $radius: 3px;
 $bold: 600;
 
 // Typography
-$lineHeight: 1.5rem;
+$unitlessLineHeight: 1.5;
+$lineHeight: $unitlessLineHeight * 1rem;
 $maxFontSize: 87.5% !default;
 
 // #### MIXINS ####
