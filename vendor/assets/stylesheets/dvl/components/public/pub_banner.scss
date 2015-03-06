@@ -33,7 +33,6 @@
 
 @media screen and (min-width: 40rem) {
   .pub_banner {
-    padding: 0;
     margin-bottom: $pub_line_height;
     strong {
       line-height: $pub_rhythm * 8;
@@ -42,15 +41,11 @@
   }
 
   .pub_banner_inner {
-    padding: $pub_line_height;
-    display: flex;
-    align-items: center;
-    text-align: left;
+    padding: $pub_line_height 0;
   }
 
   .pub_banner_logo {
     margin: 0;
-    flex: none;
     max-height: $pub_line_height * 3;
   }
 
