@@ -53,6 +53,21 @@ class Views::Home::Index < Views::Base
             li {
               a 'No!'
             }
+            li.dropdown_menu_sub_trigger {
+              a 'View more...'
+            }
+            li {
+              ul.dropdown_menu_sub {
+                li {
+                  a 'This is one option with a whole lot of content that is going to overflow ' +
+                    'onto another line and get all crazy and such, what a shame it is that we ' +
+                    'have to deal with crap like this.'
+                }
+                li {
+                  a 'This is another'
+                }
+              }
+            }
           }
         }
       }
