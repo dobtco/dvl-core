@@ -28,12 +28,12 @@ class Views::Home::Index < Views::Base
             li {
               a 'Hey! This is some really long dropdown text, yo.'
             }
-            li.dropdown_menu_sub_trigger {
+            li.dropdown_menu_sub_trigger.active {
               a 'View more...'
             }
             li {
               ul.dropdown_menu_sub {
-                li {
+                li.active {
                   a 'This is one option'
                 }
                 li {

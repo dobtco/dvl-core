@@ -1,5 +1,3 @@
-//// Customer-facing pages
-
 // Grayscale colors
 $black: #222;
 $darkestGray: #444;
@@ -38,34 +36,11 @@ $radius: 3px;
 $bold: 600;
 
 // Typography
-$lineHeight: 1.5rem;
+$unitlessLineHeight: 1.5;
+$lineHeight: $unitlessLineHeight * 1rem;
 $maxFontSize: 87.5% !default;
 
-
-
-//// Public-facing pages
-
-// Layout and typography
-$pub_rhythm: 0.5rem; // 8px
-$pub_line_height: $pub_rhythm * 4;
-$pub_ratio: 1.25;
-$pub_font_size: 1.125rem;
-$pub_font_size_small: 0.777777777rem;
-$pub_font_size_sub_label: $pub_font_size_small;
-$pub_input_height: $pub_rhythm * 6;
-
-// Font weights
-$pub_normal: 300;
-$pub_bold: 500;
-
-
-// Corner radius
-$pub_radius: 4px;
-
-
-
-//// Animation easing curves
-
+// Animation easing curves
 $easeInQuad:      cubic-bezier(0.550,  0.085, 0.680, 0.530);
 $easeInCubic:     cubic-bezier(0.550,  0.055, 0.675, 0.190);
 $easeInQuart:     cubic-bezier(0.895,  0.030, 0.685, 0.220);

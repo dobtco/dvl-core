@@ -234,6 +234,11 @@ li.dropdown_more a {
   @include font_smoothing;
 }
 
+.dropdown_menu_sub li.active a {
+  background-color: #428bca;
+  color: #fff;
+}
+
 // ## Dropdown list styles
 
 
