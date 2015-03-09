@@ -52,14 +52,12 @@ $navBreakpoint: 800px !default;
   line-height: $navHeight;
 }
 
-.navbar_content {
+.navbar_content_wrapper {
   clear: both;
   display: none;
+}
 
-  .open & {
-    display: block;
-  }
-
+.navbar_content {
   input[type=text] {
     @include navItemMargin($navCollapsedLineHeight);
     padding-left: 0.6rem;
@@ -107,10 +105,12 @@ $navBreakpoint: 800px !default;
   }
 
   // Show the content
-  .navbar_content {
+  .navbar_content_wrapper {
     display: block;
     clear: none;
+  }
 
+  .navbar_content {
     // Add X padding to nav items
     > ul > li > a,
     form {

@@ -17,4 +17,5 @@
 //= require dvl/components/dynamic_email
 //= require dvl/components/newsletter_form
 //= require dvl/components/splash_footer
+//= require dvl/components/navbar
 //= require simple_form/dropdown_select

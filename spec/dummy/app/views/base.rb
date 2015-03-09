@@ -64,47 +64,45 @@ class Views::Base < Erector::Widget
       div.container {
         div.navbar_header {
           a.navbar_brand 'DOBT Style Guide', href: '#'
-          a.navbar_toggle(
-            "<i class='fa fa-reorder'></i>".html_safe,
-            'data-toggle-class' => 'open',
-            'data-target' => '.navbar'
-          )
+          a.navbar_toggle "<i class='fa fa-reorder'></i>".html_safe
         }
 
-        div.navbar_content.navbar_content_primary {
-          ul {
-            li.active {
-              a 'Main styles'
-            }
-            li {
-              a 'Something else'
-            }
-          }
-        }
-
-        div.navbar_content.navbar_content_secondary {
-          form {
-            input type: 'text', placeholder: 'Search...'
-          }
-          ul {
-            li {
-              a 'Link One'
-            }
-            li {
-              a 'Link Two'
-            }
-            li.dropdown {
-              a(
-                'data-toggle' => 'dropdown'
-              ) {
-                img.nav_avatar src: '//dobt-misc.s3.amazonaws.com/headshots/adam.jpg'
+        div.navbar_content_wrapper {
+          div.navbar_content.navbar_content_primary {
+            ul {
+              li.active {
+                a 'Main styles'
               }
+              li {
+                a 'Something else'
+              }
+            }
+          }
 
-              div.dropdown_menu {
-                ul.dropdown_body {
-                  li.dropdown_header 'My account'
-                  li { a 'Edit profile', href: '#' }
-                  li { a 'Sign out', href: '#' }
+          div.navbar_content.navbar_content_secondary {
+            form {
+              input type: 'text', placeholder: 'Search...'
+            }
+            ul {
+              li {
+                a 'Link One'
+              }
+              li {
+                a 'Link Two'
+              }
+              li.dropdown {
+                a(
+                  'data-toggle' => 'dropdown'
+                ) {
+                  img.nav_avatar src: '//dobt-misc.s3.amazonaws.com/headshots/adam.jpg'
+                }
+
+                div.dropdown_menu {
+                  ul.dropdown_body {
+                    li.dropdown_header 'My account'
+                    li { a 'Edit profile', href: '#' }
+                    li { a 'Sign out', href: '#' }
+                  }
                 }
               }
             }
