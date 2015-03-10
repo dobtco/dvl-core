@@ -84,7 +84,7 @@ class Views::Base < Erector::Widget
         }
 
         div.navbar_content.navbar_content_secondary {
-          form {
+          form.navbar_search_form {
             input type: 'text', placeholder: 'Search...'
           }
           ul {

@@ -19,6 +19,7 @@ end
 Bundler.require(*Rails.groups)
 
 require 'simple_form'
+require 'ffaker'
 
 module Dummy
   class Application < Rails::Application

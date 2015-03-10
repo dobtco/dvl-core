@@ -42,6 +42,9 @@ $unitlessLineHeight: 1.5;
 $lineHeight: $unitlessLineHeight * 1rem;
 $maxFontSize: 87.5% !default;
 
+$inputHeight: 2.286rem; // 32px @ 14px root
+$inputPadding: 0.3rem;
+
 // #### MIXINS ####
 
 @mixin font-smoothing() {
