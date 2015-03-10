@@ -36,8 +36,8 @@ $navBreakpoint: 800px !default;
 }
 
 // Modifier for fixed navbar
-.navbar_fixed {
-  position: fixed;
+.navbar_sticky {
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -96,6 +96,10 @@ $navBreakpoint: 800px !default;
   .navbar {
     line-height: $navHeight;
     min-height: $navHeight;
+  }
+
+  .navbar_sticky {
+    position: fixed;
   }
 
   .nav_avatar {

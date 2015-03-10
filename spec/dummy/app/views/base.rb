@@ -62,7 +62,7 @@ class Views::Base < Erector::Widget
   end
 
   def render_navbar
-    nav.navbar.navbar_fixed {
+    nav.navbar.navbar_sticky {
       div.container {
         div.navbar_header {
           a.navbar_brand 'DOBT Style Guide', href: '#'
