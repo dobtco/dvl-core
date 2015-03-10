@@ -1,7 +1,7 @@
 dvl-core [![build_status]](https://circleci.com/gh/dobtco/dvl-core)
 ====
 
-DOBT"s base styles. [Live demo](https://dvlcore.herokuapp.com/)
+DOBT's base styles. [Live demo](https://dvlcore.herokuapp.com/)
 
 ## Usage
 
@@ -14,15 +14,10 @@ gem 'dvl-core', github: 'dobtco/dvl-core'
 # assets/stylesheets/application.css
 /*
 *= require dvl/core
-*= require dvl/components/flashes
-*= require dvl/components/footer
-*= require simple_form/dropdown_select
 */
 
 # assets/javascripts/application.js
 //= require dvl/core
-//= require dvl/components/flashes
-//= require simple_form/dropdown_select
 ```
 
 #### Without Rails

@@ -19,7 +19,6 @@ end
 Bundler.require(*Rails.groups)
 
 require 'simple_form'
-require 'simple_form/dropdown_select'
 
 module Dummy
   class Application < Rails::Application
