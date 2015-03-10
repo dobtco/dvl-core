@@ -69,7 +69,8 @@ class Views::Home::Forms < Views::Base
         f.input :bar,
                       as: :dropdown_select,
                       collection: [
-                        ['I am a dropdown-select', 'B', 'C'],
+                        ['I am a dropdown-select this is supier long and probably overflwos
+                          onto the next line aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'B', 'C'],
                         ['D', 'E', 'F']
                       ]
 
