@@ -21,6 +21,7 @@ body {
   color: $bodyFontColor;
   font-size: 1rem; /* 2 */
   font-family: $fontFamilyDefault;
+  font-weight: $weightNormal;
   line-height: $unitlessLineHeight; /* 3 */
 }
 /* Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome */
