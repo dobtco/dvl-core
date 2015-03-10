@@ -164,7 +164,7 @@ input::-moz-focus-inner {
 /* Give labels a pointer cursor by default */
 label {
   cursor: pointer;
-  font-weight: 600;
+  font-weight: $weightBold;
   font-size: 0.9rem;
 }
 
@@ -210,7 +210,7 @@ select.datetime {
 
 label.control {
   display: block;
-  font-weight: normal;
+  font-weight: $weightNormal;
   font-size: 1rem;
   position: relative;
   line-height: 1.5rem;
@@ -467,7 +467,7 @@ form {
   padding-left: 0.75rem;
   line-height: $inputHeight;
   color: #333;
-  font-weight: normal;
+  font-weight: $weightNormal;
   &:after {
     font-family: 'FontAwesome';
     content: '\f0d7';

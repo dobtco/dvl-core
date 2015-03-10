@@ -27,7 +27,7 @@ $footerBackground: #080F1F !default;
   dt {
     @include font-smoothing;
     margin: 0;
-    font-weight: 600;
+    font-weight: $weightBold;
     clear: left;
     width: 5rem;
     color: rgba(#fff,0.8);

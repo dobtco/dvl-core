@@ -99,7 +99,7 @@
 
 .dropdown_menu_form li {
   label {
-    font-weight: normal;
+    font-weight: $weightNormal;
     padding: 0.25rem 0.5rem;
     display: block;
     font-size: 0.9rem;
@@ -121,7 +121,7 @@
 .dropdown_header_nav {
   text-align: center;
   text-transform: uppercase;
-  font-weight: $bold;
+  font-weight: $weightBold;
   font-size: 0.85rem;
 }
 
@@ -159,7 +159,7 @@ li.dropdown_more a {
   position: relative;
   display: block;
   text-decoration: none;
-  font-weight: normal;
+  font-weight: $weightNormal;
   cursor: pointer;
   &.disabled {
     opacity: 0.6;
@@ -333,7 +333,7 @@ li.dropdown_more a {
 .drop_detail {
   @include ellipses;
   label {
-    font-weight: normal;
+    font-weight: $weightNormal;
   }
 }
 
