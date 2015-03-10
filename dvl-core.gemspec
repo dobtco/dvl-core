@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'autoprefixer-rails', '4.0.2.2'
   s.add_development_dependency 'capybara', '2.4.4'
+  s.add_development_dependency 'ffaker', '1.32.1'
   s.add_development_dependency 'poltergeist', '1.6.0'
   s.add_development_dependency 'pry'
   s.add_development_dependency 'pry-remote'
