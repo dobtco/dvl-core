@@ -22,49 +22,50 @@ class Views::Home::Index < Views::Base
     docs 'Dropdowns', %{
       div.dropdown {
         a.dropdown_toggle 'Click me',
-                          'data-toggle' => 'dropdown'
-        div.dropdown_menu {
+                          'data-toggle' => 'dropdown',
+                          href: '#'
+        div.dropdown_menu(role: 'menu') {
           ul.dropdown_body {
             li {
-              a 'Hey! This is some really long dropdown text, yo.'
+              a 'Hey! This is some really long dropdown text, yo.', href: '#'
             }
             li.dropdown_menu_sub_trigger.active {
-              a 'View more...'
+              a 'View more...', href: '#'
             }
             li {
               ul.dropdown_menu_sub {
                 li.active {
-                  a 'This is one option'
+                  a 'This is one option', href: '#'
                 }
                 li {
-                  a 'This is another'
+                  a 'This is another', href: '#'
                 }
                 li {
-                  a 'This is a third option'
+                  a 'This is a third option', href: '#'
                 }
               }
             }
             li {
-              a {
+              a(href: '#') {
                 i(class: 'fa fa-star')
                 text ' With an icon!'
               }
             }
             li {
-              a 'No!'
+              a 'No!', href: '#'
             }
             li.dropdown_menu_sub_trigger {
-              a 'View more...'
+              a 'View more...', href: '#'
             }
             li {
               ul.dropdown_menu_sub {
                 li {
                   a 'This is one option with a whole lot of content that is going to overflow ' +
                     'onto another line and get all crazy and such, what a shame it is that we ' +
-                    'have to deal with crap like this.'
+                    'have to deal with crap like this.', href: '#'
                 }
                 li {
-                  a 'This is another'
+                  a 'This is another', href: '#'
                 }
               }
             }
@@ -76,11 +77,12 @@ class Views::Home::Index < Views::Base
 
       div.dropdown {
         a.dropdown_toggle_button.gray 'Click me',
-                          'data-toggle' => 'dropdown'
-        div.dropdown_menu {
+                          'data-toggle' => 'dropdown',
+                          href: '#'
+        div.dropdown_menu(role: 'menu') {
           ul.dropdown_body {
             li {
-              a 'This was triggered by a dropdown_toggle_button'
+              a 'This was triggered by a dropdown_toggle_button', href: '#'
             }
           }
         }

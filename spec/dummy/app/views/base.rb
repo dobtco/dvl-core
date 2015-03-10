@@ -94,12 +94,13 @@ class Views::Base < Erector::Widget
               }
               li.dropdown {
                 a(
-                  'data-toggle' => 'dropdown'
+                  'data-toggle' => 'dropdown',
+                  href: '#'
                 ) {
                   img.nav_avatar src: '//dobt-misc.s3.amazonaws.com/headshots/adam.jpg'
                 }
 
-                div.dropdown_menu {
+                div.dropdown_menu(role: 'menu') {
                   ul.dropdown_body {
                     li.dropdown_header.dropdown_header_nav 'My account'
                     li { a 'Edit profile', href: '#' }

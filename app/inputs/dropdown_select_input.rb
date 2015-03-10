@@ -23,12 +23,12 @@ class DropdownSelectInput < SimpleForm::Inputs::CollectionInput
 
     content_tag(:div, class: 'styled_select_wrapper', 'data-dropdown-select' => true) do
       @builder.hidden_field(attribute_name, input_html_options) +
-      content_tag(:div, class: 'styled_select', 'data-toggle' => 'dropdown') { selected_option[0] } +
-      content_tag(:div, class: 'dropdown_menu dropdown_menu_rich') {
+      content_tag(:a, class: 'styled_select', 'data-toggle' => 'dropdown', href: '#') { selected_option[0] } +
+      content_tag(:div, class: 'dropdown_menu dropdown_menu_rich', role: 'menu') {
         content_tag(:ul, class: 'dropdown_body') {
           collection.map do |x|
             content_tag(:li, class: selected_option == x ? 'active' : nil) {
-              content_tag(:a, 'data-value' => x[1]) {
+              content_tag(:a, 'data-value' => x[1], href: '#') {
                 content_tag(:strong, class: 'drop_rich_head') { x[0] } +
                 content_tag(:span, class: 'drop_rich_subhead') { x[2] }
               }

@@ -19,7 +19,9 @@ class DropdownSelectInput
         .siblings()
         .removeClass('active')
 
-      @$toggle.text($a.find('.drop_rich_head').text())
+      @$toggle.
+        text($a.find('.drop_rich_head').text()).
+        focus()
 
 $.fn.extend dropdownSelect: (option, args...) ->
   $(@).find('[data-dropdown-select]').each ->
