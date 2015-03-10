@@ -18,11 +18,8 @@ $navBreakpoint: 800px !default;
 
 .navbar {
   background-color: $navBackground;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
   line-height: $navCollapsedLineHeight;
+  min-height: $navCollapsedLineHeight;
   z-index: $navZ;
 
   // Specify links directly so that we don't mess up any other
@@ -39,10 +36,26 @@ $navBreakpoint: 800px !default;
   }
 }
 
+// Modifier for fixed navbar
+.navbar_fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
 .navbar_brand {
   float: left;
   font-size: 1.5rem;
   line-height: $navHeight;
+
+  img {
+    position: relative;
+    display: block;
+    top: 0;
+    max-height: $navHeight - 1.25rem;
+    margin: 0.625rem 0;
+  }
 }
 
 // The "hamburger" button
@@ -83,6 +96,7 @@ $navBreakpoint: 800px !default;
 @media only screen and (min-width: $navBreakpoint) {
   .navbar {
     line-height: $navHeight;
+    min-height: $navHeight;
   }
 
   // Float almost everything. Can't use inline-block because it

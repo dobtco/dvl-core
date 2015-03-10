@@ -55,12 +55,13 @@ class Views::Base < Erector::Widget
       'Forms' => '/forms',
       'Flashes' => '/flashes',
       'Footer' => '/footer',
-      'Splash' => '/splash'
+      'Splash' => '/splash',
+      'Navbar' => '/navbar'
     }
   end
 
   def render_navbar
-    nav.navbar {
+    nav.navbar.navbar_fixed {
       div.container {
         div.navbar_header {
           a.navbar_brand 'DOBT Style Guide', href: '#'
