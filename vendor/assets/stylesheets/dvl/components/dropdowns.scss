@@ -49,7 +49,7 @@
     > a,
     > span {
       display: block;
-      min-height: 2.5rem;
+      min-height: 2.25rem;
       font-size: 0.9rem;
       line-height: 1.5rem;
       padding: 0.375rem 0.5rem;
@@ -60,8 +60,7 @@
       &:hover,
       &:focus {
         text-decoration: none;
-        color: #fff;
-        background-color: #428bca;
+        background-color: #f7f7f7;
       }
     }
 
@@ -217,26 +216,63 @@ li.dropdown_more a {
       &:after {
         content: "\f107";
       }
+      a {
+        background: #eee;
+        color: #555;
+        &:hover, &:active, &:visited {
+          color: #555;
+        }
+        &:hover, &:active {
+          background: #ededed;
+        }
+      }
       & + li .dropdown_menu_sub {
         display: block;
       }
     }
 }
 
-.dropdown_menu_sub li a {
-  font-size: 0.85rem;
-  padding: 0.375rem 0.5rem;
-  padding-left: 1.5rem;
-  display: block;
-  line-height: 1rem;
-  color: #777;
-  max-height: 3rem;
-  @include font_smoothing;
+.dropdown_menu_sub li {
+  a {
+    font-size: 0.85rem;
+    padding: 0.375rem 0.75rem;
+    display: block;
+    line-height: 1.5rem;
+    color: #777;
+    max-height: 5.25rem;
+    @include font_smoothing;
+    overflow: hidden;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    &:after {
+      position: absolute;
+      content: '';
+      z-index: 2;
+      height: 1.5rem;
+      right: 0.75rem;
+      bottom: 0.375rem;
+      width: 45%;
+      background: linear-gradient(to right, rgba(#fff,0), #fff 80%);
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      &:after {
+        background: linear-gradient(to right, rgba(#f7f7f7,0), #f7f7f7 80%);
+      }
+    }
+  }
+  &:first-child a {
+    border-top: 1px solid #eee;
+  }
 }
 
 .dropdown_menu_sub li.active a {
   background-color: #428bca;
   color: #fff;
+  &:after {
+    background: linear-gradient(to right, rgba(#428bca,0), #428bca 80%);
+  }
 }
 
 // ## Dropdown list styles
