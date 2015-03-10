@@ -12,8 +12,8 @@ $navBreakpoint: 800px !default;
 
 // (height / input height) / 2
 @mixin navItemMargin($navHeight) {
-  margin-top: ($navHeight - 2.1rem) / 2;
-  margin-bottom: ($navHeight - 2.1rem) / 2;
+  margin-top: ($navHeight - $inputHeight) / 2;
+  margin-bottom: ($navHeight - $inputHeight) / 2;
 }
 
 .navbar {
@@ -75,16 +75,20 @@ $navBreakpoint: 800px !default;
 }
 
 .nav_avatar {
-  @include navItemMargin($navCollapsedLineHeight);
-  display: inline;
   height: 28px;
   width: 28px;
   border-radius: 50%;
+  // add some margin for the bottom of the collapsed nav
+  margin-bottom: 0.75rem;
 }
 
 @media only screen and (min-width: $navBreakpoint) {
   .navbar {
     line-height: $navHeight;
+  }
+
+  .nav_avatar {
+    margin-bottom: 0;
   }
 
   // Float almost everything. Can't use inline-block because it
@@ -93,7 +97,7 @@ $navBreakpoint: 800px !default;
   .navbar_content,
   .navbar_content > ul,
   .navbar_content > ul > li,
-  .navbar_content form {
+  .navbar_content .navbar_search_form {
     float: left;
   }
 
@@ -113,11 +117,11 @@ $navBreakpoint: 800px !default;
 
     // Add X padding to nav items
     > ul > li > a,
-    form {
+    .navbar_search_form {
       padding: 0 0.75rem;
     }
 
-    form {
+    .navbar_search_form {
       width: auto;
     }
 
