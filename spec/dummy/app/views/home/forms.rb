@@ -3,7 +3,15 @@ class Views::Home::Forms < Views::Base
     docs 'Forms', %{
       simple_form_for :foo do |f|
         f.input :string,
-                as: :string
+                as: :string,
+                input_html: { value: Faker::Lorem.words(3).join(' ') }
+
+        f.input :text,
+                as: :text,
+                input_html: {
+                  rows: 5,
+                  value:  Faker::Lorem.paragraph
+                }
 
         f.input :radio,
                 as: :radio_buttons,

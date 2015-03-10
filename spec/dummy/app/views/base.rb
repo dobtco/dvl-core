@@ -82,7 +82,7 @@ class Views::Base < Erector::Widget
           }
 
           div.navbar_content.navbar_content_secondary {
-            form {
+            form.navbar_search_form {
               input type: 'text', placeholder: 'Search...'
             }
             ul {
@@ -92,18 +92,26 @@ class Views::Base < Erector::Widget
               li {
                 a 'Link Two'
               }
-              li.dropdown {
-                a(
-                  'data-toggle' => 'dropdown'
-                ) {
-                  img.nav_avatar src: '//dobt-misc.s3.amazonaws.com/headshots/adam.jpg'
+              ul {
+                li {
+                  a 'Link One'
                 }
+                li {
+                  a 'Link Two'
+                }
+                li.dropdown {
+                  a(
+                    'data-toggle' => 'dropdown'
+                  ) {
+                    img.nav_avatar src: '//dobt-misc.s3.amazonaws.com/headshots/adam.jpg'
+                  }
 
-                div.dropdown_menu {
-                  ul.dropdown_body {
-                    li.dropdown_header.dropdown_header_strong 'My account'
-                    li { a 'Edit profile', href: '#' }
-                    li { a 'Sign out', href: '#' }
+                  div.dropdown_menu {
+                    ul.dropdown_body {
+                      li.dropdown_header.dropdown_header_strong 'My account'
+                      li { a 'Edit profile', href: '#' }
+                      li { a 'Sign out', href: '#' }
+                    }
                   }
                 }
               }
