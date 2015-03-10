@@ -20,13 +20,13 @@ body {
   margin: 0; /* 1 */
   color: $bodyFontColor;
   font-size: 1rem; /* 2 */
-  font-family: 'Open Sans', "Helvetica Neue", Arial, sans-serif;
+  font-family: $fontFamilyDefault;
   line-height: $unitlessLineHeight; /* 3 */
 }
 /* Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome */
 b,
 strong {
-  font-weight: 600;
+  font-weight: $bold;
 }
 
 blockquote,
