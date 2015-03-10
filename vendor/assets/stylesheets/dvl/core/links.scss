@@ -18,7 +18,7 @@ a {
     }
   }
   &.smallbold {
-    font-weight: 600;
+    font-weight: $weightBold;
     font-size: 0.9rem;
   }
   &:hover {
@@ -36,7 +36,7 @@ a {
     text-transform: uppercase;
     color: $darkGray;
     font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: $weightBold;
     letter-spacing: 0.04rem;
     &:hover {
       text-decoration: none;

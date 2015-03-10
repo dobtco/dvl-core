@@ -33,8 +33,10 @@ $purpleBlue: #6188f5;
 // Corner radius
 $radius: 3px !default;
 
-// Bold font weight
-$bold: 600 !default;
+// Font weights
+$weightLight: 300 !default;
+$weightNormal: 500 !default;
+$weightBold: 600 !default;
 
 // Typography
 $fontFamilyDefault: 'Open Sans', 'Helvetica Neue', Arial, sans-serif !default;

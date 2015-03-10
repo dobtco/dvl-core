@@ -26,7 +26,7 @@ body {
 /* Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome */
 b,
 strong {
-  font-weight: $bold;
+  font-weight: $weightBold;
 }
 
 blockquote,
@@ -67,7 +67,7 @@ h5,
 h6 {
   margin: 0 0 0.75rem;
   color: $black;
-  font-weight: 600;
+  font-weight: $weightBold;
   line-height: 1.333;
   text-rendering: optimizeLegibility;
 }
@@ -89,7 +89,7 @@ h4 {
 }
 
 h5 {
-  font-weight: 600;
+  font-weight: $weightBold;
   text-transform: uppercase;
   color: $darkerGray;
   font-size: 0.9rem;

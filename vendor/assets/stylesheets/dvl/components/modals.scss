@@ -96,7 +96,7 @@
   padding: 0.5rem 1.75rem;
   h3 {
     font-size: 1.35rem;
-    font-weight: 600;
+    font-weight: $weightBold;
     margin: 0;
     color: #444;
     line-height: 2rem;
@@ -107,7 +107,7 @@
     text-decoration: none;
     text-align: right;
     font-size: 2rem;
-    font-weight: 300;
+    font-weight: $weightLight;
     line-height: 2rem;
     width: 2rem;
     &:hover {
