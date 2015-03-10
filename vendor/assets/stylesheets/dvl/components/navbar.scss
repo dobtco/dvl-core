@@ -21,18 +21,17 @@ $navBreakpoint: 800px !default;
   line-height: $navCollapsedLineHeight;
   min-height: $navCollapsedLineHeight;
   z-index: $navZ;
-}
 
-// Specify links directly so that we don't mess up any other
-// child elements (e.g. dropdowns)
-.navbar_brand,
-.navbar_toggle,
-.navbar_content > ul > li > a {
-  color: $navText;
-  text-decoration: none;
+  // Add specificity to override text-decoration.
+  .navbar_brand,
+  .navbar_toggle,
+  .navbar_content > ul > li > a {
+    color: $navText;
+    text-decoration: none;
 
-  &:hover {
-    color: lighten($navText, 10%);
+    &:hover {
+      color: lighten($navText, 10%);
+    }
   }
 }
 
