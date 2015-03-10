@@ -21,18 +21,18 @@ $navBreakpoint: 800px !default;
   line-height: $navCollapsedLineHeight;
   min-height: $navCollapsedLineHeight;
   z-index: $navZ;
+}
 
-  // Specify links directly so that we don't mess up any other
-  // child elements (e.g. dropdowns)
-  .navbar_brand,
-  .navbar_toggle,
-  .navbar_content > ul > li > a {
-    color: $navText;
-    text-decoration: none;
+// Specify links directly so that we don't mess up any other
+// child elements (e.g. dropdowns)
+.navbar_brand,
+.navbar_toggle,
+.navbar_content > ul > li > a {
+  color: $navText;
+  text-decoration: none;
 
-    &:hover {
-      color: lighten($navText, 10%);
-    }
+  &:hover {
+    color: lighten($navText, 10%);
   }
 }
 
@@ -109,7 +109,7 @@ $navBreakpoint: 800px !default;
   .navbar_content,
   .navbar_content > ul,
   .navbar_content > ul > li,
-  .navbar_content .navbar_search_form {
+  .navbar_search_form {
     float: left;
   }
 
@@ -128,15 +128,15 @@ $navBreakpoint: 800px !default;
     clear: none;
   }
 
+  .navbar_search_form {
+    padding: 0 0.75rem;
+    width: auto;
+  }
+
   .navbar_content {
     // Add X padding to nav items
-    > ul > li > a,
-    .navbar_search_form {
+    > ul > li > a {
       padding: 0 0.75rem;
-    }
-
-    .navbar_search_form {
-      width: auto;
     }
 
     input[type=text] {
