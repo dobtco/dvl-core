@@ -14,6 +14,7 @@ class Views::Base < Erector::Widget
         $('[data-toggle="tooltip"]').tooltip()
         $('body').styledSelect()
         $('body').styledControls()
+        $('body').dropdownSelect()
       });
     }.html_safe
   end
