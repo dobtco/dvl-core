@@ -21,26 +21,6 @@ class Views::Home::Navbar < Views::Base
                 }
               }
             }
-
-            div.navbar_content.navbar_content_secondary {
-              ul {
-                li.dropdown {
-                  a(
-                    'data-toggle' => 'dropdown'
-                  ) {
-                    img.nav_avatar src: '//dobt-misc.s3.amazonaws.com/headshots/adam.jpg'
-                  }
-
-                  div.dropdown_menu {
-                    ul.dropdown_body {
-                      li.dropdown_header 'My account'
-                      li { a 'Edit profile', href: '#' }
-                      li { a 'Sign out', href: '#' }
-                    }
-                  }
-                }
-              }
-            }
           }
         }
       }
