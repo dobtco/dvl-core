@@ -117,6 +117,14 @@
   margin-bottom: 0.25rem;
 }
 
+// Modifier for dropdown header, used in navbar
+.dropdown_header_nav {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: $bold;
+  font-size: 0.85rem;
+}
+
 // Open state for the dropdown
 .open {
   // Show the menu
