@@ -64,7 +64,7 @@ textarea {
   vertical-align: middle;
   border: 1px solid #ddd;
   font-size: 0.9rem;
-  padding: 0.3rem;
+  padding: $inputPadding;
   border-radius: $radius;
   &.error {
     border-color: $errorColor;
@@ -85,6 +85,19 @@ textarea {
   textarea {
     border-color: $errorColor;
   }
+}
+
+// Height
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="password"],
+input[type="url"] {
+  height: $inputHeight;
+}
+
+textarea {
+  line-height: $lineHeight;
 }
 
 // Focus states
@@ -383,10 +396,8 @@ form {
   }
 }
 
-$styledSelectHeight: 2.5rem;
-
 .styled_select_wrapper {
-  height: $styledSelectHeight;
+  height: $inputHeight;
   width: 17rem; // around 240px
   vertical-align: middle;
   &.auto {
@@ -400,7 +411,7 @@ $styledSelectHeight: 2.5rem;
     top: 0;
     left: 0;
     right: 0;
-    height: $styledSelectHeight;
+    height: $inputHeight;
     opacity: 0;
     z-index: 2;
     &:focus + div {
@@ -446,7 +457,7 @@ $styledSelectHeight: 2.5rem;
 
 .styled_select,
 .dropdown_toggle_button {
-  height: $styledSelectHeight;
+  height: $inputHeight;
   background: #fff;
   border: 1px solid #bbb;
   border-radius: $radius;
@@ -454,7 +465,7 @@ $styledSelectHeight: 2.5rem;
   font-size: 0.95rem;
   padding-right: 2rem;
   padding-left: 0.75rem;
-  line-height: $styledSelectHeight;
+  line-height: $inputHeight;
   color: #333;
   font-weight: normal;
   &:after {

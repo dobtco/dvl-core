@@ -5,6 +5,13 @@ class Views::Home::Forms < Views::Base
         f.input :string,
                 as: :string
 
+        f.input :text,
+                as: :text,
+                input_html: {
+                  rows: 5,
+                  value: "foo\nbar\nbaz"
+                }
+
         f.input :radio,
                 as: :radio_buttons,
                 collection: ['Foo', 'Bar'],
