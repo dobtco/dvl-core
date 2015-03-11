@@ -284,6 +284,12 @@ li.dropdown_more a {
   @include ellipses;
 }
 
+// Important
+
+.drop_important {
+  font-weight: $weightBold;
+}
+
 // Master / detail:
 // Square item (checkbox, color legend, image) on left,
 // description on right
@@ -310,6 +316,9 @@ li.dropdown_more a {
     width: 100%;
     text-align: center;
     vertical-align: middle;
+    .drop_important & {
+      color: $darkestGray;
+    }
     .active & {
       color: #fff;
     }

@@ -96,10 +96,10 @@ class Views::Home::Index < Views::Base
                           href: '#'
         div.dropdown_menu(role: 'menu') {
           ul.dropdown_body {
-            li {
+            li.drop_important {
               a.cf(href: '#') {
                 span.drop_master_multiline { i(class: 'fa fa-envelope') }
-                span.drop_detail_multiline 'You were sent a message'
+                span.drop_detail_multiline 'Important! You were sent a message!!!'
               }
             }
             li {
