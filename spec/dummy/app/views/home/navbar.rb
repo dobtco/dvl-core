@@ -21,6 +21,15 @@ class Views::Home::Navbar < Views::Base
                 }
               }
             }
+            div.navbar_content.navbar_content_secondary {
+              ul {
+                li {
+                  span {
+                    a.button.primary 'Sign in'
+                  }
+                }
+              }
+            }
           }
         }
       }
