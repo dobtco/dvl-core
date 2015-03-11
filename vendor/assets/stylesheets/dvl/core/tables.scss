@@ -14,7 +14,7 @@ table {
   tfoot td {
     color: $black;
     text-align: left;
-    font-weight: bold;
+    font-weight: $weightBold;
   }
   thead th,
   tfoot td  {
@@ -23,7 +23,7 @@ table {
   thead th {
     color: $darkestGray;
     font-size: 0.9rem;
-    font-weight: 600;
+    font-weight: $weightBold;
     word-break: normal;
   }
   th,

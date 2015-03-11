@@ -38,7 +38,7 @@ $dvlFlashDefaultColor: #2886A8 !default;
     text-decoration: none;
     right: 1rem;
     top: 0;
-    font-weight: bold;
+    font-weight: $weightBold;
     color: $lightGray;
     &:hover {
       color: $white;

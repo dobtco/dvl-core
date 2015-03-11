@@ -29,7 +29,7 @@
   display: block;
   color: rgba(#000,0.5);
   font-size: 0.85rem;
-  font-weight: normal;
+  font-weight: $weightNormal;
   line-height: 1.3;
 
   .active a & {

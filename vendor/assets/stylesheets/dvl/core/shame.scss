@@ -211,11 +211,11 @@
 
   /* Font styles */
   .#{$x}font_thin {
-    font-weight: 300;
+    font-weight: $weightLight;
   }
 
   .#{$x}weight_normal {
-    font-weight: normal;
+    font-weight: $weightNormal;
   }
 
   .#{$x}font_muted {

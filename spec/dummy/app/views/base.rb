@@ -101,8 +101,8 @@ class Views::Base < Erector::Widget
                 }
 
                 div.dropdown_menu(role: 'menu') {
+                  h3 'My account'
                   ul.dropdown_body {
-                    li.dropdown_header.dropdown_header_nav 'My account'
                     li { a 'Edit profile', href: '#' }
                     li { a 'Sign out', href: '#' }
                   }

@@ -23,27 +23,30 @@ $bodyFontColor: $darkestGray;
 $darkBlue: #1fa3ec;
 
 // Other Colors
-$successColor: #2aa828;
-$errorColor: #c12f2e;
-$alertColor: $errorColor;
+$successColor: #2aa828 !default;
+$errorColor: #c12f2e !default;
+$alertColor: $errorColor !default;
 $blueHighlight: #eaf3fa;
 $mintHighlight: #e7f9e7;
-$questionTextColor: #297cbb;
 $purpleBlue: #6188f5;
 
 // Corner radius
-$radius: 3px;
+$radius: 3px !default;
 
-// Bold font weight
-$bold: 600;
+// Font weights
+$weightLight: 300 !default;
+$weightNormal: 500 !default;
+$weightBold: 600 !default;
 
 // Typography
-$unitlessLineHeight: 1.5;
-$lineHeight: $unitlessLineHeight * 1rem;
+$fontFamilyDefault: 'Open Sans', 'Helvetica Neue', Arial, sans-serif !default;
+$fontFamilyMonospace: 'Lucida Console', monospace !default;
+$unitlessLineHeight: 1.5 !default;
+$lineHeight: $unitlessLineHeight * 1rem !default;
 $maxFontSize: 87.5% !default;
 
-$inputHeight: 2.286rem; // 32px @ 14px root
-$inputPadding: 0.3rem;
+$inputHeight: 2.286rem !default; // 32px @ 14px root
+$inputPadding: 0.3rem !default;
 
 // #### MIXINS ####
 
@@ -138,7 +141,7 @@ $easeInOutBack:  cubic-bezier(0.680, -0.550, 0.265, 1.550);
 }
 
 @mixin monospace() {
-  font-family: "Lucida Console", monospace;
+  font-family: $fontFamilyMonospace;
 }
 
 @mixin ellipses {

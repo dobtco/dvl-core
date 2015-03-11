@@ -99,7 +99,7 @@
 
 .dropdown_menu_form li {
   label {
-    font-weight: normal;
+    font-weight: $weightNormal;
     padding: 0.25rem 0.5rem;
     display: block;
     font-size: 0.9rem;
@@ -115,14 +115,6 @@
   font-size: 0.85rem;
   padding: 0 0.5rem;
   margin-bottom: 0.25rem;
-}
-
-// Modifier for dropdown header, used in navbar
-.dropdown_header_nav {
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: $bold;
-  font-size: 0.85rem;
 }
 
 // Open state for the dropdown
@@ -159,7 +151,7 @@ li.dropdown_more a {
   position: relative;
   display: block;
   text-decoration: none;
-  font-weight: normal;
+  font-weight: $weightNormal;
   cursor: pointer;
   &.disabled {
     opacity: 0.6;
@@ -333,7 +325,7 @@ li.dropdown_more a {
 .drop_detail {
   @include ellipses;
   label {
-    font-weight: normal;
+    font-weight: $weightNormal;
   }
 }
 
