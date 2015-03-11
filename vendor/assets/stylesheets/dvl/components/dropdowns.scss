@@ -310,8 +310,7 @@ li.dropdown_more a {
     width: 100%;
     text-align: center;
     vertical-align: middle;
-    .active &,
-    a:hover & {
+    .active & {
       color: #fff;
     }
   }

@@ -87,6 +87,36 @@ class Views::Home::Index < Views::Base
           }
         }
       }
+
+      br
+
+      div.dropdown {
+        a.dropdown_toggle_button.gray 'Notifications',
+                          'data-toggle' => 'dropdown',
+                          href: '#'
+        div.dropdown_menu(role: 'menu') {
+          ul.dropdown_body {
+            li {
+              a.cf(href: '#') {
+                span.drop_master_multiline { i(class: 'fa fa-envelope') }
+                span.drop_detail_multiline 'You were sent a message'
+              }
+            }
+            li {
+              a.cf(href: '#') {
+                span.drop_master_multiline { i(class: 'fa fa-file-text') }
+                span.drop_detail_multiline 'A file was added to your project'
+              }
+            }
+            li.active {
+              a.cf(href: '#') {
+                span.drop_master_multiline { i(class: 'fa fa-file-text') }
+                span.drop_detail_multiline 'This is an active item'
+              }
+            }
+          }
+        }
+      }
     }
 
     docs 'Grid', %{
