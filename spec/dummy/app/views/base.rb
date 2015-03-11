@@ -87,10 +87,14 @@ class Views::Base < Erector::Widget
             }
             ul {
               li {
-                a 'Link One'
+                a {
+                  i(class: 'fa fa-search navbar_icon')
+                }
               }
               li {
-                a 'Link Two'
+                a {
+                  i(class: 'fa fa-file-text navbar_icon')
+                }
               }
               li.dropdown {
                 a(

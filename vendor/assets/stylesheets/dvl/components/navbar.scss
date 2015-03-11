@@ -4,22 +4,13 @@ $navHeight: 3.75rem !default;
 $navZ: 1000 !default;
 $navHoverBackground: darken($navBackground, 5%) !default;
 
-// Make it a bit more condensed when collapsed
-$navCollapsedLineHeight: $navHeight * 0.8 !default;
-
 // might want to adjust this based on how many items are in your nav
 $navBreakpoint: 800px !default;
 
-// (height / input height) / 2
-@mixin navItemMargin($navHeight) {
-  margin-top: ($navHeight - $inputHeight) / 2;
-  margin-bottom: ($navHeight - $inputHeight) / 2;
-}
-
 .navbar {
   background-color: $navBackground;
-  line-height: $navCollapsedLineHeight;
-  min-height: $navCollapsedLineHeight;
+  line-height: $navHeight;
+  min-height: $navHeight;
   z-index: $navZ;
 
   // Add specificity to override text-decoration.
@@ -33,6 +24,17 @@ $navBreakpoint: 800px !default;
       color: lighten($navText, 10%);
     }
   }
+
+  // Fix buttons inside navbar
+  .button {
+    line-height: normal;
+    font-size: 0.9rem;
+  }
+}
+
+.navbar_content > ul > li > a {
+  font-weight: $weightBold;
+  font-size: 0.9rem;
 }
 
 // Modifier for fixed navbar
@@ -52,8 +54,8 @@ $navBreakpoint: 800px !default;
     position: relative;
     display: block;
     top: 0;
-    max-height: $navHeight - 1.25rem;
-    margin: 0.625rem 0;
+    max-height: $navHeight - 1.5rem;
+    margin: 0.75rem 0;
   }
 }
 
@@ -69,9 +71,18 @@ $navBreakpoint: 800px !default;
   display: none;
 }
 
-.navbar_content {
+.nav_avatar {
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  // add some margin for the bottom of the collapsed nav
+  margin-bottom: 0.75rem;
+}
+
+.navbar_search_form {
   input[type=text] {
-    @include navItemMargin($navCollapsedLineHeight);
+    margin-top: ($navHeight - $inputHeight) / 2;
+    margin-bottom: ($navHeight - $inputHeight) / 2;
     padding-left: 0.6rem;
     padding-right: 0.6rem;
     background: rgba(0, 0, 0, 0.5);
@@ -82,14 +93,6 @@ $navBreakpoint: 800px !default;
       border-color: $darkBlue;
     }
   }
-}
-
-.nav_avatar {
-  height: 28px;
-  width: 28px;
-  border-radius: 50%;
-  // add some margin for the bottom of the collapsed nav
-  margin-bottom: 0.75rem;
 }
 
 @media only screen and (min-width: $navBreakpoint) {
@@ -142,10 +145,6 @@ $navBreakpoint: 800px !default;
       padding: 0 0.75rem;
     }
 
-    input[type=text] {
-      @include navItemMargin($navHeight);
-    }
-
     // Ensure links take up the full height
     > ul > li > a {
       display: block;
@@ -156,6 +155,11 @@ $navBreakpoint: 800px !default;
     > ul > li.active > a {
       background-color: $navHoverBackground;
     }
+  }
+
+  // Add even more padding to icon items
+  .navbar_icon {
+    padding: 0 0.5rem;
   }
 
   // Float the secondary content to the right and handle dropdowns
