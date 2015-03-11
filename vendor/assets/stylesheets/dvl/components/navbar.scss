@@ -37,6 +37,11 @@ $navBreakpoint: 800px !default;
   }
 }
 
+// Allow for badges and things
+.navbar_content > ul > li {
+  position: relative;
+}
+
 .navbar_content > ul > li > a {
   font-weight: $weightBold;
   font-size: 0.9rem;
@@ -103,6 +108,18 @@ $navBreakpoint: 800px !default;
 // Utility class for hiding/showing content
 .navbar_full_i {
   display: none;
+}
+
+.navbar_badge {
+  background-color: $alertColor;
+  text-align: center;
+  display: inline-block;
+  padding: 0 0.5rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  font-size: 0.75rem;
+  border-radius: 0.75rem;
+  margin-left: 0.5rem;
 }
 
 @media only screen and (min-width: $navBreakpoint) {
@@ -188,5 +205,11 @@ $navBreakpoint: 800px !default;
       right: 0;
       left: auto;
     }
+  }
+
+  .navbar_badge {
+    position: absolute;
+    top: 0.5rem;
+    right: 0;
   }
 }
