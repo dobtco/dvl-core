@@ -100,7 +100,20 @@ $navBreakpoint: 800px !default;
   }
 }
 
+// Utility class for hiding/showing content
+.navbar_full_i {
+  display: none;
+}
+
 @media only screen and (min-width: $navBreakpoint) {
+  .navbar_collapsed_i {
+    display: none;
+  }
+
+  .navbar_full_i {
+    display: inline;
+  }
+
   .navbar {
     line-height: $navHeight;
     min-height: $navHeight;

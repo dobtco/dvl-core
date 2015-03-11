@@ -88,7 +88,12 @@ class Views::Base < Erector::Widget
             ul {
               li {
                 a {
-                  i(class: 'fa fa-search navbar_icon')
+                  span.navbar_full_i {
+                    i(class: 'fa fa-search navbar_icon')
+                  }
+                  span.navbar_collapsed_i {
+                    text 'Search'
+                  }
                 }
               }
               li.dropdown.dropdown_navbar {
@@ -96,7 +101,12 @@ class Views::Base < Erector::Widget
                   'data-toggle' => 'dropdown',
                   href: '#'
                 ) {
-                  i(class: 'fa fa-file-text navbar_icon')
+                  span.navbar_full_i {
+                    i(class: 'fa fa-file-text navbar_icon')
+                  }
+                  span.navbar_collapsed_i {
+                    text 'Projects'
+                  }
                 }
 
                 div.dropdown_menu(role: 'menu') {
