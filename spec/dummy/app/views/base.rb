@@ -91,12 +91,22 @@ class Views::Base < Erector::Widget
                   i(class: 'fa fa-search navbar_icon')
                 }
               }
-              li {
-                a {
+              li.dropdown.dropdown_navbar {
+                a(
+                  'data-toggle' => 'dropdown',
+                  href: '#'
+                ) {
                   i(class: 'fa fa-file-text navbar_icon')
                 }
+
+                div.dropdown_menu(role: 'menu') {
+                  h3 'Projects'
+                  ul.dropdown_body {
+                    li { a 'Item', href: '#' }
+                  }
+                }
               }
-              li.dropdown {
+              li.dropdown.dropdown_navbar {
                 a(
                   'data-toggle' => 'dropdown',
                   href: '#'

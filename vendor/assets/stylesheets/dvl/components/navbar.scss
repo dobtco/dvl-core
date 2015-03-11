@@ -30,6 +30,11 @@ $navBreakpoint: 800px !default;
     line-height: normal;
     font-size: 0.9rem;
   }
+
+  // Override display: inline-block for proper stacking
+  .dropdown_navbar {
+    display: block;
+  }
 }
 
 .navbar_content > ul > li > a {
