@@ -86,13 +86,27 @@ class Views::Base < Erector::Widget
               input type: 'text', placeholder: 'Search...'
             }
             ul {
-              li {
-                a {
+              li.dropdown.dropdown_navbar {
+                a(
+                  'data-toggle' => 'dropdown',
+                  href: '#'
+                ) {
                   span.navbar_full_i {
                     i(class: 'fa fa-search navbar_icon')
                   }
                   span.navbar_collapsed_i {
                     text 'Search'
+                  }
+                }
+
+                div.dropdown_menu(role: 'menu') {
+                  h3 'Loading forever'
+                  ul.dropdown_body {
+                    li.dropdown_loading {
+                      span {
+                        i(class: 'fa fa-spin fa-refresh')
+                      }
+                    }
                   }
                 }
               }

@@ -117,6 +117,23 @@ class Views::Home::Index < Views::Base
           }
         }
       }
+
+      br
+
+      div.dropdown {
+        a.dropdown_toggle_button.gray 'Loading state',
+                          'data-toggle' => 'dropdown',
+                          href: '#'
+        div.dropdown_menu(role: 'menu') {
+          ul.dropdown_body {
+            li.dropdown_loading {
+              span {
+                i(class: 'fa fa-refresh fa-spin dropdown_loading_icon')
+              }
+            }
+          }
+        }
+      }
     }
 
     docs 'Grid', %{

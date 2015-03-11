@@ -68,6 +68,15 @@
       border-bottom: 1px solid $gray;
     }
   }
+  // Loading state
+  > .dropdown_loading {
+    span {
+      display: block;
+      padding: 1rem;
+      text-align: center;
+      color: $gray;
+    }
+  }
   // Active state
   > .active {
     > a,
