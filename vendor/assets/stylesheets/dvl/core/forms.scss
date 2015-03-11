@@ -457,6 +457,7 @@ form {
 
 .styled_select,
 .dropdown_toggle_button {
+  display: block;
   height: $inputHeight;
   background: #fff;
   border: 1px solid #bbb;
@@ -479,6 +480,10 @@ form {
     right: 0.75rem;
     color: $darkerGray;
   }
+}
+
+a.styled_select {
+  text-decoration: none;
 }
 
 .datetime_input_wrapper .input_group {
