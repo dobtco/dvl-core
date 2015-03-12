@@ -13,6 +13,14 @@ class Views::Home::Forms < Views::Base
                   value:  Faker::Lorem.paragraph
                 }
 
+        f.input :large_string,
+                as: :string,
+                input_html: { class: 'large' }
+
+        f.input :large_text,
+                as: :text,
+                input_html: { class: 'large' }
+
         f.input :radio,
                 as: :radio_buttons,
                 collection: ['Foo', 'Bar'],

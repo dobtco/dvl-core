@@ -87,29 +87,30 @@ textarea {
   }
 }
 
-// Height
-input[type="text"],
-input[type="email"],
-input[type="search"],
-input[type="password"],
-input[type="url"] {
-  height: $inputHeight;
-}
+// Heights & sizes
 
-textarea {
-  line-height: $lineHeight;
-}
-
-// Focus states
+$largeInputMultiplier: 1.5;
 
 input[type="text"],
 input[type="email"],
 input[type="search"],
 input[type="password"],
 input[type="url"],
+input[type="number"] {
+  height: $inputHeight;
+
+  &.large {
+    font-size: $largeInputMultiplier * 1rem;
+    height: $inputHeight * $largeInputMultiplier;
+  }
+}
+
 textarea {
-  &:focus {
-    border-color: $darkBlue;
+  line-height: $lineHeight;
+
+  &.large {
+    font-size: $largeInputMultiplier * 1rem;
+    line-height: 1.5;
   }
 }
 
@@ -328,10 +329,6 @@ form {
   background-color: $lighterGray;
   padding: 1rem;
   margin-top: 2rem;
-}
-
-input[type="text"].large {
-  font-size: 1.5rem;
 }
 
 @media only screen and (min-width: 640px) {
