@@ -169,6 +169,10 @@ class Views::Base < Erector::Widget
     div.grid.gutter_none.docs_preview_grid {
       div(class: "item #{opts[:full] ? '' : 'six_columns'}") {
         div.docs_preview {
+          if opts[:hint]
+            p opts[:hint]
+          end
+
           eval(codeString)
         }
       }

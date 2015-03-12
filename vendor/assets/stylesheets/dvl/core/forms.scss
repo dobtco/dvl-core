@@ -66,24 +66,16 @@ textarea {
   font-size: 0.9rem;
   padding: $inputPadding;
   border-radius: $radius;
-  &.error {
+  .error & {
     border-color: $errorColor;
   }
   &:focus {
     outline: 0;
     border-color: $darkBlue;
   }
-  &[readonly] {
+  &[readonly], &[disabled] {
     border-color: #ccc;
     background-color: $lightestGray;
-  }
-}
-
-.error {
-  input,
-  select,
-  textarea {
-    border-color: $errorColor;
   }
 }
 
@@ -113,7 +105,6 @@ textarea {
     line-height: 1.5;
   }
 }
-
 
 /* Make checkbox, image, and radio inputs `inline-block` by default */
 input[type="checkbox"],
@@ -411,14 +402,14 @@ form {
     height: $inputHeight;
     opacity: 0;
     z-index: 2;
+    .error & + div {
+      border-color: $errorColor;
+    }
     &:focus + div {
       border-color: $darkBlue;
       &:after {
         color: $darkBlue;
       }
-    }
-    &.error + div {
-      border-color: $errorColor;
     }
     &:hover + div {
       background: #fcfcfc;
@@ -481,6 +472,19 @@ form {
 
 a.styled_select {
   text-decoration: none;
+}
+
+.styled_select {
+  cursor: default;
+
+  + .dropdown_menu a {
+    cursor: default;
+  }
+
+  &:focus {
+    outline: 0;
+    border-color: $darkBlue;
+  }
 }
 
 .datetime_input_wrapper .input_group {
