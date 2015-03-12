@@ -167,5 +167,12 @@ class Views::Home::Forms < Views::Base
                 input_html: { class: 'large', rows: 4 }
       end
     }
+
+    docs 'Alternate icons', %{
+      label.control.control_minus {
+        input type: 'checkbox', checked: true
+        text 'This is a control_minus'
+      }
+    }
   end
 end
