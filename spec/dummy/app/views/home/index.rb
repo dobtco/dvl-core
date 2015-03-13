@@ -134,6 +134,30 @@ class Views::Home::Index < Views::Base
           }
         }
       }
+
+      br
+
+      div.dropdown {
+        a.dropdown_toggle_button.gray 'Right item',
+                          'data-toggle' => 'dropdown',
+                          href: '#'
+        div.dropdown_menu(role: 'menu') {
+          ul.dropdown_body {
+            li {
+              a {
+                span.drop_rt_item 'This is an item!'
+                span.drop_rt_arrow { i(class: 'fa fa-external-link') }
+              }
+            }
+            li {
+              a {
+                span.drop_rt_item 'This is another!'
+                span.drop_rt_arrow { i(class: 'fa fa-external-link') }
+              }
+            }
+          }
+        }
+      }
     }
 
     docs 'Grid', %{
