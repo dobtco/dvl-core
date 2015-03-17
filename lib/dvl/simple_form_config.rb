@@ -4,32 +4,32 @@ SimpleForm::Inputs::Base.default_options = {
 }
 
 SimpleForm.setup do |config|
-  config.wrappers :horizontal, tag: 'div', class: 'form_horiz', error_class: 'error' do |b|
+  config.wrappers :horizontal, tag: 'div', class: 'form_item form_item_horiz', error_class: 'error' do |b|
     b.use :html5
     b.use :placeholder
     b.use(:judge) if defined?(Judge)
 
-    b.wrapper tag: 'div', class: 'form_horiz_label' do |ba|
+    b.wrapper tag: 'div', class: 'form_item_horiz_label' do |ba|
       ba.use :label
     end
 
-    b.wrapper tag: 'div', class: 'form_horiz_input' do |ba|
+    b.wrapper tag: 'div', class: 'form_item_horiz_input' do |ba|
       ba.use :input
       ba.use :error, wrap_with: { tag: 'span', class: 'error_message' }
       ba.use :hint,  wrap_with: { tag: 'div', class: 'help-block' }
     end
   end
 
-  config.wrappers :vertical, tag: 'div', class: 'form_vert', error_class: 'error' do |b|
+  config.wrappers :vertical, tag: 'div', class: 'form_item form_item_vert', error_class: 'error' do |b|
     b.use :html5
     b.use :placeholder
     b.use(:judge) if defined?(Judge)
 
-    b.wrapper tag: 'div', class: 'form_vert_label' do |ba|
+    b.wrapper tag: 'div', class: 'form_item_vert_label' do |ba|
       ba.use :label
     end
 
-    b.wrapper tag: 'div', class: 'form_vert_input' do |ba|
+    b.wrapper tag: 'div', class: 'form_item_vert_input' do |ba|
       ba.use :input
       ba.use :error, wrap_with: { tag: 'span', class: 'error_message' }
       ba.use :hint,  wrap_with: { tag: 'div', class: 'help-block' }

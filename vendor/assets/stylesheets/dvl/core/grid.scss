@@ -1,7 +1,8 @@
 // Grid system
 
+$columns: 12;
 $columnWidth: 6.25%;
-$gutterWidth: 2.0833333%;
+$gutterWidth: (100% - ($columnWidth * $columns)) / $columns;
 
 
 @mixin grid() {

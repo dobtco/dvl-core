@@ -320,16 +320,15 @@ form {
 
 // Form layouts
 
-.form_horiz_label {
-  margin-top: 0.15rem;
-}
-
-.form_horiz,
-.form_vert {
+.form_item {
   margin-bottom: 1rem;
 }
 
-.form_vert_label {
+.form_item_horiz_label {
+  margin-top: 0.15rem;
+}
+
+.form_item_vert_label {
   margin-bottom: 0.25rem;
 }
 
@@ -343,7 +342,7 @@ form {
   margin-top: 2rem;
 }
 
-.form_horiz_two_inputs {
+.form_item_horiz_two_inputs {
   input {
     width: 48.75%;
     display: inline-block;
@@ -354,19 +353,19 @@ form {
 }
 
 @media only screen and (min-width: $lapWidth) {
-  .form_horiz_label,
-  .form_horiz_input {
+  .form_item_horiz_label,
+  .form_item_horiz_input {
     display: inline-block;
     vertical-align: top;
   }
 
-  .form_horiz_label {
+  .form_item_horiz_label {
     text-align: right;
     width: 25%;
     padding-right: 2rem;
   }
 
-  .form_horiz_input {
+  .form_item_horiz_input {
     width: 75%;
   }
 
