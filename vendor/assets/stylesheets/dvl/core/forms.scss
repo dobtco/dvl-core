@@ -343,6 +343,15 @@ form {
   margin-top: 2rem;
 }
 
+.form_horiz_two_inputs {
+  input {
+    width: 48.75%;
+    &:first-child {
+      margin-right: 2.5%;
+    }
+  }
+}
+
 @media only screen and (min-width: $lapWidth) {
   .form_horiz_label,
   .form_horiz_input {
@@ -353,11 +362,11 @@ form {
   .form_horiz_label {
     text-align: right;
     width: 25%;
-    margin-right: 2.5%;
+    padding-right: 2rem;
   }
 
   .form_horiz_input {
-    width: 72.5%;
+    width: 75%;
   }
 
   .form_actions.horizontal {
