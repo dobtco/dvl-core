@@ -160,19 +160,6 @@ class Views::Home::Index < Views::Base
       }
     }
 
-    docs 'Grid', %{
-      div.grid {
-        div.item.six_columns 'six_columns'
-        div.item.six_columns 'six_columns'
-      }
-      div.grid.gutter_none {
-        div.item.three_columns 'three_columns (gutter_none)'
-        div.item.three_columns 'three_columns (gutter_none)'
-        div.item.three_columns 'three_columns (gutter_none)'
-        div.item.three_columns 'three_columns (gutter_none)'
-      }
-    }
-
     docs 'Labels', %{
       span.label.label_error 'Error'
       text ' '

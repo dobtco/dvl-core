@@ -1,7 +1,7 @@
 class Views::Home::Forms < Views::Base
   def main
     docs 'Basic Forms', %{
-      simple_form_for :foo do |f|
+      simple_form_for :basic do |f|
         f.input :string,
                 as: :string,
                 input_html: { value: Faker::Lorem.words(3).join(' ') }
@@ -46,8 +46,24 @@ class Views::Home::Forms < Views::Base
       end
     }
 
+    docs 'Horizontal Forms', %{
+      simple_form_for :horizontal, wrapper: :horizontal do |f|
+        f.input :string,
+                as: :string,
+                input_html: { value: Faker::Lorem.words(3).join(' ') }
+
+        f.input :text,
+                as: :text,
+                input_html: { rows: 5, value:  Faker::Lorem.paragraph }
+
+        div.form_actions.horizontal {
+          f.button :button, 'Submit', class: 'primary'
+        }
+      end
+    }, full: true
+
     docs 'Error state', %{
-      simple_form_for :foo do |f|
+      simple_form_for :error do |f|
         f.input :error_string,
                 as: :string,
                 input_html: { value: Faker::Lorem.words(3).join(' ') },
@@ -72,7 +88,7 @@ class Views::Home::Forms < Views::Base
     }, hint: 'Error states should still show the focus state when focused.'
 
     docs 'Disabled state', %{
-      simple_form_for :foo do |f|
+      simple_form_for :disabled do |f|
         f.input :string,
                 as: :string,
                 input_html: { value: Faker::Lorem.words(3).join(' ') },
@@ -105,7 +121,7 @@ class Views::Home::Forms < Views::Base
     }, hint: 'Note that disabled and readonly have the same visual style.'
 
     docs 'Selects', %{
-      simple_form_for :foo do |f|
+      simple_form_for :selects do |f|
         f.input :bar,
                       as: :dropdown_select,
                       collection: [
@@ -135,7 +151,7 @@ class Views::Home::Forms < Views::Base
     }
 
     docs 'Input groups', %{
-      simple_form_for :foo do |f|
+      simple_form_for :input_groups do |f|
         f.input :input_group do
           div.input_group {
             f.input_field :input_group,
@@ -157,7 +173,7 @@ class Views::Home::Forms < Views::Base
     }
 
     docs 'Large inputs', %{
-      simple_form_for :foo do |f|
+      simple_form_for :large_inputs do |f|
         f.input :large_string,
                 as: :string,
                 input_html: { class: 'large' }

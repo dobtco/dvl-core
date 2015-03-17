@@ -58,3 +58,13 @@ body {
     margin: 0;
   }
 }
+
+.docs_grid {
+  margin-bottom: 1rem;
+
+  .item > span {
+    display: block;
+    background-color: $lightGray;
+    text-align: center;
+  }
+}
