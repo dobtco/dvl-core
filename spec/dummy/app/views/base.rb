@@ -57,7 +57,8 @@ class Views::Base < Erector::Widget
       'Flashes' => '/flashes',
       'Footer' => '/footer',
       'Splash' => '/splash',
-      'Navbar' => '/navbar'
+      'Navbar' => '/navbar',
+      'Grid' => '/grid',
     }
   end
 

@@ -69,3 +69,11 @@ body {
     margin: 0;
   }
 }
+
+.docs_grid {
+  margin-bottom: 1rem;
+
+  .item {
+    background-color: $lightGray;
+  }
+}
