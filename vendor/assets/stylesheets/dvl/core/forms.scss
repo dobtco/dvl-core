@@ -316,9 +316,21 @@ form {
   .grid {
     margin-bottom: 1rem;
   }
-  .horizontal_label_item {
-    margin-top: 0.15rem;
-  }
+}
+
+// Form layouts
+
+.form_horiz_label {
+  margin-top: 0.15rem;
+}
+
+.form_horiz,
+.form_vert {
+  margin-bottom: 1rem;
+}
+
+.form_vert_label {
+  margin-bottom: 0.25rem;
 }
 
 .input_sub {
@@ -331,10 +343,21 @@ form {
   margin-top: 2rem;
 }
 
-@media only screen and (min-width: 640px) {
-  form .horizontal_label_item {
+@media only screen and (min-width: $lapWidth) {
+  .form_horiz_label,
+  .form_horiz_input {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .form_horiz_label {
     text-align: right;
-    padding-right: 1.5rem;
+    width: 25%;
+    margin-right: 5%;
+  }
+
+  .form_horiz_input {
+    width: 70%;
   }
 
   .form_actions.horizontal {
@@ -571,7 +594,7 @@ a.styled_select {
     line-height: 2rem;
     margin-right: 1rem;
   }
-  @media screen and (min-width: 640px) {
+  @media screen and (min-width: $lapWidth) {
       margin-left: 8.3333% * 3;
   }
 }

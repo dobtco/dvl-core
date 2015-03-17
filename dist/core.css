@@ -1731,7 +1731,7 @@ li.dropdown_more a {
 
   .lap_twelve_columns {
     width: 99.996%; } }
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: $deskWidth) {
   .desk_one_column {
     width: 8.333%; }
 
@@ -2344,7 +2344,7 @@ li.dropdown_more a {
 
   th.lap_show, td.lap_show {
     display: table-cell !important; } }
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: $deskWidth) {
   /* Alignment */
   .desk_align_left {
     float: left !important; }
