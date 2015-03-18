@@ -2,7 +2,7 @@
 
 $columns: 12;
 $columnWidth: 6.25%;
-$gutterWidth: (100% - ($columnWidth * $columns)) / $columns - 1; // no outside gutter, so subtract 1
+$gutterWidth: (100% - ($columnWidth * $columns)) / ($columns - 1); // no outside gutter, so subtract 1
 
 
 @mixin grid() {
