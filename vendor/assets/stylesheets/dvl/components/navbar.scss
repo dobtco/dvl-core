@@ -1,7 +1,6 @@
 $navBackground: #0074D9 !default;
 $navText: #eee !default;
 $navHeight: 3.715rem !default; // 52px @ 14px
-$navZ: 1000 !default;
 $navHoverBackground: darken($navBackground, 5%) !default;
 
 // might want to adjust this based on how many items are in your nav
@@ -11,7 +10,7 @@ $navBreakpoint: 800px !default;
   background-color: $navBackground;
   line-height: $navHeight;
   min-height: $navHeight;
-  z-index: $navZ;
+  z-index: $z_navbar;
 
   // Add specificity to override text-decoration.
   .navbar_brand,

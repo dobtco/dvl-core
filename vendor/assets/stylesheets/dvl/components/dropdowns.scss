@@ -11,7 +11,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  z-index: 1000;
+  z-index: $z_dropdown;
   display: none;
   float: left;
   min-width: 220px;
@@ -145,7 +145,7 @@
   right: 0;
   bottom: 0;
   top: 0;
-  z-index: 990;
+  z-index: $z_dropdown - 10;
 }
 
 li.dropdown_more a {

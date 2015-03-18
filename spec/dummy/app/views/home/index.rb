@@ -189,7 +189,29 @@ class Views::Home::Index < Views::Base
       widget Dvl::Components::Modal.new(title: 'Awesome modal', id: 'modal') do
         div.modal_body {
           text 'This is the modal body!'
+
+          br br
+
+          div.dropdown {
+            a.dropdown_toggle_button.gray 'Click me',
+                              'data-toggle' => 'dropdown',
+                              href: '#'
+            div.dropdown_menu(role: 'menu') {
+              ul.dropdown_body {
+                li {
+                  a 'This was triggered by a dropdown_toggle_button', href: '#'
+                }
+              }
+            }
+          }
+
+          br br
+
+          a 'This is a tooltip link',
+            'data-toggle' => 'tooltip',
+            title: 'Tooltip'
         }
+
       end
 
       br
