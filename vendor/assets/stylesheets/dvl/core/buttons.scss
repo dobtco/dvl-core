@@ -25,8 +25,8 @@
 .button {
   display: inline-block;
   margin: 0;
-  padding: 0.5rem 1rem;
-  border: 0;
+  padding: (($inputHeight - 1.5rem) / 2) 1rem;
+  border: 1px solid $lightGray;
   background: $lightGray;
   color: $darkestGray;
   text-align: center;
