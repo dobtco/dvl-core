@@ -1,15 +1,26 @@
 #!/usr/bin/env ruby
+#
+# If you need a compiled version of the CSS from dvl-core, this script
+# can generate it for you.
+#
+# Usage:
+#
+#   ./script/compile app
+#   ./script/compile core
+#   ./script/compile components/dropdown
+#
+# The compiled CSS will be written to the `dist` directory, which is
+# .gitignore'd for your convenience.
 
 require File.expand_path("../../spec/dummy/config/environment.rb",  __FILE__)
 require 'sass'
 
 stylesheets = [
   'core',
-  'components/flashes',
-  'components/footer'
+  'app'
 ]
 
-stylesheets.each do |x|
+Array(ARGV).each do |x|
   asset = Rails.application.assets.find_asset("dvl/#{x}.scss")
 
   compiled = ::Sass::Engine.new(
@@ -20,5 +31,6 @@ stylesheets.each do |x|
     style: :nested
   ).render
 
+  Dir.mkdir('dist') rescue Errno::EEXIST
   File.write "dist/#{x.gsub('/', '-')}.css", compiled
 end

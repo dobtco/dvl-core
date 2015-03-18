@@ -4,3 +4,4 @@ Gemfile.lock
 screenshots/
 spec/dummy/tmp
 spec/dummy/log
+dist/
