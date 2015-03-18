@@ -20,14 +20,6 @@ $gutterWidth: 2rem;
   font-size: 0; /* 3 */
 }
 
-// Allows for modification of the gutter width
-@mixin gridGutter($customGutterWidth) {
-  margin-left: - $customGutterWidth;
-  > .item {
-    padding-left: $customGutterWidth;
-  }
-}
-
 /**
  * Grid item
  * 1. Default gutter width, change if desired

@@ -26,24 +26,5 @@ class Views::Home::Grid < Views::Base
         }
       }
     }
-
-    docs 'Custom gutters', %{
-      div.grid.docs_grid.docs_grid_custom_gutter_zero {
-        div.item.six_columns { span '6, no gutter' }
-        div.item.six_columns { span '6, no gutter' }
-      }
-
-      div.grid.docs_grid.docs_grid_custom_gutter_4rem {
-        div.item.six_columns { span '6, 4rem gutter' }
-        div.item.six_columns { span '6, 4rem gutter' }
-      }
-
-      div.grid.docs_grid.docs_grid_custom_gutter_4rem {
-        div.item.three_columns { span '3/4rem' }
-        div.item.three_columns { span '3/4rem' }
-        div.item.three_columns { span '3/4rem' }
-        div.item.three_columns { span '3/4rem' }
-      }
-    }, hint: 'The gutter width can be customized with a SASS mixin.'
   end
 end
