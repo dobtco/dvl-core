@@ -70,10 +70,19 @@ body {
   }
 }
 
+.docs_grid_custom_gutter_zero {
+  @include gridGutter(0);
+}
+
+.docs_grid_custom_gutter_4rem {
+  @include gridGutter(4rem);
+}
+
 .docs_grid {
   margin-bottom: 1rem;
 
-  .item {
+  .item > span {
+    display: block;
     background-color: $lightGray;
   }
 }

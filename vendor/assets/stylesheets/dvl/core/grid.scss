@@ -21,10 +21,10 @@ $gutterWidth: 2rem;
 }
 
 // Allows for modification of the gutter width
-@mixin gridGutter($size) {
-  margin-left: $size;
+@mixin gridGutter($customGutterWidth) {
+  margin-left: - $customGutterWidth;
   > .item {
-    padding-left: $size;
+    padding-left: $customGutterWidth;
   }
 }
 
