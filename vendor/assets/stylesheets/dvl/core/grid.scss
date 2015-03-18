@@ -51,6 +51,12 @@ $gutterWidth: (100% - ($columnWidth * $columns)) / $columns - 1; // no outside g
 
 .item {
   @include col;
+  &:first-child {
+    margin-left: 0;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
 /* Widths */
