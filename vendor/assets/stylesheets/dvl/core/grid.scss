@@ -86,10 +86,10 @@ $gutterWidth: 2rem;
 
 @include build_grid();
 
-@media only screen and (min-width: 640px) {
+@media only screen and (min-width: $lapWidth) {
   @include build_grid("lap_");
 }
 
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: $deskWidth) {
   @include build_grid("desk_");
 }
