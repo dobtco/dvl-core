@@ -48,6 +48,13 @@ $maxFontSize: 87.5% !default;
 $inputHeight: 2.286rem !default; // 32px @ 14px root
 $inputPadding: 0.3rem !default;
 
+// Z-index scale
+$z_dropdown: 600 !default;
+$z_tooltip: 600 !default;
+$z_navbar: 700 !default;
+$z_modal: 800 !default;
+$z_flash: 900 !default;
+
 // #### MIXINS ####
 
 @mixin font-smoothing() {
