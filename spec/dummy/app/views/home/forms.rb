@@ -10,6 +10,13 @@ class Views::Home::Forms < Views::Base
                 as: :text,
                 input_html: { rows: 5, value:  Faker::Lorem.paragraph }
 
+        f.input :your_name do
+          div.form_item_two_inputs {
+            f.input_field :first_name, as: :string, placeholder: 'First name'
+            f.input_field :last_name, as: :string, placeholder: 'Last name'
+          }
+        end
+
         f.input :radio,
                 as: :radio_buttons,
                 collection: ['Foo', 'Bar'],

@@ -167,8 +167,8 @@ class Views::Base < Erector::Widget
   def docs(name, codeString, opts = {})
     div.section_header name, id: name.downcase
 
-    div.grid.gutter_none.docs_preview_grid {
-      div(class: "item #{opts[:full] ? '' : 'six_columns'}") {
+    div(class: "docs #{opts[:full] ? 'docs_layout_full' : 'docs_layout_split'}") {
+      div.docs_col {
         div.docs_preview {
           if opts[:hint]
             p opts[:hint]
@@ -178,7 +178,7 @@ class Views::Base < Erector::Widget
         }
       }
 
-      div(class: "item code_item #{opts[:full] ? '' : 'six_columns'}") {
+      div.docs_col {
         div.docs_code {
           pre codeString.strip_heredoc.strip
         }

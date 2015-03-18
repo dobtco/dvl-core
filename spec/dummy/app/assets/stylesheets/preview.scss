@@ -42,9 +42,20 @@ body {
   color: #222;
 }
 
-.docs_preview_grid {
+.docs {
   border: 1px solid #ccc;
   border-radius: $radius;
+}
+
+.docs_col {
+  display: inline-block;
+  vertical-align: top;
+  .docs_layout_full & {
+    width: 100%;
+  }
+  .docs_layout_split & {
+    width: 50%;
+  }
 }
 
 .docs_preview {
@@ -65,6 +76,5 @@ body {
   .item > span {
     display: block;
     background-color: $lightGray;
-    text-align: center;
   }
 }

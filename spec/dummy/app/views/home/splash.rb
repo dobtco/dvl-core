@@ -7,7 +7,7 @@ class Views::Home::Splash < Views::Base
     docs 'Splash', %{
       footer.footer {
         div.footer_inner {
-          form.newsletter_form.grid.gutter_half {
+          form.newsletter_form.grid {
             p.item {
               strong 'Subscribe to our newsletter!'
               text " We'll email you around once a month with updates."
