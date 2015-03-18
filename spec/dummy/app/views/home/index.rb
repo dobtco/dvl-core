@@ -1,19 +1,5 @@
 class Views::Home::Index < Views::Base
   def main
-    docs 'Buttons', %{
-      a.button 'Yo!'
-      text ' '
-      a.button.info 'Info'
-      text ' '
-      a.button.primary 'Primary'
-      text ' '
-      a.button.success 'Success'
-      text ' '
-      a.button.white 'White'
-      text ' '
-      a.button_uppercase 'Uppercase'
-    }
-
     docs 'Code', %{
       pre %{<p>This is some awesome code</p>}
       p %{This is a paragraph with <code>code</code>.}.html_safe

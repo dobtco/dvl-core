@@ -54,6 +54,7 @@ class Views::Base < Erector::Widget
     {
       'Index' => '/',
       'Forms' => '/forms',
+      'Buttons' => '/buttons',
       'Flashes' => '/flashes',
       'Footer' => '/footer',
       'Splash' => '/splash',
