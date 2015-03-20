@@ -130,12 +130,11 @@ class Views::Home::Forms < Views::Base
     docs 'Selects', %{
       simple_form_for :selects do |f|
         f.input :bar,
-                      as: :dropdown_select,
-                      collection: [
-                        ['I am a dropdown-select this is supier long and probably overflwos
-                          onto the next line aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'B', 'C'],
-                        ['D', 'E', 'F']
-                      ]
+                as: :dropdown_select,
+                collection: [
+                  ['I am a dropdown-select this is supier long and probably overflwos onto the next line aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'B', 'C'],
+                  ['D', 'E', 'F']
+                ]
 
         f.input :full_width_select,
                       as: :select,
@@ -154,6 +153,16 @@ class Views::Home::Forms < Views::Base
                       collection: ['100 width'],
                       include_blank: false,
                       input_html: { 'data-width' => '100' }
+
+        f.input :blank_select,
+                      as: :select,
+                      collection: ['100 width'],
+                      include_blank: true
+
+        f.input :blank_dropdown_select,
+                      as: :dropdown_select,
+                      collection: [['A', 'B', 'C']],
+                      include_blank: true
       end
     }
 
