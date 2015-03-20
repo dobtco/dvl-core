@@ -1,6 +1,7 @@
 class StyledSelect
   defaults:
     width: undefined # options are numeric (pixel units), 'full', or 'auto'
+    blank: '' # text to display when blank option selected
 
   constructor: ($el, options) ->
     @$el = $el
@@ -29,10 +30,15 @@ class StyledSelect
       @$wrapper.width(@options.width)
 
   _change: ->
-    @$span.text(@$el.find('option:selected').text())
+    if (text = @$el.find('option:selected').text())
+      @$span.text(text)
+      @$span.removeClass('is_blank')
+    else
+      @$span.text(@options.blank)
+      @$span.addClass('is_blank')
 
-$.fn.extend styledSelect: ->
+$.fn.extend styledSelect: (opts) ->
   $(@).find('select:not(.datetime)').each ->
     unless @styledSelect
       @styledSelect = true
-      new StyledSelect($(@))
+      new StyledSelect($(@), opts)

@@ -14,10 +14,14 @@ class DropdownSelectInput < SimpleForm::Inputs::CollectionInput
     end
   end
 
+  def blank_option
+    options[:allow_blank] || options[:include_blank]
+  end
+
   def input(wrapper_options = nil)
-    if options[:allow_blank]
+    if blank_option
       collection.unshift(
-        [options[:allow_blank] == true ? 'None' : options[:allow_blank], '']
+        [blank_option == true ? '' : blank_option, '']
       )
     end
 
