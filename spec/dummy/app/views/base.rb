@@ -12,9 +12,9 @@ class Views::Base < Erector::Widget
     script %{
       $(function(){
         $('[data-toggle="tooltip"]').tooltip()
-        $('body').styledSelect()
+        $('body').styledSelect({blank: 'Choose an option'})
         $('body').styledControls()
-        $('body').dropdownSelect()
+        $('body').dropdownSelect({blank: 'Choose an option'})
       });
     }.html_safe
   end

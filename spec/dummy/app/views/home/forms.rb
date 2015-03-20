@@ -155,14 +155,14 @@ class Views::Home::Forms < Views::Base
                       input_html: { 'data-width' => '100' }
 
         f.input :blank_select,
-                      as: :select,
-                      collection: ['100 width'],
-                      include_blank: true
+                as: :select,
+                collection: ['100 width'],
+                include_blank: true
 
         f.input :blank_dropdown_select,
-                      as: :dropdown_select,
-                      collection: [['A', 'B', 'C']],
-                      include_blank: true
+                as: :dropdown_select,
+                collection: [['A', 'B', 'C']],
+                include_blank: true
       end
     }
 
