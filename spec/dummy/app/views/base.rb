@@ -30,18 +30,21 @@ class Views::Base < Erector::Widget
         render_navbar
 
         div.container {
-          div.preview_sidebar {
-            ul {
-              pages.each do |name, path|
-                li(class: url_for == path ? 'active' : nil) {
-                  a name, href: path
-                }
-              end
+          div.grid {
+            div.item.desk_three_columns {
+              ul.sidebar_nav {
+                li.header 'Navigation'
+                pages.each do |name, path|
+                  li(class: url_for == path ? 'active' : nil) {
+                    a name, href: path
+                  }
+                end
+              }
             }
-          }
 
-          div.preview_main {
-            main
+            div.item.desk_nine_columns {
+              main
+            }
           }
         }
       }

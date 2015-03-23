@@ -11,31 +11,6 @@ body {
   margin: 0 auto;
 }
 
-.preview_sidebar {
-  float: left;
-  width: 200px;
-
-  a {
-    display: block;
-    background-color: $blueHighlight;
-    padding: 0.5rem 1rem;
-    margin-bottom: 0.5rem;
-    color: $black;
-    border-radius: $radius;
-    text-decoration: none;
-
-  }
-
-  .active a,
-  a:hover, {
-    background-color: darken($blueHighlight, 10%);
-  }
-}
-
-.preview_main {
-  margin-left: 240px;
-}
-
 .section_header {
   font-size: 1.6rem;
   padding: 1rem 0 0.5rem;

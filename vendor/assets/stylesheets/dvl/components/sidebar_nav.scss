@@ -1,0 +1,87 @@
+.sidebar_nav {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  > li {
+    @include font_smoothing;
+    > a,
+    &.content,
+    &.header {
+      border: 1px solid;
+    }
+
+    &.header {
+      font-weight: $weightBold;
+      color: $blankStateGray;
+      background-color: $lighterGray;
+      border-color: $lighterGray;
+      position: relative;
+      border-left: 3px solid transparent;
+      padding: ($rhythm/2) $lineHeight;
+      img {
+        height: $lineHeight;
+        width: $lineHeight;
+        position: absolute;
+        top: 50%;
+        margin-top: $lineHeight / -2;
+        right: $rhythm;
+      }
+    }
+    > a,
+    &.content {
+      position: relative;
+      display: block;
+      color: $darkestGray;
+      background-color: $lightestGray;
+      line-height: $lineHeight;
+      text-decoration: none;
+      border-color: $lightGray;
+      border-bottom-width: 0;
+      padding: $rhythm $lineHeight;
+      padding-right: 18%;
+    }
+    &:first-child {
+      > a,
+      &.content,
+      &.header {
+        @include border_top_radius($radius);
+      }
+    }
+    &:last-child {
+      > a, &.content {
+        @include border_bottom_radius($radius);
+        border-bottom-width: 1px;
+      }
+    }
+    .badge {
+      position: absolute;
+      right: $rhythm;
+      top: 0.75rem;
+      background-color: $lighterGray;
+      color: $darkestGray;
+      font-weight: $weightBold;
+      padding: 0 0.5rem;
+      border-radius: $radius;
+    }
+    &:hover > a {
+      background-color: $lighterGray;
+      .badge {
+        background-color: $lightGray;
+      }
+    }
+    &.active {
+      > a {
+        box-shadow: inset 3px 0 0 $logoBlue;
+        font-weight: $weightBold;
+      }
+      .badge {
+        background-color: $logoBlue;
+        color: $white;
+      }
+      &:hover {
+        .badge {
+          background-color: $logoBlue;
+        }
+      }
+    }
+  }
+}
