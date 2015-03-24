@@ -2,21 +2,19 @@
   font-size: 0.9rem;
   margin-bottom: 1rem;
   > li {
-    @include font_smoothing;
     > a,
     &.content,
     &.header {
       border: 1px solid;
     }
-
     &.header {
       font-weight: $weightBold;
       color: $blankStateGray;
       background-color: $lighterGray;
       border-color: $lighterGray;
       position: relative;
-      border-left: 3px solid transparent;
       padding: ($rhythm/2) $lineHeight;
+      @include font_smoothing;
       img {
         height: $lineHeight;
         width: $lineHeight;
