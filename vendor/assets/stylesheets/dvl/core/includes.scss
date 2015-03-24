@@ -1,16 +1,16 @@
 // #### VARIABLES ####
 
 // Grayscale
-$black: #222;
-$darkestGray: #444;
-$blankStateGray: #666;
-$darkerGray: #777;
-$darkGray: #aaa;
-$gray: #ccc;
+$black: #262626;
+$darkestGray: #4d4d4d;
+$blankStateGray: #737373;
+$darkerGray: #999;
+$darkGray: #bfbfbf;
+$gray: #d9d9d9;
 $borderGray: #dfdfdf;
-$lightGray: #e5e5e5;
-$lighterGray: #efefef;
-$lightestGray: #f7f7f7;
+$lightGray: #e6e6e6;
+$lighterGray: #f2f2f2;
+$lightestGray: #fcfcfc;
 $white: #fff;
 
 // Blues
@@ -35,13 +35,15 @@ $radius: 3px !default;
 
 // Font weights
 $weightLight: 300 !default;
-$weightNormal: 500 !default;
+$weightNormal: 400 !default;
 $weightBold: 600 !default;
 
 // Typography
 $fontFamilyDefault: 'Open Sans', 'Helvetica Neue', Arial, sans-serif !default;
 $fontFamilyMonospace: 'Lucida Console', monospace !default;
-$unitlessLineHeight: 1.5 !default;
+$unitlessRhythm: 0.75 !default;
+$rhythm: $unitlessRhythm * 1rem !default;
+$unitlessLineHeight: $unitlessRhythm * 2 !default;
 $lineHeight: $unitlessLineHeight * 1rem !default;
 $maxFontSize: 87.5% !default;
 
