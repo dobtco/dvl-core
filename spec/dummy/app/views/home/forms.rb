@@ -136,6 +136,11 @@ class Views::Home::Forms < Views::Base
                   ['D', 'E', 'F']
                 ]
 
+        f.input :"90_dropdown_select",
+                as: :dropdown_select,
+                collection: [['Foo', 'Bar', 'Baz']],
+                input_html: { 'data-width' => '90%' }
+
         f.input :full_width_select,
                       as: :select,
                       collection: ['Full width'],

@@ -1,12 +1,18 @@
 class DropdownSelectInput
   defaults:
+    width: undefined # options are numeric (pixel units), 'full', or 'auto'
     blank: '' # text to display when blank option selected
 
   constructor: ($el, options) ->
-    @options = $.extend({}, @defaults, options)
     @$el = $el
+    @options = $.extend({}, @defaults, options)
     @$input = $el.find('input')
     @$toggle = $el.find('[data-toggle=dropdown]')
+
+    for i in ['width']
+      @options[i] = @$input.data(i) if @$input.data(i)?
+
+    @setWidth()
     @$el.on 'click', 'a[data-value]', $.proxy(@_onClick, @)
     @_setText()
 
@@ -36,6 +42,14 @@ class DropdownSelectInput
     else
       @$toggle.text(@options.blank)
       @$toggle.addClass('is_blank')
+
+  setWidth: ->
+    if @options.width == 'full'
+      @$el.addClass 'full'
+    else if @options.width == 'auto'
+      @$el.addClass 'auto'
+    else if @options.width
+      @$el.width(@options.width)
 
 $.fn.extend dropdownSelect: (option, args...) ->
   $(@).find('[data-dropdown-select]').each ->
