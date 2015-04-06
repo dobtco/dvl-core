@@ -1,5 +1,5 @@
 $(document).on 'click', '.dropdown_menu_sub_trigger a', (e) ->
-  $(e.target).parent().toggleClass('is_open')
+  $(e.currentTarget).parent().toggleClass('is_open')
   false
 
 $(document).on 'show.bs.dropdown', (e) ->
