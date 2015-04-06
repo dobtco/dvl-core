@@ -220,11 +220,11 @@ class Views::Home::Index < Views::Base
     docs 'Pagination', %{
       div(class: 'pagination-wrapper') {
         ul {
-          li { a '‹' }
-          li { a '1' }
+          li { a(href: '#'){text '‹'}}
+          li { a(href: '#'){text '1'}}
           li { span '2' }
-          li { a '3' }
-          li { a '›' }
+          li { a(href: '#'){text '3'}}
+          li { a(href: '#'){text '›'}}
         }
       }
     }

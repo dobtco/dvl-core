@@ -167,6 +167,7 @@ li.dropdown_more a {
     cursor: default;
   }
   &:focus {
+    outline: 0;
     border-color: $darkBlue;
     &:after {
       color: $darkBlue;

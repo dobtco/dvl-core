@@ -23,8 +23,17 @@
         color: #333;
         font-weight: $weightBold;
       }
-      a:hover {
-        background-color: #ddd;
+      a {
+        &:hover,
+        &:focus {
+          background-color: #ddd;
+        }
+        &:focus {
+          outline: 0;
+        }
+        &:active {
+          background-color: #ccc;
+        }
       }
       &:last-child {
         a,
