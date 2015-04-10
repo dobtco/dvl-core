@@ -4,7 +4,8 @@
   background: $base_color;
   color: $font_color;
   border: 1px solid darken($base_color, 5%);
-  &:hover {
+  &:hover,
+  &:focus {
     background: darken($base_color, 5%);
     color: $font_color;
   }
@@ -15,7 +16,8 @@
   font-weight: $weightBold;
   border: 1px solid darken($base_color, 5%);
   color: $font_color;
-  &:hover {
+  &:hover,
+  &:focus {
     background: darken($base_color, 3%);
     color: $font_color;
   }
@@ -91,7 +93,8 @@
   &.gray {
     @include light_button_color($lighterGray);
   }
-  &:hover {
+  &:hover,
+  &:focus {
     background: $gray;
     text-decoration: none;
   }
@@ -99,9 +102,7 @@
     box-shadow: inset 0 2px 3px hsla(0, 0%, 0%, 0.2);
   }
   &:focus {
-    outline: thin dotted;
-    outline: 5px auto -webkit-focus-ring-color;
-    outline-offset: -2px;
+    outline: 0;
   }
   // Sizes
   // #todo refactor and catalog these sizes
@@ -125,6 +126,7 @@
   // States
   &[disabled],
   &.disabled,
+  &.disabled:focus,
   &.disabled:active {
     box-shadow: none !important;
     text-shadow: none !important;

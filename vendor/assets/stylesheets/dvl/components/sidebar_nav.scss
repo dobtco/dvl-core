@@ -24,6 +24,9 @@
         right: $rhythm;
       }
     }
+    > a:focus {
+      outline: 0;
+    }
     > a,
     &.content {
       position: relative;
@@ -60,7 +63,8 @@
       padding: 0 0.5rem;
       border-radius: $radius;
     }
-    &:hover > a {
+    > a:focus,
+    > a:hover {
       background-color: $lighterGray;
       .badge {
         background-color: $lightGray;
@@ -75,7 +79,8 @@
         background-color: $logoBlue;
         color: $white;
       }
-      &:hover {
+      &:hover,
+      &:focus {
         .badge {
           background-color: $logoBlue;
         }

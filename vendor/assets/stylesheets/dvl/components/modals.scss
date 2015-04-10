@@ -110,8 +110,12 @@
     font-weight: $weightLight;
     line-height: 2rem;
     width: 2rem;
-    &:hover {
-      color: rgba(#000,0.75);
+    &:hover,
+    &:focus {
+      color: rgba(#000,0.9);
+    }
+    &:focus {
+      outline: 0;
     }
   }
 }
