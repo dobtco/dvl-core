@@ -20,6 +20,7 @@ Bundler.require(*Rails.groups)
 
 require 'simple_form'
 require 'ffaker'
+require 'autoprefixer-rails'
 
 module Dummy
   class Application < Rails::Application
