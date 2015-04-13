@@ -144,6 +144,24 @@ class Views::Home::Index < Views::Base
           }
         }
       }
+
+      br
+
+      div.dropdown {
+        a.dropdown_toggle_button.gray 'Dropdown with sections',
+                          'data-toggle' => 'dropdown',
+                          href: '#'
+        div.dropdown_menu(role: 'menu') {
+          ul.dropdown_body {
+            li.dropdown_header 'Section One'
+            li { a 'Link One' }
+            li { a 'Link Two' }
+            li.dropdown_header 'Section Two'
+            li { a 'Link Three' }
+            li { a 'Link Four' }
+          }
+        }
+      }
     }
 
     docs 'Labels', %{
