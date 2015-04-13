@@ -478,14 +478,12 @@ form {
   }
 }
 
-.styled_select_wrapper,
-.dropdown_toggle_button {
+.styled_select_wrapper {
   position: relative;
   display: inline-block;
 }
 
-.styled_select,
-.dropdown_toggle_button {
+.styled_select {
   display: block;
   height: $inputHeight;
   background: #fff;
