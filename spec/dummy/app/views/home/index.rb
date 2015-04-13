@@ -195,7 +195,8 @@ class Views::Home::Index < Views::Base
 
           a 'This is a tooltip link',
             'data-toggle' => 'tooltip',
-            title: 'Tooltip'
+            title: 'Tooltip',
+            href: '#'
         }
 
       end
@@ -329,7 +330,8 @@ class Views::Home::Index < Views::Base
           'data-toggle' => 'tooltip',
           'data-placement' => x,
           'data-container' => 'body',
-          title: "Tooltip on the " + x + "!"
+          title: "Tooltip on the " + x + "!",
+          href: '#'
 
         text ' '
       end
