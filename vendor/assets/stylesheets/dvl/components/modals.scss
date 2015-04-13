@@ -75,6 +75,7 @@
   background-color: #000;
   opacity: 0.5;
   animation: fade_half 170ms ease-in;
+  z-index: $z_modal - 1;
 }
 
 @keyframes fade_half {
