@@ -68,6 +68,12 @@
       margin-left: 0.5rem;
       color: $darkerGray;
     }
+
+    &.info, &.primary {
+      &:after {
+        color: $white;
+      }
+    }
   }
   &.loading {
     opacity: 0.65;

@@ -82,7 +82,7 @@ class Views::Home::Index < Views::Base
       br
 
       div.dropdown {
-        a.button.small.toggle 'Notifications',
+        a.button.small.toggle.info 'Notifications',
                           'data-toggle' => 'dropdown',
                           href: '#'
         div.dropdown_menu(role: 'menu') {
@@ -113,7 +113,7 @@ class Views::Home::Index < Views::Base
       br
 
       div.dropdown {
-        a "Loading state <i class='fa fa-caret-down'></i>".html_safe,
+        a.button.toggle.primary 'Loading state',
                           'data-toggle' => 'dropdown',
                           href: '#'
         div.dropdown_menu(role: 'menu') {
@@ -169,7 +169,7 @@ class Views::Home::Index < Views::Base
           }
         }
       }
-    }
+    }, hint: 'Add the .toggle modifier to buttons to give them a border and a caret.'
 
     docs 'Labels', %{
       span.label.label_error 'Error'
