@@ -238,6 +238,10 @@ class Views::Home::Index < Views::Base
           text 'Are you sure?'
         }
         div.modal_footer {
+          span.modal_footer_link {
+            text 'Or '
+            a 'do another thing'
+          }
           a.button.error 'OK'
         }
       end
