@@ -7,9 +7,9 @@ class Views::Home::Index < Views::Base
 
     docs 'Dropdowns', %{
       div.dropdown {
-        a.dropdown_toggle 'Click me',
-                          'data-toggle' => 'dropdown',
-                          href: '#'
+        a "Click me <i class='fa fa-caret-down'></i>".html_safe,
+          'data-toggle' => 'dropdown',
+          href: '#'
         div.dropdown_menu(role: 'menu') {
           ul.dropdown_body {
             li {
@@ -60,24 +60,29 @@ class Views::Home::Index < Views::Base
       }
 
       br
+      br
 
       div.dropdown {
-        a.dropdown_toggle_button.gray 'Click me',
-                          'data-toggle' => 'dropdown',
-                          href: '#'
+        a.button.toggle(
+          'Click me',
+          'data-toggle' => 'dropdown',
+          href: '#'
+        )
+
         div.dropdown_menu(role: 'menu') {
           ul.dropdown_body {
             li {
-              a 'This was triggered by a dropdown_toggle_button', href: '#'
+              a 'This was triggered by a button', href: '#'
             }
           }
         }
       }
 
       br
+      br
 
       div.dropdown {
-        a.dropdown_toggle_button.gray 'Notifications',
+        a.button.small.toggle 'Notifications',
                           'data-toggle' => 'dropdown',
                           href: '#'
         div.dropdown_menu(role: 'menu') {
@@ -105,9 +110,10 @@ class Views::Home::Index < Views::Base
       }
 
       br
+      br
 
       div.dropdown {
-        a.dropdown_toggle_button.gray 'Loading state',
+        a "Loading state <i class='fa fa-caret-down'></i>".html_safe,
                           'data-toggle' => 'dropdown',
                           href: '#'
         div.dropdown_menu(role: 'menu') {
@@ -122,9 +128,10 @@ class Views::Home::Index < Views::Base
       }
 
       br
+      br
 
       div.dropdown {
-        a.dropdown_toggle_button.gray 'Right item',
+        a "Right item <i class='fa fa-caret-down'></i>".html_safe,
                           'data-toggle' => 'dropdown',
                           href: '#'
         div.dropdown_menu(role: 'menu') {
@@ -197,13 +204,13 @@ class Views::Home::Index < Views::Base
           br br
 
           div.dropdown {
-            a.dropdown_toggle_button.gray 'Click me',
+            a.gray 'Click me',
                               'data-toggle' => 'dropdown',
                               href: '#'
             div.dropdown_menu(role: 'menu') {
               ul.dropdown_body {
                 li {
-                  a 'This was triggered by a dropdown_toggle_button', href: '#'
+                  a 'Item 1', href: '#'
                 }
               }
             }

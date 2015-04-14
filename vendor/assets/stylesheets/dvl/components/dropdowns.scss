@@ -163,56 +163,6 @@ li.dropdown_more a {
 // Enhanced dropdowns:
 // Multiple lines of text, images, etc.
 
-.dropdown_toggle_button {
-  position: relative;
-  display: block;
-  text-decoration: none;
-  font-weight: $weightNormal;
-  cursor: pointer;
-  &.disabled {
-    opacity: 0.6;
-    cursor: default;
-  }
-  &:focus {
-    outline: 0;
-    border-color: $darkBlue;
-    &:after {
-      color: $darkBlue;
-    }
-  }
-  &:focus, &:hover, &:active {
-    text-decoration: none;
-  }
-  &:hover {
-    background: #fcfcfc;
-  }
-  &:active,
-  .open & {
-    background: #f7f7f7;
-  }
-  &.gray {
-    background-color: $lighterGray;
-    color: $darkestGray;
-    font-size: 0.9rem;
-    &:hover {
-      background-color: $lightGray;
-      &.disabled {
-        background-color: $lighterGray;
-      }
-    }
-    &:active,
-    .open & {
-      background-color: $lightGray;
-    }
-  }
-  &.auto {
-    width: auto;
-  }
-  &.full {
-    width: 100%;
-  }
-}
-
 .dropdown_menu_sub {
   display: none;
 }
