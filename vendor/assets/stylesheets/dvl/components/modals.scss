@@ -161,6 +161,12 @@
   }
 }
 
+.modal_footer_link {
+  float: left;
+  font-size: 0.9rem;
+  line-height: $inputHeight;
+}
+
 .modal_confirm {
   .modal_header {
     background-color: $errorColor;
