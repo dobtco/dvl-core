@@ -80,12 +80,6 @@ $z_flash: 900 !default;
   font-family: 'FontAwesome';
 }
 
-@mixin user_pic($size: 25) {
-  width: $size * 1px;
-  border-radius: 50%;
-  border: 1px solid $gray;
-}
-
 @mixin border_top_radius($radius) {
   border-top-left-radius: $radius;
   border-top-right-radius: $radius;
