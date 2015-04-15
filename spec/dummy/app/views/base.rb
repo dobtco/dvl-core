@@ -27,8 +27,10 @@ class Views::Base < Erector::Widget
         javascripts
       }
       body {
+        a.sr_only 'Skip to content', href: '#content'
         render_navbar
 
+        div.content!
         div.container {
           div.grid {
             div.item.desk_three_columns {
