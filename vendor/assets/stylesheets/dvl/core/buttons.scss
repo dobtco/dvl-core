@@ -37,6 +37,7 @@
   cursor: pointer;
   border-radius: $radius;
   white-space: nowrap;
+  line-height: normal;
   &.uppercase {
     border: 0 !important;
     border-radius: 0;

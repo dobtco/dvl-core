@@ -25,6 +25,14 @@ class Views::Home::Buttons < Views::Base
       end
     }
 
+    docs 'Button with select', %{
+      select {
+        option 'Option'
+      }
+      text ' '
+      a.button 'Go!'
+    }, hint: 'The alignment should match up perfectly :)'
+
     docs 'Fancy stuff', %{
       a.button.info.arrow_l 'arrow_l'
       br
