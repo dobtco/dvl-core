@@ -1,4 +1,4 @@
-// #### VARIABLES ####
+// Variables
 
 // Grayscale
 $black: #262626;
@@ -54,14 +54,14 @@ $inputPadding: 0.3rem !default;
 $lapWidth: 640px;
 $deskWidth: 960px;
 
-// Z-index scale
+// x-index scale
 $z_dropdown: 600 !default;
 $z_tooltip: 600 !default;
 $z_navbar: 700 !default;
 $z_modal: 800 !default;
 $z_flash: 900 !default;
 
-// #### MIXINS ####
+// Mixins
 
 @mixin font-smoothing() {
   -webkit-font-smoothing: antialiased;
@@ -136,7 +136,6 @@ $easeInOutExpo:  cubic-bezier(1.000,  0.000, 0.000, 1.000);
 $easeInOutCirc:  cubic-bezier(0.785,  0.135, 0.150, 0.860);
 $easeInOutBack:  cubic-bezier(0.680, -0.550, 0.265, 1.550);
 
-
 @mixin cf() {
   &:before, &:after {
     display: table;
@@ -160,22 +159,4 @@ $easeInOutBack:  cubic-bezier(0.680, -0.550, 0.265, 1.550);
 @mixin word_break {
   word-wrap: break-word;
   hyphens: auto;
-}
-
-// See: http://a11yproject.com/posts/how-to-hide-content/
-.sr_only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  border: 0;
-
-  &:focus {
-    height: auto;
-    width: auto;
-    clip: auto;
-  }
 }
