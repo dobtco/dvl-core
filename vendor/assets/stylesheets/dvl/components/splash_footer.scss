@@ -22,6 +22,7 @@ $footerBackground: #080F1F !default;
 
   dt, dd {
     float: left;
+    line-height: $lineHeight;
   }
 
   dt {
@@ -33,7 +34,6 @@ $footerBackground: #080F1F !default;
     color: rgba(#fff,0.8);
     text-transform: uppercase;
     font-size: 0.8rem;
-    line-height: 1.5rem / 0.8;
     letter-spacing: 0.05rem;
   }
   dd {
