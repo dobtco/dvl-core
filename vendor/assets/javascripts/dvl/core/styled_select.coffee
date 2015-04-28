@@ -37,6 +37,8 @@ class StyledSelect
       @$span.text(@options.blank)
       @$span.addClass('is_blank')
 
+window.StyledSelect = StyledSelect
+
 $.fn.extend styledSelect: (opts) ->
   $(@).find('select:not(.datetime)').each ->
     unless @styledSelect
