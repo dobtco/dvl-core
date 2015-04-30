@@ -1,0 +1,70 @@
+// Design pattern for displaying lists of small bits of data,
+// along with associated actions.
+
+@import 'includes';
+
+.data_simple {
+  li {
+    @include cf;
+    position: relative;
+    line-height: 3rem;
+    border-bottom: 1px solid #ccc;
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+  input,
+  .button {
+    float: left;
+    line-height: 1.5rem;
+    margin-top: 0.375rem;
+    margin-bottom: 0.375rem;
+  }
+  input {
+    width: 77%;
+    margin-right: 3%;
+  }
+  .button {
+    width: 20%;
+  }
+}
+
+
+.data_simple_action {
+  color: #999;
+  font-size: 1.25rem;
+  float: left;
+  margin-right: 1rem;
+  transition: opacity 0.25s ease-out;
+  i {
+    line-height: 3rem;
+    &.fa-reorder {
+      cursor: move;
+    }
+  }
+}
+
+.data_simple_secondary {
+  display: block;
+  margin-left: 5.5rem;
+  clear: left;
+  margin-bottom: 0.75rem;
+  a {
+    line-height: 3rem;
+    display: inline-block;
+    margin-left: 0.75rem;
+    &:first-child {
+      margin: 0;
+    }
+  }
+  transition: opacity 0.2s ease-out;
+}
+
+@media screen and (min-width: 30rem) {
+  .data_simple_secondary {
+    position: absolute;
+    line-height: 3rem;
+    right: 0;
+    font-size: 0.85rem;
+  }
+}
