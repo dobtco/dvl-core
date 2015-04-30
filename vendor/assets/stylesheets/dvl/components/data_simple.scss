@@ -1,8 +1,6 @@
 // Design pattern for displaying lists of small bits of data,
 // along with associated actions.
 
-@import 'includes';
-
 .data_simple {
   li {
     @include cf;
