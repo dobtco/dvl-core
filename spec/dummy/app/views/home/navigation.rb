@@ -1,4 +1,4 @@
-class Views::Home::Navbar < Views::Base
+class Views::Home::Navigation < Views::Base
   def main
     docs 'Navbar', %{
       nav.navbar {
@@ -56,6 +56,40 @@ class Views::Home::Navbar < Views::Base
                 }
               }
             }
+          }
+        }
+      }
+    }, full: true
+
+    docs 'Page Header with Secondary and Tertiary Nav', %{
+      div.page_header {
+        h2 'Page header'
+
+        ul.secondary_nav {
+          li {
+            a 'Secondary nav'
+          }
+
+          li {
+            a 'A thing'
+          }
+
+          li {
+            a 'A another thing'
+          }
+        }
+
+        ul.tertiary_nav {
+          li {
+            a 'Tertiary nav'
+          }
+
+          li {
+            a 'A thing'
+          }
+
+          li {
+            a 'Another thing'
           }
         }
       }
