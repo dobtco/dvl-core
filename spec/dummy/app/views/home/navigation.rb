@@ -65,7 +65,7 @@ class Views::Home::Navigation < Views::Base
       div.page_header {
         h2 'Page header'
 
-        ul.secondary_nav {
+        ul.page_header_secondary_nav {
           li {
             a 'Secondary nav'
           }
@@ -79,7 +79,7 @@ class Views::Home::Navigation < Views::Base
           }
         }
 
-        ul.tertiary_nav {
+        ul.page_header_tertiary_nav {
           li {
             a 'Tertiary nav'
           }
