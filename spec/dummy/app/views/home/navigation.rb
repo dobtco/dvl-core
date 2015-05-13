@@ -75,7 +75,7 @@ class Views::Home::Navigation < Views::Base
           }
 
           li {
-            a 'A another thing'
+            a 'Another thing'
           }
         }
 
