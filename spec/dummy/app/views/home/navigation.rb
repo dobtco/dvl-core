@@ -61,7 +61,7 @@ class Views::Home::Navigation < Views::Base
       }
     }, full: true
 
-    docs 'Page Header with Secondary and Tertiary Nav', %{
+    docs 'Page Header with Secondary and Tertiary Nav and Subheader', %{
       div.page_header {
         h2 'Page header'
 
@@ -91,6 +91,15 @@ class Views::Home::Navigation < Views::Base
           li {
             a 'Another thing'
           }
+        }
+      }
+
+      div.page_subheader {
+        h3 'Subheader'
+
+        div.page_subheader_actions {
+          a.page_subheader_link 'An action'
+          a.button.info 'Another action'
         }
       }
     }, full: true
