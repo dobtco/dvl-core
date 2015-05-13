@@ -44,16 +44,3 @@
 .page_subheader_link {
   font-size: 0.85rem;
 }
-
-// Labels next to View Responses page
-.page_subheader_labels {
-    display: inline-block;
-    margin-left: 0.5rem;
-    li {
-      display: inline;
-      margin-right: 0.75rem;
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-}
