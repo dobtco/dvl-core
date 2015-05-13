@@ -17,10 +17,6 @@ body {
   color: #222;
 }
 
-.page_header {
-  @include cf();
-}
-
 .docs {
   border: 1px solid #ccc;
   border-radius: $radius;
