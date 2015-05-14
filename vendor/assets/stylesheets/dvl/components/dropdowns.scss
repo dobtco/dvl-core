@@ -189,7 +189,7 @@ li.dropdown_more a {
         &:hover, &:active, &:visited {
           color: #555;
         }
-        &:hover, &:active {
+        &:hover, &:active, &:focus {
           background: #ededed;
         }
       }
