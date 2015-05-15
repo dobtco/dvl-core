@@ -1,0 +1,66 @@
+.page_header {
+  @include cf();
+  border-bottom: 1px solid $lightGray;
+  padding-bottom: 0.6rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+  h2 {
+    margin-bottom: 0;
+    margin-right: 2rem;
+    float: left;
+  }
+}
+
+// Secondary and tertiary navigation, within page headers.
+
+.page_header_secondary_nav,
+.page_header_tertiary_nav {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  li {
+    display: inline;
+    > span {
+      color: $darkGray;
+    }
+    &.active a {
+      color: $darkestGray;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.page_header_secondary_nav {
+  float: left;
+  font-size: 0.9rem;
+  li {
+    margin-right: 1.5rem;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.page_header_tertiary_nav {
+  float: right;
+  font-size: 0.8rem;
+  line-height: 1.8;
+  li {
+    margin-right: 1rem;
+    a {
+      color: $darkerGray;
+
+      // Add a space in between icon & text
+      > i {
+        margin-right: 0.2rem;
+      }
+    }
+    &.active a {
+      color: $black;
+    }
+  }
+}
