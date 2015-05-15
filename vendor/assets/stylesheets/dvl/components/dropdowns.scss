@@ -272,10 +272,6 @@ li.dropdown_more a {
 .drop_master_multiline {
   width: 1.5rem;
   margin-right: 0.5rem;
-  img,
-  span {
-    border-radius: 50%;
-  }
   i {
     font-size: 1.25rem;
     line-height: 1.5rem;
@@ -320,6 +316,11 @@ li.dropdown_more a {
   width: 1.5rem;
   height: 1.5rem;
   float: left;
+  border-radius: 50%;
+}
+
+.drop_master_avatar {
+  @include avatar;
 }
 
 

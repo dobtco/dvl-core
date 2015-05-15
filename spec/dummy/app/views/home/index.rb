@@ -89,13 +89,13 @@ class Views::Home::Index < Views::Base
           ul.dropdown_body {
             li.drop_important {
               a.cf(href: '#') {
-                span.drop_master_multiline { i(class: 'fa fa-envelope') }
+                span.drop_master_multiline { span.drop_master_color(style: 'background-color: red;') }
                 span.drop_detail_multiline 'Important! You were sent a message!!!'
               }
             }
             li {
               a.cf(href: '#') {
-                span.drop_master_multiline { i(class: 'fa fa-file-text') }
+                span.drop_master_multiline { img.drop_master_avatar(src: '//dobt-captured.s3.amazonaws.com/ajb/dummy_av_square.png') }
                 span.drop_detail_multiline 'A file was added to your project'
               }
             }
