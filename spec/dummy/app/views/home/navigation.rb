@@ -83,7 +83,7 @@ class Views::Home::Navigation < Views::Base
       }
     }, full: true
 
-    docs 'Page subheader and actions', %{
+    docs 'Page subheader (h3) and actions', %{
       div.page_subheader {
         h3 'Subheader'
 
@@ -93,5 +93,15 @@ class Views::Home::Navigation < Views::Base
         }
       }
     }, full: true
+
+    docs 'Page subheader (h4) with icon', %{
+      div.page_subheader {
+        h4 {
+          i(class: 'fa fa-star')
+          text ' '
+          text 'Ratings'
+        }
+      }
+    }, full: true, hint: 'Page subheaders can use either an <h3> or <h4>.'
   end
 end
