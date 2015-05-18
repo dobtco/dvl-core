@@ -43,7 +43,9 @@ class Views::Home::Navigation < Views::Base
 
     docs 'Page Header with Secondary and Tertiary Nav', %{
       div.page_header {
-        h2 'Page header'
+        h2 {
+          a 'Page header', href: '#'
+        }
 
         ul.page_header_secondary_nav {
           li {
@@ -81,7 +83,7 @@ class Views::Home::Navigation < Views::Base
           }
         }
       }
-    }, full: true
+    }, full: true, hint: '<h2> can optionally contain an <a> tag inside.'
 
     docs 'Page subheader (h3) and actions', %{
       div.page_subheader {
