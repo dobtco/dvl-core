@@ -15,8 +15,8 @@ SimpleForm.setup do |config|
 
     b.wrapper tag: 'div', class: 'form_item_horiz_input' do |ba|
       ba.use :input
-      ba.use :error, wrap_with: { tag: 'span', class: 'error_message' }
-      ba.use :hint,  wrap_with: { tag: 'div', class: 'help-block' }
+      ba.use :error, wrap_with: { tag: 'span', class: 'form_error' }
+      ba.use :hint,  wrap_with: { tag: 'div', class: 'form_hint' }
     end
   end
 
@@ -31,8 +31,8 @@ SimpleForm.setup do |config|
 
     b.wrapper tag: 'div', class: 'form_item_vert_input' do |ba|
       ba.use :input
-      ba.use :error, wrap_with: { tag: 'span', class: 'error_message' }
-      ba.use :hint,  wrap_with: { tag: 'div', class: 'help-block' }
+      ba.use :error, wrap_with: { tag: 'span', class: 'form_error' }
+      ba.use :hint,  wrap_with: { tag: 'div', class: 'form_hint' }
     end
   end
 

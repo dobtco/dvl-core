@@ -90,7 +90,7 @@ class Views::Home::Forms < Views::Base
                 ],
                 wrapper_html: { class: 'error' }
 
-        span.error_message 'There was an error!'
+        span.form_error 'There was an error!'
       end
     }, hint: 'Error states should still show the focus state when focused.'
 
