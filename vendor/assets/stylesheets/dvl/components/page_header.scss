@@ -14,34 +14,52 @@
       text-decoration: none;
     }
   }
+
+  &.with_back_arrow {
+    padding-left: 2.25rem;
+  }
+}
+
+.page_header_back_arrow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 2rem;
+  line-height: 1;
 }
 
 // Secondary and tertiary navigation, within page headers.
 
-.page_header_secondary_nav,
-.page_header_tertiary_nav {
-  margin-top: 0.5rem;
-  font-weight: 600;
-  li {
-    display: inline;
-    > span {
-      color: $darkGray;
-    }
-    &.active a {
-      color: $darkestGray;
-      &:hover {
-        text-decoration: none;
+.page_header_secondary,
+.page_header_tertiary {
+  ul {
+    margin-top: 0.5rem;
+    font-weight: 600;
+    li {
+      display: inline;
+      > span {
+        color: $darkGray;
       }
-    }
-    &:last-child {
-      margin-right: 0;
+      &.active a {
+        color: $darkestGray;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 }
 
-.page_header_secondary_nav {
+.page_header_secondary {
   float: left;
-  font-size: 0.9rem;
+  clear: left;
+  ul {
+    float: left;
+    font-size: 0.9rem;
+  }
   li {
     margin-right: 1.5rem;
     &:last-child {
@@ -50,12 +68,24 @@
   }
 }
 
-.page_header_tertiary_nav {
+.page_header_tertiary {
   float: right;
-  font-size: 0.8rem;
-  line-height: 1.8;
+  ul,
+  .button {
+    float: left;
+  }
+  ul {
+    font-size: 0.8rem;
+    line-height: 1.8;
+  }
+  li,
+  .button {
+    margin-left: 1rem;
+  }
   li {
-    margin-right: 1rem;
+    &:first-child {
+      margin-left: 0;
+    }
     a {
       color: $darkerGray;
 
