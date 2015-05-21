@@ -299,11 +299,6 @@ input[type="radio"] {
   }
 }
 
-.help-block {
-  font-size: 0.85rem;
-  margin: 0.25rem 0 0 0;
-}
-
 .datetime_input_clear_wrapper {
   clear: both;
 }
@@ -374,6 +369,21 @@ form {
   }
 }
 
+.form_error {
+  font-size: 0.85rem;
+  background-color: $errorColor;
+  color: #fff;
+  padding: 2px 5px;
+  border-radius: $radius;
+  margin: 4px 0 0 0;
+  display: inline-block;
+}
+
+.form_hint {
+  font-size: 0.85rem;
+  margin: 0.25rem 0 0 0;
+}
+
 .input_group {
   position: relative;
   display: table;
@@ -409,16 +419,6 @@ form {
 }
 
 form {
-  /* Validation */
-  .error_message {
-    font-size: 0.85rem;
-    background-color: $errorColor;
-    color: #fff;
-    padding: 2px 5px;
-    border-radius: $radius;
-    margin: 4px 0 0 0;
-    display: inline-block;
-  }
   /* Autosubmitter */
   .item {
     position: relative;
