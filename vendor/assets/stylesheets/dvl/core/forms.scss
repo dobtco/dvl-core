@@ -435,11 +435,14 @@ form {
   &.full {
     width: 100%;
   }
-  select {
+  select,
+  select[data-width="100%"] + div {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
+  }
+  select {
     height: $inputHeight;
     opacity: 0;
     z-index: 2;
