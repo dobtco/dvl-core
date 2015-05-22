@@ -436,7 +436,7 @@ form {
     width: 100%;
   }
   select,
-  div {
+  select[data-width="100%"] + div {
     position: absolute;
     top: 0;
     left: 0;
