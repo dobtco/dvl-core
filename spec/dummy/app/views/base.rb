@@ -142,7 +142,7 @@ class Views::Base < Erector::Widget
                   'data-toggle' => 'dropdown',
                   href: '#'
                 ) {
-                  img.nav_avatar src: '//dobt-misc.s3.amazonaws.com/headshots/adam.jpg'
+                  img.nav_avatar src: '//dobt-captured.s3.amazonaws.com/ajb/richard_ayoade_-_Google_Search_2015-05-26_09-56-32.png_290290_2015-05-26_09-57-03.png'
                 }
 
                 div.dropdown_menu(role: 'menu') {

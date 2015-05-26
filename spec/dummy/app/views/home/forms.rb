@@ -182,6 +182,17 @@ class Views::Home::Forms < Views::Base
           }
         end
 
+        f.input :input_group_with_copy do
+          div.input_group {
+            f.input_field :input_group_with_copy,
+                          as: :string,
+                          value: 'http://this.is.a/long/url'
+            a.button.small.info {
+              i(class: 'fa fa-copy')
+            }
+          }
+        end
+
         f.input :input_group_with_text do
           div.input_group {
             f.input_field :input_group,

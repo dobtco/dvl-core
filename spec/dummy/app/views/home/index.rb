@@ -181,6 +181,33 @@ class Views::Home::Index < Views::Base
       span.label.label_warning 'Warning'
     }
 
+    docs 'Alerts', %{
+      div.alert {
+        span.alert_message 'This project is <strong>not yet posted</strong>.'.html_safe
+      }
+
+      div.alert {
+        span.alert_message 'This project is a draft.'
+
+        span.alert_buttons {
+          a.button.primary 'Go Live!', href: '#'
+        }
+      }
+
+      div.alert {
+        span.alert_message 'Please choose a new owner.'
+
+        form {
+          select {
+            option 'Person One'
+            option 'Person Two'
+          }
+          text ' '
+          button.button.info 'Submit'
+        }
+      }
+    }, full: true
+
     docs 'Links', %{
       a.uppercase 'Uppercase'
       text ' '
@@ -288,9 +315,9 @@ class Views::Home::Index < Views::Base
               div.sidebar_data_label 'Dropdowns'
               div.sidebar_data_value {
                 simple_form_for :foo do |f|
-                  f.input_field :blah, as: :select, collection: ['Bar'], selected: 'Bar'
+                  f.input_field :blah, as: :select, collection: ['Bar'], selected: 'Bar', 'data-width' => '100%'
                   br
-                  f.input_field :blah, as: :dropdown_select, collection: [['Bar', 'Bar', 'Bar']], selected: 'Bar'
+                  f.input_field :blah, as: :dropdown_select, collection: [['Bar', 'Bar', 'Bar']], selected: 'Bar', 'data-width' => '100%'
                 end
               }
             }
