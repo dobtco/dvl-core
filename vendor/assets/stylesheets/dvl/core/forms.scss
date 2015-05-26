@@ -396,6 +396,9 @@ form {
     display: table-cell;
     width: 100%;
   }
+  .button {
+    border-left-width: 0;
+  }
   :first-child {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
