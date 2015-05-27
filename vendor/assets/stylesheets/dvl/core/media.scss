@@ -21,9 +21,3 @@ img, video {
   width: auto\9;
   height: auto !important;
 }
-
-// Enforcing component consistency
-
-@mixin avatar {
-  border-radius: 50%;
-}
