@@ -85,7 +85,7 @@ $navBreakpoint: 800px !default;
 .nav_avatar {
   height: 28px;
   width: 28px;
-  border-radius: 50%;
+  @include avatar;
   // add some margin for the bottom of the collapsed nav
   margin-bottom: 0.75rem;
 }
