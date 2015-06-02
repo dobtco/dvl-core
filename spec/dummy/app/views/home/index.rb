@@ -206,6 +206,13 @@ class Views::Home::Index < Views::Base
           button.button.info 'Submit'
         }
       }
+
+      div.alert {
+        span.alert_message ('This is a really long alert message. ' * 5)
+        span.alert_buttons {
+          a.button.primary 'Go Live!', href: '#'
+        }
+      }
     }, full: true
 
     docs 'Links', %{
