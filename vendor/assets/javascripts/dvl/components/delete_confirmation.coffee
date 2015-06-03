@@ -1,17 +1,25 @@
 $.rails.allowAction = ($link) ->
   return true unless $link.attr('data-confirm')?
 
-  DvlDeleteConfirmation $link, ->
+  DvlDeleteConfirmation $link, $link.attr('data-confirm'), ->
     $link.removeAttr('data-confirm')
     $link.trigger('click.rails')
 
   false
 
-window.DvlDeleteConfirmation = ($el, cb) ->
+window.DvlDeleteConfirmation = ($el, message, cb) ->
+  if message
+    wrappedMessage = """
+      <div class='popover_delete_confirmation_message'>
+        #{message}
+      </div>
+    """
+
   $el.popover
     html: true
     content: """
       <div class='popover_delete_confirmation'>
+        #{wrappedMessage || ''}
         <a class='button error js-confirm-delete' href='#'>Delete</a>
         <a class='button' href='#'>Cancel</a>
       </div>

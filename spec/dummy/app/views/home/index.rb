@@ -409,7 +409,12 @@ class Views::Home::Index < Views::Base
     }
 
     docs 'Delete confirmation', %{
-      a.button.error 'Delete', 'data-confirm' => 'true', href: 'delete', 'data-method' => 'delete'
+      a.button.error 'Delete', 'data-confirm' => true, href: 'delete', 'data-method' => 'delete'
+
+      br
+      br
+
+      a.button.error 'Delete', 'data-confirm' => 'Are you sure you want to delete the thing? You will lose a ton of data.', href: 'delete', 'data-method' => 'delete'
     }
 
     docs 'Tooltips', %{
