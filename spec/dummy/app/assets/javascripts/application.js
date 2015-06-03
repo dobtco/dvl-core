@@ -10,9 +10,11 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery_ujs
 //= require dvl/core
 //= require dvl/helpers/flash_placeholder
 //= require dvl/helpers/toggle_class
+//= require dvl/components/delete_confirmation
 //= require dvl/components/flashes
 //= require dvl/components/dynamic_email
 //= require dvl/components/newsletter_form

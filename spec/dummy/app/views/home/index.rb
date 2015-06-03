@@ -408,6 +408,10 @@ class Views::Home::Index < Views::Base
       }
     }
 
+    docs 'Delete confirmation', %{
+      a.button.error 'Delete', 'data-confirm' => 'true', href: 'delete', 'data-method' => 'delete'
+    }
+
     docs 'Tooltips', %{
       %w(top right bottom left).each do |x|
         a x.capitalize,

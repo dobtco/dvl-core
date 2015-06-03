@@ -1,0 +1,11 @@
+.popover_delete_confirmation {
+  .button {
+    display: block;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+
+    &:first-child {
+      margin-bottom: $rhythm / 2;
+    }
+  }
+}
