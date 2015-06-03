@@ -282,12 +282,33 @@ class Views::Home::Index < Views::Base
     }
 
     docs 'Pagination', %{
-      div(class: 'pagination-wrapper') {
+      div.pagination {
         ul {
           li { a(href: '#'){text '‹'}}
           li { a(href: '#'){text '1'}}
           li { span '2' }
           li { a(href: '#'){text '3'}}
+          li { a(href: '#'){text '›'}}
+        }
+      }
+
+      div.pagination.pagination_centered {
+        ul {
+          li { a(href: '#'){text '‹'}}
+          li { a(href: '#'){text '11'}}
+          li { span '12' }
+          li { a(href: '#'){text '13'}}
+          li { a(href: '#'){text '›'}}
+        }
+      }
+
+      hr
+
+      div.pagination {
+        span.pagination_status "Showing <strong>1</strong> of <strong>123</strong>".html_safe
+
+        ul {
+          li { span{text '‹'}}
           li { a(href: '#'){text '›'}}
         }
       }

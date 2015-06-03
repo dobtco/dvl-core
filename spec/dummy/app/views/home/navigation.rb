@@ -132,6 +132,42 @@ class Views::Home::Navigation < Views::Base
       }
     }, full: true
 
+    docs 'Page Header with pagination', %{
+      div.page_header.with_back_arrow {
+        a.page_header_back_arrow(title: 'Back to account', 'data-toggle' => 'tooltip') {
+          i(class: 'fa fa-arrow-circle-o-left')
+        }
+
+        h2 {
+          a 'Page header', href: '#'
+        }
+
+        div.page_header_secondary {
+          ul {
+            li {
+              a 'Secondary nav'
+            }
+
+            li {
+              a 'A thing'
+            }
+
+            li {
+              a 'Another thing'
+            }
+          }
+        }
+        div.pagination.pagination_page_header {
+          span.pagination_status "Showing <strong>1</strong> of <strong>123</strong>".html_safe
+
+          ul {
+            li { span{text '‹'}}
+            li { a(href: '#'){text '›'}}
+          }
+        }
+      }
+    }, full: true
+
     docs 'Page subheader (h3) and actions', %{
       div.page_subheader {
         h3 'Subheader'
