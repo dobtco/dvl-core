@@ -408,6 +408,19 @@ class Views::Home::Index < Views::Base
       }
     }
 
+    docs 'Delete confirmation', %{
+      a.subtle_icon('data-confirm' => true, href: 'delete', 'data-method' => 'delete'){
+        i(class: 'fa fa-minus-circle')
+      }
+
+      br
+      br
+
+      a.subtle_icon('data-confirm' => 'Are you sure you want to delete the thing? You will lose a ton of data.', href: 'delete', 'data-method' => 'delete'){
+        i(class: 'fa fa-minus-circle')
+      }
+    }
+
     docs 'Tooltips', %{
       %w(top right bottom left).each do |x|
         a x.capitalize,

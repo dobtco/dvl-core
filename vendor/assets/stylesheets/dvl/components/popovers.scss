@@ -1,0 +1,116 @@
+//
+// Popovers
+// --------------------------------------------------
+
+$arrowSize: 7px;
+$outerArrowSize: $arrowSize + 1px;
+
+.popover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: $z_popover;
+  display: none;
+  max-width: 276px;
+  padding: 1px;
+  font-size: 0.9rem;
+
+  background-color: $white;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: $radius;
+  box-shadow: 0 5px $arrowSize rgba(0,0,0,.2);
+
+  // Offset the popover to account for the popover arrow
+  &.top     { margin-top: -$arrowSize; }
+  &.right   { margin-left: $arrowSize; }
+  &.bottom  { margin-top: $arrowSize; }
+  &.left    { margin-left: -$arrowSize; }
+}
+
+.popover_content {
+  padding: 0.5rem;
+}
+
+// Arrows
+//
+// .arrow is outer, .arrow:after is inner
+
+.popover > .arrow {
+  &,
+  &:after {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+  }
+}
+.popover > .arrow {
+  border-width: $outerArrowSize;
+}
+.popover > .arrow:after {
+  border-width: $arrowSize;
+  content: "";
+}
+
+.popover {
+  &.top > .arrow {
+    left: 50%;
+    margin-left: -$outerArrowSize;
+    border-bottom-width: 0;
+    border-top-color: #bbb;
+    bottom: -$outerArrowSize;
+    &:after {
+      content: " ";
+      bottom: 1px;
+      margin-left: -$arrowSize;
+      border-bottom-width: 0;
+      border-top-color: $white;
+    }
+  }
+  &.right > .arrow {
+    top: 50%;
+    left: -$outerArrowSize;
+    margin-top: -$outerArrowSize;
+    border-left-width: 0;
+    border-right-color: #bbb;
+    &:after {
+      content: " ";
+      left: 1px;
+      bottom: -$arrowSize;
+      border-left-width: 0;
+      border-right-color: $white;
+    }
+  }
+  &.bottom > .arrow {
+    left: 50%;
+    margin-left: -$outerArrowSize;
+    border-top-width: 0;
+    border-bottom-color: #bbb;
+    top: -$outerArrowSize;
+    &:after {
+      content: " ";
+      top: 1px;
+      margin-left: -$arrowSize;
+      border-top-width: 0;
+      border-bottom-color: $white;
+    }
+  }
+
+  &.left > .arrow {
+    top: 50%;
+    right: -$outerArrowSize;
+    margin-top: -$outerArrowSize;
+    border-right-width: 0;
+    border-left-color: #bbb;
+    &:after {
+      content: " ";
+      right: 1px;
+      border-right-width: 0;
+      border-left-color: $white;
+      bottom: -$arrowSize;
+    }
+  }
+}
