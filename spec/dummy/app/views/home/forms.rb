@@ -149,7 +149,7 @@ class Views::Home::Forms < Views::Base
 
         f.input :auto_width_select,
                       as: :select,
-                      collection: ['Auto width'],
+                      collection: ['Auto width', 'I am a dropdown-select this is supier long and probably overflwos onto the next line aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'],
                       include_blank: false,
                       input_html: { 'data-width' => 'auto' }
 

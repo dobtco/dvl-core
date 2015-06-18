@@ -434,6 +434,7 @@ form {
   vertical-align: middle;
   &.auto {
     width: auto;
+    max-width: 100%;
   }
   &.full {
     width: 100%;
