@@ -46,7 +46,7 @@ ul {
 
 dt {
   color: #888;
-  font-size: 0.9rem;
+  font-size: $fontSmaller;
 }
 
 dd {
@@ -76,6 +76,9 @@ h6 {
 h1, h2 {
   font-family: $fontFamilyDisplay;
   font-weight: 100;
+}
+
+h1, h2, h3, h4 {
   @include font_smoothing;
 }
 
@@ -92,9 +95,10 @@ h2 {
 }
 
 h3 {
+  font-weight: $weightNormal;
   font-size: $fontH3Size;
   line-height: $fontH3LineHeight;
-  margin-bottom: $fontH3LineHeight;
+  margin-bottom: $lineHeight;
 }
 
 h4 {

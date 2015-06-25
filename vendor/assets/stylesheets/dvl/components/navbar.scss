@@ -26,7 +26,7 @@ $navBreakpoint: 800px !default;
 
   // Fix buttons inside navbar
   .button {
-    font-size: 0.9rem;
+    font-size: $fontSmaller;
   }
 
   // Override display: inline-block for proper stacking
@@ -42,7 +42,7 @@ $navBreakpoint: 800px !default;
 
 .navbar_content > ul > li > a {
   font-weight: $weightBold;
-  font-size: 0.9rem;
+  font-size: $fontSmaller;
 }
 
 // Modifier for fixed navbar

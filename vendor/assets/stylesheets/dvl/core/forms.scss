@@ -63,7 +63,7 @@ textarea {
   width: 100%;
   vertical-align: middle;
   border: 1px solid #ddd;
-  font-size: 0.9rem;
+  font-size: $fontSmaller;
   padding: $inputPadding;
   border-radius: $radius;
   .error & {
@@ -156,8 +156,6 @@ input::-moz-focus-inner {
 /* Give labels a pointer cursor by default */
 label {
   cursor: pointer;
-  font-weight: $weightBold;
-  font-size: 0.9rem;
 }
 
 /**
@@ -304,7 +302,7 @@ input[type="radio"] {
 }
 
 .datetime_input_clear {
-  font-size: 0.85rem;
+  font-size: $fontSmallest;
 }
 
 form {
@@ -370,7 +368,7 @@ form {
 }
 
 .form_error {
-  font-size: 0.9rem;
+  font-size: $fontSmaller;
   background-color: $errorColor;
   color: #fff;
   padding: 0.375rem 0.6rem;
@@ -380,7 +378,7 @@ form {
 }
 
 .form_hint {
-  font-size: 0.85rem;
+  font-size: $fontSmallest;
   margin: 0.25rem 0 0 0;
 }
 
@@ -416,7 +414,7 @@ form {
   width: 100%;
   color: $darkestGray;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: $fontSmaller;
   line-height: normal;
   white-space: nowrap;
 }
@@ -494,7 +492,7 @@ form {
   border: 1px solid #bbb;
   border-radius: $radius;
   @include ellipses;
-  font-size: 0.95rem;
+  font-size: $fontSmall;
   padding-right: 2rem;
   padding-left: 0.75rem;
   line-height: $inputHeight;

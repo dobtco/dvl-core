@@ -10,15 +10,10 @@ body {
   margin: 0 auto;
 }
 
-.section_header {
-  font-size: 1.6rem;
-  padding: 1rem 0 0.5rem;
-  color: #222;
-}
-
 .docs {
   border: 1px solid #ccc;
   border-radius: $radius;
+  margin-bottom: $lineHeight;
 }
 
 .docs_col {

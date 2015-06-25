@@ -10,7 +10,7 @@
 }
 .sidebar_section {
   margin-bottom: 1rem;
-  font-size: 0.9rem;
+  font-size: $fontSmaller;
   @include cf();
   h4 {
     font-size: 1rem;
@@ -53,7 +53,7 @@
 }
 
 .sidebar_data_label {
-  font-size: 0.9rem;
+  font-size: $fontSmaller;
 }
 
 .sidebar_data_value,
@@ -69,7 +69,7 @@
 }
 
 .sidebar_data_details {
-  font-size: 0.9rem;
+  font-size: $fontSmaller;
   color: #999;
 }
 
@@ -102,6 +102,6 @@
 
 .sidebar_submit_hint {
   text-align: center;
-  font-size: 0.85rem;
+  font-size: $fontSmallest;
   margin-top: 0.25rem;
 }

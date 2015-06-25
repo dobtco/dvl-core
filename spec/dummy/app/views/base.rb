@@ -182,7 +182,7 @@ class Views::Base < Erector::Widget
   # end
 
   def docs(name, codeString, opts = {})
-    div.section_header name, id: name.downcase
+    h3 name, id: name.downcase
 
     div(class: "docs #{opts[:full] ? 'docs_layout_full' : 'docs_layout_split'}") {
       div.docs_col {

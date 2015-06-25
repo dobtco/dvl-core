@@ -4,7 +4,7 @@
   position: absolute;
   z-index: $z_tooltip;
   display: block;
-  font-size: 0.9rem;
+  font-size: $fontSmaller;
   line-height: 1.6;
   opacity: 0;
   visibility: visible;
