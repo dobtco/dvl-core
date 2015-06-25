@@ -1,20 +1,18 @@
 .sidebar_nav {
-  font-size: $fontSmaller;
   margin-bottom: 1rem;
   > li {
     > a,
     &.content,
     &.header {
       border: 1px solid;
+      @include font_smoothing;
     }
     &.header {
-      font-weight: $weightBold;
-      color: $blankStateGray;
+      color: $darkerGray;
       background-color: $lighterGray;
       border-color: $lighterGray;
       position: relative;
-      padding: ($rhythm/2) $lineHeight;
-      @include font_smoothing;
+      padding: $rhythm $lineHeight;
       img {
         height: $lineHeight;
         width: $lineHeight;
@@ -37,7 +35,7 @@
       text-decoration: none;
       border-color: $lightGray;
       border-bottom-width: 0;
-      padding: $rhythm $lineHeight;
+      padding: ($rhythm * 3) $lineHeight;
       padding-right: 18%;
     }
     &:first-child {
@@ -72,8 +70,8 @@
     }
     &.active {
       > a {
-        box-shadow: inset 3px 0 0 $logoBlue;
-        font-weight: $weightBold;
+        background: $darkerGray;
+        color: #fff;
       }
       .badge {
         background-color: $logoBlue;

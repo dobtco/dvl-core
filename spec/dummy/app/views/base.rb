@@ -46,7 +46,7 @@ class Views::Base < Erector::Widget
           div.grid {
             div.item.desk_three_columns {
               ul.sidebar_nav {
-                li.header 'Navigation'
+                li.header 'Table of Contents'
                 pages.each do |name, path|
                   li(class: url_for == path ? 'active' : nil) {
                     a name, href: path
@@ -68,7 +68,7 @@ class Views::Base < Erector::Widget
 
   def pages
     {
-      'Index' => '/',
+      'Introduction' => '/',
       'Forms' => '/forms',
       'Buttons' => '/buttons',
       'Flashes' => '/flashes',

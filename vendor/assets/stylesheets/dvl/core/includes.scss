@@ -1,17 +1,24 @@
 // COLORS
 
+
 // Grayscale
 $black: #262626;
 $darkestGray: #4d4d4d;
-$blankStateGray: #737373;
-$darkerGray: #999;
+$darkerGray: #737373;
 $darkGray: #bfbfbf;
 $gray: #d9d9d9;
-$borderGray: #dfdfdf;
-$lightGray: #e6e6e6;
+$lightGray:#e6e6e6;
 $lighterGray: #f2f2f2;
 $lightestGray: #fcfcfc;
 $white: #fff;
+
+// Other grays
+
+$blankStateGray: $darkerGray;
+$borderGray: #dfdfdf;
+
+
+
 
 // Blues
 $logoBlue: #009ade;
@@ -26,7 +33,7 @@ $darkBlue: #1fa3ec;
 $successColor: #2aa828 !default;
 $errorColor: #c12f2e !default;
 $alertColor: $errorColor !default;
-$blueHighlight: #eaf3fa;
+$blueHighlight: #dff5f7;
 $mintHighlight: #e7f9e7;
 $purpleBlue: #6188f5;
 
