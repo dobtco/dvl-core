@@ -1,4 +1,4 @@
-// Variables
+// COLORS
 
 // Grayscale
 $black: #262626;
@@ -30,24 +30,76 @@ $blueHighlight: #eaf3fa;
 $mintHighlight: #e7f9e7;
 $purpleBlue: #6188f5;
 
+// Qualitative colors
+
+$qualColor1:  #D95B76;
+$qualColor2:  #E16D72;
+$qualColor3:  #EC846D;
+$qualColor4:  #F79A68;
+$qualColor5:  #EFB765;
+$qualColor6:  #E3E15F;
+$qualColor7:  #C2E172;
+$qualColor8:  #A1E085;
+$qualColor9:  #82E098;
+$qualColor10: #5EE0AC;
+
+// Label colors
+
+$redLabelColor: #D95B76;
+$lightRedLabelColor: #F0BECF;
+$orangeLabelColor: #F79A68;
+$lightOrangeLabelColor: #F0CCBE;
+$yellowLabelColor: #E3E15F;
+$lightYellowLabelColor: #FCF4C3;
+$greenLabelColor: #5EE0AC;
+$lightGreenLabelColor: #DBF4BF;
+$blueLabelColor: #5BB7D9;
+$lightBlueLabelColor: #BFEEF3;
+$purpleLabelColor: #6569F0;
+$lightPurpleLabelColor: #BEC9F0;
+
+
 // Corner radius
 $radius: 3px !default;
 
+
+// TYPOGRAPHY
+
 // Font weights
-$weightLight: 300 !default;
+$weightLight: 100 !default;
 $weightNormal: 400 !default;
-$weightBold: 600 !default;
+$weightBold: 700 !default;
 
 // Typography
-$fontFamilyDefault: 'Open Sans', 'Helvetica Neue', Arial, sans-serif !default;
+$fontFamilyDefault: 'franklin-gothic-urw', 'Helvetica Neue', Arial, sans-serif !default;
+$fontFamilyDisplay: 'Source Sans Pro', 'HelveticaNeue', Helvetica, Arial, sans-serif !default;
 $fontFamilyMonospace: 'Lucida Console', monospace !default;
-$unitlessRhythm: 0.75 !default;
+$unitlessRhythm: 0.3125 !default; // 5px @ 16px root
 $rhythm: $unitlessRhythm * 1rem !default;
-$unitlessLineHeight: $unitlessRhythm * 2 !default;
+$unitlessLineHeight: $unitlessRhythm * 4 !default; // 20px
 $lineHeight: $unitlessLineHeight * 1rem !default;
-$maxFontSize: 87.5% !default;
+$maxFontSize: 100% !default; // 16px
 
-$inputHeight: 2.286rem !default; // 32px @ 14px root
+// Font Sizes
+
+$fontH1Size: 4rem !default; // 64px
+$fontH1LineHeight: (14 * $rhythm) !default; // 70px
+
+$fontH2Size: 2.5rem !default; // 40px
+$fontH2LineHeight: (11 * $rhythm) !default; // 55px
+
+$fontH3Size: 1.4375rem !default; // 23px
+$fontH3LineHeight: (7 * $rhythm) !default; // 30px
+
+
+
+$fontSmall: 0.875rem; // 14px
+$fontSmaller: 0.8125rem; // 13px
+$fontSmallest: 0.75rem; // 12px
+
+// LAYOUT
+
+$inputHeight: 2.1875rem !default; // 35px @ 16px root
 $inputPadding: 0.3rem !default;
 
 // Grid
@@ -57,6 +109,7 @@ $gutterWidth: 2rem;
 // Viewport widths
 $lapWidth: 640px;
 $deskWidth: 960px;
+$maxWidth: 1140px;
 
 // x-index scale
 $z_dropdown: 600 !default;
@@ -65,7 +118,7 @@ $z_navbar: 700 !default;
 $z_modal: 800 !default;
 $z_flash: 900 !default;
 
-// Mixins
+// MIXINS
 
 @mixin font-smoothing() {
   -webkit-font-smoothing: antialiased;

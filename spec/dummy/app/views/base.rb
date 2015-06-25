@@ -1,14 +1,16 @@
 class Views::Base < Erector::Widget
   def stylesheets(manifest = 'application')
     link href: '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', rel: 'stylesheet'
-    link href: '//fonts.googleapis.com/css?family=Open+Sans:400,300,700,600', rel: 'stylesheet'
-    link href: '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', rel: 'stylesheet'
     stylesheet_link_tag manifest, media: 'all'
   end
 
   def javascripts
     script src: '//code.jquery.com/jquery-1.11.1.min.js'
     javascript_include_tag 'application'
+    script src: '//use.typekit.net/ckb1dps.js'
+    script %{
+      try{Typekit.load();}catch(e){}
+    }
     script %{
       $(function(){
         $('[data-toggle="tooltip"]').tooltip()
@@ -27,8 +29,17 @@ class Views::Base < Erector::Widget
         javascripts
       }
       body {
+        div.hero {
+          div.container {
+            p {
+              img(src: 'http://www.dobt.co/img/dobt_logo.png', alt: 'DOBT')
+            }
+            h1 'DOBT Style Guide'
+            p 'We use these guidelines and shared components for everything we build, including commercial and internal apps.'
+          }
+        }
+
         a.sr_only 'Skip to content', href: '#content'
-        render_navbar
 
         div.content!
         div.container {

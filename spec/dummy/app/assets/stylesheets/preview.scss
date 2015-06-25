@@ -2,12 +2,11 @@
 
 body {
   background: white;
-  padding-top: $navHeight + 1.5rem;
 }
 
 .container {
   width: 90%;
-  max-width: 1140px;
+  max-width: $maxWidth;
   margin: 0 auto;
 }
 
