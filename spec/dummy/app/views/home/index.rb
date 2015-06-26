@@ -23,7 +23,7 @@ class Views::Home::Index < Views::Base
 
     docs 'Lists', %{
 
-      ul.list_formatted {
+      ul.formatted_list {
         li 'Item 1'
         li 'Item 2'
         li 'Item 3'
@@ -33,7 +33,7 @@ class Views::Home::Index < Views::Base
         li 'Item 7'
       }
 
-      ol.list_formatted {
+      ol.formatted_list {
         li 'Item 1'
         li 'Item 2'
         li 'Item 3'
