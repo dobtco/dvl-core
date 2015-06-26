@@ -81,8 +81,6 @@ textarea {
 
 // Heights & sizes
 
-$largeInputMultiplier: 1.5;
-
 input[type="text"],
 input[type="email"],
 input[type="search"],
@@ -92,8 +90,10 @@ input[type="number"] {
   height: $inputHeight;
 
   &.large {
-    font-size: $largeInputMultiplier * 1rem;
-    height: $inputHeight * $largeInputMultiplier;
+    font-size: 1rem * $ratio;
+    height: $inputHeight * $ratio;
+    padding: $inputPadding * $ratio;
+    @include font_smoothing;
   }
 }
 
@@ -101,8 +101,10 @@ textarea {
   line-height: $lineHeight;
 
   &.large {
-    font-size: $largeInputMultiplier * 1rem;
-    line-height: 1.5;
+    padding: $inputPadding * $ratio;
+    font-size: 1rem * $ratio;
+    line-height: $rhythm * 5;
+    @include font_smoothing;
   }
 }
 
@@ -171,7 +173,7 @@ textarea {
 
 label.required > abbr {
   color: $errorColor;
-  font-size: 0.8rem;
+  font-size: $fontSmaller;
 }
 
 select.datetime {
@@ -318,11 +320,11 @@ form {
 }
 
 .form_item_horiz_label {
-  margin-top: 0.15rem;
+  margin-top: $rhythm;
 }
 
 .form_item_vert_label {
-  margin-bottom: 0.25rem;
+  margin-bottom: $rhythm;
 }
 
 .input_sub {
