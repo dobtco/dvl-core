@@ -41,12 +41,12 @@ pre,
 summary,
 table,
 ul {
-  margin: 0 0 1rem;
+  margin: 0 0 $lineHeight;
 }
 
 dt {
-  color: #888;
-  font-size: $fontSmaller;
+  color: $darkGray;
+  font-size: $fontSmall;
 }
 
 dd {
@@ -76,6 +76,16 @@ h6 {
 h1, h2 {
   font-family: $fontFamilyDisplay;
   font-weight: 100;
+}
+
+// Optically aligning Source Sans Pro with body text
+
+h1 {
+  margin-left: -0.3125rem;
+}
+
+h2 {
+  margin-left: -0.125rem;
 }
 
 h1, h2, h3, h4 {
@@ -120,6 +130,13 @@ hr {
   border-bottom: 1px solid $lightGray;
 }
 
+blockquote {
+  border-left: ($rhythm / 2) solid $lighterGray;
+  padding-left: $rhythm * 2.5;
+  font-style: italic;
+  color: $darkerGray;
+}
+
 /* 1. Address inconsistent and variable `font-size` in all browsers */
 small {
   display: inline-block;
@@ -142,17 +159,4 @@ sup {
 
 sub {
   bottom: -0.25em;
-}
-
-.microcopy {
-  background: #f7f7f7;
-  font-size: $fontSmallest;
-  padding: 0.375rem 1rem;
-  border-radius: $radius;
-  max-width: 22rem;
-}
-
-// Actionable links within .microcopy
-.microcopy_action {
-  display: block;
 }

@@ -81,22 +81,22 @@ $weightBold: 700 !default;
 $fontFamilyDefault: 'franklin-gothic-urw', 'Helvetica Neue', Arial, sans-serif !default;
 $fontFamilyDisplay: 'Source Sans Pro', 'HelveticaNeue', Helvetica, Arial, sans-serif !default;
 $fontFamilyMonospace: 'Lucida Console', monospace !default;
-$unitlessRhythm: 0.3125 !default; // 5px @ 16px root
+$unitlessRhythm: 0.5 !default; // 8px @ 16px root
 $rhythm: $unitlessRhythm * 1rem !default;
-$unitlessLineHeight: $unitlessRhythm * 4 !default; // 20px
+$unitlessLineHeight: $unitlessRhythm * 3 !default; // 24px
 $lineHeight: $unitlessLineHeight * 1rem !default;
 $maxFontSize: 100% !default; // 16px
 
 // Font Sizes
 
 $fontH1Size: 4rem !default; // 64px
-$fontH1LineHeight: (14 * $rhythm) !default; // 70px
+$fontH1LineHeight: (10 * $rhythm) !default; // 80px
 
 $fontH2Size: 2.5rem !default; // 40px
-$fontH2LineHeight: (11 * $rhythm) !default; // 55px
+$fontH2LineHeight: (7 * $rhythm) !default; // 56px
 
 $fontH3Size: 1.4375rem !default; // 23px
-$fontH3LineHeight: (7 * $rhythm) !default; // 30px
+$fontH3LineHeight: (4 * $rhythm) !default; // 32px
 
 
 
@@ -106,7 +106,7 @@ $fontSmallest: 0.75rem; // 12px
 
 // LAYOUT
 
-$inputHeight: 2.1875rem !default; // 35px @ 16px root
+$inputHeight: 2.25rem !default; // 36px @ 16px root
 $inputPadding: 0.3rem !default;
 
 // Grid

@@ -1,8 +1,57 @@
 class Views::Home::Index < Views::Base
   def main
-    docs 'Code', %{
-      pre %{<p>This is some awesome code</p>}
-      p %{This is a paragraph with <code>code</code>.}.html_safe
+
+    docs 'Headings', %{
+      h1 'Heading 1 64/80px'
+      h2 'Heading 2 40/56px'
+      h3 'Heading 3 23/32px'
+      h4 'Heading 4 16/24px'
+      h5 'Heading 5 13/24px'
+    }
+
+    docs 'Paragraph-Level Text', %{
+      p 'Paragraph text is 16/24px. You should be styling most text with these defaults.'.html_safe
+
+      blockquote 'Blockquotes are usually unecessary in UI copywriting. Use them in blog posts, support documentation, and other prose writing when quoting another source.'
+
+      p %{Text with inline code, or developer-oriented data like API keys, should be wrapped in a <code>&lt;code&gt;</code> tag.}.html_safe
+
+      pre %{## Code which wraps to multiple lines should be
+## placed in a <pre> tag.}
+
+    }
+
+    docs 'Lists', %{
+
+      ul.list_formatted {
+        li 'Item 1'
+        li 'Item 2'
+        li 'Item 3'
+        li 'Item 4'
+        li 'Item 5'
+        li 'Item 6'
+        li 'Item 7'
+      }
+
+      ol.list_formatted {
+        li 'Item 1'
+        li 'Item 2'
+        li 'Item 3'
+        li 'Item 4'
+        li 'Item 5'
+        li 'Item 6'
+        li 'Item 7'
+      }
+    }
+
+    docs 'Definition Lists', %{
+      p 'Use definition lists to format labeled lists and metadata, like the contents of a form submissions or the sender information in an email.'
+      dl {
+        dt 'Name'
+        dd 'Barack Obama'
+        dt 'Email Address'
+        dd 'barack.obama@whitehouse.gov'
+      }
     }
 
     docs 'Dropdowns', %{
@@ -419,21 +468,6 @@ class Views::Home::Index < Views::Base
 
         text ' '
       end
-    }
-
-    docs 'Typography', %{
-      h1 'Heading 1'
-      h2 'Heading 2'
-      h3 'Heading 3'
-      h4 'Heading 4'
-      h5 'Heading 5'
-      h6 'Heading 6'
-      p 'Lorem ipsum.'
-
-      p.microcopy {
-        text 'This is some awesome .microcopy.'
-        a.microcopy_action 'Microcopy action'
-      }
     }
   end
 end

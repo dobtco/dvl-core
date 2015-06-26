@@ -607,3 +607,12 @@ a.styled_select {
       margin-left: 8.3333% * 3;
   }
 }
+
+.microcopy {
+  background: $lighterGray;
+  font-size: $fontSmaller;
+  padding: 0.375rem 1rem;
+  border-radius: $radius;
+  max-width: 22rem;
+}
+

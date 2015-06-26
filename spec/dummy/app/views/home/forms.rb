@@ -204,6 +204,13 @@ class Views::Home::Forms < Views::Base
       end
     }
 
+    docs 'Microcopy', %{
+      p.microcopy {
+        text 'When providing '
+        a 'Change signature?'
+      }
+    }
+
     docs 'Large inputs', %{
       simple_form_for :large_inputs do |f|
         f.input :large_string,

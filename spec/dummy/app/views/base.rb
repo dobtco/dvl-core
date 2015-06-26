@@ -182,21 +182,24 @@ class Views::Base < Erector::Widget
   # end
 
   def docs(name, codeString, opts = {})
-    h3 name, id: name.downcase
 
-    div(class: "docs #{opts[:full] ? 'docs_layout_full' : 'docs_layout_split'}") {
+    div.docs_item {
+      h3 name, id: name.downcase
+
+      if opts[:hint]
+        p opts[:hint]
+      end
+
+      eval(codeString)
+
       div.docs_col {
-        div.docs_preview {
-          if opts[:hint]
-            p opts[:hint]
-          end
-
-          eval(codeString)
+        label.docs_toggle_label(for: "docs_code_#{name.downcase}") {
+          text 'View source'
         }
-      }
+        input(class: 'docs_toggle_input', id: "docs_code_#{name.downcase}", type: 'checkbox')
 
-      div.docs_col {
         div.docs_code {
+          div.docs_code_header 'Source code'
           pre codeString.strip_heredoc.strip
         }
       }
