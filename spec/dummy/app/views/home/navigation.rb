@@ -168,6 +168,39 @@ class Views::Home::Navigation < Views::Base
       }
     }, full: true
 
+    docs 'Sidebar Navigation', %{
+      ul.sidebar_nav {
+        li.header {
+          text 'Header Item'
+          img(src: '//dobt-misc.s3.amazonaws.com/headshots/adam.jpg')
+        }
+        li.active {
+          a {
+            text 'Item 1'
+            span.badge '500'
+          }
+        }
+        li {
+          a {
+            text 'Item 2'
+            span.badge '0'
+          }
+        }
+        li {
+          a {
+            text 'Item 3: an example of a very long item which wraps to multiple lines.'
+            span.badge '400'
+          }
+        }
+        li {
+          a {
+            div.label "Yoooooo"
+            span.badge "500"
+          }
+        }
+      }
+    }
+
     docs 'Page subheader (h3) and actions', %{
       div.page_subheader {
         h3 'Subheader'
