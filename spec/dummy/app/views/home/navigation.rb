@@ -1,6 +1,9 @@
 class Views::Home::Navigation < Views::Base
   def main
+    h2 'Navigation'
+
     docs 'Navbar', %{
+      h5 'Signed Out'
       nav.navbar {
         div.container {
           div.navbar_header {
@@ -39,7 +42,100 @@ class Views::Home::Navigation < Views::Base
           }
         }
       }
-    }, full: true
+
+      h5 'Signed In'
+
+      nav.navbar {
+        div.container {
+          div.navbar_header {
+            a.navbar_brand 'DOBT Style Guide', href: '#'
+            a.navbar_toggle "<i class='fa fa-reorder'></i>".html_safe
+          }
+
+          div.navbar_content_wrapper {
+            div.navbar_content.navbar_content_primary {
+              ul {
+                li.active {
+                  a 'Main styles'
+                }
+                li {
+                  a 'Something else'
+                }
+              }
+            }
+
+            div.navbar_content.navbar_content_secondary {
+              form.navbar_search_form {
+                input type: 'text', placeholder: 'Search...'
+              }
+              ul {
+                li.dropdown.dropdown_navbar {
+                  a(
+                    'data-toggle' => 'dropdown',
+                    href: '#'
+                  ) {
+                    span.navbar_full_i {
+                      i(class: 'fa fa-search navbar_icon')
+                    }
+                    span.navbar_collapsed_i {
+                      text 'Search'
+                    }
+                  }
+
+                  div.dropdown_menu(role: 'menu') {
+                    h3 'Loading forever'
+                    ul.dropdown_body {
+                      li.dropdown_loading {
+                        span {
+                          i(class: 'fa fa-spin fa-refresh')
+                        }
+                      }
+                    }
+                  }
+                }
+                li.dropdown.dropdown_navbar {
+                  a(
+                    'data-toggle' => 'dropdown',
+                    href: '#'
+                  ) {
+                    span.navbar_full_i {
+                      i(class: 'fa fa-file-text navbar_icon')
+                    }
+                    span.navbar_collapsed_i {
+                      text 'Projects'
+                    }
+                  }
+
+                  div.dropdown_menu(role: 'menu') {
+                    h3 'Projects'
+                    ul.dropdown_body {
+                      li { a 'Item', href: '#' }
+                    }
+                  }
+                }
+                li.dropdown.dropdown_navbar {
+                  a(
+                    'data-toggle' => 'dropdown',
+                    href: '#'
+                  ) {
+                    img.nav_avatar src: '//dobt-captured.s3.amazonaws.com/ajb/richard_ayoade_-_Google_Search_2015-05-26_09-56-32.png_290290_2015-05-26_09-57-03.png'
+                  }
+
+                  div.dropdown_menu(role: 'menu') {
+                    h3 'My account'
+                    ul.dropdown_body {
+                      li { a 'Edit profile', href: '#' }
+                      li { a 'Sign out', href: '#' }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
 
     docs 'Page Header with Secondary and Tertiary Nav', %{
       div.page_header {

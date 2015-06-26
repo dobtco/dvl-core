@@ -1,6 +1,7 @@
 class Views::Home::Components < Views::Base
   def main
-
+    h2 'Components'
+    
     docs 'Dropdowns', %{
       div.dropdown {
         a "Click me <i class='fa fa-caret-down'></i>".html_safe,
@@ -175,6 +176,20 @@ class Views::Home::Components < Views::Base
       span.label.label_info 'Info'
       text ' '
       span.label.label_warning 'Warning'
+    }
+
+    docs 'Flashes', %{
+      ul {
+        li {
+          a 'Success', href: 'javascript:DvlFlash("success", "You did it!")'
+        }
+        li {
+          a 'Info', href: 'javascript:DvlFlash("info", "An informational message...")'
+        }
+        li {
+          a 'Error', href: 'javascript:DvlFlash("error", "Oh no, an error occured!")'
+        }
+      }
     }
 
     docs 'Alerts', %{

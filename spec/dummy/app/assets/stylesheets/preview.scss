@@ -55,3 +55,9 @@
     display: block;
   }
 }
+
+// Preview-specific styles
+
+.navbar + h5 {
+  margin-top: $lineHeight;
+}

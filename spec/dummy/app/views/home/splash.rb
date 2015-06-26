@@ -4,6 +4,8 @@ class Views::Home::Splash < Views::Base
   end
 
   def main
+    h2 'Navigation'
+    
     docs 'Splash', %{
       footer.footer {
         div.footer_inner {

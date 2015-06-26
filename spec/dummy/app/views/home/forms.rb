@@ -1,5 +1,7 @@
 class Views::Home::Forms < Views::Base
   def main
+    h2 'Forms'
+    
     docs 'Basic Forms', %{
       simple_form_for :basic do |f|
         f.input :string,
@@ -228,6 +230,82 @@ class Views::Home::Forms < Views::Base
         input type: 'checkbox', checked: true
         text 'This is a control_minus'
       }
+    }
+
+        docs 'Buttons', %{
+      a.button 'Yo!'
+      text ' '
+      a.button.info 'Info'
+      text ' '
+      a.button.primary 'Primary'
+      text ' '
+      a.button.success 'Success'
+      text ' '
+      a.button.white 'White'
+    }
+
+    docs 'Button with form', %{
+      simple_form_for :search do |f|
+        div.grid {
+          div.item.eight_columns {
+            f.input_field :q, as: :string
+          }
+          div.item.four_columns {
+            f.button :button
+          }
+        }
+      end
+    }
+
+    docs 'Button with select', %{
+      select {
+        option 'Option'
+      }
+      text ' '
+      a.button 'Go!'
+    }, hint: 'The alignment should match up perfectly :)'
+
+    docs 'Fancy stuff', %{
+      a.button.info.arrow_l 'arrow_l'
+      br
+      a.button.info.arrow 'arrow'
+      br
+      a.button.info.long_arrow 'long_arrow'
+      br
+      a.button.info.loading {
+        text 'loading'
+        i(class: 'fa fa-refresh fa-spin')
+      }
+    }
+
+    docs 'Disabled', %{
+      a.button.disabled 'Yo!'
+      text ' '
+      a.button.info.disabled 'Info'
+      text ' '
+      a.button.primary.disabled 'Primary'
+      text ' '
+      a.button.success.disabled 'Success'
+      text ' '
+      a.button.white.disabled 'White'
+    }
+
+    docs 'Button sizes', %{
+      a.button.large.block 'Yo!'
+      br
+      a.button.large 'Yo!'
+      text ' '
+      a.button 'Yo!'
+      text ' '
+      a.button.small 'Yo!'
+      text ' '
+      a.button.mini 'Yo!'
+    }
+
+    docs 'Other buttons', %{
+      a.button_uppercase 'Uppercase'
+      text ' '
+      a.button_link 'Link'
     }
   end
 end

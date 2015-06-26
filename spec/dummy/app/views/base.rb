@@ -69,106 +69,13 @@ class Views::Base < Erector::Widget
   def pages
     {
       'Typography' => '/',
+      'Color' => '/color',
+      'Layout' => '/layout',
+      'Data' => '/data',
       'Forms' => '/forms',
-      'Buttons' => '/buttons',
-      'Flashes' => '/flashes',
-      'Footer' => '/footer',
-      'Splash' => '/splash',
       'Navigation' => '/navigation',
-      'Grid' => '/grid',
-      'Components' => '/components'
-    }
-  end
-
-  def render_navbar
-    nav.navbar.navbar_sticky {
-      div.container {
-        div.navbar_header {
-          a.navbar_brand 'DOBT Style Guide', href: '#'
-          a.navbar_toggle "<i class='fa fa-reorder'></i>".html_safe
-        }
-
-        div.navbar_content_wrapper {
-          div.navbar_content.navbar_content_primary {
-            ul {
-              li.active {
-                a 'Main styles'
-              }
-              li {
-                a 'Something else'
-              }
-            }
-          }
-
-          div.navbar_content.navbar_content_secondary {
-            form.navbar_search_form {
-              input type: 'text', placeholder: 'Search...'
-            }
-            ul {
-              li.dropdown.dropdown_navbar {
-                a(
-                  'data-toggle' => 'dropdown',
-                  href: '#'
-                ) {
-                  span.navbar_full_i {
-                    i(class: 'fa fa-search navbar_icon')
-                  }
-                  span.navbar_collapsed_i {
-                    text 'Search'
-                  }
-                }
-
-                div.dropdown_menu(role: 'menu') {
-                  h3 'Loading forever'
-                  ul.dropdown_body {
-                    li.dropdown_loading {
-                      span {
-                        i(class: 'fa fa-spin fa-refresh')
-                      }
-                    }
-                  }
-                }
-              }
-              li.dropdown.dropdown_navbar {
-                a(
-                  'data-toggle' => 'dropdown',
-                  href: '#'
-                ) {
-                  span.navbar_full_i {
-                    i(class: 'fa fa-file-text navbar_icon')
-                  }
-                  span.navbar_collapsed_i {
-                    text 'Projects'
-                  }
-                }
-
-                div.dropdown_menu(role: 'menu') {
-                  h3 'Projects'
-                  ul.dropdown_body {
-                    li { a 'Item', href: '#' }
-                  }
-                }
-              }
-              li.dropdown.dropdown_navbar {
-                a(
-                  'data-toggle' => 'dropdown',
-                  href: '#'
-                ) {
-                  img.nav_avatar src: '//dobt-captured.s3.amazonaws.com/ajb/richard_ayoade_-_Google_Search_2015-05-26_09-56-32.png_290290_2015-05-26_09-57-03.png'
-                }
-
-                div.dropdown_menu(role: 'menu') {
-                  h3 'My account'
-                  ul.dropdown_body {
-                    li { a 'Edit profile', href: '#' }
-                    li { a 'Sign out', href: '#' }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+      'Components' => '/components',
+      'Splash' => '/splash'
     }
   end
 
