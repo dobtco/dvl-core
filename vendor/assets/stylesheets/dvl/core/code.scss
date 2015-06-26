@@ -9,13 +9,13 @@ code, pre {
 
 code {
   padding: 0 $rhythm;
-  font-size: $fontSmaller;
+  font-size: $fontSmallest;
   border: 1px solid $lightGray;
   background: $lightestGray;
   white-space: nowrap;
   // Increase `padding` at larger viewport widths
   @media only screen and (min-width: 480px) {
-    padding: 0.25rem 0.5rem;
+    padding: 0.125rem 0.25rem;
   }
 }
 
@@ -29,4 +29,5 @@ pre {
   word-wrap: normal;
   word-break: normal;
   @include font_smoothing;
+  letter-spacing: 0.02rem;
 }

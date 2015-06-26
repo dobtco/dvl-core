@@ -18,6 +18,7 @@ html {
 
 body {
   margin: 0; /* 1 */
+  background: $bodyBackgroundColor;
   color: $bodyFontColor;
   font-size: 1rem; /* 2 */
   font-family: $fontFamilyDefault;
@@ -69,7 +70,6 @@ h6 {
   margin: 0 0 $lineHeight;
   padding: 0;
   color: $black;
-  line-height: 1.333;
   text-rendering: optimizeLegibility;
 }
 
@@ -117,7 +117,6 @@ h4 {
 h5 {
   font-weight: $weightNormal;
   text-transform: uppercase;
-  color: $darkerGray;
   font-size: $fontSmaller; // 13px
   line-height: $lineHeight; // 20px
   letter-spacing: 0.06rem; // 0.9px
@@ -137,11 +136,22 @@ blockquote {
   color: $darkerGray;
 }
 
+del {
+  text-decoration: line-through;
+  .cssgradients & {
+    text-decoration: none;
+    background-image: linear-gradient($bodyBackgroundColor, $bodyBackgroundColor), linear-gradient($bodyBackgroundColor, $bodyBackgroundColor), linear-gradient(rgba($bodyFontColor,0.6), rgba($bodyFontColor,0.6));
+    background-size: .05em 2px, .05em 2px, 2px 2px;
+    background-repeat: no-repeat, no-repeat, repeat-x;
+    background-position: 0% 60%, 100% 60%, 0% 60%;
+  }
+}
+
 /* 1. Address inconsistent and variable `font-size` in all browsers */
 small {
   display: inline-block;
-  font-size: 87.5%; /* 1 */
-  line-height: 1.333;
+  font-size: $fontSmaller;
+  line-height: $lineHeight;
 }
 
 /* Prevent <sub> and <sup> affecting `line-height` in all browsers */
@@ -149,14 +159,14 @@ sub,
 sup {
   position: relative;
   vertical-align: baseline;
-  font-size: 75%;
+  font-size: $fontSmallest;
   line-height: 0;
 }
 
 sup {
-  top: -0.5em;
+  top: -0.3125rem;
 }
 
 sub {
-  bottom: -0.25em;
+  bottom: -0.1875rem;
 }

@@ -10,18 +10,24 @@ class Views::Home::Index < Views::Base
     }
 
     docs 'Paragraph-Level Text', %{
-      p 'Paragraph text is 16/24px. You should be styling most text with these defaults.'.html_safe
+      p 'Our default text styles are 16/24px. You should be styling most text with this default.'.html_safe
 
-      blockquote 'Blockquotes are usually unecessary in UI copywriting. Use them in blog posts, support documentation, and other prose writing when quoting another source.'
+      blockquote 'Use blockquotes in blog posts, support documentation, and other prose writing when quoting another source. They are usually unnecessary in interface design.'
 
       p %{Text with inline code, or developer-oriented data like API keys, should be wrapped in a <code>&lt;code&gt;</code> tag.}.html_safe
 
       pre %{## Code which wraps to multiple lines should be
 ## placed in a <pre> tag.}
 
+      p %{<del>Redacted text</del> should be styled with <code>&lt;del&gt;</code> tags.}.html_safe
+
+      p %{The 1<sup>st</sup> degree of burns.<sub><a href="#">1</a></sub>}.html_safe
+
     }
 
     docs 'Lists', %{
+
+      p %{By default, lists are unstyled. Use the <code>.formatted_list</code> class to create bulleted and numbered lists.}.html_safe
 
       ul.formatted_list {
         li 'Item 1'
@@ -268,14 +274,6 @@ class Views::Home::Index < Views::Base
       a.uppercase 'Uppercase'
       text ' '
       a.smallbold 'Smallbold'
-    }
-
-    docs 'Lists', %{
-      ul {
-        li 'This'
-        li 'is a'
-        li 'list!'
-      }
     }
 
     docs 'Modals', %{

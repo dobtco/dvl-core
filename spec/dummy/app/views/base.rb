@@ -68,14 +68,14 @@ class Views::Base < Erector::Widget
 
   def pages
     {
-      'Introduction' => '/',
+      'Typography' => '/',
       'Forms' => '/forms',
       'Buttons' => '/buttons',
       'Flashes' => '/flashes',
       'Footer' => '/footer',
       'Splash' => '/splash',
       'Navigation' => '/navigation',
-      'Grid' => '/grid',
+      'Grid' => '/grid'
     }
   end
 
@@ -199,10 +199,12 @@ class Views::Base < Erector::Widget
         input(class: 'docs_toggle_input', id: "docs_code_#{name.downcase}", type: 'checkbox')
 
         div.docs_code {
-          div.docs_code_header 'Source code'
+          div.docs_code_header 'Erector source code'
           pre codeString.strip_heredoc.strip
         }
       }
     }
+
+    hr
   end
 end

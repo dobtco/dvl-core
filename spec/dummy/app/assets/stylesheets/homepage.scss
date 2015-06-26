@@ -14,6 +14,6 @@
   }
   padding: $lineHeight * 6 0;
   margin-bottom: $lineHeight * 2;
-  background-color: #09132D;
+  background-color: $brandColor;
   background-image: linear-gradient(10deg, rgba(186,146,112,0.6) 7%, rgba(186,146,112,0) 58%), linear-gradient(-10deg, rgba(0,133,250,0.3) 10%, rgba(0,133,250,0) 60%);
 }

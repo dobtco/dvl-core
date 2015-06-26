@@ -75,15 +75,23 @@ html {
  * 2. Remove `text-shadow` selection highlight - http://cbrac.co/Q6swON
  */
 
-::-moz-selection, ::selection {
+::-moz-selection {
   background: $selectionBackground;
+  color: $selectionColor;
+  text-shadow: none;
+}
+
+::selection {
+  background: $selectionBackground;
+  color: $selectionColor;
   text-shadow: none;
 }
 
 
+
 /* Change `background` for text selections when browser is unfocused */
 ::selection:window-inactive {
-  background: $lightGray;
+  background: rgba($selectionBackground,0.6);
 }
 
 /* Remove `background` on images when selected */

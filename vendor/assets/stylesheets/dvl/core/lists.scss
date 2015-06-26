@@ -1,24 +1,37 @@
 // Default and prose list styles
 
-@mixin formatted_list {
-  list-style-position: inside;
-  margin-left: 1rem;
-  margin-bottom: $lineHeight;
-}
-
 @mixin formatted_list_ul {
-  list-style-type: disc;
+  li {
+    position: relative;
+    margin: 0 0 $lineHeight ($rhythm * 3);
+    &:before {
+      position: absolute;
+      top: $rhythm;
+      left: $rhythm * -3;
+      right: 100%;
+      content: '';
+      width: $rhythm;
+      height: $rhythm;
+      border: 1px solid $darkestGray;
+      border-radius: 50%;
+    }
+  }
 }
 
 @mixin formatted_list_ol {
-  list-style: decimal;
-  ol {
-    list-style: upper-alpha;
-    ol {
-      list-style: lower-roman;
-      ol {
-        list-style: lower-alpha;
-      }
+  counter-reset: list;
+  li {
+    position: relative;
+    counter-increment: list;
+    margin: 0 0 $lineHeight $rhythm * 5;
+    &:before {
+      position: absolute;
+      content: counter(list) '.';
+      top: 0;
+      color: $darkestGray;
+      color: rgba($darkestGray,0.8);
+      left: $rhythm * -5;
+      text-align: left;
     }
   }
 }
@@ -27,9 +40,6 @@ ul, ol {
   margin: 0;
   padding: 0;
   list-style: none;
-  &.formatted_list {
-    @include formatted_list;
-  }
 }
 
 ul.formatted_list {

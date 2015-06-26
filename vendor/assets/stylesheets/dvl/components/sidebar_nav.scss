@@ -8,11 +8,10 @@
       @include font_smoothing;
     }
     &.header {
-      color: $darkerGray;
-      background-color: $lighterGray;
-      border-color: $lighterGray;
+      color: #999;
+      border: 0;
       position: relative;
-      padding: $rhythm $lineHeight;
+      padding: 0 0 $rhythm;
       img {
         height: $lineHeight;
         width: $lineHeight;
@@ -41,7 +40,8 @@
     &:first-child {
       > a,
       &.content,
-      &.header {
+      &.header + li.content,
+      &.header + li > a {
         @include border_top_radius($radius);
       }
     }

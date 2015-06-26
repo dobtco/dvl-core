@@ -1,6 +1,12 @@
 // COLORS
 
 
+// App-specific colors
+$bodyBackgroundColor: #fff !default;
+$brandColor: #09152f !default;
+$selectionBackground: $brandColor !default;
+$selectionColor: #fff !default;
+
 // Grayscale
 $black: #262626;
 $darkestGray: #4d4d4d;
@@ -12,11 +18,6 @@ $lighterGray: #f2f2f2;
 $lightestGray: #fcfcfc;
 $white: #fff;
 
-// Other grays
-
-$blankStateGray: $darkerGray;
-$borderGray: #dfdfdf;
-
 
 
 
@@ -24,7 +25,6 @@ $borderGray: #dfdfdf;
 $logoBlue: #009ade;
 $blueGray: #6a6e75;
 $lighterBlueGray: #6a6e75;
-$selectionBackground: #b3d4fc;
 $linkColor: #2e8ad0;
 $bodyFontColor: $darkestGray;
 $darkBlue: #1fa3ec;
@@ -80,7 +80,7 @@ $weightBold: 700 !default;
 // Typography
 $fontFamilyDefault: 'franklin-gothic-urw', 'Helvetica Neue', Arial, sans-serif !default;
 $fontFamilyDisplay: 'Source Sans Pro', 'HelveticaNeue', Helvetica, Arial, sans-serif !default;
-$fontFamilyMonospace: 'Lucida Console', monospace !default;
+$fontFamilyMonospace: 'Consolas', 'Monaco', 'Lucida Console', monospace !default;
 $unitlessRhythm: 0.5 !default; // 8px @ 16px root
 $rhythm: $unitlessRhythm * 1rem !default;
 $unitlessLineHeight: $unitlessRhythm * 3 !default; // 24px
@@ -100,16 +100,14 @@ $fontH2LineHeight: (7 * $rhythm) !default; // 56px
 $fontH3Size: 1.4375rem !default; // 23px
 $fontH3LineHeight: (4 * $rhythm) !default; // 32px
 
-
-
 $fontSmall: 0.875rem; // 14px
 $fontSmaller: 0.8125rem; // 13px
 $fontSmallest: 0.75rem; // 12px
 
 // LAYOUT
 
-$inputHeight: 2.25rem !default; // 36px @ 16px root
-$inputPadding: 0.3rem !default;
+$inputHeight: $rhythm * 5 !default; // 36px @ 16px root
+$inputPadding: $rhythm !default;
 
 // Grid
 $columnWidth: 8.333%;
@@ -120,7 +118,7 @@ $lapWidth: 640px;
 $deskWidth: 960px;
 $maxWidth: 1140px;
 
-// x-index scale
+// Z-index scale
 $z_dropdown: 600 !default;
 $z_tooltip: 600 !default;
 $z_navbar: 700 !default;
@@ -164,13 +162,6 @@ $z_flash: 900 !default;
 @mixin border_left_radius($radius) {
   border-top-left-radius: $radius;
   border-bottom-left-radius: $radius;
-}
-
-@mixin social_button_color($base_color) {
-  background: $base_color;
-  &:hover {
-    background: darken($base_color, 7%);
-  }
 }
 
 // Animation mixins
@@ -230,3 +221,18 @@ $easeInOutBack:  cubic-bezier(0.680, -0.550, 0.265, 1.550);
 @mixin avatar {
   border-radius: 50%;
 }
+
+
+// Legacy
+
+@mixin social_button_color($base_color) {
+  background: $base_color;
+  &:hover {
+    background: darken($base_color, 7%);
+  }
+}
+
+// Other grays
+
+$blankStateGray: $darkerGray;
+$borderGray: #dfdfdf;
