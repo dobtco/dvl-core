@@ -10,17 +10,6 @@ a {
   text-decoration: none;
 // Improve readability when focused or hovered in all browsers
 // Address `outline` inconsistency between Chrome and other browsers
-  &.muted {
-    color: $darkerGray;
-    text-decoration: underline;
-    &:hover {
-      text-decoration: none;
-    }
-  }
-  &.smallbold {
-    font-weight: $weightBold;
-    font-size: $fontSmaller;
-  }
   &:hover {
     text-decoration: underline;
   }
@@ -35,19 +24,10 @@ a {
   &.uppercase {
     // #todo consolidate this with .caps
     text-transform: uppercase;
-    color: $darkGray;
     font-size: $fontSmallest;
-    font-weight: $weightBold;
-    letter-spacing: 0.04rem;
+    letter-spacing: 0.06rem; // 0.9px
     &:hover {
       text-decoration: none;
-      color: $darkerGray;
-    }
-  }
-  &.subtle_icon {
-    color: $darkGray;
-    text-decoration: none;
-    &:hover {
       color: $darkerGray;
     }
   }

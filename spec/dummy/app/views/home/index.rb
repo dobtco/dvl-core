@@ -1,6 +1,6 @@
 class Views::Home::Index < Views::Base
   def main
-    h2 'Typography'
+    h2 'Base Styles'
 
     docs 'Headings', %{
       h1 'Heading 1 64/80px'
@@ -20,8 +20,9 @@ class Views::Home::Index < Views::Base
       pre %{## Code which wraps to multiple lines should be
 ## placed in a <pre> tag.}
 
+      p %{Use the <code>&lt;sub&gt;</code> and <code>&lt;sup&gt;</code> tags to style superscript and subscript text. For example: &ldquo;The 8<sup>th</sup> molecule of H<sub>2</sub>O.&rdquo;}.html_safe
+    
       p %{<del>Redacted text</del> should be styled with <code>&lt;del&gt;</code> tags.}.html_safe
-
     }
 
     docs 'Lists', %{
@@ -59,10 +60,14 @@ class Views::Home::Index < Views::Base
       }
     }
 
+    docs 'Figures', %{
+      p %{<figure><img src="http://i.imgur.com/lAaFALg.jpg" alt="DOBT team photo"><figcaption>Did we mention we're hiring?</figcaption></figure>}.html_safe
+    }
+
     docs 'Links', %{
-      a.uppercase 'Uppercase'
-      text ' '
-      a.smallbold 'Smallbold'
+      p %{DOBT believes in the power of open data. It encourages transparency in government, and sometimes, <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">it even saves lives</a>.}.html_safe
+      p %{Add the <code>.uppercase</code> class to any link to downplay a tertiary action. For example:}.html_safe
+      a.uppercase 'Contact Your Local Representative'
     }
 
   end

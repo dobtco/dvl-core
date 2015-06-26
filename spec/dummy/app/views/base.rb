@@ -68,7 +68,7 @@ class Views::Base < Erector::Widget
 
   def pages
     {
-      'Typography' => '/',
+      'Base Styles' => '/',
       'Color' => '/color',
       'Layout' => '/layout',
       'Data' => '/data',

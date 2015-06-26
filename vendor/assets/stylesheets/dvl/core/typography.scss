@@ -136,6 +136,13 @@ blockquote {
   color: $darkerGray;
 }
 
+figcaption {
+  font-style: italic;
+  font-size: $fontSmall;
+  color: $darkerGray;
+  margin-top: $rhythm;
+}
+
 del {
   text-decoration: line-through;
   .cssgradients & {

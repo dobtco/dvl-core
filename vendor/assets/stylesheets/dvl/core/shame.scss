@@ -218,3 +218,28 @@
 .cf {
   @include cf();
 }
+
+// Legacy styles to remove incrementally
+
+a.smallbold {
+  font-weight: $weightBold;
+  font-size: $fontSmaller;
+}
+
+a.muted {
+  color: $darkerGray;
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// Replace this with an icon-specific class
+// or remove it altogether, recommend the use of smaller icons instead
+a.subtle_icon {
+  color: $darkGray;
+  text-decoration: none;
+  &:hover {
+    color: $darkerGray;
+  }
+}
