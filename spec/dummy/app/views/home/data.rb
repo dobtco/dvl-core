@@ -137,6 +137,62 @@ class Views::Home::Data < Views::Base
       p {
         span.label.label_warning 'Warning'
       }
-    }  
+    } 
+
+    docs 'Sidebar (Data List)', %{
+      div.sidebar_box {
+        ul.sidebar_data {
+          li {
+            div.sidebar_data_icon {
+              i(class: 'fa fa-pencil')
+            }
+            div.sidebar_data_text {
+              div.sidebar_data_label 'Assigned to'
+              div.sidebar_data_value 'Jean-Luc Godard'
+              div.sidebar_data_details {
+                a 'Reassign?'
+              }
+            }
+          }
+          li {
+            div.sidebar_data_icon {
+              i(class: 'fa fa-folder')
+            }
+            div.sidebar_data_text {
+              div.sidebar_data_label 'Status'
+              div.sidebar_data_value {
+                simple_form_for :native_select do |f|
+                  f.input_field :blah, as: :select, collection: ['Open', 'Pending', 'Rejected'], selected: 'Option 1', 'data-width' => '100%'
+                end
+              }
+            }
+          }
+          li {
+            div.sidebar_data_icon {
+              i(class: 'fa fa-clock-o')
+            }
+            div.sidebar_data_text {
+              div.sidebar_data_label 'Revision History'
+              div.sidebar_data_value {
+                simple_form_for :foo do |f|
+                  f.input_field :blah, as: :dropdown_select, collection: [['Edited 06/26/15 at 10:28pm', true, 'by Jean-Luc Godard'], ['Edited 06/23/15 at 05:59am', true, 'by Jean-Pierre Melville'], ['Edited 04/15/15 at 01:15pm', true, 'by Jean Cocteau']], selected: 'Edited 06/26/15 at 10:28pm', 'data-width' => '100%'
+                end
+              }
+            }
+          }
+        }
+      }
+      ul.sidebar_sub_actions {
+        li {
+          a 'Grant permission to edit'
+        }
+        li {
+          a 'Export'
+        }
+        li {
+          a 'Archive'
+        }
+      }
+    }, hint: 'Use this sidebar to display metadata and secondary actions related to the main content.'
   end
 end

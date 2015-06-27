@@ -90,8 +90,10 @@
   }
 }
 
-// Preview-specific styles
+// Style-guide specific overrides
 
-.navbar + h4 {
-  margin-top: $lineHeight;
+.navbar {
+  + h4 {
+    margin-top: $lineHeight;
+  }
 }

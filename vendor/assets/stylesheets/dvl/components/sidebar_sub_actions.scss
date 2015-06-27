@@ -1,0 +1,9 @@
+// Actions which appear below the sidebar.
+
+.sidebar_sub_actions {
+  margin-top: $rhythm;
+  font-size: $fontSmall;
+  .sidebar_box + & {
+    text-align: right;
+  }
+}

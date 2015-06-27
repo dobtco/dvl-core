@@ -328,11 +328,13 @@ table {
 // 1. Separate .pagination_status from .pagination, rename to .pagination_compact
 // 2. Make .pagination_center the default, add .pagination_left if necessary
 
+$paginationStatusHeight: $rhythm * 5;
+
 .pagination .pagination_status {
   float: left;
   text-transform: uppercase;
   letter-spacing: $letterspaceSmaller;
-  line-height: $rhythm * 5;
+  line-height: $paginationStatusHeight;
   + ul {
     margin-left: $rhythm * 2;
     li {
@@ -343,7 +345,7 @@ table {
           background: $lightestGray;
           border: 1px solid $lightGray;
           float: left;
-          width: $rhythm * 5;
+          width: $paginationStatusHeight;
           text-align: center;
           display: block;
         }
@@ -392,8 +394,7 @@ table {
   padding-top: 0.5rem;
   @media only screen and (min-width: $lapWidth) {
       position: absolute;
-      top: 0;
+      top: ($fontLineHeightH2 - $paginationStatusHeight) / 2; // Vertical centering
       right: 0;
-      padding-top: 0;
   }
 }

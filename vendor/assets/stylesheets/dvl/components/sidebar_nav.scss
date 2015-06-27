@@ -1,5 +1,5 @@
 .sidebar_nav {
-  margin-bottom: 1rem;
+  margin-bottom: $rhythm * 4;
   > li {
     > a,
     &.content,
@@ -15,10 +15,9 @@
       img {
         height: $lineHeight;
         width: $lineHeight;
-        position: absolute;
-        top: 50%;
-        margin-top: $lineHeight / -2;
-        right: $rhythm;
+        border-radius: $radius;
+        float: left;
+        margin-right: $rhythm;
       }
     }
     > a:focus {
@@ -54,18 +53,17 @@
     .badge {
       position: absolute;
       right: $rhythm;
-      top: 0.75rem;
-      background-color: $lighterGray;
+      top: $rhythm * 2;
+      background-color: $lightGray;
       color: $darkestGray;
-      font-weight: $weightBold;
-      padding: 0 0.5rem;
+      padding: 0 $rhythm;
       border-radius: $radius;
     }
     > a:focus,
     > a:hover {
       background-color: $lighterGray;
       .badge {
-        background-color: $lightGray;
+        background-color: $gray;
       }
     }
     &.active {
@@ -74,13 +72,13 @@
         color: #fff;
       }
       .badge {
-        background-color: $logoBlue;
-        color: $white;
+        background-color: $white;
+        color: $darkestGray;
       }
       &:hover,
       &:focus {
         .badge {
-          background-color: $logoBlue;
+          background-color: $white;
         }
       }
     }

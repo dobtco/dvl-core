@@ -2,8 +2,32 @@ class Views::Home::Navigation < Views::Base
   def main
     h2 'Navigation'
 
-    docs 'Navbar', %{
-      h4 'Signed Out'
+    h3 'Navbar'
+
+    docs 'Signed Out', %{
+      nav.navbar {
+        div.container {
+          div.navbar_header {
+            a.navbar_brand 'DOBT Style Guide', href: '#'
+            a.navbar_toggle "<i class='fa fa-reorder'></i>".html_safe
+          }
+
+          div.navbar_content_wrapper {
+            div.navbar_content.navbar_content_secondary {
+              ul {
+                li {
+                  span {
+                    a.button.primary 'Sign in'
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }, sub: '', hint: 'The product name in a navbar can be either text or a logo, but not both.'
+
+    docs 'Signed In', %{
       nav.navbar {
         div.container {
           div.navbar_header {
@@ -17,49 +41,10 @@ class Views::Home::Navigation < Views::Base
             div.navbar_content.navbar_content_primary {
               ul {
                 li.active {
-                  a 'Main styles'
+                  a 'Dashboard'
                 }
                 li {
-                  a 'Something else'
-                }
-                li {
-                  a {
-                    i(class: 'fa fa-bolt navbar_icon')
-                    span.navbar_badge '1'
-                  }
-                }
-              }
-            }
-            div.navbar_content.navbar_content_secondary {
-              ul {
-                li {
-                  span {
-                    a.button.primary 'Sign in'
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-
-      h4 'Signed In'
-
-      nav.navbar {
-        div.container {
-          div.navbar_header {
-            a.navbar_brand 'DOBT Style Guide', href: '#'
-            a.navbar_toggle "<i class='fa fa-reorder'></i>".html_safe
-          }
-
-          div.navbar_content_wrapper {
-            div.navbar_content.navbar_content_primary {
-              ul {
-                li.active {
-                  a 'Main styles'
-                }
-                li {
-                  a 'Something else'
+                  a 'Projects'
                 }
               }
             }
@@ -69,21 +54,32 @@ class Views::Home::Navigation < Views::Base
                 input type: 'text', placeholder: 'Search...'
               }
               ul {
+                li {
+                  a {
+                    span.navbar_full_i {
+                      i(class: 'fa fa-bolt navbar_icon')
+                      span.navbar_badge '1'
+                    }
+                    span.navbar_collapsed_i {
+                      text 'Notifications'
+                    }
+                  }
+                }
                 li.dropdown.dropdown_navbar {
                   a(
                     'data-toggle' => 'dropdown',
                     href: '#'
                   ) {
                     span.navbar_full_i {
-                      i(class: 'fa fa-search navbar_icon')
+                      i(class: 'fa fa-refresh navbar_icon')
                     }
                     span.navbar_collapsed_i {
-                      text 'Search'
+                      text 'Loading State'
                     }
                   }
 
                   div.dropdown_menu(role: 'menu') {
-                    h3 'Loading forever'
+                    h3 'Loading State'
                     ul.dropdown_body {
                       li.dropdown_loading {
                         span {
@@ -102,14 +98,16 @@ class Views::Home::Navigation < Views::Base
                       i(class: 'fa fa-file-text navbar_icon')
                     }
                     span.navbar_collapsed_i {
-                      text 'Projects'
+                      text 'Default Dropdown'
                     }
                   }
 
                   div.dropdown_menu(role: 'menu') {
-                    h3 'Projects'
+                    h3 'Default Dropdown'
                     ul.dropdown_body {
-                      li { a 'Item', href: '#' }
+                      li { a 'Item 1', href: '#' }
+                      li { a 'Item 2', href: '#' }
+                      li { a 'Item 3', href: '#' }
                     }
                   }
                 }
@@ -134,27 +132,29 @@ class Views::Home::Navigation < Views::Base
           }
         }
       }
-    }
+    }, sub: '', hint: 'Use badges next to navbar icons to notify the user of new information.'
 
+    hr
+    
     h3 'Page Header'
 
     docs 'With Navigation', %{
       div.page_header {
         h2 {
-          a 'Page header', href: '#'
+          a 'Sales Leads', href: '#'
         }
         div.page_header_secondary {
           ul {
             li {
-              a 'Secondary nav'
+              a 'Stages'
             }
 
             li {
-              a 'A thing'
+              a 'Contacts'
             }
 
             li {
-              a 'Another thing'
+              a 'Messages'
             }
           }
         }
@@ -163,20 +163,13 @@ class Views::Home::Navigation < Views::Base
             li {
               a {
                 i(class: 'fa fa-pencil')
-                text 'Tertiary nav'
+                text 'Edit campaign'
               }
             }
 
             li {
               a {
-                i(class: 'fa fa-file')
-                text 'A thing'
-              }
-            }
-
-            li {
-              a {
-                text 'Another thing'
+                text 'Settings'
               }
             }
           }
@@ -186,76 +179,81 @@ class Views::Home::Navigation < Views::Base
 
     docs 'With Button and Back Arrow', %{
       div.page_header.with_back_arrow {
-        a.page_header_back_arrow(title: 'Back to account', 'data-toggle' => 'tooltip') {
+        a.page_header_back_arrow(title: 'Dashboard', 'data-toggle' => 'tooltip') {
           i(class: 'fa fa-arrow-circle-o-left')
         }
 
         h2 {
-          a 'Page header', href: '#'
+          a 'Meeting request', href: '#'
         }
 
         div.page_header_secondary {
           ul {
             li {
-              a 'Secondary nav'
+              a 'Stages'
             }
 
             li {
-              a 'A thing'
+              a 'Contacts'
             }
 
             li {
-              a 'Another thing'
+              a 'Messages'
             }
           }
         }
         div.page_header_tertiary {
           ul {
             li {
-              a(href: '#') {
-                text 'A thing'
+              a {
+                i(class: 'fa fa-pencil')
+                text 'Edit campaign'
               }
             }
 
             li {
-              a(href: '#') {
-                text 'Another thing'
+              a {
+                text 'Settings'
               }
             }
           }
 
-          a.button.info.long_arrow 'View project', href: '#'
+          a.button.info.long_arrow 'View campaign', href: '#'
         }
       }
     }, sub: ''
 
     docs 'With Pagination', %{
       div.page_header.with_back_arrow {
-        a.page_header_back_arrow(title: 'Back to account', 'data-toggle' => 'tooltip') {
+        a.page_header_back_arrow(title: 'All responses', 'data-toggle' => 'tooltip') {
           i(class: 'fa fa-arrow-circle-o-left')
         }
 
         h2 {
-          a 'Page header', href: '#'
+          a 'Max Ophüls', href: '#'
         }
 
         div.page_header_secondary {
           ul {
             li {
-              a 'Secondary nav'
+              a 'Responses'
             }
 
             li {
-              a 'A thing'
+              a 'Questions'
             }
 
             li {
-              a 'Another thing'
+              a 'Messages'
+            }
+
+            li {
+              a 'Settings'
             }
           }
         }
         div.pagination.pagination_page_header {
-          span.pagination_status "Showing <strong>1</strong> of <strong>123</strong>".html_safe
+          span.pagination_status "#94 of 566"
 
           ul {
             li { span{text '&larr;'.html_safe}}
@@ -265,38 +263,76 @@ class Views::Home::Navigation < Views::Base
       }
     }, sub: ''
 
-    docs 'Sidebar Navigation', %{
+    docs 'Sidebar (Navigation)', %{
       ul.sidebar_nav {
         li.header {
-          text 'Header Item'
-          img(src: '//dobt-misc.s3.amazonaws.com/headshots/adam.jpg')
+          text 'Steve McQueen'
+          img(src: 'http://i.imgur.com/2WkSV2N.png')
         }
         li.active {
           a {
-            text 'Item 1'
-            span.badge '500'
+            text 'Profile'
           }
         }
         li {
           a {
-            text 'Item 2'
-            span.badge '0'
+            text 'Preferences'
           }
         }
         li {
           a {
-            text 'Item 3: an example of a very long item which wraps to multiple lines.'
-            span.badge '400'
-          }
-        }
-        li {
-          a {
-            div.label "Yoooooo"
-            span.badge "500"
+            text 'Billing'
           }
         }
       }
-    }
+
+      ul.sidebar_nav {
+        li.header {
+          text 'Statuses'
+        }
+        li {
+          a {
+            text 'Open'
+            span.badge '2'
+          }
+        }
+        li {
+          a {
+            text 'Discarded, but pending review by James Joyce. We need to exhume the body first, though'
+            span.badge '5,000'
+          }
+        }
+      }
+
+      ul.sidebar_nav {
+        li.header {
+          text 'Labels'
+        }
+        li {
+          a {
+            div.label "Label 1"
+            span.badge "15"
+          }
+        }
+        li {
+          a {
+            div.label "Label 2"
+            span.badge "27"
+          }
+        }
+      }
+      ul.sidebar_sub_actions {
+        li {
+          a 'Grant permission to edit'
+        }
+        li {
+          a 'Export'
+        }
+        li {
+          a 'Archive'
+        }
+      }
+    }, hint: 'You can place secondary / tertiary actions for a page under any sidebar, including this one.'
 
     h3 'Page Sub-Headers'
 

@@ -1,10 +1,10 @@
 $navBackground: #0f1c3c !default;
-$navText: #eee !default;
-$navHeight: 3.715rem !default; // 52px @ 14px
+$navText: #fff !default;
+$navHeight: $rhythm * 8 !default;
 $navHoverBackground: darken($navBackground, 5%) !default;
 
 // might want to adjust this based on how many items are in your nav
-$navBreakpoint: 800px !default;
+$navBreakpoint: $deskWidth !default;
 
 .navbar {
   background-color: $navBackground;
@@ -16,11 +16,13 @@ $navBreakpoint: 800px !default;
   .navbar_brand,
   .navbar_toggle,
   .navbar_content > ul > li > a {
-    color: $navText;
+    color: rgba($navText,0.8);
     text-decoration: none;
-
     &:hover {
-      color: lighten($navText, 10%);
+      color: rgba($navText,0.9);
+    }
+    &:active {
+      color: $navText;
     }
   }
 
@@ -41,8 +43,7 @@ $navBreakpoint: 800px !default;
 }
 
 .navbar_content > ul > li > a {
-  font-weight: $weightBold;
-  font-size: $fontSmaller;
+  font-size: $fontSmall;
 }
 
 // Modifier for fixed navbar
@@ -55,7 +56,8 @@ $navBreakpoint: 800px !default;
 
 .navbar_brand {
   float: left;
-  font-size: 1.5rem;
+  font-size: $fontSizeH3;
+  @include font_smoothing;
   line-height: $navHeight;
   &:focus {
     outline: 0;
@@ -65,15 +67,15 @@ $navBreakpoint: 800px !default;
     position: relative;
     display: block;
     top: 0;
-    max-height: $navHeight - 1.5rem;
-    margin: 0.75rem 0;
+    max-height: $navHeight - $lineHeight;
+    margin: ($lineHeight / 2) 0;
   }
 }
 
 // The "hamburger" button
 .navbar_toggle {
   float: right;
-  font-size: 2rem;
+  font-size: $rhythm * 4;
   line-height: $navHeight;
 }
 
@@ -83,20 +85,18 @@ $navBreakpoint: 800px !default;
 }
 
 .nav_avatar {
-  height: 28px;
-  width: 28px;
+  width: $rhythm * 4;
+  height: $rhythm * 4;
   @include avatar;
   // add some margin for the bottom of the collapsed nav
-  margin-bottom: 0.75rem;
+  margin-bottom: $rhythm;
 }
 
 .navbar_search_form {
   input[type=text] {
-    margin-top: ($navHeight - $inputHeight) / 2;
-    margin-bottom: ($navHeight - $inputHeight) / 2;
-    padding-left: 0.6rem;
-    padding-right: 0.6rem;
-    background: rgba(0, 0, 0, 0.5);
+    margin: ($navHeight - $inputHeight) / 2 0;
+    padding: auto 0.6rem;
+    background: rgba($black, 0.25);
     border-color: $black;
     color: $navText;
 
@@ -115,12 +115,12 @@ $navBreakpoint: 800px !default;
   background-color: $alertColor;
   text-align: center;
   display: inline-block;
-  padding: 0 0.5rem;
-  height: 1.5rem;
-  line-height: 1.5rem;
-  font-size: 0.75rem;
-  border-radius: 0.75rem;
-  margin-left: 0.5rem;
+  padding: 0 $rhythm / 2;
+  height: $rhythm * 2;
+  line-height: $rhythm * 2;
+  font-size: $fontSmallest;
+  border-radius: $rhythm;
+  margin-left: $rhythm;
 }
 
 @media only screen and (min-width: $navBreakpoint) {
@@ -157,7 +157,7 @@ $navBreakpoint: 800px !default;
 
   // Margin between brand and items
   .navbar_brand {
-    margin-right: 1rem;
+    margin-right: $rhythm * 3;
   }
 
   .navbar_toggle {
@@ -171,14 +171,14 @@ $navBreakpoint: 800px !default;
   }
 
   .navbar_search_form {
-    padding: 0 0.75rem;
+    padding: 0 $rhythm;
     width: auto;
   }
 
   .navbar_content {
     // Add X padding to nav items
     > ul > li > a {
-      padding: 0 0.75rem;
+      padding: 0 $rhythm * 2;
     }
 
     // Ensure links take up the full height
@@ -199,13 +199,15 @@ $navBreakpoint: 800px !default;
 
   // Add even more padding to icon items
   .navbar_icon {
-    padding: 0 0.5rem;
+    padding: 0 $rhythm;
   }
 
   // Float the secondary content to the right and handle dropdowns
   .navbar_content_secondary {
     float: right;
-
+    .button {
+      margin-top: ($navHeight - ($rhythm * 4)) / 2;
+    }
     .dropdown_menu {
       right: 0;
       left: auto;
@@ -214,7 +216,7 @@ $navBreakpoint: 800px !default;
 
   .navbar_badge {
     position: absolute;
-    top: 0.5rem;
-    right: 0;
+    top: $rhythm;
+    right: $rhythm;
   }
 }

@@ -93,19 +93,19 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  font-size: $fontH1Size;
-  line-height: $fontH1LineHeight;
+  font-size: $fontSizeH1;
+  line-height: $fontLineHeightH1;
 }
 
 h2 {
-  font-size: $fontH2Size;
-  line-height: $fontH2LineHeight;
+  font-size: $fontSizeH2;
+  line-height: $fontLineHeightH2;
 }
 
 h3 {
   font-weight: $weightNormal;
-  font-size: $fontH3Size;
-  line-height: $fontH3LineHeight;
+  font-size: $fontSizeH3;
+  line-height: $fontLineHeightH3;
 }
 
 h4 {

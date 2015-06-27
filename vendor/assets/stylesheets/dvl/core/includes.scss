@@ -91,14 +91,14 @@ $ratio: 1.5;
 
 // Font Sizes
 
-$fontH1Size: 4rem !default; // 64px
-$fontH1LineHeight: (10 * $rhythm) !default; // 80px
+$fontSizeH1: 4rem !default; // 64px
+$fontLineHeightH1: (10 * $rhythm) !default; // 80px
 
-$fontH2Size: 2.5rem !default; // 40px
-$fontH2LineHeight: (7 * $rhythm) !default; // 56px
+$fontSizeH2: 2.5rem !default; // 40px
+$fontLineHeightH2: (7 * $rhythm) !default; // 56px
 
-$fontH3Size: 1.4375rem !default; // 23px
-$fontH3LineHeight: (4 * $rhythm) !default; // 32px
+$fontSizeH3: 1.4375rem !default; // 23px
+$fontLineHeightH3: (4 * $rhythm) !default; // 32px
 
 $fontSmall: 0.875rem; // 14px
 $fontSmaller: 0.8125rem; // 13px
