@@ -3,7 +3,7 @@ class Views::Home::Navigation < Views::Base
     h2 'Navigation'
 
     docs 'Navbar', %{
-      h5 'Signed Out'
+      h4 'Signed Out'
       nav.navbar {
         div.container {
           div.navbar_header {
@@ -43,7 +43,7 @@ class Views::Home::Navigation < Views::Base
         }
       }
 
-      h5 'Signed In'
+      h4 'Signed In'
 
       nav.navbar {
         div.container {

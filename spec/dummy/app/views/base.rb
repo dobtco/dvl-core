@@ -91,8 +91,13 @@ class Views::Base < Erector::Widget
 
   def docs(name, codeString, opts = {})
 
-    div.docs_item {
-      h3 name, id: name.downcase
+    div(class: opts[:sub]? 'docs_item docs_item_sub' : 'docs_item') {
+
+      if opts[:sub]
+        h4 name, id: name.downcase
+      else
+        h3 name, id: name.downcase
+      end
 
       if opts[:hint]
         p opts[:hint]
@@ -113,6 +118,5 @@ class Views::Base < Erector::Widget
       }
     }
 
-    hr
   end
 end

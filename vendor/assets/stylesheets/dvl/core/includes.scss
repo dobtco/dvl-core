@@ -111,7 +111,7 @@ $inputPadding: $rhythm !default;
 
 // Grid
 $columnWidth: 8.333%;
-$gutterWidth: 2rem;
+$gutterWidth: $lineHeight * 2;
 
 // Viewport widths
 $lapWidth: 640px;
@@ -127,9 +127,17 @@ $z_flash: 900 !default;
 
 // MIXINS
 
-@mixin font-smoothing() {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+// Utility mixins
+
+@mixin font_smoothing($sub: 'on') {
+  @if $sub == 'on' {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
 }
 
 @mixin ninety_wrapper() {

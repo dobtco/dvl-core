@@ -15,6 +15,10 @@
   display: block;
   position: relative;
   margin-bottom: $lineHeight * 2;
+  border-bottom: 1px solid $darkGray;
+  &.docs_item_sub {
+    border: 0;
+  }
 }
 
 .docs_code_header {
@@ -56,8 +60,37 @@
   }
 }
 
+.swatch {
+  margin: 0 $lineHeight $lineHeight 0;
+  display: inline-block;
+  div {
+    width: $lineHeight * 6;
+    height: $lineHeight * 4;
+    box-shadow: inset 0 0 0 1px rgba($black,0.1);
+  }
+  span {
+    font-size: $fontSmall;
+    color: $darkerGray;
+  }
+}
+
+.docs_grid {
+  margin-bottom: $rhythm * 2;
+  margin-left: $rhythm * -4;
+  .item {
+    padding-left: $rhythm * 4;
+    span {
+      background: $blueHighlight;
+      display: block;
+      padding: $rhythm;
+      font-size: $fontSmall;
+      border-radius: $radius;
+    }
+  }
+}
+
 // Preview-specific styles
 
-.navbar + h5 {
+.navbar + h4 {
   margin-top: $lineHeight;
 }

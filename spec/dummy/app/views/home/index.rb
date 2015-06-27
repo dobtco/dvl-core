@@ -26,9 +26,6 @@ class Views::Home::Index < Views::Base
     }
 
     docs 'Lists', %{
-
-      p %{By default, lists are unstyled. Use the <code>.formatted_list</code> class to create bulleted and numbered lists.}.html_safe
-
       ul.formatted_list {
         li 'Item 1'
         li 'Item 2'
@@ -48,27 +45,32 @@ class Views::Home::Index < Views::Base
         li 'Item 6'
         li 'Item 7'
       }
-    }
+    }, hint: %{By default, lists are unstyled. Use the <code>.formatted_list</code> class to create bulleted and numbered lists.}.html_safe
 
     docs 'Definition Lists', %{
-      p 'Use definition lists to format labeled lists and metadata, like the contents of a form submissions or the sender information in an email.'
       dl {
         dt 'Name'
         dd 'Barack Obama'
         dt 'Email Address'
         dd 'barack.obama@whitehouse.gov'
       }
-    }
+    }, hint: 'Use definition lists to format labeled lists and metadata, like the contents of a form submissions or the sender information in an email.'
 
     docs 'Figures', %{
       p %{<figure><img src="http://i.imgur.com/lAaFALg.jpg" alt="DOBT team photo"><figcaption>Did we mention we're hiring?</figcaption></figure>}.html_safe
     }
 
-    docs 'Links', %{
+    h3 'Links'
+
+    docs 'Default', %{
       p %{DOBT believes in the power of open data. It encourages transparency in government, and sometimes, <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">it even saves lives</a>.}.html_safe
-      p %{Add the <code>.uppercase</code> class to any link to downplay a tertiary action. For example:}.html_safe
-      a.uppercase 'Contact Your Local Representative'
-    }
+    }, sub: ''
+
+    docs 'Button links', %{
+      p {
+        button.button_link 'Example'
+      }
+    }, hint: %{Add the <code>.button_link</code> class to any <code>&lt;button&gt;</code> tag to make it appear like a link.}.html_safe, sub: ''
 
   end
 end
