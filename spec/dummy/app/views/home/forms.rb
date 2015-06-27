@@ -281,7 +281,7 @@ class Views::Home::Forms < Views::Base
 
     docs 'Button with arrows', %{
       p {
-        a.button.info.arrow_l 'Back'
+        a.button.info.arrow_l 'Previous'
       }
       
       p {

@@ -13,7 +13,6 @@
 
 @mixin light_button_color($base_color, $font_color: #333) {
   background: $base_color;
-  font-weight: $weightBold;
   border: 1px solid darken($base_color, 5%);
   color: $font_color;
   &:hover,
@@ -33,10 +32,9 @@
   color: $darkestGray;
   text-align: center;
   text-decoration: none;
-  font-size: 1rem;
   cursor: pointer;
   border-radius: $radius;
-  white-space: nowrap;
+  @include ellipses;
   line-height: normal;
   &.uppercase {
     border: 0 !important;
@@ -122,21 +120,15 @@
   &:focus {
     outline: 0;
   }
+
   // Sizes
-  // #todo refactor and catalog these sizes
   &.mini {
-    padding: 0.238rem 0.563rem;
-    font-size: 0.8125rem;
+    padding: $rhythm / 2 $rhythm;
+    font-size: $fontSmaller;
   }
   &.small {
-    padding: 0.317rem 0.75rem;
-    font-size: 0.875rem;
-  }
-  &.large,
-  &.block {
-    padding: 1rem 1.333rem;
-    font-size: 1.125rem;
-    line-height: 1.333;
+    padding: $rhythm $rhythm * 2;
+    font-size: $fontSmall;
   }
   &.block {
     display: block;
