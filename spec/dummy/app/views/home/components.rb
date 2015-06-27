@@ -185,6 +185,10 @@ class Views::Home::Components < Views::Base
     docs 'Alerts', %{
       div.alert {
         span.alert_message 'This project is <strong>not yet posted</strong>.'.html_safe
+        span.alert_buttons {
+          a.button.primary 'Go live'
+          a.button 'Dismiss'
+        }
       }
 
       div.alert {
@@ -217,7 +221,8 @@ class Views::Home::Components < Views::Base
     }, full: true
 
     docs 'Modals', %{
-      a 'Open modal', 'data-toggle' => 'modal', href: '#modal'
+      text 'In addition to our '
+      a 'default modal style', 'data-toggle' => 'modal', href: '#modal'
       widget Dvl::Components::Modal.new(title: 'Awesome modal', id: 'modal') do
         div.modal_body {
           text 'This is the modal body!'
@@ -246,10 +251,8 @@ class Views::Home::Components < Views::Base
         }
 
       end
-
-      br
-
-      a 'Confirmation modal', 'data-toggle' => 'modal', href: '#confirmModal'
+      text ', we have a modal to '
+      a 'confirm destructive actions', 'data-toggle' => 'modal', href: '#confirmModal'
       widget Dvl::Components::Modal.new(
         title: 'Are you sure?',
         id: 'confirmModal',
@@ -266,6 +269,7 @@ class Views::Home::Components < Views::Base
           a.button.error 'OK'
         }
       end
+    text '.'
     }
 
     h3 'Pagination'

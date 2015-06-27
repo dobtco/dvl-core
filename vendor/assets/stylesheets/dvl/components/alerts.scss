@@ -2,8 +2,8 @@
 
 .alert {
   background-color: $lightestGray;
-  padding: 1rem;
-  margin-bottom: 1.5rem;
+  padding: $rhythm * 2;
+  margin-bottom: $lineHeight;
   border: 1px solid $lightGray;
   border-radius: $radius;
 }
@@ -13,27 +13,25 @@
   display: block;
 }
 
-.alert_buttons,
-.alert form {
-  margin-top: 0.5rem;
-}
-
 @media screen and (min-width: 640px) {
   .alert {
     display: table;
     width: 100%;
-    padding: 0.5rem 0.5rem 0.5rem 1rem;
-    line-height: $inputHeight;
+    padding: $rhythm ($rhythm * 2);
+    line-height: $lineHeight;
+    span,
+    form {
+      display: table-cell;
+      vertical-align: middle;
+    }
   }
   .alert_message {
-    display: table-cell;
     width: 100%;
-    padding-right: 1rem;
+    padding-right: $rhythm * 2;
   }
   .alert_buttons,
   .alert form {
     width: 1%;
-    display: table-cell;
     white-space: nowrap;
   }
 }

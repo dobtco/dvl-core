@@ -38,20 +38,19 @@
 .modal_dialog {
   position: relative;
   width: auto;
-  margin: 10px;
+  margin: $rhythm;
 }
 
 // Actual modal
 .modal_content {
   position: relative;
   background-color: #fff;
-  border: 1px solid rgba(#000,0.15);
   border-radius: $radius;
   background-clip: padding-box;
   // Remove focus outline from opened modal
   outline: 0;
-  box-shadow: 0 1px 3px rgba(#000,0.18);
-  animation: modal_show 0.25s ease-out;
+  box-shadow: 0 1px 3px rgba($black,0.5);
+  animation: modal_show 0.25s $easeOutSine;
 }
 
 @keyframes modal_show {
@@ -72,19 +71,9 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: #000;
-  opacity: 0.5;
-  animation: fade_half 170ms ease-in;
+  background-color: rgba($black,0.5);
+  animation: fadeIn 170ms ease-in;
   z-index: $z_modal - 1;
-}
-
-@keyframes fade_half {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.5;
-  }
 }
 
 // Modal header
@@ -157,9 +146,9 @@
 // Footer (for actions)
 .modal_footer {
   background-color: $lighterGray;
-  padding: 1rem 2rem;
+  padding: 0 $rhythm * 3;
   text-align: right; // right align buttons
-  @include border_bottom_radius($radius * 2);
+  @include border_bottom_radius($radius);
 
   // Properly space out buttons
   .btn + .btn {
@@ -178,8 +167,8 @@
 
 .modal_footer_link {
   float: left;
-  font-size: $fontSmaller;
-  line-height: $inputHeight;
+  font-size: $fontSmall;
+  line-height: $lineHeight;
 }
 
 // Measure scrollbar width for padding body during modal show/hide

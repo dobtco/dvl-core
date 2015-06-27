@@ -99,7 +99,7 @@ class Views::Home::Layout < Views::Base
           }
           li {
             div.sidebar_data_icon {
-              i(class: 'fa fa-clock')
+              i(class: 'fa fa-clock-o')
             }
             div.sidebar_data_text {
               div.sidebar_data_label 'Revision History'

@@ -56,7 +56,7 @@ class Views::Home::Index < Views::Base
       }
     }, hint: 'Use definition lists to format labeled lists and metadata, like the contents of a form submissions or the sender information in an email.'
 
-    docs 'Figures', %{
+    docs 'Images and Captions', %{
       p %{<figure><img src="http://i.imgur.com/lAaFALg.jpg" alt="DOBT team photo"><figcaption>Did we mention we're hiring?</figcaption></figure>}.html_safe
     }
 

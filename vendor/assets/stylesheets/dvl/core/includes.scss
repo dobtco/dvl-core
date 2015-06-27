@@ -237,6 +237,26 @@ $easeInOutBack:  cubic-bezier(0.680, -0.550, 0.265, 1.550);
   border-radius: 50%;
 }
 
+// Utility animations
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 
 // Legacy
 
