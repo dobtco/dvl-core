@@ -119,7 +119,7 @@ h5 {
   text-transform: uppercase;
   font-size: $fontSmaller; // 13px
   line-height: $lineHeight; // 20px
-  letter-spacing: 0.06rem; // 0.9px
+  letter-spacing: $letterspaceSmaller;
 }
 
 hr {

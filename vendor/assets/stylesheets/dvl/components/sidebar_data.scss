@@ -1,11 +1,12 @@
 // Sidebar
 
 .sidebar_box {
-  background-color: $lighterGray;
-  border: 1px solid #d8d8d8;
-  padding: 1rem;
+  background-color: $lightestGray;
+  border: 1px solid $lightGray;
+  border-radius: $radius;
+  padding: $rhythm * 2 0;
   hr {
-    margin: 0.75rem 0;
+    margin: $rhythm 0;
   }
 }
 .sidebar_section {
@@ -23,10 +24,10 @@
 // Sidebar sections with icons on the left
 
 .sidebar_data {
-  padding: 0 1rem;
+  padding: 0;
   > li {
     border-bottom: 1px solid $lightGray;
-    padding: 0.75rem 0;
+    padding: ($rhythm * 2);
     &:first-of-type {
       padding-top: 0;
     }
@@ -39,21 +40,25 @@
 
 .sidebar_data_icon {
   float: left;
-  width: 2rem;
-  padding-top: 0.5rem;
-  text-align: center;
+  width: $rhythm * 5;
+  text-align: left;
   i {
-    font-size: 26px;
+    font-size: $rhythm * 5;
+    line-height: 1;
     color: $darkerGray;
   }
 }
 
 .sidebar_data_text {
-  margin-left: 3.5rem;
+  margin-left: $rhythm * 8;
+  line-height: $lineHeight;
 }
 
 .sidebar_data_label {
-  font-size: $fontSmaller;
+  font-size: $fontSmall;
+  font-weight: $weightBold;
+  @include font_smoothing;
+  color: $darkerGray;
 }
 
 .sidebar_data_value,
@@ -63,14 +68,13 @@
 
 .sidebar_data_value {
   @include cf;
-  font-size: 1.1rem;
-  color: #999;
-  font-weight: $weightBold;
+  color: $darkestGray;
 }
 
 .sidebar_data_details {
   font-size: $fontSmaller;
-  color: #999;
+  color: $darkGray;
+  @include font_smoothing;
 }
 
 // List of items in

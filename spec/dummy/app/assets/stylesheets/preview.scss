@@ -14,6 +14,7 @@
 .docs_item {
   display: block;
   position: relative;
+  padding-bottom: $lineHeight;
   margin-bottom: $lineHeight * 2;
   border-bottom: 1px solid $darkGray;
   &.docs_item_sub {

@@ -104,6 +104,13 @@ $fontSmall: 0.875rem; // 14px
 $fontSmaller: 0.8125rem; // 13px
 $fontSmallest: 0.75rem; // 12px
 
+// Small caps letterspacing at different sizes
+
+$letterspaceNormal: 0.08rem;
+$letterspaceSmall: 0.05rem;
+$letterspaceSmaller: 0.06rem;
+$letterspaceSmallest: 0.05rem;
+
 // LAYOUT
 
 $inputHeight: $rhythm * 5 !default; // 36px @ 16px root

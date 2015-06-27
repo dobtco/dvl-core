@@ -268,38 +268,53 @@ class Views::Home::Components < Views::Base
       end
     }
 
-    docs 'Pagination', %{
+    h3 'Pagination'
+    docs 'Left Aligned', %{
       div.pagination {
         ul {
-          li { a(href: '#'){text '‹'}}
+          li { a(href: '#'){text "&larr;".html_safe}}
           li { a(href: '#'){text '1'}}
-          li { span '2' }
+          li.active { span '2' }
           li { a(href: '#'){text '3'}}
-          li { a(href: '#'){text '›'}}
+          li { a(href: '#'){text '4'}}
+          li { span '&hellip;'.html_safe }
+          li { a(href: '#'){text '17'}}
+          li { a(href: '#'){text '18'}}
+          li { a(href: '#'){text '19'}}
+          li { a(href: '#'){text '20'}}
+          li { a(href: '#'){text "&rarr;".html_safe}}
         }
       }
+    }, sub: ''
 
+    docs 'Center Aligned', %{
       div.pagination.pagination_centered {
         ul {
-          li { a(href: '#'){text '‹'}}
-          li { a(href: '#'){text '11'}}
-          li { span '12' }
-          li { a(href: '#'){text '13'}}
-          li { a(href: '#'){text '›'}}
+          li { a(href: '#'){text "&larr;".html_safe}}
+          li { a(href: '#'){text '1'}}
+          li.active { span '2' }
+          li { a(href: '#'){text '3'}}
+          li { a(href: '#'){text '4'}}
+          li { span '&hellip;'.html_safe }
+          li { a(href: '#'){text '17'}}
+          li { a(href: '#'){text '18'}}
+          li { a(href: '#'){text '19'}}
+          li { a(href: '#'){text '20'}}
+          li { a(href: '#'){text "&rarr;".html_safe}}
         }
       }
+    }, sub: ''
 
-      hr
-
+    docs 'Compact', %{
       div.pagination {
-        span.pagination_status "Showing <strong>1</strong> of <strong>123</strong>".html_safe
+        span.pagination_status "#1 of 123".html_safe
 
         ul {
-          li { span{text '‹'}}
-          li { a(href: '#'){text '›'}}
+          li { span{text '&larr;'.html_safe}}
+          li { a(href: '#'){text '&rarr;'.html_safe}}
         }
       }
-    }
+    }, sub: ''
 
     docs 'Progress', %{
       div.progress {

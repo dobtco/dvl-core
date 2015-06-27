@@ -21,7 +21,7 @@ tfoot td {
 thead th {
   color: $darkestGray;
   font-size: $fontSmaller;
-  letter-spacing: 0.06rem;
+  letter-spacing: $letterspaceSmaller;
   text-transform: uppercase;
   word-break: normal;
 }

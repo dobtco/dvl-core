@@ -311,7 +311,7 @@ table {
   }
 }
 
-// Convert to a fieldset
+// Convert this to a fieldset
 
 .form_item_two_inputs {
   input {
@@ -323,4 +323,75 @@ table {
   }
 }
 
-// Remove .form_actions
+// Remove .form_actions class from other repos
+
+// 1. Separate .pagination_status from .pagination, rename to .pagination_compact
+// 2. Make .pagination_center the default, add .pagination_left if necessary
+
+.pagination .pagination_status {
+  float: left;
+  text-transform: uppercase;
+  letter-spacing: $letterspaceSmaller;
+  line-height: $rhythm * 5;
+  + ul {
+    margin-left: $rhythm * 2;
+    li {
+      &:first-child,
+      &:last-child {
+        a,
+        span {
+          background: $lightestGray;
+          border: 1px solid $lightGray;
+          float: left;
+          width: $rhythm * 5;
+          text-align: center;
+          display: block;
+        }
+        a {
+          cursor: pointer;
+          &:hover,
+          &:focus {
+            background: $lighterGray;
+          }
+          &:active {
+            border-color: $gray;
+            background: $lightGray;
+          }
+        }
+      }
+      &:first-child {
+        a,
+        span {
+          border-right: 0;
+          @include border_left_radius($radius);
+          @include border_right_radius(0);
+        }
+      }
+      &:last-child {
+        a,
+        span {
+          @include border_right_radius($radius);
+          @include border_left_radius(0);
+        }
+      }
+    }
+  }
+}
+
+// The most common modifier, used underneath tables of results and the like
+.pagination_centered {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+// A modifier for when pagination is inside of the page header
+.pagination_page_header {
+  clear: both;
+  padding-top: 0.5rem;
+  @media only screen and (min-width: $lapWidth) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding-top: 0;
+  }
+}
