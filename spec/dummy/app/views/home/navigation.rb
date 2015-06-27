@@ -297,7 +297,9 @@ class Views::Home::Navigation < Views::Base
       }
     }
 
-    docs 'Page subheader (h3) and actions', %{
+    h3 'Page Sub-Headers'
+
+    docs 'Heading 3', %{
       div.page_subheader {
         h3 'Subheader'
 
@@ -306,9 +308,9 @@ class Views::Home::Navigation < Views::Base
           a.button.info 'Another action'
         }
       }
-    }, full: true
+    }, sub: ''
 
-    docs 'Page subheader (h4) with icon', %{
+    docs 'Heading 4', %{
       div.page_subheader {
         h4 {
           i(class: 'fa fa-star')
@@ -316,6 +318,6 @@ class Views::Home::Navigation < Views::Base
           text 'Ratings'
         }
       }
-    }, full: true, hint: 'Page subheaders can use either an <h3> or <h4>.'
+    }, sub: ''
   end
 end

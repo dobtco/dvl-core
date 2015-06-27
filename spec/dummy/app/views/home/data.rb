@@ -123,6 +123,20 @@ class Views::Home::Data < Views::Base
     }, hint: %{Add the <code>.condensed</code> class when the table is likely to take up many rows on the same page.}.html_safe, sub: ''
   
     hr
-    
+  
+    docs 'Labels', %{
+      p {
+        span.label.label_error 'Error'
+      }
+      p {
+        span.label.label_success 'Success'
+      }
+      p {
+        span.label.label_info 'Info'
+      }
+      p {
+        span.label.label_warning 'Warning'
+      }
+    }  
   end
 end

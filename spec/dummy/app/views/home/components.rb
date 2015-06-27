@@ -168,16 +168,6 @@ class Views::Home::Components < Views::Base
       }
     }, hint: 'Add the .toggle modifier to buttons to give them a border and a caret.'
 
-    docs 'Labels', %{
-      span.label.label_error 'Error'
-      text ' '
-      span.label.label_success 'Success'
-      text ' '
-      span.label.label_info 'Info'
-      text ' '
-      span.label.label_warning 'Warning'
-    }
-
     docs 'Flashes', %{
       ul {
         li {
@@ -315,59 +305,6 @@ class Views::Home::Components < Views::Base
       div.progress {
         div.progress_inner(style: "width: 30%") {
           text '30%'
-        }
-      }
-    }
-
-    docs 'Sidebar Data List', %{
-      div.sidebar_box {
-        ul.sidebar_data {
-          li {
-            div.sidebar_data_icon {
-              i '✓'
-            }
-            div.sidebar_data_text {
-              div.sidebar_data_label 'Label'
-              div.sidebar_data_value 'Value'
-              div.sidebar_data_details 'Details'
-            }
-          }
-          li {
-            div.sidebar_data_icon {
-              i '✓'
-            }
-            div.sidebar_data_text {
-              div.sidebar_data_label 'Dropdowns'
-              div.sidebar_data_value {
-                simple_form_for :foo do |f|
-                  f.input_field :blah, as: :select, collection: ['Bar'], selected: 'Bar', 'data-width' => '100%'
-                  br
-                  f.input_field :blah, as: :dropdown_select, collection: [['Bar', 'Bar', 'Bar']], selected: 'Bar', 'data-width' => '100%'
-                end
-              }
-            }
-          }
-        }
-      }
-    }
-
-    docs 'Tables', %{
-      table {
-        thead {
-          tr {
-            th 'ID'
-            th 'Name'
-          }
-        }
-        tbody {
-          tr {
-            td '1'
-            td 'Bob'
-          }
-          tr {
-            td '2'
-            td 'Job'
-          }
         }
       }
     }
