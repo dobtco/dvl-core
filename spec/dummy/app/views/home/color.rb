@@ -26,7 +26,7 @@ class Views::Home::Color < Views::Base
     hr
 
     h3 'Qualitative Colors'
-    p 'Use this color range to add a value judgment ("good" or "bad") to specific user data.'
+    p 'Use this color range to provide a value judgment (ranging from &ldquo;bad&rdquo; to &ldquo;good&rdquo;) on user-generated information.'.html_safe
 
     qualColors.each do |var, color|
       render('components/swatch', color: color, var: var)

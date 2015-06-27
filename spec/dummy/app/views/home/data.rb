@@ -120,7 +120,7 @@ class Views::Home::Data < Views::Base
           }
         }
       }
-    }, hint: %{Add the <code>.condensed</code> class when the table is likely to take up many rows on the same page.}.html_safe, sub: ''
+    }, hint: %{Add the <code>.condensed</code> class when the table is likely to take up many rows of the same page.}.html_safe, sub: ''
   
     hr
   

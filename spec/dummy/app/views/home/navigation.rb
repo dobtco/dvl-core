@@ -136,8 +136,9 @@ class Views::Home::Navigation < Views::Base
       }
     }
 
+    h3 'Page Header'
 
-    docs 'Page Header with Secondary and Tertiary Nav', %{
+    docs 'With Navigation', %{
       div.page_header {
         h2 {
           a 'Page header', href: '#'
@@ -181,9 +182,9 @@ class Views::Home::Navigation < Views::Base
           }
         }
       }
-    }, full: true, hint: '<h2> can optionally contain an <a> tag inside.'
+    }, sub: '', hint: %{The title can optionally contain a <code>&lt;a&gt;</code> tag.}.html_safe
 
-    docs 'Page Header with button and back arrow', %{
+    docs 'With Button and Back Arrow', %{
       div.page_header.with_back_arrow {
         a.page_header_back_arrow(title: 'Back to account', 'data-toggle' => 'tooltip') {
           i(class: 'fa fa-arrow-circle-o-left')
@@ -226,9 +227,9 @@ class Views::Home::Navigation < Views::Base
           a.button.info.long_arrow 'View project', href: '#'
         }
       }
-    }, full: true
+    }, sub: ''
 
-    docs 'Page Header with pagination', %{
+    docs 'With Pagination', %{
       div.page_header.with_back_arrow {
         a.page_header_back_arrow(title: 'Back to account', 'data-toggle' => 'tooltip') {
           i(class: 'fa fa-arrow-circle-o-left')
@@ -257,12 +258,12 @@ class Views::Home::Navigation < Views::Base
           span.pagination_status "Showing <strong>1</strong> of <strong>123</strong>".html_safe
 
           ul {
-            li { span{text '‹'}}
-            li { a(href: '#'){text '›'}}
+            li { span{text '&larr;'.html_safe}}
+            li { a(href: '#'){text '&rarr;'.html_safe}}
           }
         }
       }
-    }, full: true
+    }, sub: ''
 
     docs 'Sidebar Navigation', %{
       ul.sidebar_nav {

@@ -37,7 +37,7 @@
     color: #444;
     font-size: $fontSmaller;
     text-transform: uppercase;
-    letter-spacing: 0.03rem;
+    letter-spacing: $letterspaceSmaller;
   }
 }
 
@@ -110,7 +110,6 @@
     font-weight: $weightNormal;
     padding: 0.25rem 0.5rem;
     display: block;
-    font-size: $fontSmaller;
   }
   .control_styled {
     top: 2px;
@@ -118,14 +117,12 @@
 }
 
 .dropdown_header {
-  line-height: 2.25rem;
   background: $lighterGray;
-  font-size: $fontSmallest;
-  padding: 0 0.5rem;
-  border-width: 1px 0;
-  border-color: $lightGray;
-  border-style: solid;
-
+  color: $darkestGray;
+  padding: $rhythm;
+  font-size: $fontSmaller;
+  text-transform: uppercase;
+  letter-spacing: $letterspaceSmaller;
   &:first-child {
     border-top-width: 0;
     @include border_top_radius($radius - 1);
@@ -155,7 +152,6 @@
 }
 
 li.dropdown_more a {
-  font-size: 0.8rem;
   color: #888;
 }
 
@@ -176,7 +172,6 @@ li.dropdown_more a {
       right: 1rem;
       top: 0;
       line-height: 2.25rem;
-      font-size: 1.5rem;
     }
     &.is_open{
       &:after {
@@ -200,7 +195,6 @@ li.dropdown_more a {
 
 .dropdown_menu_sub li {
   a {
-    font-size: $fontSmallest;
     padding: 0.375rem 0.75rem;
     display: block;
     line-height: 1.5rem;
@@ -338,6 +332,7 @@ li.dropdown_more a {
 .drop_rt_arrow {
   width: 10%;
   text-align: center;
+  color: $darkerGray;
 }
 
 // Nav dropdowns
