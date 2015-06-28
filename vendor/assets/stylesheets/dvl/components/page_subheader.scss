@@ -1,7 +1,9 @@
 .page_subheader {
+  @include cf;
   margin-bottom: $lineHeight;
   h3, h4 {
     display: inline;
+    float: left;
   }
   // Subheader 1
   h3 {
@@ -33,5 +35,5 @@
 }
 
 .page_subheader_link {
-  font-size: $fontSmallest;
+  font-size: $fontSmaller;
 }

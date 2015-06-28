@@ -2,7 +2,9 @@ class Views::Home::Navigation < Views::Base
   def main
     h2 'Navigation'
 
-    h3 'Navbar'
+    h3 'Navigation Bar'
+
+    p 'The navigation bar should always take up the full page width. The examples below break at some viewport sizes, because they violate this rule.'
 
     docs 'Signed Out', %{
       nav.navbar {
@@ -25,7 +27,7 @@ class Views::Home::Navigation < Views::Base
           }
         }
       }
-    }, sub: '', hint: 'The product name in a navbar can be either text or a logo, but not both.'
+    }, sub: '', hint: 'The product name in a navigation bar can be either text or a logo, but not both.'
 
     docs 'Signed In', %{
       nav.navbar {
@@ -132,136 +134,9 @@ class Views::Home::Navigation < Views::Base
           }
         }
       }
-    }, sub: '', hint: 'Use badges next to navbar icons to notify the user of new information.'
+    }, sub: '', hint: 'Use badges next to icons to notify the user of new information.'
 
     hr
-    
-    h3 'Page Header'
-
-    docs 'With Navigation', %{
-      div.page_header {
-        h2 {
-          a 'Sales Leads', href: '#'
-        }
-        div.page_header_secondary {
-          ul {
-            li {
-              a 'Stages'
-            }
-
-            li {
-              a 'Contacts'
-            }
-
-            li {
-              a 'Messages'
-            }
-          }
-        }
-        div.page_header_tertiary {
-          ul {
-            li {
-              a {
-                i(class: 'fa fa-pencil')
-                text 'Edit campaign'
-              }
-            }
-
-            li {
-              a {
-                text 'Settings'
-              }
-            }
-          }
-        }
-      }
-    }, sub: '', hint: %{The title can optionally contain a <code>&lt;a&gt;</code> tag.}.html_safe
-
-    docs 'With Button and Back Arrow', %{
-      div.page_header.with_back_arrow {
-        a.page_header_back_arrow(title: 'Dashboard', 'data-toggle' => 'tooltip') {
-          i(class: 'fa fa-arrow-circle-o-left')
-        }
-
-        h2 {
-          a 'Meeting request', href: '#'
-        }
-
-        div.page_header_secondary {
-          ul {
-            li {
-              a 'Stages'
-            }
-
-            li {
-              a 'Contacts'
-            }
-
-            li {
-              a 'Messages'
-            }
-          }
-        }
-        div.page_header_tertiary {
-          ul {
-            li {
-              a {
-                i(class: 'fa fa-pencil')
-                text 'Edit campaign'
-              }
-            }
-
-            li {
-              a {
-                text 'Settings'
-              }
-            }
-          }
-
-          a.button.info.long_arrow 'View campaign', href: '#'
-        }
-      }
-    }, sub: ''
-
-    docs 'With Pagination', %{
-      div.page_header.with_back_arrow {
-        a.page_header_back_arrow(title: 'All responses', 'data-toggle' => 'tooltip') {
-          i(class: 'fa fa-arrow-circle-o-left')
-        }
-
-        h2 {
-          a 'Max Ophüls', href: '#'
-        }
-
-        div.page_header_secondary {
-          ul {
-            li {
-              a 'Responses'
-            }
-
-            li {
-              a 'Questions'
-            }
-
-            li {
-              a 'Messages'
-            }
-
-            li {
-              a 'Settings'
-            }
-          }
-        }
-        div.pagination.pagination_page_header {
-          span.pagination_status "#94 of 566"
-
-          ul {
-            li { span{text '&larr;'.html_safe}}
-            li { a(href: '#'){text '&rarr;'.html_safe}}
-          }
-        }
-      }
-    }, sub: ''
 
     docs 'Sidebar (Navigation)', %{
       ul.sidebar_nav {
@@ -334,27 +209,19 @@ class Views::Home::Navigation < Views::Base
       }
     }, hint: 'You can place secondary / tertiary actions for a page under any sidebar, including this one.'
 
-    h3 'Page Sub-Headers'
+    docs 'Mult-Step Navigation 1', %{
+    }
 
-    docs 'Heading 3', %{
-      div.page_subheader {
-        h3 'Subheader'
+    docs 'Multi-Step Navigation 2', %{
+    }
 
-        div.page_subheader_actions {
-          a.page_subheader_link 'An action'
-          a.button.info 'Another action'
-        }
-      }
-    }, sub: ''
+    docs 'Tabs', %{
+    }
 
     docs 'Heading 4', %{
-      div.page_subheader {
-        h4 {
-          i(class: 'fa fa-star')
-          text ' '
-          text 'Ratings'
-        }
-      }
-    }, sub: ''
+    }
+
+    docs 'Heading 4', %{
+    }
   end
 end

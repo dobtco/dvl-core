@@ -2,7 +2,112 @@ class Views::Home::Components < Views::Base
   def main
     h2 'Components'
     
-    docs 'Dropdowns', %{
+    h3 'Dropdowns'
+
+    docs 'Basic', %{
+      div.dvlcore_button_array {
+        div.dropdown {
+          a.button.toggle(
+            'Dropdown',
+            'data-toggle' => 'dropdown',
+            href: '#'
+          )
+
+          div.dropdown_menu(role: 'menu') {
+            ul.dropdown_body {
+              li {
+                a 'Option 1', href: '#'
+              }
+              li.divider {
+                a 'Option 2, with divider'
+              }
+              li {
+                a(href: 'mailto:support@dobt.co') {
+                  span.drop_rt_item 'Contact support&hellip;'.html_safe
+                  span.drop_rt_arrow { i(class: 'fa fa-external-link') }
+                }
+              }
+            }
+          }
+        }
+
+        div.dropdown {
+          a.button.toggle(
+            'Dropdown with more options',
+            'data-toggle' => 'dropdown',
+            href: '#'
+          )
+
+          div.dropdown_menu(role: 'menu') {
+            ul.dropdown_body {
+              li {
+                a 'Option 1', href: '#'
+              }
+              li {
+                a 'Option 2', href: '#'
+              }
+              li {
+                a 'Option 3', href: '#'
+              }
+              li {
+                a 'Option 4', href: '#'
+              }
+              li.dropdown_more {
+                a 'View more&hellip;'.html_safe, href: '#'
+              }
+            }
+          }
+        }
+      }
+    }, sub: ''
+
+    docs 'Appearance', %{
+      div.dvlcore_button_array {
+        div.dropbown {
+          a.button.toggle(
+            'Loading state',
+            'data-toggle' => 'dropdown',
+            href: '#'
+          )
+          div.dropdown_menu(role: 'menu') {
+            h3 'Loading State'
+            ul.dropdown_body {
+              li.dropdown_loading {
+                span {
+                  i(class: 'fa fa-spin fa-refresh')
+                }
+              }
+            }
+          }
+
+          div.dropdown {
+            a.button.toggle(
+              'Right-aligned',
+              'data-toggle' => 'dropdown',
+              href: '#'
+            )
+
+            div.dropdown_menu.dropdown_right(role: 'menu') {
+              ul.dropdown_body {
+                li {
+                  a 'Option 1', href: '#'
+                }
+                li {
+                  a 'Option 2', href: '#'
+                }
+                li {
+                  a 'Option 3', href: '#'
+                }
+              }
+            }
+          }
+        }
+      }
+
+
+    }, sub: ''
+
+    docs 'Multi-Level', %{
       div.dropdown {
         a "Click me <i class='fa fa-caret-down'></i>".html_safe,
           'data-toggle' => 'dropdown',
@@ -55,25 +160,27 @@ class Views::Home::Components < Views::Base
           }
         }
       }
+    }, sub: ''
+
+    docs 'Rich Text', %{
+      simple_form_for :selects do |f|
+        f.input :bar,
+                as: :dropdown_select,
+                label: 'Notifications',
+                collection: [
+                  ['All', 'action', 'All activity on this project will trigger a new notification.'],
+                  ['Only when mentioned', 'action', 'You will be emailed when someone mentions you in a comment, or a response is assigned.'],
+                  ['None', 'action']
+                ]
+      end
+    }, hint: %{See the <a href="/forms#rich-text dropdowns">Forms page</a> for more details.}.html_safe, sub: ''
+
+    docs 'Dropdowns', %{
+      
 
       br
       br
 
-      div.dropdown {
-        a.button.toggle(
-          'Click me',
-          'data-toggle' => 'dropdown',
-          href: '#'
-        )
-
-        div.dropdown_menu(role: 'menu') {
-          ul.dropdown_body {
-            li {
-              a 'This was triggered by a button', href: '#'
-            }
-          }
-        }
-      }
 
       br
       br
@@ -320,7 +427,9 @@ class Views::Home::Components < Views::Base
       }
     }, sub: ''
 
-    docs 'Progress', %{
+    hr
+    
+    docs 'Progress Bars', %{
       div.progress {
         div.progress_inner(style: "width: 30%") {
           text '30%'

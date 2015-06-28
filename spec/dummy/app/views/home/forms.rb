@@ -73,6 +73,26 @@ class Views::Home::Forms < Views::Base
       end
     }, sub: ''
 
+    docs 'Rich-text dropdowns', %{
+      simple_form_for :selects do |f|
+        f.input :bar,
+                as: :dropdown_select,
+                label: 'Notifications',
+                collection: [
+                  ['All', 'action', 'All activity on this project will trigger a new notification.'],
+                  ['Only when mentioned', 'action', 'You will be emailed when someone mentions you in a comment, or a response is assigned.'],
+                  ['None', 'action']
+                ]
+
+        f.input :blank_dropdown_select,
+                as: :dropdown_select,
+                label: 'Rich-text dropdowns can be blank by default.',
+                collection: [['Option 1', 'action', 'Description'],
+                ['An example of a very long Option 2. This should not be a problem, because the text should wrap to multiple lines.', 'action', 'Description']],
+                include_blank: true
+      end
+    }, hint: 'This component lets you add long answer options, or descriptive text to each option, while imitating the behavior of a native <code>&lt;select&gt;</code>.'.html_safe, sub: ''
+
     hr
 
     h3 'States'
@@ -220,17 +240,6 @@ class Views::Home::Forms < Views::Base
         end
       end
 
-      simple_form_for :search do |f|
-        div.grid {
-          div.item.eight_columns {
-            f.input_field :q, as: :string
-          }
-          div.item.four_columns {
-            f.button :button
-          }
-        }
-      end
-
       select {
         option 'Option'
       }
@@ -238,24 +247,21 @@ class Views::Home::Forms < Views::Base
       a.button 'Go!'
     }, sub: ''
 
+    docs 'Filter form', %{
+      form.filter_form {
+        div.filter_form_search_wrapper {
+          i(class: 'fa fa-search')
+          a(href: '#') {
+            i(class: 'fa fa-times-circle filter_form_icon_right')
+          }
+          input(type: 'text', placeholder: 'Search your projects')
+        }
+        button.button 'Search'
+      }
+    }, sub: ''
+
 
     hr
-
-    docs 'Selects', %{
-      simple_form_for :selects do |f|
-        f.input :bar,
-                as: :dropdown_select,
-                collection: [
-                  ['I am a dropdown-select this is supier long and probably overflwos onto the next line aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'B', 'C'],
-                  ['D', 'E', 'F']
-                ]
-
-        f.input :blank_dropdown_select,
-                as: :dropdown_select,
-                collection: [['A', 'B', 'C']],
-                include_blank: true
-      end
-    }
 
     docs 'Microcopy', %{
       p.microcopy {
@@ -267,32 +273,35 @@ class Views::Home::Forms < Views::Base
     h3 'Buttons'
 
     docs 'Simple', %{
-      a.button 'Yo!'
-      text ' '
-      a.button.info 'Info'
-      text ' '
-      a.button.primary 'Primary'
-      text ' '
-      a.button.success 'Success'
-      text ' '
-      a.button.white 'White'
+      div.dvlcore_button_array {
+        a.button 'Yo!'
+        a.button.info 'Info'
+        a.button.primary 'Primary'
+        a.button.success 'Success'
+        a.button.subtle 'Subtle'
+      }
     }, sub: ''
 
+    docs 'Toggle buttons', %{
+      div.dropdown {
+        a.button.toggle 'Dropdown',
+                          'data-toggle' => 'dropdown',
+                          href: '#'
+        div.dropdown_menu(role: 'menu') {
+          ul.dropdown_body {
+            li { a 'Option 1' }
+            li { a 'Option 2' }
+            li { a 'Option 3' }
+          }
+        }
+      }
+    }, hint: 'Use the <code>.toggle</code> class for buttons which summon a dropdown.'.html_safe, sub: ''
 
     docs 'Button with arrows', %{
-      p {
+      div.dvlcore_button_array {
         a.button.info.arrow_l 'Previous'
-      }
-      
-      p {
         a.button.info.arrow 'Next'
-      }
-
-      p {
         a.button.info.long_arrow 'Submit'
-      }
-
-      p {
         a.button.info.loading {
           text 'Loading state'
           i(class: 'fa fa-refresh fa-spin')
@@ -301,16 +310,13 @@ class Views::Home::Forms < Views::Base
     }, sub: ''
 
     docs 'Disabled', %{
-      a.button.disabled 'Yo!'
-      text ' '
-      a.button.info.disabled 'Info'
-      text ' '
-      a.button.primary.disabled 'Primary'
-      text ' '
-      a.button.success.disabled 'Success'
-      text ' '
-      a.button.white.disabled 'White'
-    }, sub: ''
+      div.dvlcore_button_array {
+        a.button.disabled 'Yo!'
+        a.button.info.disabled 'Info'
+        a.button.primary.disabled 'Primary'
+        a.button.success.disabled 'Success'
+      }
+    }, hint: %{Buttons with the <code>.subtle</code> class should be hidden when disabled.}.html_safe, sub: ''
 
     docs 'Button sizes', %{
       p { a.button 'Normal'}
@@ -318,7 +324,7 @@ class Views::Home::Forms < Views::Base
       p { a.button.mini 'Mini'}
     }, sub: ''
 
-    docs 'Subtle buttons', %{
+    docs 'Tertiary buttons', %{
       p {
         a.uppercase 'Contact Your Local Representative'
       }

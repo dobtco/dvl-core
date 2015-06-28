@@ -13,16 +13,14 @@
 .drop_rich_head,
 .drop_rich_subhead {
   @include word_break;
-  line-height: $lineHeight;
+  display: block;
 }
 
 .drop_rich_head {
-  display: block;
   font-weight: $weightNormal;
 }
 
 .drop_rich_subhead {
-  display: block;
   color: $darkGray;
   font-size: $fontSmaller;
   .active a & {

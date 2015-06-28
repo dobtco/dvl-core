@@ -71,6 +71,6 @@ class Views::Home::Layout < Views::Base
 
     docs 'Footer', %{
       widget Dvl::Components::Footer.new(application_name: 'DOBT Style Guide')
-    }, full: true
+    }
   end
 end

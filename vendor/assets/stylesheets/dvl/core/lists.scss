@@ -51,7 +51,7 @@ ol.formatted_list {
 }
 
 .rendered_from_wysiwyg,
-.wysiwyg_wrapper {
+.redactor_wysiwyg {
   ul {
     @include formatted_list_ul;
   }

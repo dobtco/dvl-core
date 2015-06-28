@@ -14,11 +14,11 @@
   z-index: $z_dropdown;
   display: none;
   float: left;
-  min-width: 220px;
-  margin-top: 3px;
-  background-color: #fff;
-  box-shadow: 0 1px 0 rgba(#000,0.14);
-  border: 1px solid #dadada;
+  min-width: 18rem;
+  margin-top: $rhythm / 2;
+  background-color: $white;
+  box-shadow: 0 1px 0 rgba($black,0.14);
+  border: 1px solid $lightGray;
   border-radius: $radius;
   background-clip: padding-box;
   // Right-aligns menu
@@ -28,38 +28,39 @@
   }
   h3 {
     margin: 0;
-    background: #efefef;
+    background: $lightestGray;
     text-align: center;
-    min-height: 2.5rem;
-    line-height: 1.25rem;
-    padding: 0.625rem 0.5rem;
-    @include border_top_radius($radius - 1);
-    color: #444;
+    min-height: $rhythm * 5;
+    line-height: $rhythm * 3;
+    padding: $rhythm $rhythm * 2;
+    color: $darkestGray;
     font-size: $fontSmaller;
     text-transform: uppercase;
     letter-spacing: $letterspaceSmaller;
+    &:first-child {
+      @include border_top_radius($radius - 1);
+    }
   }
 }
 
 // Links
 .dropdown_body {
-  max-height: 350px;
+  max-height: ($lineHeight * 15) + $rhythm; // Overlap a list item with the bottom edge
   overflow: auto;
   > li {
     > a,
     > span {
       display: block;
-      min-height: 2.25rem;
-      line-height: 1.5rem;
-      padding: 0.375rem 0.5rem;
+      min-height: $rhythm * 5;
+      padding: $rhythm $rhythm * 2;
       clear: both;
     }
     a {
-      color: #333;
+      color: $darkestGray;
       &:hover,
       &:focus {
         text-decoration: none;
-        background-color: #f7f7f7;
+        background-color: $lightestGray;
       }
     }
 
@@ -152,7 +153,8 @@
 }
 
 li.dropdown_more a {
-  color: #888;
+  color: $darkerGray;
+  font-size: $fontSmaller;
 }
 
 // Enhanced dropdowns:

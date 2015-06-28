@@ -42,6 +42,11 @@
     text-transform: uppercase;
     font-size: $fontSmallest;
   }
+  &.subtle {
+    background: $lightestGray;
+    border-color: $lighterGray;
+    color: $darkGray;
+  }
   &.arrow_l:before {
     content: "\f0d9";
     font-family: 'FontAwesome';
@@ -122,14 +127,16 @@
   }
 
   // Sizes
+  &.small {
+    padding: $rhythm / 2 $rhythm * 2;
+    font-size: $fontSmall;
+  }
+
   &.mini {
     padding: $rhythm / 2 $rhythm;
     font-size: $fontSmaller;
   }
-  &.small {
-    padding: $rhythm $rhythm * 2;
-    font-size: $fontSmall;
-  }
+
   &.block {
     display: block;
   }

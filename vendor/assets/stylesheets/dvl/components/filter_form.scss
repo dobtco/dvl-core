@@ -1,0 +1,123 @@
+.filter_form {
+  display: inline-block;
+  position: relative;
+
+  .styled_select_wrapper,
+  .button {
+    vertical-align: top;
+  }
+
+  .styled_select_wrapper {
+    margin-left: 0.5rem;
+  }
+
+  .button {
+    margin-left: .5rem;
+  }
+  // Contains query with close button
+  // #todo change to search input, remove Close icon
+  &.with_query {
+    .filter_form_search_wrapper {
+      input {
+        padding-right: 1.75rem;
+      }
+      .filter_form_close {
+        display: inline;
+      }
+    }
+  }
+
+  // Full-width search input.
+  // Currently achieved by removing the search button.
+  // #todo use grid or display: table to achieve?
+  &.full {
+    width: 100%;
+
+    .filter_form_search_wrapper {
+      width: 100%;
+    }
+
+    .button {
+      display: none;
+    }
+  }
+}
+
+.filter_form_search_wrapper {
+  display: inline-block;
+  width: 16rem;
+  position: relative;
+  input {
+    width: 100%;
+    padding-left: 1.75rem;
+    display: inline;
+    line-height: 1.5rem;
+  }
+  i {
+    position: absolute;
+    top: 0;
+    line-height: $inputHeight;
+    color: $darkGray;
+  }
+  .fa-search {
+    width: 1.75rem;
+    text-align: center;
+    left: 0;
+  }
+  .filter_form_close {
+    display: none;
+    right: 7px;
+    text-decoration: none;
+    &:hover {
+      color: $darkerGray;
+    }
+  }
+}
+
+// "Expand" button triggering advanced search
+
+.filter_form_expand {
+  position: absolute;
+  top: 0.2rem;
+  line-height: 1.9rem;
+  width: 2.25rem;
+  text-align: center;
+  right: 0.25rem;
+  text-decoration: none;
+  border-radius: 3px;
+  color: $darkGray;
+  background: #f7f7f7;
+  + input {
+    padding-right: 2.5rem;
+  }
+  &:focus,
+  &:hover,
+  &:active {
+    text-decoration: none;
+  }
+
+  &:focus,
+  &:hover {
+    background: #f1f1f1;
+    outline: 0;
+  }
+  &:active {
+    background: #eee;
+  }
+  &.with_facets {
+    background: $linkColor;
+    color: $white;
+    border-radius: $radius;
+    font-size: 0.9rem;
+    font-weight: 600;
+    &:hover {
+      background: darken($linkColor, 5%);
+    }
+  }
+}
+
+.below_filter_form {
+  margin-top: -0.75rem; // get all up in the filter form's business
+  padding-bottom: 1rem;
+  font-size: 0.9rem;
+}

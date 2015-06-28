@@ -76,13 +76,13 @@ html {
  */
 
 ::-moz-selection {
-  background: $selectionBackground;
+  background: rgba($selectionBackground,0.6);
   color: $selectionColor;
   text-shadow: none;
 }
 
 ::selection {
-  background: $selectionBackground;
+  background: rgba($selectionBackground,0.6);
   color: $selectionColor;
   text-shadow: none;
 }
@@ -91,7 +91,7 @@ html {
 
 /* Change `background` for text selections when browser is unfocused */
 ::selection:window-inactive {
-  background: rgba($selectionBackground,0.6);
+  background: rgba($selectionBackground,0.4);
 }
 
 /* Remove `background` on images when selected */

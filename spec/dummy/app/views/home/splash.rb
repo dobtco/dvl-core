@@ -4,9 +4,9 @@ class Views::Home::Splash < Views::Base
   end
 
   def main
-    h2 'Navigation'
+    h2 'Splash Pages'
     
-    docs 'Splash', %{
+    docs 'Footer', %{
       footer.footer {
         div.footer_inner {
           form.newsletter_form.grid {
