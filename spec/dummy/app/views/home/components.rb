@@ -61,11 +61,203 @@ class Views::Home::Components < Views::Base
       }
     }, sub: ''
 
+    docs 'Multi-Column', %{
+      div.dvlcore_button_array {
+        div.dropdown {
+          a.button.toggle(
+            'Icons',
+            'data-toggle' => 'dropdown',
+            href: '#'
+          )
+
+          div.dropdown_menu(role: 'menu') {
+            ul.dropdown_body {
+              li {
+                a(href: '#') {
+                  span.drop_master { i(class: 'fa fa-envelope') }
+                  span.drop_detail 'Send a message'
+                }
+              }
+
+              li {
+                a(href: '#') {
+                  span.drop_master { i(class: 'fa fa-pencil') }
+                  span.drop_detail 'Edit'
+                }
+              }
+
+              li {
+                a(href: '#') {
+                  span.drop_master { i(class: 'fa fa-minus-circle') }
+                  span.drop_detail 'Delete'
+                }
+              }
+            }
+          }
+        }
+
+        div.dropdown {
+          a.button.toggle(
+            'Users',
+            'data-toggle' => 'dropdown',
+            href: '#'
+          )
+
+          div.dropdown_menu(role: 'menu') {
+            ul.dropdown_body {
+              li {
+                a(href: '#') {
+                  span.drop_master {
+                    img.drop_master_avatar(src: 'https://raw.githubusercontent.com/dobtco/headshots/master/headshots/adam.jpg', alt: 'Adam Becker')
+                  }
+                  span.drop_detail 'Adam Becker'
+                }
+              }
+              li {
+                a(href: '#') {
+                  span.drop_master {
+                    img.drop_master_avatar(src: 'https://raw.githubusercontent.com/dobtco/headshots/master/headshots/aviv.jpg', alt: 'Aviv Nitsan')
+                  }
+                  span.drop_detail 'Aviv Nitsan'
+                }
+              }
+            li {
+                a(href: '#') {
+                  span.drop_master {
+                    img.drop_master_avatar(src: 'https://raw.githubusercontent.com/dobtco/headshots/master/headshots/clay.jpg', alt: 'Clay Johnson')
+                  }
+                  span.drop_detail 'Clay Johnson'
+                }
+              }
+              li.disabled {
+                a(href: '#') {
+                  span.drop_master {
+                    img.drop_master_avatar(src: 'https://raw.githubusercontent.com/dobtco/headshots/master/headshots/jg.jpg', alt: 'Disabled')
+                  }
+                  span.drop_detail 'Disabled Option'
+                }
+              }
+            }
+          }
+        }
+
+        div.dropdown {
+          a.button.toggle(
+            'Colors',
+            'data-toggle' => 'dropdown',
+            href: '#'
+          )
+
+          div.dropdown_menu(role: 'menu') {
+            ul.dropdown_body {
+              li {
+                a(href: '#') {
+                  span.drop_master {
+                    span.drop_master_color(style: "background-color: #e3e15f")
+                  }
+                  span.drop_detail 'Open'
+                }
+              }
+
+             li.is_selected {
+                a(href: '#') {
+                  span.drop_master {
+                    span.drop_master_color(style: "background-color: #5bb7d9")
+                  }
+                  span.drop_detail 'Pending'
+                }
+              }
+
+              li {
+                a(href: '#') {
+                  span.drop_master {
+                    span.drop_master_color(style: "background-color: #bfeef3")
+                  }
+                  span.drop_detail 'Rejected'
+                }
+              }
+            }
+          }
+        }
+      }
+    }, sub: ''
+
+    docs 'Filtering', %{
+      div.dvlcore_button_array {
+        div.dropdown.dropdown_filter {
+          a.button.toggle(
+            'Assign to&hellip;'.html_safe,
+            'data-toggle' => 'dropdown',
+            href: '#'
+          )
+          div.dropdown_menu.dropdown_menu_label {
+            form.dropdown_filter_head {
+              input type: 'text',
+                    placeholder: 'Filter users',
+                    class: 'js-dropdown-filter-input'
+            }
+            ul.dropdown_body {
+              li('data-clear' => true) {
+                a(
+                  'data-dropdown-filter-action' => true
+                ) {
+                  span.drop_master { i(class: 'fa fa-minus-circle') }
+                  span.drop_detail 'Clear selection'
+                }
+              }
+              li {
+                a(href: '#') {
+                  span.drop_master {
+                    img.drop_master_avatar(src: 'https://raw.githubusercontent.com/dobtco/headshots/master/headshots/adam.jpg', alt: 'Adam Becker')
+                  }
+                  span.drop_detail 'Adam Becker'
+                }
+              }
+              li.is_selected {
+                a(href: '#') {
+                  span.drop_master {
+                    img.drop_master_avatar(src: 'https://raw.githubusercontent.com/dobtco/headshots/master/headshots/aviv.jpg', alt: 'Aviv Nitsan')
+                  }
+                  span.drop_detail 'Aviv Nitsan'
+                }
+              }
+            li.is_partial {
+                a(href: '#') {
+                  span.drop_master {
+                    img.drop_master_avatar(src: 'https://raw.githubusercontent.com/dobtco/headshots/master/headshots/clay.jpg', alt: 'Clay Johnson')
+                  }
+                  span.drop_detail 'Clay Johnson'
+                }
+              }
+            }
+          }
+        }
+
+        div.dropdown.dropdown_filter {
+          a.button.toggle(
+            'Blank state',
+            'data-toggle' => 'dropdown',
+            href: '#'
+          )
+          div.dropdown_menu.dropdown_menu_label {
+            form.dropdown_filter_head {
+              input type: 'text',
+                    placeholder: 'Filter users',
+                    class: 'js-dropdown-filter-input'
+            }
+            ul.dropdown_body {
+              li.js_no_labels { span.none 'No users' }
+            }
+          }
+        }
+      }
+    }, hint: 'The minus icon inside the first dropdown indicates that only some of the current selection applies to that item.', sub: ''
+
     docs 'Appearance', %{
       div.dvlcore_button_array {
-        div.dropbown {
+        div.dropdown {
           a.button.toggle(
-            'Loading state',
+            'Loading',
             'data-toggle' => 'dropdown',
             href: '#'
           )
@@ -79,88 +271,91 @@ class Views::Home::Components < Views::Base
               }
             }
           }
+        }
+        
+        div.dropdown {
+          a.button.toggle 'Multiple Sections',
+                            'data-toggle' => 'dropdown',
+                            href: '#'
+          div.dropdown_menu(role: 'menu') {
+            ul.dropdown_body {
+              li.dropdown_header 'Section One'
+              li { a 'Link One' }
+              li { a 'Link Two' }
+              li.dropdown_header 'Section Two'
+              li { a 'Link Three' }
+              li { a 'Link Four' }
+            }
+          }
+        }
 
-          div.dropdown {
-            a.button.toggle(
-              'Right-aligned',
-              'data-toggle' => 'dropdown',
-              href: '#'
-            )
+        div.dropdown {
+          a.button.toggle(
+            'Right-aligned',
+            'data-toggle' => 'dropdown',
+            href: '#'
+          )
 
-            div.dropdown_menu.dropdown_right(role: 'menu') {
-              ul.dropdown_body {
-                li {
-                  a 'Option 1', href: '#'
-                }
-                li {
-                  a 'Option 2', href: '#'
-                }
-                li {
-                  a 'Option 3', href: '#'
-                }
+          div.dropdown_menu.dropdown_right(role: 'menu') {
+            ul.dropdown_body {
+              li {
+                a 'Option 1', href: '#'
+              }
+              li {
+                a 'Option 2', href: '#'
+              }
+              li {
+                a 'Option 3', href: '#'
               }
             }
           }
         }
       }
-
-
     }, sub: ''
 
     docs 'Multi-Level', %{
       div.dropdown {
-        a "Click me <i class='fa fa-caret-down'></i>".html_safe,
+        a 'Sort by&hellip;'.html_safe,
           'data-toggle' => 'dropdown',
+          class: 'dropdown_toggle_link',
           href: '#'
         div.dropdown_menu(role: 'menu') {
           ul.dropdown_body {
             li {
-              a 'Hey! This is some really long dropdown text, yo.', href: '#'
-            }
-            li.dropdown_menu_sub_trigger.active {
-              a 'View more...', href: '#'
+              a 'Name', href: '#'
             }
             li {
-              ul.dropdown_menu_sub {
-                li.active {
-                  a 'This is one option', href: '#'
-                }
-                li {
-                  a 'This is another', href: '#'
-                }
-                li {
-                  a 'This is a third option', href: '#'
-                }
-              }
+              a 'Email', href: '#'
             }
-            li {
-              a(href: '#') {
-                i(class: 'fa fa-star')
-                text ' With an icon!'
-              }
-            }
-            li {
-              a 'No!', href: '#'
+            li.active {
+              a 'Timestamp', href: '#'
             }
             li.dropdown_menu_sub_trigger {
-              a 'View more...', href: '#'
+              a 'Answer to&hellip;'.html_safe, href: '#'
             }
             li {
               ul.dropdown_menu_sub {
                 li {
-                  a 'This is one option with a whole lot of content that is going to overflow ' +
-                    'onto another line and get all crazy and such, what a shame it is that we ' +
-                    'have to deal with crap like this.', href: '#'
+                  a 'Eligibility Requirements', href: '#'
                 }
                 li {
-                  a 'This is another', href: '#'
+                  a 'Describe your GIS analysis experience', href: '#'
+                }
+                li {
+                  a 'Have you applied for this fellowship before, in previous years? How have you improved since the last time you applied for this fellowship?', href: '#'
                 }
               }
+            }
+            li {
+              a 'Overall rating', href: '#'
+            }
+            li.disabled {
+              a 'Beauty', href: '#'
             }
           }
         }
       }
-    }, sub: ''
+    }, hint: %{Dropdowns can also be triggered from regular links. Just add the <code>.dropdown_toggle_link</code> class to any <code>&lt;a&gt;</code> tag.}.html_safe, sub: ''
 
     docs 'Rich Text', %{
       simple_form_for :selects do |f|
@@ -174,106 +369,6 @@ class Views::Home::Components < Views::Base
                 ]
       end
     }, hint: %{See the <a href="/forms#rich-text dropdowns">Forms page</a> for more details.}.html_safe, sub: ''
-
-    docs 'Dropdowns', %{
-      
-
-      br
-      br
-
-
-      br
-      br
-
-      div.dropdown {
-        a.button.small.toggle.info 'Notifications',
-                          'data-toggle' => 'dropdown',
-                          href: '#'
-        div.dropdown_menu(role: 'menu') {
-          ul.dropdown_body {
-            li.drop_important {
-              a.cf(href: '#') {
-                span.drop_master_multiline { span.drop_master_color(style: 'background-color: red;') }
-                span.drop_detail_multiline 'Important! You were sent a message!!!'
-              }
-            }
-            li {
-              a.cf(href: '#') {
-                span.drop_master_multiline { img.drop_master_avatar(src: '//dobt-captured.s3.amazonaws.com/ajb/dummy_av_square.png') }
-                span.drop_detail_multiline 'A file was added to your project'
-              }
-            }
-            li.active {
-              a.cf(href: '#') {
-                span.drop_master_multiline { i(class: 'fa fa-file-text') }
-                span.drop_detail_multiline 'This is an active item'
-              }
-            }
-          }
-        }
-      }
-
-      br
-      br
-
-      div.dropdown {
-        a.button.toggle.primary 'Loading state',
-                          'data-toggle' => 'dropdown',
-                          href: '#'
-        div.dropdown_menu(role: 'menu') {
-          ul.dropdown_body {
-            li.dropdown_loading {
-              span {
-                i(class: 'fa fa-refresh fa-spin dropdown_loading_icon')
-              }
-            }
-          }
-        }
-      }
-
-      br
-      br
-
-      div.dropdown {
-        a "Right item <i class='fa fa-caret-down'></i>".html_safe,
-                          'data-toggle' => 'dropdown',
-                          href: '#'
-        div.dropdown_menu(role: 'menu') {
-          ul.dropdown_body {
-            li {
-              a {
-                span.drop_rt_item 'This is an item!'
-                span.drop_rt_arrow { i(class: 'fa fa-external-link') }
-              }
-            }
-            li {
-              a {
-                span.drop_rt_item 'This is another!'
-                span.drop_rt_arrow { i(class: 'fa fa-external-link') }
-              }
-            }
-          }
-        }
-      }
-
-      br
-
-      div.dropdown {
-        a.dropdown_toggle_button.gray 'Dropdown with sections',
-                          'data-toggle' => 'dropdown',
-                          href: '#'
-        div.dropdown_menu(role: 'menu') {
-          ul.dropdown_body {
-            li.dropdown_header 'Section One'
-            li { a 'Link One' }
-            li { a 'Link Two' }
-            li.dropdown_header 'Section Two'
-            li { a 'Link Three' }
-            li { a 'Link Four' }
-          }
-        }
-      }
-    }, hint: 'Add the .toggle modifier to buttons to give them a border and a caret.'
 
     docs 'Flashes', %{
       ul {

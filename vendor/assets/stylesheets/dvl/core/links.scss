@@ -32,3 +32,16 @@ a {
     }
   }
 }
+
+// Plain dropdown toggle links
+
+.dropdown_toggle_link {
+  padding-right: $rhythm * 2;
+  position: relative;
+  &:after {
+    position: absolute;
+    line-height: $lineHeight;
+    right: 0;
+    @include icon('\f0d7');
+  }
+}

@@ -398,3 +398,55 @@ $paginationStatusHeight: $rhythm * 5;
       right: 0;
   }
 }
+
+// Change all .dropdown_headers, they're not semantic.
+// Use .dropdown_menu h3 instead
+
+.dropdown_header {
+  background: $lighterGray;
+  color: $darkestGray;
+  padding: $rhythm $rhythm * 2;
+  font-size: $fontSmaller;
+  text-transform: uppercase;
+  letter-spacing: $letterspaceSmaller;
+  &:first-child {
+    @include border_top_radius($radius - 1);
+  }
+}
+
+// Remove this, refactor .nav_dropdown so that it's not needed
+
+.drop_sng {
+  @include ellipses;
+}
+
+// Keep and rename to .drop_unread
+
+.drop_important {
+  font-weight: $weightBold;
+}
+
+// Remove the need for this
+
+.dropdown_nav {
+  li a,
+  .drop_sng {
+    padding: 0 1.5rem;
+    line-height: 3rem;
+    height: 3rem;
+    @include cf;
+  }
+  .all {
+    .drop_rt_item,
+    .drop_rt_arrow {
+      width: auto;
+      float: none;
+    }
+    .drop_rt_item {
+      max-width: 87%;
+    }
+    .drop_rt_arrow {
+      max-width: 10%;
+    }
+  }
+}

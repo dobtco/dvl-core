@@ -16,7 +16,6 @@ $dvlFlashDefaultColor: #2886A8 !default;
   background: $dvlFlashDefaultColor;
   border-radius: $radius;
   padding: 0.75rem 1rem;
-  font-size: $fontSmaller;
   color: $white;
   box-shadow: 0 1px 0 rgba(#000,0.2);
   line-height: 1rem;
@@ -33,13 +32,13 @@ $dvlFlashDefaultColor: #2886A8 !default;
     transform: translateY(0);
   }
   .flash_close {
+    font-size: 2rem;
     position: absolute;
     line-height: 2.5rem;
     text-decoration: none;
     right: 1rem;
     top: 0;
-    font-weight: $weightBold;
-    color: $lightGray;
+    color: $white;
     &:hover {
       color: $white;
       text-decoration: none;
