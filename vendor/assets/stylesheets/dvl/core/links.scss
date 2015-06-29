@@ -45,3 +45,20 @@ a {
     @include icon('\f0d7');
   }
 }
+
+// Button tags styled as links
+
+.button_link {
+  font-size: inherit;
+  background: none;
+  padding: 0;
+  line-height: inherit;
+  border: 0;
+  color: $linkColor;
+  &:focus {
+    outline: 0;
+  }
+  &:hover {
+    text-decoration: underline;
+  }
+}

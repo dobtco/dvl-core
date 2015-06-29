@@ -208,43 +208,31 @@ class Views::Home::Forms < Views::Base
       end
     }, hint: 'When using horizontal forms, keep each label brief.', sub: ''
 
-    docs 'Inputs with buttons', %{
+    docs 'Input groups', %{
       simple_form_for :input_groups do |f|
-        f.input :input_group do
-          div.input_group {
-            f.input_field :input_group,
-                          as: :string,
-                          placeholder: 'I am an input-group'
-            a.button.small '✓'
-          }
-        end
 
-        f.input :input_group_with_copy do
+        f.input :permalink do
           div.input_group {
             f.input_field :input_group_with_copy,
                           as: :string,
-                          value: 'http://this.is.a/long/url'
-            a.button.small.info {
+                          value: 'http://dobt.forms.fm'
+            a(class: 'button small info',
+              'data-toggle' => 'tooltip',
+              title: 'Copy URL') {
               i(class: 'fa fa-copy')
             }
           }
         end
 
-        f.input :input_group_with_text do
+        f.input :enter_your_age do
           div.input_group {
             f.input_field :input_group,
-                          as: :string,
-                          placeholder: 'I am an input-group'
-            span.input_group_text 'things'
+                          as: :string
+            span.input_group_text 'years young'
           }
         end
       end
 
-      select {
-        option 'Option'
-      }
-      text ' '
-      a.button 'Go!'
     }, sub: ''
 
     docs 'Filter form', %{
@@ -319,9 +307,11 @@ class Views::Home::Forms < Views::Base
     }, hint: %{Buttons with the <code>.subtle</code> class should be hidden when disabled.}.html_safe, sub: ''
 
     docs 'Button sizes', %{
-      p { a.button 'Normal'}
-      p { a.button.small 'Small'}
-      p { a.button.mini 'Mini'}
+      div.dvlcore_button_array {
+        a.button 'Normal'
+        a.button.small 'Small'
+        a.button.mini 'Mini'
+      }
     }, sub: ''
 
     docs 'Tertiary buttons', %{

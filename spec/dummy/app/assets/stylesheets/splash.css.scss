@@ -7,5 +7,5 @@ $maxFontSize: 100%;
 
 // Give buttons a nice blue color by default
 .button {
-  @include dark_button_color(#0084B8);
+  @include button_color(#0084B8);
 }

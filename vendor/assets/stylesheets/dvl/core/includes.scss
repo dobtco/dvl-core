@@ -18,8 +18,14 @@ $lighterGray: #f2f2f2;
 $lightestGray: #fcfcfc;
 $white: #fff;
 
+// UI Colors
 
-
+$primaryColor: #5bb7d9 !default;
+$secondaryColor: #f79a68 !default;
+$successColor: #5ee0ac !default;
+$warningColor: #e3e15f !default;
+$errorColor: #d95b76 !default;
+$highlight: #dff5f7 !default;
 
 // Blues
 $logoBlue: #009ade;
@@ -27,43 +33,43 @@ $blueGray: #6a6e75;
 $lighterBlueGray: #6a6e75;
 $linkColor: #2e8ad0;
 $bodyFontColor: $darkestGray;
-$darkBlue: #1fa3ec;
+$darkBlue: $primaryColor;
 
 // Other Colors
-$successColor: #2aa828 !default;
-$errorColor: #c12f2e !default;
+
 $alertColor: $errorColor !default;
-$blueHighlight: #dff5f7;
+$blueHighlight: $highlight !default;
+
 $mintHighlight: #e7f9e7;
 $purpleBlue: #6188f5;
 
 // Qualitative colors
 
-$qualColor1:  #D95B76;
-$qualColor2:  #E16D72;
-$qualColor3:  #EC846D;
-$qualColor4:  #F79A68;
-$qualColor5:  #EFB765;
-$qualColor6:  #E3E15F;
-$qualColor7:  #C2E172;
-$qualColor8:  #A1E085;
-$qualColor9:  #82E098;
-$qualColor10: #5EE0AC;
+$qualColor1:  $errorColor;
+$qualColor2:  #e16d72;
+$qualColor3:  #ec846d;
+$qualColor4:  #f79a68;
+$qualColor5:  #efb765;
+$qualColor6:  $warningColor;
+$qualColor7:  #c2e172;
+$qualColor8:  #a1e085;
+$qualColor9:  #82e098;
+$qualColor10: $successColor;
 
 // Label colors
 
-$redLabelColor: #D95B76;
-$lightRedLabelColor: #F0BECF;
-$orangeLabelColor: #F79A68;
-$lightOrangeLabelColor: #F0CCBE;
-$yellowLabelColor: #E3E15F;
-$lightYellowLabelColor: #FCF4C3;
-$greenLabelColor: #5EE0AC;
-$lightGreenLabelColor: #DBF4BF;
-$blueLabelColor: #5BB7D9;
-$lightBlueLabelColor: #BFEEF3;
-$purpleLabelColor: #6569F0;
-$lightPurpleLabelColor: #BEC9F0;
+$redLabelColor: $errorColor;
+$lightRedLabelColor: #f0becf;
+$orangeLabelColor: $primaryColor;
+$lightOrangeLabelColor: #f0ccbe;
+$yellowLabelColor: $warningColor;
+$lightYellowLabelColor: #fcf4c3;
+$greenLabelColor: $successColor;
+$lightGreenLabelColor: #dbf4bf;
+$blueLabelColor: $darkBlue;
+$lightBlueLabelColor: #bfeef3;
+$purpleLabelColor: #6569f0;
+$lightPurpleLabelColor: #bec9f0;
 
 
 // Corner radius

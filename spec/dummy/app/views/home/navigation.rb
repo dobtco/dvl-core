@@ -173,7 +173,7 @@ class Views::Home::Navigation < Views::Base
         }
         li {
           a {
-            text 'Discarded, but pending review by James Joyce. We need to exhume the body first, though'
+            text 'Rejected by the International Court of Justice in Hague, The Netherlands after a lengthy deliberation of multiple years'
             span.badge '5,000'
           }
         }

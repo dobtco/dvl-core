@@ -170,10 +170,10 @@ class Views::Home::Components < Views::Base
 
               li {
                 a(href: '#') {
-                  span.drop_master {
+                  span.drop_master_multiline {
                     span.drop_master_color(style: "background-color: #bfeef3")
                   }
-                  span.drop_detail 'Rejected'
+                  span.drop_detail_multiline 'Rejected by the International Court of Justice in The Hague, Netherlands'
                 }
               }
             }
@@ -482,10 +482,7 @@ class Views::Home::Components < Views::Base
           li { a(href: '#'){text '1'}}
           li.active { span '2' }
           li { a(href: '#'){text '3'}}
-          li { a(href: '#'){text '4'}}
           li { span '&hellip;'.html_safe }
-          li { a(href: '#'){text '17'}}
-          li { a(href: '#'){text '18'}}
           li { a(href: '#'){text '19'}}
           li { a(href: '#'){text '20'}}
           li { a(href: '#'){text "&rarr;".html_safe}}
@@ -500,10 +497,7 @@ class Views::Home::Components < Views::Base
           li { a(href: '#'){text '1'}}
           li.active { span '2' }
           li { a(href: '#'){text '3'}}
-          li { a(href: '#'){text '4'}}
           li { span '&hellip;'.html_safe }
-          li { a(href: '#'){text '17'}}
-          li { a(href: '#'){text '18'}}
           li { a(href: '#'){text '19'}}
           li { a(href: '#'){text '20'}}
           li { a(href: '#'){text "&rarr;".html_safe}}

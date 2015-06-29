@@ -12,7 +12,9 @@ class Views::Home::Color < Views::Base
 
     h3 'UI Colors'
 
-    p 'TBD'
+    uiColors.each do |var, color|
+      render('components/swatch', color: color, var: var)
+    end
 
     hr
 
@@ -33,6 +35,17 @@ class Views::Home::Color < Views::Base
     end
 
     hr
+  end
+
+  def uiColors
+    {
+      '$primaryColor' => '#5bb7d9',
+      '$secondaryColor' => '#f79a68',
+      '$successColor' => '#5ee0ac',
+      '$warningColor' => '#e3e15f',
+      '$errorColor' =>  '#d95b76',
+      '$blueHighlight' => '#dff5f7'    
+    }
   end
 
   def grayscaleColors
