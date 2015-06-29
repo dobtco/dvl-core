@@ -367,12 +367,11 @@ form {
 }
 
 .form_error {
-  font-size: $fontSmaller;
+  font-size: $fontSmall;
   background-color: $errorColor;
-  color: #fff;
-  padding: 0.375rem 0.6rem;
+  color: $white;
+  padding: $rhythm $rhythm * 2;
   border-radius: $radius;
-  margin-top: 0.25rem;
   display: inline-block;
 }
 
@@ -457,28 +456,28 @@ form {
       }
     }
     &:hover + div {
-      background: #fcfcfc;
+      background: $lightestGray;
     }
     &:active + div {
-      background: #f7f7f7;
+      background: darken($lightestGray,3%);
     }
     &[readonly],
     &[disabled] {
       + div {
         opacity: 0.6;
-        background: #f5f5f5;
+        background: $lighterGray;
       }
       &:active + div {
-        background: #f5f5f5;
+        background: $lighterGray;
       }
     }
   }
   &:hover .styled_select {
-    background: #fcfcfc;
+    background: $lightestGray;
   }
   &:active .styled_select,
   &.open .styled_select {
-    background: #f7f7f7;
+    background: darken($lightestGray,3%);
   }
 }
 
@@ -529,16 +528,17 @@ a.styled_select {
 }
 
 .datetime_input_wrapper .input_group {
-  width: 120px;
+  width: $rhythm * 20;
   float: left;
-  margin-right: 10px;
+  margin-right: $rhythm * 2;
 }
 
+// When replacing an input with text
 .input_text {
-  margin-top: 0.25rem;
+  margin-top: $rhythm;
 }
 
-// Radio button groups
+// Radio button groups (rating field)
 .radio_group_inner {
   input {
     display: none;
@@ -555,7 +555,7 @@ a.styled_select {
     text-align: center;
     border: 1px solid $gray;
     border-right-width: 0;
-    padding: 0.5rem 0;
+    padding: $rhythm 0;
     &:first-of-type {
       @include border_left_radius($radius);
     }
@@ -566,18 +566,9 @@ a.styled_select {
   }
 }
 
-.radio_group_img {
-  height: 1.5rem;
-  display: block;
-  i {
-    font-size: 1.5rem;
-    line-height: 1;
-    text-align: center;
-  }
-}
-
 // Sub-option, conditionally visible
 // Must set the left property each time this is used
+// (Used in "max rating" when setting numeric ratings)
 
 .form_option_sub {
   background-color: $lightGray;

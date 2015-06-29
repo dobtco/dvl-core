@@ -251,7 +251,7 @@ class Views::Home::Components < Views::Base
           }
         }
       }
-    }, hint: 'The minus icon inside the first dropdown indicates that only some of the current selection applies to that item.', sub: ''
+    }, hint: 'The minus icon inside the first dropdown indicates that the current selection only partially applies to that item.', sub: ''
 
     docs 'Appearance', %{
       div.dvlcore_button_array {
