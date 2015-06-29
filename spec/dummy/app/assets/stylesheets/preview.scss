@@ -16,8 +16,8 @@
   }
   padding: $lineHeight * 6 0;
   margin-bottom: $lineHeight * 2;
-  background-color: $brandColor;
-  background-image: radial-gradient(10deg, rgba(186,146,112,0.6) 7%, rgba(186,146,112,0) 58%), linear-gradient(-10deg, rgba(0,133,250,0.3) 10%, rgba(0,133,250,0) 60%);
+  background-color: #09152f;
+  background-image: radial-gradient(farthest-corner at bottom left, rgba(186,146,112,0.6) 7%, rgba(186,146,112,0) 58%), radial-gradient(farthest-corner at bottom right, rgba(0,133,250,0.3) 10%, rgba(0,133,250,0) 60%);
 }
 
 .container {
@@ -40,6 +40,9 @@
   &.docs_item_sub {
     border: 0;
     padding-bottom: 0;
+    h4 {
+      line-height: $inputHeight;
+    }
   }
 }
 
@@ -184,7 +187,7 @@ hr {
   padding: $lineHeight * 2 5%;
   background-repeat: repeat;
   background-size: 100% $rhythm;
-  background-image: linear-gradient(to top, $white 87%, rgba($primaryColor,0.99));
+  background-image: linear-gradient(to top, $white 87%, rgba($primaryColor,0.5));
   margin-bottom: $lineHeight;
   h2, p, form {
     text-align: center;

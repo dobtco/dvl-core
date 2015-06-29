@@ -206,7 +206,7 @@ $navBreakpoint: $deskWidth !default;
   .navbar_content_secondary {
     float: right;
     .button {
-      margin-top: ($navHeight - ($rhythm * 4)) / 2;
+      margin-top: ($navHeight - ($inputHeight)) / 2;
     }
     .dropdown_menu {
       right: 0;

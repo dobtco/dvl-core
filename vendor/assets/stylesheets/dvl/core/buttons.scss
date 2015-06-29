@@ -15,8 +15,10 @@
   &:hover,
   &:focus {
     background: darken($bg, 5%);
-    @if lightness($bg) > 62% {
-      color: darken($bg,45%);
+    @if saturation($bg) > 40% {
+      color: #fff;
+    } @else if lightness($bg) > 49% {
+      color: darken($bg,50%);
     } @else if saturation($bg) == 0 {
       color: $darkestGray;
     } @else {

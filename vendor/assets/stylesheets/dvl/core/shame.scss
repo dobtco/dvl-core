@@ -342,6 +342,7 @@ $paginationStatusHeight: $rhythm * 5;
       &:last-child {
         a,
         span {
+          margin: 0;
           background: $lightestGray;
           border: 1px solid $lightGray;
           float: left;

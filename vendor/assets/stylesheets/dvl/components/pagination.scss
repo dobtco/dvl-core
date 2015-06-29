@@ -17,9 +17,7 @@
       a {
         width: $rhythm * 5;
       }
-      span,
-      &:first-child a,
-      &:last-child a {
+      span {
         width: $rhythm * 3;
       }
       &.active span {
@@ -29,6 +27,7 @@
         @include font_smoothing;
       }
       a {
+        transition: background-color 100ms ease-out;
         &:hover,
         &:focus {
           background-color: $blueHighlight;

@@ -3,7 +3,7 @@
 
 // App-specific colors
 $bodyBackgroundColor: #fff !default;
-$brandColor: #09152f !default;
+$brandColor: #697182 !default;
 $selectionBackground: $brandColor !default;
 $selectionColor: #fff !default;
 
@@ -20,7 +20,7 @@ $white: #fff;
 
 // UI Colors
 
-$primaryColor: #5bb7d9 !default;
+$primaryColor: $brandColor !default;
 $secondaryColor: #f79a68 !default;
 $successColor: #5ee0ac !default;
 $warningColor: #e3e15f !default;
@@ -33,7 +33,7 @@ $blueGray: #6a6e75;
 $lighterBlueGray: #6a6e75;
 $linkColor: #2e8ad0;
 $bodyFontColor: $darkestGray;
-$darkBlue: $primaryColor;
+$darkBlue: #5bb7d9;
 
 // Other Colors
 
@@ -60,13 +60,13 @@ $qualColor10: $successColor;
 
 $redLabelColor: $errorColor;
 $lightRedLabelColor: #f0becf;
-$orangeLabelColor: $primaryColor;
+$orangeLabelColor: #f79a68;
 $lightOrangeLabelColor: #f0ccbe;
 $yellowLabelColor: $warningColor;
 $lightYellowLabelColor: #fcf4c3;
 $greenLabelColor: $successColor;
 $lightGreenLabelColor: #dbf4bf;
-$blueLabelColor: $darkBlue;
+$blueLabelColor: #5bb7d9;
 $lightBlueLabelColor: #bfeef3;
 $purpleLabelColor: #6569f0;
 $lightPurpleLabelColor: #bec9f0;

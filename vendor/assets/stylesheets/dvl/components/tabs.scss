@@ -1,0 +1,46 @@
+// Tabbed navigation.
+// For switching between sub-sections of the same view.
+
+.tabs {
+  display: table;
+  margin: 0 auto $lineHeight;
+  user-select: none;
+  li {
+    position: relative;
+    float: left;
+    a {
+      @include ellipses;
+      text-decoration: none;
+      background: $lightestGray;
+      line-height: $rhythm * 5;
+      text-align: center;
+      border: 1px solid $primaryColor;
+      border-right-width: 0;
+      color: $primaryColor;
+      font-weight: normal;
+      display: block;
+      transition: background 120ms ease-out;
+      padding: 0 $rhythm * 2;
+      &:hover {
+        background: rgba($primaryColor,0.2);
+      }
+      &:active {
+        background: rgba($primaryColor,0.3);
+        transition: none;
+      }
+    }
+    &.active a {
+      background: $primaryColor;
+      color: $white;
+      transition: none;
+      @include font_smoothing;
+    }
+    &:first-child a {
+      @include border_left_radius($lineHeight);
+    }
+    &:last-child a {
+      @include border_right_radius($lineHeight);
+      border-right-width: 1px;
+    }
+  }
+}

@@ -167,6 +167,118 @@ class Views::Home::Data < Views::Base
       }
     } 
 
+    h3 'Email Previews'
+
+    p "When a DOBT app is able to send plain-text email, use this layout to preview the email's content to the user."
+
+    docs 'Default', %{
+      div.message_preview {
+        header {
+          dl {
+            dt 'From:'
+            dd %{&ldquo;Max Ophuls&rdquo; &lt;max@ophuls.biz&gt;}.html_safe
+            dt 'Reply to:'
+            dd 'max@ophuls.biz'
+            dt 'To:'
+            dd %{&ldquo;Jean-Pierre Melville&rdquo; &lt;jp@melville.org&gt;}.html_safe
+            dt 'Subject:'
+            dd 'New vlog promo request'
+            dt 'Sent:'
+            dd { 
+              text %{<time data-formatted-timestamp="long" datetime="2015-06-29T20:45:33Z">06/29/15 at 01:45pm</time>}.html_safe
+            }
+          }
+        }
+        div.message_preview_body {
+          div.rendered_from_wysiwyg {
+            text 'Can you please promote my new weekly vlog on your social media channels?'
+            br
+            br
+            text 'It would mean the world to me.'
+            br
+            br
+            text 'Best,'
+            br
+            text 'Max'
+          }
+        }
+      }
+    }, sub: ''
+
+    docs 'Error State', %{
+      div.is_invalid {
+        div.message_preview {
+          header {
+            dl {
+              dt 'From:'
+              dd %{&ldquo;Max Ophuls&rdquo; &lt;max@ophuls.biz&gt;}.html_safe
+              dt 'Reply to:'
+              dd 'max@ophuls.biz'
+              dt 'To:'
+              dd %{&ldquo;Jean-Pierre Melville&rdquo; &lt;jp@melville.org&gt;}.html_safe
+              dt 'Subject:'
+              dd 'New vlog promo request'
+              dt 'Sent:'
+              dd { 
+                text %{<time data-formatted-timestamp="long" datetime="2015-06-29T20:45:33Z">06/29/15 at 01:45pm</time>}.html_safe
+              }
+            }
+          }
+          div.message_preview_body {
+            div.rendered_from_wysiwyg {
+              text 'Can you please promote my new weekly vlog on your social media channels?'
+              br
+              br
+              text 'It would mean the world to me.'
+              br
+              br
+              text 'Best,'
+              br
+              text 'Max'
+            }
+          }
+        }
+      }
+    }, hint: "Used when previewing an email which the app is unable to send, due to user error.", sub: ''
+
+    docs 'Duplicate State', %{
+      div.is_duplicate {
+        div.message_preview {
+          header {
+            dl {
+              dt 'From:'
+              dd %{&ldquo;Max Ophuls&rdquo; &lt;max@ophuls.biz&gt;}.html_safe
+              dt 'Reply to:'
+              dd 'max@ophuls.biz'
+              dt 'To:'
+              dd %{&ldquo;Jean-Pierre Melville&rdquo; &lt;jp@melville.org&gt;}.html_safe
+              dt 'Subject:'
+              dd 'New vlog promo request'
+              dt 'Sent:'
+              dd { 
+                text %{<time data-formatted-timestamp="long" datetime="2015-06-29T20:45:33Z">06/29/15 at 01:45pm</time>}.html_safe
+              }
+            }
+          }
+          div.message_preview_body {
+            div.rendered_from_wysiwyg {
+              text 'Can you please promote my new weekly vlog on your social media channels?'
+              br
+              br
+              text 'It would mean the world to me.'
+              br
+              br
+              text 'Best,'
+              br
+              text 'Max'
+            }
+          }
+        }
+      }
+    }, hint: "Used when previewing an email that the user has already sent to the intended recipient.", sub: ''
+
+    hr
+    
     docs 'Sidebar (Data List)', %{
       div.sidebar_box {
         ul.sidebar_data {

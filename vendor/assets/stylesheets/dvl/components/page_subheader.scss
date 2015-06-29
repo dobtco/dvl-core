@@ -27,13 +27,18 @@
 .page_subheader_actions {
   float: right;
   a {
+    float: left;
     margin-right: $lineHeight;
     &:last-child {
       margin-right: 0;
     }
   }
+  .button.small {
+    margin-top: $rhythm / 2;
+  }
 }
 
 .page_subheader_link {
   font-size: $fontSmaller;
+  line-height: $inputHeight;
 }

@@ -67,7 +67,7 @@ textarea {
   }
   &:focus {
     outline: 0;
-    border-color: $darkBlue;
+    border-color: $primaryColor;
   }
   &[readonly], &[disabled] {
     border-color: #ccc;
@@ -226,13 +226,13 @@ label.control {
     top: 0;
     left: 0;
     &:focus + .control_styled {
-      border-color: $darkBlue;
+      border-color: $primaryColor;
     }
     &:hover + .control_styled {
-      background: #fcfcfc;
+      background: $lightestGray;
     }
     &:active + .control_styled {
-      background: #f7f7f7;
+      background: darken($lightestGray,3%);
     }
     &:checked + .control_styled:after {
       opacity: 1;
@@ -242,10 +242,10 @@ label.control {
     &[disabled] {
       + .control_styled {
         opacity: 0.6;
-        background: #f5f5f5;
+        background: $lighterGray;
       }
       &:active + .control_styled {
-        background: #f5f5f5;
+        background: $lighterGray;
       }
     }
   }
@@ -259,7 +259,7 @@ input[type="checkbox"] {
       position: absolute;
       font-family: 'FontAwesome';
       content: "\f00c";
-      color: $darkBlue;
+      color: $primaryColor;
       line-height: ($rhythm * 3);
       width: ($rhythm * 3) - 0.125rem; // Subtracting widths of border
       text-align: center;
@@ -272,7 +272,7 @@ input[type="checkbox"] {
   &.readonly,
   &.disabled {
     + .control_styled:after {
-      color: #888;
+      color: $darkGray;
     }
   }
 }
@@ -282,7 +282,7 @@ input[type="radio"] {
     border-radius: 50%;
     &:after {
       content: "";
-      background: $darkBlue;
+      background: $primaryColor;
       width: $rhythm * 1.5; // Half the width of the button
       height: $rhythm * 1.5; // Half the width of the button
       border-radius: 50%;
@@ -298,7 +298,7 @@ input[type="radio"] {
   &.readonly,
   &.disabled {
     + .control_styled:after {
-      background: #888;
+      background: $darkGray;
     }
   }
 }
@@ -322,14 +322,14 @@ input[type="radio"] {
 
 form {
   .grid {
-    margin-bottom: 1rem;
+    margin-bottom: $rhythm * 2;
   }
 }
 
 // Form layouts
 
 .form_item {
-  margin-bottom: 1rem;
+  margin-bottom: $rhythm * 2;
 }
 
 .form_item_horiz_label {
@@ -354,7 +354,7 @@ form {
   .form_item_horiz_label {
     text-align: right;
     width: 25%;
-    padding-right: 2rem;
+    padding-right: $rhythm * 4;
   }
 
   .form_item_horiz_input {
@@ -380,8 +380,9 @@ form {
   margin: $rhythm 0;
   font-style: italic;
   color: $darkGray;
+  max-width: 30rem;
   .control + & {
-    margin: 0 0 $rhythm ($rhythm * 5);
+    margin: 0 0 ($rhythm * 2) ($rhythm * 5);
   }
 }
 
@@ -450,9 +451,9 @@ form {
       border-color: $errorColor;
     }
     &:focus + div {
-      border-color: $darkBlue;
+      border-color: $primaryColor;
       &:after {
-        color: $darkBlue;
+        color: $primaryColor;
       }
     }
     &:hover + div {
@@ -523,7 +524,7 @@ a.styled_select {
 
   &:focus {
     outline: 0;
-    border-color: $darkBlue;
+    border-color: $primaryColor;
   }
 }
 
@@ -602,7 +603,7 @@ a.styled_select {
 .microcopy {
   background: $lighterGray;
   font-size: $fontSmaller;
-  padding: 0.375rem 1rem;
+  padding: $rhythm $rhythm * 2;
   border-radius: $radius;
   max-width: 22rem;
 }

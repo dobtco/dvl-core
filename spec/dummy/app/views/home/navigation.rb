@@ -209,19 +209,19 @@ class Views::Home::Navigation < Views::Base
       }
     }, hint: 'You can place secondary / tertiary actions for a page under any sidebar, including this one.'
 
-    docs 'Mult-Step Navigation 1', %{
-    }
-
-    docs 'Multi-Step Navigation 2', %{
-    }
-
     docs 'Tabs', %{
-    }
+      ul.tabs {
+        li.active {
+          a 'The Form'
+        }
+        li {
+          a 'Ratings'
+        }
+        li {
+          a 'Settings'
+        }
+      }
+    }, hint: %{Add tabs below a <a href="/headings#heading 3">page subheader</a> to let users navigate between different sections of the same view.}.html_safe
 
-    docs 'Heading 4', %{
-    }
-
-    docs 'Heading 4', %{
-    }
   end
 end

@@ -10,7 +10,7 @@ class Views::Home::Forms < Views::Base
                 as: :string,
                 label: 'Text',
                 input_html: { value: Faker::Lorem.words(3).join(' ') },
-                hint: "Use hint text if a form label can&#39;t sufficiently explain a UI control. Keep it brief.".html_safe
+                hint: "Use hint text if the input can't be fully described by its label. Keep this text brief.".html_safe
 
         f.input :text,
                 as: :text,

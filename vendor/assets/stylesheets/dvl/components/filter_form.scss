@@ -1,27 +1,23 @@
 .filter_form {
   display: inline-block;
   position: relative;
-
   .styled_select_wrapper,
   .button {
     vertical-align: top;
   }
-
   .styled_select_wrapper {
-    margin-left: 0.5rem;
+    margin-left: $rhythm;
   }
-
   .button {
-    margin-left: .5rem;
+    margin-left: $rhythm;
   }
   // Contains query with close button
-  // #todo change to search input, remove Close icon
   &.with_query {
     .filter_form_search_wrapper {
       input {
         padding-right: 1.75rem;
       }
-      .filter_form_close {
+      .fa-times-circle {
         display: inline;
       }
     }
@@ -64,7 +60,7 @@
     text-align: center;
     left: 0;
   }
-  .filter_form_close {
+  .fa-times-circle {
     display: none;
     right: 7px;
     text-decoration: none;

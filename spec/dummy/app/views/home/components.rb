@@ -373,13 +373,13 @@ class Views::Home::Components < Views::Base
     docs 'Flashes', %{
       ul {
         li {
-          a 'Success', href: 'javascript:DvlFlash("success", "You did it!")'
+          a 'Success notification', href: 'javascript:DvlFlash("success", "You did it!")'
         }
         li {
-          a 'Info', href: 'javascript:DvlFlash("info", "An informational message...")'
+          a 'Neutral flash', href: 'javascript:DvlFlash("info", "An informational message...")'
         }
         li {
-          a 'Error', href: 'javascript:DvlFlash("error", "Oh no, an error occured!")'
+          a 'Error notification', href: 'javascript:DvlFlash("error", "Oh no, an error occured!")'
         }
       }
     }

@@ -18,11 +18,15 @@
 
 .drop_rich_head {
   font-weight: $weightNormal;
+  .active a & {
+    @include font_smoothing(off);
+  }
 }
 
 .drop_rich_subhead {
   color: $darkGray;
   font-size: $fontSmaller;
+  @include font_smoothing(off);
   .active a & {
     color: rgba($white,0.7);
   }

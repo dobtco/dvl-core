@@ -165,7 +165,11 @@ class Views::Home::Headers < Views::Base
       }
     }, hint: 'Icons in this style are optional.', sub: ''
 
-    docs 'Header with Search Bar', %{
+    h3 'Header with Search Bar'
+
+    p 'Use this header for standalone pages which do not require navigation.'
+
+    docs 'Default', %{
       div.header_h2_search {
         h2 'Your projects'
         form.filter_form {
@@ -179,6 +183,22 @@ class Views::Home::Headers < Views::Base
           button.button 'Search'
         }
       }
-    }, hint: 'These primary headers are used for standalone pages which do not require navigation.'
+    }, sub: ''
+
+    docs 'Default', %{
+      div.header_h2_search {
+        h2 'Your projects'
+        form.filter_form.with_query {
+          div.filter_form_search_wrapper {
+            i(class: 'fa fa-search')
+            a(href: '#') {
+              i(class: 'fa fa-times-circle filter_form_icon_right')
+            }
+            input(type: 'text', placeholder: 'Search your projects', value: 'Innovation Challenge')
+          }
+          button.button 'Search'
+        }
+      }
+    }, sub: ''
   end
 end
