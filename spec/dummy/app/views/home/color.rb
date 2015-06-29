@@ -2,6 +2,12 @@ class Views::Home::Color < Views::Base
   def main
     h2 'Color'
 
+    guide '',
+      %{<strong>Do</strong> supplement color with text and icons to differentiate data or call out a UI element.}.html_safe,
+      '',
+      %{<strong>Don&#39;t</strong> attempt to communicate something to users with only a change in color. This is inaccessible to color-blind users.}.html_safe
+
+
     h3 'Grayscale'
 
     grayscaleColors.each do |var, color|

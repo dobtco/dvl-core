@@ -120,4 +120,19 @@ class Views::Base < Erector::Widget
     }
 
   end
+
+  def guide(codeDo, guideDo, codeDont, guideDont)
+    h5 'Rule of Thumb'
+    div.docs_guide {
+      div.docs_guide_col {
+        div.docs_guide_example codeDo
+        p.docs_guide_explain guideDo
+      }
+      div.docs_guide_col {
+        div.docs_guide_example codeDont
+        p.docs_guide_explain guideDont
+      }
+    }
+    hr
+  end
 end

@@ -115,6 +115,48 @@ hr {
   }
 }
 
+// Guides
+
+.docs_guide {
+  @include cf;
+  margin-bottom: $lineHeight * 2;
+  display: table;
+}
+
+.docs_guide_col {
+  display: table-cell;
+  vertical-align: top;
+  width: 50%;
+  padding: 0 4% 0 0;
+  &:first-of-type {
+    margin-right: 4%;
+  }
+}
+
+.docs_guide_example,
+.docs_guide_explain {
+  padding: $rhythm $rhythm * 2;
+  border: 1px solid $lightGray;
+}
+
+.docs_guide_example {
+  height: $lineHeight * 9;
+  @include border_top_radius($radius);
+  border-bottom: 0;
+  &:empty {
+    display: none;
+    + .docs_guide_explain {
+      @include border_top_radius($radius);
+    }
+  }
+}
+
+.docs_guide_explain {
+  margin: 0;
+  background: $lightestGray;
+  @include border_bottom_radius($radius);
+}
+
 // Style-guide specific overrides
 
 .navbar {
@@ -129,5 +171,35 @@ hr {
   }
   .dropdown:last-child .button {
     margin-right: 0;
+  }
+}
+
+// Style guide illustrations
+
+.docs_rhythm {
+  padding: $lineHeight * 2 5%;
+  background-repeat: repeat;
+  background-size: 100% $rhythm;
+  background-image: linear-gradient(to top, $white 87%, rgba($primaryColor,0.5));
+  margin-bottom: $lineHeight;
+  h2, p, form {
+    text-align: center;
+    opacity: 0.75;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  p {
+    max-width: 25rem;
+  }
+  form {
+    width: $lineHeight * 15;
+    @include cf;
+    input, button {
+      float: left;
+    }
+    input {
+      width: 60%;
+      margin-right: $rhythm;
+    }
   }
 }
