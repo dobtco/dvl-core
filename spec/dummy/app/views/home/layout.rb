@@ -69,6 +69,29 @@ class Views::Home::Layout < Views::Base
 
     hr
 
+    docs 'Blank States', %{
+      div.blank_slate {
+        i(class: 'fa fa-star')
+        h4 'No ratings yet!'
+        span 'Ratings give you a standard set of criteria to judge responses.'
+        a.button.primary 'Add your first rating'
+      }
+    }, hint: 'When there is no data to display in the current view, a well-designed blank state can help users move forward.'
+
+    guide %{ <div class="blank_slate">
+              <i class="fa fa-file-o"></i>
+              <h4>No attachments yet!</h4>
+              <span>Uploading videos and images to an amicus brief can help it stand out.</span>
+              <a class="button primary">Add an attachment</a>
+              </div>
+        }.html_safe,
+      %{<strong>Do</strong> use blank states to help explain how a page is useful, and show users how to add data to it.}.html_safe,
+      %{<div class="blank_slate">
+          <i class="fa fa-file-o"></i>
+          <h4>No attachments</h4>
+        </div>}.html_safe,
+      %{<strong>Don&#39;t</strong> turn a blank state into a dead end. Provide users with a way to move forward.}.html_safe
+
     docs 'Footer', %{
       widget Dvl::Components::Footer.new(application_name: 'DOBT Style Guide')
     }

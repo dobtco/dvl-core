@@ -25,6 +25,7 @@ class Views::Base < Erector::Widget
     rawtext '<!doctype html>'
     html {
       head {
+        title 'DOBT Style Guide'
         stylesheets
         javascripts
       }

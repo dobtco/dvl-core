@@ -17,7 +17,7 @@
   padding: $lineHeight * 6 0;
   margin-bottom: $lineHeight * 2;
   background-color: $brandColor;
-  background-image: linear-gradient(10deg, rgba(186,146,112,0.6) 7%, rgba(186,146,112,0) 58%), linear-gradient(-10deg, rgba(0,133,250,0.3) 10%, rgba(0,133,250,0) 60%);
+  background-image: radial-gradient(10deg, rgba(186,146,112,0.6) 7%, rgba(186,146,112,0) 58%), linear-gradient(-10deg, rgba(0,133,250,0.3) 10%, rgba(0,133,250,0) 60%);
 }
 
 .container {
@@ -124,12 +124,16 @@ hr {
 }
 
 .docs_guide_col {
-  display: table-cell;
-  vertical-align: top;
-  width: 50%;
-  padding: 0 4% 0 0;
-  &:first-of-type {
-    margin-right: 4%;
+  margin-bottom: $lineHeight;
+  @media screen and (min-width: $deskWidth) {
+    display: table-cell;
+    vertical-align: top;
+    width: 50%;
+    margin-bottom: 0;
+    padding: 0 4% 0 0;
+    &:first-of-type {
+      margin-right: 4%;
+    }
   }
 }
 
@@ -140,7 +144,7 @@ hr {
 }
 
 .docs_guide_example {
-  height: $lineHeight * 9;
+  min-height: $lineHeight * 9;
   @include border_top_radius($radius);
   border-bottom: 0;
   &:empty {
@@ -180,7 +184,7 @@ hr {
   padding: $lineHeight * 2 5%;
   background-repeat: repeat;
   background-size: 100% $rhythm;
-  background-image: linear-gradient(to top, $white 87%, rgba($primaryColor,0.5));
+  background-image: linear-gradient(to top, $white 87%, rgba($primaryColor,0.99));
   margin-bottom: $lineHeight;
   h2, p, form {
     text-align: center;

@@ -123,6 +123,34 @@ class Views::Home::Data < Views::Base
     }, hint: %{Add the <code>.condensed</code> class when the table is likely to take up many rows of the same page.}.html_safe, sub: ''
   
     hr
+
+    h3 'User Block'
+
+    p 'When displaying the avatar and basic information of a user of the app, employ the user block for visual consistency.'
+
+    docs 'Default', %{
+      div.user_block {
+        figure {
+          img(src: 'http://i.imgur.com/2WkSV2N.png')
+          text %{<figcaption><p><strong>Steve McQueen</strong></p><p><em>steve@mcqueen.biz</em></p></figcaption>}.html_safe
+        }
+      }
+    }, sub: ''
+
+    docs 'Header and Links', %{
+      div.user_block.user_block_rich {
+        figure {
+          img(src: 'http://i.imgur.com/2WkSV2N.png')
+          text %{<figcaption><p class="user_block_header">Responding as&hellip;</p><p><strong>Steve McQueen</strong></p><p><em>steve@mcqueen.biz</em></p></figcaption>}.html_safe
+        }
+        div.user_block_links {
+          a 'Edit profile'
+          a 'Sign out'
+        }
+      }
+    }, sub: ''
+
+    hr
   
     docs 'Labels', %{
       p {
