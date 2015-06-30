@@ -1,7 +1,7 @@
 class Views::Home::Forms < Views::Base
   def main
     h2 'Forms'
-    
+
     h3 'Form elements'
 
     docs 'Basic', %{
@@ -224,6 +224,7 @@ class Views::Home::Forms < Views::Base
                           value: 'http://dobt.forms.fm'
             a(class: 'button small info',
               'data-toggle' => 'tooltip',
+              'data-container' => 'body',
               title: 'Copy URL') {
               i(class: 'fa fa-copy')
             }
