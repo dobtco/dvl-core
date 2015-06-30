@@ -49,7 +49,7 @@ class Views::Home::Index < Views::Base
 ## placed in a <pre> tag.}
 
       p %{Use the <code>&lt;sub&gt;</code> and <code>&lt;sup&gt;</code> tags to style superscript and subscript text. For example: &ldquo;The 8<sup>th</sup> molecule of H<sub>2</sub>O.&rdquo;}.html_safe
-    
+
       p %{<del>Redacted text</del> should be styled with <code>&lt;del&gt;</code> tags.}.html_safe
     }
     h3 'Small Text Sizes'
