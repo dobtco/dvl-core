@@ -66,6 +66,7 @@
   border-radius: $radius;
   @include ellipses;
   line-height: $lineHeight;
+  border-color: $darkGray;
   &.uppercase {
     border: 0 !important;
     border-radius: 0;
@@ -94,8 +95,7 @@
   }
   // Dropdown toggle button
   &.toggle {
-    border: 1px solid $darkGray;
-
+    border: 1px solid;
     &:after {
       content: "\f0d7";
       font-family: 'FontAwesome';

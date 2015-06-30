@@ -43,6 +43,10 @@
   line-height: $lineHeight;
   position: absolute;
   top: 100%;
+  margin-top: $rhythm * -1;
+  .button + & {
+    margin-top: 0;
+  }
   left: 0;
   z-index: $z_dropdown;
   background-clip: padding-box;
