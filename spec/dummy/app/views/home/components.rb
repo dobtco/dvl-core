@@ -457,7 +457,10 @@ class Views::Home::Components < Views::Base
           span.modal_footer_link {
             a 'Delete Screendoor instead'
           }
-          a.button.error 'OK'
+          span.modal_footer_actions {
+            a.button 'Cancel'
+            a.button.error 'Confirm'
+          }
         }
       end
     text '.'

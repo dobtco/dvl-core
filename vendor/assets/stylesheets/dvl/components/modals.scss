@@ -148,8 +148,13 @@
   padding: $rhythm $rhythm * 3;
   @include cf;
   @include border_bottom_radius($radius);
-  .button {
-    float: right;
+}
+
+.modal_footer_actions {
+  float: right;
+  .button, button {
+    margin-left: $rhythm;
+    float: left;
   }
 }
 
