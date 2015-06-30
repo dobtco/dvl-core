@@ -65,12 +65,17 @@ h1,
 h2,
 h3,
 h4,
-h5,
-h6 {
-  margin: 0 0 $lineHeight;
+h5 {
   padding: 0;
   color: $black;
   text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0 0 $lineHeight;
 }
 
 h1, h2 {
@@ -120,6 +125,7 @@ h5 {
   font-size: $fontSmaller; // 13px
   line-height: $lineHeight; // 20px
   letter-spacing: $letterspaceSmaller;
+  margin: 0;
 }
 
 hr {

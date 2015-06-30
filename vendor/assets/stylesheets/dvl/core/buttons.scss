@@ -181,15 +181,3 @@
     cursor: default;
   }
 }
-
-.button_uppercase {
-  text-transform: uppercase;
-  color: $darkGray;
-  font-weight: $weightBold;
-  font-size: $fontSmallest;
-  letter-spacing: 0.04rem;
-  &:hover {
-    text-decoration: none;
-    color: $darkerGray;
-  }
-}

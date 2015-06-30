@@ -22,15 +22,17 @@ a {
     outline: 5px auto -webkit-focus-ring-color;
   }
   &.uppercase {
-    // #todo consolidate this with .caps
     text-transform: uppercase;
     font-size: $fontSmallest;
     letter-spacing: $letterspaceSmallest;
-    &:hover {
-      text-decoration: none;
-      color: $darkerGray;
-    }
   }
+}
+
+.button_uppercase {
+  color: $linkColor;
+  text-transform: uppercase;
+  font-size: $fontSmallest;
+  letter-spacing: $letterspaceSmallest;
 }
 
 // Plain dropdown toggle links

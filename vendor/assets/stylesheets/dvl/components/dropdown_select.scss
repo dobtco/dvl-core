@@ -26,6 +26,7 @@
 .drop_rich_subhead {
   color: $darkGray;
   font-size: $fontSmaller;
+  line-height: $rhythm * 2;
   @include font_smoothing(off);
   .active a & {
     color: rgba($white,0.7);

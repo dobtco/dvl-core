@@ -9,10 +9,11 @@
     margin: $rhythm 0;
   }
 }
+
 .sidebar_section {
   margin-bottom: $rhythm * 2;
   font-size: $fontSmaller;
-  padding: $lineHeight ($rhythm * 2);
+  padding: 0 ($rhythm * 2);
   @include cf();
   h4 {
     font-size: 1rem;
@@ -99,7 +100,8 @@
 }
 
 .sidebar_submit {
-  padding: $lineHeight $rhythm * 2;
+  padding: 0 $rhythm * 2;
+  margin-bottom: $rhythm * 2;
   .button {
     width: 100%;
   }
