@@ -251,7 +251,7 @@ class Views::Home::Components < Views::Base
           }
         }
       }
-    }, hint: 'The minus icon inside the first dropdown indicates that the current selection only partially applies to that item.', sub: ''
+    }, hint: 'The minus icon inside the first dropdown visually indicates partial selection. In the "Assign to..." dropdown, multiple items are selected. All of them are assigned to Aviv, and some are assigned to Clay.', sub: ''
 
     docs 'Appearance', %{
       div.dvlcore_button_array {

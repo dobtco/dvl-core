@@ -161,6 +161,7 @@
   &.mini {
     padding: $rhythm / 2 $rhythm;
     font-size: $fontSmaller;
+    line-height: $rhythm * 2;
   }
 
   &.block {

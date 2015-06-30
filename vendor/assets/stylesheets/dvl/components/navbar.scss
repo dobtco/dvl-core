@@ -1,11 +1,3 @@
-$navBackground: #0f1c3c !default;
-$navText: #fff !default;
-$navHeight: $rhythm * 7 !default;
-$navHoverBackground: darken($navBackground, 5%) !default;
-
-// might want to adjust this based on how many items are in your nav
-$navBreakpoint: $deskWidth !default;
-
 .navbar {
   background-color: $navBackground;
   min-height: $navHeight;
@@ -97,7 +89,7 @@ $navBreakpoint: $deskWidth !default;
     margin: ($navHeight - $inputHeight) / 2 0;
     padding: auto 0.6rem;
     background: rgba($black, 0.25);
-    border-color: $black;
+    border-color: rgba($white,0.25);
     color: $navText;
 
     &:focus {
@@ -185,7 +177,7 @@ $navBreakpoint: $deskWidth !default;
     > ul > li > a:hover,
     > ul > li > a:focus,
     > ul > li.active > a {
-      background-color: $navHoverBackground;
+      background-color: darken($navBackground,5%);
     }
     > ul > li > a:focus {
       outline: 0;

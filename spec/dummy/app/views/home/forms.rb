@@ -320,7 +320,7 @@ class Views::Home::Forms < Views::Base
         a.button.primary.disabled 'Primary'
         a.button.success.disabled 'Success'
       }
-    }, hint: %{Buttons with the <code>.subtle</code> class should be hidden when disabled.}.html_safe, sub: ''
+    }, hint: %{Buttons with the <code>.subtle</code> class have no disabled state. Instead, they should not be displayed on the page.}.html_safe, sub: ''
 
     docs 'Button sizes', %{
       div.dvlcore_button_array {

@@ -419,7 +419,7 @@ form {
 .input_group_text {
   display: inline-block;
   margin: 0;
-  padding-left: $rhythm * 2;
+  padding-left: $rhythm;
   width: 100%;
   color: $darkerGray;
   text-align: center;
@@ -449,7 +449,7 @@ form {
     top: 0;
     left: 0;
     right: 0;
-    height: $inputHeight;
+    min-height: $inputHeight;
     opacity: 0;
     z-index: 2;
     .error & + div {

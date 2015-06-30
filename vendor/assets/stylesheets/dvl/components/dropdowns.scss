@@ -44,7 +44,8 @@
   position: absolute;
   top: 100%;
   margin-top: $rhythm * -1;
-  .button + & {
+  .button + &,
+  .styled_select + & {
     margin-top: 0;
   }
   left: 0;
@@ -102,7 +103,7 @@
       &:hover,
       &:focus {
         text-decoration: none;
-        background-color: $lightestGray;
+        background-color: darken($lightestGray,3%);
       }
     }
     &.divider {

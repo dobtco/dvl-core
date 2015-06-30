@@ -3,7 +3,7 @@ class Views::Home::Headers < Views::Base
 
     h2 'Headers'
 
-    h3 'Page Header'
+    h3 'Page Header with Navigation'
 
     docs 'Rename Button', %{
       div.page_header {
@@ -135,6 +135,14 @@ class Views::Home::Headers < Views::Base
 
     hr
 
+    docs 'Basic Page Header', %{
+      div.page_header {
+        h2 'Projects'
+
+        a.button.primary 'New project'
+      }
+    }
+
     h3 'Page Subheaders'
 
     docs 'Heading 3', %{
@@ -165,6 +173,8 @@ class Views::Home::Headers < Views::Base
       }
     }, hint: 'Icons in this style are optional.', sub: ''
 
+    hr
+    
     h3 'Header with Search Bar'
 
     p 'Use this header for standalone pages which do not require navigation.'

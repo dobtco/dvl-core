@@ -131,6 +131,15 @@ $lapWidth: 640px;
 $deskWidth: 960px;
 $maxWidth: 1140px;
 
+// Navigation
+
+$navBackground: #0f1c3c !default;
+$navText: #fff !default;
+$navHeight: $rhythm * 8 !default;
+
+// might want to adjust this based on how many items are in your nav
+$navBreakpoint: $deskWidth !default;
+
 // Z-index scale
 $z_dropdown: 600 !default;
 $z_tooltip: 600 !default;
