@@ -1,24 +1,28 @@
-// The "app" manifest is for a typical DOBT app. It includes the core
+// The 'app' manifest is for a typical DOBT app. It includes the core
 // styles, as well as common components that will most likely exist
 // in the app.
 
-@import "core";
+@import 'core';
 
-@import "components/blank_slate";
-@import "components/dropdowns";
-@import "components/filter_form";
-@import "components/header_search";
-@import "components/labels";
-@import "components/message_preview";
-@import "components/modals";
-@import "components/navbar";
-@import "components/page_header";
-@import "components/page_subheader";
-@import "components/pagination";
-@import "components/progress";
-@import "components/sidebar_data";
-@import "components/sidebar_nav";
-@import "components/sidebar_sub_actions";
-@import "components/tabs";
-@import "components/tooltips";
-@import "components/user_block";
+@import 'dvl/components/alerts';
+@import 'dvl/components/blank_slate';
+@import 'dvl/components/dropdown_select';
+@import 'dvl/components/dropdowns';
+@import 'dvl/components/filter_form';
+@import 'dvl/components/flashes';
+@import 'dvl/components/footer';
+@import 'dvl/components/header_search';
+@import 'dvl/components/labels';
+@import 'dvl/components/message_preview';
+@import 'dvl/components/modals';
+@import 'dvl/components/navbar';
+@import 'dvl/components/page_header';
+@import 'dvl/components/page_subheader';
+@import 'dvl/components/pagination';
+@import 'dvl/components/progress';
+@import 'dvl/components/sidebar_data';
+@import 'dvl/components/sidebar_nav';
+@import 'dvl/components/sidebar_sub_actions';
+@import 'dvl/components/tabs';
+@import 'dvl/components/tooltips';
+@import 'dvl/components/user_block';
