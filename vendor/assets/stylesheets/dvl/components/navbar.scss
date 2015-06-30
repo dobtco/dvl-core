@@ -8,7 +8,6 @@ $navBreakpoint: $deskWidth !default;
 
 .navbar {
   background-color: $navBackground;
-  line-height: $navHeight;
   min-height: $navHeight;
   z-index: $z_navbar;
 
@@ -44,6 +43,7 @@ $navBreakpoint: $deskWidth !default;
 
 .navbar_content > ul > li > a {
   font-size: $fontSmall;
+  line-height: $navHeight;
 }
 
 // Modifier for fixed navbar
@@ -130,11 +130,6 @@ $navBreakpoint: $deskWidth !default;
 
   .navbar_full_i {
     display: inline;
-  }
-
-  .navbar {
-    line-height: $navHeight;
-    min-height: $navHeight;
   }
 
   .navbar_sticky {

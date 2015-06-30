@@ -8,6 +8,7 @@
   li {
     position: relative;
     float: left;
+    min-width: $lineHeight * 5;
     a {
       @include ellipses;
       text-decoration: none;

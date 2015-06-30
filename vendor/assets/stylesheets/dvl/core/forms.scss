@@ -334,6 +334,11 @@ form {
 
 .form_item_horiz_label {
   margin-top: $rhythm;
+  .radio_buttons &,
+  .boolean &,
+  .check_boxes & {
+    margin-top: $rhythm / 2; // Vertically centering with .control_styled
+  }
 }
 
 .form_item_vert_label {

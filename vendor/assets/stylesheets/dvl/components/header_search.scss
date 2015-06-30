@@ -11,9 +11,9 @@
 
 @media screen and (min-width: $lapWidth) {
   .header_h2_search {
-    margin-bottom: 0;
     h2 {
       float: left;
+      margin-bottom: $rhythm;
     }
     .filter_form {
       float: right;

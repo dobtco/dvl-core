@@ -37,6 +37,10 @@
 .dropdown_menu {
   display: none;
   float: left;
+  // Overriding typography rules set in the menu's parent element...
+  // .navbar buttons, forms, etc.
+  font-size: 1rem;
+  line-height: $lineHeight;
   position: absolute;
   top: 100%;
   left: 0;
@@ -319,7 +323,7 @@
 
 .dropdown_filter_head {
   padding: 0;
-  border-bottom: ($rhythm / 2) solid $lighterGray;
+  border-bottom: ($rhythm / 2) solid $gray;
   @include border_top_radius($radius - 1);
   &:after {
     @include icon('\f002');

@@ -197,6 +197,12 @@ class Views::Home::Forms < Views::Base
                 label: 'Email Address',
                 input_html: { value: Faker::Internet.email }
 
+        f.input :radio,
+                as: :radio_buttons,
+                collection: ['Enthusiastic', 'Indifferent', 'Antagonistic'],
+                label: 'What are your thoughts on your Bilderberg Group?',
+                checked: 'Indifferent'
+
         f.input :text,
                 as: :text,
                 label: 'Description',
