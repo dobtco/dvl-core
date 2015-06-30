@@ -81,7 +81,6 @@
 .modal_header {
   @include border_top_radius($radius);
   background-color: $lightestGray;
-  margin-bottom: $lineHeight;
   position: relative;
   padding: $rhythm $rhythm * 3;
   h3 {
@@ -135,7 +134,7 @@
 // Where all modal content resides (sibling of .modal_header and .modal-footer)
 .modal_body {
   position: relative;
-  padding: 0 $lineHeight $rhythm * 3;
+  padding: $lineHeight;
 
   > .loading {
     font-size: 2rem;
@@ -146,29 +145,18 @@
 // Footer (for actions)
 .modal_footer {
   background-color: $lighterGray;
-  padding: 0 $rhythm * 3;
-  text-align: right; // right align buttons
+  padding: $rhythm $rhythm * 3;
+  @include cf;
   @include border_bottom_radius($radius);
-
-  // Properly space out buttons
-  .btn + .btn {
-    margin-left: 5px;
-    margin-bottom: 0; // account for input[type="submit"] which gets the bottom margin like all other inputs
-  }
-  // but override that for button groups
-  .btn-group .btn + .btn {
-    margin-left: -1px;
-  }
-  // and override it for block buttons as well
-  .btn-block + .btn-block {
-    margin-left: 0;
+  .button {
+    float: right;
   }
 }
 
 .modal_footer_link {
   float: left;
   font-size: $fontSmall;
-  line-height: $lineHeight;
+  line-height: $inputHeight;
 }
 
 // Measure scrollbar width for padding body during modal show/hide

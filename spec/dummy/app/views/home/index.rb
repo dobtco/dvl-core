@@ -52,17 +52,23 @@ class Views::Home::Index < Views::Base
     
       p %{<del>Redacted text</del> should be styled with <code>&lt;del&gt;</code> tags.}.html_safe
     }
+    h3 'Small Text Sizes'
+
+    p.docs_fontsmall %{<code>$fontSmall</code>: Small text should be used for displaying tertiary information.}.html_safe
+    p.docs_fontsmaller %{<code>$fontSmaller</code>: Smaller text is great for explaining primary and secondary actions.}.html_safe
+    p.docs_fontsmallest %{<code>$fontSmallest</code>: Use the smallest text size sparingly.}.html_safe
+
+    hr
+
+    guide %{<p class="docs_fontsmaller">To enable electronic signatures for your project, click &ldquo;Edit project&rdquo; and select &ldquo;Responses&rdquo; from the Project Checklist. Then, check the &ldquo;Require signatures for responses&rdquo; box under &ldquo;Data collection.&rdquo;</p>}.html_safe,
+      %{<strong>Do</strong> use multiple lines of smaller text to provide UI microcopy or tertiary information.}.html_safe,
+      %{<h2>What happens if a respondent makes changes?</h2>}.html_safe,
+      %{<strong>Don&#39;t</strong> use multiple lines of larger text. Either use the default font size, or truncate a single line of larger text with ellipses.}.html_safe
 
     guide %{<h2>Headline</h2> <p>Main Content</p> <p class="microcopy">Explanation</p>}.html_safe,
       %{<strong>Do</strong> use header styles, smaller text sizes, and <a href="/components#alerts">alerts</a> to establish hierarchy and call out bits of text.}.html_safe,
       %{<p><strong>We are dedicated to making great software that helps governments and non-profits better serve their communities.</strong></p> <p class="microcopy" style="background-color: red;">Explanation goes here.</p>}.html_safe,
       %{<strong>Don&#39;t</strong> use boldface text for long sentences, or change the text color to emphasize an action. This negatively impacts legibility.}.html_safe
-
-
-    guide '',
-      %{<strong>Do</strong> use multiple lines of smaller text to provide UI microcopy or tertiary information.}.html_safe,
-      '',
-      %{<strong>Don&#39;t</strong> add multiple lines of larger text. Either use the default font size, or truncate a single line of larger text with ellipses.}.html_safe
 
     docs 'Lists', %{
       ul.formatted_list {
@@ -96,7 +102,10 @@ class Views::Home::Index < Views::Base
     }, hint: 'Use definition lists to format labeled lists and metadata, like the contents of a form submissions or the sender information in an email.'
 
     docs 'Images and Captions', %{
-      p %{<figure><img src="http://i.imgur.com/lAaFALg.jpg" alt="DOBT team photo"><figcaption>Did we mention we're hiring?</figcaption></figure>}.html_safe
+      figure {
+        img(src: 'http://i.imgur.com/lAaFALg.jpg', alt: 'DOBT team photo')
+        text %{<figcaption>Did we mention we're hiring?</figcaption>}.html_safe
+      }
     }
 
     h3 'Links'

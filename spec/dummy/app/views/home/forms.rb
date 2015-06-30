@@ -137,14 +137,14 @@ class Views::Home::Forms < Views::Base
     docs 'Error', %{
       simple_form_for :error do |f|
         f.input :error_string,
-                label: 'Email address',
+                label: 'Email Address',
                 as: :string,
                 input_html: { value: 'Dick Cheney' },
                 wrapper_html: { class: 'error' }
 
         f.input :error_text,
                 as: :text,
-                label: 'Address',
+                label: 'Home Address',
                 input_html: { value: 'Dick Cheney' },
                 wrapper_html: { class: 'error' }
 
@@ -195,7 +195,7 @@ class Views::Home::Forms < Views::Base
         f.input :string,
                 as: :string,
                 label: 'Email Address',
-                input_html: { value: Faker::Lorem.words(3).join(' ') }
+                input_html: { value: Faker::Internet.email }
 
         f.input :text,
                 as: :text,
@@ -251,12 +251,21 @@ class Views::Home::Forms < Views::Base
 
     hr
 
-    docs 'Microcopy', %{
+    docs 'Microcopy Box', %{
+      simple_form_for :microcopyexample do |f|
+        f.input :check_boxes,
+                as: :check_boxes,
+                label: false,
+                collection: ['I want to accept credit card payments.'],
+                checked: 'I want to accept credit card payments.'
+
+      end
+
       p.microcopy {
-        text 'When providing '
-        a 'Change signature?'
+        span 'To accept payments, you must first sign in to your payment provider. '
+        a.button.primary 'Connect to Stripe'
       }
-    }
+    }, hint: 'Use this to display additional actions that should be hidden until a setting is enabled.'
 
     h3 'Buttons'
 

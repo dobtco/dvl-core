@@ -394,30 +394,23 @@ class Views::Home::Components < Views::Base
       }
 
       div.alert {
-        span.alert_message 'This project is a draft.'
-
-        span.alert_buttons {
-          a.button.primary 'Go Live!', href: '#'
-        }
-      }
-
-      div.alert {
-        span.alert_message 'Please choose a new owner.'
+        span.alert_message 'People in this organization can&hellip;'.html_safe
 
         form {
           select {
-            option 'Person One'
-            option 'Person Two'
+            option 'Manage this project'
+            option 'Edit responses'
+            option 'View responses'
           }
           text ' '
-          button.button.info 'Submit'
+          button.button.info 'Change'
         }
       }
 
       div.alert {
-        span.alert_message ('This is a really long alert message. ' * 5)
+        span.alert_message ('Please confirm the information below is correct, and then sign your name below to complete the form.')
         span.alert_buttons {
-          a.button.primary 'Go Live!', href: '#'
+          a.button.primary 'Take me to the signature field', href: '#'
         }
       }
     }, full: true
@@ -425,48 +418,44 @@ class Views::Home::Components < Views::Base
     docs 'Modals', %{
       text 'In addition to our '
       a 'default modal style', 'data-toggle' => 'modal', href: '#modal'
-      widget Dvl::Components::Modal.new(title: 'Awesome modal', id: 'modal') do
+      widget Dvl::Components::Modal.new(title: 'Default modal', id: 'modal') do
         div.modal_body {
-          text 'This is the modal body!'
-
-          br br
+          p 'Content goes here.'
 
           div.dropdown {
-            a.gray 'Click me',
+            a.dropdown_toggle_link 'You can toggle dropdowns from a modal',
                               'data-toggle' => 'dropdown',
                               href: '#'
             div.dropdown_menu(role: 'menu') {
               ul.dropdown_body {
                 li {
-                  a 'Item 1', href: '#'
+                  a 'Option 1', href: '#'
+                }
+                li {
+                  a 'Option 2', href: '#'
+                }
+                li {
+                  a 'Option 3', href: '#'
                 }
               }
             }
           }
-
-          br br
-
-          a 'This is a tooltip link',
-            'data-toggle' => 'tooltip',
-            title: 'Tooltip',
-            href: '#'
         }
 
       end
       text ', we have a modal to '
       a 'confirm destructive actions', 'data-toggle' => 'modal', href: '#confirmModal'
       widget Dvl::Components::Modal.new(
-        title: 'Are you sure?',
+        title: 'Delete the style guide?',
         id: 'confirmModal',
         html_opts: { class: 'modal_confirm' }
       ) do
         div.modal_body {
-          text 'Are you sure?'
+          text "(Disclaimer: this modal won&#39;t actually delete the style guide.)".html_safe
         }
         div.modal_footer {
           span.modal_footer_link {
-            text 'Or '
-            a 'do another thing'
+            a 'Delete Screendoor instead'
           }
           a.button.error 'OK'
         }

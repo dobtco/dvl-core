@@ -133,9 +133,11 @@ hr {
     vertical-align: top;
     width: 50%;
     margin-bottom: 0;
-    padding: 0 4% 0 0;
     &:first-of-type {
-      margin-right: 4%;
+      padding-right: 2%;
+    }
+    &:last-of-type {
+      padding-left: 2%;
     }
   }
 }
@@ -209,4 +211,16 @@ hr {
       margin-right: $rhythm;
     }
   }
+}
+
+.docs_fontsmall {
+  font-size: $fontSmall;
+}
+
+.docs_fontsmaller {
+  font-size: $fontSmaller;
+}
+
+.docs_fontsmallest {
+  font-size: $fontSmallest;
 }

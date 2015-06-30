@@ -18,6 +18,7 @@ class Views::Home::Color < Views::Base
 
     h3 'UI Colors'
 
+    p %{Each app should override <code>$primaryColor</code> and <code>$secondaryColor</code> with its primary brand colors.}.html_safe
     uiColors.each do |var, color|
       render('components/swatch', color: color, var: var)
     end
@@ -45,12 +46,12 @@ class Views::Home::Color < Views::Base
 
   def uiColors
     {
-      '$primaryColor' => '#5bb7d9',
+      '$primaryColor' => '#697182',
       '$secondaryColor' => '#f79a68',
       '$successColor' => '#5ee0ac',
       '$warningColor' => '#e3e15f',
       '$errorColor' =>  '#d95b76',
-      '$blueHighlight' => '#dff5f7'    
+      '$highlight' => '#dff5f7'    
     }
   end
 

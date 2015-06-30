@@ -185,7 +185,7 @@ class Views::Home::Headers < Views::Base
       }
     }, sub: ''
 
-    docs 'Default', %{
+    docs 'Query entered', %{
       div.header_h2_search {
         h2 'Your projects'
         form.filter_form.with_query {

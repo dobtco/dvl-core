@@ -34,7 +34,10 @@
       border-color: $lightGray;
       border-bottom-width: 0;
       padding: ($rhythm * 2) $lineHeight;
-      padding-right: 18%;
+      padding-right: 25%;
+      @media screen and (min-width: $lapWidth) {
+        padding-right: 20%;
+      }
     }
     &:first-child {
       > a,
@@ -52,7 +55,7 @@
     }
     .badge {
       position: absolute;
-      right: $rhythm;
+      right: $lineHeight;
       top: $rhythm * 2;
       background-color: $lightGray;
       color: $darkestGray;

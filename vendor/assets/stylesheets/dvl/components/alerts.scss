@@ -6,6 +6,16 @@
   margin-bottom: $lineHeight;
   border: 1px solid $lightGray;
   border-radius: $radius;
+  .styled_select_wrapper,
+  .button {
+    margin-right: $rhythm;
+  }
+  .button:last-child {
+    margin-right: 0;
+  }
+  a {
+    display: inline-table;
+  }
 }
 
 .alert_message,
@@ -13,11 +23,15 @@
   display: block;
 }
 
-@media screen and (min-width: 640px) {
+.alert_message {
+  margin-bottom: $rhythm;
+}
+
+@media screen and (min-width: $lapWidth) {
   .alert {
     display: table;
     width: 100%;
-    padding: $rhythm ($rhythm * 2);
+    padding: $rhythm $rhythm $rhythm ($rhythm * 2);
     line-height: $lineHeight;
     span,
     form {
@@ -27,6 +41,7 @@
   }
   .alert_message {
     width: 100%;
+    margin-bottom: 0;
     padding-right: $rhythm * 2;
   }
   .alert_buttons,

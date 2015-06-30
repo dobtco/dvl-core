@@ -76,7 +76,7 @@ class Views::Home::Layout < Views::Base
         span 'Ratings give you a standard set of criteria to judge responses.'
         a.button.primary 'Add your first rating'
       }
-    }, hint: 'When there is no data to display in the current view, a well-designed blank state can help users move forward.'
+    }, hint: 'When there is no data to display in the current view, a well-designed blank state can prevent users from losing their momentum.'
 
     guide %{ <div class="blank_slate">
               <i class="fa fa-file-o"></i>
@@ -85,7 +85,7 @@ class Views::Home::Layout < Views::Base
               <a class="button primary">Add an attachment</a>
               </div>
         }.html_safe,
-      %{<strong>Do</strong> use blank states to help explain how a page is useful, and show users how to add data to it.}.html_safe,
+      %{<strong>Do</strong> use blank states to help explain the purpose of a page, and show users how to add data to it.}.html_safe,
       %{<div class="blank_slate">
           <i class="fa fa-file-o"></i>
           <h4>No attachments</h4>
