@@ -8,7 +8,7 @@ class Views::Home::Splash < Views::Base
     
     docs 'Footer', %{
       footer.public_footer {
-        div.public_footer_inner {
+        div.container {
           form.newsletter_form.grid {
             p.item {
               strong 'Subscribe to our newsletter!'

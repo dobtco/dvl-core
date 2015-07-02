@@ -504,6 +504,7 @@ form {
   line-height: $inputHeight;
   color: $darkestGray;
   font-weight: $weightNormal;
+  @include font_smoothing;
   &:after {
     font-family: 'FontAwesome';
     content: '\f0d7';
@@ -513,6 +514,9 @@ form {
     line-height: $inputHeight;
     width: $inputHeight;
     text-align: center;
+    color: $darkerGray;
+  }
+  &.is_blank {
     color: $darkerGray;
   }
 }

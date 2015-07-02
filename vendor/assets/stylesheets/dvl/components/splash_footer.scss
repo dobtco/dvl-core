@@ -41,11 +41,6 @@ $footerBackground: #080F1F !default;
   }
 }
 
-.public_footer_inner {
-  @include ninety_wrapper;
-  max-width: 50rem;
-}
-
 .public_footer_links {
   li {
     margin-bottom: $lineHeight;
