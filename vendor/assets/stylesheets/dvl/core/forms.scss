@@ -119,6 +119,10 @@ textarea {
   }
 }
 
+input[type="file"] {
+  padding: $inputPadding 0;
+}
+
 /* Make checkbox, image, and radio inputs `inline-block` by default */
 input[type="checkbox"],
 input[type="image"],
