@@ -143,10 +143,10 @@
 
 @mixin build_helpers($x: "") {
   @if $x == "" {
-      .desk_show, .lap_show, .desk_show_i, .lap_show_i, .desk_show_ib, .lap_show_ib {
-        display: none !important;
-      }
-    } @else {
+    .desk_show, .lap_show, .desk_show_i, .lap_show_i, .desk_show_ib, .lap_show_ib {
+      display: none !important;
+    }
+  } @else {
     .#{$x}hide {
       display: none !important;
     }
@@ -157,6 +157,10 @@
 
     .#{$x}show_i {
       display: inline !important;
+    }
+
+    .#{$x}show_ib {
+      display: inline-block !important;
     }
 
     th.#{$x}show, td.#{$x}show {
