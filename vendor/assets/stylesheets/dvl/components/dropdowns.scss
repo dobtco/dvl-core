@@ -337,14 +337,14 @@
     left: $rhythm * 2;
     width: $lineHeight;
     text-align: center;
-    line-height: $rhythm * 4;
+    line-height: $rhythm * 5;
     @include font_smoothing;
     color: $darkGray;
   }
   input {
     border: 0;
     background: $lightestGray;
-    height: $rhythm * 4;
+    height: $rhythm * 5;
     padding-left: $rhythm * 6;
   }
 }
