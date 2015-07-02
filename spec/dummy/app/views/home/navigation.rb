@@ -221,7 +221,7 @@ class Views::Home::Navigation < Views::Page
           a 'Settings'
         }
       }
-    }, hint: %{Add tabs below a <a href="/headings#heading 3">page subheader</a> to let users navigate between different sections of the same view.}.html_safe
+    }, hint: %{Add tabs below a <a href="/headers#heading 3">page subheader</a> to let users navigate between different sections of the same view.}.html_safe
 
   end
 end
