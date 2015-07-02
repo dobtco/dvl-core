@@ -551,6 +551,7 @@ a.styled_select {
 
 // When replacing an input with text
 .input_text {
+  display: inline-block;
   margin-top: $rhythm;
 }
 
