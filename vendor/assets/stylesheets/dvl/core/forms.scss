@@ -267,7 +267,7 @@ input[type="checkbox"] {
       display: inline-block;
       opacity: 0;
       transform: scale(0.5) translateZ(0);
-      transition: opacity 120ms $easeInOutBack, transform 170ms $easeInOutBack;
+      transition: opacity 70ms $easeInOutBack, transform 120ms $easeInOutBack;
     }
   }
   &.readonly,
@@ -293,7 +293,7 @@ input[type="radio"] {
       margin: ($rhythm * -0.75) 0 0 ($rhythm * -0.75); // Center within the input
       opacity: 0;
       transform: scale(0.75) translateZ(0);
-      transition: opacity 200ms $easeInOutBack, transform 300ms $easeInOutBack;
+      transition: opacity 70ms $easeInOutBack, transform 170ms $easeInOutBack;
     }
   }
   &.readonly,
