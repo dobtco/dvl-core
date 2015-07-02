@@ -11,6 +11,11 @@
       color: $black;
       text-decoration: none;
     }
+    img {
+      max-height: $fontLineHeightH2;
+      max-width: $fontLineHeightH2;
+      margin-right: $rhythm * 2;
+    }
     .button {
       font-size: 1rem;
       float: right;
