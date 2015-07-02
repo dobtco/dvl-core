@@ -60,24 +60,18 @@ hr {
 }
 
 .docs_code {
-  display: none;
+  margin-top: $rhythm * 3;
+
   pre {
     @include border_top_radius(0);
     margin: 0;
   }
 }
 
-.docs_toggle_label {
-  background: $lighterGray;
-  display: inline-block;
-  border-radius: $radius;
-  cursor: pointer;
-  font-size: $fontSmaller;
-  padding: $rhythm $rhythm * 2;
-  margin-bottom: $rhythm * 2;
+.docs_toggle_button {
   position: absolute;
   right: 0;
-  top: $rhythm / 2;
+  top: 0;
 }
 
 .docs_toggle_input {

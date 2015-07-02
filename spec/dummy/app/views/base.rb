@@ -91,9 +91,8 @@ class Views::Base < Erector::Widget
   #   Dir["#{Rails.root}/app/views/home/*.rb"]
   # end
 
-  def docs(name, codeString, opts = {})
-
-    div(class: opts[:sub]? 'docs_item docs_item_sub' : 'docs_item') {
+  def docs(name, code_string, opts = {})
+    div(class: opts[:sub] ? 'docs_item docs_item_sub' : 'docs_item') {
 
       if opts[:sub]
         h4 name, id: name.downcase
@@ -105,35 +104,32 @@ class Views::Base < Erector::Widget
         p opts[:hint]
       end
 
-      eval(codeString)
+      eval(code_string)
 
-      div.docs_col {
-        label.docs_toggle_label(for: "docs_code_#{name.downcase}") {
-          text 'View source'
-        }
-        input(class: 'docs_toggle_input', id: "docs_code_#{name.downcase}", type: 'checkbox')
+      a.button.small.docs_toggle_button 'Toggle source'
 
-        div.docs_code {
-          div.docs_code_header 'Erector source code'
-          pre codeString.strip_heredoc.strip
-        }
+      div.docs_code(style: 'display:none;') {
+        div.docs_code_header 'Erector source code'
+        pre code_string.strip_heredoc.strip
       }
     }
 
   end
 
-  def guide(codeDo, guideDo, codeDont, guideDont)
+  def guide(code_do, guide_do, code_dont, guide_dont)
     h5 'Rule of Thumb'
+
     div.docs_guide {
       div.docs_guide_col {
-        div.docs_guide_example codeDo
-        p.docs_guide_explain guideDo
+        div.docs_guide_example code_do
+        p.docs_guide_explain guide_do
       }
       div.docs_guide_col {
-        div.docs_guide_example codeDont
-        p.docs_guide_explain guideDont
+        div.docs_guide_example code_dont
+        p.docs_guide_explain guide_dont
       }
     }
+
     hr
   end
 end
