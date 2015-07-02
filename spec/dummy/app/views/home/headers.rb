@@ -9,7 +9,7 @@ class Views::Home::Headers < Views::Base
       div.page_header {
         h2 {
           a 'Sales Leads', href: '#'
-          a.button.subtle {
+          a.button.subtle.mini {
             i(class: 'fa fa-pencil')
           }
         }
