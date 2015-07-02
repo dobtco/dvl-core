@@ -1,4 +1,4 @@
-class Views::Home::Color < Views::Base
+class Views::Home::Color < Views::Page
   def main
     h2 'Color'
 
@@ -51,7 +51,7 @@ class Views::Home::Color < Views::Base
       '$successColor' => '#5ee0ac',
       '$warningColor' => '#e3e15f',
       '$errorColor' =>  '#d95b76',
-      '$highlight' => '#dff5f7'    
+      '$highlight' => '#dff5f7'
     }
   end
 

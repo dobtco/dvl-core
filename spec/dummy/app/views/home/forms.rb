@@ -1,4 +1,4 @@
-class Views::Home::Forms < Views::Base
+class Views::Home::Forms < Views::Page
   def main
     h2 'Forms'
 

@@ -1,4 +1,4 @@
-class Views::Home::Headers < Views::Base
+class Views::Home::Headers < Views::Page
   def main
 
     h2 'Headers'
@@ -174,7 +174,7 @@ class Views::Home::Headers < Views::Base
     }, hint: 'Icons in this style are optional.', sub: ''
 
     hr
-    
+
     h3 'Header with Search Bar'
 
     p 'Use this header for standalone pages which do not require navigation.'

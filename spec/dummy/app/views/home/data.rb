@@ -1,7 +1,7 @@
-class Views::Home::Data < Views::Base
+class Views::Home::Data < Views::Page
   def main
     h2 'Data'
-    
+
     h3 'Basic Tables'
 
     docs 'Default', %{
@@ -121,7 +121,7 @@ class Views::Home::Data < Views::Base
         }
       }
     }, hint: %{Add the <code>.condensed</code> class when the table is likely to take up many rows of the same page.}.html_safe, sub: ''
-  
+
     hr
 
     h3 'User Block'
@@ -151,7 +151,7 @@ class Views::Home::Data < Views::Base
     }, sub: ''
 
     hr
-  
+
     docs 'Labels', %{
       p {
         span.label.label_error 'Error'
@@ -165,7 +165,7 @@ class Views::Home::Data < Views::Base
       p {
         span.label.label_warning 'Warning'
       }
-    } 
+    }
 
     h3 'Email Previews'
 
@@ -184,7 +184,7 @@ class Views::Home::Data < Views::Base
             dt 'Subject:'
             dd 'New vlog promo request'
             dt 'Sent:'
-            dd { 
+            dd {
               text %{<time data-formatted-timestamp="long" datetime="2015-06-29T20:45:33Z">06/29/15 at 01:45pm</time>}.html_safe
             }
           }
@@ -219,7 +219,7 @@ class Views::Home::Data < Views::Base
               dt 'Subject:'
               dd 'New vlog promo request'
               dt 'Sent:'
-              dd { 
+              dd {
                 text %{<time data-formatted-timestamp="long" datetime="2015-06-29T20:45:33Z">06/29/15 at 01:45pm</time>}.html_safe
               }
             }
@@ -255,7 +255,7 @@ class Views::Home::Data < Views::Base
               dt 'Subject:'
               dd 'New vlog promo request'
               dt 'Sent:'
-              dd { 
+              dd {
                 text %{<time data-formatted-timestamp="long" datetime="2015-06-29T20:45:33Z">06/29/15 at 01:45pm</time>}.html_safe
               }
             }
@@ -278,7 +278,7 @@ class Views::Home::Data < Views::Base
     }, hint: "Used when previewing an email that the user has already sent to the intended recipient.", sub: ''
 
     hr
-    
+
     docs 'Sidebar (Data List)', %{
       div.sidebar_box {
         ul.sidebar_data {

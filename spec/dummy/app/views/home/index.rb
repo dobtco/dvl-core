@@ -1,4 +1,4 @@
-class Views::Home::Index < Views::Base
+class Views::Home::Index < Views::Home
   def main
     h2 'Base Styles'
 

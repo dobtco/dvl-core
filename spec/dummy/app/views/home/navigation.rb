@@ -1,4 +1,4 @@
-class Views::Home::Navigation < Views::Base
+class Views::Home::Navigation < Views::Page
   def main
     h2 'Navigation'
 

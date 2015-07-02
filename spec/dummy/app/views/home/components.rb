@@ -1,7 +1,7 @@
-class Views::Home::Components < Views::Base
+class Views::Home::Components < Views::Page
   def main
     h2 'Components'
-    
+
     h3 'Dropdowns'
 
     docs 'Basic', %{
@@ -272,7 +272,7 @@ class Views::Home::Components < Views::Base
             }
           }
         }
-        
+
         div.dropdown {
           a.button.toggle 'Multiple Sections',
                             'data-toggle' => 'dropdown',
@@ -509,7 +509,7 @@ class Views::Home::Components < Views::Base
     }, sub: ''
 
     hr
-    
+
     docs 'Progress Bars', %{
       div.progress {
         div.progress_inner(style: "width: 30%") {

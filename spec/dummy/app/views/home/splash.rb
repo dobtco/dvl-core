@@ -1,11 +1,11 @@
-class Views::Home::Splash < Views::Base
+class Views::Home::Splash < Views::Page
   def stylesheets
     super('splash')
   end
 
   def main
     h2 'Splash Pages'
-    
+
     docs 'Footer', %{
       footer.public_footer {
         div.container {

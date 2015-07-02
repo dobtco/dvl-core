@@ -8,17 +8,7 @@ class Views::Base < Erector::Widget
     script src: '//code.jquery.com/jquery-1.11.1.min.js'
     javascript_include_tag 'application'
     script src: '//use.typekit.net/ckb1dps.js'
-    script %{
-      try{Typekit.load();}catch(e){}
-    }
-    script %{
-      $(function(){
-        $('[data-toggle="tooltip"]').tooltip()
-        $('body').styledSelect({blank: 'Choose an option'})
-        $('body').styledControls()
-        $('body').dropdownSelect({blank: 'Choose an option'})
-      });
-    }.html_safe
+    script 'try{Typekit.load();}catch(e){}'.html_safe
   end
 
   def content
@@ -30,20 +20,12 @@ class Views::Base < Erector::Widget
         javascripts
       }
       body {
-        div.hero {
-          div.container {
-            p {
-              img(src: 'http://www.dobt.co/img/dobt_logo.png', alt: 'DOBT')
-            }
-            h1 'DOBT Style Guide'
-            p 'We use these guidelines and shared components for everything we build, including commercial and internal apps.'
-          }
-        }
+        render_header
 
         a.sr_only 'Skip to content', href: '#content'
 
         div.content!
-        div.container {
+        div.container.primary_container {
           div.grid {
             div.item.desk_three_columns {
               ul.sidebar_nav {

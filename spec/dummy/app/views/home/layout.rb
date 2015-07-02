@@ -1,7 +1,7 @@
-class Views::Home::Layout < Views::Base
+class Views::Home::Layout < Views::Page
   def main
     h2 'Layout'
-    
+
     h3 'Grid'
 
     docs 'Basic', %{
