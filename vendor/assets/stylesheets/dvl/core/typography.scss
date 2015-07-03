@@ -125,7 +125,7 @@ h5 {
   font-size: $fontSmaller; // 13px
   line-height: $lineHeight; // 20px
   letter-spacing: $letterspaceSmaller;
-  margin: 0;
+  margin: 0 0 $rhythm;
 }
 
 hr {

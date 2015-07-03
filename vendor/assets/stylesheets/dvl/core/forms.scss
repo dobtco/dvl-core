@@ -383,6 +383,9 @@ form {
   padding: $rhythm $rhythm * 2;
   border-radius: $radius;
   display: inline-block;
+  input + {
+    margin-top: $rhythm;
+  }
 }
 
 .form_hint {
@@ -588,8 +591,8 @@ a.styled_select {
 // (Used in "max rating" when setting numeric ratings)
 
 .form_option_sub {
-  background-color: $lightGray;
-  padding: 0.5rem 1rem;
+  background-color: rgba($black,0.25);
+  padding: $rhythm $rhythm * 2;
   @include cf();
   position: relative;
   border-radius: $radius;
@@ -598,18 +601,18 @@ a.styled_select {
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 0 8px 8px;
+    border-width: 0 $rhythm $rhythm;
     border-color: transparent transparent $lightGray transparent;
     position: absolute;
-    top: -8px;
-    margin-left: -3px;
+    top: $rhythm * -1;
+    margin-left: $rhythm * -0.5; // Horizontal centering
   }
   label, input {
     float: left;
   }
   label {
-    line-height: 2rem;
-    margin-right: 1rem;
+    line-height: $rhythm * 5;
+    margin-right: $rhythm * 2;
   }
   @media screen and (min-width: $lapWidth) {
       margin-left: 8.3333% * 3;

@@ -19,7 +19,7 @@ class Views::Home::Navigation < Views::Page
               ul {
                 li {
                   span {
-                    a.button.primary 'Sign in'
+                    a.button.small.primary 'Sign in'
                   }
                 }
               }

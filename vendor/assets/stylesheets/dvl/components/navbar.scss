@@ -17,11 +17,6 @@
     }
   }
 
-  // Fix buttons inside navbar
-  .button {
-    font-size: $fontSmaller;
-  }
-
   // Override display: inline-block for proper stacking
   .dropdown_navbar {
     display: block;
@@ -193,7 +188,7 @@
   .navbar_content_secondary {
     float: right;
     .button {
-      margin-top: ($navHeight - ($inputHeight)) / 2;
+      margin-top: ($navHeight - ($rhythm * 4)) / 2;
     }
     .dropdown_menu {
       right: 0;

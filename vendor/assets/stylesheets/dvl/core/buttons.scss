@@ -42,13 +42,13 @@
   &[disabled]:active {
     background: $bg;
     @if saturation($bg) > 40% {
-      color: #fff;
+      color: rgba(#fff,0.6);
     } @else if lightness($bg) > 49% {
-      color: darken($bg,50%);
+      color: rgba(darken($bg,50%),0.6);
     } @else if saturation($bg) == 0 {
-      color: $darkestGray;
+      color: rgba($darkestGray,0.6);
     } @else {
-      color: #fff;
+      color: rgba(#fff,0.6);
     }
   }
 }
@@ -95,12 +95,12 @@
   }
   // Dropdown toggle button
   &.toggle {
-    border: 1px solid;
+    border: 1px solid $darkGray;
     &:after {
       content: "\f0d7";
       font-family: 'FontAwesome';
-      margin-left: 0.5rem;
-      color: $darkerGray;
+      margin-left: $rhythm;
+      opacity: 0.7;
     }
 
     &.info, &.primary {

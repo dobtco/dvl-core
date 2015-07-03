@@ -40,6 +40,12 @@
     float: right;
     position: relative;
     top: ($fontLineHeightH2 - $inputHeight) / 2;
+    &.small {
+      top: ($fontLineHeightH2 -($rhythm * 4)) / 2;
+    }
+    &.mini {
+       top: ($fontLineHeightH2 - ($rhythm * 3)) / 2;
+    }
   }
 }
 
