@@ -120,15 +120,21 @@ hr {
 
 .docs_grid {
   margin-bottom: $rhythm * 2;
-  margin-left: $rhythm * -4;
+  margin-left: $rhythm * -2;
   .item {
-    padding-left: $rhythm * 4;
+    padding-left: $rhythm * 2;
     span {
       background: $blueHighlight;
       display: block;
       padding: $rhythm;
       font-size: $fontSmall;
       border-radius: $radius;
+    }
+  }
+  @media screen and (min-width: $lapWidth) {
+    margin-left: $rhythm * -4;
+    .item {
+      padding-left: $rhythm * 4;
     }
   }
 }

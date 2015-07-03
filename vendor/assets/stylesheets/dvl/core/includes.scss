@@ -124,7 +124,8 @@ $inputPadding: $rhythm !default;
 
 // Grid
 $columnWidth: 8.333%;
-$gutterWidth: $lineHeight * 2;
+$gutterWidth: $lineHeight;
+$lapGutterWidth: $lineHeight * 2;
 
 // Viewport widths
 $lapWidth: 640px;

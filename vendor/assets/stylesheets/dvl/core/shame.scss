@@ -389,3 +389,16 @@ $paginationStatusHeight: $rhythm * 5;
     }
   }
 }
+
+// Switch to filtering sidebar
+
+.sidebar_nav.condensed > li {
+  > a,
+  .content {
+    padding-top: $rhythm;
+    padding-bottom: $rhythm;
+  }
+  .badge {
+    top: $rhythm;
+  }
+}
