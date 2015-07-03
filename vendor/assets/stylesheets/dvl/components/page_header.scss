@@ -35,7 +35,8 @@
   &.with_back_arrow {
     padding-left: $rhythm * 5;
   }
-  > .button {
+  > .button,
+  > form .button {
     float: right;
     position: relative;
     top: ($fontLineHeightH2 - $inputHeight) / 2;
