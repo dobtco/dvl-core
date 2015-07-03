@@ -23,14 +23,14 @@
   li {
     position: relative;
     counter-increment: list;
-    margin: 0 0 $lineHeight $rhythm * 5;
+    margin: 0 0 $lineHeight $rhythm * 4;
     &:before {
       position: absolute;
       content: counter(list) '.';
       top: 0;
       color: $darkestGray;
       color: rgba($darkestGray,0.8);
-      left: $rhythm * -5;
+      left: $rhythm * -4;
       text-align: left;
     }
   }
