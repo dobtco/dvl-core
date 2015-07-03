@@ -1,10 +1,8 @@
 class Views::Page < Views::Base
   def render_header
-    nav.navbar {
+    div.hero.hero_compact {
       div.container {
-        div.navbar_header {
-          a.navbar_brand 'DOBT Style Guide', href: '/'
-        }
+        h1 { a 'DOBT Style Guide', href: '/' }
       }
     }
   end
