@@ -38,5 +38,6 @@
 // Inline text
 
 .blank_slate_inline {
-  color: $darkGray;
+  color: $darkerGray;
+  @include font_smoothing;
 }

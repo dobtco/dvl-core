@@ -71,7 +71,8 @@ textarea {
   }
   &[readonly], &[disabled] {
     border-color: #ccc;
-    color: $darkGray;
+    color: $darkerGray;
+    @include font_smoothing;
     background-color: $lightestGray;
   }
 }
@@ -392,7 +393,8 @@ form {
   font-size: $fontSmaller;
   margin: $rhythm 0;
   font-style: italic;
-  color: $darkGray;
+  color: $darkerGray;
+  @include font_smoothing;
   max-width: 30rem;
   .control + & {
     margin: 0 0 ($rhythm * 2) ($rhythm * 5);

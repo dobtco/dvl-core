@@ -17,14 +17,17 @@
 }
 
 .drop_rich_head {
+  color: $black;
   font-weight: $weightNormal;
   .active a & {
+    color: $white;
     @include font_smoothing(off);
   }
 }
 
 .drop_rich_subhead {
-  color: $darkGray;
+  color: $darkerGray;
+  @include font_smoothing;
   font-size: $fontSmaller;
   line-height: $rhythm * 2;
   @include font_smoothing(off);
