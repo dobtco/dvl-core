@@ -29,6 +29,10 @@
   background-image: radial-gradient(farthest-corner at bottom left, rgba(186,146,112,0.6) 7%, rgba(186,146,112,0) 58%), radial-gradient(farthest-corner at bottom right, rgba(0,133,250,0.3) 10%, rgba(0,133,250,0) 60%);
   &.hero_compact {
     padding: $rhythm 0;
+    text-align: center;
+    @media screen and (min-width: $lapWidth) {
+      text-align: left;
+    }
     h1 {
       font-size: $fontSizeH2;
       line-height: $fontLineHeightH2;
@@ -90,11 +94,11 @@ hr {
 }
 
 .docs_item {
-  h3,
-  h4 {
-    padding-bottom: $inputHeight;
+  > h3,
+  > h4 {
+    margin-bottom: $inputHeight + $lineHeight;
     @media screen and (min-width: $lapWidth) {
-      padding: 0;
+      margin-bottom: $lineHeight;
     }
   }
 }

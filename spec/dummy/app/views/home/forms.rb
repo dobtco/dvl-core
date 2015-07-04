@@ -20,7 +20,7 @@ class Views::Home::Forms < Views::Page
         f.input :radio,
                 as: :radio_buttons,
                 collection: ['Enthusiastic', 'Indifferent', 'Antagonistic'],
-                label: 'What are your thoughts on your Bilderberg Group?',
+                label: 'What are your thoughts on the Bilderberg Group?',
                 checked: 'Indifferent'
 
         f.input :checkbox,
@@ -200,7 +200,7 @@ class Views::Home::Forms < Views::Page
         f.input :radio,
                 as: :radio_buttons,
                 collection: ['Enthusiastic', 'Indifferent', 'Antagonistic'],
-                label: 'What are your thoughts on your Bilderberg Group?',
+                label: 'What are your thoughts on the Bilderberg Group?',
                 checked: 'Indifferent'
 
         f.input :text,

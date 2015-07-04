@@ -37,14 +37,21 @@
   }
   > .button,
   > form .button {
-    float: right;
-    position: relative;
-    top: ($fontLineHeightH2 - $inputHeight) / 2;
-    &.small {
-      top: ($fontLineHeightH2 -($rhythm * 4)) / 2;
-    }
-    &.mini {
-       top: ($fontLineHeightH2 - ($rhythm * 3)) / 2;
+    float: left;
+    clear: left;
+    margin: $rhythm 0;
+    @media screen and (min-width: $lapWidth) {
+      float: right;
+      clear: none;
+      position: relative;
+      margin: 0;
+      top: ($fontLineHeightH2 - $inputHeight) / 2;
+      &.small {
+        top: ($fontLineHeightH2 -($rhythm * 4)) / 2;
+      }
+      &.mini {
+         top: ($fontLineHeightH2 - ($rhythm * 3)) / 2;
+      }
     }
   }
 }
@@ -99,7 +106,7 @@
 }
 
 .page_header_tertiary {
-  float: right;
+  float: left;
   ul,
   .button {
     float: left;
@@ -108,11 +115,12 @@
     font-size: $fontSmall;
     line-height: 1.8;
   }
-  li,
   .button {
-    margin-left: $rhythm * 2;
+    clear: left;
+    margin-top: $rhythm;
   }
   li {
+    margin-left: $rhythm * 2;
     &:first-child {
       margin-left: 0;
     }
@@ -126,6 +134,13 @@
     }
     &.active a {
       color: $black;
+    }
+  }
+  @media screen and (min-width: $lapWidth) {
+    float: right;
+    .button {
+      margin: 0 0 0 $rhythm * 2;
+      clear: none;
     }
   }
 }

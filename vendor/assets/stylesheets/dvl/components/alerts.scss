@@ -10,6 +10,16 @@
   .button {
     margin-right: $rhythm;
   }
+  .styled_select_wrapper {
+    + button {
+      margin-top: $rhythm;
+      display: block;
+      @media screen and (min-width: $lapWidth) {
+        margin-top: 0;
+        display: inline-block;
+      }
+    }
+  }
   .button:last-child {
     margin-right: 0;
   }

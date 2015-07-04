@@ -4,7 +4,10 @@
   h3, h4 {
     display: inline;
     float: left;
-    margin-bottom: 0;
+    margin-bottom: $rhythm;
+    @media screen and (min-width: $lapWidth) {
+      margin-bottom: 0;
+    }
   }
   // Subheader 1
   h3 {
@@ -26,7 +29,8 @@
 }
 
 .page_subheader_actions {
-  float: right;
+  float: left;
+  clear: left;
   a {
     float: left;
     margin-right: $lineHeight;
@@ -36,6 +40,10 @@
   }
   .button.small {
     margin-top: $rhythm / 2;
+  }
+  @media screen and (min-width: $lapWidth) {
+    float: right;
+    clear: none;
   }
 }
 

@@ -31,11 +31,13 @@ class Views::Home::Index < Views::Home
       %{<strong>Don&#39;t</strong> divide <code>$rhythm</code> or <code>$lineHeight</code> into fractions, unless you are vertically centering text within its container.}.html_safe
 
     docs 'Headings', %{
-      h1 'Heading 1 64/80px'
-      h2 'Heading 2 40/56px'
-      h3 'Heading 3 23/32px'
-      h4 'Heading 4 16/24px'
-      h5 'Heading 5 13/24px'
+      div.dvlcore_headings {
+        h1 'Heading 1 64/80px'
+        h2 'Heading 2 40/56px'
+        h3 'Heading 3 23/32px'
+        h4 'Heading 4 16/24px'
+        h5 'Heading 5 13/24px'
+      }
     }
 
     docs 'Paragraph-Level Text', %{
