@@ -70,7 +70,7 @@ class Views::Home::Index < Views::Home
     guide %{<h2>Headline</h2> <p>Main Content</p> <p class="microcopy">Explanation</p>}.html_safe,
       %{<strong>Do</strong> use header styles, smaller text sizes, and <a href="/components#alerts">alerts</a> to establish hierarchy and call out bits of text.}.html_safe,
       %{<p><strong>We are dedicated to making great software that helps governments and non-profits better serve their communities.</strong></p> <p class="microcopy" style="background-color: red;">Explanation goes here.</p>}.html_safe,
-      %{<strong>Don&#39;t</strong> use boldface text for long sentences, or change the text color to emphasize an action. This negatively impacts legibility.}.html_safe
+      %{<strong>Don&#39;t</strong> use boldface text for long sentences, or color the text to emphasize an action. This negatively impacts legibility.}.html_safe
 
     docs 'Lists', %{
       ul.formatted_list {

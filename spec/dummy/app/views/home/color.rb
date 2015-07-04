@@ -16,6 +16,11 @@ class Views::Home::Color < Views::Page
 
     hr
 
+    guide %{<h3>Black</h3> <p style="color: #424242">Gray</p> <p style="font-size: 0.875rem; color: #737373">Grayer</p>}.html_safe,
+      %{<strong>Do</strong> establish visual hierarchy with the <code>$black</code>, <code>$darkestGray</code> and <code>$darkerGray</code> color variables.}.html_safe,
+      %{<p style="color: #bfbfbf;">This text is too light.</p>}.html_safe,
+      %{<strong>Don&#39;t</strong> use lighter grayscale variables (like <code>$gray</code> or <code>$lightGray</code>) against white backgrounds. These will fail accessibility tests.}.html_safe
+
     h3 'UI Colors'
 
     p %{Each app should override <code>$primaryColor</code> and <code>$secondaryColor</code> with its primary brand colors.}.html_safe
