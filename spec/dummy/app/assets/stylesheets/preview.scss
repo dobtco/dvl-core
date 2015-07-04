@@ -89,10 +89,25 @@ hr {
   }
 }
 
+.docs_item {
+  h3,
+  h4 {
+    padding-bottom: $inputHeight;
+    @media screen and (min-width: $lapWidth) {
+      padding: 0;
+    }
+  }
+}
+
 .docs_toggle_button {
   position: absolute;
-  right: 0;
-  top: 0;
+  top: $fontLineHeightH3 + $rhythm;
+  left: 0;
+  @media screen and (min-width: $lapWidth) {
+    top: 0;
+    left: auto;
+    right: 0;
+  }
 }
 
 .docs_toggle_input {
