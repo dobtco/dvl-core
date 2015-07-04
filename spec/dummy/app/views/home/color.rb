@@ -44,6 +44,7 @@ class Views::Home::Color < Views::Page
     hr
   end
 
+  # Make sure everything below is equal to the variables in includes.scss
   def uiColors
     {
       '$primaryColor' => '#697182',
