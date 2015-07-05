@@ -49,7 +49,7 @@
     display: inline;
     line-height: 1.5rem;
   }
-  i {
+  > i {
     position: absolute;
     top: 0;
     line-height: $inputHeight;
