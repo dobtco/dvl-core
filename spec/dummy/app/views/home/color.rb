@@ -1,3 +1,5 @@
+require 'sass_variable_evaluator'
+
 class Views::Home::Color < Views::Page
   def main
     h2 'Color'
@@ -10,8 +12,8 @@ class Views::Home::Color < Views::Page
 
     h3 'Grayscale'
 
-    grayscaleColors.each do |var, color|
-      render('components/swatch', color: color, var: var)
+    grayscale_colors.each do |key|
+      render('components/swatch', color: color_variables[key], var: "$#{key}")
     end
 
     hr
@@ -24,8 +26,9 @@ class Views::Home::Color < Views::Page
     h3 'UI Colors'
 
     p %{Each app should override <code>$primaryColor</code> and <code>$secondaryColor</code> with its primary brand colors.}.html_safe
-    uiColors.each do |var, color|
-      render('components/swatch', color: color, var: var)
+
+    ui_colors.each do |key|
+      render('components/swatch', color: color_variables[key], var: "$#{key}")
     end
 
     hr
@@ -33,8 +36,8 @@ class Views::Home::Color < Views::Page
     h3 'Label Colors'
     p 'When building a feature that allows users to add labels to their data, use this color palette for the suggested presets.'
 
-    labelColors.each do |var, color|
-      render('components/swatch', color: color, var: var)
+    label_colors.each do |key|
+      render('components/swatch', color: color_variables[key], var: "$#{key}")
     end
 
     hr
@@ -42,69 +45,80 @@ class Views::Home::Color < Views::Page
     h3 'Qualitative Colors'
     p 'Use this color range to provide a value judgment (ranging from &ldquo;bad&rdquo; to &ldquo;good&rdquo;) on user-generated information.'.html_safe
 
-    qualColors.each do |var, color|
-      render('components/swatch', color: color, var: var)
+    qual_colors.each do |key|
+      render('components/swatch', color: color_variables[key], var: "$#{key}")
     end
 
     hr
   end
 
-  # Make sure everything below is equal to the variables in includes.scss
-  def uiColors
-    {
-      '$primaryColor' => '#697182',
-      '$secondaryColor' => '#f79a68',
-      '$successColor' => '#5ee0ac',
-      '$warningColor' => '#e3e15f',
-      '$errorColor' =>  '#d95b76',
-      '$highlight' => '#dff5f7'
-    }
+  def ui_colors
+    %w(
+      primaryColor
+      secondaryColor
+      successColor
+      warningColor
+      errorColor
+      highlight
+    )
   end
 
-  def grayscaleColors
-    {
-      '$black' => '#262626',
-      '$darkestGray' => '#4d4d4d',
-      '$darkerGray' => '#737373',
-      '$darkGray' => '#bfbfbf',
-      '$gray' => '#d9d9d9',
-      '$lightGray' => '#e6e6e6',
-      '$lighterGray' => '#f2f2f2',
-      '$lightestGray' => '#fcfcfc',
-      '$white' => '#fff'
-    }
+  def grayscale_colors
+    %w(
+      black
+      darkestGray
+      darkerGray
+      darkGray
+      gray
+      lightGray
+      lighterGray
+      lightestGray
+      white
+    )
   end
 
-  def qualColors
-    {
-      '$qualColor1' => '#D95B76',
-      '$qualColor2' => '#E16D72',
-      '$qualColor3' => '#EC846D',
-      '$qualColor4' => '#F79A68',
-      '$qualColor5' => '#EFB765',
-      '$qualColor6' => '#E3E15F',
-      '$qualColor7' => '#C2E172',
-      '$qualColor8' => '#A1E085',
-      '$qualColor9' => '#82E098',
-      '$qualColor10' => '#5EE0AC'
-    }
+  def qual_colors
+    %w(
+      qualColor1
+      qualColor2
+      qualColor3
+      qualColor4
+      qualColor5
+      qualColor6
+      qualColor7
+      qualColor8
+      qualColor9
+      qualColor10
+    )
   end
 
-  def labelColors
-    {
-      '$redLabelColor' => '#D95B76',
-      '$lightRedLabelColor' => '#F0BECF',
-      '$orangeLabelColor' => '#F79A68',
-      '$lightOrangeLabelColor' => '#F0CCBE',
-      '$yellowLabelColor' => '#E3E15F',
-      '$lightYellowLabelColor' => '#FCF4C3',
-      '$greenLabelColor' => '#5EE0AC',
-      '$lightGreenLabelColor' => '#DBF4BF',
-      '$blueLabelColor' => '#5BB7D9',
-      '$lightBlueLabelColor' => '#BFEEF3',
-      '$purpleLabelColor' => '#6569F0',
-      '$lightPurpleLabelColor' => '#BEC9F0'
-    }
+  def label_colors
+    %w(
+      redLabelColor
+      lightRedLabelColor
+      orangeLabelColor
+      lightOrangeLabelColor
+      yellowLabelColor
+      lightYellowLabelColor
+      greenLabelColor
+      lightGreenLabelColor
+      blueLabelColor
+      lightBlueLabelColor
+      purpleLabelColor
+      lightPurpleLabelColor
+    )
   end
 
+  def color_variables
+    @color_variables ||= begin
+      engine = Sass::Engine.for_file("#{Gem.loaded_specs['dvl-core'].full_gem_path}/vendor/assets/stylesheets/dvl/core/includes.scss", syntax: :scss)
+      SassVariableEvaluator.visit(engine.to_tree).compact.inject({}) do |hash, arr|
+        if arr.is_a?(Array) && arr.length == 2
+          hash[arr[0]] = arr[1].inspect
+        end
+
+        hash
+      end
+    end
+  end
 end
