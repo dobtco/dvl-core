@@ -1,5 +1,3 @@
-require 'sass_variable_evaluator'
-
 class Views::Home::Color < Views::Page
   def main
     h2 'Color'
