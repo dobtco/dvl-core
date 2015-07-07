@@ -323,7 +323,7 @@ input[type="radio"] {
 }
 
 .datetime_input_clear {
-  font-size: $fontSmallest;
+  font-size: $fontSmaller;
 }
 
 form {
@@ -585,39 +585,6 @@ a.styled_select {
       border-right-width: 1px;
       @include border_right_radius($radius);
     }
-  }
-}
-
-// Sub-option, conditionally visible
-// Must set the left property each time this is used
-// (Used in "max rating" when setting numeric ratings)
-
-.form_option_sub {
-  background-color: rgba($black,0.25);
-  padding: $rhythm $rhythm * 2;
-  @include cf();
-  position: relative;
-  border-radius: $radius;
-  &:before {
-    content: "";
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 $rhythm $rhythm;
-    border-color: transparent transparent $lightGray transparent;
-    position: absolute;
-    top: $rhythm * -1;
-    margin-left: $rhythm * -0.5; // Horizontal centering
-  }
-  label, input {
-    float: left;
-  }
-  label {
-    line-height: $rhythm * 5;
-    margin-right: $rhythm * 2;
-  }
-  @media screen and (min-width: $lapWidth) {
-      margin-left: 8.3333% * 3;
   }
 }
 
