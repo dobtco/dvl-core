@@ -150,7 +150,7 @@
   @include border_bottom_radius($radius);
 }
 
-.modal_footer_actions {
+.modal_footer_primary {
   float: right;
   .button, button {
     margin-left: $rhythm;
@@ -158,7 +158,7 @@
   }
 }
 
-.modal_footer_link {
+.modal_footer_secondary {
   float: left;
   font-size: $fontSmall;
   line-height: $inputHeight;

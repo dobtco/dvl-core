@@ -454,10 +454,10 @@ class Views::Home::Components < Views::Page
           text "(Disclaimer: this modal won&#39;t actually delete the style guide.)".html_safe
         }
         div.modal_footer {
-          span.modal_footer_link {
+          span.modal_footer_secondary {
             a 'Delete Screendoor instead'
           }
-          span.modal_footer_actions {
+          span.modal_footer_primary {
             a.button 'Cancel'
             a.button.error 'Confirm'
           }
