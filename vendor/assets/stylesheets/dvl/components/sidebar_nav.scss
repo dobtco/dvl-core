@@ -59,6 +59,10 @@
       padding: 0 $rhythm;
       border-radius: $radius;
     }
+    &.header i {
+      padding: 0;
+      position: static;
+    }
     .badge {
       background-color: $lightGray;
     }

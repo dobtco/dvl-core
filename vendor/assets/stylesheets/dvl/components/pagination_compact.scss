@@ -12,7 +12,7 @@ $paginationCompactHeight: $rhythm * 5;
     letter-spacing: $letterspaceSmaller;
     line-height: $paginationCompactHeight;
   }
-  a {
+  li a {
     &:hover,
     &:focus,
     &:active {
