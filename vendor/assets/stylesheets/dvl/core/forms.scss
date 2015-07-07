@@ -387,7 +387,9 @@ form {
   padding: $rhythm $rhythm * 2;
   border-radius: $radius;
   display: inline-block;
-  input + {
+  input +,
+  textarea +,
+  select + {
     margin-top: $rhythm;
   }
 }

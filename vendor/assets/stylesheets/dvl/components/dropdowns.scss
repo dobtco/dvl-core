@@ -95,6 +95,18 @@
       // Override parent line height
       line-height: $lineHeight;
     }
+    &:first-child {
+      & > a,
+      & > span {
+        @include border_top_radius($radius);
+      }
+    }
+    &:last-child {
+      & > a,
+      & > span {
+        @include border_bottom_radius($radius);
+      }
+    }
     > a {
       color: $darkestGray;
       &:hover,
