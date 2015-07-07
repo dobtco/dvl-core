@@ -9,6 +9,9 @@
   visibility: visible;
   min-width: 40px;
   transition: transform 0.25s $easeOutBack, opacity 120ms ease-out;
+  // Override styles on parent links
+  line-height: $lineHeight;
+  font-weight: $weightNormal;
   &.top, &.bottom {
     padding: 5px 0;
   }
