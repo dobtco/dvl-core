@@ -263,10 +263,12 @@ input[type="checkbox"] {
     border-radius: $radius;
     &:after {
       position: absolute;
+      line-height: 1;
+      @include topCenter (($rhythm * 3), 1rem);
+      left: 0;
       font-family: 'FontAwesome';
       content: "\f00c";
       color: $primaryColor;
-      line-height: ($rhythm * 3);
       width: ($rhythm * 3) - 0.125rem; // Subtracting widths of border
       text-align: center;
       display: inline-block;
@@ -313,7 +315,8 @@ input[type="radio"] {
   input[type=checkbox] {
     + .control_styled:after {
       content: "\f068";
-      top: 1px; // alignment
+      line-height: 1;
+      top: 4px; // alignment
     }
   }
 }
@@ -518,10 +521,10 @@ form {
   &:after {
     font-family: 'FontAwesome';
     content: '\f0d7';
+    line-height: 1;
     position: absolute;
-    top: 0;
+    @include topCenter($inputHeight, 1rem);
     right: 0;
-    line-height: $inputHeight;
     width: $inputHeight;
     text-align: center;
     color: $darkerGray;

@@ -60,7 +60,7 @@
   font-size: 2rem;
   position: absolute;
   opacity: 0.7;
-  top: ($fontLineHeightH2 - 2rem) / 2; // Vertical centering
+  @include topCenter($fontLineHeightH2, 2rem);
   left: 0;
   margin-top: 2px; // Optical adjustment
   line-height: 1;

@@ -234,6 +234,14 @@ $easeInOutBack:  cubic-bezier(0.680, -0.550, 0.265, 1.550);
   }
 }
 
+@mixin topCenter($height, $size) {
+  top: ($height - $size) / 2;
+}
+
+@mixin marginTopCenter($height, $size) {
+  margin-top: ($height - $size) / 2;
+}
+
 @mixin monospace() {
   font-family: $fontFamilyMonospace;
 }

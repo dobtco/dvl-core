@@ -42,7 +42,8 @@ a {
   position: relative;
   &:after {
     position: absolute;
-    line-height: $lineHeight;
+    line-height: 1;
+    @include topCenter($lineHeight, 1rem);
     right: 0;
     @include icon('\f0d7');
   }

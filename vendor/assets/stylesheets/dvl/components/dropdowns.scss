@@ -172,12 +172,12 @@
       content: "\f105";
       font-family: 'FontAwesome';
       font-size: 1.5rem;
+      line-height: 1;
       color: $gray;
       width: $rhythm * 5;
-      line-height: $rhythm * 5;
       text-align: center;
       position: absolute;
-      top: 0;
+      @include topCenter(($rhythm * 5), 1.5rem);
       right: 0;
     }
     &.is_open{
@@ -330,11 +330,11 @@
   &:after {
     @include icon('\f002');
     position: absolute;
-    top: 0;
+    line-height: 1;
+    @include topCenter(($rhythm * 5), 1rem);
     left: $rhythm * 2;
     width: $lineHeight;
     text-align: center;
-    line-height: $rhythm * 5;
     @include font_smoothing;
     color: $darkGray;
   }
@@ -356,13 +356,13 @@
       background: $lighterGray;
     }
     &:after {
+      line-height: 1;
       position: absolute;
-      top: 0;
+      top: (($lineHeight + ($rhythm * 2)) - 1rem) / 2; // Vetical centering
+      right: 0;
       width: $lineHeight + ($rhythm * 2);
       text-align: center;
-      right: 0;
       color: $darkGray;
-      line-height: $lineHeight + ($rhythm * 2);
     }
     &.is_selected:after {
       @include icon('\f00c');

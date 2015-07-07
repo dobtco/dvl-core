@@ -69,7 +69,7 @@ $paginationCompactHeight: $rhythm * 5;
   padding-top: $rhythm;
   @media only screen and (min-width: $lapWidth) {
       position: absolute;
-      top: ($fontLineHeightH2 - $paginationCompactHeight) / 2; // Vertical centering
+      @include topCenter($fontLineHeightH2, $paginationCompactHeight);
       right: 0;
   }
 }

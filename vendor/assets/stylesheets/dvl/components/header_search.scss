@@ -17,7 +17,7 @@
     }
     .filter_form {
       float: right;
-      margin-top: ($fontLineHeightH2 - $inputHeight) / 2; // Vertical centering
+      @include marginTopCenter($fontLineHeightH2, $inputHeight);
       margin-bottom: 0;
     }
   }
