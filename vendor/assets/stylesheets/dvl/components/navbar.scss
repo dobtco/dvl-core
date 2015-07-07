@@ -9,7 +9,8 @@
   .navbar_content > ul > li > a {
     color: rgba($navText,0.8);
     text-decoration: none;
-    &:hover {
+    &:hover,
+    &:focus {
       color: rgba($navText,0.9);
     }
     &:active {
