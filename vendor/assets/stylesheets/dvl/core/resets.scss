@@ -89,3 +89,7 @@ html {
 img::selection, img::-moz-selection {
   background: transparent;
 }
+
+img {
+  -ms-interpolation-mode: bicubic;
+}
