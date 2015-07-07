@@ -4,25 +4,25 @@
   background: $bg;
   border: 1px solid darken($bg, 10%);
   @if saturation($bg) > 40% {
-    color: #fff;
+    color: $white;
   } @else if lightness($bg) > 49% {
     color: darken($bg,50%);
   } @else if saturation($bg) == 0 {
     color: $darkestGray;
   } @else {
-    color: #fff;
+    color: $white;
   }
   &:hover,
   &:focus {
     background: darken($bg, 5%);
     @if saturation($bg) > 40% {
-      color: #fff;
+      color: $white;
     } @else if lightness($bg) > 49% {
       color: darken($bg,50%);
     } @else if saturation($bg) == 0 {
       color: $darkestGray;
     } @else {
-      color: #fff;
+      color: $white;
     }
     &.disabled,
     &[disabled] {

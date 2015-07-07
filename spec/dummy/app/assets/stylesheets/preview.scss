@@ -1,17 +1,17 @@
 // Styles for the style guide
 
 .hero {
-  color: #fff;
+  color: $white;
   @include font_smoothing;
   h1 {
-    color: #fff;
+    color: $white;
     a {
-      color: #fff;
+      color: $white;
       &:hover,
       &:focus,
       &:active,
       &:visited {
-        color: #fff;
+        color: $white;
         text-decoration: none;
       }
     }

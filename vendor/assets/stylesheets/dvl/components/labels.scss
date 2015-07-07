@@ -14,7 +14,7 @@
 .label_error,
 .label_success,
 .label_info {
-  color: #fff;
+  color: $white;
 }
 
 .label_error {
@@ -30,5 +30,5 @@
 }
 
 .label_warning {
-  background-color: #ffd119;
+  background-color: $warningColor;
 }

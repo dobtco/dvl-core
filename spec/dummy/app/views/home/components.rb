@@ -498,8 +498,8 @@ class Views::Home::Components < Views::Page
     }, sub: ''
 
     docs 'Compact', %{
-      div.pagination {
-        span.pagination_status "#1 of 123".html_safe
+      div.pagination_compact {
+        span "#1 of 123".html_safe
 
         ul {
           li { span{text '&larr;'.html_safe}}

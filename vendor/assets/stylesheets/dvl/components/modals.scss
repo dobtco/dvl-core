@@ -44,7 +44,7 @@
 // Actual modal
 .modal_content {
   position: relative;
-  background-color: #fff;
+  background-color: $white;
   border-radius: $radius;
   background-clip: padding-box;
   // Remove focus outline from opened modal
@@ -85,7 +85,7 @@
   padding: $rhythm $rhythm * 3;
   h3 {
     margin: 0;
-    color: #444;
+    color: $darkestGray;
   }
   .close {
     float: right;
@@ -115,7 +115,7 @@
   .modal_header {
     background-color: $errorColor;
     h3 {
-      color: #fff;
+      color: $white;
     }
   }
   .close {

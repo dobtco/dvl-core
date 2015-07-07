@@ -7,7 +7,7 @@ $footerBackground: #080F1F !default;
     list-style: none;
     padding-left: 2rem;
     a {
-      color: #fff;
+      color: $white;
       text-decoration: none;
     }
     a:hover,
@@ -113,7 +113,7 @@ $footerBackground: #080F1F !default;
   margin-bottom: $lineHeight * 2;
   p,
   strong {
-    color: #fff;
+    color: $white;
   }
   p {
     margin-bottom: $lineHeight;
@@ -136,7 +136,7 @@ input.newsletter_email {
   border: 0;
   width: 100%;
   padding: ($lineHeight * 0.25) 1rem;
-  color: #444;
+  color: $darkestGray;
 }
 
 .newsletter_subscribe {

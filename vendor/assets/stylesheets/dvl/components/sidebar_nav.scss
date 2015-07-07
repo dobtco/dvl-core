@@ -8,7 +8,7 @@
       @include font_smoothing;
     }
     &.header {
-      color: #999;
+      color: $darkerGray;
       border: 0;
       position: relative;
       padding: 0 0 $rhythm;
@@ -72,7 +72,7 @@
     &.active {
       > a {
         background: $darkestGray;
-        color: #fff;
+        color: $white;
       }
       .badge {
         background-color: $white;

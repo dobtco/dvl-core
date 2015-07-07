@@ -122,8 +122,8 @@ class Views::Home::Headers < Views::Page
             }
           }
         }
-        div.pagination.pagination_page_header {
-          span.pagination_status "#94 of 566"
+        div.pagination_compact.pagination_compact_header {
+          span "#94 of 566"
 
           ul {
             li { span{text '&larr;'.html_safe}}
