@@ -157,6 +157,7 @@ class Views::Home::Navigation < Views::Page
         li {
           a {
             text 'Billing'
+            i(class: 'fa fa-external-link')
           }
         }
       }

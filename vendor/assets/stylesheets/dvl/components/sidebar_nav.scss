@@ -53,14 +53,20 @@
         border-bottom-width: 1px;
       }
     }
-    .badge {
+    .badge,
+    i {
       position: absolute;
       right: $lineHeight;
       top: $rhythm * 2;
-      background-color: $lightGray;
       color: $darkestGray;
       padding: 0 $rhythm;
       border-radius: $radius;
+    }
+    .badge {
+      background-color: $lightGray;
+    }
+    i {
+      line-height: $lineHeight;
     }
     > a:focus,
     > a:hover {
@@ -72,6 +78,9 @@
     &.active {
       > a {
         background: $darkestGray;
+        color: $white;
+      }
+      i {
         color: $white;
       }
       .badge {
