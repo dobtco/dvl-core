@@ -330,10 +330,10 @@ a.subtle_icon {
 .sidebar_nav.condensed > li {
   > a,
   .content {
-    padding-top: $rhythm;
-    padding-bottom: $rhythm;
+    padding: $rhythm $rhythm * 2;
   }
   .badge {
     top: $rhythm;
+    right: $rhythm * 2;
   }
 }

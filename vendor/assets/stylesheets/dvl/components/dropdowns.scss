@@ -98,7 +98,7 @@
       &:hover,
       &:focus {
         text-decoration: none;
-        background-color: darken($lightestGray,3%);
+        background-color: rgba($linkColor,0.04);
       }
     }
     &.divider {
