@@ -234,12 +234,16 @@ $easeInOutBack:  cubic-bezier(0.680, -0.550, 0.265, 1.550);
   }
 }
 
-@mixin topCenter($height, $size) {
-  top: ($height - $size) / 2;
+// Vertical centering mixins
+// $parentHeight: height of the parent element
+// $height: Height of the element you want to center
+
+@mixin topCenter($parentHeight, $height) {
+  top: ($parentHeight - $height) / 2;
 }
 
-@mixin marginTopCenter($height, $size) {
-  margin-top: ($height - $size) / 2;
+@mixin marginTopCenter($parentHeight, $height) {
+  margin-top: ($parentHeight - $height) / 2;
 }
 
 @mixin monospace() {
