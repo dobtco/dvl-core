@@ -35,9 +35,6 @@
       border-bottom-width: 0;
       padding: ($rhythm * 2) $lineHeight;
       padding-right: 25%;
-      @media screen and (min-width: $lapWidth) {
-        padding-right: 20%;
-      }
     }
     &:first-child {
       > a,
