@@ -49,10 +49,11 @@
     display: inline;
     line-height: 1.5rem;
   }
-  > i {
+  .fa-search,
+  .fa-times-circle {
     position: absolute;
-    top: 0;
-    line-height: $inputHeight;
+    line-height: 1;
+    @include topCenter($inputHeight, 1rem);
     color: $darkGray;
   }
   .fa-search {
