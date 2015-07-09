@@ -12,8 +12,12 @@
       text-decoration: none;
     }
     img {
-      max-height: $fontLineHeightH2;
-      max-width: $fontLineHeightH2;
+      max-height: $fontLineHeightH2Mobile;
+      max-width: $fontLineHeightH2Mobile;
+      @media screen and (min-width: $lapWidth) {
+        max-height: $fontLineHeightH2;
+        max-width: $fontLineHeightH2;
+      }
       margin-right: $rhythm;
       float: left;
     }
@@ -22,12 +26,21 @@
       float: right;
       position: relative;
       margin-left: $rhythm * 2;
-      top: ($fontLineHeightH2 -  $inputHeight) / 2;
+      @include topCenter($fontLineHeightH2Mobile, $inputHeight);
       &.small {
-        top: ($fontLineHeightH2 -($rhythm * 4)) / 2;
+        @include topCenter($fontLineHeightH2Mobile, ($rhythm * 4));
       }
       &.mini {
-         top: ($fontLineHeightH2 - ($rhythm * 3)) / 2;
+        @include topCenter($fontLineHeightH2Mobile, ($rhythm * 3));
+      }
+      @media screen and (min-width: $lapWidth) {
+        @include topCenter($fontLineHeightH2, $inputHeight);
+        &.small {
+          @include topCenter($fontLineHeightH2, ($rhythm * 4));
+        }
+        &.mini {
+          @include topCenter($fontLineHeightH2, ($rhythm * 3));
+        }
       }
     }
   }
@@ -60,7 +73,10 @@
   font-size: 2rem;
   position: absolute;
   opacity: 0.7;
-  @include topCenter($fontLineHeightH2, 2rem);
+  @include topCenter($fontLineHeightH2Mobile, 2rem);
+  @media screen and (min-width: $lapWidth) {
+    @include topCenter($fontLineHeightH2, 2rem);
+  }
   left: 0;
   margin-top: 2px; // Optical adjustment
   line-height: 1;

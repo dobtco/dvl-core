@@ -103,7 +103,7 @@ hr {
 
 .docs_toggle_button {
   position: absolute;
-  top: $fontLineHeightH3 + $rhythm;
+  top: $fontLineHeightH3Mobile + $rhythm;
   left: 0;
   @media screen and (min-width: $lapWidth) {
     top: 0;
