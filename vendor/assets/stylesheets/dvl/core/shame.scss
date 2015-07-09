@@ -329,7 +329,7 @@ a.subtle_icon {
 
 .sidebar_nav.condensed > li {
   > a,
-  > .content {
+  &.content {
     padding-top: $rhythm;
     padding-bottom: $rhythm;
     padding-left: $rhythm * 2;

@@ -35,6 +35,9 @@
       border-bottom-width: 0;
       padding: ($rhythm * 2) $lineHeight;
       padding-right: 25%;
+      &.editing {
+        padding-right: $lineHeight;
+      }
     }
     &:first-child {
       > a,
