@@ -44,7 +44,7 @@
 
 .navbar_brand {
   float: left;
-  font-size: $fontSizeH3;
+  @include fontH3;
   @include font_smoothing;
   line-height: $navHeight;
   &:focus {

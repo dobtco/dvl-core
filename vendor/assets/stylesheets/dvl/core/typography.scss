@@ -79,39 +79,20 @@ h4 {
   margin: 0 0 $lineHeight;
 }
 
-h1, h2 {
-  font-family: $fontFamilyDisplay;
-  font-weight: $weightLight;
-}
-
-// Optically aligning Source Sans Pro with body text
-
-h1 {
-  margin-left: -0.3125rem;
-}
-
-h2 {
-  margin-left: -0.125rem;
-}
-
 h1, h2, h3, h4 {
   @include font_smoothing;
 }
 
 h1 {
-  font-size: $fontSizeH1;
-  line-height: $fontLineHeightH1;
+  @include fontH1;
 }
 
 h2 {
-  font-size: $fontSizeH2;
-  line-height: $fontLineHeightH2;
+  @include fontH2;
 }
 
 h3 {
-  font-weight: $weightNormal;
-  font-size: $fontSizeH3;
-  line-height: $fontLineHeightH3;
+  @include fontH3;
 }
 
 h4 {

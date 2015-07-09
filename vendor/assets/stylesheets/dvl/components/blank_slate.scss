@@ -20,9 +20,7 @@
   // Title, mimics h3 style
   h4 {
     margin: $rhythm 0;
-    font-size: $fontSizeH3;
-    line-height: $fontLineHeightH3;
-    font-weight: $weightNormal;
+    @include fontH3;
   }
   // Subheader
   span {

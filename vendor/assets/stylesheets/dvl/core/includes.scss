@@ -106,6 +106,50 @@ $fontLineHeightH2: (7 * $rhythm) !default; // 56px
 $fontSizeH3: 1.4375rem !default; // 23px
 $fontLineHeightH3: (4 * $rhythm) !default; // 32px
 
+@mixin fontDefault {
+  font-family: $fontFamilyDefault;
+  font-weight: $weightNormal;
+}
+
+@mixin fontDisplay {
+  font-family: $fontFamilyDisplay;
+  font-weight: $weightLight;
+}
+
+@mixin fontH1 {
+  font-size: 2rem;
+  line-height: $lineHeight * 2;
+  @include fontDisplay;
+  @media screen and (min-width: $lapWidth) {
+    margin-left: -0.3125rem; // Optically align Source Sans with body text
+    font-size: $fontSizeH1;
+    line-height: $fontLineHeightH1;
+  }
+}
+
+@mixin fontH2 {
+  font-size: 1.5625rem;
+  line-height: $rhythm * 4;
+  font-weight: $weightNormal;
+  @media screen and (min-width: $lapWidth) {
+    margin-left: -0.125rem; // Optically align Source Sans with body text
+    font-size: $fontSizeH2;
+    line-height: $fontLineHeightH2;
+    @include fontDisplay;
+  }
+}
+
+@mixin fontH3 {
+  font-size: 1.25rem;
+  line-height: $rhythm * 4;
+  font-weight: $weightNormal;
+  @media screen and (min-width: $lapWidth) {
+    font-size: $fontSizeH3;
+    line-height: $fontLineHeightH3;
+  }
+}
+
+
 $fontSmall: 0.875rem; // 14px
 $fontSmaller: 0.8125rem; // 13px
 $fontSmallest: 0.75rem; // 12px
