@@ -36,7 +36,7 @@
       padding: ($rhythm * 2) $lineHeight;
       padding-right: 25%;
       &.editing {
-        padding-right: $lineHeight;
+        padding-right: $rhythm * 2;
       }
     }
     &:first-child {
