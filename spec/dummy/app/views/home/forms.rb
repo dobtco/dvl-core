@@ -168,17 +168,29 @@ class Views::Home::Forms < Views::Page
 
     h3 'Appearance'
 
-    docs 'Large Inputs', %{
+    docs 'Input sizes', %{
       simple_form_for :large_inputs do |f|
         f.input :large_string,
-                label: 'Name',
+                label: 'Name (large)',
                 as: :string,
                 input_html: { class: 'large' }
 
         f.input :large_text,
-                label: 'Description',
+                label: 'Description (large)',
                 as: :text,
                 input_html: { class: 'large', rows: 4 }
+
+        div.grid {
+          div.item.eight_columns {
+            f.input_field :small_string,
+                          as: :string,
+                          placeholder: 'Small input',
+                          class: 'small'
+          }
+          div.item.four_columns {
+            button.button.small 'Small button'
+          }
+        }
       end
     }, sub: ''
 

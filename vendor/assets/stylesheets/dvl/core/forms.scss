@@ -107,6 +107,11 @@ input[type="number"] {
     padding: $inputPadding * $ratio;
     @include font_smoothing;
   }
+
+  &.small {
+    height: 2.125rem;
+    font-size: $fontSmall;
+  }
 }
 
 textarea {
