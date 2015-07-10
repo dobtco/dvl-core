@@ -1,6 +1,7 @@
 class Views::Home::Splash < Views::Page
   def stylesheets
-    super('splash')
+    super
+    stylesheet_link_tag 'splash', media: 'all'
   end
 
   def main
