@@ -1,5 +1,5 @@
 class SassVariableEvaluator < Sass::Tree::Visitors::Base
-  def visit_comment(node)
+  def visit_comment(_node)
     # prevents empty arrays from being in the returned array
   end
 
