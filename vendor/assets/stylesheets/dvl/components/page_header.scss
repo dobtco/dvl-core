@@ -23,25 +23,9 @@
     }
     .button {
       font-size: 1rem;
-      float: right;
       position: relative;
       margin-left: $rhythm * 2;
-      @include topCenter($fontLineHeightH2Mobile, $inputHeight);
-      &.small {
-        @include topCenter($fontLineHeightH2Mobile, ($rhythm * 4));
-      }
-      &.mini {
-        @include topCenter($fontLineHeightH2Mobile, ($rhythm * 3));
-      }
-      @media screen and (min-width: $lapWidth) {
-        @include topCenter($fontLineHeightH2, $inputHeight);
-        &.small {
-          @include topCenter($fontLineHeightH2, ($rhythm * 4));
-        }
-        &.mini {
-          @include topCenter($fontLineHeightH2, ($rhythm * 3));
-        }
-      }
+      top: $rhythm / 2;
     }
   }
 
