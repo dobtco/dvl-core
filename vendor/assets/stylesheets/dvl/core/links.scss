@@ -38,6 +38,7 @@ a {
 // Plain dropdown toggle links
 
 .dropdown_toggle_link {
+  display: inline-block;
   padding-right: $rhythm * 2;
   position: relative;
   &:after {

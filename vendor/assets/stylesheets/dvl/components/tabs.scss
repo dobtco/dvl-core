@@ -2,13 +2,10 @@
 // For switching between sub-sections of the same view.
 
 .tabs {
-  display: table;
   margin: 0 auto $lineHeight;
   user-select: none;
   li {
     position: relative;
-    float: left;
-    min-width: $lineHeight * 5;
     a {
       @include ellipses;
       text-decoration: none;
@@ -16,7 +13,7 @@
       line-height: $rhythm * 5;
       text-align: center;
       border: 1px solid $primaryColor;
-      border-right-width: 0;
+      border-bottom-width: 0;
       color: $primaryColor;
       font-weight: normal;
       display: block;
@@ -37,11 +34,31 @@
       @include font_smoothing;
     }
     &:first-child a {
-      @include border_left_radius($lineHeight);
+      @include border_top_radius($radius * 2);
     }
     &:last-child a {
-      @include border_right_radius($lineHeight);
-      border-right-width: 1px;
+      @include border_bottom_radius($radius * 2);
+      border-bottom-width: 1px;
+    }
+  }
+  @media screen and (min-width: $lapWidth) {
+    display: table;
+    li {
+      float: left;
+      min-width: $lineHeight * 5;
+      a {
+        border-bottom-width: 1px;
+        border-right-width: 0;
+      }
+      &:first-child a {
+        border-top-right-radius: 0;
+        @include border_left_radius($lineHeight);
+      }
+      &:last-child a {
+        border-bottom-left-radius: 0;
+        @include border_right_radius($lineHeight);
+        border-right-width: 1px;
+      }
     }
   }
 }

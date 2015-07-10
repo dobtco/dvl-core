@@ -34,6 +34,12 @@
   line-height: $navHeight;
 }
 
+// Bottom margin on mobile navbar buttons
+
+.navbar_content_secondary .button {
+  margin-bottom: $rhythm;
+}
+
 // Modifier for fixed navbar
 .navbar_sticky {
   position: absolute;
@@ -44,7 +50,7 @@
 
 .navbar_brand {
   float: left;
-  @include fontH3;
+  font-size: $fontSizeH3Mobile;
   @include font_smoothing;
   line-height: $navHeight;
   &:focus {
@@ -141,6 +147,7 @@
   // Margin between brand and items
   .navbar_brand {
     margin-right: $rhythm * 3;
+    font-size: $fontSizeH3;
   }
 
   .navbar_toggle {
@@ -189,7 +196,8 @@
   .navbar_content_secondary {
     float: right;
     .button {
-      margin-top: ($navHeight - ($rhythm * 4)) / 2;
+      @include marginTopCenter($navHeight, ($rhythm * 4));
+      margin-bottom: 0;
     }
     .dropdown_menu {
       right: 0;
