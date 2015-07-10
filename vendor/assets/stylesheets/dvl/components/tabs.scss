@@ -62,3 +62,9 @@
     }
   }
 }
+
+.tab_pane {
+  display: none;
+
+  &.active { display: block; }
+}

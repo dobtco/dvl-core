@@ -213,16 +213,24 @@ class Views::Home::Navigation < Views::Page
     docs 'Tabs', %{
       ul.tabs {
         li.active {
-          a 'The Form'
+          a 'The Form', href: '#form', 'data-toggle' => 'tab'
         }
         li {
-          a 'Ratings'
+          a 'Ratings', href: '#ratings', 'data-toggle' => 'tab'
         }
         li {
-          a 'Settings'
+          a 'Settings', href: '#settings', 'data-toggle' => 'tab'
         }
       }
-    }, hint: %{Add tabs below a <a href="/headers#heading 3">page subheader</a> to let users navigate between different sections of the same view.}.html_safe
+
+      div.tab_pane.form!.active 'form'
+      div.tab_pane.ratings! 'ratings'
+      div.tab_pane.settings! 'settings'
+    }, hint: %{
+      Add tabs below a <a href="/headers#heading 3">page subheader</a> to let users navigate between different sections
+      of the same view. You can optionally include <code>dvl/components/tabs.js</code> if you intend to switch the tab content
+      on the client-side.
+    }.squish.html_safe
 
   end
 end
