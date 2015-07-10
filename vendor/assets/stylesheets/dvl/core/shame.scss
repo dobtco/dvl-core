@@ -196,32 +196,16 @@
   visibility: hidden;
 }
 
-// Visually hidden, available for screen readers - http://cbrac.co/TUcUgH
-.visuallyhidden {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  margin: -1px;
-  padding: 0;
-  width: 1px;
-  height: 1px;
-  border: 0;
-  // Add keyboard navigation - http://cbrac.co/RR8gO6
-  &.focusable {
-    &:active,
-    &:focus {
-      position: static;
-      overflow: visible;
-      clip: auto;
-      margin: 0;
-      width: auto;
-      height: auto;
-    }
-  }
-}
-
 .cf {
   @include cf();
+}
+
+.visuallyhidden {
+  @include hidden();
+}
+
+.visuallyhidden.focusable {
+  @include hiddenFocus;
 }
 
 // Legacy styles to remove incrementally
