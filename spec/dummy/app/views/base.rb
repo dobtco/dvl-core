@@ -16,6 +16,7 @@ class Views::Base < Erector::Widget
     html {
       head {
         title 'DOBT Style Guide'
+        meta(name: 'viewport', content: 'width=device-width')
         stylesheets
         javascripts
       }

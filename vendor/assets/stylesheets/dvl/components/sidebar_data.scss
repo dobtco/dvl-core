@@ -42,18 +42,26 @@
 
 .sidebar_data_icon {
   float: left;
-  width: $rhythm * 5;
+  width: 1rem;
   text-align: center;
   i {
-    font-size: $rhythm * 5;
     line-height: 1;
     color: $darkerGray;
+  }
+  @media screen and (min-width: $lapWidth) {
+    width: $rhythm * 5;
+    i {
+      font-size: $rhythm * 5;
+    }
   }
 }
 
 .sidebar_data_text {
-  margin-left: $rhythm * 8;
+  margin-left: $lineHeight;
   line-height: $lineHeight;
+  @media screen and (min-width: $lapWidth) {
+    margin-left: $rhythm * 8;
+  }
 }
 
 .sidebar_data_label {

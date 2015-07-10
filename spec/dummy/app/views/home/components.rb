@@ -342,7 +342,7 @@ class Views::Home::Components < Views::Page
                   a 'Describe your GIS analysis experience', href: '#'
                 }
                 li {
-                  a 'Have you applied for this fellowship before, in previous years? How have you improved since the last time you applied for this fellowship?', href: '#'
+                  a 'Have you applied for this job before, in previous years? How have you improved since the last time you applied for this job in person?', href: '#'
                 }
               }
             }

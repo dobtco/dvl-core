@@ -215,6 +215,10 @@ hr {
 .dvlcore_button_array {
   .button {
     margin-right: $rhythm;
+    margin-bottom: $rhythm;
+    @media screen and (min-width: $lapWidth) {
+      margin-bottom: 0;
+    }
   }
   .dropdown:last-child .button {
     margin-right: 0;
@@ -238,15 +242,23 @@ hr {
   p {
     max-width: 25rem;
   }
-  form {
-    width: $lineHeight * 15;
-    @include cf;
-    input, button {
-      float: left;
-    }
-    input {
-      width: 60%;
-      margin-right: $rhythm;
+  button {
+    margin-top: $rhythm;
+  }
+  @media screen and (min-width: $lapWidth) {
+    form {
+      width: $lineHeight * 15;
+      @include cf;
+      input, button {
+        float: left;
+      }
+      input {
+        width: 60%;
+        margin-right: $rhythm;
+      }
+      button {
+        margin-top: 0;
+      }
     }
   }
 }

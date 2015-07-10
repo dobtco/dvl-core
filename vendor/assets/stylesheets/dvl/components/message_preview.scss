@@ -39,7 +39,10 @@
 
 .message_preview header,
 .message_preview_body {
-  padding: $lineHeight ($rhythm * 4);
+  padding: ($rhythm * 2) ($rhythm * 3);
+  @media screen and (min-width: $lapWidth) {
+    padding: $lineHeight ($rhythm * 4);
+  }
 }
 
 @media screen and (min-width: $lapWidth) {

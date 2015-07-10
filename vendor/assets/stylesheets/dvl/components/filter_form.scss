@@ -1,15 +1,24 @@
 .filter_form {
   display: inline-block;
   position: relative;
-  .styled_select_wrapper,
-  .button {
-    vertical-align: top;
-  }
+  .button,
   .styled_select_wrapper {
-    margin-left: $rhythm;
+    margin-top: $rhythm;
+    display: block;
   }
-  .button {
-    margin-left: $rhythm;
+  @media screen and (min-width: $lapWidth) {
+    .styled_select_wrapper,
+    .button {
+      display: inline-block;
+      vertical-align: top;
+    }
+    .styled_select_wrapper {
+      margin-left: $rhythm;
+    }
+    .button {
+      margin-top: 0;
+      margin-left: $rhythm;
+    }
   }
   // Contains query with close button
   &.with_query {

@@ -37,7 +37,10 @@ $footerBackground: #080F1F !default;
     letter-spacing: 0.05rem;
   }
   dd {
-    margin: 0 0 0 2rem;
+    display: block;
+    @media screen and (min-width: $lapWidth) {
+      margin: 0 0 0 2rem;
+    }
   }
 }
 

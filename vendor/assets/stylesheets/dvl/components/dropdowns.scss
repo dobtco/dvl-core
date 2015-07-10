@@ -232,10 +232,10 @@
       content: '';
       z-index: 2;
       height: $lineHeight;
-      right: $rhythm * 2;
+      right: 0;
       bottom: $rhythm;
-      width: 20%;
-      background: linear-gradient(to right, rgba($white,0), $white 80%);
+      width: $rhythm * 6;
+      background: linear-gradient(to right, rgba($white,0), $white 64%);
     }
     &:hover,
     &:focus,
@@ -243,7 +243,7 @@
       text-decoration: none;
       background: $lightestGray;
       &:after {
-        background: linear-gradient(to right, rgba($lightestGray,0), $lightestGray 80%);
+        background: linear-gradient(to right, rgba($lightestGray,0), $lightestGray 64%);
       }
     }
   }
@@ -257,7 +257,7 @@
     background-color: $linkColor;
     color: $white;
     &:after {
-      background: linear-gradient(to right, rgba($linkColor,0), $linkColor 80%);
+      background: linear-gradient(to right, rgba($linkColor,0), $linkColor 64%);
     }
   }
 }

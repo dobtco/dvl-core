@@ -1,5 +1,8 @@
 .dropdown_menu_rich {
-  min-width: 22rem;
+  width: 100%;
+  @media screen and (min-width: 25rem) {
+    min-width: 22rem;
+  }
   li {
     a {
       white-space: normal;
