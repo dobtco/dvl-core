@@ -1,25 +1,55 @@
 // Buttons
 
-@mixin dark_button_color($base_color, $font_color: #fff) {
-  background: $base_color;
-  color: $font_color;
-  border: 1px solid darken($base_color, 5%);
-  &:hover,
-  &:focus {
-    background: darken($base_color, 5%);
-    color: $font_color;
+@mixin button_color($bg) {
+  background: $bg;
+  border: 1px solid darken($bg, 10%);
+  @if saturation($bg) > 40% {
+    color: $white;
+  } @else if lightness($bg) > 49% {
+    color: darken($bg,50%);
+  } @else if saturation($bg) == 0 {
+    color: $darkestGray;
+  } @else {
+    color: $white;
   }
-}
-
-@mixin light_button_color($base_color, $font_color: #333) {
-  background: $base_color;
-  font-weight: $weightBold;
-  border: 1px solid darken($base_color, 5%);
-  color: $font_color;
   &:hover,
   &:focus {
-    background: darken($base_color, 3%);
-    color: $font_color;
+    background: darken($bg, 5%);
+    @if saturation($bg) > 40% {
+      color: $white;
+    } @else if lightness($bg) > 49% {
+      color: darken($bg,50%);
+    } @else if saturation($bg) == 0 {
+      color: $darkestGray;
+    } @else {
+      color: $white;
+    }
+    &.disabled,
+    &[disabled] {
+      background: $bg;
+    }
+  }
+  &:active {
+    box-shadow: inset 0 1px 2px darken($bg,20%);
+  }
+  &.disabled,
+  &.disabled:hover,
+  &.disabled:focus,
+  &.disabled:active,
+  &[disabled],
+  &[disabled]:hover
+  &[disabled]:focus,
+  &[disabled]:active {
+    background: $bg;
+    @if saturation($bg) > 40% {
+      color: rgba(#fff,0.6);
+    } @else if lightness($bg) > 49% {
+      color: rgba(darken($bg,50%),0.6);
+    } @else if saturation($bg) == 0 {
+      color: rgba($darkestGray,0.6);
+    } @else {
+      color: rgba(#fff,0.6);
+    }
   }
 }
 
@@ -27,22 +57,26 @@
 .button {
   display: inline-block;
   margin: 0;
-  padding: (($inputHeight - 1.5rem) / 2) 1rem;
-  border: 1px solid $lightGray;
-  background: $lightGray;
-  color: $darkestGray;
+  // Button height should equal $inputHeight
+  padding: ((($inputHeight - $lineHeight) / 2) - 0.0625rem) ($rhythm * 2);
+  @include button_color($lightGray);
   text-align: center;
   text-decoration: none;
-  font-size: 1rem;
   cursor: pointer;
   border-radius: $radius;
-  white-space: nowrap;
-  line-height: normal;
+  @include ellipses;
+  line-height: $lineHeight;
+  border-color: $darkGray;
   &.uppercase {
     border: 0 !important;
     border-radius: 0;
     text-transform: uppercase;
-    font-size: 0.85rem;
+    font-size: $fontSmallest;
+  }
+  &.subtle {
+    background: $lightestGray;
+    border-color: $lighterGray;
+    color: $darkerGray;
   }
   &.arrow_l:before {
     content: "\f0d9";
@@ -62,12 +96,11 @@
   // Dropdown toggle button
   &.toggle {
     border: 1px solid $darkGray;
-
     &:after {
       content: "\f0d7";
       font-family: 'FontAwesome';
-      margin-left: 0.5rem;
-      color: $darkerGray;
+      margin-left: $rhythm;
+      opacity: 0.7;
     }
 
     &.info, &.primary {
@@ -86,99 +119,66 @@
       display: none;
     }
   }
-  // #todo find an example of button.primary
+  // Examples
   &.primary {
-    @include dark_button_color(#e75845);
+    @include button_color($secondaryColor);
   }
   &.success {
-    @include dark_button_color($successColor);
+    @include button_color($successColor);
   }
   &.error {
-    @include dark_button_color($errorColor);
+    @include button_color($errorColor);
   }
   &.info {
-    @include dark_button_color($darkBlue);
+    @include button_color($primaryColor);
   }
   &.white {
-    @include light_button_color(#fff);
+    @include button_color($white);
   }
   &.darker_gray {
-    @include light_button_color(#ccc);
+    @include button_color($gray);
   }
   &.light_gray {
-    @include light_button_color(#eeeff0, $blueGray);
+    @include button_color($lightestGray);
   }
   &.gray {
-    @include light_button_color($lighterGray);
+    @include button_color($lighterGray);
   }
   &:hover,
   &:focus {
-    background: $gray;
     text-decoration: none;
-  }
-  &:active {
-    box-shadow: inset 0 2px 3px hsla(0, 0%, 0%, 0.2);
   }
   &:focus {
     outline: 0;
   }
+
   // Sizes
-  // #todo refactor and catalog these sizes
-  &.mini {
-    padding: 0.238rem 0.563rem;
-    font-size: 0.8125rem;
-  }
   &.small {
-    padding: 0.317rem 0.75rem;
-    font-size: 0.875rem;
+    padding: $rhythm / 2 $rhythm * 2;
+    font-size: $fontSmall;
   }
-  &.large,
-  &.block {
-    padding: 1rem 1.333rem;
-    font-size: 1.125rem;
-    line-height: 1.333;
+
+  &.mini {
+    padding: $rhythm / 2 $rhythm;
+    font-size: $fontSmaller;
+    line-height: $rhythm * 2;
   }
+
   &.block {
     display: block;
   }
   // States
-  &[disabled],
   &.disabled,
+  &.disabled:hover,
   &.disabled:focus,
-  &.disabled:active {
-    box-shadow: none !important;
-    text-shadow: none !important;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=65)";
+  &.disabled:active,
+  &[disabled],
+  &[disabled]:hover
+  &[disabled]:focus {
+    cursor: not-allowed;
+    box-shadow: none;
+    text-shadow: none;
     opacity: 0.65;
-    cursor: default !important;
-  }
-}
-
-.button_uppercase {
-  text-transform: uppercase;
-  color: $darkGray;
-  font-weight: $weightBold;
-  font-size: 0.85rem;
-  letter-spacing: 0.04rem;
-  &:hover {
-    text-decoration: none;
-    color: $darkerGray;
-  }
-}
-
-// Link-styled buttons
-
-.button_link {
-  font-size: inherit;
-  background: none;
-  padding: 0;
-  line-height: inherit;
-  border: 0;
-  color: $linkColor;
-  &:focus {
-    outline: 0;
-  }
-  &:hover {
-    text-decoration: underline;
+    cursor: default;
   }
 }

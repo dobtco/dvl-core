@@ -1,13 +1,13 @@
 $footerBackground: #080F1F !default;
 
-.footer {
+.public_footer {
   padding-top: $lineHeight * 2;
   background: $footerBackground;
   ul {
     list-style: none;
     padding-left: 2rem;
     a {
-      color: #fff;
+      color: $white;
       text-decoration: none;
     }
     a:hover,
@@ -37,22 +37,20 @@ $footerBackground: #080F1F !default;
     letter-spacing: 0.05rem;
   }
   dd {
-    margin: 0 0 0 2rem;
+    display: block;
+    @media screen and (min-width: $lapWidth) {
+      margin: 0 0 0 2rem;
+    }
   }
 }
 
-.footer_inner {
-  @include ninety_wrapper;
-  max-width: 50rem;
-}
-
-.footer_links {
+.public_footer_links {
   li {
     margin-bottom: $lineHeight;
   }
 }
 
-.footer_status {
+.public_footer_status {
   position: relative;
   &:before {
     content: "";
@@ -75,7 +73,7 @@ $footerBackground: #080F1F !default;
   }
 }
 
-.footer_contact {
+.public_footer_contact {
   li {
     position: relative;
     margin-bottom: $lineHeight;
@@ -93,32 +91,36 @@ $footerBackground: #080F1F !default;
   }
 }
 
-.footer_phone:before {
+.public_footer_phone:before {
   content: "\f095";
   top: 0.125rem;
 }
 
-.footer_email:before {
+.public_footer_email:before {
   content: "\f003";
 }
 
-.footer_fb:before {
+.public_footer_fb:before {
   content: "\f09a";
 }
 
-.footer_gplus:before {
+.public_footer_gplus:before {
   content: "\f0d5";
 }
 
-.footer_twitter:before {
+.public_footer_twitter:before {
   content: "\f099";
 }
 
 .newsletter_form {
   margin-bottom: $lineHeight * 2;
+  margin-left: -1rem;
+  .item {
+    padding-left: 1rem;
+  }
   p,
   strong {
-    color: #fff;
+    color: $white;
   }
   p {
     margin-bottom: $lineHeight;
@@ -141,7 +143,7 @@ input.newsletter_email {
   border: 0;
   width: 100%;
   padding: ($lineHeight * 0.25) 1rem;
-  color: #444;
+  color: $darkestGray;
 }
 
 .newsletter_subscribe {
@@ -151,7 +153,7 @@ input.newsletter_email {
 }
 
 @media screen and (min-width: 640px) {
-  .footer {
+  .public_footer {
     padding: ($lineHeight * 3) 0;
     ul {
       padding-left: 0;
@@ -162,7 +164,7 @@ input.newsletter_email {
     margin-top: 0;
   }
 
-  .footer_status {
+  .public_footer_status {
     &:before {
       left: -1rem;
     }

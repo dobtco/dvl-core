@@ -31,202 +31,122 @@
 //
 // -Josh
 
+
+.margin_tn {
+  margin-top: ($rhythm * 3) !important;
+}
+
+.margin_rn {
+  margin-right: ($rhythm * 3) !important;
+}
+
+.margin_bn {
+  margin-bottom: ($rhythm * 3) !important;
+}
+
+.margin_ln {
+  margin-left: ($rhythm * 3) !important;
+}
+
+.margin_th {
+  margin-top: ($rhythm * 2) !important;
+}
+
+.margin_rh {
+  margin-right: ($rhythm * 2) !important;
+}
+
+.margin_bh {
+  margin-bottom: ($rhythm * 2) !important;
+}
+
+.margin_lh {
+  margin-left: ($rhythm * 2) !important;
+}
+
+.margin_tq {
+  margin-top: $rhythm !important;
+}
+
+.margin_rq {
+  margin-right: $rhythm !important;
+}
+
+.margin_bq {
+  margin-bottom: $rhythm !important;
+}
+
+.margin_lq {
+  margin-left: $rhythm !important;
+}
+
+.margin_td {
+  margin-top: ($rhythm * 4) !important;
+}
+
+.margin_rd {
+  margin-right: ($rhythm * 4) !important;
+}
+
+.margin_bd {
+  margin-bottom: ($rhythm * 4) !important;
+}
+
+.margin_ld {
+  margin-left: ($rhythm * 4) !important;
+}
+
+.margin_none {
+  margin: 0 !important;
+}
+
+// Font sizes
+
+.font_smaller,
+.font_small {
+  color: inherit;
+  font-weight: inherit;
+}
+
+.font_smaller {
+  font-size: $fontSmall !important;
+}
+
+.font_small {
+  font-size: $fontSmaller !important;
+}
+
+// Floats
+
+.align_left   {
+  float: left !important;
+}
+
+.align_right {
+  float: right !important;
+}
+
+
+// Text alignment
+
+.text_left {
+  text-align: left !important;
+}
+
+.text_center {
+  text-align: center !important;
+}
+
+.text_right {
+  text-align: right !important;
+}
+
 @mixin build_helpers($x: "") {
-
-  /* Alignment */
-  .#{$x}align_left   {
-    float: left !important;
-  }
-
-  .#{$x}align_center {
-    float: none;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .#{$x}align_right {
-    float: right !important;
-  }
-
-  .#{$x}align_none {
-    float: none !important;
-  }
-
-  .#{$x}margin_tn {
-    margin-top: 1rem !important;
-  }
-
-  .#{$x}margin_rn {
-    margin-right: 1rem !important;
-  }
-
-  .#{$x}margin_bn {
-    margin-bottom: 1rem !important;
-  }
-
-  .#{$x}margin_ln {
-    margin-left: 1rem !important;
-  }
-
-  .#{$x}margin_th {
-    margin-top: 0.5rem !important;
-  }
-
-  .#{$x}margin_rh {
-    margin-right: 0.5rem !important;
-  }
-
-  .#{$x}margin_bh {
-    margin-bottom: 0.5rem !important;
-  }
-
-  .#{$x}margin_lh {
-    margin-left: 0.5rem !important;
-  }
-
-  .#{$x}margin_tq {
-    margin-top: 0.25rem !important;
-  }
-
-  .#{$x}margin_rq {
-    margin-right: 0.25rem !important;
-  }
-
-  .#{$x}margin_bq {
-    margin-bottom: 0.25rem !important;
-  }
-
-  .#{$x}margin_lq {
-    margin-left: 0.25rem !important;
-  }
-
-  .#{$x}margin_td {
-    margin-top: 2rem !important;
-  }
-
-  .#{$x}margin_rd {
-    margin-right: 2rem !important;
-  }
-
-  .#{$x}margin_bd {
-    margin-bottom: 2rem !important;
-  }
-
-  .#{$x}margin_ld {
-    margin-left: 2rem !important;
-  }
-
-  .#{$x}margin_none {
-    margin: 0 !important;
-  }
-
-  /* Paddings */
-
-  .#{$x}padding_top {
-    padding-top: 1rem !important;
-  }
-
-  .#{$x}padding_right  {
-    padding-right: 1rem !important;
-  }
-
-  .#{$x}padding_bottom {
-    padding-bottom: 1rem !important;
-  }
-
-  .#{$x}padding_left {
-    padding-left: 1rem !important;
-  }
-
-  .#{$x}padding_none {
-    padding: 0 !important;
-  }
-
-  /* Text alignment */
-  .#{$x}text_left {
-    text-align: left !important;
-  }
-
-  .#{$x}text_center {
-    text-align: center !important;
-  }
-
-  .#{$x}text_right {
-    text-align: right !important;
-  }
-
-  .#{$x}text_justify {
-    text-align: justify !important;
-  }
-
-  /* Font sizing */
-  .#{$x}font_huge,
-  .#{$x}font_xxl,
-  .#{$x}font_xl,
-  .#{$x}font_large,
-  .#{$x}font_medium,
-  .#{$x}font_normal,
-  .#{$x}font_smaller,
-  .#{$x}font_small {
-    color: inherit;
-    font-weight: inherit;
-  }
-
-  .#{$x}font_huge,
-  .#{$x}font_xxl {
-    line-height: 1.333 !important;
-  }
-
-  .#{$x}font_huge   {
-    font-size: 4.209rem !important;
-  }
-
-  .#{$x}font_xxl  {
-    font-size: 3.157rem !important;
-  }
-
-  .#{$x}font_xl   {
-    font-size: 2.369rem !important;
-  }
-
-  .#{$x}font_large  {
-    font-size: 1.777rem !important;
-  }
-
-  .#{$x}font_medium {
-    font-size: 1.333rem !important;
-  }
-
-  .#{$x}font_normal {
-    font-size: 1rem !important;
-  }
-
-  .#{$x}font_smaller {
-    font-size: 0.9rem !important;
-  }
-
-  .#{$x}font_small {
-    font-size: 0.8rem !important;
-  }
-
-  /* Font styles */
-  .#{$x}font_thin {
-    font-weight: $weightLight;
-  }
-
-  .#{$x}weight_normal {
-    font-weight: $weightNormal;
-  }
-
-  .#{$x}font_muted {
-    color: $darkerGray;
-  }
-
   @if $x == "" {
-      .desk_show, .lap_show, .desk_show_i, .lap_show_i, .desk_show_ib, .lap_show_ib {
-        display: none !important;
-      }
-    } @else {
+    .desk_show, .lap_show, .desk_show_i, .lap_show_i, .desk_show_ib, .lap_show_ib {
+      display: none !important;
+    }
+  } @else {
     .#{$x}hide {
       display: none !important;
     }
@@ -260,7 +180,8 @@
 }
 
 .none {
-  color: $darkGray;
+  color: $darkerGray;
+  @include font_smoothing;
 }
 .yes {
   color: $successColor;
@@ -301,4 +222,120 @@
 
 .cf {
   @include cf();
+}
+
+// Legacy styles to remove incrementally
+
+a.smallbold {
+  font-weight: $weightBold;
+  font-size: $fontSmaller;
+}
+
+a.muted {
+  color: $darkerGray;
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// Replace this with an icon-specific class
+// or remove it altogether, recommend the use of smaller icons instead
+a.subtle_icon {
+  color: $darkerGray;
+  text-decoration: none;
+  &:hover {
+    color: darken($darkerGray,5%);
+  }
+}
+
+// Convert this to a fieldset
+
+.form_item_two_inputs {
+  input {
+    width: 48.75%;
+    display: inline-block;
+    &:first-child {
+      margin-right: 2.5%;
+    }
+  }
+}
+
+// Remove .form_actions class from other repos
+
+// 2. Make .pagination_center the default, add .pagination_left if necessary
+
+// The most common modifier, used underneath tables of results and the like
+.pagination_centered {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+// Convert checkbox and radio inputs to fieldsets
+
+// Change all .dropdown_headers, they're not semantic.
+// Use .dropdown_menu h3 instead
+
+.dropdown_header {
+  background: $lighterGray;
+  color: $darkestGray;
+  padding: $rhythm $rhythm * 2;
+  font-size: $fontSmaller;
+  text-transform: uppercase;
+  letter-spacing: $letterspaceSmaller;
+  &:first-child {
+    @include border_top_radius($radius - 1);
+  }
+}
+
+// Remove this, refactor .nav_dropdown so that it's not needed
+
+.drop_sng {
+  @include ellipses;
+}
+
+// Keep and rename to .drop_unread
+
+.drop_important {
+  font-weight: $weightBold;
+}
+
+// Remove the need for this
+
+.dropdown_nav {
+  li a,
+  .drop_sng {
+    padding: 0 1.5rem;
+    line-height: 3rem;
+    height: 3rem;
+    @include cf;
+  }
+  .all {
+    .drop_rt_item,
+    .drop_rt_arrow {
+      width: auto;
+      float: none;
+    }
+    .drop_rt_item {
+      max-width: 87%;
+    }
+    .drop_rt_arrow {
+      max-width: 10%;
+    }
+  }
+}
+
+// Switch to filtering sidebar
+
+.sidebar_nav.condensed > li {
+  > a,
+  &.content {
+    padding-top: $rhythm;
+    padding-bottom: $rhythm;
+    padding-left: $rhythm * 2;
+  }
+  .badge {
+    top: $rhythm;
+    right: $rhythm * 2;
+  }
 }

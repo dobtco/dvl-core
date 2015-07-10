@@ -1,439 +1,126 @@
-class Views::Home::Index < Views::Base
+class Views::Home::Index < Views::Home
   def main
-    docs 'Code', %{
-      pre %{<p>This is some awesome code</p>}
-      p %{This is a paragraph with <code>code</code>.}.html_safe
+    h2 'Base Styles'
+
+
+    h3 'Sizes and Spacing'
+
+    p %{Our typographical <em>vertical rhythm</em> is 8px. We use a multiple of that number (24px) to set the line height of our text.}.html_safe
+
+    div.docs_rhythm {
+      h2 'The Department of Better Technology'
+      p 'We are dedicated to making great software that helps governments and non-profits better serve their communities.'
+      form {
+        input(type: 'text', placeholder: 'Enter your email address')
+        button.button.info 'Subscribe'
+      }
     }
 
-    docs 'Dropdowns', %{
-      div.dropdown {
-        a "Click me <i class='fa fa-caret-down'></i>".html_safe,
-          'data-toggle' => 'dropdown',
-          href: '#'
-        div.dropdown_menu(role: 'menu') {
-          ul.dropdown_body {
-            li {
-              a 'Hey! This is some really long dropdown text, yo.', href: '#'
-            }
-            li.dropdown_menu_sub_trigger.active {
-              a 'View more...', href: '#'
-            }
-            li {
-              ul.dropdown_menu_sub {
-                li.active {
-                  a 'This is one option', href: '#'
-                }
-                li {
-                  a 'This is another', href: '#'
-                }
-                li {
-                  a 'This is a third option', href: '#'
-                }
-              }
-            }
-            li {
-              a(href: '#') {
-                i(class: 'fa fa-star')
-                text ' With an icon!'
-              }
-            }
-            li {
-              a 'No!', href: '#'
-            }
-            li.dropdown_menu_sub_trigger {
-              a 'View more...', href: '#'
-            }
-            li {
-              ul.dropdown_menu_sub {
-                li {
-                  a 'This is one option with a whole lot of content that is going to overflow ' +
-                    'onto another line and get all crazy and such, what a shame it is that we ' +
-                    'have to deal with crap like this.', href: '#'
-                }
-                li {
-                  a 'This is another', href: '#'
-                }
-              }
-            }
-          }
-        }
+    p %{Always use the <code>$rhythm</code> or <code>$lineHeight</code> variables to set dimensions and spacing for UI elements.}.html_safe
+
+    hr
+
+    guide '',
+      %{<strong>Do</strong> use multiples of <code>$rhythm</code> and <code>$lineHeight</code> to specify the dimensions and padding of an item.}.html_safe,
+      '',
+      %{<strong>Don&#39;t</strong> use <code>px</code>, <code>em</code> or <code>rem</code> units to specify spacing or sizes.}.html_safe
+
+    guide '',
+      %{<strong>Do</strong> multiply the vertical rhythm by whole numbers when styling the dimensions of new UI elements.}.html_safe,
+      '',
+      %{<strong>Don&#39;t</strong> divide <code>$rhythm</code> or <code>$lineHeight</code> into fractions, unless you are vertically centering text within its container.}.html_safe
+
+    docs 'Headings', %{
+      div.dvlcore_headings {
+        h1 'Heading 1 64/80px'
+        h2 'Heading 2 40/56px'
+        h3 'Heading 3 23/32px'
+        h4 'Heading 4 16/24px'
+        h5 'Heading 5 13/24px'
       }
-
-      br
-      br
-
-      div.dropdown {
-        a.button.toggle(
-          'Click me',
-          'data-toggle' => 'dropdown',
-          href: '#'
-        )
-
-        div.dropdown_menu(role: 'menu') {
-          ul.dropdown_body {
-            li {
-              a 'This was triggered by a button', href: '#'
-            }
-          }
-        }
-      }
-
-      br
-      br
-
-      div.dropdown {
-        a.button.small.toggle.info 'Notifications',
-                          'data-toggle' => 'dropdown',
-                          href: '#'
-        div.dropdown_menu(role: 'menu') {
-          ul.dropdown_body {
-            li.drop_important {
-              a.cf(href: '#') {
-                span.drop_master_multiline { span.drop_master_color(style: 'background-color: red;') }
-                span.drop_detail_multiline 'Important! You were sent a message!!!'
-              }
-            }
-            li {
-              a.cf(href: '#') {
-                span.drop_master_multiline { img.drop_master_avatar(src: '//dobt-captured.s3.amazonaws.com/ajb/dummy_av_square.png') }
-                span.drop_detail_multiline 'A file was added to your project'
-              }
-            }
-            li.active {
-              a.cf(href: '#') {
-                span.drop_master_multiline { i(class: 'fa fa-file-text') }
-                span.drop_detail_multiline 'This is an active item'
-              }
-            }
-          }
-        }
-      }
-
-      br
-      br
-
-      div.dropdown {
-        a.button.toggle.primary 'Loading state',
-                          'data-toggle' => 'dropdown',
-                          href: '#'
-        div.dropdown_menu(role: 'menu') {
-          ul.dropdown_body {
-            li.dropdown_loading {
-              span {
-                i(class: 'fa fa-refresh fa-spin dropdown_loading_icon')
-              }
-            }
-          }
-        }
-      }
-
-      br
-      br
-
-      div.dropdown {
-        a "Right item <i class='fa fa-caret-down'></i>".html_safe,
-                          'data-toggle' => 'dropdown',
-                          href: '#'
-        div.dropdown_menu(role: 'menu') {
-          ul.dropdown_body {
-            li {
-              a {
-                span.drop_rt_item 'This is an item!'
-                span.drop_rt_arrow { i(class: 'fa fa-external-link') }
-              }
-            }
-            li {
-              a {
-                span.drop_rt_item 'This is another!'
-                span.drop_rt_arrow { i(class: 'fa fa-external-link') }
-              }
-            }
-          }
-        }
-      }
-
-      br
-
-      div.dropdown {
-        a.dropdown_toggle_button.gray 'Dropdown with sections',
-                          'data-toggle' => 'dropdown',
-                          href: '#'
-        div.dropdown_menu(role: 'menu') {
-          ul.dropdown_body {
-            li.dropdown_header 'Section One'
-            li { a 'Link One' }
-            li { a 'Link Two' }
-            li.dropdown_header 'Section Two'
-            li { a 'Link Three' }
-            li { a 'Link Four' }
-          }
-        }
-      }
-    }, hint: 'Add the .toggle modifier to buttons to give them a border and a caret.'
-
-    docs 'Labels', %{
-      span.label.label_error 'Error'
-      text ' '
-      span.label.label_success 'Success'
-      text ' '
-      span.label.label_info 'Info'
-      text ' '
-      span.label.label_warning 'Warning'
     }
 
-    docs 'Alerts', %{
-      div.alert {
-        span.alert_message 'This project is <strong>not yet posted</strong>.'.html_safe
-      }
+    docs 'Paragraph-Level Text', %{
+      p 'Our default text styles are 16/24px. You should be styling most text with this default.'.html_safe
 
-      div.alert {
-        span.alert_message 'This project is a draft.'
+      blockquote 'Use blockquotes in blog posts, support documentation, and other prose writing when quoting another source. They are usually unnecessary in interface design.'
 
-        span.alert_buttons {
-          a.button.primary 'Go Live!', href: '#'
-        }
-      }
+      p %{Text with inline code, or developer-oriented data like API keys, should be wrapped in a <code>&lt;code&gt;</code> tag.}.html_safe
 
-      div.alert {
-        span.alert_message 'Please choose a new owner.'
+      pre %{## Code which wraps to multiple lines should be
+## placed in a <pre> tag.}
 
-        form {
-          select {
-            option 'Person One'
-            option 'Person Two'
-          }
-          text ' '
-          button.button.info 'Submit'
-        }
-      }
+      p %{Use the <code>&lt;sub&gt;</code> and <code>&lt;sup&gt;</code> tags to style superscript and subscript text. For example: &ldquo;The 8<sup>th</sup> molecule of H<sub>2</sub>O.&rdquo;}.html_safe
 
-      div.alert {
-        span.alert_message ('This is a really long alert message. ' * 5)
-        span.alert_buttons {
-          a.button.primary 'Go Live!', href: '#'
-        }
-      }
-    }, full: true
-
-    docs 'Links', %{
-      a.uppercase 'Uppercase'
-      text ' '
-      a.smallbold 'Smallbold'
+      p %{<del>Redacted text</del> should be styled with <code>&lt;del&gt;</code> tags.}.html_safe
     }
+    h3 'Small Text Sizes'
+
+    p.docs_fontsmall %{<code>$fontSmall</code>: Small text should be used for displaying tertiary information.}.html_safe
+    p.docs_fontsmaller %{<code>$fontSmaller</code>: Smaller text is great for explaining primary and secondary actions.}.html_safe
+    p.docs_fontsmallest %{<code>$fontSmallest</code>: Use the smallest text size sparingly.}.html_safe
+
+    hr
+
+    guide %{<p class="docs_fontsmaller">To enable electronic signatures for your project, click &ldquo;Edit project&rdquo; and select &ldquo;Responses&rdquo; from the Project Checklist. Then, check the &ldquo;Require signatures for responses&rdquo; box under &ldquo;Data collection.&rdquo;</p>}.html_safe,
+      %{<strong>Do</strong> use multiple lines of smaller text to provide UI microcopy or tertiary information.}.html_safe,
+      %{<h2>What happens if a respondent makes changes?</h2>}.html_safe,
+      %{<strong>Don&#39;t</strong> use multiple lines of larger text. Either use the default font size, or truncate a single line of larger text with ellipses.}.html_safe
+
+    guide %{<h2>Headline</h2> <p>Main Content</p> <p class="microcopy">Explanation</p>}.html_safe,
+      %{<strong>Do</strong> use header styles, smaller text sizes, and <a href="/components#alerts">alerts</a> to establish hierarchy and call out bits of text.}.html_safe,
+      %{<p><strong>We are dedicated to making great software that helps governments and non-profits better serve their communities.</strong></p> <p class="microcopy" style="background-color: red;">Explanation goes here.</p>}.html_safe,
+      %{<strong>Don&#39;t</strong> use boldface text for long sentences, or color the text to emphasize an action. This negatively impacts legibility.}.html_safe
 
     docs 'Lists', %{
-      ul {
-        li 'This'
-        li 'is a'
-        li 'list!'
+      ul.formatted_list {
+        li 'Item 1'
+        li 'Item 2'
+        li 'Item 3'
+        li 'Item 4'
+        li 'Item 5'
+        li 'Item 6'
+        li 'Item 7'
+      }
+
+      ol.formatted_list {
+        li 'Item 1'
+        li 'Item 2'
+        li 'Item 3'
+        li 'Item 4'
+        li 'Item 5'
+        li 'Item 6'
+        li 'Item 7'
+      }
+    }, hint: %{By default, lists are unstyled. Use the <code>.formatted_list</code> class to create bulleted and numbered lists.}.html_safe
+
+    docs 'Definition Lists', %{
+      dl {
+        dt 'Name'
+        dd 'Barack Obama'
+        dt 'Email Address'
+        dd 'barack.obama@whitehouse.gov'
+      }
+    }, hint: 'Use definition lists to format labeled lists and metadata, like the contents of a form submissions or the sender information in an email.'
+
+    docs 'Images and Captions', %{
+      figure {
+        img(src: 'http://i.imgur.com/lAaFALg.jpg', alt: 'DOBT team photo')
+        text %{<figcaption>Did we mention we're hiring?</figcaption>}.html_safe
       }
     }
 
-    docs 'Modals', %{
-      a 'Open modal', 'data-toggle' => 'modal', href: '#modal'
-      widget Dvl::Components::Modal.new(title: 'Awesome modal', id: 'modal') do
-        div.modal_body {
-          text 'This is the modal body!'
+    h3 'Links'
 
-          br br
+    docs 'Default', %{
+      p %{DOBT believes in the power of open data. It encourages transparency in government, and sometimes, <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">it even saves lives</a>.}.html_safe
+    }, sub: ''
 
-          div.dropdown {
-            a.gray 'Click me',
-                              'data-toggle' => 'dropdown',
-                              href: '#'
-            div.dropdown_menu(role: 'menu') {
-              ul.dropdown_body {
-                li {
-                  a 'Item 1', href: '#'
-                }
-              }
-            }
-          }
-
-          br br
-
-          a 'This is a tooltip link',
-            'data-toggle' => 'tooltip',
-            title: 'Tooltip',
-            href: '#'
-        }
-
-      end
-
-      br
-
-      a 'Confirmation modal', 'data-toggle' => 'modal', href: '#confirmModal'
-      widget Dvl::Components::Modal.new(
-        title: 'Are you sure?',
-        id: 'confirmModal',
-        html_opts: { class: 'modal_confirm' }
-      ) do
-        div.modal_body {
-          text 'Are you sure?'
-        }
-        div.modal_footer {
-          span.modal_footer_link {
-            text 'Or '
-            a 'do another thing'
-          }
-          a.button.error 'OK'
-        }
-      end
-    }
-
-    docs 'Pagination', %{
-      div.pagination {
-        ul {
-          li { a(href: '#'){text '‹'}}
-          li { a(href: '#'){text '1'}}
-          li { span '2' }
-          li { a(href: '#'){text '3'}}
-          li { a(href: '#'){text '›'}}
-        }
+    docs 'Button links', %{
+      p {
+        button.button_link 'Example'
       }
+    }, hint: %{Add the <code>.button_link</code> class to any <code>&lt;button&gt;</code> tag to make it appear like a link.}.html_safe, sub: ''
 
-      div.pagination.pagination_centered {
-        ul {
-          li { a(href: '#'){text '‹'}}
-          li { a(href: '#'){text '11'}}
-          li { span '12' }
-          li { a(href: '#'){text '13'}}
-          li { a(href: '#'){text '›'}}
-        }
-      }
-
-      hr
-
-      div.pagination {
-        span.pagination_status "Showing <strong>1</strong> of <strong>123</strong>".html_safe
-
-        ul {
-          li { span{text '‹'}}
-          li { a(href: '#'){text '›'}}
-        }
-      }
-    }
-
-    docs 'Progress', %{
-      div.progress {
-        div.progress_inner(style: "width: 30%") {
-          text '30%'
-        }
-      }
-    }
-
-    docs 'Sidebar Data List', %{
-      div.sidebar_box {
-        ul.sidebar_data {
-          li {
-            div.sidebar_data_icon {
-              i '✓'
-            }
-            div.sidebar_data_text {
-              div.sidebar_data_label 'Label'
-              div.sidebar_data_value 'Value'
-              div.sidebar_data_details 'Details'
-            }
-          }
-          li {
-            div.sidebar_data_icon {
-              i '✓'
-            }
-            div.sidebar_data_text {
-              div.sidebar_data_label 'Dropdowns'
-              div.sidebar_data_value {
-                simple_form_for :foo do |f|
-                  f.input_field :blah, as: :select, collection: ['Bar'], selected: 'Bar', 'data-width' => '100%'
-                  br
-                  f.input_field :blah, as: :dropdown_select, collection: [['Bar', 'Bar', 'Bar']], selected: 'Bar', 'data-width' => '100%'
-                end
-              }
-            }
-          }
-        }
-      }
-    }
-
-    docs 'Sidebar Navigation', %{
-      ul.sidebar_nav {
-        li.header {
-          text 'Header Item'
-          img(src: '//dobt-misc.s3.amazonaws.com/headshots/adam.jpg')
-        }
-        li.active {
-          a {
-            text 'Item 1'
-            span.badge '500'
-          }
-        }
-        li {
-          a {
-            text 'Item 2'
-            span.badge '0'
-          }
-        }
-        li {
-          a {
-            text 'Item 3: an example of a very long item which wraps to multiple lines.'
-            span.badge '400'
-          }
-        }
-        li {
-          a {
-            div.label "Yoooooo"
-            span.badge "500"
-          }
-        }
-      }
-    }
-
-    docs 'Tables', %{
-      table {
-        thead {
-          tr {
-            th 'ID'
-            th 'Name'
-          }
-        }
-        tbody {
-          tr {
-            td '1'
-            td 'Bob'
-          }
-          tr {
-            td '2'
-            td 'Job'
-          }
-        }
-      }
-    }
-
-    docs 'Tooltips', %{
-      %w(top right bottom left).each do |x|
-        a x.capitalize,
-          'data-toggle' => 'tooltip',
-          'data-placement' => x,
-          'data-container' => 'body',
-          title: "Tooltip on the " + x + "!",
-          href: '#'
-
-        text ' '
-      end
-    }
-
-    docs 'Typography', %{
-      h1 'Heading 1'
-      h2 'Heading 2'
-      h3 'Heading 3'
-      h4 'Heading 4'
-      h5 'Heading 5'
-      h6 'Heading 6'
-      p 'Lorem ipsum.'
-
-      p.microcopy {
-        text 'This is some awesome .microcopy.'
-        a.microcopy_action 'Microcopy action'
-      }
-    }
   end
 end

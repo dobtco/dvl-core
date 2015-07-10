@@ -1,6 +1,35 @@
-class Views::Home::Navigation < Views::Base
+class Views::Home::Navigation < Views::Page
   def main
-    docs 'Navbar', %{
+    h2 'Navigation'
+
+    h3 'Navigation Bar'
+
+    p 'The navigation bar should always take up the full page width. The examples below break at some viewport sizes, because they violate this rule.'
+
+    docs 'Signed Out', %{
+      nav.navbar {
+        div.container {
+          div.navbar_header {
+            a.navbar_brand 'DOBT Style Guide', href: '#'
+            a.navbar_toggle "<i class='fa fa-reorder'></i>".html_safe
+          }
+
+          div.navbar_content_wrapper {
+            div.navbar_content.navbar_content_secondary {
+              ul {
+                li {
+                  span {
+                    a.button.small.primary 'Sign in'
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }, sub: '', hint: 'The product name in a navigation bar can be either text or a logo, but not both.'
+
+    docs 'Signed In', %{
       nav.navbar {
         div.container {
           div.navbar_header {
@@ -14,24 +43,90 @@ class Views::Home::Navigation < Views::Base
             div.navbar_content.navbar_content_primary {
               ul {
                 li.active {
-                  a 'Main styles'
+                  a 'Dashboard'
                 }
                 li {
-                  a 'Something else'
-                }
-                li {
-                  a {
-                    i(class: 'fa fa-bolt navbar_icon')
-                    span.navbar_badge '1'
-                  }
+                  a 'Projects'
                 }
               }
             }
+
             div.navbar_content.navbar_content_secondary {
+              form.navbar_search_form {
+                input type: 'text', placeholder: 'Search...'
+              }
               ul {
                 li {
-                  span {
-                    a.button.primary 'Sign in'
+                  a {
+                    span.navbar_full_i {
+                      i(class: 'fa fa-bolt navbar_icon')
+                      span.navbar_badge '1'
+                    }
+                    span.navbar_collapsed_i {
+                      text 'Notifications'
+                    }
+                  }
+                }
+                li.dropdown.dropdown_navbar {
+                  a(
+                    'data-toggle' => 'dropdown',
+                    href: '#'
+                  ) {
+                    span.navbar_full_i {
+                      i(class: 'fa fa-refresh navbar_icon')
+                    }
+                    span.navbar_collapsed_i {
+                      text 'Loading State'
+                    }
+                  }
+
+                  div.dropdown_menu(role: 'menu') {
+                    h3 'Loading State'
+                    ul.dropdown_body {
+                      li.dropdown_loading {
+                        span {
+                          i(class: 'fa fa-spin fa-refresh')
+                        }
+                      }
+                    }
+                  }
+                }
+                li.dropdown.dropdown_navbar {
+                  a(
+                    'data-toggle' => 'dropdown',
+                    href: '#'
+                  ) {
+                    span.navbar_full_i {
+                      i(class: 'fa fa-file-text navbar_icon')
+                    }
+                    span.navbar_collapsed_i {
+                      text 'Default Dropdown'
+                    }
+                  }
+
+                  div.dropdown_menu(role: 'menu') {
+                    h3 'Default Dropdown'
+                    ul.dropdown_body {
+                      li { a 'Item 1', href: '#' }
+                      li { a 'Item 2', href: '#' }
+                      li { a 'Item 3', href: '#' }
+                    }
+                  }
+                }
+                li.dropdown.dropdown_navbar {
+                  a(
+                    'data-toggle' => 'dropdown',
+                    href: '#'
+                  ) {
+                    img.nav_avatar src: '//dobt-captured.s3.amazonaws.com/ajb/richard_ayoade_-_Google_Search_2015-05-26_09-56-32.png_290290_2015-05-26_09-57-03.png'
+                  }
+
+                  div.dropdown_menu(role: 'menu') {
+                    h3 'My account'
+                    ul.dropdown_body {
+                      li { a 'Edit profile', href: '#' }
+                      li { a 'Sign out', href: '#' }
+                    }
                   }
                 }
               }
@@ -39,154 +134,103 @@ class Views::Home::Navigation < Views::Base
           }
         }
       }
-    }, full: true
+    }, sub: '', hint: 'Use badges next to icons to notify the user of new information.'
 
-    docs 'Page Header with Secondary and Tertiary Nav', %{
-      div.page_header {
-        h2 {
-          a 'Page header', href: '#'
+    hr
+
+    docs 'Sidebar (Navigation)', %{
+      ul.sidebar_nav {
+        li.header {
+          text 'Steve McQueen'
+          img(src: 'http://i.imgur.com/2WkSV2N.png')
         }
-        div.page_header_secondary {
-          ul {
-            li {
-              a 'Secondary nav'
-            }
-
-            li {
-              a 'A thing'
-            }
-
-            li {
-              a 'Another thing'
-            }
+        li.active {
+          a {
+            text 'Profile'
           }
         }
-        div.page_header_tertiary {
-          ul {
-            li {
-              a {
-                i(class: 'fa fa-pencil')
-                text 'Tertiary nav'
-              }
-            }
-
-            li {
-              a {
-                i(class: 'fa fa-file')
-                text 'A thing'
-              }
-            }
-
-            li {
-              a {
-                text 'Another thing'
-              }
-            }
+        li {
+          a {
+            text 'Preferences'
+          }
+        }
+        li {
+          a {
+            text 'Billing'
+            i(class: 'fa fa-external-link')
           }
         }
       }
-    }, full: true, hint: '<h2> can optionally contain an <a> tag inside.'
 
-    docs 'Page Header with button and back arrow', %{
-      div.page_header.with_back_arrow {
-        a.page_header_back_arrow(title: 'Back to account', 'data-toggle' => 'tooltip') {
-          i(class: 'fa fa-arrow-circle-o-left')
+      ul.sidebar_nav {
+        li.header {
+          text 'Statuses'
         }
-
-        h2 {
-          a 'Page header', href: '#'
-        }
-
-        div.page_header_secondary {
-          ul {
-            li {
-              a 'Secondary nav'
-            }
-
-            li {
-              a 'A thing'
-            }
-
-            li {
-              a 'Another thing'
-            }
+        li {
+          a {
+            text 'Open'
+            span.badge '2'
           }
         }
-        div.page_header_tertiary {
-          ul {
-            li {
-              a(href: '#') {
-                text 'A thing'
-              }
-            }
-
-            li {
-              a(href: '#') {
-                text 'Another thing'
-              }
-            }
-          }
-
-          a.button.info.long_arrow 'View project', href: '#'
-        }
-      }
-    }, full: true
-
-    docs 'Page Header with pagination', %{
-      div.page_header.with_back_arrow {
-        a.page_header_back_arrow(title: 'Back to account', 'data-toggle' => 'tooltip') {
-          i(class: 'fa fa-arrow-circle-o-left')
-        }
-
-        h2 {
-          a 'Page header', href: '#'
-        }
-
-        div.page_header_secondary {
-          ul {
-            li {
-              a 'Secondary nav'
-            }
-
-            li {
-              a 'A thing'
-            }
-
-            li {
-              a 'Another thing'
-            }
-          }
-        }
-        div.pagination.pagination_page_header {
-          span.pagination_status "Showing <strong>1</strong> of <strong>123</strong>".html_safe
-
-          ul {
-            li { span{text '‹'}}
-            li { a(href: '#'){text '›'}}
+        li {
+          a {
+            text 'Rejected by the International Court of Justice in Hague, The Netherlands after a lengthy deliberation of multiple years'
+            span.badge '5,000'
           }
         }
       }
-    }, full: true
 
-    docs 'Page subheader (h3) and actions', %{
-      div.page_subheader {
-        h3 'Subheader'
-
-        div.page_subheader_actions {
-          a.page_subheader_link 'An action'
-          a.button.info 'Another action'
+      ul.sidebar_nav {
+        li.header {
+          text 'Labels'
+        }
+        li {
+          a {
+            div.label "Label 1"
+            span.badge "15"
+          }
+        }
+        li {
+          a {
+            div.label "Label 2"
+            span.badge "27"
+          }
         }
       }
-    }, full: true
-
-    docs 'Page subheader (h4) with icon', %{
-      div.page_subheader {
-        h4 {
-          i(class: 'fa fa-star')
-          text ' '
-          text 'Ratings'
+      ul.sidebar_sub_actions {
+        li {
+          a 'Grant permission to edit'
+        }
+        li {
+          a 'Export'
+        }
+        li {
+          a 'Archive'
         }
       }
-    }, full: true, hint: 'Page subheaders can use either an <h3> or <h4>.'
+    }, hint: 'You can place secondary / tertiary actions for a page under any sidebar, including this one.'
+
+    docs 'Tabs', %{
+      ul.tabs {
+        li.active {
+          a 'The Form', href: '#form', 'data-toggle' => 'tab'
+        }
+        li {
+          a 'Ratings', href: '#ratings', 'data-toggle' => 'tab'
+        }
+        li {
+          a 'Settings', href: '#settings', 'data-toggle' => 'tab'
+        }
+      }
+
+      div.tab_pane.form!.active 'form'
+      div.tab_pane.ratings! 'ratings'
+      div.tab_pane.settings! 'settings'
+    }, hint: %{
+      Add tabs below a <a href="/headers#heading 3">page subheader</a> to let users navigate between different sections
+      of the same view. You can optionally include <code>dvl/components/tabs.js</code> if you intend to switch the tab content
+      on the client-side.
+    }.squish.html_safe
+
   end
 end

@@ -1,27 +1,23 @@
 .sidebar_nav {
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
+  margin-bottom: $rhythm * 4;
   > li {
     > a,
     &.content,
     &.header {
       border: 1px solid;
+      @include font_smoothing;
     }
     &.header {
-      font-weight: $weightBold;
-      color: $blankStateGray;
-      background-color: $lighterGray;
-      border-color: $lighterGray;
+      color: $darkerGray;
+      border: 0;
       position: relative;
-      padding: ($rhythm/2) $lineHeight;
-      @include font_smoothing;
+      padding: 0 0 $rhythm;
       img {
         height: $lineHeight;
         width: $lineHeight;
-        position: absolute;
-        top: 50%;
-        margin-top: $lineHeight / -2;
-        right: $rhythm;
+        border-radius: $radius;
+        float: left;
+        margin-right: $rhythm;
       }
     }
     > a:focus {
@@ -37,13 +33,17 @@
       text-decoration: none;
       border-color: $lightGray;
       border-bottom-width: 0;
-      padding: $rhythm $lineHeight;
-      padding-right: 18%;
+      padding: ($rhythm * 2) $lineHeight;
+      padding-right: 25%;
+      &.editing {
+        padding-right: $rhythm * 2;
+      }
     }
     &:first-child {
       > a,
       &.content,
-      &.header {
+      &.header + li.content,
+      &.header + li > a {
         @include border_top_radius($radius);
       }
     }
@@ -53,36 +53,48 @@
         border-bottom-width: 1px;
       }
     }
-    .badge {
+    .badge,
+    i {
       position: absolute;
-      right: $rhythm;
-      top: 0.75rem;
-      background-color: $lighterGray;
+      right: $lineHeight;
+      top: $rhythm * 2;
       color: $darkestGray;
-      font-weight: $weightBold;
-      padding: 0 0.5rem;
+      padding: 0 $rhythm;
       border-radius: $radius;
+    }
+    &.header i {
+      padding: 0;
+      position: static;
+    }
+    .badge {
+      background-color: $lightGray;
+    }
+    i {
+      line-height: $lineHeight;
     }
     > a:focus,
     > a:hover {
       background-color: $lighterGray;
       .badge {
-        background-color: $lightGray;
+        background-color: $gray;
       }
     }
     &.active {
       > a {
-        box-shadow: inset 3px 0 0 $logoBlue;
-        font-weight: $weightBold;
+        background: $darkestGray;
+        color: $white;
+      }
+      i {
+        color: $white;
       }
       .badge {
-        background-color: $logoBlue;
-        color: $white;
+        background-color: $white;
+        color: $darkestGray;
       }
       &:hover,
       &:focus {
         .badge {
-          background-color: $logoBlue;
+          background-color: $white;
         }
       }
     }

@@ -1,39 +1,53 @@
 .page_subheader {
+  @include cf;
   margin-bottom: $lineHeight;
   h3, h4 {
     display: inline;
+    float: left;
+    margin-bottom: $rhythm;
+    @media screen and (min-width: $lapWidth) {
+      margin-bottom: 0;
+    }
   }
-  // Grey, bold
+  // Subheader 1
   h3 {
     color: $darkerGray;
-    font-size: 1.4rem;
-    line-height: $lineHeight * 1.5;
   }
-  // Smaller, black, usually has an icon
+  // Subheader 2 (icon optional)
   h4 {
     font-size: 1rem;
     color: $darkestGray;
-    margin-right: 0.5rem;
+    margin-right: $rhythm;
     i {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       color: $darkestGray;
       vertical-align: middle;
-      margin-right: 0.25rem;
+      margin-right: $rhythm;
       line-height: 1.3333rem;
     }
   }
 }
 
 .page_subheader_actions {
-  float: right;
+  float: left;
+  clear: left;
   a {
+    float: left;
     margin-right: $lineHeight;
     &:last-child {
       margin-right: 0;
     }
   }
+  .button.small {
+    margin-top: $rhythm / 2;
+  }
+  @media screen and (min-width: $lapWidth) {
+    float: right;
+    clear: none;
+  }
 }
 
 .page_subheader_link {
-  font-size: 0.85rem;
+  font-size: $fontSmaller;
+  line-height: $inputHeight;
 }

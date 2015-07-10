@@ -1,55 +1,276 @@
 // Styles for the style guide
 
-body {
-  background: white;
-  padding-top: $navHeight + 1.5rem;
+.hero {
+  color: $white;
+  @include font_smoothing;
+  h1 {
+    color: $white;
+    a {
+      color: $white;
+      &:hover,
+      &:focus,
+      &:active,
+      &:visited {
+        color: $white;
+        text-decoration: none;
+      }
+    }
+  }
+  img {
+    max-width: $lineHeight * 2;
+  }
+  p {
+    @include fontH3;
+    max-width: 30rem;
+  }
+  padding: $lineHeight * 3 0;
+  background-color: #09152f;
+  background-image: radial-gradient(farthest-corner at bottom left, rgba(186,146,112,0.6) 7%, rgba(186,146,112,0) 58%), radial-gradient(farthest-corner at bottom right, rgba(0,133,250,0.3) 10%, rgba(0,133,250,0) 60%);
+  &.hero_compact {
+    padding: $rhythm 0;
+    text-align: center;
+    @media screen and (min-width: $lapWidth) {
+      text-align: left;
+    }
+    h1 {
+      @include fontH2;
+      margin: 0;
+    }
+  }
 }
 
 .container {
   width: 90%;
-  max-width: 1140px;
+  max-width: $maxWidth;
   margin: 0 auto;
 }
 
-.section_header {
-  font-size: 1.6rem;
-  padding: 1rem 0 0.5rem;
-  color: #222;
+.primary_container {
+  margin-top: $lineHeight * 2;
 }
 
 .docs {
-  border: 1px solid #ccc;
   border-radius: $radius;
+  margin-bottom: $lineHeight;
 }
 
-.docs_col {
-  display: inline-block;
-  vertical-align: top;
-  .docs_layout_full & {
-    width: 100%;
-  }
-  .docs_layout_split & {
-    width: 50%;
+.docs_item {
+  display: block;
+  position: relative;
+  padding-bottom: $lineHeight * 2;
+  margin-bottom: $lineHeight * 2;
+  border-bottom: 1px solid $gray;
+  &.docs_item_sub {
+    border: 0;
+    padding-bottom: 0;
+    h4 {
+      line-height: $inputHeight;
+    }
   }
 }
 
-.docs_preview {
-  padding: 1rem;
+hr {
+  margin-bottom: $lineHeight * 2;
+}
+
+.docs_code_header {
+  background: $lighterGray;
+  line-height: $rhythm * 4;
+  padding: 0 ($rhythm * 2);
+  @include border_top_radius($radius);
+  color: $darkerGray;
+  font-size: $fontSmall;
 }
 
 .docs_code {
-  padding: 1rem;
+  margin-top: $rhythm * 3;
 
   pre {
+    @include border_top_radius(0);
     margin: 0;
   }
 }
 
-.docs_grid {
-  margin-bottom: 1rem;
-
-  .item > span {
-    display: block;
-    background-color: $lightGray;
+.docs_item {
+  > h3,
+  > h4 {
+    margin-bottom: $inputHeight + $lineHeight;
+    @media screen and (min-width: $lapWidth) {
+      margin-bottom: $lineHeight;
+    }
   }
+}
+
+.docs_toggle_button {
+  position: absolute;
+  top: $fontLineHeightH3Mobile + $rhythm;
+  left: 0;
+  @media screen and (min-width: $lapWidth) {
+    top: 0;
+    left: auto;
+    right: 0;
+  }
+}
+
+.docs_toggle_input {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+  &:checked + .docs_code {
+    display: block;
+  }
+}
+
+.swatch {
+  margin: 0 $lineHeight $lineHeight 0;
+  display: inline-block;
+  div {
+    width: $lineHeight * 6;
+    height: $lineHeight * 4;
+    box-shadow: inset 0 0 0 1px rgba($black,0.1);
+  }
+  span {
+    font-size: $fontSmall;
+    color: $darkerGray;
+  }
+}
+
+.docs_grid {
+  margin-bottom: $rhythm * 2;
+  margin-left: $rhythm * -2;
+  .item {
+    padding-left: $rhythm * 2;
+    span {
+      background: $blueHighlight;
+      display: block;
+      padding: $rhythm;
+      font-size: $fontSmall;
+      border-radius: $radius;
+    }
+  }
+  @media screen and (min-width: $lapWidth) {
+    margin-left: $rhythm * -4;
+    .item {
+      padding-left: $rhythm * 4;
+    }
+  }
+}
+
+// Guides
+
+.docs_guide {
+  @include cf;
+  margin-bottom: $lineHeight * 2;
+  display: table;
+}
+
+.docs_guide_col {
+  margin-bottom: $lineHeight;
+  @media screen and (min-width: $deskWidth) {
+    display: table-cell;
+    vertical-align: top;
+    width: 50%;
+    margin-bottom: 0;
+    &:first-of-type {
+      padding-right: 2%;
+    }
+    &:last-of-type {
+      padding-left: 2%;
+    }
+  }
+}
+
+.docs_guide_example,
+.docs_guide_explain {
+  padding: $rhythm $rhythm * 2;
+  border: 1px solid $lightGray;
+}
+
+.docs_guide_example {
+  min-height: $lineHeight * 9;
+  @include border_top_radius($radius);
+  border-bottom: 0;
+  &:empty {
+    display: none;
+    + .docs_guide_explain {
+      @include border_top_radius($radius);
+    }
+  }
+}
+
+.docs_guide_explain {
+  margin: 0;
+  background: $lightestGray;
+  @include border_bottom_radius($radius);
+}
+
+// Style-guide specific overrides
+
+.navbar {
+  + h4 {
+    margin-top: $lineHeight;
+  }
+}
+
+.dvlcore_button_array {
+  .button {
+    margin-right: $rhythm;
+    margin-bottom: $rhythm;
+    @media screen and (min-width: $lapWidth) {
+      margin-bottom: 0;
+    }
+  }
+  .dropdown:last-child .button {
+    margin-right: 0;
+  }
+}
+
+// Style guide illustrations
+
+.docs_rhythm {
+  padding: $lineHeight * 2 5%;
+  background-repeat: repeat;
+  background-size: 100% $rhythm;
+  background-image: linear-gradient(to top, $white 87%, rgba($primaryColor,0.5));
+  margin-bottom: $lineHeight;
+  h2, p, form {
+    text-align: center;
+    opacity: 0.75;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  p {
+    max-width: 25rem;
+  }
+  button {
+    margin-top: $rhythm;
+  }
+  @media screen and (min-width: $lapWidth) {
+    form {
+      width: $lineHeight * 15;
+      @include cf;
+      input, button {
+        float: left;
+      }
+      input {
+        width: 60%;
+        margin-right: $rhythm;
+      }
+      button {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.docs_fontsmall {
+  font-size: $fontSmall;
+}
+
+.docs_fontsmaller {
+  font-size: $fontSmaller;
+}
+
+.docs_fontsmallest {
+  font-size: $fontSmallest;
 }
