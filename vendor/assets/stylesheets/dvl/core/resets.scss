@@ -30,8 +30,6 @@
  */
 
 *, *:before, *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -75,15 +73,16 @@ html {
  * 2. Remove `text-shadow` selection highlight - http://cbrac.co/Q6swON
  */
 
-::-moz-selection, ::selection {
-  background: $selectionBackground;
+::-moz-selection,
+::selection {
+  background: rgba($selectionBackground,0.6);
+  color: $selectionColor;
   text-shadow: none;
 }
 
-
 /* Change `background` for text selections when browser is unfocused */
 ::selection:window-inactive {
-  background: $lightGray;
+  background: rgba($selectionBackground,0.4);
 }
 
 /* Remove `background` on images when selected */

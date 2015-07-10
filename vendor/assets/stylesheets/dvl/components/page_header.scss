@@ -1,30 +1,68 @@
 .page_header {
   @include cf();
   border-bottom: 1px solid $lightGray;
-  padding-bottom: 0.6rem;
-  margin-bottom: 1.25rem;
+  padding-bottom: $rhythm;
+  margin-bottom: $lineHeight;
   position: relative;
   h2 {
-    margin-bottom: 0;
-    margin-right: 2rem;
     float: left;
-
+    margin: 0 ($rhythm * 4) 0 0;
     a {
       color: $black;
       text-decoration: none;
     }
+    img {
+      max-height: $fontLineHeightH2Mobile;
+      max-width: $fontLineHeightH2Mobile;
+      @media screen and (min-width: $lapWidth) {
+        max-height: $fontLineHeightH2;
+        max-width: $fontLineHeightH2;
+      }
+      margin-right: $rhythm;
+      float: left;
+    }
+    .button {
+      font-size: 1rem;
+      position: relative;
+      margin-left: $rhythm * 2;
+      top: $rhythm / 2;
+    }
   }
 
   &.with_back_arrow {
-    padding-left: 2.25rem;
+    padding-left: $rhythm * 5;
+  }
+  > .button,
+  > form .button {
+    float: left;
+    clear: left;
+    margin: $rhythm 0;
+    @media screen and (min-width: $lapWidth) {
+      float: right;
+      clear: none;
+      position: relative;
+      margin: 0;
+      top: ($fontLineHeightH2 - $inputHeight) / 2;
+      &.small {
+        top: ($fontLineHeightH2 -($rhythm * 4)) / 2;
+      }
+      &.mini {
+         top: ($fontLineHeightH2 - ($rhythm * 3)) / 2;
+      }
+    }
   }
 }
 
 .page_header_back_arrow {
-  position: absolute;
-  top: 0;
-  left: 0;
   font-size: 2rem;
+  position: absolute;
+  opacity: 0.7;
+  @include topCenter($fontLineHeightH2Mobile, 2rem);
+  @media screen and (min-width: $lapWidth) {
+    @include topCenter($fontLineHeightH2, 2rem);
+  }
+  left: 0;
+  margin-top: 2px; // Optical adjustment
   line-height: 1;
 }
 
@@ -33,12 +71,11 @@
 .page_header_secondary,
 .page_header_tertiary {
   ul {
-    margin-top: 0.5rem;
-    font-weight: 600;
+    margin-top: $rhythm;
     li {
       display: inline;
       > span {
-        color: $darkGray;
+        color: $darkerGray;
       }
       &.active a {
         color: $darkestGray;
@@ -58,10 +95,10 @@
   clear: left;
   ul {
     float: left;
-    font-size: 0.9rem;
   }
   li {
-    margin-right: 1.5rem;
+    float: left;
+    margin-right: $rhythm * 3;
     &:last-child {
       margin-right: 0;
     }
@@ -69,20 +106,21 @@
 }
 
 .page_header_tertiary {
-  float: right;
+  float: left;
   ul,
   .button {
     float: left;
   }
   ul {
-    font-size: 0.8rem;
+    font-size: $fontSmall;
     line-height: 1.8;
   }
-  li,
   .button {
-    margin-left: 1rem;
+    clear: left;
+    margin-top: $rhythm;
   }
   li {
+    margin-left: $rhythm * 2;
     &:first-child {
       margin-left: 0;
     }
@@ -91,11 +129,18 @@
 
       // Add a space in between icon & text
       > i {
-        margin-right: 0.2rem;
+        margin-right: 0.25rem;
       }
     }
     &.active a {
       color: $black;
+    }
+  }
+  @media screen and (min-width: $lapWidth) {
+    float: right;
+    .button {
+      margin: 0 0 0 $rhythm * 2;
+      clear: none;
     }
   }
 }

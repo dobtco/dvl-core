@@ -1,12 +1,15 @@
-class Views::Home::Splash < Views::Base
+class Views::Home::Splash < Views::Page
   def stylesheets
-    super('splash')
+    super
+    stylesheet_link_tag 'splash', media: 'all'
   end
 
   def main
-    docs 'Splash', %{
-      footer.footer {
-        div.footer_inner {
+    h2 'Splash Pages'
+
+    docs 'Footer', %{
+      footer.public_footer {
+        div.container {
           form.newsletter_form.grid {
             p.item {
               strong 'Subscribe to our newsletter!'
@@ -23,11 +26,11 @@ class Views::Home::Splash < Views::Base
 
           div.grid {
             div.item.lap_six_columns {
-              ul.footer_links {
+              ul.public_footer_links {
                 li {
                   a 'Blog', href: 'http://blog.dobt.co'
                 }
-                li.footer_status {
+                li.public_footer_status {
                   a 'Status Board', href: 'http://status.dobt.co'
                 }
                 li {
@@ -42,8 +45,8 @@ class Views::Home::Splash < Views::Base
               }
             }
             div.item.lap_six_columns {
-              ul.footer_contact {
-                li.footer_phone {
+              ul.public_footer_contact {
+                li.public_footer_phone {
                   dl {
                     dt 'Toll-Free'
                     dd {
@@ -57,16 +60,16 @@ class Views::Home::Splash < Views::Base
                     }
                   }
                 }
-                li.footer_email {
+                li.public_footer_email {
                   a.dynamic_email
                 }
-                li.footer_fb {
+                li.public_footer_fb {
                   a 'Facebook', href: 'https://www.facebook.com/dobtco'
                 }
-                li.footer_gplus {
+                li.public_footer_gplus {
                   a 'Google&#43;'.html_safe, href: 'https://plus.google.com/+DobtCo'
                 }
-                li.footer_twitter {
+                li.public_footer_twitter {
                   a 'Twitter', href: 'https://www.twitter.com/dobtco'
                 }
               }

@@ -1,41 +1,36 @@
 class Views::Base < Erector::Widget
   def stylesheets(manifest = 'application')
     link href: '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', rel: 'stylesheet'
-    link href: '//fonts.googleapis.com/css?family=Open+Sans:400,300,700,600', rel: 'stylesheet'
-    link href: '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', rel: 'stylesheet'
     stylesheet_link_tag manifest, media: 'all'
   end
 
   def javascripts
     script src: '//code.jquery.com/jquery-1.11.1.min.js'
     javascript_include_tag 'application'
-    script %{
-      $(function(){
-        $('[data-toggle="tooltip"]').tooltip()
-        $('body').styledSelect({blank: 'Choose an option'})
-        $('body').styledControls()
-        $('body').dropdownSelect({blank: 'Choose an option'})
-      });
-    }.html_safe
+    script src: '//use.typekit.net/ckb1dps.js'
+    script 'try{Typekit.load();}catch(e){}'.html_safe
   end
 
   def content
     rawtext '<!doctype html>'
     html {
       head {
+        title 'DOBT Style Guide'
+        meta(name: 'viewport', content: 'width=device-width')
         stylesheets
         javascripts
       }
       body {
+        render_header
+
         a.sr_only 'Skip to content', href: '#content'
-        render_navbar
 
         div.content!
-        div.container {
+        div.container.primary_container {
           div.grid {
             div.item.desk_three_columns {
               ul.sidebar_nav {
-                li.header 'Navigation'
+                li.header 'Table of Contents'
                 pages.each do |name, path|
                   li(class: url_for == path ? 'active' : nil) {
                     a name, href: path
@@ -57,106 +52,15 @@ class Views::Base < Erector::Widget
 
   def pages
     {
-      'Index' => '/',
+      'Base Styles' => '/',
+      'Color' => '/color',
+      'Layout' => '/layout',
+      'Data' => '/data',
       'Forms' => '/forms',
-      'Buttons' => '/buttons',
-      'Flashes' => '/flashes',
-      'Footer' => '/footer',
-      'Splash' => '/splash',
+      'Headers' => '/headers',
       'Navigation' => '/navigation',
-      'Grid' => '/grid',
-    }
-  end
-
-  def render_navbar
-    nav.navbar.navbar_sticky {
-      div.container {
-        div.navbar_header {
-          a.navbar_brand 'DOBT Style Guide', href: '#'
-          a.navbar_toggle "<i class='fa fa-reorder'></i>".html_safe
-        }
-
-        div.navbar_content_wrapper {
-          div.navbar_content.navbar_content_primary {
-            ul {
-              li.active {
-                a 'Main styles'
-              }
-              li {
-                a 'Something else'
-              }
-            }
-          }
-
-          div.navbar_content.navbar_content_secondary {
-            form.navbar_search_form {
-              input type: 'text', placeholder: 'Search...'
-            }
-            ul {
-              li.dropdown.dropdown_navbar {
-                a(
-                  'data-toggle' => 'dropdown',
-                  href: '#'
-                ) {
-                  span.navbar_full_i {
-                    i(class: 'fa fa-search navbar_icon')
-                  }
-                  span.navbar_collapsed_i {
-                    text 'Search'
-                  }
-                }
-
-                div.dropdown_menu(role: 'menu') {
-                  h3 'Loading forever'
-                  ul.dropdown_body {
-                    li.dropdown_loading {
-                      span {
-                        i(class: 'fa fa-spin fa-refresh')
-                      }
-                    }
-                  }
-                }
-              }
-              li.dropdown.dropdown_navbar {
-                a(
-                  'data-toggle' => 'dropdown',
-                  href: '#'
-                ) {
-                  span.navbar_full_i {
-                    i(class: 'fa fa-file-text navbar_icon')
-                  }
-                  span.navbar_collapsed_i {
-                    text 'Projects'
-                  }
-                }
-
-                div.dropdown_menu(role: 'menu') {
-                  h3 'Projects'
-                  ul.dropdown_body {
-                    li { a 'Item', href: '#' }
-                  }
-                }
-              }
-              li.dropdown.dropdown_navbar {
-                a(
-                  'data-toggle' => 'dropdown',
-                  href: '#'
-                ) {
-                  img.nav_avatar src: '//dobt-captured.s3.amazonaws.com/ajb/richard_ayoade_-_Google_Search_2015-05-26_09-56-32.png_290290_2015-05-26_09-57-03.png'
-                }
-
-                div.dropdown_menu(role: 'menu') {
-                  h3 'My account'
-                  ul.dropdown_body {
-                    li { a 'Edit profile', href: '#' }
-                    li { a 'Sign out', href: '#' }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+      'Components' => '/components',
+      'Splash Pages' => '/splash'
     }
   end
 
@@ -170,25 +74,45 @@ class Views::Base < Erector::Widget
   #   Dir["#{Rails.root}/app/views/home/*.rb"]
   # end
 
-  def docs(name, codeString, opts = {})
-    div.section_header name, id: name.downcase
+  def docs(name, code_string, opts = {})
+    div(class: opts[:sub] ? 'docs_item docs_item_sub' : 'docs_item') {
 
-    div(class: "docs #{opts[:full] ? 'docs_layout_full' : 'docs_layout_split'}") {
-      div.docs_col {
-        div.docs_preview {
-          if opts[:hint]
-            p opts[:hint]
-          end
+      if opts[:sub]
+        h4 name, id: name.downcase
+      else
+        h3 name, id: name.downcase
+      end
 
-          eval(codeString)
-        }
-      }
+      if opts[:hint]
+        p opts[:hint]
+      end
 
-      div.docs_col {
-        div.docs_code {
-          pre codeString.strip_heredoc.strip
-        }
+      eval(code_string)
+
+      a.button.small.docs_toggle_button 'Toggle source'
+
+      div.docs_code(style: 'display:none;') {
+        div.docs_code_header 'Erector source code'
+        pre code_string.strip_heredoc.strip
       }
     }
+
+  end
+
+  def guide(code_do, guide_do, code_dont, guide_dont)
+    h5 'Rule of Thumb'
+
+    div.docs_guide {
+      div.docs_guide_col {
+        div.docs_guide_example code_do
+        p.docs_guide_explain guide_do
+      }
+      div.docs_guide_col {
+        div.docs_guide_example code_dont
+        p.docs_guide_explain guide_dont
+      }
+    }
+
+    hr
   end
 end

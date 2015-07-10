@@ -1,16 +1,19 @@
 // Sidebar
 
 .sidebar_box {
-  background-color: $lighterGray;
-  border: 1px solid #d8d8d8;
-  padding: 1rem;
+  background-color: $lightestGray;
+  border: 1px solid $lightGray;
+  border-radius: $radius;
+  padding: $rhythm * 2 0;
   hr {
-    margin: 0.75rem 0;
+    margin: $rhythm 0;
   }
 }
+
 .sidebar_section {
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
+  margin-bottom: $rhythm * 2;
+  font-size: $fontSmaller;
+  padding: 0 ($rhythm * 2);
   @include cf();
   h4 {
     font-size: 1rem;
@@ -23,10 +26,10 @@
 // Sidebar sections with icons on the left
 
 .sidebar_data {
-  padding: 0 1rem;
+  padding: 0;
   > li {
     border-bottom: 1px solid $lightGray;
-    padding: 0.75rem 0;
+    padding: ($rhythm * 2);
     &:first-of-type {
       padding-top: 0;
     }
@@ -39,21 +42,33 @@
 
 .sidebar_data_icon {
   float: left;
-  width: 2rem;
-  padding-top: 0.5rem;
+  width: 1rem;
   text-align: center;
   i {
-    font-size: 26px;
+    line-height: 1;
     color: $darkerGray;
+  }
+  @media screen and (min-width: $lapWidth) {
+    width: $rhythm * 5;
+    i {
+      font-size: $rhythm * 5;
+    }
   }
 }
 
 .sidebar_data_text {
-  margin-left: 3.5rem;
+  margin-left: $lineHeight;
+  line-height: $lineHeight;
+  @media screen and (min-width: $lapWidth) {
+    margin-left: $rhythm * 8;
+  }
 }
 
 .sidebar_data_label {
-  font-size: 0.9rem;
+  font-size: $fontSmall;
+  font-weight: $weightBold;
+  @include font_smoothing;
+  color: $darkerGray;
 }
 
 .sidebar_data_value,
@@ -63,14 +78,13 @@
 
 .sidebar_data_value {
   @include cf;
-  font-size: 1.1rem;
-  color: #999;
-  font-weight: $weightBold;
+  color: $darkestGray;
 }
 
 .sidebar_data_details {
-  font-size: 0.9rem;
-  color: #999;
+  font-size: $fontSmaller;
+  color: $darkerGray;
+  @include font_smoothing;
 }
 
 // List of items in
@@ -94,7 +108,8 @@
 }
 
 .sidebar_submit {
-  padding-bottom: 1rem;
+  padding: 0 $rhythm * 2;
+  margin-bottom: $rhythm * 2;
   .button {
     width: 100%;
   }
@@ -102,6 +117,6 @@
 
 .sidebar_submit_hint {
   text-align: center;
-  font-size: 0.85rem;
+  font-size: $fontSmallest;
   margin-top: 0.25rem;
 }

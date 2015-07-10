@@ -38,20 +38,19 @@
 .modal_dialog {
   position: relative;
   width: auto;
-  margin: 10px;
+  margin: $rhythm;
 }
 
 // Actual modal
 .modal_content {
   position: relative;
-  background-color: #fff;
-  border: 1px solid rgba(#000,0.15);
+  background-color: $white;
   border-radius: $radius;
   background-clip: padding-box;
   // Remove focus outline from opened modal
   outline: 0;
-  box-shadow: 0 1px 3px rgba(#000,0.18);
-  animation: modal_show 0.25s ease-out;
+  box-shadow: 0 1px 3px rgba($black,0.5);
+  animation: modal_show 0.25s $easeOutSine;
 }
 
 @keyframes modal_show {
@@ -72,66 +71,70 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: #000;
-  opacity: 0.5;
-  animation: fade_half 170ms ease-in;
+  background-color: rgba($black,0.5);
+  animation: fadeIn 170ms ease-in;
   z-index: $z_modal - 1;
-}
-
-@keyframes fade_half {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.5;
-  }
 }
 
 // Modal header
 // Top section of the modal w/ title and dismiss
 .modal_header {
-  padding: 1rem 2rem;
-  background-color: #f0f0f0;
-  margin-bottom: 1rem;
+  @include border_top_radius($radius);
+  background-color: $lightestGray;
   position: relative;
-  padding: 0.5rem 1.75rem;
+  padding: $rhythm $rhythm * 3;
   h3 {
-    font-size: 1.35rem;
-    font-weight: $weightBold;
     margin: 0;
-    color: #444;
-    line-height: 2rem;
+    color: $darkestGray;
   }
   .close {
     float: right;
-    color: rgba(#000,0.6);
+    color: rgba($darkestGray,0.6);
     text-decoration: none;
     text-align: right;
-    font-size: 2rem;
+    font-size: $rhythm * 5;
+    width: $rhythm * 5;
+    line-height: $rhythm * 4;
+    font-family: $fontFamilyDisplay;
     font-weight: $weightLight;
-    line-height: 2rem;
-    width: 2rem;
+    @include font_smoothing;
     &:hover,
     &:focus {
-      color: rgba(#000,0.9);
+      color: rgba($darkestGray,0.9);
     }
     &:focus {
       outline: 0;
     }
+    &:active {
+      color: $darkestGray;
+    }
   }
 }
 
-// Title text within header
-.modal_title {
-  margin: 0;
-  line-height: 20px;
+.modal_confirm {
+  .modal_header {
+    background-color: $errorColor;
+    h3 {
+      color: $white;
+    }
+  }
+  .close {
+    color: rgba(#fff,0.8);
+    &:hover {
+      color: rgba(#fff,0.92);
+    }
+  }
+  .modal_body p {
+    margin-bottom: 0;
+  }
 }
+
 
 // Modal body
 // Where all modal content resides (sibling of .modal_header and .modal-footer)
 .modal_body {
   position: relative;
-  padding: 0 2rem 1.5rem;
+  padding: $lineHeight;
 
   > .loading {
     font-size: 2rem;
@@ -142,48 +145,23 @@
 // Footer (for actions)
 .modal_footer {
   background-color: $lighterGray;
-  padding: 1rem 2rem;
-  text-align: right; // right align buttons
-  @include border_bottom_radius($radius * 2);
+  padding: $rhythm $rhythm * 3;
+  @include cf;
+  @include border_bottom_radius($radius);
+}
 
-  // Properly space out buttons
-  .btn + .btn {
-    margin-left: 5px;
-    margin-bottom: 0; // account for input[type="submit"] which gets the bottom margin like all other inputs
-  }
-  // but override that for button groups
-  .btn-group .btn + .btn {
-    margin-left: -1px;
-  }
-  // and override it for block buttons as well
-  .btn-block + .btn-block {
-    margin-left: 0;
+.modal_footer_primary {
+  float: right;
+  .button, button {
+    margin-left: $rhythm;
+    float: left;
   }
 }
 
-.modal_footer_link {
+.modal_footer_secondary {
   float: left;
-  font-size: 0.9rem;
+  font-size: $fontSmall;
   line-height: $inputHeight;
-}
-
-.modal_confirm {
-  .modal_header {
-    background-color: $errorColor;
-    h3 {
-      color: #fff;
-    }
-  }
-  .close {
-    color: rgba(#fff,0.8);
-    &:hover {
-      color: rgba(#fff,0.92);
-    }
-  }
-  .modal_body p {
-    font-size: 1.1rem;
-    margin-bottom: 0;
-  }
 }
 
 // Measure scrollbar width for padding body during modal show/hide

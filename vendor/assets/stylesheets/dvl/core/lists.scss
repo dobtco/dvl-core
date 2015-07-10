@@ -1,4 +1,40 @@
-/* Nested `list-style` types for ordered lists */
+// Default and prose list styles
+
+@mixin formatted_list_ul {
+  li {
+    position: relative;
+    margin: 0 0 $lineHeight ($rhythm * 3);
+    &:before {
+      position: absolute;
+      top: $rhythm;
+      left: $rhythm * -3;
+      right: 100%;
+      content: '';
+      width: $rhythm;
+      height: $rhythm;
+      border: 1px solid $darkestGray;
+      border-radius: 50%;
+    }
+  }
+}
+
+@mixin formatted_list_ol {
+  counter-reset: list;
+  li {
+    position: relative;
+    counter-increment: list;
+    margin: 0 0 $lineHeight $rhythm * 4;
+    &:before {
+      position: absolute;
+      content: counter(list) '.';
+      top: 0;
+      color: $darkestGray;
+      color: rgba($darkestGray,0.8);
+      left: $rhythm * -4;
+      text-align: left;
+    }
+  }
+}
 
 ul, ol {
   margin: 0;
@@ -6,25 +42,20 @@ ul, ol {
   list-style: none;
 }
 
+ul.formatted_list {
+  @include formatted_list_ul;
+}
+
+ol.formatted_list {
+  @include formatted_list_ol;
+}
+
 .rendered_from_wysiwyg,
-.wysiwyg_wrapper {
-  ul, ol {
-    list-style-position: inside;
-    margin-left: 1rem;
-  }
+.redactor_wysiwyg {
   ul {
-    list-style-type: disc;
+    @include formatted_list_ul;
   }
   ol {
-    list-style: decimal;
-    ol {
-      list-style: upper-alpha;
-      ol {
-        list-style: lower-roman;
-        ol {
-          list-style: lower-alpha;
-        }
-      }
-    }
+    @include formatted_list_ol;
   }
 }

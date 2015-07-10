@@ -4,28 +4,31 @@
 
 .label {
   display: inline-block;
-  padding: 0.1rem 0.4rem;
+  padding: 0.1rem $rhythm;
   border-radius: $radius;
-  font-size: 0.8rem;
+  font-size: $fontSmaller;
   background-color: $lighterGray;
-  color: #333;
+  color: $darkestGray;
+}
+
+.label_error,
+.label_success,
+.label_info {
+  color: $white;
 }
 
 .label_error {
   background-color: $errorColor;
-  color: #fff;
 }
 
 .label_success {
   background-color: $successColor;
-  color: #fff;
 }
 
 .label_info {
   background-color: $darkBlue;
-  color: #fff;
 }
 
 .label_warning {
-  background-color: #ffd119;
+  background-color: $warningColor;
 }

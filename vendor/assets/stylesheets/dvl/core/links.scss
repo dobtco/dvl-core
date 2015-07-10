@@ -10,17 +10,6 @@ a {
   text-decoration: none;
 // Improve readability when focused or hovered in all browsers
 // Address `outline` inconsistency between Chrome and other browsers
-  &.muted {
-    color: $darkerGray;
-    text-decoration: underline;
-    &:hover {
-      text-decoration: none;
-    }
-  }
-  &.smallbold {
-    font-weight: $weightBold;
-    font-size: 0.9rem;
-  }
   &:hover {
     text-decoration: underline;
   }
@@ -33,22 +22,47 @@ a {
     outline: 5px auto -webkit-focus-ring-color;
   }
   &.uppercase {
-    // #todo consolidate this with .caps
     text-transform: uppercase;
-    color: $darkGray;
-    font-size: 0.85rem;
-    font-weight: $weightBold;
-    letter-spacing: 0.04rem;
-    &:hover {
-      text-decoration: none;
-      color: $darkerGray;
-    }
+    font-size: $fontSmallest;
+    letter-spacing: $letterspaceSmallest;
   }
-  &.subtle_icon {
-    color: $darkGray;
-    text-decoration: none;
-    &:hover {
-      color: $darkerGray;
-    }
+}
+
+.button_uppercase {
+  color: $linkColor;
+  text-transform: uppercase;
+  font-size: $fontSmallest;
+  letter-spacing: $letterspaceSmallest;
+}
+
+// Plain dropdown toggle links
+
+.dropdown_toggle_link {
+  display: inline-block;
+  padding-right: $rhythm * 2;
+  position: relative;
+  &:after {
+    position: absolute;
+    line-height: 1;
+    @include topCenter($lineHeight, 1rem);
+    right: 0;
+    @include icon('\f0d7');
+  }
+}
+
+// Button tags styled as links
+
+.button_link {
+  font-size: inherit;
+  background: none;
+  padding: 0;
+  line-height: inherit;
+  border: 0;
+  color: $linkColor;
+  &:focus {
+    outline: 0;
+  }
+  &:hover {
+    text-decoration: underline;
   }
 }

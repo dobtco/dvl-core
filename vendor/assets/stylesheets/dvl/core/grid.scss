@@ -11,6 +11,9 @@
   padding: 0;
   list-style: none; /* 2 */
   font-size: 0; /* 3 */
+  @media screen and (min-width: $lapWidth) {
+    margin-left: - $lapGutterWidth;
+  }
 }
 
 /**
@@ -26,6 +29,9 @@
   vertical-align: top; /* 2 */
   font-size: 1rem;   /* 3 */
   width: 100%;
+  @media screen and (min-width: $lapWidth) {
+    padding-left: $lapGutterWidth;
+  }
 }
 
 @mixin col1() { width: $columnWidth * 1; }

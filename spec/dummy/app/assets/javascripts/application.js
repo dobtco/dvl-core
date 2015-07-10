@@ -13,9 +13,11 @@
 //= require dvl/core
 //= require dvl/helpers/flash_placeholder
 //= require dvl/helpers/toggle_class
+//= require dvl/components/tabs
 //= require dvl/components/flashes
 //= require dvl/components/dynamic_email
 //= require dvl/components/newsletter_form
 //= require dvl/components/splash_footer
 //= require dvl/components/navbar
 //= require dvl/components/dropdown_select
+//= require preview

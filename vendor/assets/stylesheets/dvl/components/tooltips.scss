@@ -4,12 +4,14 @@
   position: absolute;
   z-index: $z_tooltip;
   display: block;
-  font-size: 0.9rem;
-  line-height: 1.6;
+  font-size: $fontSmaller;
   opacity: 0;
   visibility: visible;
   min-width: 40px;
   transition: transform 0.25s $easeOutBack, opacity 120ms ease-out;
+  // Override styles on parent links
+  line-height: $lineHeight;
+  font-weight: $weightNormal;
   &.top, &.bottom {
     padding: 5px 0;
   }
@@ -33,7 +35,7 @@
     transform: translateX(5px) translateZ(0);
   }
   &.in {
-    opacity: 0.9;
+    opacity: 1;
     transform: translate(0,0);
   }
 }
@@ -41,10 +43,10 @@
 .tooltip-inner {
   max-width: 200px;
   padding: 0.25rem 0.5rem;
-  color: #ffffff;
+  color: $white;
   text-align: center;
   text-decoration: none;
-  background-color: #000;
+  background-color: rgba($black,0.95);
   border-radius: $radius;
 }
 
@@ -66,22 +68,22 @@
   }
   .tooltip.top & {
     bottom: 0;
-    border-top-color: #000;
+    border-top-color: rgba($black,0.95);
     border-width: 5px 5px 0;
   }
   .tooltip.right & {
     left: 0;
-    border-right-color: #000;
+    border-right-color: rgba($black,0.95);
     border-width: 5px 5px 5px 0;
   }
   .tooltip.left & {
     right: 0;
-    border-left-color: #000;
+    border-left-color: rgba($black,0.95);
     border-width: 5px 0 5px 5px;
   }
   .tooltip.bottom & {
     top: 0;
-    border-bottom-color: #000;
+    border-bottom-color: rgba($black,0.95);
     border-width: 0 5px 5px;
   }
 }

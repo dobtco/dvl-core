@@ -1,81 +1,44 @@
 .pagination {
-  font-size: 0.9rem;
+  font-size: $fontSmaller;
   ul {
     text-align: center;
     display: inline-block;
     li {
       display: inline;
-      > a,
-      > span {
+      a,
+      span {
+        border-radius: 50%;
         display: block;
         float: left;
-        padding: 0.25rem 0.35rem;
-        min-width: 2rem;
-        background-color: #eee;
+        margin: 0 $rhythm / 2;
+        line-height: $rhythm * 5;
         text-decoration: none;
-        border-color: #ccc;
-        border-style: solid;
-        border-width: 1px 1px 1px 0;
-      }
-      &.active a {
-        background-color: #ddd;
-        color: #333;
-        font-weight: $weightBold;
       }
       a {
+        width: $rhythm * 5;
+      }
+      span {
+        width: $rhythm * 3;
+      }
+      &.active span {
+        width: $rhythm * 5;
+        background-color: $darkBlue;
+        color: $white;
+        @include font_smoothing;
+      }
+      a {
+        transition: background-color 100ms ease-out;
         &:hover,
         &:focus {
-          background-color: #ddd;
+          background-color: $blueHighlight;
         }
         &:focus {
           outline: 0;
         }
         &:active {
-          background-color: #ccc;
-        }
-      }
-      &:last-child {
-        a,
-        span {
-          @include border_right_radius($radius);
-          min-width: 1.75rem;
-        }
-      }
-
-      &:first-child {
-        a,
-        span {
-          @include border_left_radius($radius);
-          border-left-width: 1px;
-          min-width: 1.75rem;
+          background-color: darken($blueHighlight,5%);
         }
       }
     }
-  }
-}
-
-.pagination_status {
-  float: left;
-  padding: 0.35rem 1rem 0.15rem 0; // adjust for lack of border
-}
-
-// The most common modifier, used underneath tables of results and the like
-.pagination_centered {
-  margin-top: 2rem;
-  text-align: center;
-}
-
-// A modifier for when pagination is inside of the page header
-.pagination_page_header {
-  clear: both;
-  padding-top: 0.5rem;
-}
-
-@media only screen and (min-width: $lapWidth) {
-  .pagination_page_header {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding-top: 0;
   }
 }
