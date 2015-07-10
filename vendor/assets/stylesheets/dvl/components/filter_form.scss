@@ -9,6 +9,7 @@
   @media screen and (min-width: $lapWidth) {
     .styled_select_wrapper,
     .button {
+      margin-top: 0;
       display: inline-block;
       vertical-align: top;
     }
@@ -16,7 +17,6 @@
       margin-left: $rhythm;
     }
     .button {
-      margin-top: 0;
       margin-left: $rhythm;
     }
   }
