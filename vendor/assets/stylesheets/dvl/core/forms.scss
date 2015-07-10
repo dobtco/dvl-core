@@ -127,6 +127,7 @@ textarea {
 
 input[type="file"] {
   padding: $inputPadding 0;
+  max-width: 100%;
 }
 
 /* Make checkbox, image, and radio inputs `inline-block` by default */
@@ -330,6 +331,20 @@ input[type="radio"] {
   clear: both;
 }
 
+.datetime_input_wrapper {
+  min-width: 100%;
+  @media screen and (min-width: $lapWidth) {
+    min-width: inherit;
+  }
+}
+
+.datetime_date_group {
+  margin-bottom: $lineHeight;
+  @media screen and (min-width: $lapWidth) {
+    margin-bottom: 0;
+  } 
+}
+
 .datetime_input_clear {
   font-size: $fontSmaller;
 }
@@ -347,7 +362,10 @@ form {
 }
 
 .form_item_horiz_label {
-  margin-top: $rhythm;
+  margin: $rhythm 0;
+  @media screen and (min-width: $lapWidth) {
+    margin-bottom: 0;
+  }
   .radio_buttons &,
   .boolean &,
   .check_boxes & {
@@ -360,7 +378,9 @@ form {
 }
 
 .input_sub {
-  margin-left: $rhythm * 3;
+  @media screen and (min-width: $lapWidth) {
+    margin-left: $rhythm * 3;
+  }
 }
 
 @media only screen and (min-width: $lapWidth) {
@@ -456,7 +476,10 @@ form {
 
 .styled_select_wrapper {
   height: $inputHeight;
-  width: 20rem; // 272px
+  width: 100%;
+  @media screen and (min-width: 25rem) {
+    width: 20rem; // 272px
+  }
   vertical-align: middle;
   &.auto {
     width: auto;
@@ -568,34 +591,6 @@ a.styled_select {
 .input_text {
   display: inline-block;
   margin-top: $rhythm;
-}
-
-// Radio button groups (rating field)
-.radio_group_inner {
-  input {
-    display: none;
-    opacity: 0;
-    &:checked + label {
-      background: $linkColor;
-      color: $white;
-    }
-  }
-  label {
-    float: left;
-    width: 25%;
-    height: 100%;
-    text-align: center;
-    border: 1px solid $gray;
-    border-right-width: 0;
-    padding: $rhythm 0;
-    &:first-of-type {
-      @include border_left_radius($radius);
-    }
-    &:last-of-type {
-      border-right-width: 1px;
-      @include border_right_radius($radius);
-    }
-  }
 }
 
 .microcopy {
