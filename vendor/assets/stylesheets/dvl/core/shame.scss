@@ -236,7 +236,8 @@ a.subtle_icon {
 // Convert this to a fieldset
 
 .form_item_two_inputs {
-  input {
+  > input,
+  .form_item_vert {
     width: 48.75%;
     display: inline-block;
     &:first-child {
