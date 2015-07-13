@@ -78,9 +78,9 @@ class Views::Base < Erector::Widget
     div(class: opts[:sub] ? 'docs_item docs_item_sub' : 'docs_item') {
 
       if opts[:sub]
-        h4 name, id: name.downcase
+        h4 name, id: name.parameterize.underscore
       else
-        h3 name, id: name.downcase
+        h3 name, id: name.parameterize.underscore
       end
 
       if opts[:hint]
