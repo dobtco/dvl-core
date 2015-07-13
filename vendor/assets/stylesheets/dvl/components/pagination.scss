@@ -14,11 +14,11 @@
         line-height: $rhythm * 5;
         text-decoration: none;
       }
-      a {
-        width: $rhythm * 5;
-      }
       span {
         width: $rhythm * 3;
+      }
+      a, &:last-child span, &:first-child span {
+        width: $rhythm * 5;
       }
       &.active span {
         width: $rhythm * 5;
