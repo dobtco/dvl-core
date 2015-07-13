@@ -190,24 +190,6 @@
   color: $errorColor;
 }
 
-// Hide from screen readers and browsers
-.hidden {
-  display: none;
-  visibility: hidden;
-}
-
-.cf {
-  @include cf();
-}
-
-.visuallyhidden {
-  @include hidden();
-}
-
-.visuallyhidden.focusable {
-  @include hiddenFocus;
-}
-
 // Legacy styles to remove incrementally
 
 a.smallbold {

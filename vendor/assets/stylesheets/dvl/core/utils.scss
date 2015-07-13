@@ -1,17 +1,17 @@
-// See: http://a11yproject.com/posts/how-to-hide-content/
-.sr_only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  border: 0;
+// Hide from screen readers and browsers
+.hidden {
+  display: none;
+  visibility: hidden;
+}
 
-  &:focus {
-    height: auto;
-    width: auto;
-    clip: auto;
-  }
+.cf {
+  @include cf;
+}
+
+.visuallyhidden {
+  @include hidden;
+}
+
+.visuallyhidden.focusable {
+  @include hiddenFocus;
 }
