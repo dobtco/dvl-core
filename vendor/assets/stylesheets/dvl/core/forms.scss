@@ -342,7 +342,7 @@ input[type="radio"] {
   margin-bottom: $lineHeight;
   @media screen and (min-width: $lapWidth) {
     margin-bottom: 0;
-  } 
+  }
 }
 
 .datetime_input_clear {
@@ -412,9 +412,9 @@ form {
   padding: $rhythm $rhythm * 2;
   border-radius: $radius;
   display: inline-block;
-  input +,
-  textarea +,
-  select + {
+  input + &,
+  textarea + &,
+  select + & {
     margin-top: $rhythm;
   }
 }
