@@ -320,6 +320,34 @@ $easeInOutBack:  cubic-bezier(0.680, -0.550, 0.265, 1.550);
   border-radius: 50%;
 }
 
+// Visually hidden, accessible to screenreaders
+
+@mixin hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  border: 0;
+}
+
+// Visually hidden, but appears on focus
+
+@mixin hiddenFocus {
+  @include hidden;
+  &:focus,
+  &:active {
+    position: static;
+    overflow: visible;
+    clip: auto;
+    margin: 0;
+    width: auto;
+    height: auto;
+  }
+}
+
 // Utility animations
 
 @keyframes fadeIn {

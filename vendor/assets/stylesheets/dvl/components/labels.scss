@@ -9,6 +9,9 @@
   font-size: $fontSmaller;
   background-color: $lighterGray;
   color: $darkestGray;
+  + .label {
+    margin-left: $rhythm;
+  }
 }
 
 .label_error,

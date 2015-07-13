@@ -9,6 +9,10 @@ table {
   border-collapse: collapse; /* 1 */
   empty-cells: show;
   word-break: break-word;
+  // Avoid single-line inputs wrapping to multiple lines
+  input {
+    word-break: normal;
+  }
 }
 
 th,

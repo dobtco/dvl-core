@@ -190,40 +190,6 @@
   color: $errorColor;
 }
 
-// Hide from screen readers and browsers
-.hidden {
-  display: none;
-  visibility: hidden;
-}
-
-// Visually hidden, available for screen readers - http://cbrac.co/TUcUgH
-.visuallyhidden {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  margin: -1px;
-  padding: 0;
-  width: 1px;
-  height: 1px;
-  border: 0;
-  // Add keyboard navigation - http://cbrac.co/RR8gO6
-  &.focusable {
-    &:active,
-    &:focus {
-      position: static;
-      overflow: visible;
-      clip: auto;
-      margin: 0;
-      width: auto;
-      height: auto;
-    }
-  }
-}
-
-.cf {
-  @include cf();
-}
-
 // Legacy styles to remove incrementally
 
 a.smallbold {
@@ -252,7 +218,8 @@ a.subtle_icon {
 // Convert this to a fieldset
 
 .form_item_two_inputs {
-  input {
+  > input,
+  .form_item_vert {
     width: 48.75%;
     display: inline-block;
     &:first-child {

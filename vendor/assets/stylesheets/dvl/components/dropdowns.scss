@@ -47,6 +47,7 @@
   z-index: $z_dropdown;
   background-clip: padding-box;
   min-width: 18rem;
+  max-width: 22rem;
   background-color: $white;
   box-shadow: 0 1px 0 rgba(#000,0.06);
   border: 1px solid $lightGray;
@@ -83,6 +84,7 @@
   max-height: ($lineHeight * 15) + $rhythm; // Overlap a list item with the bottom edge
   overflow: auto;
   > li {
+
     > a,
     > span {
       // All list items

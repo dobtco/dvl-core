@@ -23,7 +23,7 @@ class Views::Base < Erector::Widget
       body {
         render_header
 
-        a.sr_only 'Skip to content', href: '#content'
+        a.visuallyhidden.focusable 'Skip to content', href: '#content'
 
         div.content!
         div.container.primary_container {

@@ -63,7 +63,7 @@
   &.docs_item_sub {
     border: 0;
     padding-bottom: 0;
-    h4 {
+    > h4 {
       line-height: $inputHeight;
     }
   }

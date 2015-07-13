@@ -15,6 +15,9 @@
   font-size: $fontSmaller;
   padding: 0 ($rhythm * 2);
   @include cf();
+  &:last-child {
+    margin: 0;
+  }
   h4 {
     font-size: 1rem;
     line-height: 1;

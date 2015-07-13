@@ -1,5 +1,7 @@
 // Buttons
 
+// Button color mixin
+
 @mixin button_color($bg) {
   background: $bg;
   border: 1px solid darken($bg, 10%);
@@ -53,7 +55,6 @@
   }
 }
 
-// Default
 .button {
   display: inline-block;
   margin: 0;
