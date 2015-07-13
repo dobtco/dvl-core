@@ -4,9 +4,9 @@ class HomeController < ActionController::Base
   def delegate
     if respond_to?(params[:actual_action_name])
       send(params[:actual_action_name])
-      render params[:actual_action_name]
+      render "home/#{params[:actual_action_name]}"
     elsif view_exists?
-      render params[:actual_action_name], layout: false
+      render "home/#{params[:actual_action_name]}", layout: false
     else
       render plain: %{
         View not found! Expecting to see "class #{assumed_view_class_name}"
