@@ -17,7 +17,9 @@ class DropdownSelectInput
 
     # Push to next frame in order to allow any other initializers to run
     # See https://github.com/dobtco/dvl-core/issues/96
-    setTimeout (-> @_setText()), 0
+    setTimeout =>
+      @_setText()
+    , 0
 
   _onClick: (e) ->
     $a = $(e.currentTarget)
