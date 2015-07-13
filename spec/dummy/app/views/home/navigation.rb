@@ -60,11 +60,12 @@ class Views::Home::Navigation < Views::Page
                   a {
                     span.navbar_full_i {
                       i(class: 'fa fa-bolt navbar_icon')
-                      span.navbar_badge '1'
                     }
                     span.navbar_collapsed_i {
                       text 'Notifications'
                     }
+
+                    span.navbar_badge '1'
                   }
                 }
                 li.dropdown.dropdown_navbar {
