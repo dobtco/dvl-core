@@ -93,6 +93,14 @@ class Views::Home::Forms < Views::Page
       end
     }, hint: 'This component lets you add long answer options, or descriptive text to each option, while imitating the behavior of a native <code>&lt;select&gt;</code>.'.html_safe, sub: true
 
+    docs 'Date and Time Picker', %{
+      simple_form_for :datetime_picker do |f|
+        f.input :deadline,
+                as: :datetime_picker,
+                clear_text: 'Clear'
+      end
+    }, sub: true
+
     hr
 
     h3 'States'
