@@ -233,11 +233,13 @@ class Views::Home::Forms < Views::Page
           div.input_group {
             f.input_field :input_group_with_copy,
                           as: :string,
-                          value: 'http://dobt.forms.fm'
+                          value: 'http://dobt.forms.fm',
+                          'aria-label' => 'Permalink'
             a(class: 'button small info',
               'data-toggle' => 'tooltip',
               'data-container' => 'body',
-              title: 'Copy URL') {
+              title: 'Copy URL',
+              'aria-label' => 'Copy URL') {
               i(class: 'fa fa-copy')
             }
           }
@@ -246,7 +248,8 @@ class Views::Home::Forms < Views::Page
         f.input :enter_your_age do
           div.input_group {
             f.input_field :input_group,
-                          as: :string
+                          as: :string,
+                          'aria-label' => 'Age'
             span.input_group_text 'years young'
           }
         end
@@ -261,9 +264,9 @@ class Views::Home::Forms < Views::Page
           a(href: '#') {
             i(class: 'fa fa-times-circle filter_form_icon_right')
           }
-          input(type: 'text', placeholder: 'Search your projects')
+          input(type: 'text', placeholder: 'Search your projects', 'aria-label' => 'Search your projects')
         }
-        select('data-width' => '12rem') {
+        select('data-width' => '12rem', id: 'status', 'aria-label' => 'Project status') {
           option 'Active projects'
           option 'Completed projects'
         }

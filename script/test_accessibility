@@ -1,0 +1,3 @@
+#! /bin/sh
+
+RUN_ACCESSIBILITY_TESTS=t bundle exec rspec
