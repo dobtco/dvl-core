@@ -45,7 +45,7 @@ class Views::Home::Headers < Views::Page
           }
         }
       }
-    }, sub: '', hint: %{The header title can optionally be a link.}.html_safe
+    }, sub: true, hint: %{The header title can optionally be a link.}.html_safe
 
     docs 'Secondary Action and Back Arrow', %{
       div.page_header.with_back_arrow {
@@ -91,7 +91,7 @@ class Views::Home::Headers < Views::Page
           a.button.info.long_arrow 'View campaign', href: '#'
         }
       }
-    }, sub: ''
+    }, sub: true
 
     docs 'Pagination', %{
       div.page_header.with_back_arrow {
@@ -131,7 +131,7 @@ class Views::Home::Headers < Views::Page
           }
         }
       }
-    }, sub: ''
+    }, sub: true
 
     hr
 
@@ -157,7 +157,7 @@ class Views::Home::Headers < Views::Page
           a.button.info 'Request a revision'
         }
       }
-    }, hint: 'This style of subheader should never contain icons.', sub: ''
+    }, hint: 'This style of subheader should never contain icons.', sub: true
 
     docs 'Heading 4', %{
       div.page_subheader {
@@ -171,7 +171,7 @@ class Views::Home::Headers < Views::Page
           a.button.small 'Edit'
         }
       }
-    }, hint: 'Icons in this style are optional.', sub: ''
+    }, hint: 'Icons in this style are optional.', sub: true
 
     hr
 
@@ -193,7 +193,7 @@ class Views::Home::Headers < Views::Page
           button.button 'Search'
         }
       }
-    }, sub: ''
+    }, sub: true
 
     docs 'Query entered', %{
       div.header_h2_search {
@@ -209,6 +209,6 @@ class Views::Home::Headers < Views::Page
           button.button 'Search'
         }
       }
-    }, sub: ''
+    }, sub: true
   end
 end

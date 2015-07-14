@@ -52,7 +52,7 @@ class Views::Home::Layout < Views::Page
         div.item.three_columns { span '3' }
         div.item.three_columns { span '3' }
       }
-    }, hint: 'The grid currently uses a fixed-width gutter.', sub: ''
+    }, hint: 'The grid currently uses a fixed-width gutter.', sub: true
 
     docs 'Nested', %{
       div.grid.docs_grid {
@@ -65,7 +65,7 @@ class Views::Home::Layout < Views::Page
           }
         }
       }
-    }, hint: 'When nesting columns, make sure the total adds up to 12 columns or less.', sub: ''
+    }, hint: 'When nesting columns, make sure the total adds up to 12 columns or less.', sub: true
 
     hr
 

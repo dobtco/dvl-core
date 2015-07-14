@@ -59,7 +59,7 @@ class Views::Home::Components < Views::Page
           }
         }
       }
-    }, sub: ''
+    }, sub: true
 
     docs 'Multi-Column', %{
       div.dvlcore_button_array {
@@ -180,7 +180,7 @@ class Views::Home::Components < Views::Page
           }
         }
       }
-    }, sub: ''
+    }, sub: true
 
     docs 'Filtering', %{
       div.dvlcore_button_array {
@@ -251,7 +251,7 @@ class Views::Home::Components < Views::Page
           }
         }
       }
-    }, hint: 'The minus icon inside the first dropdown visually indicates partial selection. In the "Assign to..." dropdown, multiple items are selected. All of them are assigned to Aviv, and some are assigned to Clay.', sub: ''
+    }, hint: 'The minus icon inside the first dropdown visually indicates partial selection. In the "Assign to..." dropdown, multiple items are selected. All of them are assigned to Aviv, and some are assigned to Clay.', sub: true
 
     docs 'Appearance', %{
       div.dvlcore_button_array {
@@ -311,7 +311,7 @@ class Views::Home::Components < Views::Page
           }
         }
       }
-    }, sub: ''
+    }, sub: true
 
     docs 'Multi-Level', %{
       div.dropdown {
@@ -355,7 +355,7 @@ class Views::Home::Components < Views::Page
           }
         }
       }
-    }, hint: %{Dropdowns can also be triggered from regular links. Just add the <code>.dropdown_toggle_link</code> class to any <code>&lt;a&gt;</code> tag.}.html_safe, sub: ''
+    }, hint: %{Dropdowns can also be triggered from regular links. Just add the <code>.dropdown_toggle_link</code> class to any <code>&lt;a&gt;</code> tag.}.html_safe, sub: true
 
     docs 'Rich Text', %{
       simple_form_for :selects do |f|
@@ -368,7 +368,7 @@ class Views::Home::Components < Views::Page
                   ['None', 'action']
                 ]
       end
-    }, hint: %{See the <a href="/forms#rich-text dropdowns">Forms page</a> for more details.}.html_safe, sub: ''
+    }, hint: %{See the <a href="/forms#rich-text dropdowns">Forms page</a> for more details.}.html_safe, sub: true
 
     docs 'Flashes', %{
       ul {
@@ -480,7 +480,7 @@ class Views::Home::Components < Views::Page
           li { a(href: '#'){text "&rarr;".html_safe}}
         }
       }
-    }, sub: ''
+    }, sub: true
 
     docs 'Center Aligned', %{
       div.pagination.pagination_centered {
@@ -495,7 +495,7 @@ class Views::Home::Components < Views::Page
           li { a(href: '#'){text "&rarr;".html_safe}}
         }
       }
-    }, sub: ''
+    }, sub: true
 
     docs 'With fewer links', %{
       div.pagination.pagination_centered {
@@ -517,7 +517,7 @@ class Views::Home::Components < Views::Page
           li { a(href: '#'){text '&rarr;'.html_safe}}
         }
       }
-    }, sub: ''
+    }, sub: true
 
     hr
 
