@@ -497,6 +497,17 @@ class Views::Home::Components < Views::Page
       }
     }, sub: ''
 
+    docs 'With fewer links', %{
+      div.pagination.pagination_centered {
+        ul {
+          li { span '&larr;'.html_safe }
+          li.active { span '1' }
+          li { a('2', href: '#') }
+          li { a '&rarr;'.html_safe }
+        }
+      }
+    }
+
     docs 'Compact', %{
       div.pagination_compact {
         span "#1 of 123".html_safe

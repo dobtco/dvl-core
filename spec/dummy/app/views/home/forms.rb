@@ -159,7 +159,10 @@ class Views::Home::Forms < Views::Page
                 ],
                 wrapper_html: { class: 'error' }
 
-        span.form_error 'There was an error!'
+        f.input :input_with_error do
+          f.input_field :input_with_error, as: :string
+          span.form_error 'There was an error!'
+        end
       end
     }, sub: ''
 
@@ -265,10 +268,6 @@ class Views::Home::Forms < Views::Page
             i(class: 'fa fa-times-circle filter_form_icon_right')
           }
           input(type: 'text', placeholder: 'Search your projects', 'aria-label' => 'Search your projects')
-        }
-        select('data-width' => '12rem', id: 'status', 'aria-label' => 'Project status') {
-          option 'Active projects'
-          option 'Completed projects'
         }
         button.button 'Search'
       }
