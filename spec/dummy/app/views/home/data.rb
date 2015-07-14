@@ -131,7 +131,7 @@ class Views::Home::Data < Views::Page
     docs 'Default', %{
       div.user_block {
         figure {
-          img(src: 'http://i.imgur.com/2WkSV2N.png')
+          img(src: 'http://i.imgur.com/2WkSV2N.png', alt: 'Steve McQueen')
           text %{<figcaption><p><strong>Steve McQueen</strong></p><p><em>steve@mcqueen.biz</em></p></figcaption>}.html_safe
         }
       }
@@ -140,7 +140,7 @@ class Views::Home::Data < Views::Page
     docs 'Header and Links', %{
       div.user_block.user_block_rich {
         figure {
-          img(src: 'http://i.imgur.com/2WkSV2N.png')
+          img(src: 'http://i.imgur.com/2WkSV2N.png', alt: 'Steve McQueen')
           text %{<figcaption><p class="user_block_header">Responding as&hellip;</p><p><strong>Steve McQueen</strong></p><p><em>steve@mcqueen.biz</em></p></figcaption>}.html_safe
         }
         div.user_block_links {
@@ -302,7 +302,7 @@ class Views::Home::Data < Views::Page
               div.sidebar_data_label 'Status'
               div.sidebar_data_value {
                 simple_form_for :native_select do |f|
-                  f.input_field :blah, as: :select, collection: ['Open', 'Pending', 'Rejected'], selected: 'Option 1', 'data-width' => '100%'
+                  f.input_field :blah, as: :select, collection: ['Open', 'Pending', 'Rejected'], selected: 'Option 1', 'data-width' => '100%', 'aria-label' => 'Status'
                 end
               }
             }
@@ -315,7 +315,7 @@ class Views::Home::Data < Views::Page
               div.sidebar_data_label 'Revision History'
               div.sidebar_data_value {
                 simple_form_for :foo do |f|
-                  f.input_field :blah, as: :dropdown_select, collection: [['Edited 06/26/15 at 10:28pm', true, 'by Jean-Luc Godard'], ['Edited 06/23/15 at 05:59am', true, 'by Jean-Pierre Melville'], ['Edited 04/15/15 at 01:15pm', true, 'by Jean Cocteau']], selected: 'Edited 06/26/15 at 10:28pm', 'data-width' => '100%'
+                  f.input_field :blah, as: :dropdown_select, collection: [['Edited 06/26/15 at 10:28pm', true, 'by Jean-Luc Godard'], ['Edited 06/23/15 at 05:59am', true, 'by Jean-Pierre Melville'], ['Edited 04/15/15 at 01:15pm', true, 'by Jean Cocteau']], selected: 'Edited 06/26/15 at 10:28pm', 'data-width' => '100%', 'aria-label' => 'Revision history'
                 end
               }
             }

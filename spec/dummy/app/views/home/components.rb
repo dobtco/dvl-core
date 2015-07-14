@@ -397,7 +397,7 @@ class Views::Home::Components < Views::Page
         span.alert_message 'People in this organization can&hellip;'.html_safe
 
         form {
-          select {
+          select('aria-label' => 'Permission level') {
             option 'Manage this project'
             option 'Edit responses'
             option 'View responses'
