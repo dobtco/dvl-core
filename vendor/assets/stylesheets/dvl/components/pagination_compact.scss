@@ -2,8 +2,8 @@ $paginationCompactHeight: $rhythm * 5;
 
 .pagination_compact {
   @include cf;
-  span,
-  ul {
+  > span,
+  > ul {
     float: left;
   }
   > span {
