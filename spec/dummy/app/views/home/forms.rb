@@ -263,10 +263,6 @@ class Views::Home::Forms < Views::Page
           }
           input(type: 'text', placeholder: 'Search your projects')
         }
-        select('data-width' => '12rem') {
-          option 'Active projects'
-          option 'Completed projects'
-        }
         button.button 'Search'
       }
     }, sub: ''
