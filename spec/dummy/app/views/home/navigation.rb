@@ -27,7 +27,7 @@ class Views::Home::Navigation < Views::Page
           }
         }
       }
-    }, sub: '', hint: 'The product name in a navigation bar can be either text or a logo, but not both.'
+    }, sub: true, hint: 'The product name in a navigation bar can be either text or a logo, but not both.'
 
     docs 'Signed In', %{
       nav.navbar {
@@ -135,7 +135,7 @@ class Views::Home::Navigation < Views::Page
           }
         }
       }
-    }, sub: '', hint: 'Use badges next to icons to notify the user of new information.'
+    }, sub: true, hint: 'Use badges next to icons to notify the user of new information.'
 
     hr
 

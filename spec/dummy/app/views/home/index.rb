@@ -114,13 +114,13 @@ class Views::Home::Index < Views::Home
 
     docs 'Default', %{
       p %{DOBT believes in the power of open data. It encourages transparency in government, and sometimes, <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">it even saves lives</a>.}.html_safe
-    }, sub: ''
+    }, sub: true
 
     docs 'Button links', %{
       p {
         button.button_link 'Example'
       }
-    }, hint: %{Add the <code>.button_link</code> class to any <code>&lt;button&gt;</code> tag to make it appear like a link.}.html_safe, sub: ''
+    }, hint: %{Add the <code>.button_link</code> class to any <code>&lt;button&gt;</code> tag to make it appear like a link.}.html_safe, sub: true
 
   end
 end

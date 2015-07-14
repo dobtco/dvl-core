@@ -50,7 +50,7 @@ class Views::Home::Data < Views::Page
           }
         }
       }
-    }, sub: ''
+    }, sub: true
 
     docs 'Condensed', %{
       table.condensed {
@@ -120,7 +120,7 @@ class Views::Home::Data < Views::Page
           }
         }
       }
-    }, hint: %{Add the <code>.condensed</code> class when the table is likely to take up many rows of the same page.}.html_safe, sub: ''
+    }, hint: %{Add the <code>.condensed</code> class when the table is likely to take up many rows of the same page.}.html_safe, sub: true
 
     hr
 
@@ -135,7 +135,7 @@ class Views::Home::Data < Views::Page
           text %{<figcaption><p><strong>Steve McQueen</strong></p><p><em>steve@mcqueen.biz</em></p></figcaption>}.html_safe
         }
       }
-    }, sub: ''
+    }, sub: true
 
     docs 'Header and Links', %{
       div.user_block.user_block_rich {
@@ -148,7 +148,7 @@ class Views::Home::Data < Views::Page
           a 'Sign out'
         }
       }
-    }, sub: ''
+    }, sub: true
 
     hr
 
@@ -203,7 +203,7 @@ class Views::Home::Data < Views::Page
           }
         }
       }
-    }, sub: ''
+    }, sub: true
 
     docs 'Error State', %{
       div.is_invalid {
@@ -239,7 +239,7 @@ class Views::Home::Data < Views::Page
           }
         }
       }
-    }, hint: "Used when previewing an email which the app is unable to send, due to user error.", sub: ''
+    }, hint: "Used when previewing an email which the app is unable to send, due to user error.", sub: true
 
     docs 'Duplicate State', %{
       div.is_duplicate {
@@ -275,7 +275,7 @@ class Views::Home::Data < Views::Page
           }
         }
       }
-    }, hint: "Used when previewing an email that the user has already sent to the intended recipient.", sub: ''
+    }, hint: "Used when previewing an email that the user has already sent to the intended recipient.", sub: true
 
     hr
 

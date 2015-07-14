@@ -71,7 +71,7 @@ class Views::Home::Forms < Views::Page
               include_blank: false,
               input_html: { 'data-width' => 'full' }
       end
-    }, sub: ''
+    }, sub: true
 
     docs 'Rich-text dropdowns', %{
       simple_form_for :selects do |f|
@@ -91,7 +91,7 @@ class Views::Home::Forms < Views::Page
                 ['An example of a very long Option 2. This should not be a problem, because the text should wrap to multiple lines.', 'action', 'Description']],
                 include_blank: true
       end
-    }, hint: 'This component lets you add long answer options, or descriptive text to each option, while imitating the behavior of a native <code>&lt;select&gt;</code>.'.html_safe, sub: ''
+    }, hint: 'This component lets you add long answer options, or descriptive text to each option, while imitating the behavior of a native <code>&lt;select&gt;</code>.'.html_safe, sub: true
 
     hr
 
@@ -132,7 +132,7 @@ class Views::Home::Forms < Views::Page
                 selected: 'Today',
                 disabled: true
       end
-    }, sub: ''
+    }, sub: true
 
     docs 'Error', %{
       simple_form_for :error do |f|
@@ -164,7 +164,7 @@ class Views::Home::Forms < Views::Page
           span.form_error 'There was an error!'
         end
       end
-    }, sub: ''
+    }, sub: true
 
 
     hr
@@ -195,7 +195,7 @@ class Views::Home::Forms < Views::Page
           }
         }
       end
-    }, sub: ''
+    }, sub: true
 
     docs 'Horizontal Forms', %{
       simple_form_for :horizontal, wrapper: :horizontal do |f|
@@ -227,7 +227,7 @@ class Views::Home::Forms < Views::Page
           f.button :button, 'Submit', class: 'primary'
         }
       end
-    }, hint: 'When using horizontal forms, keep each label brief.', sub: ''
+    }, hint: 'When using horizontal forms, keep each label brief.', sub: true
 
     docs 'Input groups', %{
       simple_form_for :input_groups do |f|
@@ -258,7 +258,7 @@ class Views::Home::Forms < Views::Page
         end
       end
 
-    }, sub: ''
+    }, sub: true
 
     docs 'Filter form', %{
       form.filter_form {
@@ -271,7 +271,7 @@ class Views::Home::Forms < Views::Page
         }
         button.button 'Search'
       }
-    }, sub: ''
+    }, sub: true
 
 
     hr
@@ -302,7 +302,7 @@ class Views::Home::Forms < Views::Page
         a.button.success 'Success'
         a.button.subtle 'Subtle'
       }
-    }, sub: ''
+    }, sub: true
 
     docs 'Toggle buttons', %{
       div.dropdown {
@@ -317,7 +317,7 @@ class Views::Home::Forms < Views::Page
           }
         }
       }
-    }, hint: 'Use the <code>.toggle</code> class for buttons which summon a dropdown.'.html_safe, sub: ''
+    }, hint: 'Use the <code>.toggle</code> class for buttons which summon a dropdown.'.html_safe, sub: true
 
     docs 'Button with arrows', %{
       div.dvlcore_button_array {
@@ -329,7 +329,7 @@ class Views::Home::Forms < Views::Page
           i(class: 'fa fa-refresh fa-spin')
         }
       }
-    }, sub: ''
+    }, sub: true
 
     docs 'Disabled', %{
       div.dvlcore_button_array {
@@ -338,7 +338,7 @@ class Views::Home::Forms < Views::Page
         a.button.primary.disabled 'Primary'
         a.button.success.disabled 'Success'
       }
-    }, hint: %{Buttons with the <code>.subtle</code> class have no disabled state. Instead, they should not be displayed on the page.}.html_safe, sub: ''
+    }, hint: %{Buttons with the <code>.subtle</code> class have no disabled state. Instead, they should not be displayed on the page.}.html_safe, sub: true
 
     docs 'Button sizes', %{
       div.dvlcore_button_array {
@@ -346,12 +346,12 @@ class Views::Home::Forms < Views::Page
         a.button.small 'Small'
         a.button.mini 'Mini'
       }
-    }, sub: ''
+    }, sub: true
 
     docs 'Tertiary buttons', %{
       p {
         a.uppercase 'Contact Your Local Representative'
       }
-    }, sub: '', hint: %{Add the <code>.uppercase</code> class to any link to downplay a tertiary action. For example:}.html_safe
+    }, sub: true, hint: %{Add the <code>.uppercase</code> class to any link to downplay a tertiary action. For example:}.html_safe
   end
 end
