@@ -95,14 +95,5 @@ class Views::Home::Layout < Views::Page
     docs 'Footer', %{
       widget Dvl::Components::Footer.new(application_name: 'DOBT Style Guide')
     }
-
-    docs 'Footer w/ language chooser', %{
-      widget Dvl::Components::Footer.new(application_name: 'DOBT Style Guide', append: -> {
-        select('data-width' => 'auto') {
-          option 'English'
-          option 'Español'
-        }
-      })
-    }
   end
 end
