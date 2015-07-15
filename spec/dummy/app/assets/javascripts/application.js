@@ -20,4 +20,5 @@
 //= require dvl/components/splash_footer
 //= require dvl/components/navbar
 //= require dvl/components/dropdown_select
+//= require dvl/datetime_picker
 //= require preview
