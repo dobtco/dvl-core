@@ -1,6 +1,8 @@
 .page_subheader {
   @include cf;
-  margin-bottom: $lineHeight;
+  padding-bottom: $rhythm;
+  border-bottom: 1px solid $lightGray;
+  margin-bottom: $rhythm * 2;
   h3, h4 {
     display: inline;
     float: left;
