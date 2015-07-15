@@ -1,7 +1,8 @@
 require 'erector'
 
 class Dvl::Components::Footer < Erector::Widget
-  needs :application_name
+  needs :application_name,
+        append: nil
 
   def content
     footer.footer {
@@ -22,6 +23,10 @@ class Dvl::Components::Footer < Erector::Widget
           li { a t('dvl_core.footer.contact'), href: 'mailto:support@dobt.co' }
         }
       }
+
+      if @append
+        @append.call
+      end
     }
   end
 end
