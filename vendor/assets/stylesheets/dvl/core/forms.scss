@@ -327,22 +327,38 @@ input[type="radio"] {
   }
 }
 
-.datetime_input_clear_wrapper {
-  clear: both;
+.input_group_date {
+  width: $rhythm * 20;
+}
+
+.input_group_time {
+  width: $rhythm * 16;
 }
 
 .datetime_input_wrapper {
   min-width: 100%;
+
+  .input_group_date,
+  .input_group_time {
+    float: left;
+  }
+
   @media screen and (min-width: $lapWidth) {
     min-width: inherit;
   }
+
+  // Margin between date & time input
+  .input_group_date {
+    margin-right: $rhythm * 2;
+    margin-bottom: $rhythm;
+    @media screen and (min-width: $lapWidth) {
+      margin-bottom: 0;
+    }
+  }
 }
 
-.datetime_date_group {
-  margin-bottom: $lineHeight;
-  @media screen and (min-width: $lapWidth) {
-    margin-bottom: 0;
-  }
+.datetime_input_clear_wrapper {
+  clear: both;
 }
 
 .datetime_input_clear {
@@ -579,12 +595,6 @@ a.styled_select {
     outline: 0;
     border-color: $primaryColor;
   }
-}
-
-.datetime_input_wrapper .input_group {
-  width: $rhythm * 20;
-  float: left;
-  margin-right: $rhythm * 2;
 }
 
 // When replacing an input with text
