@@ -23,6 +23,7 @@ $white: #fff;
 $primaryColor: $brandColor !default;
 $secondaryColor: #f79a68 !default;
 $successColor: #5ee0ac !default;
+$successTextColor: #172b23 !default;
 $warningColor: #e3e15f !default;
 $errorColor: #d95b76 !default;
 $highlight: #dff5f7 !default;
@@ -104,7 +105,7 @@ $fontSizeH2: 2.5rem !default; // 40px
 $fontLineHeightH2: (7 * $rhythm) !default; // 56px
 
 $fontSizeH3: 1.4375rem !default; // 23px
-$fontLineHeightH3: (4 * $rhythm) !default; // 32px
+$fontLineHeightH3: (4.5 * $rhythm) !default; // 36px
 
 // Font Sizes - Small Screens
 
@@ -115,7 +116,7 @@ $fontSizeH2Mobile: 1.5625rem !default; // 25px
 $fontLineHeightH2Mobile: (5 * $rhythm) !default; // 40px
 
 $fontSizeH3Mobile: 1.25rem !default; // 20px
-$fontLineHeightH3Mobile: $fontLineHeightH3 !default; // 32px
+$fontLineHeightH3Mobile: 4 * $rhythm !default; // 32px
 
 @mixin fontDefault {
   font-family: $fontFamilyDefault;
