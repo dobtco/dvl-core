@@ -54,11 +54,6 @@ $dvlFlashDefaultColor: #2886A8 !default;
 
 .flash_success {
   background: $successColor;
-  color: $successTextColor;
-  .flash_close,
-  .flash_close:hover {
-    color: darken($successColor,40%);
-  }
 }
 
 @media only screen and (min-width: 768px) {

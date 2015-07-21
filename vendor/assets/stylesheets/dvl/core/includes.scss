@@ -22,10 +22,9 @@ $white: #fff;
 
 $primaryColor: $brandColor !default;
 $secondaryColor: #f79a68 !default;
-$successColor: #5ee0ac !default;
-$successTextColor: #172b23 !default;
+$successColor: #20b57b !default;
 $warningColor: #e3e15f !default;
-$errorColor: #d95b76 !default;
+$errorColor: #cf3353 !default;
 $highlight: #dff5f7 !default;
 
 // Blues
@@ -372,10 +371,33 @@ $easeInOutBack:  cubic-bezier(0.680, -0.550, 0.265, 1.550);
 
 // Legacy
 
-@mixin social_button_color($base_color) {
-  background: $base_color;
-  &:hover {
-    background: darken($base_color, 7%);
+@mixin button_color($bg, $text) {
+  background: $bg;
+  border: 1px solid darken($bg, 7%);
+  color: $text;
+
+  &:hover,
+  &:focus {
+    background: darken($bg, 7%);
+    border: 1px solid darken($bg, 15%);
+    color: $text;
+  }
+
+  &:active {
+    box-shadow: inset 0 1px 2px darken($bg, 20%);
+  }
+
+  // When a button is disabled, it shouldn't have a distinct
+  // hover/focus/active states.
+  &.disabled,
+  &[disabled] {
+    &:hover,
+    &:focus,
+    &:active {
+      border: 1px solid darken($bg, 7%);
+      background: $bg;
+      box-shadow: none;
+    }
   }
 }
 
