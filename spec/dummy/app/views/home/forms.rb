@@ -309,6 +309,11 @@ class Views::Home::Forms < Views::Page
         a.button.primary 'Primary'
         a.button.success 'Success'
         a.button.subtle 'Subtle'
+        a.button.error 'Error'
+        a.button.white 'White'
+        a.button.darker_gray 'Darker Gray'
+        a.button.light_gray 'Light Gray'
+        a.button.gray 'Gray'
       }
     }, sub: true
 
