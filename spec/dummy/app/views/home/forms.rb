@@ -308,12 +308,8 @@ class Views::Home::Forms < Views::Page
         a.button.info 'Info'
         a.button.primary 'Primary'
         a.button.success 'Success'
-        a.button.subtle 'Subtle'
         a.button.error 'Error'
-        a.button.white 'White'
-        a.button.darker_gray 'Darker Gray'
-        a.button.light_gray 'Light Gray'
-        a.button.gray 'Gray'
+        a.button.subtle 'Subtle'
       }
     }, sub: true
 
@@ -350,6 +346,7 @@ class Views::Home::Forms < Views::Page
         a.button.info.disabled 'Info'
         a.button.primary.disabled 'Primary'
         a.button.success.disabled 'Success'
+        a.button.error.disabled 'Success'
       }
     }, hint: %{Buttons with the <code>.subtle</code> class have no disabled state. Instead, they should not be displayed on the page.}.html_safe, sub: true
 
