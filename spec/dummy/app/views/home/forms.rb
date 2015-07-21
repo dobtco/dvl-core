@@ -342,7 +342,7 @@ class Views::Home::Forms < Views::Page
         a.button.info.disabled 'Info'
         a.button.primary.disabled 'Primary'
         a.button.success.disabled 'Success'
-        a.button.error.disabled 'Success'
+        a.button.error.disabled 'Error'
       }
     }, hint: %{Buttons with the <code>.subtle</code> class have no disabled state. Instead, they should not be displayed on the page.}.html_safe, sub: true
 
