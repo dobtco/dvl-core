@@ -304,12 +304,12 @@ class Views::Home::Forms < Views::Page
 
     docs 'Simple', %{
       div.dvlcore_button_array {
-        a.button 'Yo!'
-        a.button.info 'Info'
-        a.button.primary 'Primary'
-        a.button.success 'Success'
-        a.button.error 'Error'
-        a.button.subtle 'Subtle'
+        a.button 'Yo!', href: '#'
+        a.button.info 'Info', href: '#'
+        a.button.primary 'Primary', href: '#'
+        a.button.success 'Success', href: '#'
+        a.button.error 'Error', href: '#'
+        a.button.subtle 'Subtle', href: '#'
       }
     }, sub: true
 
@@ -333,10 +333,6 @@ class Views::Home::Forms < Views::Page
         a.button.info.arrow_l 'Previous'
         a.button.info.arrow 'Next'
         a.button.info.long_arrow 'Submit'
-        a.button.info.loading {
-          text 'Loading state'
-          i(class: 'fa fa-refresh fa-spin')
-        }
       }
     }, sub: true
 

@@ -2,15 +2,20 @@
   background: $bg;
   border: 1px solid darken($bg, 7%);
   color: $text;
+
   &:hover,
   &:focus {
     background: darken($bg, 7%);
     border: 1px solid darken($bg, 15%);
     color: $text;
   }
+
   &:active {
     box-shadow: inset 0 1px 2px darken($bg, 20%);
   }
+
+  // When a button is disabled, it shouldn't have a distinct
+  // hover/focus/active states.
   &.disabled,
   &[disabled] {
     &:hover,
@@ -18,6 +23,7 @@
     &:active {
       border: 1px solid darken($bg, 7%);
       background: $bg;
+      box-shadow: none;
     }
   }
 }
@@ -27,73 +33,85 @@
   margin: 0;
   // Button height should equal $inputHeight
   padding: ((($inputHeight - $lineHeight) / 2) - 0.0625rem) ($rhythm * 2);
-  @include button_color($lightGray, $bodyFontColor);
   text-align: center;
   text-decoration: none;
   cursor: pointer;
   border-radius: $radius;
-  @include ellipses;
   line-height: $lineHeight;
+  @include ellipses;
+  @include button_color($lightGray, $bodyFontColor);
+
+  // Overriding more default <a> styles
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  // Remove the focus outline, since we'll change the background color
+  // on focus instead.
+  &:focus {
+    outline: 0;
+  }
+
+  &.disabled,
+  &[disabled] {
+    opacity: 0.65;
+    cursor: default;
+  }
+
   &.uppercase {
     border: 0 !important;
     border-radius: 0;
     text-transform: uppercase;
     font-size: $fontSmallest;
   }
+
+  // Subtle buttons don't use the button_color mixin, since they don't
+  // have a hover/focus/active state.
   &.subtle {
     background: $lightestGray;
     border-color: $lightGray;
     color: $darkerGray;
   }
+
+  // Buttons with icons
   &.arrow_l:before {
     content: "\f0d9";
     font-family: 'FontAwesome';
-    margin-right: 1rem;
+    margin-right: $rhythm * 2;
   }
   &.arrow:after {
     content: "\f0da";
     font-family: 'FontAwesome';
-    margin-left: 1rem;
+    margin-left: $rhythm * 2;
   }
   &.long_arrow:after {
     content: "\f178";
     font-family: 'FontAwesome';
-    margin-left: 1rem;
+    margin-left: $rhythm * 2;
   }
-  // Dropdown toggle button
-  &.toggle {
-    &:after {
-      content: "\f0d7";
-      font-family: 'FontAwesome';
-      margin-left: $rhythm;
-      opacity: 0.7;
-    }
-
-    &.info, &.primary {
-      &:after {
-        color: $white;
-      }
-    }
+  &.toggle:after {
+    content: "\f0d7";
+    font-family: 'FontAwesome';
+    margin-left: $rhythm;
+    opacity: 0.7;
   }
 
+  // Colors
   &.primary {
     @include button_color($secondaryColor, $white);
   }
+
   &.success {
     @include button_color($successColor, $white);
   }
+
   &.error {
     @include button_color($errorColor, $white);
   }
+
   &.info {
     @include button_color($primaryColor, $white);
-  }
-  &:hover,
-  &:focus {
-    text-decoration: none;
-  }
-  &:focus {
-    outline: 0;
   }
 
   // Sizes
@@ -110,19 +128,5 @@
 
   &.block {
     display: block;
-  }
-  // States
-  &.disabled,
-  &.disabled:hover,
-  &.disabled:focus,
-  &.disabled:active,
-  &[disabled],
-  &[disabled]:hover
-  &[disabled]:focus {
-    cursor: not-allowed;
-    box-shadow: none;
-    text-shadow: none;
-    opacity: 0.65;
-    cursor: default;
   }
 }
