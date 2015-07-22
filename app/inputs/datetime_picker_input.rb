@@ -15,14 +15,14 @@ class DatetimePickerInput < SimpleForm::Inputs::DateTimeInput
     content_tag(:div, class: 'datetime_input_wrapper cf') do
       @builder.hidden_field(attribute_name, input_html_options) +
 
-      content_tag(:div, class: 'input_group datetime_date_group') do
+      content_tag(:div, class: 'input_group input_group_date') do
         tag(:input, type: 'text') +
         content_tag(:a, class: 'button small') do
           content_tag :i, class: 'fa fa-calendar' do; end;
         end
       end +
 
-      content_tag(:div, class: 'input_group datetime_time_group') do
+      content_tag(:div, class: 'input_group input_group_time') do
         tag(:input, type: 'text') +
         content_tag(:a, class: 'button small') do
           content_tag :i, class: 'fa fa-clock-o' do; end;

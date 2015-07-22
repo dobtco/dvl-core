@@ -15,7 +15,7 @@ class DatetimePicker
     @$wrapper.on 'click', '.datetime_input_clear', $.proxy(@clear, @)
 
   initDateInput: ->
-    @$dateInput = @$el.siblings('.datetime_date_group').find('input')
+    @$dateInput = @$el.siblings('.input_group_date').find('input')
     @$dateInput.datepicker
       autoclose: true
       todayHighlight: true
@@ -25,7 +25,7 @@ class DatetimePicker
       @$dateInput.datepicker('show')
 
   initTimeInput: ->
-    @$timeInput = @$el.siblings('.datetime_time_group').find('input')
+    @$timeInput = @$el.siblings('.input_group_time').find('input')
     @$timeInput.timepicker()
     @$timeInput.timepicker('setTime', @initDate) if @initDate
     @$timeInput.on 'change', $.proxy(@update, @)
