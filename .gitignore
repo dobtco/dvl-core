@@ -5,3 +5,4 @@ screenshots/
 spec/dummy/tmp
 spec/dummy/log
 dist/
+tmp/

@@ -21,36 +21,40 @@ class Views::Base < Erector::Widget
         javascripts
         rawtext '<!--[if lt IE 9]><script src="//d2yxgjkkbvnhdt.cloudfront.net/dist/shim.js"></script><![endif]-->'
       }
-      body {
-        render_header
+      render_body
+    }
+  end
 
-        a.visuallyhidden.focusable 'Skip to content', href: '#content'
+  private
 
-        div.content!
-        div.container.primary_container {
-          div.grid {
-            div.item.desk_three_columns {
-              ul.sidebar_nav {
-                li.header 'Table of Contents'
-                pages.each do |name, path|
-                  li(class: url_for == path ? 'active' : nil) {
-                    a name, href: path
-                  }
-                end
-              }
+  def render_body
+    body {
+      render_header
+
+      a.visuallyhidden.focusable 'Skip to content', href: '#content'
+
+      div.content!
+      div.container.primary_container {
+        div.grid {
+          div.item.desk_three_columns {
+            ul.sidebar_nav {
+              li.header 'Table of Contents'
+              pages.each do |name, path|
+                li(class: url_for == path ? 'active' : nil) {
+                  a name, href: path
+                }
+              end
             }
+          }
 
-            div.item.desk_nine_columns {
-              main
-            }
+          div.item.desk_nine_columns {
+            main
           }
         }
         rawtext '<!--[if lt IE 9]><script src="//d2yxgjkkbvnhdt.cloudfront.net/dist/polyfills.js"></script><![endif]-->'
       }
     }
   end
-
-  private
 
   def pages
     {
