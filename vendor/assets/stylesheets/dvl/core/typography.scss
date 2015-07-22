@@ -124,11 +124,15 @@ blockquote {
   color: $darkerGray;
 }
 
-figcaption {
+@mixin formatted_figcaption {
   font-style: italic;
   font-size: $fontSmall;
   color: $darkerGray;
   margin-top: $rhythm;
+}
+
+figcaption.formatted {
+  @include formatted_figcaption();
 }
 
 del {

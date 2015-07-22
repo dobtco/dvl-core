@@ -22,9 +22,6 @@
   }
   figcaption {
     margin-top: $rhythm * 2;
-    font-style: normal;
-    color: $darkestGray;
-    font-size: 1rem;
     display: inline-block;
     margin-left: $rhythm * 2;
     em {
@@ -52,7 +49,7 @@
 .user_block_links {
   margin-bottom: $lineHeight;
   // Left-aligned with figcaption
-  margin-left: ($rhythm * 10) + ($rhythm * 2); 
+  margin-left: ($rhythm * 10) + ($rhythm * 2);
   a {
     font-size: $fontSmaller;
     margin-right: $rhythm * 2;
