@@ -12,6 +12,8 @@
   // Override styles on parent links
   line-height: $lineHeight;
   font-weight: $weightNormal;
+  letter-spacing: normal;
+  text-transform: none;
   &.top, &.bottom {
     padding: 5px 0;
   }
