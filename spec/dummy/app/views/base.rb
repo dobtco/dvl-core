@@ -22,9 +22,9 @@ class Views::Base < Erector::Widget
         rawtext '<!--[if lt IE 9]><script src="//d2yxgjkkbvnhdt.cloudfront.net/dist/shim.js"></script><![endif]-->'
       }
       body {
-        render_header
-
         a.visuallyhidden.focusable 'Skip to content', href: '#content'
+
+        render_header
 
         div.content!
         div.container.primary_container {
