@@ -336,7 +336,6 @@ $easeInOutBack:  cubic-bezier(0.680, -0.550, 0.265, 1.550);
 // Visually hidden, but appears on focus
 
 @mixin hiddenFocus {
-  @include hidden;
   &:focus,
   &:active {
     position: static;
