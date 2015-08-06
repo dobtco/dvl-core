@@ -1,31 +1,23 @@
-/* ================================================================== *
-   Typography ($typography)
-
-   Modular scale:    12px @ 1:1.333 (perfect fourth)
-   Important number: 20px (maximum <html> `font-size`)
-   http://modularscale.com/scale/?px1=12&px2=20&ra1=1.333&ra2=0
-\* ================================================================== */
-
 html {
   font-size: $maxFontSize;
 }
 
-/**
- * 1. Remove default `margin`
- * 2. Inherits percentage declared on above <html> as root `font-size`
- * 3. Unitless `line-height`, which acts as multiple of root `font-size`
- */
+// 1. Remove default `margin`
+// 2. Inherits percentage declared on above <html> as root `font-size`
+// 3. Unitless `line-height`, which acts as multiple of root `font-size`
 
 body {
-  margin: 0; /* 1 */
+  margin: 0; // 1
   background: $bodyBackgroundColor;
   color: $bodyFontColor;
-  font-size: 1rem; /* 2 */
+  font-size: 1rem; // 2
   font-family: $fontFamilyDefault;
   font-weight: $weightNormal;
-  line-height: $unitlessLineHeight; /* 3 */
+  line-height: $unitlessLineHeight; // 3
 }
-/* Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome */
+
+// Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome
+
 b,
 strong {
   font-weight: $weightBold;
@@ -61,7 +53,8 @@ cite {
   font-style: italic;
 }
 
-/* NOTE: Use `text-rendering` with caution - http://cbrac.co/SJt8p1 */
+// NOTE: Use `text-rendering` with caution - http://cbrac.co/SJt8p1
+
 h1,
 h2,
 h3,
@@ -146,14 +139,15 @@ del {
   }
 }
 
-/* 1. Address inconsistent and variable `font-size` in all browsers */
+// 1. Address inconsistent and variable `font-size` in all browsers
 small {
   display: inline-block;
   font-size: $fontSmaller;
   line-height: $lineHeight;
 }
 
-/* Prevent <sub> and <sup> affecting `line-height` in all browsers */
+// Prevent <sub> and <sup> affecting `line-height` in all browsers
+
 sub,
 sup {
   position: relative;

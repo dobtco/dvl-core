@@ -1,14 +1,11 @@
-/* ================================================================== *\
-   Print ($print)
-   Inlined to avoid an extra HTTP request - http://cbrac.co/VUjfe3
-\* ================================================================== */
+// Print styles
 
 @media print {
-  /* 1. Black prints faster - http://cbrac.co/XvusCs */
+  // 1. Black prints faster - http://cbrac.co/XvusCs
   * {
     background: transparent !important;
     box-shadow: none !important;
-    color: #000 !important; /* 1 */
+    color: #000 !important; // 1
     text-shadow: none !important;
   }
 
@@ -25,7 +22,7 @@
     content: " (" attr(href) ")";
   }
 
-  /* Don’t show links for images, or javascript/internal links */
+  // Don’t show links for images, or javascript/internal links
   a[href^="#"]:after,
   a[href^="javascript:"]:after,
   .ir a:after {
@@ -64,6 +61,6 @@
   }
 
   thead {
-    display: table-header-group; /* http://cbrac.co/Q6s1o2 */
+    display: table-header-group; // http://cbrac.co/Q6s1o2
   }
 }

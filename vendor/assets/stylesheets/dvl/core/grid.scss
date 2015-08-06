@@ -1,33 +1,30 @@
-/**
- * Grid container
- * 1. Default gutter width, change if desired
- * 2. Remove `list-style` in case `.grid` is on a <ul> element
- * 3. Hack to remove `inline-block` whitespace - http://cbrac.co/16xcjcl
- */
+// Grid container
+// 1. Default gutter width, change if desired
+// 2. Remove `list-style` in case `.grid` is on a <ul> element
+// 3. Hack to remove `inline-block` whitespace - http://cbrac.co/16xcjcl
 
 @mixin grid() {
   margin: 0;
-  margin-left: - $gutterWidth; /* 1 */
+  margin-left: - $gutterWidth; // 1
   padding: 0;
-  list-style: none; /* 2 */
-  font-size: 0; /* 3 */
+  list-style: none; // 2
+  font-size: 0; // 3
   @media screen and (min-width: $lapWidth) {
     margin-left: - $lapGutterWidth;
   }
 }
 
-/**
- * Grid item
- * 1. Default gutter width, change if desired
- * 2. Ensures elements within `.item` start at the top
- * 3. Reset `font-size` back to normal
- */
+
+// Grid item
+// 1. Default gutter width, change if desired
+// 2. Ensures elements within `.item` start at the top
+// 3. Reset `font-size` back to normal
 
 @mixin col() {
   display: inline-block;
-  padding-left: $gutterWidth;  /* 1 */
-  vertical-align: top; /* 2 */
-  font-size: 1rem;   /* 3 */
+  padding-left: $gutterWidth;  // 1
+  vertical-align: top; // 2
+  font-size: 1rem;   // 3
   width: 100%;
   @media screen and (min-width: $lapWidth) {
     padding-left: $lapGutterWidth;
@@ -67,7 +64,8 @@
   @include col;
 }
 
-/* Widths */
+// Widths
+
 @mixin build_grid($prefix: "") {
   .#{$prefix}one_column     { @include col1; }
   .#{$prefix}two_columns    { @include col2; }
