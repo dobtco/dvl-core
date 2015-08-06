@@ -1,0 +1,12 @@
+---
+es:
+  dvl_core:
+    footer:
+      about: es una aplicación por <a href='http://www.dobt.co' target='_blank'> The
+        Department of Better Technology</a>.
+      about_no_app: Construido por <a href='http://www.dobt.co' target='_blank'>The
+        Department of Better Technology</a>.
+      contact: Contáctenos
+      help: Consigue ayuda
+      legal: Legal
+      status: Estado del servicio
