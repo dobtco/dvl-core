@@ -35,6 +35,10 @@ summary,
 table,
 ul {
   margin: 0 0 $lineHeight;
+  font-size: 1rem * $fontDefaultFallback;
+  .wf-active & {
+    font-size: 1rem;
+  }
 }
 
 dt {
@@ -70,9 +74,6 @@ h2,
 h3,
 h4 {
   margin: 0 0 $lineHeight;
-}
-
-h1, h2, h3, h4 {
   @include font_smoothing;
 }
 
@@ -89,7 +90,10 @@ h3 {
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1rem * $fontDefaultFallback;
+  .wf-active {
+    font-size: 1rem;
+  }
   font-weight: $weightBold;
   line-height: $lineHeight;
 }
