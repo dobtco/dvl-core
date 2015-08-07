@@ -93,6 +93,9 @@ $unitlessLineHeight: $unitlessRhythm * 3 !default; // 24px
 $lineHeight: $unitlessLineHeight * 1rem !default;
 $maxFontSize: 100% !default; // 16px
 
+$fontDefaultFallback: 0.9375;
+$fontDisplayFallback: 0.875;
+
 $ratio: 1.5;
 
 // Font Sizes - Large Screens
@@ -133,7 +136,12 @@ $fontLineHeightH3Mobile: 4 * $rhythm !default; // 32px
   @include fontDisplay;
   @media screen and (min-width: $lapWidth) {
     margin-left: -0.3125rem; // Optically align Source Sans with body text
-    font-size: $fontSizeH1;
+    font-size: $fontSizeH1 * $fontDisplayFallback;
+    letter-spacing: 0.05rem;
+    .wf-sourcesanspro-n3-active & {
+      font-size: $fontSizeH1;
+      letter-spacing: 0;
+    }
     line-height: $fontLineHeightH1;
   }
 }
@@ -144,7 +152,12 @@ $fontLineHeightH3Mobile: 4 * $rhythm !default; // 32px
   font-weight: $weightNormal;
   @media screen and (min-width: $lapWidth) {
     margin-left: -0.125rem; // Optically align Source Sans with body text
-    font-size: $fontSizeH2;
+    font-size: $fontSizeH2 * $fontDisplayFallback;
+    letter-spacing: 0.02rem;
+    .wf-active & {
+      font-size: $fontSizeH2;
+      letter-spacing: 0;
+    }
     line-height: $fontLineHeightH2;
     @include fontDisplay;
   }
@@ -155,7 +168,10 @@ $fontLineHeightH3Mobile: 4 * $rhythm !default; // 32px
   line-height: $fontLineHeightH3Mobile;
   font-weight: $weightNormal;
   @media screen and (min-width: $lapWidth) {
-    font-size: $fontSizeH3;
+    font-size: $fontSizeH3 * $fontDefaultFallback;
+    .wf-active & {
+      font-size: $fontSizeH3;
+    }
     line-height: $fontLineHeightH3;
   }
 }
