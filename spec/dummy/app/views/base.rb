@@ -8,7 +8,7 @@ class Views::Base < Erector::Widget
     script src: '//code.jquery.com/jquery-1.11.1.min.js'
     javascript_include_tag 'application'
     script src: '//use.typekit.net/ckb1dps.js'
-    script 'try{Typekit.load();}catch(e){}'.html_safe
+    script 'try{Typekit.load({async: true});}catch(e){}'.html_safe
   end
 
   def content
