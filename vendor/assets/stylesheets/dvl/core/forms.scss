@@ -33,6 +33,12 @@ select {
   text-transform: none;
 }
 
+// Hide clear button in IE
+
+input::-ms-clear {
+  display: none;
+}
+
 // 2. Improve usability and consistency of cursor style between
 //    image-type <input> and others
 // 3. Correct inability to style clickable <input> types in iOS
@@ -51,7 +57,8 @@ html input[disabled] {
 }
 
 // Remove default <fieldset> styles for all browsers
-fieldset {
+fieldset,
+legend {
   margin: 0;
   padding: 0;
   border: 0;
@@ -91,6 +98,12 @@ textarea,
 label {
   color: $darkerGray;
   @include font_smoothing;
+}
+
+// Style counter within number input
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
 }
 
 // Heights & sizes
@@ -504,7 +517,9 @@ form {
   @media screen and (min-width: 25rem) {
     width: 20rem; // 272px
   }
-  vertical-align: middle;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
   &.auto {
     width: auto;
     max-width: 100%;
@@ -553,12 +568,6 @@ form {
   &.open .styled_select {
     background: darken($lightestGray,3%);
   }
-}
-
-.styled_select_wrapper {
-  position: relative;
-  display: inline-block;
-  vertical-align: top;
 }
 
 .styled_select {
