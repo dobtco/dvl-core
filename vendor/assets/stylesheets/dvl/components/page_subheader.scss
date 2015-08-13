@@ -35,7 +35,8 @@
   a {
     float: left;
     margin-right: $lineHeight;
-    &:last-child {
+    &:last-child,
+    &:last-of-type {
       margin-right: 0;
     }
   }
