@@ -21,7 +21,8 @@ $dvlFlashDefaultColor: #2886A8 !default;
   line-height: 1rem;
   span {
     display: inline-block;
-    max-width: 95%;
+    width: 100%;
+    padding-right: 2rem;
   }
   a {
     text-decoration: underline;
