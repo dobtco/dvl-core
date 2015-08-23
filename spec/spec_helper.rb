@@ -20,5 +20,3 @@ if ENV['RUN_ACCESSIBILITY_TESTS']
 else
   Capybara.javascript_driver = :poltergeist
 end
-
-Percy.config.access_token = ENV['PERCY_ACCESS_TOKEN']
