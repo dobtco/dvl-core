@@ -10,6 +10,8 @@ require 'rspec-html-matchers'
 require 'active_support/all'
 require 'dvl/core'
 require 'simple_form'
+require 'percy/capybara'
+require 'percy/capybara/rspec'
 
 if ENV['RUN_ACCESSIBILITY_TESTS']
   require 'capybara/accessible'

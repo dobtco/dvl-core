@@ -32,7 +32,7 @@ class Views::Base < Erector::Widget
             div.item.desk_three_columns {
               ul.sidebar_nav {
                 li.header 'Table of Contents'
-                pages.each do |name, path|
+                Rails.configuration.x.pages.each do |name, path|
                   li(class: url_for == path ? 'active' : nil) {
                     a name, href: path
                   }
@@ -51,20 +51,6 @@ class Views::Base < Erector::Widget
   end
 
   private
-
-  def pages
-    {
-      'Base Styles' => '/',
-      'Color' => '/color',
-      'Layout' => '/layout',
-      'Data' => '/data',
-      'Forms' => '/forms',
-      'Headers' => '/headers',
-      'Navigation' => '/navigation',
-      'Components' => '/components',
-      'Splash Pages' => '/splash'
-    }
-  end
 
   # def test_routes
   #   test_views.map do |x|
