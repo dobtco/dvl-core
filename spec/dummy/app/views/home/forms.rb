@@ -9,13 +9,13 @@ class Views::Home::Forms < Views::Page
         f.input :string,
                 as: :string,
                 label: 'Text',
-                input_html: { value: Faker::Lorem.words(3).join(' ') },
+                input_html: { value: 'Lorem ipsum dolor' },
                 hint: "Use hint text if the input can't be fully described by its label. Keep this text brief.".html_safe
 
         f.input :text,
                 as: :text,
                 label: 'Textarea',
-                input_html: { rows: 5, value:  Faker::Lorem.paragraph }
+                input_html: { rows: 5, value:  sample_paragraph }
 
         f.input :radio,
                 as: :radio_buttons,
@@ -110,13 +110,13 @@ class Views::Home::Forms < Views::Page
         f.input :string,
                 as: :string,
                 label: 'Text',
-                input_html: { value: Faker::Lorem.words(3).join(' ') },
+                input_html: { value: 'Lorem ipsum dolor' },
                 disabled: true
 
         f.input :text,
                 as: :text,
                 label: 'Textarea',
-                input_html: { rows: 5, value:  Faker::Lorem.paragraph },
+                input_html: { rows: 5, value:  sample_paragraph },
                 disabled: true
 
         f.input :disabled_radio,
@@ -218,7 +218,7 @@ class Views::Home::Forms < Views::Page
         f.input :string,
                 as: :string,
                 label: 'Email Address',
-                input_html: { value: Faker::Internet.email }
+                input_html: { value: 'admin@dobt.co' }
 
         f.input :radio,
                 as: :radio_buttons,
@@ -229,7 +229,7 @@ class Views::Home::Forms < Views::Page
         f.input :text,
                 as: :text,
                 label: 'Description',
-                input_html: { rows: 5, value:  Faker::Lorem.paragraph }
+                input_html: { rows: 5, value:  sample_paragraph }
 
         div.form_actions.horizontal {
           f.button :button, 'Submit', class: 'primary'
@@ -359,5 +359,16 @@ class Views::Home::Forms < Views::Page
         a.uppercase 'Contact Your Local Representative'
       }
     }, sub: true, hint: %{Add the <code>.uppercase</code> class to any link to downplay a tertiary action. For example:}.html_safe
+  end
+
+  def sample_paragraph
+    %{
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+      eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+      in culpa qui officia deserunt mollit anim id est laborum.
+    }.squish
   end
 end
