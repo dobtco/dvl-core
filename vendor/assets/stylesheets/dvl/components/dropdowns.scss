@@ -116,6 +116,9 @@
         text-decoration: none;
         background-color: rgba($linkColor,0.04);
       }
+      &:focus {
+        outline: 1px dotted $darkerGray;
+      }
     }
     &.divider {
       // Dividers separating items
@@ -366,7 +369,7 @@
       padding-right: $lineHeight + ($rhythm * 2); // Making room for the icon
     }
     &.is_focused {
-      background: $lighterGray;
+      background: rgba($linkColor,0.04);
     }
     &:after {
       line-height: 1;
