@@ -45,21 +45,22 @@
   }
 
   // Buttons with icons
-  &.arrow_l:before {
-    content: "\f0d9";
-    font-family: 'FontAwesome';
-    margin-right: $rhythm * 2;
+
+  &.icon_l,
+  &.icon_r {
+    i {
+      font-size: $fontSmall;
+    }
   }
-  &.arrow:after {
-    content: "\f0da";
-    font-family: 'FontAwesome';
-    margin-left: $rhythm * 2;
+
+  &.icon_l i {
+    margin-right: $rhythm;
   }
-  &.long_arrow:after {
-    content: "\f178";
-    font-family: 'FontAwesome';
-    margin-left: $rhythm * 2;
+
+  &.icon_r i {
+    margin-left: $rhythm;
   }
+
   &.toggle:after {
     content: "\f0d7";
     font-family: 'FontAwesome';

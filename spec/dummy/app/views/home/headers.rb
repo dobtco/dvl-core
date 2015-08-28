@@ -88,7 +88,10 @@ class Views::Home::Headers < Views::Page
             }
           }
 
-          a.button.info.long_arrow 'View campaign', href: '#'
+          a.button.info.icon_r(href: '#') {
+            text 'View campaign'
+            i(class: 'fa fa-long-arrow-right')
+          }
         }
       }
     }, sub: true
