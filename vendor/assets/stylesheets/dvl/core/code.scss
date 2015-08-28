@@ -30,4 +30,5 @@ pre {
   word-break: normal;
   @include font_smoothing;
   letter-spacing: 0.02rem;
+  font-size: $fontSmaller;
 }
