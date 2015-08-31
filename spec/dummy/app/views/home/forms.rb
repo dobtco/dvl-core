@@ -328,11 +328,28 @@ class Views::Home::Forms < Views::Page
       }
     }, hint: 'Use the <code>.toggle</code> class for buttons which summon a dropdown.'.html_safe, sub: true
 
-    docs 'Button with arrows', %{
+    docs 'Button with icons', %{
       div.dvlcore_button_array {
-        a.button.info.arrow_l 'Previous'
-        a.button.info.arrow 'Next'
-        a.button.info.long_arrow 'Submit'
+        a.button.info.icon_l {
+          i(class: 'fa fa-caret-left')
+          text 'Previous'
+        }
+        a.button.info.icon_r {
+          text 'Next'
+          i(class: 'fa fa-caret-right')
+        }
+        a.button.info.icon_r {
+          text 'Submit'
+          i(class: 'fa fa-long-arrow-right')
+        }
+        a.button.primary.icon_l {
+          i(class: 'fa fa-eye')
+          text 'View'
+        }
+        a.button.primary.icon_r {
+          text 'Go to site'
+          i(class: 'fa fa-external-link')
+        }
       }
     }, sub: true
 
