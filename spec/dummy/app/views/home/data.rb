@@ -305,6 +305,7 @@ class Views::Home::Data < Views::Page
                   f.input_field :blah, as: :select, collection: ['Open', 'Pending', 'Rejected'], selected: 'Option 1', 'data-width' => '100%', 'aria-label' => 'Status'
                 end
               }
+              div.sidebar_data_details "The status is very important. Make sure you assign it with care!"
             }
           }
           li {

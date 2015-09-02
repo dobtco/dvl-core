@@ -61,15 +61,20 @@
 
 .sidebar_data_text {
   margin-left: $lineHeight;
-  line-height: $lineHeight;
   @media screen and (min-width: $lapWidth) {
     margin-left: $rhythm * 8;
   }
 }
 
+.sidebar_data_icon,
+.sidebar_data_label {
+  margin: ($rhythm / 2) 0;
+}
+
 .sidebar_data_label {
   font-size: $fontSmall;
   font-weight: $weightBold;
+  line-height: $rhythm * 2;
   @include font_smoothing;
   color: $darkerGray;
 }
@@ -81,11 +86,16 @@
 
 .sidebar_data_value {
   @include cf;
+  line-height: $lineHeight;
   color: $darkestGray;
+  form {
+    margin-bottom: $rhythm;
+  }
 }
 
 .sidebar_data_details {
   font-size: $fontSmaller;
+  line-height: $rhythm * 2.5;
   color: $darkerGray;
   @include font_smoothing;
 }
