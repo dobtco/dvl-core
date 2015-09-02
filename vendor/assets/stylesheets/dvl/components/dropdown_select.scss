@@ -22,6 +22,9 @@
 .drop_rich_head {
   color: $black;
   font-weight: $weightNormal;
+  .blank a & {
+    color: $darkGray;
+  }
   .active a & {
     color: $white;
     @include font_smoothing(off);

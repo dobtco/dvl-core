@@ -7,7 +7,7 @@ class StyledSelect
     @$el = $el
     @options = $.extend({}, @defaults, options)
 
-    for i in ['width']
+    for i in ['width', 'blank']
       @options[i] = @$el.data(i) if @$el.data(i)?
 
     @initWrapper()
@@ -30,11 +30,13 @@ class StyledSelect
       @$wrapper.width(@options.width)
 
   _change: ->
-    if (text = @$el.find('option:selected').text())
-      @$span.text(text)
+    $selected = @$el.find('option:selected')
+
+    if $selected.val()
+      @$span.text($selected.text())
       @$span.removeClass('is_blank')
     else
-      @$span.text(@options.blank)
+      @$span.text(@options.blank || $selected.text())
       @$span.addClass('is_blank')
 
 window.StyledSelect = StyledSelect

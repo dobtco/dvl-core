@@ -9,7 +9,7 @@ class DropdownSelectInput
     @$input = $el.find('input')
     @$toggle = $el.find('[data-toggle=dropdown]')
 
-    for i in ['width']
+    for i in ['width', 'blank']
       @options[i] = @$input.data(i) if @$input.data(i)?
 
     @setWidth()
@@ -41,11 +41,11 @@ class DropdownSelectInput
   _setText: ->
     newText = @$el.find('li.active .drop_rich_head').text()
 
-    if newText
+    if @$input.val()
       @$toggle.text(newText)
       @$toggle.removeClass('is_blank')
     else
-      @$toggle.text(@options.blank)
+      @$toggle.text(@options.blank || newText)
       @$toggle.addClass('is_blank')
 
   setWidth: ->

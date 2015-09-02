@@ -57,6 +57,16 @@ class Views::Home::Forms < Views::Page
                 ],
                 include_blank: true
 
+        f.input :select,
+                as: :select,
+                label: 'Selects can include placeholder text for blank options',
+                collection: [
+                  ['Caucasian', 1],
+                  ['Black / African-American', 2],
+                  ['American Indian / Alaskan National', 3]
+                ],
+                include_blank: 'None selected'
+
       f.input :select,
               as: :select,
               label: 'This dropdown has a fixed width of 14rem.',
@@ -89,7 +99,7 @@ class Views::Home::Forms < Views::Page
                 label: 'Rich-text dropdowns can be blank by default.',
                 collection: [['Option 1', 'action', 'Description'],
                 ['An example of a very long Option 2. This should not be a problem, because the text should wrap to multiple lines.', 'action', 'Description']],
-                include_blank: true
+                include_blank: 'None selected'
       end
     }, hint: 'This component lets you add long answer options, or descriptive text to each option, while imitating the behavior of a native <code>&lt;select&gt;</code>.'.html_safe, sub: true
 

@@ -31,7 +31,12 @@ class DropdownSelectInput < SimpleForm::Inputs::CollectionInput
       content_tag(:div, class: 'dropdown_menu dropdown_menu_rich', role: 'menu') {
         content_tag(:ul, class: 'dropdown_body') {
           collection.map do |x|
-            content_tag(:li, class: selected_option == x ? 'active' : nil) {
+            li_class_str = [].tap do |arr|
+              arr << 'active' if selected_option == x
+              arr << 'blank' if x[1].blank?
+            end.join(' ').presence
+
+            content_tag(:li, class: li_class_str) {
               content_tag(:a, 'data-value' => x[1], href: '#') {
                 content_tag(:strong, class: 'drop_rich_head') { x[0] } +
                 content_tag(:span, class: 'drop_rich_subhead') { x[2] }
