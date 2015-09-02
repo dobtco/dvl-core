@@ -532,7 +532,7 @@ form {
     top: 0;
     left: 0;
     right: 0;
-    min-height: $inputHeight;
+    height: $inputHeight;
     opacity: 0;
     z-index: 2;
     .error & + div {
