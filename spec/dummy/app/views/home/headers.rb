@@ -19,7 +19,7 @@ class Views::Home::Headers < Views::Page
               a 'Stages'
             }
 
-            li {
+            li.active {
               a 'Contacts'
             }
 
@@ -33,7 +33,7 @@ class Views::Home::Headers < Views::Page
             li {
               a {
                 i(class: 'fa fa-pencil')
-                text 'Edit campaign'
+                text 'Edit'
               }
             }
 
@@ -74,10 +74,10 @@ class Views::Home::Headers < Views::Page
         }
         div.page_header_tertiary {
           ul {
-            li {
+            li.active {
               a {
                 i(class: 'fa fa-pencil')
-                text 'Edit campaign'
+                text 'Edit'
               }
             }
 
@@ -88,8 +88,8 @@ class Views::Home::Headers < Views::Page
             }
           }
 
-          a.button.info.icon_r(href: '#') {
-            text 'View campaign'
+          a.button.mini.info.icon_r(href: '#') {
+            text 'View '
             i(class: 'fa fa-long-arrow-right')
           }
         }
@@ -97,7 +97,7 @@ class Views::Home::Headers < Views::Page
     }, sub: true
 
     docs 'Pagination', %{
-      div.page_header.with_back_arrow {
+      div.page_header.with_back_arrow.with_pagination {
         a.page_header_back_arrow(title: 'All responses', 'data-toggle' => 'tooltip') {
           i(class: 'fa fa-arrow-circle-o-left')
         }
@@ -108,7 +108,7 @@ class Views::Home::Headers < Views::Page
 
         div.page_header_secondary {
           ul {
-            li {
+            li.active {
               a 'Responses'
             }
 
