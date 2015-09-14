@@ -42,7 +42,7 @@ class StyledSelect
 window.StyledSelect = StyledSelect
 
 $.fn.extend styledSelect: (opts) ->
-  $(@).find('select:not(.datetime)').each ->
+  $(@).find('select:not([data-no-styled-select])').each ->
     unless @styledSelect
       @styledSelect = true
       new StyledSelect($(@), opts)
