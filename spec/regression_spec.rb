@@ -19,4 +19,12 @@ describe 'Regression', type: :feature, js: true do
       Percy::Capybara.snapshot(page)
     end
   end
+
+  describe 'selectize dropdown' do
+    it 'renders properly' do
+      visit '/regression/selectize'
+      page.execute_script %{$('.selectize-input div').click()}
+      Percy::Capybara.snapshot(page)
+    end
+  end
 end
