@@ -22,35 +22,39 @@ class Views::Base < Erector::Widget
         rawtext '<!--[if lt IE 9]><script src="//d2yxgjkkbvnhdt.cloudfront.net/dist/shim.js"></script><![endif]-->'
       }
       body {
-        a.visuallyhidden.focusable 'Skip to content', href: '#content'
-
-        render_header
-
-        div.content!
-        div.container.primary_container {
-          div.grid {
-            div.item.desk_three_columns {
-              ul.sidebar_nav {
-                li.header 'Table of Contents'
-                Rails.configuration.x.pages.each do |name, path|
-                  li(class: url_for == path ? 'active' : nil) {
-                    a name, href: path
-                  }
-                end
-              }
-            }
-
-            div.item.desk_nine_columns {
-              main
-            }
-          }
-        }
+        render_body
         rawtext '<!--[if lt IE 9]><script src="//d2yxgjkkbvnhdt.cloudfront.net/dist/polyfills.js"></script><![endif]-->'
       }
     }
   end
 
   private
+
+  def render_body
+    a.visuallyhidden.focusable 'Skip to content', href: '#content'
+
+    render_header
+
+    div.content!
+    div.container.primary_container {
+      div.grid {
+        div.item.desk_three_columns {
+          ul.sidebar_nav {
+            li.header 'Table of Contents'
+            Rails.configuration.x.pages.each do |name, path|
+              li(class: url_for == path ? 'active' : nil) {
+                a name, href: path
+              }
+            end
+          }
+        }
+
+        div.item.desk_nine_columns {
+          main
+        }
+      }
+    }
+  end
 
   # def test_routes
   #   test_views.map do |x|
