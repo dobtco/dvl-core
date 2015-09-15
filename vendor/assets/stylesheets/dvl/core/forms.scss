@@ -1,5 +1,9 @@
 // Default form styles
 
+$largeInputHeight: $inputHeight * $ratio;
+$largeInputPadding: $inputPadding * $ratio;
+$smallInputHeight: 2.125rem;
+
 form {
   margin: 0;
 }
@@ -118,13 +122,13 @@ input[type="number"] {
 
   &.large {
     font-size: 1rem * $ratio;
-    height: $inputHeight * $ratio;
-    padding: $inputPadding * $ratio;
+    height: $largeInputHeight;
+    padding: $largeInputPadding;
     @include font_smoothing;
   }
 
   &.small {
-    height: 2.125rem;
+    height: $smallInputHeight;
     font-size: $fontSmall;
   }
 }
@@ -526,6 +530,39 @@ form {
   }
   &.full {
     width: 100%;
+  }
+  &.large {
+    height: $largeInputHeight;
+    font-size: $fontSizeH3;
+    select {
+      height: $largeInputHeight;
+      min-height: $largeInputHeight;
+    }
+    .styled_select {
+      height: $largeInputHeight;
+      padding: 0 $inputHeight 0 $largeInputPadding;
+      line-height: $largeInputHeight;
+      &:after {
+        line-height: 1rem;
+        @include topCenter($largeInputHeight, 1rem);
+        right: $largeInputPadding;
+      }
+    }
+  }
+  &.small {
+    height: $smallInputHeight;
+    font-size: $fontSmall;
+    select {
+      height: $smallInputHeight;
+      min-height: $smallInputHeight;
+    }
+    .styled_select {
+      height: $smallInputHeight;
+      line-height: $smallInputHeight;
+      &:after {
+        @include topCenter($smallInputHeight, 0.9rem);
+      }
+    }
   }
   select {
     position: absolute;
