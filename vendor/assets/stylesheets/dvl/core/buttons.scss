@@ -91,6 +91,12 @@
     font-size: $fontSmall;
   }
 
+  &.large {
+    height: $inputHeight * $ratio;
+    line-height: $inputHeight * $ratio;
+    padding: 0 1.5rem;
+  }
+
   &.mini {
     padding: $rhythm / 2 $rhythm;
     font-size: $fontSmaller;
@@ -99,5 +105,6 @@
 
   &.block {
     display: block;
+    width: 100%;
   }
 }

@@ -12,6 +12,9 @@ class DropdownSelectInput
     for i in ['width', 'blank']
       @options[i] = @$input.data(i) if @$input.data(i)?
 
+    for i in ['small', 'large']
+      @$el.addClass(i) if @$input.hasClass(i)
+
     @setWidth()
     @$el.on 'click', 'a[data-value]', $.proxy(@_onClick, @)
 

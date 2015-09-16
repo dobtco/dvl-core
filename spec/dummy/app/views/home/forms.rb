@@ -189,29 +189,53 @@ class Views::Home::Forms < Views::Page
 
     h3 'Appearance'
 
-    docs 'Input sizes', %{
+    docs 'Large inputs', %{
       simple_form_for :large_inputs do |f|
+
         f.input :large_string,
-                label: 'Name (large)',
-                as: :string,
-                input_html: { class: 'large' }
+          label: 'Large input',
+          as: :string,
+          input_html: { class: 'large' }
 
         f.input :large_text,
-                label: 'Description (large)',
+                label: 'Large textarea',
                 as: :text,
                 input_html: { class: 'large', rows: 4 }
 
-        div.grid {
-          div.item.eight_columns {
-            f.input_field :small_string,
-                          as: :string,
-                          placeholder: 'Small input',
-                          class: 'small'
-          }
-          div.item.four_columns {
-            button.button.small 'Small button'
-          }
-        }
+        f.input :large_select,
+                label: 'Large native dropdown',
+                collection: ['Option 1', 'Option 2', 'Option 3'],
+                as: :select,
+                input_html: { class: 'large' }
+
+        f.input :large_dropdown_select,
+                label: 'Large rich-text dropdown',
+                collection: [['All', 'action', 'Get notified whenever a bill becomes a law.'], ['None', 'action', 'Remain ignorant of all incoming legislation.']],                as: :dropdown_select,
+                input_html: { class: 'large' }
+      end
+    }, sub: true
+
+
+    docs 'Small inputs', %{
+      simple_form_for :small_inputs do |f|
+
+        f.input :small_string,
+                label: 'Small text input',
+                as: :string,
+                input_html: { class: 'small' }
+
+        f.input :small_select,
+                label: 'Small native dropdown',
+                collection: ['Option 1', 'Option 2', 'Option 3'],
+                as: :select,
+                input_html: { class: 'small' }
+
+        f.input :small_dropdown_select,
+                label: 'Small rich-text dropdown',
+                collection: [['All', 'action', 'Get notified whenever a bill becomes a law.'], ['None', 'action', 'Remain ignorant of all incoming legislation.']],
+                as: :dropdown_select,
+                input_html: { class: 'small' }
+
       end
     }, sub: true
 
@@ -375,6 +399,7 @@ class Views::Home::Forms < Views::Page
 
     docs 'Button sizes', %{
       div.dvlcore_button_array {
+        a.button.large 'Normal'
         a.button 'Normal'
         a.button.small 'Small'
         a.button.mini 'Mini'

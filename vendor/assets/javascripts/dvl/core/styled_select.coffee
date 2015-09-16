@@ -18,6 +18,10 @@ class StyledSelect
     @$wrapper = $('<div class="styled_select_wrapper" />')
     @$span = $('<div class="styled_select" />')
     @setWidth()
+
+    for i in ['small', 'large']
+      @$wrapper.addClass(i) if @$el.hasClass(i)
+
     @$el.wrap(@$wrapper)
     @$span.appendTo(@$el.parent())
 
