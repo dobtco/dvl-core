@@ -32,8 +32,8 @@ class Views::Home::Index < Views::Home
 
     docs 'Headings', %{
       div.dvlcore_headings {
-        h1 'Heading 1 64/80px'
-        h2 'Heading 2 40/56px'
+        h1 'Heading 1 56/80px'
+        h2 'Heading 2 36/56px'
         h3 'Heading 3 23/32px'
         h4 'Heading 4 16/24px'
         h5 'Heading 5 13/24px'
