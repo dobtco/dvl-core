@@ -37,7 +37,7 @@ class Views::Home::Splash < Views::Page
                   a 'Terms of Service', href: 'http://www.dobt.co/terms/'
                 }
                 li {
-                  a 'Privacy Policy', href: 'http://www.dobt.co/privacy/'
+                  a 'Privacy Policy', href: 'https://www.dobt.co/privacy/'
                 }
                 li {
                   a 'Customer Dashboard', href: 'https://dashboard.dobt.co'
