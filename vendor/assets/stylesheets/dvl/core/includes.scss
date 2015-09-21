@@ -80,13 +80,13 @@ $radius: 3px !default;
 // TYPOGRAPHY
 
 // Font weights
-$weightLight: 300 !default;
+$weightLight: 200 !default;
 $weightNormal: 400 !default;
 $weightBold: 700 !default;
 
 // Typography
 $fontFamilyDefault: 'franklin-gothic-urw', 'Franklin Gothic Medium', 'Franklin Gothic', 'ITC Franklin Gothic', 'Helvetica Neue', Arial, sans-serif !default;
-$fontFamilyDisplay: 'source-sans-pro', 'HelveticaNeue-Light', Helvetica, Arial, sans-serif !default;
+$fontFamilyDisplay: 'tablet-gothic-wide', 'HelveticaNeue-Light', Helvetica, Arial, sans-serif !default;
 $fontFamilyMonospace: 'Consolas', 'Monaco', 'Lucida Console', monospace !default;
 $unitlessRhythm: 0.5 !default; // 8px @ 16px root
 $rhythm: $unitlessRhythm * 1rem !default;
@@ -98,10 +98,10 @@ $ratio: 1.5;
 
 // Font Sizes - Large Screens
 
-$fontSizeH1: 4rem !default; // 64px
+$fontSizeH1: 3.5rem !default; // 56px
 $fontLineHeightH1: (10 * $rhythm) !default; // 80px
 
-$fontSizeH2: 2.5rem !default; // 40px
+$fontSizeH2: 2.25rem !default; // 36px
 $fontLineHeightH2: (7 * $rhythm) !default; // 56px
 
 $fontSizeH3: 1.4375rem !default; // 23px
