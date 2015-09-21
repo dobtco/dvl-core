@@ -34,10 +34,10 @@ class Views::Home::Splash < Views::Page
                   a 'Status Board', href: 'http://status.dobt.co'
                 }
                 li {
-                  a 'Terms of Service', href: 'https://dashboard.dobt.co/terms'
+                  a 'Terms of Service', href: 'http://www.dobt.co/terms/'
                 }
                 li {
-                  a 'Privacy Policy', href: 'https://dashboard.dobt.co/privacy'
+                  a 'Privacy Policy', href: 'http://www.dobt.co/privacy/'
                 }
                 li {
                   a 'Customer Dashboard', href: 'https://dashboard.dobt.co'
