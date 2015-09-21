@@ -18,7 +18,7 @@ class Dvl::Components::Footer < Erector::Widget
 
         ul {
           li { a t('dvl_core.footer.status'), href: 'http://status.dobt.co', target: '_blank' }
-          li { a t('dvl_core.footer.legal'), href: 'http://www.dobt.co/terms/', target: '_blank' }
+          li { a t('dvl_core.footer.terms'), href: 'http://dobt.co/terms/', target: '_blank' }
           li { a t('dvl_core.footer.help'), href: 'http://help.dobt.co', target: '_blank' }
           li { a t('dvl_core.footer.contact'), href: 'mailto:support@dobt.co' }
         }
