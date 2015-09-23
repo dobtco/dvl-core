@@ -23,9 +23,8 @@
     }
     .button {
       font-size: 1rem;
-      position: relative;
       margin-left: $rhythm * 2;
-      top: $rhythm / 2;
+      vertical-align: middle;
     }
   }
   .pagination_compact {
