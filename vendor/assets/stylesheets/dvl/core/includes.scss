@@ -102,9 +102,11 @@ $ratio: 1.5;
 
 $fontSizeH1: 3.5rem !default; // 56px
 $fontLineHeightH1: (10 * $rhythm) !default; // 80px
+$fontOpticalMarginH1: -0.3125rem;
 
 $fontSizeH2: 2.25rem !default; // 36px
 $fontLineHeightH2: (7 * $rhythm) !default; // 56px
+$fontOpticalMarginH2: -0.125rem;
 
 $fontSizeH3: 1.4375rem !default; // 23px
 $fontLineHeightH3: (4.5 * $rhythm) !default; // 36px
@@ -135,7 +137,7 @@ $fontLineHeightH3Mobile: 4 * $rhythm !default; // 32px
   line-height: $fontLineHeightH1Mobile;
   @include fontDisplay;
   @media screen and (min-width: $lapWidth) {
-    margin-left: -0.3125rem; // Optically align Source Sans with body text
+    margin-left: $fontOpticalMarginH1; // Optically align Source Sans with body text
     font-size: $fontSizeH1;
     line-height: $fontLineHeightH1;
   }
@@ -146,7 +148,7 @@ $fontLineHeightH3Mobile: 4 * $rhythm !default; // 32px
   line-height: $fontLineHeightH2Mobile;
   font-weight: $weightNormal;
   @media screen and (min-width: $lapWidth) {
-    margin-left: -0.125rem; // Optically align Source Sans with body text
+    margin-left: $fontOpticalMarginH2; // Optically align Source Sans with body text
     font-size: $fontSizeH2;
     line-height: $fontLineHeightH2;
     @include fontDisplay;
