@@ -7,8 +7,11 @@
     float: left;
     margin-right: $rhythm * 4;
     margin-bottom: $rhythm;
-    a {
+    position: relative;
+    > a {
       color: $black;
+    }
+    a {
       text-decoration: none;
     }
     img {
@@ -55,6 +58,26 @@
 
   &.with_back_arrow {
     padding-left: $rhythm * 5;
+    h2 {
+      position: relative;
+      padding-top: $rhythm * 1.5;
+      padding-bottom: $rhythm * 0.5;
+      span {
+        font-size: $fontSmall;
+        text-transform: uppercase;
+        font-family: $fontFamilyDefault;
+        font-weight: $weightNormal;
+        letter-spacing: $letterspaceSmall;
+        display: block;
+        line-height: $rhythm * 2;
+        position: absolute;
+        top: 0;
+        left: $fontOpticalMarginH2 * -1;
+        a {
+          color: $darkerGray;
+        }
+      }
+    }
   }
 
   @media screen and (min-width: $lapWidth) {
@@ -70,13 +93,10 @@
   font-size: 1.75rem;
   position: absolute;
   opacity: 0.7;
-  @include topCenter($fontLineHeightH2Mobile, 1.75rem);
-  @media screen and (min-width: $lapWidth) {
-    @include topCenter($fontLineHeightH2, 1.75rem);
-  }
   left: 0;
+  @include topCenter(($fontLineHeightH2 + $lineHeight), 1.75rem);
   margin-top: 2px; // Optical adjustment
-  line-height: 1;
+  line-height: 1.75rem;
 }
 
 // Secondary and tertiary navigation, within page headers.

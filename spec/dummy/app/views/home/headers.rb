@@ -5,10 +5,18 @@ class Views::Home::Headers < Views::Page
 
     h3 'Page Header with Navigation'
 
-    docs 'Rename Button', %{
+    docs 'Basic', %{
+      div.page_header {
+        h2 'Projects'
+
+        a.button.primary 'New project'
+      }
+    }, sub: true
+
+    docs 'With secondary / tertiary navigation and rename button', %{
       div.page_header {
         h2 {
-          a 'Sales Leads', href: '#'
+          text 'Sales Leads'
           a.button.subtle.mini {
             i(class: 'fa fa-pencil')
           }
@@ -43,88 +51,25 @@ class Views::Home::Headers < Views::Page
               }
             }
           }
-        }
-      }
-    }, sub: true, hint: %{The header title can optionally be a link.}.html_safe
-
-    docs 'Secondary Action and Back Arrow', %{
-      div.page_header.with_back_arrow {
-        a.page_header_back_arrow(title: 'Dashboard', 'data-toggle' => 'tooltip') {
-          i(class: 'fa fa-arrow-circle-o-left')
-        }
-
-        h2 {
-          a 'Meeting request', href: '#'
-        }
-
-        div.page_header_secondary {
-          ul {
-            li {
-              a 'Stages'
-            }
-
-            li {
-              a 'Contacts'
-            }
-
-            li {
-              a 'Messages'
-            }
-          }
-        }
-        div.page_header_tertiary {
-          ul {
-            li.active {
-              a {
-                i(class: 'fa fa-pencil')
-                text 'Edit'
-              }
-            }
-
-            li {
-              a {
-                text 'Settings'
-              }
-            }
-          }
-
           a.button.mini.info.icon_r(href: '#') {
             text 'View '
             i(class: 'fa fa-long-arrow-right')
           }
         }
       }
-    }, sub: true
+    }, sub: true, hint: %{The header title can optionally be a link.}.html_safe
 
-    docs 'Pagination', %{
+    docs 'With back arrow and pagination', %{
       div.page_header.with_back_arrow.with_pagination {
         a.page_header_back_arrow(title: 'All responses', 'data-toggle' => 'tooltip') {
           i(class: 'fa fa-arrow-circle-o-left')
         }
 
         h2 {
-          a 'Max Ophüls', href: '#'
+          span.page_header_context { a '2015 Civic Innovation Conference', href: '#' }
+          text 'Max Ophüls'
         }
 
-        div.page_header_secondary {
-          ul {
-            li.active {
-              a 'Responses'
-            }
-
-            li {
-              a 'Questions'
-            }
-
-            li {
-              a 'Messages'
-            }
-
-            li {
-              a 'Settings'
-            }
-          }
-        }
         div.pagination_compact.pagination_compact_header {
           span "#94 of 566"
 
@@ -135,16 +80,6 @@ class Views::Home::Headers < Views::Page
         }
       }
     }, sub: true
-
-    hr
-
-    docs 'Basic Page Header', %{
-      div.page_header {
-        h2 'Projects'
-
-        a.button.primary 'New project'
-      }
-    }
 
     h3 'Page Subheaders'
 
