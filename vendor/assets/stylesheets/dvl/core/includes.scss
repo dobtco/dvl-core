@@ -178,6 +178,10 @@ $letterspaceSmallest: 0.05rem;
 $inputHeight: $rhythm * 5 !default; // 36px @ 16px root
 $inputPadding: $rhythm !default;
 
+$largeInputHeight: $inputHeight * $ratio;
+$largeInputPadding: $inputPadding * $ratio;
+$smallInputHeight: 2.125rem;
+
 // Grid
 $columnWidth: 8.333%;
 $gutterWidth: $lineHeight;
