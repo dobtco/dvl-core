@@ -3,9 +3,7 @@ class Views::Home::Headers < Views::Page
 
     h2 'Headers'
 
-    h3 'Page Header with Navigation'
-
-    docs 'Basic', %{
+    docs 'Page Header - Basic', %{
       div.page_header {
         h2 'Projects'
 
@@ -13,7 +11,7 @@ class Views::Home::Headers < Views::Page
       }
     }, sub: true
 
-    docs 'With secondary / tertiary navigation and rename button', %{
+    docs 'Page Header - With secondary / tertiary navigation and rename button', %{
       div.page_header {
         h2 {
           text 'Sales Leads'
@@ -59,7 +57,7 @@ class Views::Home::Headers < Views::Page
       }
     }, sub: true, hint: %{The header title can optionally be a link.}.html_safe
 
-    docs 'With back arrow and pagination', %{
+    docs 'Page Header - With back arrow and pagination', %{
       div.page_header.with_back_arrow.with_pagination {
         a.page_header_back_arrow(title: 'All responses', 'data-toggle' => 'tooltip') {
           i(class: 'fa fa-arrow-circle-o-left')
@@ -81,9 +79,7 @@ class Views::Home::Headers < Views::Page
       }
     }, sub: true
 
-    h3 'Page Subheaders'
-
-    docs 'Heading 3', %{
+    docs 'Page Subheader - Heading 3', %{
       div.page_subheader {
         h3 'Debra Granik'
 
@@ -97,7 +93,7 @@ class Views::Home::Headers < Views::Page
       }
     }, hint: 'This style of subheader should never contain icons.', sub: true
 
-    docs 'Heading 4', %{
+    docs 'Page Subheader - Heading 4', %{
       div.page_subheader {
         h4 {
           i(class: 'fa fa-file-text')
@@ -111,13 +107,7 @@ class Views::Home::Headers < Views::Page
       }
     }, hint: 'Icons in this style are optional.', sub: true
 
-    hr
-
-    h3 'Header with Search Bar'
-
-    p 'Use this header for standalone pages which do not require navigation.'
-
-    docs 'Default', %{
+    docs 'Page Header - With searchbar', %{
       div.header_h2_search {
         h2 'Your projects'
         form.filter_form {
@@ -131,9 +121,9 @@ class Views::Home::Headers < Views::Page
           button.button 'Search'
         }
       }
-    }, sub: true
+    }, hint: 'Use this header for standalone pages which do not require navigation.', sub: true
 
-    docs 'Query entered', %{
+    docs 'Page Header - With searchbar (query entered)', %{
       div.header_h2_search {
         h2 'Your projects'
         form.filter_form.with_query {
