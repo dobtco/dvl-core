@@ -536,7 +536,7 @@ form {
     }
     .styled_select {
       height: $largeInputHeight;
-      padding: 0 $inputHeight 0 $largeInputPadding;
+      padding: 0 $largeInputHeight 0 $largeInputPadding;
       line-height: $largeInputHeight;
       &:after {
         line-height: 1rem;
