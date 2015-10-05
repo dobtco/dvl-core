@@ -11,7 +11,7 @@ class Views::Home::Regression::HeaderTwo < Views::Base
 
   def render_body
     div.page_header.with_back_arrow.with_pagination {
-      a.page_header_back_arrow(title: 'All responses', 'data-toggle' => 'tooltip') {
+      a.page_header_back_arrow(href: '/regression/header_one', title: 'All responses', 'data-toggle' => 'tooltip') {
         i(class: 'fa fa-arrow-circle-o-left')
       }
 
