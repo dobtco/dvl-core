@@ -410,7 +410,10 @@ class Views::Home::Forms < Views::Page
       p {
         a.uppercase 'Contact Your Local Representative'
       }
-    }, sub: true, hint: %{Add the <code>.uppercase</code> class to any link to downplay a tertiary action. For example:}.html_safe
+      p {
+        a.button_uppercase 'Send an email'
+      }
+    }, sub: true, hint: %{Add the <code>.uppercase</code> or <code>.button_uppercase</code> class to any link to downplay a tertiary action. For example:}.html_safe
   end
 
   def sample_paragraph

@@ -19,7 +19,8 @@ a {
     outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
   }
-  &.uppercase {
+  &.uppercase,
+  &.button_uppercase {
     text-transform: uppercase;
     font-size: $fontSmallest;
     letter-spacing: $letterspaceSmallest;
@@ -27,10 +28,24 @@ a {
 }
 
 .button_uppercase {
-  color: $linkColor;
-  text-transform: uppercase;
-  font-size: $fontSmallest;
-  letter-spacing: $letterspaceSmallest;
+  background: $lighterGray;
+  padding: $rhythm ($rhythm * 2);
+  color: $darkerGray;
+  text-decoration: none;
+  line-height: 1;
+  border-radius: $rhythm * 2;
+  display: inline-block;
+  i {
+    margin-right: $rhythm;
+  }
+  &:hover,
+  &:focus {
+    color: $linkColor;
+    text-decoration: none;
+  }
+  &:active {
+    box-shadow: inset 0 1px 1px rgba(#000,0.05);
+  }
 }
 
 // Plain dropdown toggle links
