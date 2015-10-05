@@ -64,7 +64,7 @@ class Views::Home::Headers < Views::Page
         }
 
         h2 {
-          span.page_header_context { a '2015 Civic Innovation Conference', href: '#' }
+          a.page_header_context '2015 Civic Innovation Conference', href: '#'
           text 'Max Ophüls'
         }
 
