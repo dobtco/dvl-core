@@ -62,7 +62,7 @@
       position: relative;
       padding-top: $rhythm * 1.5;
       padding-bottom: $rhythm * 0.5;
-      span {
+      a.page_header_context {
         font-size: $fontSmall;
         text-transform: uppercase;
         font-family: $fontFamilyDefault;
@@ -73,9 +73,7 @@
         position: absolute;
         top: 0;
         left: $fontOpticalMarginH2 * -1;
-        a {
-          color: $darkerGray;
-        }
+        color: $darkerGray;
       }
     }
   }
