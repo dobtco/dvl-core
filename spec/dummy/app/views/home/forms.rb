@@ -109,6 +109,8 @@ class Views::Home::Forms < Views::Page
                 as: :datetime_picker,
                 clear_text: 'Clear'
       end
+
+      div.js_dt_result '&nbsp;'.html_safe
     }, sub: true
 
     hr
