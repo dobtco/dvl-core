@@ -54,7 +54,9 @@ class DatetimePicker
     fullDateObj.toString()
 
   update: ->
-    @$el.val(@getDateString()).trigger('input')
+    val = @getDateString()
+    @$el.trigger('update.dtpicker', val)
+    @$el.val(val).trigger('input')
 
 $.fn.extend datetimePicker: (option, args...) ->
   @each ->
