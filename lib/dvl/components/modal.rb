@@ -11,7 +11,7 @@ class Dvl::Components::Modal < Erector::Widget
         div.modal_content {
           div.modal_header {
             a.close '&times;'.html_safe, 'data-dismiss' => 'modal'
-            h3 @title.html_safe
+            h3 @title
           }
 
           modal_content
