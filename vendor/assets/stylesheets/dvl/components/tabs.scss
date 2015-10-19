@@ -6,7 +6,8 @@
   user-select: none;
   li {
     position: relative;
-    a {
+    a,
+    span {
       @include ellipses;
       text-decoration: none;
       background: $lightestGray;
@@ -27,18 +28,24 @@
         transition: none;
       }
     }
-    &.active a {
-      background: $primaryColor;
-      color: $white;
-      transition: none;
-      @include font_smoothing;
+    &.active {
+      a, span {
+        background: $primaryColor;
+        color: $white;
+        transition: none;
+        @include font_smoothing;
+      }
     }
-    &:first-child a {
-      @include border_top_radius($radius * 2);
+    &:first-child {
+      a, span {
+        @include border_top_radius($radius * 2);
+      }
     }
-    &:last-child a {
-      @include border_bottom_radius($radius * 2);
-      border-bottom-width: 1px;
+    &:last-child {
+      a, span {
+        @include border_bottom_radius($radius * 2);
+        border-bottom-width: 1px;
+      }
     }
   }
   @media screen and (min-width: $lapWidth) {
@@ -46,18 +53,22 @@
     li {
       float: left;
       min-width: $lineHeight * 5;
-      a {
+      a, span {
         border-bottom-width: 1px;
         border-right-width: 0;
       }
-      &:first-child a {
-        border-top-right-radius: 0;
-        @include border_left_radius($lineHeight);
+      &:first-child {
+        a, span {
+          border-top-right-radius: 0;
+          @include border_left_radius($lineHeight);
+        }
       }
-      &:last-child a {
-        border-bottom-left-radius: 0;
-        @include border_right_radius($lineHeight);
-        border-right-width: 1px;
+      &:last-child {
+        a, span {
+          border-bottom-left-radius: 0;
+          @include border_right_radius($lineHeight);
+          border-right-width: 1px;
+        }
       }
     }
   }
