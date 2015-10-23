@@ -143,6 +143,7 @@ textarea {
 input[type="file"] {
   padding: $inputPadding 0;
   max-width: 100%;
+  background: transparent;
 }
 
 // Make checkbox, image, and radio inputs `inline-block` by default
@@ -474,34 +475,78 @@ form {
   position: relative;
   display: table;
   border-collapse: separate;
-  > .button, > .input_group_text {
-    width: 1%;
-    display: table-cell;
-  }
-  > input {
-    display: table-cell;
-    width: 100%;
-  }
-  .button {
-    border-left-width: 0;
-  }
-  :first-child {
-    @include border_right_radius(0);
-  }
-  :last-child {
+}
+
+.input_group_input,
+.input_group_append,
+.input_group_prepend {
+  display: table-cell;
+}
+
+// Remove corner radius for elements not on the edge of .input_groups
+
+.input_group_input input {
+  @include border_right_radius(0);
+  .input_group_prepend + & {
+    @include border_right_radius($radius);
     @include border_left_radius(0);
   }
 }
 
-.input_group_text {
-  display: inline-block;
-  margin: 0;
-  padding-left: $rhythm;
+.input_group_prepend .button {
+  @include border_right_radius(0);
+  border-right-width: 0;
+}
+
+.input_group_append .button {
+  @include border_left_radius(0);
+  border-left-width: 0;
+}
+
+// Restore border radius if no buttons are adjacent
+
+.input_group_text input {
+  border-radius: $radius;
+  border-width: 1px;
+}
+
+.input_group_input {
   width: 100%;
-  color: $darkerGray;
-  text-align: center;
-  line-height: $inputHeight;
-  @include ellipses;
+  input {
+    width: 100%;
+  }
+}
+
+.input_group_append,
+.input_group_prepend {
+  width: 1%;
+  display: table-cell;
+  vertical-align: top;
+  .button {
+    height: $inputHeight;
+    line-height: $rhythm * 4;
+  }
+  span {
+    display: inline-block;
+    margin: 0;
+    width: 100%;
+    color: $darkerGray;
+    text-align: center;
+    line-height: $inputHeight;
+    @include ellipses;
+  }
+}
+
+.input_group_append {
+  span {
+    padding-left: $rhythm;
+  }
+}
+
+.input_group_prepend {
+  span {
+    padding-right: $rhythm;
+  }
 }
 
 form {

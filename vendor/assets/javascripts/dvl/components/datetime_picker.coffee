@@ -22,7 +22,7 @@ class DatetimePicker
       todayHighlight: true
     @$dateInput.datepicker('update', @initDate) if @initDate
     @$dateInput.on 'changeDate clearDate', $.proxy(@update, @)
-    @$dateInput.parent().find('a').click =>
+    @$el.siblings('.input_group_date').find('a').click =>
       @$dateInput.datepicker('show')
 
   initTimeInput: ->
@@ -30,7 +30,7 @@ class DatetimePicker
     @$timeInput.timepicker()
     @$timeInput.timepicker('setTime', @initDate) if @initDate
     @$timeInput.on 'change', $.proxy(@update, @)
-    @$timeInput.parent().find('a').click =>
+    @$el.siblings('.input_group_time').find('a').click =>
       @$timeInput.timepicker('show')
 
   clear: ->

@@ -156,21 +156,21 @@ li.ui-timepicker-selected {
     cursor: default;
   }
   .today {
-    background: $secondaryColor;
+    background: rgba($secondaryColor,0.3);
     &:hover,
     &:focus,
     &:active {
-      background: $secondaryColor;
+      background: rgba($secondaryColor,0.3);
       fieldset[disabled] &,
       .open & {
-        background: $secondaryColor;
+        background: rgba($secondaryColor,0.3);
       }
       &[disabled],
       &.disabled {
-        background-color: $secondaryColor;
+        background-color: rgba($secondaryColor,0.3);
         fieldset[disabled] &,
         .open & {
-          background: $secondaryColor;
+          background: rgba($secondaryColor,0.3);
         }
       }
     }
