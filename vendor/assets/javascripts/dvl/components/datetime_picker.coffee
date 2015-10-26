@@ -17,6 +17,7 @@ class DatetimePicker
   initDateInput: ->
     @$dateInput = @$el.siblings('.input_group_date').find('input')
     @$dateInput.datepicker
+      assumeNearbyYear: true
       autoclose: true
       todayHighlight: true
     @$dateInput.datepicker('update', @initDate) if @initDate
