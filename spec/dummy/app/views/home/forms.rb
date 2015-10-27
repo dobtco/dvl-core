@@ -103,16 +103,6 @@ class Views::Home::Forms < Views::Page
       end
     }, hint: 'This component lets you add long answer options, or descriptive text to each option, while imitating the behavior of a native <code>&lt;select&gt;</code>.'.html_safe, sub: true
 
-    docs 'Date and Time Picker', %{
-      simple_form_for :datetime_picker do |f|
-        f.input :deadline,
-                as: :datetime_picker,
-                clear_text: 'Clear'
-      end
-
-      div.js_dt_result '&nbsp;'.html_safe
-    }, sub: true
-
     hr
 
     h3 'States'
@@ -278,30 +268,60 @@ class Views::Home::Forms < Views::Page
 
         f.input :permalink do
           div.input_group {
-            f.input_field :input_group_with_copy,
-                          as: :string,
-                          value: 'http://dobt.forms.fm',
-                          'aria-label' => 'Permalink'
-            a(class: 'button small info',
-              'data-toggle' => 'tooltip',
-              'data-container' => 'body',
-              title: 'Copy URL',
-              'aria-label' => 'Copy URL') {
-              i(class: 'fa fa-copy')
+            div.input_group_input {
+              f.input_field :input_group_with_copy,
+                            as: :string,
+                            value: 'http://dobt.forms.fm',
+                            'aria-label' => 'Permalink'
+            }
+            div.input_group_append {
+              a(class: 'button small info',
+                'data-toggle' => 'tooltip',
+                'data-container' => 'body',
+                title: 'Copy URL',
+                'aria-label' => 'Copy URL') {
+                i(class: 'fa fa-copy')
+              }
             }
           }
         end
 
         f.input :enter_your_age do
-          div.input_group {
-            f.input_field :input_group,
-                          as: :string,
-                          'aria-label' => 'Age'
-            span.input_group_text 'years young'
+          div.input_group.input_group_text {
+            div.input_group_input {
+              f.input_field :input_group,
+                            as: :string,
+                            'aria-label' => 'Age'
+            }
+            div.input_group_append {
+              span 'years young'
+            }
+          }
+        end
+
+        f.input :example_of_prepended_input do
+          div.input_group.input_group_text {
+            div.input_group_prepend {
+              a.button.small {
+                i(class: 'fa fa-eye')
+              }
+            }
+            div.input_group_input {
+              f.input_field :input_group,
+                            as: :string,
+                            'aria-label' => 'Example of prepended button'
+            }
           }
         end
       end
 
+      simple_form_for :datetime_picker do |f|
+        f.input :pick_a_date_and_time,
+                as: :datetime_picker,
+                clear_text: 'Clear'
+      end
+
+      div.js_dt_result '&nbsp;'.html_safe
     }, sub: true
 
     docs 'Filter form', %{
