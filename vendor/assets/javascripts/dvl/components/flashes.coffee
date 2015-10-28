@@ -1,20 +1,16 @@
 FLASH_ALERT_LENGTH = 3500
 TRANSITION_LENGTH = 300
 
-hideFlash = ($flash, immediate) ->
-  if immediate
-    $flash.remove()
-  else
-    $flash.addClass('is_hiding')
+hideFlash = ($flash) ->
+  $flash.addClass('is_hiding')
 
-    $flash.on 'fakeTransitionEnd', ->
-      $flash.remove()
-    .emulateTransitionEnd(TRANSITION_LENGTH)
+  $flash.on 'fakeTransitionEnd', ->
+    $flash.remove()
+  .emulateTransitionEnd(TRANSITION_LENGTH)
 
 window.DvlFlash = (flashType, message, linksHTML) ->
-  # Hide existing flashes
-  $('.flash').each ->
-    hideFlash($(@), true)
+  # Remove existing flashes
+  $('.flash').remove()
 
   $flash = $("""
     <div class="flash flash_#{flashType}">
@@ -43,3 +39,6 @@ window.DvlFlash = (flashType, message, linksHTML) ->
     setTimeout ->
       hideFlash($flash)
     , FLASH_ALERT_LENGTH
+
+$(document).on 'page:before-change', ->
+  $('.flash').remove()
