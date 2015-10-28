@@ -37,12 +37,12 @@ $bodyFontColor: $darkestGray;
 $darkBlue: #5bb7d9;
 
 // Other Colors
-
+$successColor: #5ee0ac !default;
+$errorColor: #d95b76 !default;
 $alertColor: $errorColor !default;
-$blueHighlight: $highlight !default;
-
-$mintHighlight: #e7f9e7;
-$purpleBlue: #6188f5;
+$blueHighlight: #bfeef3;
+$mintHighlight: #dbf4bf;
+$purpleBlue: #6569f0;
 
 // Qualitative colors
 
@@ -92,6 +92,8 @@ $unitlessRhythm: 0.5 !default; // 8px @ 16px root
 $rhythm: $unitlessRhythm * 1rem !default;
 $unitlessLineHeight: $unitlessRhythm * 3 !default; // 24px
 $lineHeight: $unitlessLineHeight * 1rem !default;
+$unitlessLineHeightSmall: $unitlessRhythm * 2.25 !default; // 18px
+$lineHeightSmall: $unitlessLineHeightSmall * 1rem !default;
 $maxFontSize: 100% !default; // 16px
 
 $ratio: 1.5;

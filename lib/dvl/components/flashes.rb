@@ -5,10 +5,7 @@ class Dvl::Components::Flashes < Erector::Widget
 
   def content
     @flash.select { |k, v| k.to_s.in?(%w(success error info)) && v.present? }.each do |k, v|
-      div(class: "flash flash_#{k}") {
-        a.flash_close '&times;'.html_safe
-        span v
-      }
+      script %{DvlFlash("#{k}", "#{h(v)}")}.html_safe
     end
   end
 end
