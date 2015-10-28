@@ -1,5 +1,6 @@
 //= require dvl/plugins/modernizr_custom
 //= require dvl/core/hacks
+//= require dvl/core/transition
 //= require dvl/core/dropdown_menu_sub
 //= require dvl/core/dropdowns
 //= require dvl/core/tooltips

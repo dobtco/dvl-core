@@ -1,48 +1,45 @@
-TRANSITION_LENGTH = 300
 FLASH_ALERT_LENGTH = 3500
+TRANSITION_LENGTH = 300
 
-# Grab alerts rendered by the server and apply our behavior to them
-$ ->
-  $('.flash').each ->
-    DvlFlash $(@)
-
-window.DvlFlash = (alertType, message, lengthInMilliseconds) ->
-  # Initialize from an existing alert
-  if alertType instanceof jQuery
-    $alert = alertType
+hideFlash = ($flash, immediate) ->
+  if immediate
+    $flash.remove()
   else
-    $alert = $("""
-      <div class="flash flash_#{alertType}">
-        <a class='flash_close'>&times;</a>
-        <span>#{message}</span>
-      </div>
-    """).appendTo("body")
+    $flash.addClass('is_hiding')
 
+    $flash.on 'fakeTransitionEnd', ->
+      $flash.remove()
+    .emulateTransitionEnd(TRANSITION_LENGTH)
+
+window.DvlFlash = (flashType, message, linksHTML) ->
+  # Hide existing flashes
+  $('.flash').each ->
+    hideFlash($(@), true)
+
+  $flash = $("""
+    <div class="flash flash_#{flashType}">
+      <span>#{message}</span>
+      <a class='flash_close' href='#'>&times;</a>
+    </div>
+  """)
+
+  $flash.on 'click', '.flash_close', ->
+    hideFlash($flash)
+
+  if linksHTML
+    $flash.append("
+      <div class='flash_links'>#{linksHTML}</span>
+    ")
+
+  $flash.appendTo('body')
+
+  # Push this to the next frame so that the transition works :/
   setTimeout ->
-    $alert.addClass 'is_visible'
+    $flash.addClass('is_visible')
   , 0
 
-  mousedOver = undefined
-  timeoutExpired = undefined
-
-  hide = ->
-    $alert.removeClass 'is_visible'
+  # Hide flashes automatically unless they have links
+  unless linksHTML
     setTimeout ->
-      $alert.remove()
-    , TRANSITION_LENGTH
-
-  setTimeout ->
-    hide() unless mousedOver
-    timeoutExpired = true
-  , lengthInMilliseconds || FLASH_ALERT_LENGTH
-
-  $alert.on 'mouseover', ->
-    mousedOver = true
-
-    $alert.one 'mouseout', ->
-      mousedOver = undefined
-      hide() if timeoutExpired
-
-  $alert.on 'click', '.flash_close', ->
-    mousedOver = undefined
-    hide()
+      hideFlash($flash)
+    , FLASH_ALERT_LENGTH
