@@ -1,15 +1,22 @@
 require 'erector'
 
 class Dvl::Components::Flashes < Erector::Widget
-  needs :flash
+  needs :flash,
+        accept_keys: %w(success error info)
 
   def content
-    @flash.select { |k, v| k.to_s.in?(%w(success error info)) && v.present? }.each do |k, v|
-      div(class: "flash flash_#{k}") {
-        a.flash_close '&times;'.html_safe
-        span v
-      }
+    selected_flashes.each do |k, v|
+      if v.is_a?(Array)
+        text, links = v
+      else
+        text = v
+      end
+
+      script %{DvlFlash("#{k}", "#{h(text)}", "#{escape_javascript(links)}")}.html_safe
     end
   end
-end
 
+  def selected_flashes
+    @flash.select { |k, v| k.to_s.in?(@accept_keys) && v.present? }
+  end
+end
