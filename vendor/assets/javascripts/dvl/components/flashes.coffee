@@ -40,5 +40,5 @@ window.DvlFlash = (flashType, message, linksHTML) ->
       hideFlash($flash)
     , FLASH_ALERT_LENGTH
 
-$(document).on 'page:before-change', ->
+$(document).on 'page:before-unload', ->
   $('.flash').remove()
