@@ -22,6 +22,7 @@ class Views::Base < Erector::Widget
         rawtext '<!--[if lt IE 9]><script src="//d2yxgjkkbvnhdt.cloudfront.net/dist/shim.js"></script><![endif]-->'
       }
       body {
+        widget Dvl::Components::Flashes.new(flash: flash)
         render_body
         rawtext '<!--[if lt IE 9]><script src="//d2yxgjkkbvnhdt.cloudfront.net/dist/polyfills.js"></script><![endif]-->'
       }

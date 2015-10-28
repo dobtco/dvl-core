@@ -376,10 +376,13 @@ class Views::Home::Components < Views::Page
           a 'Success notification', href: 'javascript:DvlFlash("success", "You did it!")'
         }
         li {
-          a 'Neutral flash', href: 'javascript:DvlFlash("info", "An informational message...")'
+          a 'Neutral flash', href: 'javascript:DvlFlash("info", "This is an informational message.")'
         }
         li {
-          a 'Error notification', href: 'javascript:DvlFlash("error", "Oh no, an error occured!")'
+          a 'Long error notification', href: 'javascript:DvlFlash("error", "Oh dear lord, an error has occurred! I am not sure how to handle a quandary quite like this.")'
+        }
+        li {
+          a 'Neutral with action', href: 'javascript:DvlFlash("info", "Your item was deleted.", "<a>Undo</a>")'
         }
       }
     }
