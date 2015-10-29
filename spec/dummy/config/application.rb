@@ -21,6 +21,7 @@ Bundler.require(*Rails.groups)
 require 'simple_form'
 require 'autoprefixer-rails'
 require 'sass'
+require 'dvl/icons'
 
 module Dummy
   class Application < Rails::Application
@@ -31,6 +32,7 @@ module Dummy
       'Base Styles' => '/',
       'Color' => '/color',
       'Layout' => '/layout',
+      'Icons' => '/icons',
       'Data' => '/data',
       'Forms' => '/forms',
       'Headers' => '/headers',
