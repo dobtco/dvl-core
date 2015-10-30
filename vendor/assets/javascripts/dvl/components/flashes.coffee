@@ -1,7 +1,7 @@
 FLASH_ALERT_LENGTH = 3500
 TRANSITION_LENGTH = 300
 
-hideFlash = ($flash) ->
+window.DvlFlashHide = ($flash) ->
   $flash.addClass('is_hiding')
 
   $flash.on 'fakeTransitionEnd', ->
@@ -20,7 +20,7 @@ window.DvlFlash = (flashType, message, linksHTML) ->
   """)
 
   $flash.on 'click', '.flash_close', ->
-    hideFlash($flash)
+    DvlFlashHide($flash)
 
   if linksHTML
     $flash.append("
@@ -37,7 +37,7 @@ window.DvlFlash = (flashType, message, linksHTML) ->
   # Hide flashes automatically unless they have links
   unless linksHTML
     setTimeout ->
-      hideFlash($flash)
+      DvlFlashHide($flash)
     , FLASH_ALERT_LENGTH
 
 $(document).on 'page:before-unload', ->
