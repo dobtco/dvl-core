@@ -28,7 +28,7 @@ class DropdownSelectInput < SimpleForm::Inputs::CollectionInput
     content_tag(:div, class: 'styled_select_wrapper', 'data-dropdown-select' => true) do
       @builder.hidden_field(attribute_name, input_html_options) +
       content_tag(:a, class: 'styled_select', 'data-toggle' => 'dropdown', href: '#') { selected_option[0] } +
-      content_tag(:div, class: 'dropdown_menu dropdown_menu_rich', role: 'menu') {
+      content_tag(:div, class: 'dropdown_menu dropdown_menu_rich') {
         content_tag(:ul, class: 'dropdown_body') {
           collection.map do |x|
             li_class_str = [].tap do |arr|

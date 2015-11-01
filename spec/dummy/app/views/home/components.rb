@@ -13,13 +13,13 @@ class Views::Home::Components < Views::Page
             href: '#'
           )
 
-          div.dropdown_menu(role: 'menu') {
+          div.dropdown_menu {
             ul.dropdown_body {
               li {
                 a 'Option 1', href: '#'
               }
               li.divider {
-                a 'Option 2, with divider'
+                a 'Option 2, with divider', href: '#'
               }
               li {
                 a(href: 'mailto:support@dobt.co') {
@@ -38,7 +38,7 @@ class Views::Home::Components < Views::Page
             href: '#'
           )
 
-          div.dropdown_menu(role: 'menu') {
+          div.dropdown_menu {
             ul.dropdown_body {
               li {
                 a 'Option 1', href: '#'
@@ -70,7 +70,7 @@ class Views::Home::Components < Views::Page
             href: '#'
           )
 
-          div.dropdown_menu(role: 'menu') {
+          div.dropdown_menu {
             ul.dropdown_body {
               li {
                 a(href: '#') {
@@ -103,7 +103,7 @@ class Views::Home::Components < Views::Page
             href: '#'
           )
 
-          div.dropdown_menu(role: 'menu') {
+          div.dropdown_menu {
             ul.dropdown_body {
               li {
                 a(href: '#') {
@@ -148,7 +148,7 @@ class Views::Home::Components < Views::Page
             href: '#'
           )
 
-          div.dropdown_menu(role: 'menu') {
+          div.dropdown_menu {
             ul.dropdown_body {
               li {
                 a(href: '#') {
@@ -261,7 +261,7 @@ class Views::Home::Components < Views::Page
             'data-toggle' => 'dropdown',
             href: '#'
           )
-          div.dropdown_menu(role: 'menu') {
+          div.dropdown_menu {
             h3 'Loading State'
             ul.dropdown_body {
               li.dropdown_loading {
@@ -277,7 +277,7 @@ class Views::Home::Components < Views::Page
           a.button.toggle 'Multiple Sections',
                             'data-toggle' => 'dropdown',
                             href: '#'
-          div.dropdown_menu(role: 'menu') {
+          div.dropdown_menu {
             ul.dropdown_body {
               li.dropdown_header 'Section One'
               li { a 'Link One' }
@@ -296,7 +296,7 @@ class Views::Home::Components < Views::Page
             href: '#'
           )
 
-          div.dropdown_menu.dropdown_right(role: 'menu') {
+          div.dropdown_menu.dropdown_right {
             ul.dropdown_body {
               li {
                 a 'Option 1', href: '#'
@@ -319,7 +319,7 @@ class Views::Home::Components < Views::Page
           'data-toggle' => 'dropdown',
           class: 'dropdown_toggle_link',
           href: '#'
-        div.dropdown_menu(role: 'menu') {
+        div.dropdown_menu {
           ul.dropdown_body {
             li {
               a 'Name', href: '#'
@@ -429,7 +429,7 @@ class Views::Home::Components < Views::Page
             a.dropdown_toggle_link 'You can toggle dropdowns from a modal',
                               'data-toggle' => 'dropdown',
                               href: '#'
-            div.dropdown_menu(role: 'menu') {
+            div.dropdown_menu {
               ul.dropdown_body {
                 li {
                   a 'Option 1', href: '#'

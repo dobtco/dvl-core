@@ -4,7 +4,7 @@ TRANSITION_LENGTH = 300
 window.DvlFlashHide = ($flash) ->
   $flash.addClass('is_hiding')
 
-  $flash.on 'fakeTransitionEnd', ->
+  $flash.on 'bsTransitionEnd', ->
     $flash.remove()
   .emulateTransitionEnd(TRANSITION_LENGTH)
 
