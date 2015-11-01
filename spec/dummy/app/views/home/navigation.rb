@@ -81,7 +81,7 @@ class Views::Home::Navigation < Views::Page
                     }
                   }
 
-                  div.dropdown_menu(role: 'menu') {
+                  div.dropdown_menu {
                     h3 'Loading State'
                     ul.dropdown_body {
                       li.dropdown_loading {
@@ -105,7 +105,7 @@ class Views::Home::Navigation < Views::Page
                     }
                   }
 
-                  div.dropdown_menu(role: 'menu') {
+                  div.dropdown_menu {
                     h3 'Default Dropdown'
                     ul.dropdown_body {
                       li { a 'Item 1', href: '#' }
@@ -122,7 +122,7 @@ class Views::Home::Navigation < Views::Page
                     img.nav_avatar src: '//dobt-captured.s3.amazonaws.com/ajb/richard_ayoade_-_Google_Search_2015-05-26_09-56-32.png_290290_2015-05-26_09-57-03.png'
                   }
 
-                  div.dropdown_menu(role: 'menu') {
+                  div.dropdown_menu {
                     h3 'My account'
                     ul.dropdown_body {
                       li { a 'Edit profile', href: '#' }

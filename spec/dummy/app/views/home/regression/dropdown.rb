@@ -7,7 +7,7 @@ class Views::Home::Regression::Dropdown < Views::Base
         href: '#'
       )
 
-      div.dropdown_menu(role: 'menu') {
+      div.dropdown_menu {
         ul.dropdown_body {
           li {
             a 'Option 1', href: '#'
