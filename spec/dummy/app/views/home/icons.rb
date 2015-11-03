@@ -2,12 +2,11 @@ class Views::Home::Icons < Views::Page
   def main
     h2 'Icons'
 
-    ul {
+    ul.docs_icons {
       icon_classes.each do |x|
         li {
-          i(class: "icon #{x}")
-          text ' '
-          text x
+          span { i(class: "icon #{x}")}
+          em x
         }
       end
     }

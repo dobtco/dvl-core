@@ -156,6 +156,79 @@ hr {
   }
 }
 
+// Icons
+
+.docs_icons {
+  max-width: $lineHeight * 35;
+  margin-bottom: $lineHeight;
+  li {
+    display: inline-block;
+    border: 1px solid $lightGray;
+    border-bottom-width: 0;
+    width: 100%;
+    &:nth-last-child {
+      border-bottom-width: 1px;
+    }
+    @media screen and (min-width: $lineHeight * 18) {
+      width: 50%;
+      border-right-width: 0;
+      &:nth-child(even) {
+        border-right-width: 1px;
+      }
+      &:nth-last-child(-n + 2) {
+        border-bottom-width: 1px;
+      }
+    }
+    @media screen and (min-width: $lineHeight * 36) {
+      width: 25%;
+      &:nth-child(even) {
+        border-right-width: 0;
+      }
+      &:nth-child(4n) {
+        border-right-width: 1px;
+      }
+      &:nth-last-child(-n + 4) {
+        border-bottom-width: 1px;
+      }
+    }
+    @media screen and (min-width: $lineHeight * 60) {
+      width: 20%;
+      &:nth-child(4n) {
+        border-right-width: 0;
+      }
+      &:nth-child(5n) {
+        border-right-width: 1px;
+      }
+      &:nth-last-child(-n + 5) {
+        border-bottom-width: 1px;
+      }
+    }
+    height: $lineHeight * 6;
+    text-align: center;
+    i {
+      display: block;
+      line-height: $lineHeight * 4;
+    }
+    color: rgba($black,0.6);
+    transition: all 0.2s ease-out;
+    &:hover {
+      color: $black;
+      background: rgba($blueHighlight,0.2);
+    }
+  }
+  em {
+    font-size: $fontSmaller;
+    font-style: normal;
+    color: $darkerGray;
+    text-align: center;
+    display: block;
+    margin-top: $rhythm;
+  }
+  i {
+    font-size: 3rem;
+  }
+}
+
 // Guides
 
 .docs_guide {
