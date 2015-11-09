@@ -13,6 +13,19 @@
     }
     a {
       text-decoration: none;
+      &.page_header_context {
+        font-size: $fontSmall;
+        text-transform: uppercase;
+        font-family: $fontFamilyDefault;
+        font-weight: $weightNormal;
+        letter-spacing: $letterspaceSmall;
+        display: block;
+        line-height: $rhythm * 2;
+        position: absolute;
+        top: $rhythm * -1;
+        left: $fontOpticalMarginH2 * -1;
+        color: $darkerGray;
+      }
     }
     img {
       max-height: $fontLineHeightH2Mobile;

@@ -130,7 +130,7 @@ requires jQuery 1.7+
 
       if ((self.offset().top + self.outerHeight(true) + list.outerHeight()) > $(window).height() + $(window).scrollTop()) {
         // position the dropdown on top
-        listOffset.top = self.offset().top - list.outerHeight() + parseInt(list.css('marginTop').replace('px', ''), 10);
+        listOffset.top = self.offset().top - list.outerHeight() + parseInt(list.css('marginTop').replace('px', ''), 10) - 7;
         list.addClass('ui-timepicker-positioned-top');
       } else {
         // put it under the input

@@ -1,6 +1,6 @@
 machine:
   environment:
-    # PERCY_TOKEN: 2d6e1b63e2d182c22393d18c1c092bedf2405990d26969c74514b9c920c8f54e
+    PERCY_TOKEN: 2d6e1b63e2d182c22393d18c1c092bedf2405990d26969c74514b9c920c8f54e
 
 general:
   artifacts:

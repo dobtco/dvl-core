@@ -1,48 +1,105 @@
 @import 'dvl/core/includes';
 
-$dvlFlashZIndex: 1041 !default; // above modal
-$dvlFlashDefaultColor: #2886A8 !default;
+@keyframes flashIn {
+  0% {
+    opacity: 0;
+    transform: translateY(1rem) translateZ(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) translateZ(0);
+  }
+}
 
 .flash {
   position: fixed;
-  left: 0;
-  top: 0;
-  transform: translateY(-8rem);
+  bottom: 1rem;
+  right: 1rem;
+  z-index: $z_flash;
   opacity: 0;
-  transition: transform 0.3s ease-out, opacity 0.15s ease-out;
-  width: 95%;
-  margin: 1rem 2.5% 0;
-  z-index: $dvlFlashZIndex;
-  background: $dvlFlashDefaultColor;
-  border-radius: $radius;
-  padding: 0.75rem 1rem;
+  @include font_smoothing;
+  transition: opacity 0.15s ease-out;
+  background: $primaryColor;
   color: $white;
-  box-shadow: 0 1px 0 rgba(#000,0.2);
-  line-height: 1rem;
+  border-radius: $radius;
+  transform-origin: 100% 0;
+  font-size: $fontSmall;
+  line-height: $lineHeightSmall;
+  box-shadow: 0 1px 0 rgba(#000,0.06);
+  animation: flashIn 0.2s ease-out;
+  width: 100%;
+  max-width: 22rem;
+  @media screen and (min-width: 25rem) {
+    width: 22rem;
+  }
   span {
     display: inline-block;
     width: 100%;
-    padding-right: 2rem;
-  }
-  a {
-    text-decoration: underline;
-    color: $white;
+    padding-top: $rhythm * 2;
+    padding-bottom: $rhythm * 2;
+    position: relative;
+    &:before {
+      font-family: 'FontAwesome';
+      content: '\f05a';
+      color: $white;
+      opacity: 0.7;
+      position: absolute;
+      left: $rhythm * 3;
+      top: $rhythm * 2;
+      font-size: 1.5rem;
+    }
   }
   &.is_visible {
     opacity: 1;
-    transform: translateY(0);
+  }
+  &.is_hiding {
+    transition: all 0.15s ease-out;
+    opacity: 0;
+    transform: translateY(-0.5rem);
   }
   .flash_close {
     font-size: 2rem;
     position: absolute;
-    line-height: 2.5rem;
+    line-height: 1;
     text-decoration: none;
-    right: 1rem;
-    top: 0;
+    right: $rhythm * 2;
+    top: $rhythm;
     color: $white;
-    &:hover {
-      color: $white;
-      text-decoration: none;
+    opacity: 0.7;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+}
+
+.flash span,
+.flash_links {
+  padding-right: $rhythm * 10;
+  padding-left: $rhythm * 8;
+}
+
+.flash_links {
+  background: rgba(#000,0.2);
+  padding-top: $rhythm / 2;
+  padding-bottom: $rhythm / 2;
+  a {
+    font-size: $fontSmall;
+    text-transform: uppercase;
+    letter-spacing: $letterspaceSmall;
+    opacity: 0.8;
+    display: inline-block;
+    color: $white;
+    &:hover,
+    &:focus {
+      opacity: 0.85;
+    }
+    &:active {
+      opacity: 1;
+    }
+    + a {
+      margin-left: $rhythm * 2;
     }
   }
 }
@@ -50,17 +107,15 @@ $dvlFlashDefaultColor: #2886A8 !default;
 // Colors
 
 .flash_error {
-  background: $errorColor;
+  background-color: $errorColor;
+  span:before {
+    content: '\f06a';
+  }
 }
 
 .flash_success {
-  background: $successColor;
-}
-
-@media only screen and (min-width: 768px) {
-  .flash {
-    width: 50rem;
-    margin-left: -25rem;
-    left: 50%;
+  background-color: $successColor;
+  span:before {
+    content: '\f058';
   }
 }

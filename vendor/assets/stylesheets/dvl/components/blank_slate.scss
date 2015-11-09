@@ -17,6 +17,9 @@
     font-size: $rhythm * 10;
     line-height: 1;
   }
+  .button i {
+    color: inherit;
+  }
   // Title, mimics h3 style
   h4 {
     margin: $rhythm 0;
