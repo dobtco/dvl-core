@@ -69,11 +69,7 @@ $paginationCompactHeight: $rhythm * 5;
   padding-top: $rhythm;
   @media only screen and (min-width: $lapWidth) {
       position: absolute;
-      @include topCenter($fontLineHeightH2, $paginationCompactHeight);
-      .page_header.with_back_arrow & {
-        // Account for context
-        @include topCenter(($fontLineHeightH2 + ($rhythm * 1.5)), $paginationCompactHeight);
-      }
+      bottom: 0;
       right: 0;
   }
 }
