@@ -13,19 +13,6 @@
     }
     a {
       text-decoration: none;
-      &.page_header_context {
-        font-size: $fontSmall;
-        text-transform: uppercase;
-        font-family: $fontFamilyDefault;
-        font-weight: $weightNormal;
-        letter-spacing: $letterspaceSmall;
-        display: block;
-        line-height: $rhythm * 2;
-        position: absolute;
-        top: $rhythm * -1;
-        left: $fontOpticalMarginH2 * -1;
-        color: $darkerGray;
-      }
     }
     img {
       max-height: $fontLineHeightH2Mobile;
@@ -66,26 +53,13 @@
       }
     }
   }
-
   // Modifiers
 
   &.with_back_arrow {
     padding-left: $rhythm * 5;
     h2 {
       position: relative;
-      a.page_header_context {
-        font-size: $fontSmall;
-        text-transform: uppercase;
-        font-family: $fontFamilyDefault;
-        font-weight: $weightNormal;
-        letter-spacing: $letterspaceSmall;
-        display: block;
-        line-height: $rhythm * 2;
-        position: absolute;
-        top: $rhythm * -1;
-        left: $fontOpticalMarginH2 * -1;
-        color: $darkerGray;
-      }
+      width: 100%;
     }
   }
 
@@ -98,14 +72,37 @@
   }
 }
 
+.page_header_context {
+  font-size: $fontSmall;
+  text-transform: uppercase;
+  font-family: $fontFamilyDefault;
+  font-weight: $weightNormal;
+  letter-spacing: $letterspaceSmall;
+  display: block;
+  line-height: $rhythm * 2;
+  position: relative;
+  left: $fontOpticalMarginH2 * -1;
+  color: $darkerGray;
+  width: 100%;
+  @include ellipses;
+  @media screen and (min-width: $lapWidth) {
+    position: absolute;
+    top: $rhythm * -1;
+  }
+}
+
 .page_header_back_arrow {
   font-size: 1.75rem;
   position: absolute;
   opacity: 0.7;
+  top: 0;
   left: 0;
-  @include topCenter($fontLineHeightH2, 1.75rem);
   margin-top: 2px; // Optical adjustment
   line-height: 1;
+  @include topCenter($fontLineHeightH2Mobile + $rhythm, 1.75rem);
+  @media screen and (min-width: $lapWidth) {
+    @include topCenter($fontLineHeightH2 + $rhythm, 1.75rem);
+  }
 }
 
 // Secondary and tertiary navigation, within page headers.
