@@ -97,7 +97,6 @@
   opacity: 0.7;
   top: 0;
   left: 0;
-  margin-top: 2px; // Optical adjustment
   line-height: 1;
   @include topCenter($fontLineHeightH2Mobile + $rhythm, 1.75rem);
   @media screen and (min-width: $lapWidth) {
