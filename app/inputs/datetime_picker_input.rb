@@ -21,7 +21,7 @@ class DatetimePickerInput < SimpleForm::Inputs::DateTimeInput
         end +
         content_tag(:div, class: 'input_group_append') do
           content_tag(:a, class: 'button small') do
-            content_tag :i, class: 'fa fa-calendar' do; end;
+            content_tag :i, class: 'icon icon_date' do; end;
           end
         end
       end +
@@ -32,7 +32,7 @@ class DatetimePickerInput < SimpleForm::Inputs::DateTimeInput
         end +
         content_tag(:div, class: 'input_group_append') do
           content_tag(:a, class: 'button small') do
-            content_tag :i, class: 'fa fa-clock-o' do; end;
+            content_tag :i, class: 'icon icon_time' do; end;
           end
         end
       end +

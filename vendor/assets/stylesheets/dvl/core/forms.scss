@@ -294,8 +294,8 @@ input[type="checkbox"] {
       line-height: 1;
       @include topCenter (($rhythm * 3), 1rem);
       left: 0;
-      font-family: 'FontAwesome';
-      content: "\f00c";
+      // .icon_check
+      @include icon('\f167');
       color: $primaryColor;
       width: ($rhythm * 3) - 0.125rem; // Subtracting widths of border
       text-align: center;
@@ -342,7 +342,8 @@ input[type="radio"] {
 .control_minus {
   input[type=checkbox] {
     + .control_styled:after {
-      content: "\f068";
+      // .icon_delete
+      content: "\f170";
       line-height: 1;
       top: 4px; // alignment
     }
@@ -661,8 +662,8 @@ form {
   font-weight: $weightNormal;
   @include font_smoothing;
   &:after {
-    font-family: 'FontAwesome';
-    content: '\f0d7';
+    // .icon_caret_down
+    @include icon('\f162');
     line-height: 1;
     position: absolute;
     @include topCenter($inputHeight, 1rem);

@@ -10,7 +10,7 @@ class Views::Home::Headers < Views::Page
         h2 {
           a 'Sales Leads', href: '#'
           a.button.subtle.mini {
-            i(class: 'fa fa-pencil')
+            i(class: 'icon icon_edit')
           }
         }
         div.page_header_secondary {
@@ -32,7 +32,7 @@ class Views::Home::Headers < Views::Page
           ul {
             li {
               a {
-                i(class: 'fa fa-pencil')
+                i(class: 'icon icon_edit')
                 text 'Edit'
               }
             }
@@ -50,7 +50,7 @@ class Views::Home::Headers < Views::Page
     docs 'Secondary Action and Back Arrow', %{
       div.page_header.with_back_arrow {
         a.page_header_back_arrow(title: 'Dashboard', 'data-toggle' => 'tooltip') {
-          i(class: 'fa fa-arrow-circle-o-left')
+          i(class: 'icon icon_back')
         }
 
         h2 {
@@ -76,7 +76,7 @@ class Views::Home::Headers < Views::Page
           ul {
             li.active {
               a {
-                i(class: 'fa fa-pencil')
+                i(class: 'icon icon_edit')
                 text 'Edit'
               }
             }
@@ -90,7 +90,7 @@ class Views::Home::Headers < Views::Page
 
           a.button.mini.info.icon_r(href: '#') {
             text 'View '
-            i(class: 'fa fa-long-arrow-right')
+            i(class: 'icon icon_arrow_right')
           }
         }
       }
@@ -99,7 +99,7 @@ class Views::Home::Headers < Views::Page
     docs 'Pagination', %{
       div.page_header.with_back_arrow.with_pagination {
         a.page_header_back_arrow(title: 'All responses', 'data-toggle' => 'tooltip') {
-          i(class: 'fa fa-arrow-circle-o-left')
+          i(class: 'icon icon_back')
         }
 
         h2 {
@@ -154,7 +154,7 @@ class Views::Home::Headers < Views::Page
 
         div.page_subheader_actions {
           a.page_subheader_link {
-            i(class: 'fa fa-comments')
+            i(class: 'icon icon_activity')
             text ' 2 comments'
           }
           a.button.info 'Request a revision'
@@ -165,7 +165,7 @@ class Views::Home::Headers < Views::Page
     docs 'Heading 4', %{
       div.page_subheader {
         h4 {
-          i(class: 'fa fa-file-text')
+          i(class: 'icon icon_file')
           text ' '
           text 'Attachments'
         }
@@ -187,9 +187,9 @@ class Views::Home::Headers < Views::Page
         h2 'Your projects'
         form.filter_form {
           div.filter_form_search_wrapper {
-            i(class: 'fa fa-search')
+            i(class: 'icon icon_search')
             a(href: '#') {
-              i(class: 'fa fa-times-circle filter_form_icon_right')
+              i(class: 'icon icon_close_circle filter_form_icon_right')
             }
             input(type: 'text', placeholder: 'Search your projects')
           }
@@ -203,9 +203,9 @@ class Views::Home::Headers < Views::Page
         h2 'Your projects'
         form.filter_form.with_query {
           div.filter_form_search_wrapper {
-            i(class: 'fa fa-search')
+            i(class: 'icon icon_search')
             a(href: '#') {
-              i(class: 'fa fa-times-circle filter_form_icon_right')
+              i(class: 'icon icon_close_circle filter_form_icon_right')
             }
             input(type: 'text', placeholder: 'Search your projects', value: 'Innovation Challenge')
           }

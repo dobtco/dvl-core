@@ -26,7 +26,7 @@
       input {
         padding-right: 1.75rem;
       }
-      .fa-times-circle {
+      .icon_close_circle {
         display: inline;
       }
     }
@@ -58,19 +58,19 @@
     display: inline;
     line-height: 1.5rem;
   }
-  .fa-search,
-  .fa-times-circle {
+  .icon_search,
+  .icon_close_circle {
     position: absolute;
     line-height: 1;
     @include topCenter($inputHeight, 1rem);
     color: $darkGray;
   }
-  .fa-search {
+  .icon_search {
     width: 1.75rem;
     text-align: center;
     left: 0;
   }
-  .fa-times-circle {
+  .icon_close_circle {
     display: none;
     right: 7px;
     text-decoration: none;

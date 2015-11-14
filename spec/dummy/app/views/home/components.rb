@@ -24,7 +24,7 @@ class Views::Home::Components < Views::Page
               li {
                 a(href: 'mailto:support@dobt.co') {
                   span.drop_rt_item 'Contact support&hellip;'.html_safe
-                  span.drop_rt_arrow { i(class: 'fa fa-external-link') }
+                  span.drop_rt_arrow { i(class: 'icon icon_external_link') }
                 }
               }
             }
@@ -74,21 +74,21 @@ class Views::Home::Components < Views::Page
             ul.dropdown_body {
               li {
                 a(href: '#') {
-                  span.drop_master { i(class: 'fa fa-envelope') }
+                  span.drop_master { i(class: 'icon icon_email') }
                   span.drop_detail 'Send a message'
                 }
               }
 
               li {
                 a(href: '#') {
-                  span.drop_master { i(class: 'fa fa-pencil') }
+                  span.drop_master { i(class: 'icon icon_edit') }
                   span.drop_detail 'Edit'
                 }
               }
 
               li {
                 a(href: '#') {
-                  span.drop_master { i(class: 'fa fa-minus-circle') }
+                  span.drop_master { i(class: 'icon icon_delete_circle') }
                   span.drop_detail 'Delete'
                 }
               }
@@ -201,7 +201,7 @@ class Views::Home::Components < Views::Page
                 a(
                   'data-dropdown-filter-action' => true
                 ) {
-                  span.drop_master { i(class: 'fa fa-minus-circle') }
+                  span.drop_master { i(class: 'icon icon_delete_circle') }
                   span.drop_detail 'Clear selection'
                 }
               }
@@ -265,9 +265,7 @@ class Views::Home::Components < Views::Page
             h3 'Loading State'
             ul.dropdown_body {
               li.dropdown_loading {
-                span {
-                  i(class: 'fa fa-spin fa-refresh')
-                }
+                span.loader
               }
             }
           }

@@ -280,7 +280,7 @@ class Views::Home::Forms < Views::Page
                 'data-container' => 'body',
                 title: 'Copy URL',
                 'aria-label' => 'Copy URL') {
-                i(class: 'fa fa-copy')
+                i(class: 'icon icon_copy')
               }
             }
           }
@@ -303,7 +303,7 @@ class Views::Home::Forms < Views::Page
           div.input_group.input_group_text {
             div.input_group_prepend {
               a.button.small {
-                i(class: 'fa fa-eye')
+                i(class: 'icon icon_eye')
               }
             }
             div.input_group_input {
@@ -327,9 +327,9 @@ class Views::Home::Forms < Views::Page
     docs 'Filter form', %{
       form.filter_form {
         div.filter_form_search_wrapper {
-          i(class: 'fa fa-search')
+          i(class: 'icon icon_search')
           a(href: '#') {
-            i(class: 'fa fa-times-circle filter_form_icon_right')
+            i(class: 'icon icon_close_circle filter_form_icon_right')
           }
           input(type: 'text', placeholder: 'Search your projects', 'aria-label' => 'Search your projects')
         }
@@ -387,24 +387,24 @@ class Views::Home::Forms < Views::Page
     docs 'Button with icons', %{
       div.dvlcore_button_array {
         a.button.info.icon_l {
-          i(class: 'fa fa-caret-left')
+          i(class: 'icon icon_caret_left')
           text 'Previous'
         }
         a.button.info.icon_r {
           text 'Next'
-          i(class: 'fa fa-caret-right')
+          i(class: 'icon icon_caret_right')
         }
         a.button.info.icon_r {
           text 'Submit'
-          i(class: 'fa fa-long-arrow-right')
+          i(class: 'icon icon_arrow_right')
         }
         a.button.primary.icon_l {
-          i(class: 'fa fa-eye')
+          i(class: 'icon icon_eye')
           text 'View'
         }
         a.button.primary.icon_r {
           text 'Go to site'
-          i(class: 'fa fa-external-link')
+          i(class: 'icon icon_external_link')
         }
       }
     }, sub: true

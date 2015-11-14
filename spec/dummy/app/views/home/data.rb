@@ -284,7 +284,7 @@ class Views::Home::Data < Views::Page
         ul.sidebar_data {
           li {
             div.sidebar_data_icon {
-              i(class: 'fa fa-pencil')
+              i(class: 'icon icon_edit')
             }
             div.sidebar_data_text {
               div.sidebar_data_label 'Assigned to'
@@ -296,7 +296,7 @@ class Views::Home::Data < Views::Page
           }
           li {
             div.sidebar_data_icon {
-              i(class: 'fa fa-folder')
+              i(class: 'icon icon_status')
             }
             div.sidebar_data_text {
               div.sidebar_data_label 'Status'
@@ -310,7 +310,7 @@ class Views::Home::Data < Views::Page
           }
           li {
             div.sidebar_data_icon {
-              i(class: 'fa fa-clock-o')
+              i(class: 'icon icon_time')
             }
             div.sidebar_data_text {
               div.sidebar_data_label 'Revision History'

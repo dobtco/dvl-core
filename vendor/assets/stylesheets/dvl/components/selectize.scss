@@ -230,8 +230,7 @@
   cursor: text;
 }
 .selectize-control.single .selectize-input:after {
-  font-family: 'FontAwesome';
-  content: '\f0d7';
+  @include icon('\f162');
   line-height: 1;
   position: absolute;
   @include topCenter($inputHeight, 1rem);

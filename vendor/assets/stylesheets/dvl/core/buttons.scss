@@ -62,8 +62,8 @@
   }
 
   &.toggle:after {
-    content: "\f0d7";
-    font-family: 'FontAwesome';
+    // .icon_caret_down
+    @include icon("\f162");
     margin-left: $rhythm;
     opacity: 0.7;
   }
