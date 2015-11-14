@@ -234,7 +234,7 @@ $z_flash: 900 !default;
 
 @mixin icon($unicode_id) {
   content: $unicode_id;
-  font-family: 'FontAwesome';
+  font-family: 'dvl-icons';
 }
 
 @mixin border_top_radius($radius) {
