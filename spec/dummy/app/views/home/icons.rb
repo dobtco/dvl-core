@@ -19,7 +19,7 @@ class Views::Home::Icons < Views::Page
         '/app/assets/stylesheets/dvl-icons.scss'
       )
 
-      raw_css.scan(/\.(icon_[a-z0-9\-]+)\:before/).flatten
+      raw_css.scan(/\.(icon_[a-z0-9_\-]+)\:before/).flatten
     end
   end
 end
