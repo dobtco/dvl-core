@@ -84,7 +84,6 @@
   max-height: ($lineHeight * 15) + $rhythm; // Overlap a list item with the bottom edge
   overflow: auto;
   > li {
-
     > a,
     > span {
       // All list items
@@ -165,6 +164,7 @@
         cursor: not-allowed;
       }
     }
+  }
 }
 
 // Backdrop to catch body clicks on mobile, etc.
@@ -197,7 +197,7 @@
     @include topCenter(($rhythm * 5), 1.5rem);
     right: 0;
   }
-  &.is_open{
+  &.is_open {
     &:after {
       content: "\f107";
       color: $white;
@@ -205,10 +205,14 @@
     a {
       background: $darkestGray;
       color: $white;
-      &:hover, &:active, &:visited {
+      &:hover,
+      &:active,
+      &:visited {
         color: $white;
       }
-      &:hover, &:active, &:focus {
+      &:hover,
+      &:active,
+      &:focus {
         background: $darkestGray;
       }
     }
