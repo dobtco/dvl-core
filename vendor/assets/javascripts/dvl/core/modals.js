@@ -283,6 +283,23 @@
     return scrollbarWidth
   }
 
+  // DOBT addition: seamless hide one modal and show another by disabling
+  // CSS animation while switching
+  Modal.prototype.switch = function ($newModal) {
+    var style = document.createElement('style')
+    
+    style.innerHTML = '@keyframes modal_show {} ' +
+                      '@-webkit-keyframes modal_show {}' +
+                      '@keyframes fadeIn {}' +
+                      '@-webkit-keyframes fadeIn {}'
+
+    document.head.appendChild(style)
+    this.hide()
+    $newModal.modal('show')
+    setTimeout(function(){
+      document.head.removeChild(style)
+    }, 250)
+  }
 
   // MODAL PLUGIN DEFINITION
   // =======================
