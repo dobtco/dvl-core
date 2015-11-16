@@ -6,8 +6,9 @@
     margin: 0 0 $lineHeight ($rhythm * 3);
     &:before {
       position: absolute;
-      top: $rhythm;
+      top: 50%;
       left: $rhythm * -3;
+      margin-top: - ($rhythm / 2);
       right: 100%;
       content: '';
       width: $rhythm;
