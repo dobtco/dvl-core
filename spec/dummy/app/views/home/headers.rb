@@ -57,16 +57,27 @@ class Views::Home::Headers < Views::Page
       }
     }, sub: true, hint: %{The header title can optionally be a link.}.html_safe
 
+    docs 'Page Header - With back arrow and button', %{
+      div.page_header.with_back_arrow {
+        a.page_header_back_arrow(title: 'All responses', 'data-toggle' => 'tooltip') {
+          i(class: 'fa fa-arrow-circle-o-left')
+        }
+
+        a.page_header_context '2015 Civic Innovation Conference', href: '#'
+        h2 'Message Presets'
+
+        a.button.info 'Add a preset'
+      }
+    }, sub: true
+
     docs 'Page Header - With back arrow and pagination', %{
       div.page_header.with_back_arrow.with_pagination {
         a.page_header_back_arrow(title: 'All responses', 'data-toggle' => 'tooltip') {
           i(class: 'fa fa-arrow-circle-o-left')
         }
 
-        h2 {
-          a.page_header_context '2015 Civic Innovation Conference', href: '#'
-          text 'Max Ophüls'
-        }
+        a.page_header_context '2015 Civic Innovation Conference', href: '#'
+        h2 'Max Ophüls'
 
         div.pagination_compact.pagination_compact_header {
           span "#94 of 566"

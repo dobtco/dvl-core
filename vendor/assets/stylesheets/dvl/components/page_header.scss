@@ -44,12 +44,12 @@
       clear: none;
       position: relative;
       margin: 0;
-      top: ($fontLineHeightH2 - $inputHeight) / 2;
+      @include topCenter($fontLineHeightH2, $inputHeight);
       &.small {
-        top: ($fontLineHeightH2 -($rhythm * 4)) / 2;
+        @include topCenter($fontLineHeightH2, ($rhythm * 4));
       }
       &.mini {
-         top: ($fontLineHeightH2 - ($rhythm * 3)) / 2;
+         @include topCenter($fontLineHeightH2, ($rhythm * 3));
       }
     }
   }
@@ -58,10 +58,21 @@
   &.with_back_arrow {
     margin-top: $rhythm * 2;
     padding-left: $rhythm * 5;
+    .page_header_context {
+      width: 100%;
+    }
     h2 {
       position: relative;
-      width: 100%;
-      padding-bottom: $rhythm * 1.5;
+    }
+    > .button,
+    > form .button {
+      @include topCenter(($fontLineHeightH2 + $rhythm), $inputHeight);
+      &.small {
+        @include topCenter(($fontLineHeightH2 + $rhythm), ($rhythm * 4));
+      }
+      &.mini {
+         @include topCenter(($fontLineHeightH2 + $rhythm), ($rhythm * 3));
+      }
     }
   }
 
@@ -83,14 +94,11 @@
   display: block;
   line-height: $rhythm * 2;
   position: relative;
+  top: $rhythm * 0.5;
   left: $fontOpticalMarginH2 * -1;
   color: $darkerGray;
   width: 100%;
   @include ellipses;
-  @media screen and (min-width: $lapWidth) {
-    position: absolute;
-    top: $rhythm * -1.5;
-  }
 }
 
 .page_header_back_arrow {
@@ -100,9 +108,9 @@
   top: 0;
   left: 0;
   line-height: 1;
-  @include topCenter($fontLineHeightH2Mobile + $rhythm, 1.75rem);
+  @include topCenter($fontLineHeightH2Mobile + ($rhythm * 4.5), 1.75rem);
   @media screen and (min-width: $lapWidth) {
-    @include topCenter($fontLineHeightH2 + $rhythm, 1.75rem);
+    @include topCenter($fontLineHeightH2 + ($rhythm * 4.5), 1.75rem);
   }
 }
 
