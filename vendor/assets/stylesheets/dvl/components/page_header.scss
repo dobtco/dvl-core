@@ -1,7 +1,7 @@
 .page_header {
   @include cf();
   border-bottom: 1px solid $lightGray;
-  margin: $rhythm 0 $lineHeight;
+  margin-bottom: $lineHeight;
   position: relative;
   h2 {
     float: left;
@@ -56,6 +56,7 @@
   // Modifiers
 
   &.with_back_arrow {
+    margin-top: $rhythm * 1.5;
     padding-left: $rhythm * 5;
     h2 {
       position: relative;
@@ -87,7 +88,7 @@
   @include ellipses;
   @media screen and (min-width: $lapWidth) {
     position: absolute;
-    top: $rhythm * -1;
+    top: $rhythm * -1.5;
   }
 }
 
