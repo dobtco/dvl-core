@@ -56,11 +56,12 @@
   // Modifiers
 
   &.with_back_arrow {
-    margin-top: $rhythm * 1.5;
+    margin-top: $rhythm * 2;
     padding-left: $rhythm * 5;
     h2 {
       position: relative;
       width: 100%;
+      padding-bottom: $rhythm * 1.5;
     }
   }
 
