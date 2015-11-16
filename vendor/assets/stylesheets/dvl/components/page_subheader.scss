@@ -43,6 +43,9 @@
   .button.small {
     margin-top: $rhythm / 2;
   }
+  .button.mini {
+    margin-top: $rhythm;
+  }
   @media screen and (min-width: $lapWidth) {
     float: right;
     clear: none;
