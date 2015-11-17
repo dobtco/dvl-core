@@ -90,7 +90,7 @@ class Views::Home::Headers < Views::Page
 
           a.button.mini.info.icon_r(href: '#') {
             text 'View '
-            i(class: 'icon icon_arrow_right')
+            i(class: 'icon icon_arrow_right_sm')
           }
         }
       }
@@ -129,8 +129,8 @@ class Views::Home::Headers < Views::Page
           span "#94 of 566"
 
           ul {
-            li { span{text '&larr;'.html_safe}}
-            li { a(href: '#'){text '&rarr;'.html_safe}}
+            li { span{ i.icon.icon_arrow_left_sm }}
+            li { a(href: '#'){ i.icon.icon_arrow_right_sm }}
           }
         }
       }

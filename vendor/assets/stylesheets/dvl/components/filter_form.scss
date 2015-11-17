@@ -1,6 +1,9 @@
 .filter_form {
   display: inline-block;
   position: relative;
+  i {
+    font-size: $iconSize;
+  }
   .button,
   .styled_select_wrapper {
     margin-top: $rhythm;
@@ -24,7 +27,7 @@
   &.with_query {
     .filter_form_search_wrapper {
       input {
-        padding-right: 1.75rem;
+        padding-right: $rhythm * 5;
       }
       .icon_close_circle {
         display: inline;
@@ -54,7 +57,7 @@
   position: relative;
   input {
     width: 100%;
-    padding-left: 1.75rem;
+    padding-left: $rhythm * 5;
     display: inline;
     line-height: 1.5rem;
   }
@@ -62,13 +65,13 @@
   .icon_close_circle {
     position: absolute;
     line-height: 1;
-    @include topCenter($inputHeight, 1rem);
+    @include topCenter($inputHeight, $iconSize);
     color: $darkGray;
   }
   .icon_search {
     width: 1.75rem;
     text-align: center;
-    left: 0;
+    left: $rhythm;
   }
   .icon_close_circle {
     display: none;

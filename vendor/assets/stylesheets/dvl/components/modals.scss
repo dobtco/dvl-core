@@ -92,12 +92,9 @@
     color: rgba($darkestGray,0.6);
     text-decoration: none;
     text-align: right;
-    font-size: $rhythm * 5;
+    font-size: $iconSize;
     width: $rhythm * 5;
     line-height: $rhythm * 4;
-    font-family: $fontFamilyDisplay;
-    font-weight: $weightLight;
-    @include font_smoothing;
     &:hover,
     &:focus {
       color: rgba($darkestGray,0.9);

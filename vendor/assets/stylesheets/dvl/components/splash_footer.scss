@@ -80,11 +80,13 @@ $footerBackground: #080F1F !default;
   }
   li:before {
     position: absolute;
-    left: (-3rem / 1.2);
-    color: rgba(#fff,0.5);
+    color: rgba(#fff,0.7);
     font-family: 'dvl-icons';
-    font-size: 1.2rem;
-    width: (3rem / 1.2);
+    font-size: $iconSize;
+    width: $iconSize * 2;
+    left: $iconSize * -2;
+    padding-right: $rhythm;
+    top: $rhythm * -0.5;
     text-align: center;
     display: block;
     @include font-smoothing;

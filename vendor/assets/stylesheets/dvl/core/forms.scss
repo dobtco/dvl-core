@@ -294,8 +294,8 @@ input[type="checkbox"] {
       line-height: 1;
       @include topCenter (($rhythm * 3), 1rem);
       left: 0;
-      // .icon_check
-      @include icon('\f167');
+      // .icon_check_sm
+      @include icon('\f1c5');
       color: $primaryColor;
       width: ($rhythm * 3) - 0.125rem; // Subtracting widths of border
       text-align: center;
@@ -342,10 +342,10 @@ input[type="radio"] {
 .control_minus {
   input[type=checkbox] {
     + .control_styled:after {
-      // .icon_delete
-      content: "\f170";
+      // .icon_minus_sm
+      content: "\f1c7";
       line-height: 1;
-      top: 4px; // alignment
+      top: 3px; // alignment
     }
   }
 }
@@ -536,6 +536,12 @@ form {
     line-height: $inputHeight;
     @include ellipses;
   }
+  i {
+    font-size: $iconSize;
+    line-height: 1;
+    position: relative;
+    top: $rhythm * -0.5; // alignment
+  }
 }
 
 .input_group_append {
@@ -585,8 +591,11 @@ form {
       padding: 0 $largeInputHeight 0 $largeInputPadding;
       line-height: $largeInputHeight;
       &:after {
-        line-height: 1rem;
-        @include topCenter($largeInputHeight, 1rem);
+        // .icon_caret_down
+        @include icon("\f162");
+        line-height: 1;
+        font-size: $iconSize;
+        @include topCenter($largeInputHeight, $iconSize);
         right: $largeInputPadding;
       }
     }
@@ -662,8 +671,8 @@ form {
   font-weight: $weightNormal;
   @include font_smoothing;
   &:after {
-    // .icon_caret_down
-    @include icon('\f162');
+    // .icon_caret_down_sm
+    @include icon('\f1c1');
     line-height: 1;
     position: absolute;
     @include topCenter($inputHeight, 1rem);

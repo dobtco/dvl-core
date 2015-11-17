@@ -190,6 +190,7 @@
   // Add even more padding to icon items
   .navbar_icon {
     padding: 0 $rhythm;
+    font-size: $iconSize;
   }
 
   // Float the secondary content to the right and handle dropdowns

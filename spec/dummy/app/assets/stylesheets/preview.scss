@@ -207,13 +207,19 @@ hr {
     text-align: center;
     i {
       display: block;
+      font-size: 1.5rem;
       line-height: $lineHeight * 4;
+      opacity: 0.8;
+      transition: transform 0.25s $easeOutSine;
+      will-change: transform, opacity;
     }
-    color: rgba($black,0.6);
     transition: all 0.2s ease-out;
     &:hover {
-      color: $black;
       background: rgba($blueHighlight,0.2);
+      i {
+        opacity: 1;
+        transform: scale(2);
+      }
     }
   }
   em {
@@ -223,9 +229,6 @@ hr {
     text-align: center;
     display: block;
     margin-top: $rhythm;
-  }
-  i {
-    font-size: 3rem;
   }
 }
 

@@ -275,7 +275,7 @@ class Views::Home::Forms < Views::Page
                             'aria-label' => 'Permalink'
             }
             div.input_group_append {
-              a(class: 'button small info',
+              a(class: 'button info',
                 'data-toggle' => 'tooltip',
                 'data-container' => 'body',
                 title: 'Copy URL',
@@ -302,7 +302,7 @@ class Views::Home::Forms < Views::Page
         f.input :example_of_prepended_input do
           div.input_group.input_group_text {
             div.input_group_prepend {
-              a.button.small {
+              a.button {
                 i(class: 'icon icon_eye')
               }
             }
@@ -387,24 +387,16 @@ class Views::Home::Forms < Views::Page
     docs 'Button with icons', %{
       div.dvlcore_button_array {
         a.button.info.icon_l {
-          i(class: 'icon icon_caret_left')
+          i(class: 'icon icon_arrow_left')
           text 'Previous'
         }
         a.button.info.icon_r {
           text 'Next'
-          i(class: 'icon icon_caret_right')
-        }
-        a.button.info.icon_r {
-          text 'Submit'
           i(class: 'icon icon_arrow_right')
         }
         a.button.primary.icon_l {
           i(class: 'icon icon_eye')
           text 'View'
-        }
-        a.button.primary.icon_r {
-          text 'Go to site'
-          i(class: 'icon icon_external_link')
         }
       }
     }, sub: true

@@ -5,6 +5,10 @@
     display: inline-block;
     li {
       display: inline;
+      i {
+        font-size: $iconSize;
+        line-height: 1;
+      }
       a,
       span {
         border-radius: 50%;

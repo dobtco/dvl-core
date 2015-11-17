@@ -313,7 +313,7 @@ class Views::Home::Components < Views::Page
 
     docs 'Multi-Level', %{
       div.dropdown {
-        a 'Sort by&hellip;'.html_safe,
+        a 'Sort',
           'data-toggle' => 'dropdown',
           class: 'dropdown_toggle_link',
           href: '#'
@@ -471,14 +471,14 @@ class Views::Home::Components < Views::Page
     docs 'Left Aligned', %{
       div.pagination {
         ul {
-          li { a(href: '#'){text "&larr;".html_safe}}
+          li { a(href: '#'){ i.icon.icon_arrow_left }}
           li { a(href: '#'){text '1'}}
           li.active { span '2' }
           li { a(href: '#'){text '3'}}
           li { span '&hellip;'.html_safe }
           li { a(href: '#'){text '19'}}
           li { a(href: '#'){text '20'}}
-          li { a(href: '#'){text "&rarr;".html_safe}}
+          li { a(href: '#'){ i.icon.icon_arrow_right }}
         }
       }
     }, sub: true
@@ -486,14 +486,14 @@ class Views::Home::Components < Views::Page
     docs 'Center Aligned', %{
       div.pagination.pagination_centered {
         ul {
-          li { a(href: '#'){text "&larr;".html_safe}}
+          li { a(href: '#'){ i.icon.icon_arrow_left }}
           li { a(href: '#'){text '1'}}
           li.active { span '2' }
           li { a(href: '#'){text '3'}}
           li { span '&hellip;'.html_safe }
           li { a(href: '#'){text '19'}}
           li { a(href: '#'){text '20'}}
-          li { a(href: '#'){text "&rarr;".html_safe}}
+          li { a(href: '#'){ i.icon.icon_arrow_right }}
         }
       }
     }, sub: true
@@ -501,10 +501,10 @@ class Views::Home::Components < Views::Page
     docs 'With fewer links', %{
       div.pagination.pagination_centered {
         ul {
-          li { span '&larr;'.html_safe }
+          li { span { i.icon.icon_arrow_left }}
           li.active { span '1' }
           li { a('2', href: '#') }
-          li { a '&rarr;'.html_safe }
+          li { a { i.icon.icon_arrow_right }}
         }
       }
     }
@@ -514,8 +514,8 @@ class Views::Home::Components < Views::Page
         span "#1 of 123".html_safe
 
         ul {
-          li { span{text '&larr;'.html_safe}}
-          li { a(href: '#'){text '&rarr;'.html_safe}}
+          li { span{ i.icon.icon_arrow_left_sm }}
+          li { a(href: '#'){ i.icon.icon_arrow_right_sm }}
         }
       }
     }, sub: true

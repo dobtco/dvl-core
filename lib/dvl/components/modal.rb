@@ -10,7 +10,9 @@ class Dvl::Components::Modal < Erector::Widget
       div.modal_dialog {
         div.modal_content {
           div.modal_header {
-            a.close '&times;'.html_safe, 'data-dismiss' => 'modal'
+            a('data-dismiss' => 'modal', 'class' => 'close'){
+              i.icon.icon_close
+            }
             h3 @title
           }
 
