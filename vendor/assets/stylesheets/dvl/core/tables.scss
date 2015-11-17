@@ -60,14 +60,21 @@ th {
 td {
   padding: $rhythm * 2;
   border-color: $lightGray;
+  .yes, .no {
+    i {
+      font-size: $iconSize;
+    }
+  }
 }
 
 th.sortable a {
   color: $darkestGray;
   i {
     color: $darkerGray;
-    margin-left: 0.25rem;
+    margin-left: $rhythm;
+    margin-top: -0.25rem; // Alignment
     font-size: 1rem;
+    display: inline; // Carets should never break on a separate line
   }
     &:hover {
     text-decoration: none;
