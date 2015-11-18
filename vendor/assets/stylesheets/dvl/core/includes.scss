@@ -225,13 +225,6 @@ $z_flash: 900 !default;
   }
 }
 
-@mixin ninety_wrapper() {
-  margin: 0 auto;
-  width: 90%;
-  max-width: 1150px;
-  position: relative;
-}
-
 @mixin icon($unicode_id) {
   content: $unicode_id;
   font-family: 'FontAwesome';
