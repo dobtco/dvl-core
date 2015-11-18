@@ -75,14 +75,6 @@
       }
     }
   }
-
-  @media screen and (min-width: $lapWidth) {
-    &.with_pagination {
-      h2 {
-        padding-right: ($rhythm * 10) + ($lineHeight * 4);
-      }
-    }
-  }
 }
 
 .page_header_context {

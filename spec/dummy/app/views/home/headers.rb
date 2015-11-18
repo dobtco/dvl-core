@@ -71,7 +71,7 @@ class Views::Home::Headers < Views::Page
     }, sub: true
 
     docs 'Page Header - With back arrow and pagination', %{
-      div.page_header.with_back_arrow.with_pagination {
+      div.page_header.with_back_arrow {
         a.page_header_back_arrow(title: 'All responses', 'data-toggle' => 'tooltip') {
           i(class: 'fa fa-arrow-circle-o-left')
         }

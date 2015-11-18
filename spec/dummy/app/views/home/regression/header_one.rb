@@ -10,7 +10,7 @@ class Views::Home::Regression::HeaderOne < Views::Base
   end
 
   def render_body
-    div.page_header.with_pagination {
+    div.page_header {
       h2 {
         text 'Max Ophüls'
       }
