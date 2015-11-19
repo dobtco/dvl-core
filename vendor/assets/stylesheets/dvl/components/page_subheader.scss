@@ -4,6 +4,7 @@
   h3, h4 {
     display: inline;
     float: left;
+    max-width: 100%;
     margin-bottom: $rhythm;
     @media screen and (min-width: $lapWidth) {
       margin-bottom: 0;
