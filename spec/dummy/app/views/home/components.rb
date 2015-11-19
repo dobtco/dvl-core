@@ -382,7 +382,7 @@ class Views::Home::Components < Views::Page
           a 'Long error notification', href: 'javascript:DvlFlash("error", "Oh dear lord, an error has occurred! I am not sure how to handle a quandary quite like this.")'
         }
         li {
-          a 'Neutral with action', href: 'javascript:DvlFlash("info", "Your item was deleted.", "<a>Undo</a>")'
+          a 'Neutral with action', href: 'javascript:DvlFlash("info", "Your item was deleted.", "<a href=#>Undo</a>")'
         }
       }
     }
