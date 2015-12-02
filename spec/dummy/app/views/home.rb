@@ -1,7 +1,7 @@
-class Views::Home < Views::Base
+class Views::Home < Views::Layout
   def render_header
-    div.hero {
-      div.container {
+    div(class: 'hero') {
+      div(class: 'container') {
         p {
           img(src: 'http://www.dobt.co/img/dobt_logo.png', alt: 'DOBT')
         }

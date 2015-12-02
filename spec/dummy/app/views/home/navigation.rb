@@ -7,19 +7,19 @@ class Views::Home::Navigation < Views::Page
     p 'The navigation bar should always take up the full page width. The examples below break at some viewport sizes, because they violate this rule.'
 
     docs 'Signed Out', %{
-      nav.navbar {
-        div.container {
-          div.navbar_header {
-            a.navbar_brand 'DOBT Style Guide', href: '#'
-            a.navbar_toggle "<i class='fa fa-reorder'></i>".html_safe
+      nav(class: 'navbar') {
+        div(class: 'container') {
+          div(class: 'navbar_header') {
+            a 'DOBT Style Guide', class: 'navbar_brand', href: '#'
+            a "<i class='fa fa-reorder'></i>".html_safe, class: 'navbar_toggle'
           }
 
-          div.navbar_content_wrapper {
-            div.navbar_content.navbar_content_secondary {
+          div(class: 'navbar_content_wrapper') {
+            div(class: 'navbar_content navbar_content_secondary') {
               ul {
                 li {
                   span {
-                    a.button.small.primary 'Sign in'
+                    a 'Sign in', class: 'button small primary'
                   }
                 }
               }
@@ -30,19 +30,19 @@ class Views::Home::Navigation < Views::Page
     }, sub: true, hint: 'The product name in a navigation bar can be either text or a logo, but not both.'
 
     docs 'Signed In', %{
-      nav.navbar {
-        div.container {
-          div.navbar_header {
-            a.navbar_brand(href: '#') {
+      nav(class: 'navbar') {
+        div(class: 'container') {
+          div(class: 'navbar_header') {
+            a(class: 'navbar_brand', href: '#') {
               img src: 'http://www.dobt.co/img/dobt_logo.png'
             }
-            a.navbar_toggle "<i class='fa fa-reorder'></i>".html_safe
+            a "<i class='fa fa-reorder'></i>".html_safe, class: 'navbar_toggle'
           }
 
-          div.navbar_content_wrapper {
-            div.navbar_content.navbar_content_primary {
+          div(class: 'navbar_content_wrapper') {
+            div(class: 'navbar_content navbar_content_primary') {
               ul {
-                li.active {
+                li(class: 'active') {
                   a 'Dashboard'
                 }
                 li {
@@ -51,40 +51,40 @@ class Views::Home::Navigation < Views::Page
               }
             }
 
-            div.navbar_content.navbar_content_secondary {
-              form.navbar_search_form {
+            div(class: 'navbar_content navbar_content_secondary') {
+              form(class: 'navbar_search_form') {
                 input type: 'text', placeholder: 'Search...'
               }
               ul {
                 li {
                   a {
-                    span.navbar_full_i {
+                    span(class: 'navbar_full_i') {
                       i(class: 'fa fa-bolt navbar_icon')
                     }
-                    span.navbar_collapsed_i {
+                    span(class: 'navbar_collapsed_i') {
                       text 'Notifications'
                     }
 
-                    span.navbar_badge '1'
+                    span '1', class: 'navbar_badge'
                   }
                 }
-                li.dropdown.dropdown_navbar {
+                li(class: 'dropdown dropdown_navbar') {
                   a(
                     'data-toggle' => 'dropdown',
                     href: '#'
                   ) {
-                    span.navbar_full_i {
+                    span(class: 'navbar_full_i') {
                       i(class: 'fa fa-refresh navbar_icon')
                     }
-                    span.navbar_collapsed_i {
+                    span(class: 'navbar_collapsed_i') {
                       text 'Loading State'
                     }
                   }
 
-                  div.dropdown_menu {
+                  div(class: 'dropdown_menu') {
                     h3 'Loading State'
-                    ul.dropdown_body {
-                      li.dropdown_loading {
+                    ul(class: 'dropdown_body') {
+                      li(class: 'dropdown_loading') {
                         span {
                           i(class: 'fa fa-spin fa-refresh')
                         }
@@ -92,39 +92,39 @@ class Views::Home::Navigation < Views::Page
                     }
                   }
                 }
-                li.dropdown.dropdown_navbar {
+                li(class: 'dropdown dropdown_navbar') {
                   a(
                     'data-toggle' => 'dropdown',
                     href: '#'
                   ) {
-                    span.navbar_full_i {
+                    span(class: 'navbar_full_i') {
                       i(class: 'fa fa-file-text navbar_icon')
                     }
-                    span.navbar_collapsed_i {
+                    span(class: 'navbar_collapsed_i') {
                       text 'Default Dropdown'
                     }
                   }
 
-                  div.dropdown_menu {
+                  div(class: 'dropdown_menu') {
                     h3 'Default Dropdown'
-                    ul.dropdown_body {
+                    ul(class: 'dropdown_body') {
                       li { a 'Item 1', href: '#' }
                       li { a 'Item 2', href: '#' }
                       li { a 'Item 3', href: '#' }
                     }
                   }
                 }
-                li.dropdown.dropdown_navbar {
+                li(class: 'dropdown dropdown_navbar') {
                   a(
                     'data-toggle' => 'dropdown',
                     href: '#'
                   ) {
-                    img.nav_avatar src: '//dobt-captured.s3.amazonaws.com/ajb/richard_ayoade_-_Google_Search_2015-05-26_09-56-32.png_290290_2015-05-26_09-57-03.png'
+                    img class: 'nav_avatar', src: '//dobt-captured.s3.amazonaws.com/ajb/richard_ayoade_-_Google_Search_2015-05-26_09-56-32.png_290290_2015-05-26_09-57-03.png'
                   }
 
-                  div.dropdown_menu {
+                  div(class: 'dropdown_menu') {
                     h3 'My account'
-                    ul.dropdown_body {
+                    ul(class: 'dropdown_body') {
                       li { a 'Edit profile', href: '#' }
                       li { a 'Sign out', href: '#' }
                     }
@@ -140,12 +140,12 @@ class Views::Home::Navigation < Views::Page
     hr
 
     docs 'Sidebar (Navigation)', %{
-      ul.sidebar_nav {
-        li.header {
+      ul(class: 'sidebar_nav') {
+        li(class: 'header') {
           text 'Steve McQueen'
           img(src: 'http://i.imgur.com/2WkSV2N.png')
         }
-        li.active {
+        li(class: 'active') {
           a {
             text 'Profile'
           }
@@ -163,42 +163,42 @@ class Views::Home::Navigation < Views::Page
         }
       }
 
-      ul.sidebar_nav {
-        li.header {
+      ul(class: 'sidebar_nav') {
+        li(class: 'header') {
           text 'Statuses'
         }
         li {
           a {
             text 'Open'
-            span.badge '2'
+            span '2', class: 'badge'
           }
         }
         li {
           a {
             text 'Rejected by the International Court of Justice in Hague, The Netherlands after a lengthy deliberation of multiple years'
-            span.badge '5,000'
+            span '5,000', class: 'badge'
           }
         }
       }
 
-      ul.sidebar_nav {
-        li.header {
+      ul(class: 'sidebar_nav') {
+        li(class: 'header') {
           text 'Labels'
         }
         li {
           a {
-            div.label "Label 1"
-            span.badge "15"
+            div "Label 1", class: 'label'
+            span "15", class: 'badge'
           }
         }
         li {
           a {
-            div.label "Label 2"
-            span.badge "27"
+            div "Label 2", class: 'label'
+            span "27", class: 'badge'
           }
         }
       }
-      ul.sidebar_sub_actions {
+      ul(class: 'sidebar_sub_actions') {
         li {
           a 'Grant permission to edit'
         }
@@ -212,8 +212,8 @@ class Views::Home::Navigation < Views::Page
     }, hint: 'You can place secondary / tertiary actions for a page under any sidebar, including this one.'
 
     docs 'Tabs', %{
-      ul.tabs {
-        li.active {
+      ul(class: 'tabs') {
+        li(class: 'active') {
           a 'The Form', href: '#form', 'data-toggle' => 'tab'
         }
         li {
@@ -224,9 +224,9 @@ class Views::Home::Navigation < Views::Page
         }
       }
 
-      div.tab_pane.form!.active 'form'
-      div.tab_pane.ratings! 'ratings'
-      div.tab_pane.settings! 'settings'
+      div 'form', class: 'tab_pane active', id: 'form'
+      div 'ratings', class: 'tab_pane', id: 'ratings'
+      div 'settings', class: 'tab_pane', id: 'settings'
     }, hint: %{
       Add tabs below a <a href="/headers#heading 3">page subheader</a> to let users navigate between different sections
       of the same view. You can optionally include <code>dvl/components/tabs.js</code> if you intend to switch the tab content

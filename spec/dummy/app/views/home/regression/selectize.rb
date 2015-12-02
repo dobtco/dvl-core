@@ -1,4 +1,4 @@
-class Views::Home::Regression::Selectize < Views::Base
+class Views::Home::Regression::Selectize < Views::Layout
   def render_body
     label 'Selectize', for: 'select1'
 

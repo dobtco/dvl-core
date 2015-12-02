@@ -53,7 +53,7 @@ class Views::Home::Data < Views::Page
     }, sub: true
 
     docs 'Condensed', %{
-      table.condensed {
+      table(class: 'condensed') {
         thead {
           tr {
             th 'Name'
@@ -129,7 +129,7 @@ class Views::Home::Data < Views::Page
     p 'When displaying the avatar and basic information of a user of the app, employ the user block for visual consistency.'
 
     docs 'Default', %{
-      div.user_block {
+      div(class: 'user_block') {
         figure {
           img(src: 'http://i.imgur.com/2WkSV2N.png', alt: 'Steve McQueen')
           text %{<figcaption><p><strong>Steve McQueen</strong></p><p><em>steve@mcqueen.biz</em></p></figcaption>}.html_safe
@@ -138,12 +138,12 @@ class Views::Home::Data < Views::Page
     }, sub: true
 
     docs 'Header and Links', %{
-      div.user_block.user_block_rich {
+      div(class: 'user_block user_block_rich') {
         figure {
           img(src: 'http://i.imgur.com/2WkSV2N.png', alt: 'Steve McQueen')
           text %{<figcaption><p class="user_block_header">Responding as&hellip;</p><p><strong>Steve McQueen</strong></p><p><em>steve@mcqueen.biz</em></p></figcaption>}.html_safe
         }
-        div.user_block_links {
+        div(class: 'user_block_links') {
           a 'Edit profile'
           a 'Sign out'
         }
@@ -154,16 +154,16 @@ class Views::Home::Data < Views::Page
 
     docs 'Labels', %{
       p {
-        span.label.label_error 'Error'
+        span 'Error', class: 'label label_error'
       }
       p {
-        span.label.label_success 'Success'
+        span 'Success', class: 'label label_success'
       }
       p {
-        span.label.label_info 'Info'
+        span 'Info', class: 'label label_info'
       }
       p {
-        span.label.label_warning 'Warning'
+        span 'Warning', class: 'label label_warning'
       }
     }
 
@@ -172,7 +172,7 @@ class Views::Home::Data < Views::Page
     p "When a DOBT app is able to send plain-text email, use this layout to preview the email's content to the user."
 
     docs 'Default', %{
-      div.message_preview {
+      div(class: 'message_preview') {
         header {
           dl {
             dt 'From:'
@@ -189,8 +189,8 @@ class Views::Home::Data < Views::Page
             }
           }
         }
-        div.message_preview_body {
-          div.rendered_from_wysiwyg {
+        div(class: 'message_preview_body') {
+          div(class: 'rendered_from_wysiwyg') {
             text 'Can you please promote my new weekly vlog on your social media channels?'
             br
             br
@@ -206,8 +206,8 @@ class Views::Home::Data < Views::Page
     }, sub: true
 
     docs 'Error State', %{
-      div.is_invalid {
-        div.message_preview {
+      div(class: 'is_invalid') {
+        div(class: 'message_preview') {
           header {
             dl {
               dt 'From:'
@@ -224,8 +224,8 @@ class Views::Home::Data < Views::Page
               }
             }
           }
-          div.message_preview_body {
-            div.rendered_from_wysiwyg {
+          div(class: 'message_preview_body') {
+            div(class: 'rendered_from_wysiwyg') {
               text 'Can you please promote my new weekly vlog on your social media channels?'
               br
               br
@@ -242,8 +242,8 @@ class Views::Home::Data < Views::Page
     }, hint: "Used when previewing an email which the app is unable to send, due to user error.", sub: true
 
     docs 'Duplicate State', %{
-      div.is_duplicate {
-        div.message_preview {
+      div(class: 'is_duplicate') {
+        div(class: 'message_preview') {
           header {
             dl {
               dt 'From:'
@@ -260,8 +260,8 @@ class Views::Home::Data < Views::Page
               }
             }
           }
-          div.message_preview_body {
-            div.rendered_from_wysiwyg {
+          div(class: 'message_preview_body') {
+            div(class: 'rendered_from_wysiwyg') {
               text 'Can you please promote my new weekly vlog on your social media channels?'
               br
               br
@@ -280,41 +280,43 @@ class Views::Home::Data < Views::Page
     hr
 
     docs 'Sidebar (Data List)', %{
-      div.sidebar_box {
-        ul.sidebar_data {
+      div(class: 'sidebar_box') {
+        ul(class: 'sidebar_data') {
           li {
-            div.sidebar_data_icon {
+            div(class: 'sidebar_data_icon') {
               i(class: 'fa fa-pencil')
             }
-            div.sidebar_data_text {
-              div.sidebar_data_label 'Assigned to'
-              div.sidebar_data_value 'Jean-Luc Godard'
-              div.sidebar_data_details {
+            div(class: 'sidebar_data_text') {
+              div('Assigned to', class: 'sidebar_data_label')
+              div('Jean-Luc Godard', class: 'sidebar_data_value')
+              div(class: 'sidebar_data_details') {
                 a 'Reassign?'
               }
             }
           }
           li {
-            div.sidebar_data_icon {
+            div(class: 'sidebar_data_icon') {
               i(class: 'fa fa-folder')
             }
-            div.sidebar_data_text {
-              div.sidebar_data_label 'Status'
-              div.sidebar_data_value {
+            div(class: 'sidebar_data_text') {
+              div('Status', class: 'sidebar_data_label')
+              div(class: 'sidebar_data_value') {
                 simple_form_for :native_select do |f|
                   f.input_field :blah, as: :select, collection: ['Open', 'Pending', 'Rejected'], selected: 'Option 1', 'data-width' => '100%', 'aria-label' => 'Status'
                 end
               }
-              div.sidebar_data_details "The status is very important. Make sure you assign it with care!"
+              div(class: 'sidebar_data_details') {
+                text "The status is very important. Make sure you assign it with care!"
+              }
             }
           }
           li {
-            div.sidebar_data_icon {
+            div(class: 'sidebar_data_icon') {
               i(class: 'fa fa-clock-o')
             }
-            div.sidebar_data_text {
-              div.sidebar_data_label 'Revision History'
-              div.sidebar_data_value {
+            div(class: 'sidebar_data_text') {
+              div('Revision History', class: 'sidebar_data_label')
+              div(class: 'sidebar_data_value') {
                 simple_form_for :foo do |f|
                   f.input_field :blah, as: :dropdown_select, collection: [['Edited 06/26/15 at 10:28pm', true, 'by Jean-Luc Godard'], ['Edited 06/23/15 at 05:59am', true, 'by Jean-Pierre Melville'], ['Edited 04/15/15 at 01:15pm', true, 'by Jean Cocteau']], selected: 'Edited 06/26/15 at 10:28pm', 'data-width' => '100%', 'aria-label' => 'Revision history'
                 end
@@ -323,7 +325,7 @@ class Views::Home::Data < Views::Page
           }
         }
       }
-      ul.sidebar_sub_actions {
+      ul(class: 'sidebar_sub_actions') {
         li {
           a 'Grant permission to edit'
         }
