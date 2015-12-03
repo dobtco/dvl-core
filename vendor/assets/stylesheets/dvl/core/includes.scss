@@ -333,6 +333,15 @@ $easeInOutBack:  cubic-bezier(0.680, -0.550, 0.265, 1.550);
   border: 0;
 }
 
+// Wrapper
+
+@mixin container() {
+  margin: 0 auto;
+  width: 90%;
+  max-width: $maxWidth;
+}
+
+
 // Visually hidden, but appears on focus
 
 @mixin hiddenFocus {
