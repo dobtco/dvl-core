@@ -225,13 +225,6 @@ $z_flash: 900 !default;
   }
 }
 
-@mixin ninety_wrapper() {
-  margin: 0 auto;
-  width: 90%;
-  max-width: 1150px;
-  position: relative;
-}
-
 @mixin icon($unicode_id) {
   content: $unicode_id;
   font-family: 'FontAwesome';
@@ -339,6 +332,15 @@ $easeInOutBack:  cubic-bezier(0.680, -0.550, 0.265, 1.550);
   height: 1px;
   border: 0;
 }
+
+// Wrapper
+
+@mixin container() {
+  margin: 0 auto;
+  width: 90%;
+  max-width: $maxWidth;
+}
+
 
 // Visually hidden, but appears on focus
 
