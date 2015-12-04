@@ -561,9 +561,10 @@ form {
   position: relative;
   display: inline-block;
   vertical-align: top;
+  max-width: 100%;
+
   &.auto {
     width: auto;
-    max-width: 100%;
   }
   &.full {
     width: 100%;
