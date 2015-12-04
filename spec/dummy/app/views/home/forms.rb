@@ -228,8 +228,13 @@ class Views::Home::Forms < Views::Page
                 as: :dropdown_select,
                 input_html: { class: 'small' }
 
+        label.control.small {
+          input type: 'checkbox', checked: true
+          text 'Show the Cents field'
+        }
+
       end
-    }, sub: true
+    }, hint: 'Use small inputs to style advanced, information-dense options. Or, place them under regular inputs to differentiate primary and secondary settings.', sub: true
 
     docs 'Horizontal Forms', %{
       simple_form_for :horizontal, wrapper: :horizontal do |f|
@@ -295,6 +300,27 @@ class Views::Home::Forms < Views::Page
             }
             div.input_group_append {
               span 'years young'
+            }
+          }
+        end
+
+        f.input :small_input_group do
+          div.input_group.input_group_small {
+            div.input_group_input {
+              f.input_field :small_input_group,
+                            as: :string,
+                            value: 'http://dobt.forms.fm',
+                            'aria-label' => 'Small input group',
+                            class: 'small'
+            }
+            div.input_group_append {
+              a(class: 'button small info',
+                'data-toggle' => 'tooltip',
+                'data-container' => 'body',
+                title: 'Copy URL',
+                'aria-label' => 'Copy URL') {
+                i(class: 'fa fa-copy')
+              }
             }
           }
         end
