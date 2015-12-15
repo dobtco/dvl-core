@@ -48,6 +48,24 @@
       top: $rhythm * 2;
       font-size: 1.5rem;
     }
+    a {
+      color: $white;
+      text-decoration: underline;
+      &:hover,
+      &:focus,
+      &:active {
+        color: $white;
+      }
+      &:hover {
+        opacity: 0.95;
+      }
+      &:focus {
+        opacity: 0.8;
+      }
+      &:active {
+        opacity: 0.75;
+      }
+    }
   }
   &.is_visible {
     opacity: 1;

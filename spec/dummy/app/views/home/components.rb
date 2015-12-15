@@ -376,7 +376,7 @@ class Views::Home::Components < Views::Page
           a 'Success notification', href: 'javascript:DvlFlash("success", "You did it!")'
         }
         li {
-          a 'Neutral flash', href: 'javascript:DvlFlash("info", "This is an informational message.")'
+          a 'Neutral flash', href: 'javascript:DvlFlash("info", "This is <a href=#>an informational message</a>.")'
         }
         li {
           a 'Long error notification', href: 'javascript:DvlFlash("error", "Oh dear lord, an error has occurred! I am not sure how to handle a quandary quite like this.")'
