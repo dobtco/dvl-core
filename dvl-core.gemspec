@@ -18,12 +18,12 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'activesupport'
   s.add_dependency 'coffee-script'
-  s.add_dependency 'erector-rails4'
   s.add_dependency 'sass'
 
   s.add_development_dependency 'autoprefixer-rails', '5.2.1'
   s.add_development_dependency 'capybara', '2.4.4'
   s.add_development_dependency 'capybara-accessible', '0.2.1'
+  s.add_development_dependency 'fortitude', '0.9.4'
   s.add_development_dependency 'percy-capybara', '0.7.0'
   s.add_development_dependency 'poltergeist', '1.6.0'
   s.add_development_dependency 'pry'

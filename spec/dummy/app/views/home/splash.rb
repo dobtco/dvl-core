@@ -8,29 +8,29 @@ class Views::Home::Splash < Views::Page
     h2 'Splash Pages'
 
     docs 'Footer', %{
-      footer.public_footer {
-        div.container {
-          form.newsletter_form.grid {
-            p.item {
+      footer(class: 'public_footer') {
+        div(class: 'container') {
+          form(class: 'newsletter_form grid') {
+            p(class: 'item') {
               strong 'Subscribe to our newsletter!'
               text " We'll email you around once a month with updates."
             }
-            div.item.lap_eight_columns {
+            div(class: 'item lap_eight_columns') {
               label 'Enter your email address', for: 'newsletter_email'
               input type: 'email', id: 'newsletter_email', placeholder: 'Enter your email address here', class: 'newsletter_email'
             }
-            div.item.lap_four_columns {
+            div(class: 'item lap_four_columns') {
               input type: 'submit', value: 'Subscribe', class: 'button newsletter_subscribe'
             }
           }
 
-          div.grid {
-            div.item.lap_six_columns {
-              ul.public_footer_links {
+          div(class: 'grid') {
+            div(class: 'item lap_six_columns') {
+              ul(class: 'public_footer_links') {
                 li {
                   a 'Blog', href: 'http://blog.dobt.co'
                 }
-                li.public_footer_status {
+                li(class: 'public_footer_status') {
                   a 'Status Board', href: 'http://status.dobt.co'
                 }
                 li {
@@ -44,9 +44,9 @@ class Views::Home::Splash < Views::Page
                 }
               }
             }
-            div.item.lap_six_columns {
-              ul.public_footer_contact {
-                li.public_footer_phone {
+            div(class: 'item lap_six_columns') {
+              ul(class: 'public_footer_contact') {
+                li(class: 'public_footer_phone') {
                   dl {
                     dt 'Toll-Free'
                     dd {
@@ -60,16 +60,16 @@ class Views::Home::Splash < Views::Page
                     }
                   }
                 }
-                li.public_footer_email {
-                  a.dynamic_email
+                li(class: 'public_footer_email') {
+                  a(class: 'dynamic_email')
                 }
-                li.public_footer_fb {
+                li(class: 'public_footer_fb') {
                   a 'Facebook', href: 'https://www.facebook.com/dobtco'
                 }
-                li.public_footer_gplus {
+                li(class: 'public_footer_gplus') {
                   a 'Google&#43;'.html_safe, href: 'https://plus.google.com/+DobtCo'
                 }
-                li.public_footer_twitter {
+                li(class: 'public_footer_twitter') {
                   a 'Twitter', href: 'https://www.twitter.com/dobtco'
                 }
               }
@@ -77,6 +77,6 @@ class Views::Home::Splash < Views::Page
           }
         }
       }
-    }, full: true
+    }
   end
 end

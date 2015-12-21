@@ -7,12 +7,12 @@ class Views::Home::Index < Views::Home
 
     p %{Our typographical <em>vertical rhythm</em> is 8px. We use a multiple of that number (24px) to set the line height of our text.}.html_safe
 
-    div.docs_rhythm {
+    div(class: 'docs_rhythm') {
       h2 'The Department of Better Technology'
       p 'We are dedicated to making great software that helps governments and non-profits better serve their communities.'
       form {
         input(type: 'text', placeholder: 'Enter your email address')
-        button.button.info 'Subscribe'
+        button 'Subscribe', class: 'button info'
       }
     }
 
@@ -31,7 +31,7 @@ class Views::Home::Index < Views::Home
       %{<strong>Don&#39;t</strong> divide <code>$rhythm</code> or <code>$lineHeight</code> into fractions, unless you are vertically centering text within its container.}.html_safe
 
     docs 'Headings', %{
-      div.dvlcore_headings {
+      div(class: 'dvlcore_headings') {
         h1 'Heading 1 56/80px'
         h2 'Heading 2 36/56px'
         h3 'Heading 3 23/32px'
@@ -56,9 +56,9 @@ class Views::Home::Index < Views::Home
     }
     h3 'Small Text Sizes'
 
-    p.docs_fontsmall %{<code>$fontSmall</code>: Small text should be used for displaying tertiary information.}.html_safe
-    p.docs_fontsmaller %{<code>$fontSmaller</code>: Smaller text is great for explaining primary and secondary actions.}.html_safe
-    p.docs_fontsmallest %{<code>$fontSmallest</code>: Use the smallest text size sparingly.}.html_safe
+    p %{<code>$fontSmall</code>: Small text should be used for displaying tertiary information.}.html_safe, class: 'docs_fontsmall'
+    p %{<code>$fontSmaller</code>: Smaller text is great for explaining primary and secondary actions.}.html_safe, class: 'docs_fontsmaller'
+    p %{<code>$fontSmallest</code>: Use the smallest text size sparingly.}.html_safe, class: 'docs_fontsmallest'
 
     hr
 
@@ -73,7 +73,7 @@ class Views::Home::Index < Views::Home
       %{<strong>Don&#39;t</strong> use boldface text for long sentences, or color the text to emphasize an action. This negatively impacts legibility.}.html_safe
 
     docs 'Lists', %{
-      ul.formatted_list {
+      ul(class: 'formatted_list') {
         li 'Item 1'
         li 'Item 2'
         li 'Item 3'
@@ -83,7 +83,7 @@ class Views::Home::Index < Views::Home
         li 'Item 7'
       }
 
-      ol.formatted_list {
+      ol(class: 'formatted_list') {
         li 'Item 1'
         li 'Item 2'
         li 'Item 3'
@@ -118,7 +118,7 @@ class Views::Home::Index < Views::Home
 
     docs 'Button links', %{
       p {
-        button.button_link 'Example'
+        button('Example', class: 'button_link')
       }
     }, hint: %{Add the <code>.button_link</code> class to any <code>&lt;button&gt;</code> tag to make it appear like a link.}.html_safe, sub: true
 

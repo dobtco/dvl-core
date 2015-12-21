@@ -1,12 +1,10 @@
-require 'erector'
-
-class Dvl::Components::Footer < Erector::Widget
+class Dvl::Core::Views::Footer < Dvl::Core::Views.base_view_class.constantize
   needs :application_name,
         append: nil
 
   def content
-    footer.footer {
-      div.footer_inner {
+    footer(class: 'footer') {
+      div(class: 'footer_inner') {
         span {
           if @application_name
             text @application_name
