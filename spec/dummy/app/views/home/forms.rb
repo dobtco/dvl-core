@@ -228,7 +228,7 @@ class Views::Home::Forms < Views::Page
                 as: :dropdown_select,
                 input_html: { class: 'small' }
 
-        label.control.small {
+        label(class: 'control small') {
           input type: 'checkbox', checked: true
           text 'Show the Cents field'
         }
@@ -305,15 +305,15 @@ class Views::Home::Forms < Views::Page
         end
 
         f.input :small_input_group do
-          div.input_group.input_group_small {
-            div.input_group_input {
+          div(class: 'input_group input_group_small') {
+            div(class: 'input_group_input') {
               f.input_field :small_input_group,
                             as: :string,
                             value: 'http://dobt.forms.fm',
                             'aria-label' => 'Small input group',
                             class: 'small'
             }
-            div.input_group_append {
+            div(class: 'input_group_append') {
               a(class: 'button small info',
                 'data-toggle' => 'tooltip',
                 'data-container' => 'body',
