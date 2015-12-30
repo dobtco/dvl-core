@@ -34,7 +34,7 @@ class Views::Home::Navigation < Views::Page
         div(class: 'container') {
           div(class: 'navbar_header') {
             a(class: 'navbar_brand', href: '#') {
-              img src: 'http://www.dobt.co/img/dobt_logo.png'
+              img src: 'https://www.dobt.co/img/dobt_logo.png'
             }
             a "<i class='fa fa-reorder'></i>".html_safe, class: 'navbar_toggle'
           }
