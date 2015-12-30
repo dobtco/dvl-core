@@ -16,7 +16,7 @@ class Dvl::Core::Views::Footer < Dvl::Core::Views.base_view_class.constantize
 
         ul {
           li { a t('dvl_core.footer.status'), href: 'http://status.dobt.co', target: '_blank' }
-          li { a t('dvl_core.footer.legal'), href: 'http://www.dobt.co/terms/', target: '_blank' }
+          li { a t('dvl_core.footer.legal'), href: 'https://www.dobt.co/terms/', target: '_blank' }
           li { a t('dvl_core.footer.help'), href: 'http://help.dobt.co', target: '_blank' }
           li { a t('dvl_core.footer.contact'), href: 'mailto:support@dobt.co' }
         }
