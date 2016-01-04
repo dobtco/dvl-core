@@ -5,7 +5,7 @@ $(document).on 'submit', '.newsletter_form', (e) ->
   return unless $input.val()
 
   $.ajax
-    url: 'http://dobt.createsend.com/t/t/s/dijhkj/?callback=?'
+    url: '//dobt.createsend.com/t/t/s/dijhkj/?callback=?'
     type: 'get',
     dataType: 'json'
     data:

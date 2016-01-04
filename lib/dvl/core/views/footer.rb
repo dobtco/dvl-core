@@ -1,12 +1,10 @@
-require 'erector'
-
-class Dvl::Components::Footer < Erector::Widget
+class Dvl::Core::Views::Footer < Dvl::Core::Views.base_view_class.constantize
   needs :application_name,
         append: nil
 
   def content
-    footer.footer {
-      div.footer_inner {
+    footer(class: 'footer') {
+      div(class: 'footer_inner') {
         span {
           if @application_name
             text @application_name
@@ -18,7 +16,7 @@ class Dvl::Components::Footer < Erector::Widget
 
         ul {
           li { a t('dvl_core.footer.status'), href: 'http://status.dobt.co', target: '_blank' }
-          li { a t('dvl_core.footer.legal'), href: 'http://www.dobt.co/terms/', target: '_blank' }
+          li { a t('dvl_core.footer.legal'), href: 'https://www.dobt.co/terms/', target: '_blank' }
           li { a t('dvl_core.footer.help'), href: 'http://help.dobt.co', target: '_blank' }
           li { a t('dvl_core.footer.contact'), href: 'mailto:support@dobt.co' }
         }

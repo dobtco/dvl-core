@@ -40,9 +40,7 @@
 }
 
 .container {
-  width: 90%;
-  max-width: $maxWidth;
-  margin: 0 auto;
+  @include container;
 }
 
 .primary_container {

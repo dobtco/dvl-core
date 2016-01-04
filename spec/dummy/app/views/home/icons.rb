@@ -2,7 +2,7 @@ class Views::Home::Icons < Views::Page
   def main
     h2 'Icons'
 
-    ul.docs_icons {
+    ul(class: "docs_icons") {
       icon_classes.each do |x|
         li {
           span { i(class: "icon #{x}")}

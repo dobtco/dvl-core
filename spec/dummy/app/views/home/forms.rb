@@ -35,11 +35,11 @@ class Views::Home::Forms < Views::Page
                 inline_label: 'Yes.',
                 hint: "Checkbox fields can contain a single answer option where appropriate.".html_safe
 
-        label.control.control_minus {
+        label(class: 'control control_minus') {
           input type: 'checkbox', checked: true
           text 'Select all items'
         }
-        div.form_hint 'This is a partially selected checkbox. In this example, only some items are selected.'
+        div 'This is a partially selected checkbox. In this example, only some items are selected.', class: 'form_hint'
 
       end
       simple_form_for :selects do |f|
@@ -171,7 +171,7 @@ class Views::Home::Forms < Views::Page
 
         f.input :input_with_error do
           f.input_field :input_with_error, as: :string
-          span.form_error 'There was an error!'
+          span 'There was an error!', class: 'form_error'
         end
       end
     }, sub: true
@@ -228,14 +228,19 @@ class Views::Home::Forms < Views::Page
                 as: :dropdown_select,
                 input_html: { class: 'small' }
 
+        label(class: 'control small') {
+          input type: 'checkbox', checked: true
+          text 'Show the Cents field'
+        }
+
       end
-    }, sub: true
+    }, hint: 'Use small inputs to style advanced, information-dense options. Or, place them under regular inputs to differentiate primary and secondary settings.', sub: true
 
     docs 'Horizontal Forms', %{
       simple_form_for :horizontal, wrapper: :horizontal do |f|
 
         f.input :name do
-          div.form_item_two_inputs {
+          div(class: 'form_item_two_inputs') {
             f.input_field :first_name, as: :string, placeholder: 'First name'
             f.input_field :last_name, as: :string, placeholder: 'Last name'
           }
@@ -257,7 +262,7 @@ class Views::Home::Forms < Views::Page
                 label: 'Description',
                 input_html: { rows: 5, value:  sample_paragraph }
 
-        div.form_actions.horizontal {
+        div(class: 'form_actions horizontal') {
           f.button :button, 'Submit', class: 'primary'
         }
       end
@@ -267,15 +272,15 @@ class Views::Home::Forms < Views::Page
       simple_form_for :input_groups do |f|
 
         f.input :permalink do
-          div.input_group {
-            div.input_group_input {
+          div(class: 'input_group') {
+            div(class: 'input_group_input') {
               f.input_field :input_group_with_copy,
                             as: :string,
                             value: 'http://dobt.forms.fm',
                             'aria-label' => 'Permalink'
             }
-            div.input_group_append {
-              a(class: 'button info',
+            div(class: 'input_group_append') {
+              a(class: 'button small info',
                 'data-toggle' => 'tooltip',
                 'data-container' => 'body',
                 title: 'Copy URL',
@@ -287,26 +292,47 @@ class Views::Home::Forms < Views::Page
         end
 
         f.input :enter_your_age do
-          div.input_group.input_group_text {
-            div.input_group_input {
+          div(class: 'input_group input_group_text') {
+            div(class: 'input_group_input') {
               f.input_field :input_group,
                             as: :string,
                             'aria-label' => 'Age'
             }
-            div.input_group_append {
+            div(class: 'input_group_append') {
               span 'years young'
             }
           }
         end
 
+        f.input :small_input_group do
+          div(class: 'input_group input_group_small') {
+            div(class: 'input_group_input') {
+              f.input_field :small_input_group,
+                            as: :string,
+                            value: 'http://dobt.forms.fm',
+                            'aria-label' => 'Small input group',
+                            class: 'small'
+            }
+            div(class: 'input_group_append') {
+              a(class: 'button small info',
+                'data-toggle' => 'tooltip',
+                'data-container' => 'body',
+                title: 'Copy URL',
+                'aria-label' => 'Copy URL') {
+                i(class: 'fa fa-copy')
+              }
+            }
+          }
+        end
+
         f.input :example_of_prepended_input do
-          div.input_group.input_group_text {
-            div.input_group_prepend {
-              a.button {
+          div(class: 'input_group input_group_text') {
+            div(class: 'input_group_prepend') {
+              a(class: 'button small') {
                 i(class: 'icon icon_eye')
               }
             }
-            div.input_group_input {
+            div(class: 'input_group_input') {
               f.input_field :input_group,
                             as: :string,
                             'aria-label' => 'Example of prepended button'
@@ -321,19 +347,19 @@ class Views::Home::Forms < Views::Page
                 clear_text: 'Clear'
       end
 
-      div.js_dt_result '&nbsp;'.html_safe
+      div '&nbsp;'.html_safe, class: 'js_dt_result'
     }, sub: true
 
     docs 'Filter form', %{
-      form.filter_form {
-        div.filter_form_search_wrapper {
+      form(class: 'filter_form') {
+        div(class: 'filter_form_search_wrapper') {
           i(class: 'icon icon_search')
           a(href: '#') {
             i(class: 'icon icon_close_circle filter_form_icon_right')
           }
           input(type: 'text', placeholder: 'Search your projects', 'aria-label' => 'Search your projects')
         }
-        button.button 'Search'
+        button 'Search', class: 'button'
       }
     }, sub: true
 
@@ -350,32 +376,34 @@ class Views::Home::Forms < Views::Page
 
       end
 
-      p.microcopy {
+      p(class: 'microcopy') {
         span 'To accept payments, you must first sign in to your payment provider. '
-        a.button.primary 'Connect to Stripe'
+        a 'Connect to Stripe', class: 'button primary'
       }
     }, hint: 'Use this to display additional actions that should be hidden until a setting is enabled.'
 
     h3 'Buttons'
 
     docs 'Simple', %{
-      div.dvlcore_button_array {
-        a.button 'Yo!', href: '#'
-        a.button.info 'Info', href: '#'
-        a.button.primary 'Primary', href: '#'
-        a.button.success 'Success', href: '#'
-        a.button.error 'Error', href: '#'
-        a.button.subtle 'Subtle', href: '#'
+      div(class: 'dvlcore_button_array') {
+        a 'Yo!', href: '#', class: 'button'
+        a 'Info', href: '#', class: 'button info'
+        a 'Primary', href: '#', class: 'button primary'
+        a 'Success', href: '#', class: 'button success'
+        a 'Error', href: '#', class: 'button error'
+        a 'Subtle', href: '#', class: 'button subtle'
       }
     }, sub: true
 
     docs 'Toggle buttons', %{
-      div.dropdown {
-        a.button.toggle 'Dropdown',
-                          'data-toggle' => 'dropdown',
-                          href: '#'
-        div.dropdown_menu(role: 'menu') {
-          ul.dropdown_body {
+      div(class: 'dropdown') {
+        a 'Dropdown',
+          'data-toggle' => 'dropdown',
+          href: '#',
+          class: 'button toggle'
+
+        div(class: 'dropdown_menu') {
+          ul(class: 'dropdown_body') {
             li { a 'Option 1' }
             li { a 'Option 2' }
             li { a 'Option 3' }
@@ -385,16 +413,16 @@ class Views::Home::Forms < Views::Page
     }, hint: 'Use the <code>.toggle</code> class for buttons which summon a dropdown.'.html_safe, sub: true
 
     docs 'Button with icons', %{
-      div.dvlcore_button_array {
-        a.button.info.icon_l {
+      div(class: 'dvlcore_button_array') {
+        a(class: 'button info icon_l') {
           i(class: 'icon icon_arrow_left')
           text 'Previous'
         }
-        a.button.info.icon_r {
+        a(class: 'button info icon_r') {
           text 'Next'
           i(class: 'icon icon_arrow_right')
         }
-        a.button.primary.icon_l {
+        a(class: 'button primary icon_l') {
           i(class: 'icon icon_eye')
           text 'View'
         }
@@ -402,30 +430,30 @@ class Views::Home::Forms < Views::Page
     }, sub: true
 
     docs 'Disabled', %{
-      div.dvlcore_button_array {
-        a.button.disabled 'Yo!'
-        a.button.info.disabled 'Info'
-        a.button.primary.disabled 'Primary'
-        a.button.success.disabled 'Success'
-        a.button.error.disabled 'Error'
+      div(class: 'dvlcore_button_array') {
+        a 'Yo!', class: 'button disabled'
+        a 'Info', class: 'button info disabled'
+        a 'Primary', class: 'button primary disabled'
+        a 'Success', class: 'button success disabled'
+        a 'Error', class: 'button error disabled'
       }
     }, hint: %{Buttons with the <code>.subtle</code> class have no disabled state. Instead, they should not be displayed on the page.}.html_safe, sub: true
 
     docs 'Button sizes', %{
-      div.dvlcore_button_array {
-        a.button.large 'Normal'
-        a.button 'Normal'
-        a.button.small 'Small'
-        a.button.mini 'Mini'
+      div(class: 'dvlcore_button_array') {
+        a 'Normal', class: 'button large'
+        a 'Normal', class: 'button'
+        a 'Small', class: 'button small'
+        a 'Mini', class: 'button mini'
       }
     }, sub: true
 
     docs 'Tertiary buttons', %{
       p {
-        a.uppercase 'Contact Your Local Representative'
+        a 'Contact Your Local Representative', class: 'uppercase'
       }
       p {
-        a.button_uppercase 'Send an email'
+        a 'Send an email', class: 'button_uppercase'
       }
     }, sub: true, hint: %{Add the <code>.uppercase</code> or <code>.button_uppercase</code> class to any link to downplay a tertiary action. For example:}.html_safe
   end

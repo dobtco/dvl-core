@@ -1,5 +1,5 @@
 /* ========================================================================
- * Bootstrap: modal.js v3.3.4
+ * Bootstrap: modal.js v3.3.5
  * http://getbootstrap.com/javascript/#modals
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -33,7 +33,7 @@
     }
   }
 
-  Modal.VERSION  = '3.3.4'
+  Modal.VERSION  = '3.3.5'
 
   Modal.TRANSITION_DURATION = 300
   Modal.BACKDROP_TRANSITION_DURATION = 150
@@ -283,6 +283,23 @@
     return scrollbarWidth
   }
 
+  // DOBT addition: seamless hide one modal and show another by disabling
+  // CSS animation while switching
+  Modal.prototype.switch = function ($newModal) {
+    var style = document.createElement('style')
+    
+    style.innerHTML = '@keyframes modal_show {} ' +
+                      '@-webkit-keyframes modal_show {}' +
+                      '@keyframes fadeIn {}' +
+                      '@-webkit-keyframes fadeIn {}'
+
+    document.head.appendChild(style)
+    this.hide()
+    $newModal.modal('show')
+    setTimeout(function(){
+      document.head.removeChild(style)
+    }, 250)
+  }
 
   // MODAL PLUGIN DEFINITION
   // =======================

@@ -8,6 +8,10 @@
   cursor: pointer;
   border-radius: $radius;
   line-height: $lineHeight;
+  
+  // allow .button to be applied to other elements, e.g. labels
+  font-weight: $weightNormal; 
+  
   @include ellipses;
   @include button_color($lighterGray, $bodyFontColor);
 

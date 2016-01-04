@@ -5,63 +5,63 @@ class Views::Home::Layout < Views::Page
     h3 'Grid'
 
     docs 'Basic', %{
-      div.grid.docs_grid {
-        div.item.twelve_columns { span '12' }
+      div(class: 'grid docs_grid') {
+        div(class: 'item twelve_columns') { span '12' }
       }
 
-      div.grid.docs_grid {
-        div.item.eleven_columns { span '11' }
-        div.item.one_column { span '1' }
+      div(class: 'grid docs_grid') {
+        div(class: 'item eleven_columns') { span '11' }
+        div(class: 'item one_column') { span '1' }
       }
-      div.grid.docs_grid {
-        div.item.ten_columns { span '10' }
-        div.item.two_columns { span '2' }
+      div(class: 'grid docs_grid') {
+        div(class: 'item ten_columns') { span '10' }
+        div(class: 'item two_columns') { span '2' }
       }
-      div.grid.docs_grid {
-        div.item.nine_columns { span '9' }
-        div.item.three_columns { span '3' }
+      div(class: 'grid docs_grid') {
+        div(class: 'item nine_columns') { span '9' }
+        div(class: 'item three_columns') { span '3' }
       }
-      div.grid.docs_grid {
-        div.item.eight_columns { span '8' }
-        div.item.four_columns { span '4' }
+      div(class: 'grid docs_grid') {
+        div(class: 'item eight_columns') { span '8' }
+        div(class: 'item four_columns') { span '4' }
       }
-      div.grid.docs_grid {
-        div.item.seven_columns { span '7' }
-        div.item.five_columns { span '5' }
+      div(class: 'grid docs_grid') {
+        div(class: 'item seven_columns') { span '7' }
+        div(class: 'item five_columns') { span '5' }
       }
-      div.grid.docs_grid {
-        div.item.six_columns { span '6' }
-        div.item.six_columns { span '6' }
-      }
-
-      div.grid.docs_grid {
-        div.item.three_columns { span '3' }
-        div.item.three_columns { span '3' }
-        div.item.three_columns { span '3' }
-        div.item.three_columns { span '3' }
+      div(class: 'grid docs_grid') {
+        div(class: 'item six_columns') { span '6' }
+        div(class: 'item six_columns') { span '6' }
       }
 
-      div.grid.docs_grid {
-        div.item.four_columns { span '4' }
-        div.item.four_columns { span '4' }
-        div.item.four_columns { span '4' }
+      div(class: 'grid docs_grid') {
+        div(class: 'item three_columns') { span '3' }
+        div(class: 'item three_columns') { span '3' }
+        div(class: 'item three_columns') { span '3' }
+        div(class: 'item three_columns') { span '3' }
       }
 
-      div.grid.docs_grid {
-        div.item.six_columns { span '6' }
-        div.item.three_columns { span '3' }
-        div.item.three_columns { span '3' }
+      div(class: 'grid docs_grid') {
+        div(class: 'item four_columns') { span '4' }
+        div(class: 'item four_columns') { span '4' }
+        div(class: 'item four_columns') { span '4' }
+      }
+
+      div(class: 'grid docs_grid') {
+        div(class: 'item six_columns') { span '6' }
+        div(class: 'item three_columns') { span '3' }
+        div(class: 'item three_columns') { span '3' }
       }
     }, hint: 'The grid currently uses a fixed-width gutter.', sub: true
 
     docs 'Nested', %{
-      div.grid.docs_grid {
-        div.item.six_columns { span '6' }
-        div.item.six_columns {
-          div.grid {
-            div.item.four_columns { span '4' }
-            div.item.four_columns { span '4' }
-            div.item.four_columns { span '4' }
+      div(class: 'grid docs_grid') {
+        div(class: 'item six_columns') { span '6' }
+        div(class: 'item six_columns') {
+          div(class: 'grid') {
+            div(class: 'item four_columns') { span '4' }
+            div(class: 'item four_columns') { span '4' }
+            div(class: 'item four_columns') { span '4' }
           }
         }
       }
@@ -70,11 +70,11 @@ class Views::Home::Layout < Views::Page
     hr
 
     docs 'Blank States', %{
-      div.blank_slate {
+      div(class: 'blank_slate') {
         i(class: 'icon icon_star')
         h4 'No ratings yet!'
         span 'Ratings give you a standard set of criteria to judge responses.'
-        a.button.info 'Add your first rating'
+        a 'Add your first rating', class: 'button primary'
       }
     }, hint: 'When there is no data to display in the current view, a well-designed blank state can prevent users from losing their momentum.'
 
@@ -93,7 +93,7 @@ class Views::Home::Layout < Views::Page
       %{<strong>Don&#39;t</strong> turn a blank state into a dead end. Provide users with a way to move forward.}.html_safe
 
     docs 'Footer', %{
-      widget Dvl::Components::Footer.new(application_name: 'DOBT Style Guide')
+      widget Dvl::Core::Views::Footer.new(application_name: 'DOBT Style Guide')
     }
   end
 end

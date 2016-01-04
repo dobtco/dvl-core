@@ -6,20 +6,20 @@ class Views::Home::Headers < Views::Page
     h3 'Page Header with Navigation'
 
     docs 'Rename Button', %{
-      div.page_header {
+      div(class: 'page_header') {
         h2 {
           a 'Sales Leads', href: '#'
-          a.button.subtle.mini {
+          a(class: 'button subtle mini') {
             i(class: 'icon icon_edit')
           }
         }
-        div.page_header_secondary {
+        div(class: 'page_header_secondary') {
           ul {
             li {
               a 'Stages'
             }
 
-            li.active {
+            li(class: 'active') {
               a 'Contacts'
             }
 
@@ -28,7 +28,7 @@ class Views::Home::Headers < Views::Page
             }
           }
         }
-        div.page_header_tertiary {
+        div(class: 'page_header_tertiary') {
           ul {
             li {
               a {
@@ -48,8 +48,9 @@ class Views::Home::Headers < Views::Page
     }, sub: true, hint: %{The header title can optionally be a link.}.html_safe
 
     docs 'Secondary Action and Back Arrow', %{
-      div.page_header.with_back_arrow {
-        a.page_header_back_arrow(title: 'Dashboard', 'data-toggle' => 'tooltip') {
+
+      div(class: 'page_header with_back_arrow') {
+        a(class: 'page_header_back_arrow', title: 'Dashboard', 'data-toggle' => 'tooltip') {
           i(class: 'icon icon_back')
         }
 
@@ -57,7 +58,7 @@ class Views::Home::Headers < Views::Page
           a 'Meeting request', href: '#'
         }
 
-        div.page_header_secondary {
+        div(class: 'page_header_secondary') {
           ul {
             li {
               a 'Stages'
@@ -72,9 +73,9 @@ class Views::Home::Headers < Views::Page
             }
           }
         }
-        div.page_header_tertiary {
+        div(class: 'page_header_tertiary') {
           ul {
-            li.active {
+            li(class: 'active') {
               a {
                 i(class: 'icon icon_edit')
                 text 'Edit'
@@ -88,7 +89,7 @@ class Views::Home::Headers < Views::Page
             }
           }
 
-          a.button.mini.info.icon_r(href: '#') {
+          a(class: 'button mini info icon_r', href: '#') {
             text 'View '
             i(class: 'icon icon_arrow_right_sm')
           }
@@ -97,8 +98,8 @@ class Views::Home::Headers < Views::Page
     }, sub: true
 
     docs 'Pagination', %{
-      div.page_header.with_back_arrow.with_pagination {
-        a.page_header_back_arrow(title: 'All responses', 'data-toggle' => 'tooltip') {
+      div(class: 'page_header with_back_arrow with_pagination') {
+        a(class: 'page_header_back_arrow', title: 'All responses', 'data-toggle' => 'tooltip') {
           i(class: 'icon icon_back')
         }
 
@@ -106,9 +107,9 @@ class Views::Home::Headers < Views::Page
           a 'Max Ophüls', href: '#'
         }
 
-        div.page_header_secondary {
+        div(class: 'page_header_secondary') {
           ul {
-            li.active {
+            li(class: 'active') {
               a 'Responses'
             }
 
@@ -125,12 +126,12 @@ class Views::Home::Headers < Views::Page
             }
           }
         }
-        div.pagination_compact.pagination_compact_header {
+        div(class: 'pagination_compact pagination_compact_header') {
           span "#94 of 566"
 
           ul {
-            li { span{ i.icon.icon_arrow_left_sm }}
-            li { a(href: '#'){ i.icon.icon_arrow_right_sm }}
+            li { span{ i(class: 'icon icon_arrow_left_sm') }}
+            li { a(href: '#'){ i(class: 'icon icon_arrow_right_sm') }}
           }
         }
       }
@@ -139,39 +140,39 @@ class Views::Home::Headers < Views::Page
     hr
 
     docs 'Basic Page Header', %{
-      div.page_header {
+      div(class: 'page_header') {
         h2 'Projects'
 
-        a.button.primary 'New project'
+        a 'New project', class: 'button primary'
       }
     }
 
     h3 'Page Subheaders'
 
     docs 'Heading 3', %{
-      div.page_subheader {
+      div(class: 'page_subheader') {
         h3 'Debra Granik'
 
-        div.page_subheader_actions {
-          a.page_subheader_link {
+        div(class: 'page_subheader_actions') {
+          a(class: 'page_subheader_link') {
             i(class: 'icon icon_activity')
             text ' 2 comments'
           }
-          a.button.info 'Request a revision'
+          a 'Request a revision', class: 'button info'
         }
       }
     }, hint: 'This style of subheader should never contain icons.', sub: true
 
     docs 'Heading 4', %{
-      div.page_subheader {
+      div(class: 'page_subheader') {
         h4 {
           i(class: 'icon icon_file')
           text ' '
           text 'Attachments'
         }
-        div.page_subheader_actions {
-          a.page_subheader_link 'View all'
-          a.button.small 'Edit'
+        div(class: 'page_subheader_actions') {
+          a 'View all', class: 'page_subheader_link'
+          a 'Edit', class: 'button small'
         }
       }
     }, hint: 'Icons in this style are optional.', sub: true
@@ -183,33 +184,33 @@ class Views::Home::Headers < Views::Page
     p 'Use this header for standalone pages which do not require navigation.'
 
     docs 'Default', %{
-      div.header_h2_search {
+      div(class: 'header_h2_search') {
         h2 'Your projects'
-        form.filter_form {
-          div.filter_form_search_wrapper {
+        form(class: 'filter_form') {
+          div(class: 'filter_form_search_wrapper') {
             i(class: 'icon icon_search')
             a(href: '#') {
               i(class: 'icon icon_close_circle filter_form_icon_right')
             }
             input(type: 'text', placeholder: 'Search your projects')
           }
-          button.button 'Search'
+          button 'Search', class: 'button'
         }
       }
     }, sub: true
 
     docs 'Query entered', %{
-      div.header_h2_search {
+      div(class: 'header_h2_search') {
         h2 'Your projects'
-        form.filter_form.with_query {
-          div.filter_form_search_wrapper {
+        form(class: 'filter_form with_query') {
+          div(class: 'filter_form_search_wrapper') {
             i(class: 'icon icon_search')
             a(href: '#') {
               i(class: 'icon icon_close_circle filter_form_icon_right')
             }
             input(type: 'text', placeholder: 'Search your projects', value: 'Innovation Challenge')
           }
-          button.button 'Search'
+          button 'Search', class: 'button'
         }
       }
     }, sub: true

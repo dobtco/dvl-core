@@ -283,6 +283,10 @@ label.control {
       }
     }
   }
+  &.small {
+    font-size: $fontSmall;
+    line-height: $lineHeight;
+  }
 }
 
 
@@ -451,11 +455,7 @@ form {
   padding: $rhythm $rhythm * 2;
   border-radius: $radius;
   display: inline-block;
-  input + &,
-  textarea + &,
-  select + & {
-    margin-top: $rhythm;
-  }
+  margin-top: $rhythm;
 }
 
 .form_hint {
@@ -525,7 +525,11 @@ form {
   vertical-align: top;
   .button {
     height: $inputHeight;
-    line-height: $rhythm * 4;
+    line-height: $inputHeight - $rhythm;
+    .input_group_small & {
+      height: $smallInputHeight;
+      line-height: $smallInputHeight - $rhythm;
+    }
   }
   span {
     display: inline-table;
@@ -572,9 +576,10 @@ form {
   position: relative;
   display: inline-block;
   vertical-align: top;
+  max-width: 100%;
+
   &.auto {
     width: auto;
-    max-width: 100%;
   }
   &.full {
     width: 100%;

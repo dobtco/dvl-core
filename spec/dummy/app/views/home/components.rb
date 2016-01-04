@@ -5,41 +5,41 @@ class Views::Home::Components < Views::Page
     h3 'Dropdowns'
 
     docs 'Basic', %{
-      div.dvlcore_button_array {
-        div.dropdown {
-          a.button.toggle(
-            'Dropdown',
+      div(class: 'dvlcore_button_array') {
+        div(class: 'dropdown') {
+          a(
+            'Dropdown', class: 'button toggle',
             'data-toggle' => 'dropdown',
             href: '#'
           )
 
-          div.dropdown_menu(role: 'menu') {
-            ul.dropdown_body {
+          div(class: 'dropdown_menu') {
+            ul(class: 'dropdown_body') {
               li {
                 a 'Option 1', href: '#'
               }
-              li.divider {
-                a 'Option 2, with divider'
+              li(class: 'divider') {
+                a 'Option 2, with divider', href: '#'
               }
               li {
                 a(href: 'mailto:support@dobt.co') {
-                  span.drop_rt_item 'Contact support&hellip;'.html_safe
-                  span.drop_rt_arrow { i(class: 'icon icon_external_link') }
+                  span 'Contact support&hellip;'.html_safe, class: 'drop_rt_item'
+                  span(class: 'drop_rt_arrow') { i(class: 'icon icon_external_link') }
                 }
               }
             }
           }
         }
 
-        div.dropdown {
-          a.button.toggle(
-            'Dropdown with more options',
+        div(class: 'dropdown') {
+          a(
+            'Dropdown with more options', class: 'button toggle',
             'data-toggle' => 'dropdown',
             href: '#'
           )
 
-          div.dropdown_menu(role: 'menu') {
-            ul.dropdown_body {
+          div(class: 'dropdown_menu') {
+            ul(class: 'dropdown_body') {
               li {
                 a 'Option 1', href: '#'
               }
@@ -52,7 +52,7 @@ class Views::Home::Components < Views::Page
               li {
                 a 'Option 4', href: '#'
               }
-              li.dropdown_more {
+              li(class: 'dropdown_more') {
                 a 'View more&hellip;'.html_safe, href: '#'
               }
             }
@@ -62,118 +62,118 @@ class Views::Home::Components < Views::Page
     }, sub: true
 
     docs 'Multi-Column', %{
-      div.dvlcore_button_array {
-        div.dropdown {
-          a.button.toggle(
-            'Icons',
+      div(class: 'dvlcore_button_array') {
+        div(class: 'dropdown') {
+          a(
+            'Icons', class: 'button toggle',
             'data-toggle' => 'dropdown',
             href: '#'
           )
 
-          div.dropdown_menu(role: 'menu') {
-            ul.dropdown_body {
+          div(class: 'dropdown_menu') {
+            ul(class: 'dropdown_body') {
               li {
                 a(href: '#') {
-                  span.drop_master { i(class: 'icon icon_email') }
-                  span.drop_detail 'Send a message'
+                  span(class: 'drop_master') { i(class: 'icon icon_email') }
+                  span 'Send a message', class: 'drop_detail'
                 }
               }
 
               li {
                 a(href: '#') {
-                  span.drop_master { i(class: 'icon icon_edit') }
-                  span.drop_detail 'Edit'
+                  span(class: 'drop_master') { i(class: 'icon icon_edit') }
+                  span 'Edit', class: 'drop_detail'
                 }
               }
 
               li {
                 a(href: '#') {
-                  span.drop_master { i(class: 'icon icon_delete_circle') }
-                  span.drop_detail 'Delete'
+                  span(class: 'drop_master') { i(class: 'icon icon_delete_circle') }
+                  span 'Delete', class: 'drop_detail'
                 }
               }
             }
           }
         }
 
-        div.dropdown {
-          a.button.toggle(
-            'Users',
+        div(class: 'dropdown') {
+          a(
+            'Users', class: 'button toggle',
             'data-toggle' => 'dropdown',
             href: '#'
           )
 
-          div.dropdown_menu(role: 'menu') {
-            ul.dropdown_body {
+          div(class: 'dropdown_menu') {
+            ul(class: 'dropdown_body') {
               li {
                 a(href: '#') {
-                  span.drop_master {
-                    img.drop_master_avatar(src: 'https://raw.githubusercontent.com/dobtco/headshots/master/headshots/adam.jpg', alt: 'Adam Becker')
+                  span(class: 'drop_master') {
+                    img(class: 'drop_master_avatar', src: 'https://raw.githubusercontent.com/dobtco/headshots/master/headshots/adam.jpg', alt: 'Adam Becker')
                   }
-                  span.drop_detail 'Adam Becker'
+                  span 'Adam Becker', class: 'drop_detail'
                 }
               }
               li {
                 a(href: '#') {
-                  span.drop_master {
-                    img.drop_master_avatar(src: 'https://raw.githubusercontent.com/dobtco/headshots/master/headshots/aviv.jpg', alt: 'Aviv Nitsan')
+                  span(class: 'drop_master') {
+                    img(class: 'drop_master_avatar', src: 'https://raw.githubusercontent.com/dobtco/headshots/master/headshots/aviv.jpg', alt: 'Aviv Nitsan')
                   }
-                  span.drop_detail 'Aviv Nitsan'
+                  span 'Aviv Nitsan', class: 'drop_detail'
                 }
               }
             li {
                 a(href: '#') {
-                  span.drop_master {
-                    img.drop_master_avatar(src: 'https://raw.githubusercontent.com/dobtco/headshots/master/headshots/clay.jpg', alt: 'Clay Johnson')
+                  span(class: 'drop_master') {
+                    img(class: 'drop_master_avatar', src: 'https://raw.githubusercontent.com/dobtco/headshots/master/headshots/clay.jpg', alt: 'Clay Johnson')
                   }
-                  span.drop_detail 'Clay Johnson'
+                  span 'Clay Johnson', class: 'drop_detail'
                 }
               }
-              li.disabled {
+              li(class: 'disabled') {
                 a(href: '#') {
-                  span.drop_master {
-                    img.drop_master_avatar(src: 'https://raw.githubusercontent.com/dobtco/headshots/master/headshots/jg.jpg', alt: 'Disabled')
+                  span(class: 'drop_master') {
+                    img(class: 'drop_master_avatar', src: 'https://raw.githubusercontent.com/dobtco/headshots/master/headshots/jg.jpg', alt: 'Disabled')
                   }
-                  span.drop_detail 'Disabled Option'
+                  span 'Disabled Option', class: 'drop_detail'
                 }
               }
             }
           }
         }
 
-        div.dropdown {
-          a.button.toggle(
-            'Colors',
+        div(class: 'dropdown') {
+          a(
+            'Colors', class: 'button toggle',
             'data-toggle' => 'dropdown',
             href: '#'
           )
 
-          div.dropdown_menu(role: 'menu') {
-            ul.dropdown_body {
+          div(class: 'dropdown_menu') {
+            ul(class: 'dropdown_body') {
               li {
                 a(href: '#') {
-                  span.drop_master {
-                    span.drop_master_color(style: "background-color: #e3e15f")
+                  span(class: 'drop_master') {
+                    span(class: 'drop_master_color', style: "background-color: #e3e15f")
                   }
-                  span.drop_detail 'Open'
+                  span 'Open', class: 'drop_detail'
                 }
               }
 
-             li.is_selected {
+             li(class: 'is_selected') {
                 a(href: '#') {
-                  span.drop_master {
-                    span.drop_master_color(style: "background-color: #5bb7d9")
+                  span(class: 'drop_master') {
+                    span(class: 'drop_master_color', style: "background-color: #5bb7d9")
                   }
-                  span.drop_detail 'Pending'
+                  span 'Pending', class: 'drop_detail'
                 }
               }
 
               li {
                 a(href: '#') {
-                  span.drop_master_multiline {
-                    span.drop_master_color(style: "background-color: #bfeef3")
+                  span(class: 'drop_master_multiline') {
+                    span(class: 'drop_master_color', style: "background-color: #bfeef3")
                   }
-                  span.drop_detail_multiline 'Rejected by the International Court of Justice in The Hague, Netherlands'
+                  span 'Rejected by the International Court of Justice in The Hague, Netherlands', class: 'drop_detail_multiline'
                 }
               }
             }
@@ -183,70 +183,70 @@ class Views::Home::Components < Views::Page
     }, sub: true
 
     docs 'Filtering', %{
-      div.dvlcore_button_array {
-        div.dropdown.dropdown_filter {
-          a.button.toggle(
-            'Assign to&hellip;'.html_safe,
+      div(class: 'dvlcore_button_array') {
+        div(class: 'dropdown dropdown_filter') {
+          a(
+            'Assign to&hellip;'.html_safe, class: 'button toggle',
             'data-toggle' => 'dropdown',
             href: '#'
           )
-          div.dropdown_menu.dropdown_menu_label {
-            form.dropdown_filter_head {
+          div(class: 'dropdown_menu dropdown_menu_label') {
+            form(class: 'dropdown_filter_head') {
               input type: 'text',
                     placeholder: 'Filter users',
                     class: 'js-dropdown-filter-input'
             }
-            ul.dropdown_body {
+            ul(class: 'dropdown_body') {
               li('data-clear' => true) {
                 a(
                   'data-dropdown-filter-action' => true
                 ) {
-                  span.drop_master { i(class: 'icon icon_delete_circle') }
-                  span.drop_detail 'Clear selection'
+                  span(class: 'drop_master') { i(class: 'icon icon_delete_circle') }
+                  span 'Clear selection', class: 'drop_detail'
                 }
               }
               li {
                 a(href: '#') {
-                  span.drop_master {
-                    img.drop_master_avatar(src: 'https://raw.githubusercontent.com/dobtco/headshots/master/headshots/adam.jpg', alt: 'Adam Becker')
+                  span(class: 'drop_master') {
+                    img(class: 'drop_master_avatar', src: 'https://raw.githubusercontent.com/dobtco/headshots/master/headshots/adam.jpg', alt: 'Adam Becker')
                   }
-                  span.drop_detail 'Adam Becker'
+                  span 'Adam Becker', class: 'drop_detail'
                 }
               }
-              li.is_selected {
+              li(class: 'is_selected') {
                 a(href: '#') {
-                  span.drop_master {
-                    img.drop_master_avatar(src: 'https://raw.githubusercontent.com/dobtco/headshots/master/headshots/aviv.jpg', alt: 'Aviv Nitsan')
+                  span(class: 'drop_master') {
+                    img(class: 'drop_master_avatar', src: 'https://raw.githubusercontent.com/dobtco/headshots/master/headshots/aviv.jpg', alt: 'Aviv Nitsan')
                   }
-                  span.drop_detail 'Aviv Nitsan'
+                  span 'Aviv Nitsan', class: 'drop_detail'
                 }
               }
-            li.is_partial {
+            li(class: 'is_partial') {
                 a(href: '#') {
-                  span.drop_master {
-                    img.drop_master_avatar(src: 'https://raw.githubusercontent.com/dobtco/headshots/master/headshots/clay.jpg', alt: 'Clay Johnson')
+                  span(class: 'drop_master') {
+                    img(class: 'drop_master_avatar', src: 'https://raw.githubusercontent.com/dobtco/headshots/master/headshots/clay.jpg', alt: 'Clay Johnson')
                   }
-                  span.drop_detail 'Clay Johnson'
+                  span 'Clay Johnson', class: 'drop_detail'
                 }
               }
             }
           }
         }
 
-        div.dropdown.dropdown_filter {
-          a.button.toggle(
-            'Blank state',
+        div(class: 'dropdown dropdown_filter') {
+          a(
+            'Blank state', class: 'button toggle',
             'data-toggle' => 'dropdown',
             href: '#'
           )
-          div.dropdown_menu.dropdown_menu_label {
-            form.dropdown_filter_head {
+          div(class: 'dropdown_menu dropdown_menu_label') {
+            form(class: 'dropdown_filter_head') {
               input type: 'text',
                     placeholder: 'Filter users',
                     class: 'js-dropdown-filter-input'
             }
-            ul.dropdown_body {
-              li.js_no_labels { span.none 'No users' }
+            ul(class: 'dropdown_body') {
+              li(class: 'js_no_labels') { span 'No users', class: 'none' }
             }
           }
         }
@@ -254,48 +254,48 @@ class Views::Home::Components < Views::Page
     }, hint: 'The minus icon inside the first dropdown visually indicates partial selection. In the "Assign to..." dropdown, multiple items are selected. All of them are assigned to Aviv, and some are assigned to Clay.', sub: true
 
     docs 'Appearance', %{
-      div.dvlcore_button_array {
-        div.dropdown {
-          a.button.toggle(
-            'Loading',
+      div(class: 'dvlcore_button_array') {
+        div(class: 'dropdown') {
+          a(
+            'Loading', class: 'button toggle',
             'data-toggle' => 'dropdown',
             href: '#'
           )
-          div.dropdown_menu(role: 'menu') {
+          div(class: 'dropdown_menu') {
             h3 'Loading State'
-            ul.dropdown_body {
-              li.dropdown_loading {
-                span.loader
+            ul(class: 'dropdown_body') {
+              li(class: 'dropdown_loading') {
+                span(class: 'loader')
               }
             }
           }
         }
 
-        div.dropdown {
-          a.button.toggle 'Multiple Sections',
+        div(class: 'dropdown') {
+          a 'Multiple Sections', class: 'button toggle',
                             'data-toggle' => 'dropdown',
                             href: '#'
-          div.dropdown_menu(role: 'menu') {
-            ul.dropdown_body {
-              li.dropdown_header 'Section One'
+          div(class: 'dropdown_menu') {
+            ul(class: 'dropdown_body') {
+              li 'Section One', class: 'dropdown_header'
               li { a 'Link One' }
               li { a 'Link Two' }
-              li.dropdown_header 'Section Two'
+              li 'Section Two', class: 'dropdown_header'
               li { a 'Link Three' }
               li { a 'Link Four' }
             }
           }
         }
 
-        div.dropdown {
-          a.button.toggle(
-            'Right-aligned',
+        div(class: 'dropdown') {
+          a(
+            'Right-aligned', class: 'button toggle',
             'data-toggle' => 'dropdown',
             href: '#'
           )
 
-          div.dropdown_menu.dropdown_right(role: 'menu') {
-            ul.dropdown_body {
+          div(class: 'dropdown_menu dropdown_right') {
+            ul(class: 'dropdown_body') {
               li {
                 a 'Option 1', href: '#'
               }
@@ -312,27 +312,27 @@ class Views::Home::Components < Views::Page
     }, sub: true
 
     docs 'Multi-Level', %{
-      div.dropdown {
-        a 'Sort',
+      div(class: 'dropdown') {
+        a 'Sort by&hellip;'.html_safe,
           'data-toggle' => 'dropdown',
           class: 'dropdown_toggle_link',
           href: '#'
-        div.dropdown_menu(role: 'menu') {
-          ul.dropdown_body {
+        div(class: 'dropdown_menu') {
+          ul(class: 'dropdown_body') {
             li {
               a 'Name', href: '#'
             }
             li {
               a 'Email', href: '#'
             }
-            li.active {
+            li(class: 'active') {
               a 'Timestamp', href: '#'
             }
-            li.dropdown_menu_sub_trigger {
+            li(class: 'dropdown_menu_sub_trigger') {
               a 'Answer to&hellip;'.html_safe, href: '#'
             }
             li {
-              ul.dropdown_menu_sub {
+              ul(class: 'dropdown_menu_sub') {
                 li {
                   a 'Eligibility Requirements', href: '#'
                 }
@@ -347,7 +347,7 @@ class Views::Home::Components < Views::Page
             li {
               a 'Overall rating', href: '#'
             }
-            li.disabled {
+            li(class: 'disabled') {
               a 'Beauty', href: '#'
             }
           }
@@ -380,22 +380,22 @@ class Views::Home::Components < Views::Page
           a 'Long error notification', href: 'javascript:DvlFlash("error", "Oh dear lord, an error has occurred! I am not sure how to handle a quandary quite like this.")'
         }
         li {
-          a 'Neutral with action', href: 'javascript:DvlFlash("info", "Your item was deleted.", "<a>Undo</a>")'
+          a 'Neutral with action', href: 'javascript:DvlFlash("info", "Your item was deleted.", "<a href=#>Undo</a>")'
         }
       }
     }
 
     docs 'Alerts', %{
-      div.alert {
-        span.alert_message 'This project is <strong>not yet posted</strong>.'.html_safe
-        span.alert_buttons {
-          a.button.primary 'Go live'
-          a.button 'Dismiss'
+      div(class: 'alert') {
+        span 'This project is <strong>not yet posted</strong>.'.html_safe, class: 'alert_message'
+        span(class: 'alert_buttons') {
+          a 'Go live', class: 'button primary'
+          a 'Dismiss', class: 'button'
         }
       }
 
-      div.alert {
-        span.alert_message 'People in this organization can&hellip;'.html_safe
+      div(class: 'alert') {
+        span 'People in this organization can&hellip;'.html_safe, class: 'alert_message'
 
         form {
           select('aria-label' => 'Permission level') {
@@ -404,14 +404,14 @@ class Views::Home::Components < Views::Page
             option 'View responses'
           }
           text ' '
-          button.button.info 'Change'
+          button 'Change', class: 'button info'
         }
       }
 
-      div.alert {
-        span.alert_message ('Please confirm the information below is correct, and then sign your name below to complete the form.')
-        span.alert_buttons {
-          a.button.primary 'Take me to the signature field', href: '#'
+      div(class: 'alert') {
+        span ('Please confirm the information below is correct, and then sign your name below to complete the form.'), class: 'alert_message'
+        span(class: 'alert_buttons') {
+          a 'Take me to the signature field', class: 'button primary', href: '#'
         }
       }
     }, full: true
@@ -419,16 +419,16 @@ class Views::Home::Components < Views::Page
     docs 'Modals', %{
       text 'In addition to our '
       a 'default modal style', 'data-toggle' => 'modal', href: '#modal'
-      widget Dvl::Components::Modal.new(title: 'Default modal', id: 'modal') do
-        div.modal_body {
+      widget Dvl::Core::Views::Modal.new(title: 'Default modal', id: 'modal') do
+        div(class: 'modal_body') {
           p 'Content goes here.'
 
-          div.dropdown {
-            a.dropdown_toggle_link 'You can toggle dropdowns from a modal',
+          div(class: 'dropdown') {
+            a 'You can toggle dropdowns from a modal', class: 'dropdown_toggle_link',
                               'data-toggle' => 'dropdown',
                               href: '#'
-            div.dropdown_menu(role: 'menu') {
-              ul.dropdown_body {
+            div(class: 'dropdown_menu') {
+              ul(class: 'dropdown_body') {
                 li {
                   a 'Option 1', href: '#'
                 }
@@ -442,80 +442,79 @@ class Views::Home::Components < Views::Page
             }
           }
         }
-
       end
       text ', we have a modal to '
       a 'confirm destructive actions', 'data-toggle' => 'modal', href: '#confirmModal'
-      widget Dvl::Components::Modal.new(
+      widget Dvl::Core::Views::Modal.new(
         title: 'Delete the style guide?',
         id: 'confirmModal',
         html_opts: { class: 'modal_confirm' }
       ) do
-        div.modal_body {
+        div(class: 'modal_body') {
           text "(Disclaimer: this modal won&#39;t actually delete the style guide.)".html_safe
         }
-        div.modal_footer {
-          span.modal_footer_secondary {
+        div(class: 'modal_footer') {
+          span(class: 'modal_footer_secondary') {
             a 'Delete Screendoor instead'
           }
-          span.modal_footer_primary {
-            a.button 'Cancel'
-            a.button.error 'Confirm'
+          span(class: 'modal_footer_primary') {
+            a 'Cancel', class: 'button'
+            a 'Confirm', class: 'button error'
           }
         }
       end
-    text '.'
+      text '.'
     }
 
     h3 'Pagination'
     docs 'Left Aligned', %{
-      div.pagination {
+      div(class: 'pagination') {
         ul {
-          li { a(href: '#'){ i.icon.icon_arrow_left }}
+          li { a(href: '#'){ i(class: 'icon icon_arrow_left') }}
           li { a(href: '#'){text '1'}}
-          li.active { span '2' }
+          li(class: 'active') { span '2' }
           li { a(href: '#'){text '3'}}
           li { span '&hellip;'.html_safe }
           li { a(href: '#'){text '19'}}
           li { a(href: '#'){text '20'}}
-          li { a(href: '#'){ i.icon.icon_arrow_right }}
+          li { a(href: '#'){ i(class: 'icon icon_arrow_right') }}
         }
       }
     }, sub: true
 
     docs 'Center Aligned', %{
-      div.pagination.pagination_centered {
+      div(class: 'pagination pagination_centered') {
         ul {
-          li { a(href: '#'){ i.icon.icon_arrow_left }}
+          li { a(href: '#'){ i(class: 'icon icon_arrow_left') }}
           li { a(href: '#'){text '1'}}
-          li.active { span '2' }
+          li(class: 'active') { span '2' }
           li { a(href: '#'){text '3'}}
           li { span '&hellip;'.html_safe }
           li { a(href: '#'){text '19'}}
           li { a(href: '#'){text '20'}}
-          li { a(href: '#'){ i.icon.icon_arrow_right }}
+          li { a(href: '#'){ i(class: 'icon icon_arrow_right') }}
         }
       }
     }, sub: true
 
     docs 'With fewer links', %{
-      div.pagination.pagination_centered {
+      div(class: 'pagination pagination_centered') {
         ul {
-          li { span { i.icon.icon_arrow_left }}
-          li.active { span '1' }
+          li { span { i(class: 'icon icon_arrow_left') }}
+          li(class: 'active') { span '1' }
           li { a('2', href: '#') }
-          li { a { i.icon.icon_arrow_right }}
+          li { a { i(class: 'icon icon_arrow_right') }}
         }
       }
     }
 
     docs 'Compact', %{
-      div.pagination_compact {
+      div(class: 'pagination_compact') {
         span "#1 of 123".html_safe
 
         ul {
-          li { span{ i.icon.icon_arrow_left_sm }}
-          li { a(href: '#'){ i.icon.icon_arrow_right_sm }}
+          li { span{ i(class: 'icon icon_arrow_left_sm') }}
+          li { a(href: '#'){ i(class: 'icon icon_arrow_right_sm') }}
         }
       }
     }, sub: true
@@ -523,8 +522,8 @@ class Views::Home::Components < Views::Page
     hr
 
     docs 'Progress Bars', %{
-      div.progress {
-        div.progress_inner(style: "width: 30%") {
+      div(class: 'progress') {
+        div(class: 'progress_inner', style: "width: 30%") {
           text '30%'
         }
       }

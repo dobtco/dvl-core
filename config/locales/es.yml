@@ -2,9 +2,9 @@
 es:
   dvl_core:
     footer:
-      about: es una aplicación por <a href='http://www.dobt.co' target='_blank'> The
+      about: es una aplicación por <a href='https://www.dobt.co' target='_blank'> The
         Department of Better Technology</a>.
-      about_no_app: Construido por <a href='http://www.dobt.co' target='_blank'>The
+      about_no_app: Construido por <a href='https://www.dobt.co' target='_blank'>The
         Department of Better Technology</a>.
       contact: Contáctenos
       help: Consigue ayuda
