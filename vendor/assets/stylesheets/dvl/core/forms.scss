@@ -549,7 +549,7 @@ form {
   }
 }
 
-.input_group_small & {
+.input_group_small {
   height: $smallInputHeight;
   .input_group_append,
   .input_group_prepend {
