@@ -5,16 +5,14 @@ $(document).on 'submit', '.newsletter_form', (e) ->
   return unless $input.val()
 
   $.ajax
-    url: '//dobt.createsend.com/t/t/s/dijhkj/?callback=?'
-    type: 'get',
-    dataType: 'json'
+    url: 'https://piper.dobt.co/api/subscribe_to_newsletter'
+    type: 'post'
     data:
-      'cm-dijhkj-dijhkj': $input.val()
-    success: (data) ->
-      if data.Status == 400
-        $input.flashPlaceholder('Whoops, an error occurred!', 2000)
-      else
-        $input.flashPlaceholder('Thanks!', 2000)
+      email: $input.val()
+    success: ->
+      $input.flashPlaceholder('Thanks!', 2000)
+    error: ->
+      $input.flashPlaceholder('Whoops, an error occurred!', 2000)
 
   $input.flashPlaceholder('Subscribing...')
   $input.blur()
