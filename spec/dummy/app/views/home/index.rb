@@ -9,7 +9,7 @@ class Views::Home::Index < Views::Home
 
     div(class: 'docs_rhythm') {
       h2 'The Department of Better Technology'
-      p 'We are dedicated to making great software that helps governments and non-profits better serve their communities.'
+      p 'We help governments deliver great digital services to the people who depend on them.'
       form {
         input(type: 'text', placeholder: 'Enter your email address')
         button 'Subscribe', class: 'button info'
@@ -69,7 +69,7 @@ class Views::Home::Index < Views::Home
 
     guide %{<h2>Headline</h2> <p>Main Content</p> <p class="microcopy">Explanation</p>}.html_safe,
       %{<strong>Do</strong> use header styles, smaller text sizes, and <a href="/components#alerts">alerts</a> to establish hierarchy and call out bits of text.}.html_safe,
-      %{<p><strong>We are dedicated to making great software that helps governments and non-profits better serve their communities.</strong></p> <p class="microcopy" style="background-color: red;">Explanation goes here.</p>}.html_safe,
+      %{<p><strong>We help governments deliver great digital services to the people who depend on them.</strong></p> <p class="microcopy" style="background-color: red;">Explanation goes here.</p>}.html_safe,
       %{<strong>Don&#39;t</strong> use boldface text for long sentences, or color the text to emphasize an action. This negatively impacts legibility.}.html_safe
 
     docs 'Lists', %{
