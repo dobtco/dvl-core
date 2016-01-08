@@ -3,29 +3,23 @@ class Views::Home::Headers < Views::Page
 
     h2 'Headers'
 
-    docs 'Page Header - Basic', %{
-      div.page_header {
-        h2 'Projects'
+    h3 'Page Header with Navigation'
 
-        a.button.primary 'New project'
-      }
-    }, sub: true
-
-    docs 'Page Header - With secondary / tertiary navigation and rename button', %{
-      div.page_header {
+    docs 'Rename Button', %{
+      div(class: 'page_header') {
         h2 {
           text 'Sales Leads'
-          a.button.subtle.mini {
+          a(class: 'button subtle mini') {
             i(class: 'fa fa-pencil')
           }
         }
-        div.page_header_secondary {
+        div(class: 'page_header_secondary') {
           ul {
             li {
               a 'Stages'
             }
 
-            li.active {
+            li(class: 'active') {
               a 'Contacts'
             }
 
@@ -34,7 +28,7 @@ class Views::Home::Headers < Views::Page
             }
           }
         }
-        div.page_header_tertiary {
+        div(class: 'page_header_tertiary') {
           ul {
             li {
               a {
@@ -49,37 +43,104 @@ class Views::Home::Headers < Views::Page
               }
             }
           }
-          a.button.mini.info.icon_r(href: '#') {
+        }
+      }
+    }, sub: true, hint: %{The header title can optionally be a link.}.html_safe
+
+    docs 'Back Arrow and Button', %{
+      div(class: 'page_header with_back_arrow') {
+        a(class: 'page_header_back_arrow', title: 'Dashboard', 'data-toggle' => 'tooltip') {
+          i(class: 'fa fa-arrow-circle-o-left')
+        }
+
+        a(class: 'page_header_context', href: '#') { text '2015 Civic Innovation Conference' }
+
+        h2 'Message Presets'
+
+        a(class: 'button info') { text 'Add a preset' }
+      }
+    }, sub: true
+
+
+    docs 'Secondary Action and Back Arrow', %{
+      div(class: 'page_header with_back_arrow') {
+        a(class: 'page_header_back_arrow', title: 'Dashboard', 'data-toggle' => 'tooltip') {
+          i(class: 'fa fa-arrow-circle-o-left')
+        }
+
+        h2 { a 'Meeting request', href: '#' }
+
+        div(class: 'page_header_secondary') {
+          ul {
+            li {
+              a 'Stages'
+            }
+
+            li {
+              a 'Contacts'
+            }
+
+            li {
+              a 'Messages'
+            }
+          }
+        }
+        div(class: 'page_header_tertiary') {
+          ul {
+            li(class: 'active') {
+              a {
+                i(class: 'fa fa-pencil')
+                text 'Edit'
+              }
+            }
+
+            li {
+              a {
+                text 'Settings'
+              }
+            }
+          }
+
+          a(class: 'button mini info icon_r', href: '#') {
             text 'View '
             i(class: 'fa fa-long-arrow-right')
           }
         }
       }
-    }, sub: true, hint: %{The header title can optionally be a link.}.html_safe
-
-    docs 'Page Header - With back arrow and button', %{
-      div.page_header.with_back_arrow {
-        a.page_header_back_arrow(title: 'All responses', 'data-toggle' => 'tooltip') {
-          i(class: 'fa fa-arrow-circle-o-left')
-        }
-
-        a.page_header_context '2015 Civic Innovation Conference', href: '#'
-        h2 'Message Presets'
-
-        a.button.info 'Add a preset'
-      }
     }, sub: true
 
-    docs 'Page Header - With back arrow and pagination', %{
-      div.page_header.with_back_arrow {
-        a.page_header_back_arrow(title: 'All responses', 'data-toggle' => 'tooltip') {
+    docs 'Back Arrow and Pagination', %{
+      div(class: 'page_header with_back_arrow with_pagination') {
+        a(class: 'page_header_back_arrow', title: 'All responses', 'data-toggle' => 'tooltip') {
           i(class: 'fa fa-arrow-circle-o-left')
         }
 
-        a.page_header_context '2015 Civic Innovation Conference', href: '#'
-        h2 'Max Ophüls'
+        a(class: 'page_header_context', href: '#') { text '2015 Civic Innovation Conference' }
 
-        div.pagination_compact.pagination_compact_header {
+        h2 {
+          a 'Max Ophüls', href: '#'
+        }
+
+        div(class: 'page_header_secondary') {
+          ul {
+            li(class: 'active') {
+              a 'Responses'
+            }
+
+            li {
+              a 'Questions'
+            }
+
+            li {
+              a 'Messages'
+            }
+
+            li {
+              a 'Settings'
+            }
+          }
+        }
+        div(class: 'pagination_compact pagination_compact_header') {
           span "#94 of 566"
 
           ul {
@@ -90,62 +151,80 @@ class Views::Home::Headers < Views::Page
       }
     }, sub: true
 
-    docs 'Page Subheader - Heading 3', %{
-      div.page_subheader {
+    hr
+
+    docs 'Basic Page Header', %{
+      div(class: 'page_header') {
+        h2 'Projects'
+
+        a 'New project', class: 'button primary'
+      }
+    }
+
+    h3 'Page Subheaders'
+
+    docs 'Heading 3', %{
+      div(class: 'page_subheader') {
         h3 'Debra Granik'
 
-        div.page_subheader_actions {
-          a.page_subheader_link {
+        div(class: 'page_subheader_actions') {
+          a(class: 'page_subheader_link') {
             i(class: 'fa fa-comments')
             text ' 2 comments'
           }
-          a.button.info 'Request a revision'
+          a 'Request a revision', class: 'button info'
         }
       }
     }, hint: 'This style of subheader should never contain icons.', sub: true
 
-    docs 'Page Subheader - Heading 4', %{
-      div.page_subheader {
+    docs 'Heading 4', %{
+      div(class: 'page_subheader') {
         h4 {
           i(class: 'fa fa-file-text')
           text ' '
           text 'Attachments'
         }
-        div.page_subheader_actions {
-          a.page_subheader_link 'View all'
-          a.button.small 'Edit'
+        div(class: 'page_subheader_actions') {
+          a 'View all', class: 'page_subheader_link'
+          a 'Edit', class: 'button small'
         }
       }
     }, hint: 'Icons in this style are optional.', sub: true
 
-    docs 'Page Header - With searchbar', %{
-      div.header_h2_search {
+    hr
+
+    h3 'Header with Search Bar'
+
+    p 'Use this header for standalone pages which do not require navigation.'
+
+    docs 'Default', %{
+      div(class: 'header_h2_search') {
         h2 'Your projects'
-        form.filter_form {
-          div.filter_form_search_wrapper {
+        form(class: 'filter_form') {
+          div(class: 'filter_form_search_wrapper') {
             i(class: 'fa fa-search')
             a(href: '#') {
               i(class: 'fa fa-times-circle filter_form_icon_right')
             }
             input(type: 'text', placeholder: 'Search your projects')
           }
-          button.button 'Search'
+          button 'Search', class: 'button'
         }
       }
-    }, hint: 'Use this header for standalone pages which do not require navigation.', sub: true
+    }, sub: true
 
-    docs 'Page Header - With searchbar (query entered)', %{
-      div.header_h2_search {
+    docs 'Query entered', %{
+      div(class: 'header_h2_search') {
         h2 'Your projects'
-        form.filter_form.with_query {
-          div.filter_form_search_wrapper {
+        form(class: 'filter_form with_query') {
+          div(class: 'filter_form_search_wrapper') {
             i(class: 'fa fa-search')
             a(href: '#') {
               i(class: 'fa fa-times-circle filter_form_icon_right')
             }
             input(type: 'text', placeholder: 'Search your projects', value: 'Innovation Challenge')
           }
-          button.button 'Search'
+          button 'Search', class: 'button'
         }
       }
     }, sub: true

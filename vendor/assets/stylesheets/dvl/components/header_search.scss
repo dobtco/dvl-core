@@ -13,6 +13,7 @@
   .header_h2_search {
     h2 {
       float: left;
+      max-width: 100%;
       margin-bottom: $rhythm;
     }
     .filter_form {

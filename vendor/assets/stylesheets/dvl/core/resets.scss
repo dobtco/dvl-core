@@ -61,6 +61,10 @@ html {
   text-size-adjust: 100%;
 }
 
+body {
+  @include word_break;
+}
+
 // 1. Customize `background` for text selections
 // 2. Remove `text-shadow` selection highlight - http://cbrac.co/Q6swON
 

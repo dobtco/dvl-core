@@ -1,6 +1,4 @@
-require 'erector'
-
-class Dvl::Components::Flashes < Erector::Widget
+class Dvl::Core::Views::Flashes < Dvl::Core::Views.base_view_class.constantize
   needs :flash,
         accept_keys: %w(success error info)
 

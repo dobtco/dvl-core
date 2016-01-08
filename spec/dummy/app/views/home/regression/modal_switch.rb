@@ -1,13 +1,13 @@
-class Views::Home::Regression::ModalSwitch < Views::Base
+class Views::Home::Regression::ModalSwitch < Views::Layout
   def render_body
-    widget Dvl::Components::Modal.new(title: 'One', id: 'modal1') {
-      div.modal_body {
+    widget Dvl::Core::Views::Modal.new(title: 'One', id: 'modal1') {
+      div(class: 'modal_body') {
         p 'Hi!'
       }
     }
 
-    widget Dvl::Components::Modal.new(title: 'Two', id: 'modal2') {
-      div.modal_body {
+    widget Dvl::Core::Views::Modal.new(title: 'Two', id: 'modal2') {
+      div(class: 'modal_body') {
         p 'Bye!'
       }
     }
