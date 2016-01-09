@@ -47,26 +47,8 @@ class Views::Home::Headers < Views::Page
       }
     }, sub: true, hint: %{The header title can optionally be a link.}.html_safe
 
-    docs 'Back Arrow and Button', %{
-      div(class: 'page_header with_back_arrow') {
-        a(class: 'page_header_back_arrow', title: 'Dashboard', 'data-toggle' => 'tooltip') {
-          i(class: 'fa fa-arrow-circle-o-left')
-        }
-
-        a(class: 'page_header_context', href: '#') { text '2015 Civic Innovation Conference' }
-
-        h2 'Message Presets'
-
-        a(class: 'button info') { text 'Add a preset' }
-      }
-    }, sub: true
-
-
-    docs 'Secondary Action and Back Arrow', %{
-      div(class: 'page_header with_back_arrow') {
-        a(class: 'page_header_back_arrow', title: 'Dashboard', 'data-toggle' => 'tooltip') {
-          i(class: 'fa fa-arrow-circle-o-left')
-        }
+    docs 'Secondary Action', %{
+      div(class: 'page_header ') {
 
         h2 { a 'Meeting request', href: '#' }
 
@@ -109,37 +91,37 @@ class Views::Home::Headers < Views::Page
       }
     }, sub: true
 
+    docs 'Back Arrow and Button', %{
+      div(class: 'page_header with_back_arrow') {
+        a(class: 'page_header_back_arrow', title: 'Dashboard', 'data-toggle' => 'tooltip') {
+          i(class: 'fa fa-arrow-circle-o-left')
+        }
+
+        div(class: 'page_header_context') {
+          a '2015 Civic Innovation Conference', href: '#'
+        }
+
+        h2 'Message Presets'
+
+        a(class: 'button info') { text 'Add a preset' }
+      }
+    }, sub: true
+
     docs 'Back Arrow and Pagination', %{
       div(class: 'page_header with_back_arrow with_pagination') {
         a(class: 'page_header_back_arrow', title: 'All responses', 'data-toggle' => 'tooltip') {
           i(class: 'fa fa-arrow-circle-o-left')
         }
 
-        a(class: 'page_header_context', href: '#') { text '2015 Civic Innovation Conference' }
+        div(class: 'page_header_context'){
+          a(href: '#') { text '2015 Civic Innovation Conference' }
+          a(href: '#') { text 'Responses' }
+        }
 
         h2 {
           a 'Max Ophüls', href: '#'
         }
 
-        div(class: 'page_header_secondary') {
-          ul {
-            li(class: 'active') {
-              a 'Responses'
-            }
-
-            li {
-              a 'Questions'
-            }
-
-            li {
-              a 'Messages'
-            }
-
-            li {
-              a 'Settings'
-            }
-          }
-        }
         div(class: 'pagination_compact pagination_compact_header') {
           span "#94 of 566"
 
@@ -153,7 +135,22 @@ class Views::Home::Headers < Views::Page
 
     hr
 
-    docs 'Basic Page Header', %{
+    h3 'Basic Page Header'
+
+    docs 'With Button', %{
+      div(class: 'page_header') {
+        div(class: 'page_header_context'){
+          a '2015 Civic Innovation Conference', href: '#'
+          a 'Responses', href: '#'
+        }
+
+        h2 'Import responses'
+
+        a 'Cancel', class: 'button_uppercase'
+      }
+    }
+
+    docs 'With Button', %{
       div(class: 'page_header') {
         h2 'Projects'
 

@@ -36,15 +36,14 @@
   }
 
   > .button,
-  > form .button {
+  > form .button,
+  > .button_uppercase {
     float: left;
     clear: left;
-    margin: $rhythm 0;
     @media screen and (min-width: $lapWidth) {
       float: right;
       clear: none;
       position: relative;
-      margin: 0;
       @include topCenter($fontLineHeightH2, $inputHeight);
       &.small {
         @include topCenter($fontLineHeightH2, ($rhythm * 4));
@@ -54,6 +53,22 @@
       }
     }
   }
+
+  > .button,
+  > form .button {
+    margin: $rhythm 0;
+    @media screen and (min-width: $lapWidth) {
+      margin: 0;
+    }
+  }
+
+  > .button_uppercase {
+    margin-bottom: $rhythm;
+    @media screen and (min-width: $lapWidth) {
+      margin: ($rhythm * 1.5) 0;
+    }
+  }
+
   // Modifiers
 
   &.with_back_arrow {
@@ -79,19 +94,35 @@
 }
 
 .page_header_context {
-  font-size: $fontSmall;
-  text-transform: uppercase;
-  font-family: $fontFamilyDefault;
-  font-weight: $weightNormal;
-  letter-spacing: $letterspaceSmall;
-  display: block;
-  line-height: $rhythm * 2;
+  width: 100%;
   position: relative;
   top: $rhythm * 0.5;
   left: $fontOpticalMarginH2 * -1;
-  color: $darkerGray;
-  width: 100%;
-  @include ellipses;
+  line-height: $rhythm * 2;
+  a {
+    color: $darkerGray;
+    font-size: $fontSmall;
+    text-transform: uppercase;
+    font-family: $fontFamilyDefault;
+    font-weight: $weightNormal;
+    letter-spacing: $letterspaceSmall;
+    display: inline-block;
+    position: relative;
+    + a {
+      margin-left: $rhythm * 2;
+      &:before {
+        font-family: 'FontAwesome';
+        content: '\f0da';
+        position: absolute;
+        color: $darkGray;
+        top: 0;
+        left: $rhythm * -2;
+        width: $rhythm * 2;
+        text-align: center;
+        line-height: $rhythm * 2;
+      }
+    }
+  }
 }
 
 .page_header_back_arrow {
