@@ -148,7 +148,7 @@ class Views::Home::Headers < Views::Page
 
         a 'Cancel', class: 'button_uppercase'
       }
-    }, hint: 'During a user flow that requires multiple pages to complete, provide a single, unambiguous "Cancel" link as the only way to leave that flow.'
+    }, sub: true, hint: 'During a user flow that requires multiple pages to complete, provide a single, unambiguous "Cancel" link as the only way to leave that flow.'
 
     docs 'With Button', %{
       div(class: 'page_header') {
@@ -156,7 +156,7 @@ class Views::Home::Headers < Views::Page
 
         a 'New project', class: 'button primary'
       }
-    }
+    }, sub: true
 
     h3 'Page Subheaders'
 
