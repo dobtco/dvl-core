@@ -99,7 +99,8 @@
   top: $rhythm * 0.5;
   left: $fontOpticalMarginH2 * -1;
   line-height: $rhythm * 2;
-  a {
+  a,
+  span {
     color: $darkerGray;
     font-size: $fontSmall;
     text-transform: uppercase;
@@ -108,7 +109,8 @@
     letter-spacing: $letterspaceSmall;
     display: inline-block;
     position: relative;
-    + a {
+    + a,
+    + span {
       margin-left: $rhythm * 2;
       &:before {
         font-family: 'FontAwesome';

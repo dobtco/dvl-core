@@ -137,18 +137,18 @@ class Views::Home::Headers < Views::Page
 
     h3 'Basic Page Header'
 
-    docs 'With Button', %{
+    docs 'Multi-Step Flows', %{
       div(class: 'page_header') {
         div(class: 'page_header_context'){
-          a '2015 Civic Innovation Conference', href: '#'
-          a 'Responses', href: '#'
+          span '2015 Civic Innovation Conference', href: '#'
+          span 'Responses', href: '#'
         }
 
         h2 'Import responses'
 
         a 'Cancel', class: 'button_uppercase'
       }
-    }
+    }, hint: 'During a user flow that requires multiple pages to complete, provide a single, unambiguous "Cancel" link as the only way to leave that flow.'
 
     docs 'With Button', %{
       div(class: 'page_header') {
