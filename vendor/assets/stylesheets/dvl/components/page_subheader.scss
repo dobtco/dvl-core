@@ -1,6 +1,7 @@
 .page_subheader {
   @include cf;
   margin-bottom: $lineHeight;
+  position: relative;
   h3, h4 {
     display: inline;
     float: left;
