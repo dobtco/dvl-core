@@ -148,7 +148,7 @@ class Views::Home::Headers < Views::Page
 
         a 'Cancel', class: 'button_uppercase'
       }
-    }, sub: true, hint: 'During a user flow that requires multiple pages to complete, provide a single, unambiguous "Cancel" link as the only way to leave that flow.'
+    }, sub: true, hint: 'When a task requires multiple pages to complete, the user should only be able to interrupt that task through a single, unambiguous "Cancel" button.'
 
     docs 'With Button', %{
       div(class: 'page_header') {
