@@ -140,8 +140,8 @@ class Views::Home::Headers < Views::Page
     docs 'Multi-Step Flows', %{
       div(class: 'page_header') {
         div(class: 'page_header_context'){
-          span '2015 Civic Innovation Conference', href: '#'
-          span 'Responses', href: '#'
+          span '2015 Civic Innovation Conference'
+          span 'Responses'
         }
 
         h2 'Import responses'
