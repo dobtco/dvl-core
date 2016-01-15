@@ -148,11 +148,7 @@ class Views::Home::Headers < Views::Page
 
         a 'Cancel', class: 'button_uppercase'
       }
-    }, sub: true, hint: %{
-      Display this header when a task requires multiple pages to complete.
-      Consider using the <code>beforeunload</code> event to ensure that user
-      don't exit the flow unless explicitly clicking the "cancel" button.
-    }.squish.html_safe
+    }, sub: true, hint: 'Display this header when a task requires multiple pages to complete.'
 
     docs 'With Button', %{
       div(class: 'page_header') {
