@@ -140,15 +140,15 @@ class Views::Home::Headers < Views::Page
     docs 'Multi-Step Flows', %{
       div(class: 'page_header') {
         div(class: 'page_header_context'){
-          span '2015 Civic Innovation Conference'
-          span 'Responses'
+          a '2015 Civic Innovation Conference', href='#'
+          a 'Responses', href='#'
         }
 
         h2 'Import responses'
 
         a 'Cancel', class: 'button_uppercase'
       }
-    }, sub: true, hint: 'When a task requires multiple pages to complete, the user should only be able to interrupt that task through a single, unambiguous "Cancel" button.'
+    }, sub: true, hint: 'Display this header when a task requires multiple pages to complete. If the user clicks anything other than the Cancel button, a confirmation modal should display.'
 
     docs 'With Button', %{
       div(class: 'page_header') {
