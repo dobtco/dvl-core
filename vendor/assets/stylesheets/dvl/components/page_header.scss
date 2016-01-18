@@ -74,6 +74,9 @@
   &.with_back_arrow {
     margin-top: $rhythm;
     padding-left: $rhythm * 5;
+    &.with_no_context {
+      margin-top: 0;
+    }
     .page_header_context {
       width: 100%;
     }
