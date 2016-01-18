@@ -8,8 +8,11 @@
     max-width: 100%;
     margin-right: $rhythm * 4;
     margin-bottom: $rhythm;
-    a {
+    position: relative;
+    > a {
       color: $black;
+    }
+    a {
       text-decoration: none;
     }
     img {
@@ -33,35 +36,95 @@
   }
 
   > .button,
-  > form .button {
+  > form .button,
+  > .button_uppercase {
     float: left;
     clear: left;
-    margin: $rhythm 0;
     @media screen and (min-width: $lapWidth) {
       float: right;
       clear: none;
       position: relative;
-      margin: 0;
-      top: ($fontLineHeightH2 - $inputHeight) / 2;
+      @include topCenter($fontLineHeightH2, $inputHeight);
       &.small {
-        top: ($fontLineHeightH2 -($rhythm * 4)) / 2;
+        @include topCenter($fontLineHeightH2, ($rhythm * 4));
       }
       &.mini {
-         top: ($fontLineHeightH2 - ($rhythm * 3)) / 2;
+         @include topCenter($fontLineHeightH2, ($rhythm * 3));
       }
+    }
+  }
+
+  > .button,
+  > form .button {
+    margin: $rhythm 0;
+    @media screen and (min-width: $lapWidth) {
+      margin: 0;
+    }
+  }
+
+  > .button_uppercase {
+    margin-bottom: $rhythm;
+    @media screen and (min-width: $lapWidth) {
+      margin: ($rhythm * 1.5) 0;
     }
   }
 
   // Modifiers
 
   &.with_back_arrow {
+    margin-top: $rhythm;
     padding-left: $rhythm * 5;
+    &.with_no_context {
+      margin-top: 0;
+    }
+    .page_header_context {
+      width: 100%;
+    }
+    h2 {
+      position: relative;
+    }
+    > .button,
+    > form .button {
+      @include topCenter(($fontLineHeightH2 + $rhythm), $inputHeight);
+      &.small {
+        @include topCenter(($fontLineHeightH2 + $rhythm), ($rhythm * 4));
+      }
+      &.mini {
+         @include topCenter(($fontLineHeightH2 + $rhythm), ($rhythm * 3));
+      }
+    }
   }
+}
 
-  @media screen and (min-width: $lapWidth) {
-    &.with_pagination {
-      h2 {
-        padding-right: ($rhythm * 10) + ($lineHeight * 4);
+.page_header_context {
+  width: 100%;
+  position: relative;
+  top: $rhythm * 0.5;
+  left: $fontOpticalMarginH2 * -1;
+  line-height: $rhythm * 2;
+  a,
+  span {
+    color: $darkerGray;
+    font-size: $fontSmall;
+    text-transform: uppercase;
+    font-family: $fontFamilyDefault;
+    font-weight: $weightNormal;
+    letter-spacing: $letterspaceSmall;
+    display: inline-block;
+    position: relative;
+    + a,
+    + span {
+      margin-left: $rhythm * 2;
+      &:before {
+        font-family: 'FontAwesome';
+        content: '\f0da';
+        position: absolute;
+        color: $darkGray;
+        top: 0;
+        left: $rhythm * -2;
+        width: $rhythm * 2;
+        text-align: center;
+        line-height: $rhythm * 2;
       }
     }
   }
@@ -71,13 +134,13 @@
   font-size: 1.75rem;
   position: absolute;
   opacity: 0.7;
-  @include topCenter($fontLineHeightH2Mobile, 1.75rem);
-  @media screen and (min-width: $lapWidth) {
-    @include topCenter($fontLineHeightH2, 1.75rem);
-  }
+  top: 0;
   left: 0;
-  margin-top: 2px; // Optical adjustment
   line-height: 1;
+  @include topCenter($fontLineHeightH2Mobile + ($rhythm * 4.5), 1.75rem);
+  @media screen and (min-width: $lapWidth) {
+    @include topCenter($fontLineHeightH2 + ($rhythm * 4.5), 1.75rem);
+  }
 }
 
 // Secondary and tertiary navigation, within page headers.
