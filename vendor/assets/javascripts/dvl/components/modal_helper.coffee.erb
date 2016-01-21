@@ -1,0 +1,21 @@
+Dvl.Modal =
+  getHTML: (opts = {}) ->
+    """<%= Dvl::Core::Views::Modal.new(id: ':id', title: ':title') {}.to_html %>""".
+      replace(':id', opts.id || '').
+      replace(':title', opts.title || '')
+
+  init: (html, opts = {}) ->
+    $modal = $(html)
+
+    $modal.appendTo('body')
+
+    unless opts.noShow
+      $modal.modal('show')
+
+    if opts.removeOnClose
+      $modal.on 'hidden.bs.modal', -> $modal.remove()
+
+    if opts.onHide
+      $modal.on 'hide.bs.modal', opts.onHide
+
+    $modal

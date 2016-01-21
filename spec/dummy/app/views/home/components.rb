@@ -373,16 +373,16 @@ class Views::Home::Components < Views::Page
     docs 'Flashes', %{
       ul {
         li {
-          a 'Success notification', href: 'javascript:DvlFlash("success", "You did it!")'
+          a 'Success notification', href: 'javascript:Dvl.Flash("success", "You did it!")'
         }
         li {
-          a 'Neutral flash', href: 'javascript:DvlFlash("info", "This is <a href=#>an informational message</a>.")'
+          a 'Neutral flash', href: 'javascript:Dvl.Flash("info", "This is <a href=#>an informational message</a>.")'
         }
         li {
-          a 'Long error notification', href: 'javascript:DvlFlash("error", "Oh dear lord, an error has occurred! I am not sure how to handle a quandary quite like this.")'
+          a 'Long error notification', href: 'javascript:Dvl.Flash("error", "Oh dear lord, an error has occurred! I am not sure how to handle a quandary quite like this.")'
         }
         li {
-          a 'Neutral with action', href: 'javascript:DvlFlash("info", "Your item was deleted.", "<a href=#>Undo</a>")'
+          a 'Neutral with action', href: 'javascript:Dvl.Flash("info", "Your item was deleted.", "<a href=#>Undo</a>")'
         }
       }
     }
@@ -530,6 +530,50 @@ class Views::Home::Components < Views::Page
         }
       }
     }
+
+    h3 'Delete confirmations'
+
+    p 'Use one of the following patterns to confirm a destructive action.'
+
+    docs "When the Delete button is an icon, show a popover to clarify the user's intent.", %{
+      ul(class: 'delete_list') {
+        li(class: 'js_delete_1') {
+          text 'Project 1'
+          a(class: 'subtle_icon', 'data-confirm' => true, 'data-confirm-with' => 'popover', href: "javascript:$('.js_delete_1').remove()"){
+            i(class: 'fa fa-minus-circle')
+          }
+        }
+        li(class: 'js_delete_2') {
+          text 'Project 2'
+          a(class: 'subtle_icon', 'data-confirm' => 'This is an important record. <strong>It will be destroyed forever.</strong>', 'data-confirm-with' => 'popover', href: "javascript:$('.js_delete_2').remove()"){
+            i(class: 'fa fa-minus-circle')
+          }
+        }
+        li(class: 'js_delete_3') {
+          text 'Project 3'
+          a(class: 'subtle_icon', 'data-confirm' => true, 'data-confirm-with' => 'popover', 'data-confirmation-options' => { 't_delete' => 'Archive' }.to_json, href: "javascript:$('.js_delete_3').remove()"){
+            i(class: 'fa fa-minus-circle')
+          }
+        }
+      }
+    }, sub: true, hint: 'Popovers can contain headers and alternate button text.'
+
+    docs 'When the Delete button contains text, delete the item immediately, and let the user undo the action.', %{
+      li(class: 'js_delete_5') {
+        a(class: 'button_uppercase',
+          href: "javascript: Dvl.Flash('info', 'You deleted the response.', '<a>Undo</a>')") {
+            i(class: 'fa fa-minus-circle')
+            text 'Delete this response'
+          }
+      }
+    }, sub: true, hint: 'The undo is usually implemented server-side.'
+
+
+    docs 'For destructive actions with major consequences, show a confirmation modal.', %{
+      div(class: 'js_delete_4') {
+        a('Archive my project', class: 'button error', 'data-confirm' => true, href: "javascript: Dvl.Flash('info', 'Your project has been archived.')")
+      }
+    }, sub: true
 
     docs 'Tooltips', %{
       %w(top right bottom left).each do |x|
