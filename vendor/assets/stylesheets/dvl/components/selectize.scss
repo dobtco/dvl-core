@@ -77,7 +77,8 @@
 .selectize-item {
   .single & {
     position: relative;
-    top: $rhythm;
+    padding-top: $rhythm * 1.5;
+    line-height: $rhythm * 2;
   }
   .single .input-active & {
     top: 0;
