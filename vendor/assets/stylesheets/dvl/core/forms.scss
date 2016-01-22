@@ -4,6 +4,10 @@ form {
   margin: 0;
 }
 
+::placeholder {
+  color: $darkGray;
+}
+
 // 1. Address `margin` set differently in Firefox 4+, Safari 5, & Chrome
 // 2. Correct `font-size` not being inherited in all browsers
 // 3. Correct `font-family` not being inherited in all browsers
@@ -677,7 +681,7 @@ form {
     color: $darkerGray;
   }
   &.is_blank {
-    color: $darkerGray;
+    color: $darkGray;
   }
 }
 
