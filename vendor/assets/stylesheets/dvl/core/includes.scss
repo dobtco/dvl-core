@@ -1,5 +1,5 @@
-// COLORS
-
+// WARNING: this file must only include variables and mixins. It cannot
+// have any output, since it might be included multiple times in host apps.
 
 // App-specific colors
 $bodyBackgroundColor: #fff !default;
@@ -356,27 +356,6 @@ $easeInOutBack:  cubic-bezier(0.680, -0.550, 0.265, 1.550);
     height: auto;
   }
 }
-
-// Utility animations
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 
 // Legacy
 
