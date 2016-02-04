@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require dvl/vendor/jquery-ujs
 //= require dvl/core
 //= require dvl/helpers/flash_placeholder
 //= require dvl/helpers/toggle_class
@@ -20,6 +21,10 @@
 //= require dvl/components/splash_footer
 //= require dvl/components/navbar
 //= require dvl/components/dropdown_select
+//= require dvl/components/modal_helper
+//= require dvl/components/confirmations
+//= require dvl/components/popovers
 //= require dvl/datetime_picker
 //= require dvl/vendor/selectize
+//= require dvl/overrides/rails_allow_action
 //= require preview
