@@ -571,7 +571,7 @@ class Views::Home::Components < Views::Page
 
     docs 'For destructive actions with major consequences, show a confirmation modal.', %{
       div(class: 'js_delete_4') {
-        a('Archive my project', class: 'button error', 'data-confirm' => true, href: "javascript: Dvl.Flash('info', 'Your project has been archived.')")
+        a('Archive my project', class: 'button error', 'data-confirm' => true, href: '/delete', 'data-method' => 'delete', 'data-remote' => true)
       }
     }, sub: true
 
