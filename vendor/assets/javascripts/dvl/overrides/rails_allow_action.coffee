@@ -4,11 +4,7 @@ $.rails.allowAction = ($link) ->
 
   cb = ->
     $link.data('confirmed', true)
-
-    if $.rails.isRemote($link)
-      $.rails.handleRemote($link)
-    else
-      $.rails.handleMethod($link)
+    $link.trigger('click.rails')
 
   new Dvl.Confirmations[if $link.data('confirm-with') == 'popover' then 'Popover' else 'Modal'](
     $link,
