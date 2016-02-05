@@ -67,6 +67,16 @@ class Views::Home::Forms < Views::Page
                 ],
                 include_blank: 'None selected'
 
+        f.input :select,
+                as: :select,
+                label: 'Use <code>data-no-blank-class</code> if the blank option is not a prompt.'.html_safe,
+                collection: [
+                  ['Show only input fields', 1],
+                  ['Show only display fields', 2]
+                ],
+                include_blank: 'Show all fields',
+                input_html: { 'data-no-blank-class' => true }
+
       f.input :select,
               as: :select,
               label: 'This dropdown has a fixed width of 14rem.',

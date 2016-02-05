@@ -1,8 +1,8 @@
 $ ->
   $('[data-toggle="tooltip"]').tooltip()
-  $('body').styledSelect(blank: 'Choose an option')
+  $('body').styledSelect()
   $('body').styledControls()
-  $('body').dropdownSelect(blank: 'Choose an option')
+  $('body').dropdownSelect()
   $("input.datetime_picker").datetimePicker()
 
 $(document).on 'click', '.docs_toggle_button', ->
