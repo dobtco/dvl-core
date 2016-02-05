@@ -529,10 +529,6 @@ form {
   .button {
     height: $inputHeight;
     line-height: $inputHeight - $rhythm;
-    .input_group_small & {
-      height: $smallInputHeight;
-      line-height: $smallInputHeight - $rhythm;
-    }
   }
   span {
     display: inline-table;
@@ -554,6 +550,17 @@ form {
 .input_group_prepend {
   span {
     padding-right: $rhythm;
+  }
+}
+
+.input_group_small {
+  height: $smallInputHeight;
+  .input_group_append,
+  .input_group_prepend {
+    .button {
+      height: $smallInputHeight;
+      line-height: $smallInputHeight - $rhythm;
+    }
   }
 }
 
