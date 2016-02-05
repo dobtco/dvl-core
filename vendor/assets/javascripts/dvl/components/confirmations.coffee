@@ -79,16 +79,16 @@ class Dvl.Confirmations.Modal
             <a class='button white' data-dismiss='modal'>
               #{@options.t_cancel}
             </a>
-            <button class='button error confirm_button'>#{@options.t_confirm}</button>
+            <button class='button error js-confirm-delete'>#{@options.t_confirm}</button>
           </div>
         </div>
       """
 
-    $modal.one 'click', '.confirm_button', ->
+    $modal.one 'click', '.js-confirm-delete', ->
       cb()
 
       $modal.
         modal('hide').
         remove()
 
-    $modal.find('button.error').focus()
+    $modal.find('.js-confirm-delete').focus()
