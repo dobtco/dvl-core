@@ -527,6 +527,7 @@ form {
   display: table-cell;
   vertical-align: top;
   .button {
+    vertical-align: top;
     height: $inputHeight;
     line-height: $inputHeight - $rhythm;
     .input_group_small & {
@@ -721,4 +722,3 @@ a.styled_select {
   border-radius: $radius;
   max-width: 22rem;
 }
-
