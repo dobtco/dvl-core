@@ -4,9 +4,12 @@ TRANSITION_LENGTH = 300
 Dvl.FlashHide = ($flash) ->
   $flash.addClass('is_hiding')
 
-  $flash.on 'bsTransitionEnd', ->
+  if $.support.transition
+    $flash.on 'bsTransitionEnd', ->
+      $flash.remove()
+    .emulateTransitionEnd(TRANSITION_LENGTH)
+  else
     $flash.remove()
-  .emulateTransitionEnd(TRANSITION_LENGTH)
 
 Dvl.Flash = (flashType, message, linksHTML) ->
   # Remove existing flashes
