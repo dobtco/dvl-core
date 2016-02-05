@@ -9,6 +9,10 @@
   font-size: $fontSmaller;
   background-color: $lighterGray;
   color: $darkestGray;
+
+  // For some reason, body { word-wrap: break-word } doesn't affect lablels...
+  // maybe because it's inline-block?
+  word-break: break-word;
 }
 
 .label_error,
