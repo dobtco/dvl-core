@@ -389,6 +389,7 @@ input[type="radio"] {
 
 .datetime_input_clear_wrapper {
   clear: both;
+  height: $lineHeightSmall; // preserve height when clear button is hidden
 }
 
 .datetime_input_clear {

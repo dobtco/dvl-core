@@ -357,7 +357,10 @@ class Views::Home::Forms < Views::Page
                 clear_text: 'Clear'
       end
 
-      div '&nbsp;'.html_safe, class: 'js_dt_result'
+      div {
+        text 'Date chosen: '
+        span 'none', class: 'js_dt_result'
+      }
     }, sub: true
 
     docs 'Filter form', %{
