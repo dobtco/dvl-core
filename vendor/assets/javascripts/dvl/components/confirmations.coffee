@@ -4,8 +4,9 @@ class Dvl.Confirmations.Popover
   defaults:
     t_cancel: 'Cancel'
     t_delete: 'Delete'
+    # cancelCb:
 
-  constructor: ($el, message, cb, cancelCb) ->
+  constructor: ($el, message, cb, opts = {}) ->
     @$el = $el
 
     if (instance = @$el.data('popover-confirmation'))
@@ -13,7 +14,7 @@ class Dvl.Confirmations.Popover
 
     @$el.data('popover-confirmation', @)
 
-    @options = $.extend {}, @defaults, @$el.data('confirmation-options')
+    @options = $.extend {}, @defaults, @$el.data('confirmation-options'), opts
 
     if message
       wrappedMessage = """
@@ -45,7 +46,7 @@ class Dvl.Confirmations.Popover
 
       if $(e.target).hasClass('js-cancel')
         @$el.trigger('cancel.dvl')
-        cancelCb?()
+        @options.cancelCb?()
 
       @destroy()
       @$el.popover('destroy')
@@ -65,9 +66,10 @@ class Dvl.Confirmations.Modal
     t_title: 'Are you sure?'
     t_cancel: 'Cancel'
     t_confirm: 'Confirm'
+    # cancelCb:
 
-  constructor: ($el, message, cb, cancelCb) ->
-    @options = $.extend {}, @defaults, $el.data('confirmation-options')
+  constructor: ($el, message, cb, opts = {}) ->
+    @options = $.extend {}, @defaults, $el.data('confirmation-options'), opts
 
     message ||= @options.t_generic
 
@@ -91,9 +93,9 @@ class Dvl.Confirmations.Modal
         </div>
       """
 
-    $modal.one 'click', '[data-dismiss=modal]', ->
+    $modal.one 'click', '[data-dismiss=modal]', =>
       $el.trigger('cancel.dvl')
-      cancelCb?()
+      @options.cancelCb?()
 
     $modal.one 'click', '.js-confirm-delete', ->
       $el.trigger('confirm.dvl')
