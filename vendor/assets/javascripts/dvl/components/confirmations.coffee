@@ -4,6 +4,7 @@ class Dvl.Confirmations.Popover
   defaults:
     t_cancel: 'Cancel'
     t_delete: 'Delete'
+    popoverOpts: {}
     # cancelCb:
 
   constructor: ($el, message, cb, opts = {}) ->
@@ -23,17 +24,20 @@ class Dvl.Confirmations.Popover
         </div>
       """
 
-    @$el.popover
-      html: true
-      content: """
-        <div class='popover_delete_confirmation'>
-          #{wrappedMessage || ''}
-          <a class='button error js-confirm-delete' href='#'>#{@options.t_delete}</a>
-          <a class='button js-cancel' href='#'>#{@options.t_cancel}</a>
-        </div>
-      """
-      trigger: 'manual'
-      placement: 'bottom'
+    @$el.popover(
+      $.extend({
+        html: true
+        content: """
+          <div class='popover_delete_confirmation'>
+            #{wrappedMessage || ''}
+            <a class='button error js-confirm-delete' href='#'>#{@options.t_delete}</a>
+            <a class='button js-cancel' href='#'>#{@options.t_cancel}</a>
+          </div>
+        """
+        trigger: 'manual'
+        placement: 'bottom'
+      }, @options.popoverOpts)
+    )
 
     @$el.popover('show')
 
