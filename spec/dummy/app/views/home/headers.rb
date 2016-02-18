@@ -197,15 +197,17 @@ class Views::Home::Headers < Views::Page
     docs 'Default', %{
       div(class: 'header_h2_search') {
         h2 'Your projects'
-        form(class: 'filter_form') {
-          div(class: 'filter_form_search_wrapper') {
+        form(class: 'filter_form input_group') {
+          div(class: 'input_group_input') {
             i(class: 'fa fa-search')
             a(href: '#') {
               i(class: 'fa fa-times-circle filter_form_icon_right')
             }
             input(type: 'text', placeholder: 'Search your projects')
           }
-          button 'Search', class: 'button'
+          div(class: 'input_group_append') {
+            button 'Search', class: 'button small'
+          }
         }
       }
     }, sub: true
@@ -213,15 +215,17 @@ class Views::Home::Headers < Views::Page
     docs 'Query entered', %{
       div(class: 'header_h2_search') {
         h2 'Your projects'
-        form(class: 'filter_form with_query') {
-          div(class: 'filter_form_search_wrapper') {
+        form(class: 'filter_form with_query input_group') {
+          div(class: 'input_group_input') {
             i(class: 'fa fa-search')
             a(href: '#') {
               i(class: 'fa fa-times-circle filter_form_icon_right')
             }
             input(type: 'text', placeholder: 'Search your projects', value: 'Innovation Challenge')
           }
-          button 'Search', class: 'button'
+          div(class: 'input_group_append') {
+            button 'Search', class: 'button small'
+          }
         }
       }
     }, sub: true

@@ -1,5 +1,4 @@
 .filter_form {
-  position: relative;
   button {
     @include button_color($lightestGray,$darkestGray);
     border-left-color: transparent;
@@ -18,45 +17,43 @@
   }
   // Search button isn't present
   &.without_button {
-    .filter_form_search_wrapper {
+    .input_group_input {
       display: block;
     }
     input {
       width: 100%;
     }
   }
-}
-
-.filter_form_search_wrapper {
-  display: inline-block;
-  position: relative;
-  input {
-    padding-left: 1.75rem;
-    .with_query & {
-      padding-right: 1.75rem;
+  .input_group_input {
+    position: relative;
+    input {
+      padding-left: 1.75rem;
+      .with_query & {
+        padding-right: 1.75rem;
+      }
     }
-  }
-  .fa-search,
-  .fa-times-circle {
-    position: absolute;
-    line-height: 1;
-    @include topCenter($inputHeight, 1rem);
-    color: $darkGray;
-  }
-  .fa-search {
-    width: 1.75rem;
-    text-align: center;
-    left: 0;
-  }
-  .fa-times-circle {
-    display: none;
-    right: 7px;
-    text-decoration: none;
-    .with_query & {
-      display: inline;
+    .fa-search,
+    .fa-times-circle {
+      position: absolute;
+      line-height: 1;
+      @include topCenter($inputHeight, 1rem);
+      color: $darkGray;
     }
-    &:hover {
-      color: $darkerGray;
+    .fa-search {
+      width: 1.75rem;
+      text-align: center;
+      left: 0;
+    }
+    .fa-times-circle {
+      display: none;
+      right: 7px;
+      text-decoration: none;
+      .with_query & {
+        display: inline;
+      }
+      &:hover {
+        color: $darkerGray;
+      }
     }
   }
 }
