@@ -22,7 +22,7 @@
   }
   // Contains query with close button
   &.with_query {
-    .filter_form_search_wrapper {
+    .input_group_input {
       input {
         padding-right: 1.75rem;
       }
@@ -38,7 +38,7 @@
   &.full {
     width: 100%;
 
-    .filter_form_search_wrapper {
+    .input_group_input {
       width: 100%;
     }
 
@@ -50,13 +50,9 @@
 
 .filter_form_search_wrapper {
   display: inline-block;
-  width: 16rem;
   position: relative;
   input {
-    width: 100%;
     padding-left: 1.75rem;
-    display: inline;
-    line-height: 1.5rem;
   }
   .fa-search,
   .fa-times-circle {
