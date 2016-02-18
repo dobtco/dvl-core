@@ -6,6 +6,7 @@
     text-transform: uppercase;
     letter-spacing: $letterspaceSmall;
   }
+  // Search button is present but hidden
   &.full {
     width: 100%;
     .input_group_input {
@@ -15,7 +16,11 @@
       display: none;
     }
   }
+  // Search button isn't present
   &.without_button {
+    .filter_form_search_wrapper {
+      display: block;
+    }
     input {
       width: 100%;
     }
