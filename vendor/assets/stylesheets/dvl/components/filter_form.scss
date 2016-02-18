@@ -15,6 +15,11 @@
       display: none;
     }
   }
+  &.without_button {
+    input {
+      width: 100%;
+    }
+  }
 }
 
 .filter_form_search_wrapper {
