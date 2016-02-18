@@ -1,5 +1,11 @@
 .filter_form {
   position: relative;
+  button {
+    @include button_color($lightestGray,$darkestGray);
+    border-left-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: $letterspaceSmall;
+  }
   &.full {
     width: 100%;
     .input_group_input {
