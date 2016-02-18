@@ -1,48 +1,11 @@
 .filter_form {
-  display: inline-block;
   position: relative;
-  .button,
-  .styled_select_wrapper {
-    margin-top: $rhythm;
-    display: block;
-  }
-  @media screen and (min-width: $lapWidth) {
-    .styled_select_wrapper,
-    .button {
-      margin-top: 0;
-      display: inline-block;
-      vertical-align: top;
-    }
-    .styled_select_wrapper {
-      margin-left: $rhythm;
-    }
-    .button {
-      margin-left: $rhythm;
-    }
-  }
-  // Contains query with close button
-  &.with_query {
-    .input_group_input {
-      input {
-        padding-right: 1.75rem;
-      }
-      .fa-times-circle {
-        display: inline;
-      }
-    }
-  }
-
-  // Full-width search input.
-  // Currently achieved by removing the search button.
-  // #todo use grid or display: table to achieve?
   &.full {
     width: 100%;
-
     .input_group_input {
       width: 100%;
     }
-
-    .button {
+    .input_group_append {
       display: none;
     }
   }
@@ -53,6 +16,9 @@
   position: relative;
   input {
     padding-left: 1.75rem;
+    .with_query & {
+      padding-right: 1.75rem;
+    }
   }
   .fa-search,
   .fa-times-circle {
@@ -70,6 +36,9 @@
     display: none;
     right: 7px;
     text-decoration: none;
+    .with_query & {
+      display: inline;
+    }
     &:hover {
       color: $darkerGray;
     }
