@@ -1,3 +1,8 @@
 #! /bin/sh
 
+# Disable Percy unless there's an open PR
+if [ -z "${CIRCLE_PR_NUMBER}" ]; then
+  export PERCY_ENABLE=0
+fi
+
 bundle exec rspec
