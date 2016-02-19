@@ -4,34 +4,14 @@
     border-left-color: transparent;
     text-transform: uppercase;
     letter-spacing: $letterspaceSmall;
-  }
-  // Search button is present but hidden
-  &.full {
-    width: 100%;
-    input {
-      width: 100%;
-      border-radius: $radius;
-    }
-    .input_group_append {
-      display: none;
-    }
-  }
-  // Search button isn't present
-  &.without_button {
-    .input_group_input {
-      display: block;
-    }
-    input {
-      width: 100%;
+    &:hover {
+      border-left: 0;
     }
   }
   .input_group_input {
     position: relative;
     input {
       padding-left: 1.75rem;
-      .with_query & {
-        padding-right: 1.75rem;
-      }
     }
     .fa-search,
     .fa-times-circle {
@@ -49,12 +29,32 @@
       display: none;
       right: 7px;
       text-decoration: none;
-      .with_query & {
-        display: inline;
-      }
       &:hover {
         color: $darkerGray;
       }
+    }
+  }
+  &.with_query {
+    input {
+      padding-right: 1.75rem;
+    }
+    .fa-times-circle {
+      display: inline;
+    }
+  }
+  &.without_button {
+    width: 100%;
+    .input_group_input {
+      display: block;
+      width: 100%;
+      border-radius: $radius;
+    }
+    input {
+      width: 100%;
+    }
+    // Hide the search button if it exists
+    .input_group_append {
+      display: none;
     }
   }
 }
