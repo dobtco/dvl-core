@@ -137,7 +137,7 @@ $fontLineHeightH3Mobile: 4 * $rhythm !default; // 32px
 // Used in addition to fontDefault
 // when overriding fontDisplay
 
-@mixin fontDefaultReset {
+@mixin fontDisplayReset {
   letter-spacing: 0;
   font-feature-settings: normal;
 }
