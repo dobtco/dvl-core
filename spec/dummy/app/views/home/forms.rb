@@ -364,15 +364,17 @@ class Views::Home::Forms < Views::Page
     }, sub: true
 
     docs 'Filter form', %{
-      form(class: 'filter_form') {
-        div(class: 'filter_form_search_wrapper') {
+      form(class: 'filter_form input_group') {
+        div(class: 'input_group_input') {
           i(class: 'fa fa-search')
           a(href: '#') {
             i(class: 'fa fa-times-circle filter_form_icon_right')
           }
           input(type: 'text', placeholder: 'Search your projects', 'aria-label' => 'Search your projects')
         }
-        button 'Search', class: 'button'
+        div(class: 'input_group_append') {
+          button 'Search', class: 'button small'
+        }
       }
     }, sub: true
 

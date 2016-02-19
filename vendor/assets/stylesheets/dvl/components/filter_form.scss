@@ -1,81 +1,60 @@
 .filter_form {
-  display: inline-block;
-  position: relative;
-  .button,
-  .styled_select_wrapper {
-    margin-top: $rhythm;
-    display: block;
-  }
-  @media screen and (min-width: $lapWidth) {
-    .styled_select_wrapper,
-    .button {
-      margin-top: 0;
-      display: inline-block;
-      vertical-align: top;
-    }
-    .styled_select_wrapper {
-      margin-left: $rhythm;
-    }
-    .button {
-      margin-left: $rhythm;
+  button {
+    @include button_color($lightestGray,$darkestGray);
+    border-left-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: $letterspaceSmall;
+    &:hover {
+      border-left: 0;
     }
   }
-  // Contains query with close button
+  .input_group_input {
+    position: relative;
+    input {
+      padding-left: 1.75rem;
+    }
+    .fa-search,
+    .fa-times-circle {
+      position: absolute;
+      line-height: 1;
+      @include topCenter($inputHeight, 1rem);
+      color: $darkGray;
+    }
+    .fa-search {
+      width: 1.75rem;
+      text-align: center;
+      left: 0;
+    }
+    .fa-times-circle {
+      display: none;
+      right: 7px;
+      text-decoration: none;
+      &:hover {
+        color: $darkerGray;
+      }
+    }
+  }
   &.with_query {
-    .filter_form_search_wrapper {
-      input {
-        padding-right: 1.75rem;
-      }
-      .fa-times-circle {
-        display: inline;
-      }
+    input {
+      padding-right: 1.75rem;
+    }
+    .fa-times-circle {
+      display: inline;
     }
   }
-
-  // Full-width search input.
-  // Currently achieved by removing the search button.
-  // #todo use grid or display: table to achieve?
-  &.full {
+  &.without_button {
     width: 100%;
-
-    .filter_form_search_wrapper {
+    .input_group_input {
+      display: block;
+      width: 100%;
+      border-radius: $radius;
+    }
+    input {
       width: 100%;
     }
-
-    .button {
+    // Hide the search button if it exists
+    .input_group_append {
       display: none;
-    }
-  }
-}
-
-.filter_form_search_wrapper {
-  display: inline-block;
-  width: 16rem;
-  position: relative;
-  input {
-    width: 100%;
-    padding-left: 1.75rem;
-    display: inline;
-    line-height: 1.5rem;
-  }
-  .fa-search,
-  .fa-times-circle {
-    position: absolute;
-    line-height: 1;
-    @include topCenter($inputHeight, 1rem);
-    color: $darkGray;
-  }
-  .fa-search {
-    width: 1.75rem;
-    text-align: center;
-    left: 0;
-  }
-  .fa-times-circle {
-    display: none;
-    right: 7px;
-    text-decoration: none;
-    &:hover {
-      color: $darkerGray;
     }
   }
 }

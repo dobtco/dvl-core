@@ -83,6 +83,7 @@ class Views::Home::Layout < Views::Page
               <h4>No attachments yet!</h4>
               <span>Uploading videos and images to an amicus brief can help it stand out.</span>
               <a class="button primary">Add an attachment</a>
+              <p class="blank_slate_alternative">or <a href="#">take a photo</a></p>
               </div>
         }.html_safe,
       %{<strong>Do</strong> use blank states to help explain the purpose of a page, and show users how to add data to it.}.html_safe,
