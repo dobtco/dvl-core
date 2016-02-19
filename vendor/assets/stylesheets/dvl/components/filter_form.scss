@@ -8,8 +8,9 @@
   // Search button is present but hidden
   &.full {
     width: 100%;
-    .input_group_input {
+    input {
       width: 100%;
+      border-radius: $radius;
     }
     .input_group_append {
       display: none;
