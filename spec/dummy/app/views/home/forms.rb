@@ -365,7 +365,7 @@ class Views::Home::Forms < Views::Page
 
     docs 'Filter form', %{
       form(class: 'filter_form input_group') {
-        div(class: 'filter_form_search_wrapper input_group_input') {
+        div(class: 'input_group_input') {
           i(class: 'fa fa-search')
           a(href: '#') {
             i(class: 'fa fa-times-circle filter_form_icon_right')
