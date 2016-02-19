@@ -130,6 +130,16 @@ $fontLineHeightH3Mobile: 4 * $rhythm !default; // 32px
 @mixin fontDisplay {
   font-family: $fontFamilyDisplay;
   font-weight: $weightLight;
+  letter-spacing: -0.02em;
+  font-feature-settings: 'tnum';
+}
+
+// Used in addition to fontDefault
+// when overriding fontDisplay
+
+@mixin fontDisplayReset {
+  letter-spacing: 0;
+  font-feature-settings: normal;
 }
 
 @mixin fontH1 {
