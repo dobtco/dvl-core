@@ -5,6 +5,7 @@ class DatetimePicker
     @options = $.extend({}, @defaults, options)
     @$el = $el
     @$wrapper = @$el.parent()
+    @$clearBtn = @$wrapper.find('.datetime_input_clear')
     @initDate = if $el.val()
       new Date $el.val()
     else
@@ -12,7 +13,7 @@ class DatetimePicker
     @initTimeInput()
     @initDateInput()
 
-    @$wrapper.on 'click', '.datetime_input_clear', $.proxy(@clear, @)
+    @$clearBtn.on 'click', $.proxy(@clear, @)
 
   initDateInput: ->
     @$dateInput = @$el.siblings('.input_group_date').find('input')
@@ -36,6 +37,7 @@ class DatetimePicker
   clear: ->
     @$timeInput.timepicker('setTime', '')
     @$dateInput.datepicker('setDate', '')
+    @$clearBtn.hide()
     @$el.trigger('cleared.dtpicker')
 
   getDateString: ->
@@ -58,6 +60,12 @@ class DatetimePicker
     val = @getDateString()
     @$el.trigger('update.dtpicker', val)
     @$el.val(val).trigger('input')
+
+    if !val
+      @$clearBtn.hide()
+      @$el.trigger('cleared.dtpicker')
+    else
+      @$clearBtn.show()
 
 $.fn.extend datetimePicker: (option, args...) ->
   @each ->

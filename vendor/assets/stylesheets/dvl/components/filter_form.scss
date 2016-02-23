@@ -1,84 +1,56 @@
 .filter_form {
-  display: inline-block;
-  position: relative;
-  i {
-    font-size: $iconSize;
-  }
-  .button,
-  .styled_select_wrapper {
-    margin-top: $rhythm;
-    display: block;
-  }
-  @media screen and (min-width: $lapWidth) {
-    .styled_select_wrapper,
-    .button {
-      margin-top: 0;
-      display: inline-block;
-      vertical-align: top;
-    }
-    .styled_select_wrapper {
-      margin-left: $rhythm;
-    }
-    .button {
-      margin-left: $rhythm;
-    }
-  }
-  // Contains query with close button
-  &.with_query {
-    .filter_form_search_wrapper {
-      input {
-        padding-right: $rhythm * 5;
-      }
-      .icon_close_circle {
-        display: inline;
-      }
-    }
-  }
-
-  // Full-width search input.
-  // Currently achieved by removing the search button.
-  // #todo use grid or display: table to achieve?
-  &.full {
-    width: 100%;
-
-    .filter_form_search_wrapper {
-      width: 100%;
-    }
-
-    .button {
-      display: none;
-    }
-  }
-}
-
-.filter_form_search_wrapper {
-  display: inline-block;
-  width: 16rem;
-  position: relative;
-  input {
-    width: 100%;
-    padding-left: $rhythm * 5;
-    display: inline;
-    line-height: 1.5rem;
-  }
-  .icon_search,
-  .icon_close_circle {
-    position: absolute;
-    line-height: 1;
-    @include topCenter($inputHeight, $iconSize);
-    color: $darkGray;
-  }
-  .icon_search {
-    width: 1.75rem;
-    text-align: center;
-    left: $rhythm;
-  }
-  .icon_close_circle {
-    display: none;
-    right: 7px;
-    text-decoration: none;
+  button {
+    @include button_color($lightestGray,$darkestGray);
+    border-left-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: $letterspaceSmall;
     &:hover {
+      border-left: 0;
+    }
+  }
+  .input_group_input {
+    position: relative;
+    input {
+      padding-left: $rhythm * 4;
+    }
+    .icon_search,
+    .icon_close_circle {
+      position: absolute;
+      line-height: 1;
+      @include topCenter($inputHeight, 1rem);
       color: $darkerGray;
+    }
+    .icon_search {
+      width: $rhythm * 3.5;
+      left: $rhythm * 0.5;
+      text-align: center;
+    }
+    .icon_close_circle {
+      display: none;
+      right: 7px;
+      text-decoration: none;
+      &:hover {
+        color: $darkestGray;
+      }
+    }
+  }
+  &.with_query {
+    input {
+      padding-right: 1.75rem;
+    }
+    .icon_close_circle {
+      display: inline;
+    }
+  }
+  &.without_button {
+    width: 100%;
+    .input_group_input {
+      display: block;
+      width: 100%;
+      border-radius: $radius;
+    }
+    input {
+      width: 100%;
     }
   }
 }

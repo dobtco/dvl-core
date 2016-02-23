@@ -67,6 +67,16 @@ class Views::Home::Forms < Views::Page
                 ],
                 include_blank: 'None selected'
 
+        f.input :select,
+                as: :select,
+                label: 'Use <code>data-no-blank-class</code> if the blank option is not a prompt.'.html_safe,
+                collection: [
+                  ['Show only input fields', 1],
+                  ['Show only display fields', 2]
+                ],
+                include_blank: 'Show all fields',
+                input_html: { 'data-no-blank-class' => true }
+
       f.input :select,
               as: :select,
               label: 'This dropdown has a fixed width of 14rem.',
@@ -319,7 +329,7 @@ class Views::Home::Forms < Views::Page
                 'data-container' => 'body',
                 title: 'Copy URL',
                 'aria-label' => 'Copy URL') {
-                i(class: 'fa fa-copy')
+                i(class: 'icon icon_copy')
               }
             }
           }
@@ -347,19 +357,24 @@ class Views::Home::Forms < Views::Page
                 clear_text: 'Clear'
       end
 
-      div '&nbsp;'.html_safe, class: 'js_dt_result'
+      div {
+        text 'Date chosen: '
+        span 'none', class: 'js_dt_result'
+      }
     }, sub: true
 
     docs 'Filter form', %{
-      form(class: 'filter_form') {
-        div(class: 'filter_form_search_wrapper') {
+      form(class: 'filter_form input_group') {
+        div(class: 'input_group_input') {
           i(class: 'icon icon_search')
           a(href: '#') {
             i(class: 'icon icon_close_circle filter_form_icon_right')
           }
           input(type: 'text', placeholder: 'Search your projects', 'aria-label' => 'Search your projects')
         }
-        button 'Search', class: 'button'
+        div(class: 'input_group_append') {
+          button 'Search', class: 'button small'
+        }
       }
     }, sub: true
 

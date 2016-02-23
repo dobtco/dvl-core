@@ -10,7 +10,7 @@ class Dvl::Core::Views::Flashes < Dvl::Core::Views.base_view_class.constantize
         text = v
       end
 
-      script %{DvlFlash("#{k}", "#{h(text)}", "#{escape_javascript(links)}")}.html_safe
+      script %{Dvl.Flash("#{k}", "#{h(text)}", "#{escape_javascript(links)}")}.html_safe
     end
   end
 

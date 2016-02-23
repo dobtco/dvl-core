@@ -3,6 +3,10 @@
   display: inline-block;
 }
 
+a[data-toggle="dropdown"] i {
+  font-size: 0.5rem;
+}
+
 // Nav dropdowns
 
 .dropdown_nav {

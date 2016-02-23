@@ -1,7 +1,6 @@
 class DropdownSelectInput
   defaults:
     width: undefined # options are numeric (pixel units), 'full', or 'auto'
-    blank: '' # text to display when blank option selected
 
   constructor: ($el, options) ->
     @$el = $el
@@ -9,8 +8,11 @@ class DropdownSelectInput
     @$input = $el.find('input')
     @$toggle = $el.find('[data-toggle=dropdown]')
 
-    for i in ['width', 'blank']
+    for i in ['width']
       @options[i] = @$input.data(i) if @$input.data(i)?
+
+    if @$input.data('no-blank-class')?
+      @options.noBlankClass = true
 
     for i in ['small', 'large']
       @$el.addClass(i) if @$input.hasClass(i)
@@ -46,10 +48,10 @@ class DropdownSelectInput
 
     if @$input.val()
       @$toggle.text(newText)
-      @$toggle.removeClass('is_blank')
+      @$toggle.removeClass('is_blank') unless @options.noBlankClass
     else
-      @$toggle.text(@options.blank || newText)
-      @$toggle.addClass('is_blank')
+      @$toggle.text(newText)
+      @$toggle.addClass('is_blank') unless @options.noBlankClass
 
   setWidth: ->
     if @options.width == 'full'

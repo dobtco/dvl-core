@@ -1,14 +1,16 @@
 class StyledSelect
   defaults:
     width: undefined # options are numeric (pixel units), 'full', or 'auto'
-    blank: '' # text to display when blank option selected
 
   constructor: ($el, options) ->
     @$el = $el
     @options = $.extend({}, @defaults, options)
 
-    for i in ['width', 'blank']
+    for i in ['width']
       @options[i] = @$el.data(i) if @$el.data(i)?
+
+    if @$el.data('no-blank-class')?
+      @options.noBlankClass = true
 
     @initWrapper()
     @$el.on 'change', $.proxy(@_change, @)
@@ -38,10 +40,10 @@ class StyledSelect
 
     if $selected.val()
       @$span.text($selected.text())
-      @$span.removeClass('is_blank')
+      @$span.removeClass('is_blank') unless @options.noBlankClass
     else
-      @$span.text(@options.blank || $selected.text())
-      @$span.addClass('is_blank')
+      @$span.text($selected.text())
+      @$span.addClass('is_blank') unless @options.noBlankClass
 
 window.StyledSelect = StyledSelect
 

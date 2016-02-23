@@ -1,6 +1,7 @@
 .page_subheader {
   @include cf;
   margin-bottom: $lineHeight;
+  position: relative;
   h3, h4 {
     display: inline;
     float: left;
@@ -43,6 +44,9 @@
   }
   .button.small {
     margin-top: $rhythm / 2;
+  }
+  .button.mini {
+    margin-top: $rhythm;
   }
   @media screen and (min-width: $lapWidth) {
     float: right;

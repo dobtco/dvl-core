@@ -327,7 +327,16 @@ class Views::Home::Data < Views::Page
       }
       ul(class: 'sidebar_sub_actions') {
         li {
-          a 'Grant permission to edit'
+          div(class: 'dropdown') {
+            a "Grant permission to edit <i class='icon icon_caret_down_sm'></i>".html_safe,
+              'data-toggle' => 'dropdown'
+            div(class: 'dropdown_menu dropdown_right') {
+              ul(class: 'dropdown_body') {
+                li { a 'Once' }
+                li { a 'Anytime' }
+              }
+            }
+          }
         }
         li {
           a 'Export'

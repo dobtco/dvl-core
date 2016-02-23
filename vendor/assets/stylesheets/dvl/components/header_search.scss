@@ -18,7 +18,8 @@
     }
     .filter_form {
       float: right;
-      @include marginTopCenter($fontLineHeightH2, $inputHeight);
+      width: 20rem;
+      @include marginTopCenter(($fontLineHeightH2 + $rhythm) , $inputHeight);
       margin-bottom: 0;
     }
   }

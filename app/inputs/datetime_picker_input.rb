@@ -39,7 +39,11 @@ class DatetimePickerInput < SimpleForm::Inputs::DateTimeInput
 
       ( options[:clear_text] ?
           content_tag(:div, class: 'datetime_input_clear_wrapper') do
-            content_tag(:a, class: 'datetime_input_clear') do
+            content_tag(
+              :a,
+              class: 'datetime_input_clear',
+              style: input_html_options[:value] ? nil : 'display:none'
+            ) do
               options[:clear_text]
             end
           end :

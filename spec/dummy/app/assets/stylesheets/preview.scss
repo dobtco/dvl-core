@@ -1,42 +1,7 @@
 // Styles for the style guide
 
 .hero {
-  color: $white;
-  @include font_smoothing;
-  h1 {
-    color: $white;
-    a {
-      color: $white;
-      &:hover,
-      &:focus,
-      &:active,
-      &:visited {
-        color: $white;
-        text-decoration: none;
-      }
-    }
-  }
-  img {
-    max-width: $lineHeight * 2;
-  }
-  p {
-    @include fontH3;
-    max-width: 30rem;
-  }
-  padding: $lineHeight * 3 0;
-  background-color: #09152f;
-  background-image: radial-gradient(farthest-corner at bottom left, rgba(186,146,112,0.6) 7%, rgba(186,146,112,0) 58%), radial-gradient(farthest-corner at bottom right, rgba(0,133,250,0.3) 10%, rgba(0,133,250,0) 60%);
-  &.hero_compact {
-    padding: $rhythm 0;
-    text-align: center;
-    @media screen and (min-width: $lapWidth) {
-      text-align: left;
-    }
-    h1 {
-      @include fontH2;
-      margin: 0;
-    }
-  }
+  @include hero_color(#09152f,#ba9270,0.6,#0085fa,0.3);
 }
 
 .container {
@@ -62,7 +27,11 @@
     border: 0;
     padding-bottom: 0;
     > h4 {
-      line-height: $inputHeight;
+      @media screen and (min-width: $lapWidth) {
+        position: relative;
+        top: $rhythm;
+        padding-right: 8rem;
+      }
     }
   }
 }
@@ -296,6 +265,23 @@ hr {
   }
   .dropdown:last-child .button {
     margin-right: 0;
+  }
+}
+
+// List in delete confirmations
+
+.delete_list {
+  li {
+    padding: $rhythm 0;
+    @include font_smoothing;
+    max-width: 20rem;
+    border-bottom: 1px solid $gray;
+    &:first-of-type {
+      border-top: 1px solid $gray;
+    }
+  }
+  .subtle_icon {
+    float: right;
   }
 }
 

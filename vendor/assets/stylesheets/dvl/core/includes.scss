@@ -1,5 +1,5 @@
-// COLORS
-
+// WARNING: this file must only include variables and mixins. It cannot
+// have any output, since it might be included multiple times in host apps.
 
 // App-specific colors
 $bodyBackgroundColor: #fff !default;
@@ -104,9 +104,11 @@ $ratio: 1.5;
 
 $fontSizeH1: 3.5rem !default; // 56px
 $fontLineHeightH1: (10 * $rhythm) !default; // 80px
+$fontOpticalMarginH1: -0.3125rem;
 
 $fontSizeH2: 2.25rem !default; // 36px
 $fontLineHeightH2: (7 * $rhythm) !default; // 56px
+$fontOpticalMarginH2: -0.125rem;
 
 $fontSizeH3: 1.4375rem !default; // 23px
 $fontLineHeightH3: (4.5 * $rhythm) !default; // 36px
@@ -130,6 +132,16 @@ $fontLineHeightH3Mobile: 4 * $rhythm !default; // 32px
 @mixin fontDisplay {
   font-family: $fontFamilyDisplay;
   font-weight: $weightLight;
+  letter-spacing: -0.02em;
+  font-feature-settings: 'tnum';
+}
+
+// Used in addition to fontDefault
+// when overriding fontDisplay
+
+@mixin fontDisplayReset {
+  letter-spacing: 0;
+  font-feature-settings: normal;
 }
 
 @mixin fontH1 {
@@ -137,7 +149,7 @@ $fontLineHeightH3Mobile: 4 * $rhythm !default; // 32px
   line-height: $fontLineHeightH1Mobile;
   @include fontDisplay;
   @media screen and (min-width: $lapWidth) {
-    margin-left: -0.3125rem; // Optically align Source Sans with body text
+    margin-left: $fontOpticalMarginH1; // Optically align Source Sans with body text
     font-size: $fontSizeH1;
     line-height: $fontLineHeightH1;
   }
@@ -148,7 +160,7 @@ $fontLineHeightH3Mobile: 4 * $rhythm !default; // 32px
   line-height: $fontLineHeightH2Mobile;
   font-weight: $weightNormal;
   @media screen and (min-width: $lapWidth) {
-    margin-left: -0.125rem; // Optically align Source Sans with body text
+    margin-left: $fontOpticalMarginH2; // Optically align Source Sans with body text
     font-size: $fontSizeH2;
     line-height: $fontLineHeightH2;
     @include fontDisplay;
@@ -206,6 +218,7 @@ $navHeight: $rhythm * 7 !default;
 $navBreakpoint: $deskWidth !default;
 
 // Z-index scale
+$z_popover: 590 !default;
 $z_dropdown: 600 !default;
 $z_tooltip: 600 !default;
 $z_navbar: 700 !default;
@@ -356,27 +369,6 @@ $easeInOutBack:  cubic-bezier(0.680, -0.550, 0.265, 1.550);
     height: auto;
   }
 }
-
-// Utility animations
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 
 // Legacy
 

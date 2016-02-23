@@ -4,6 +4,10 @@ form {
   margin: 0;
 }
 
+::placeholder {
+  color: $darkGray;
+}
+
 // 1. Address `margin` set differently in Firefox 4+, Safari 5, & Chrome
 // 2. Correct `font-size` not being inherited in all browsers
 // 3. Correct `font-family` not being inherited in all browsers
@@ -386,6 +390,7 @@ input[type="radio"] {
 
 .datetime_input_clear_wrapper {
   clear: both;
+  height: $lineHeightSmall; // preserve height when clear button is hidden
 }
 
 .datetime_input_clear {
@@ -524,11 +529,24 @@ form {
   display: table-cell;
   vertical-align: top;
   .button {
+    vertical-align: top;
     height: $inputHeight;
     line-height: $inputHeight - $rhythm;
     .input_group_small & {
       height: $smallInputHeight;
       line-height: $smallInputHeight - $rhythm;
+    }
+    i,
+    &.small i {
+      font-size: $iconSize;
+      line-height: 1rem;
+      position: relative;
+    }
+    i {
+      top: $rhythm / -2;
+    }
+    &.small i {
+      top: $rhythm / -4;
     }
   }
   span {
@@ -539,12 +557,6 @@ form {
     text-align: center;
     line-height: $inputHeight;
     @include ellipses;
-  }
-  i {
-    font-size: $iconSize;
-    line-height: 1;
-    position: relative;
-    top: $rhythm * -0.5; // alignment
   }
 }
 
@@ -687,7 +699,7 @@ form {
     color: $darkerGray;
   }
   &.is_blank {
-    color: $darkerGray;
+    color: $darkGray;
   }
 }
 
@@ -727,4 +739,3 @@ a.styled_select {
   border-radius: $radius;
   max-width: 22rem;
 }
-

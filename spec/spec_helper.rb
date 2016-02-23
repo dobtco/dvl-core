@@ -5,8 +5,7 @@ Rails.backtrace_cleaner.remove_silencers!
 
 require 'rspec/rails'
 require 'capybara/rspec'
-require 'capybara/poltergeist'
-require 'rspec-html-matchers'
+require 'capybara-webkit'
 require 'active_support/all'
 require 'dvl/core'
 require 'simple_form'
@@ -15,8 +14,12 @@ require 'percy/capybara/rspec'
 
 if ENV['RUN_ACCESSIBILITY_TESTS']
   require 'capybara/accessible'
-  Capybara.default_driver = :accessible_poltergeist
-  Capybara.javascript_driver = :accessible_poltergeist
+  Capybara.default_driver = :accessible_webkit
+  Capybara.javascript_driver = :accessible_webkit
 else
-  Capybara.javascript_driver = :poltergeist
+  Capybara.javascript_driver = :webkit
+end
+
+Capybara::Webkit.configure do |config|
+  config.allow_unknown_urls
 end

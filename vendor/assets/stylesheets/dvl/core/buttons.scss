@@ -8,10 +8,10 @@
   cursor: pointer;
   border-radius: $radius;
   line-height: $lineHeight;
-  
+
   // allow .button to be applied to other elements, e.g. labels
-  font-weight: $weightNormal; 
-  
+  font-weight: $weightNormal;
+
   @include ellipses;
   @include button_color($lighterGray, $bodyFontColor);
 
@@ -38,14 +38,6 @@
     border-radius: 0;
     text-transform: uppercase;
     font-size: $fontSmallest;
-  }
-
-  // Subtle buttons don't use the button_color mixin, since they don't
-  // have a hover/focus/active state.
-  &.subtle {
-    background: $lightestGray;
-    border-color: $lightGray;
-    color: $darkerGray;
   }
 
   // Buttons with icons
@@ -90,6 +82,10 @@
 
   &.info {
     @include button_color($primaryColor, $white);
+  }
+
+  &.subtle {
+    @include button_color($lightestGray,$darkerGray);
   }
 
   // Sizes
