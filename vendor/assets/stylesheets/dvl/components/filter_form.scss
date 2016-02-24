@@ -51,6 +51,7 @@
     }
     input {
       width: 100%;
+      @include border_right_radius($radius);
     }
     // Hide the search button if it exists
     .input_group_append {
