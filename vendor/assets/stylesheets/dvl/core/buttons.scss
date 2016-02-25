@@ -108,3 +108,8 @@
     width: 100%;
   }
 }
+
+// Ensure label buttons look *exactly like* other buttons
+label.button {
+  @include font_smoothing('off');
+}

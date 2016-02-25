@@ -403,9 +403,11 @@ class Views::Home::Forms < Views::Page
       div(class: 'dvlcore_button_array') {
         a 'Yo!', href: '#', class: 'button'
         a 'Info', href: '#', class: 'button info'
+        label 'Info', href: '#', class: 'button info'
         a 'Primary', href: '#', class: 'button primary'
         a 'Success', href: '#', class: 'button success'
         a 'Error', href: '#', class: 'button error'
+        a 'Subtle', href: '#', class: 'button subtle'
         a 'Subtle', href: '#', class: 'button subtle'
       }
     }, sub: true
