@@ -498,12 +498,14 @@ form {
   }
 }
 
-.input_group_prepend .button {
+.input_group_prepend .button,
+.input_group_prepend .button:hover {
   @include border_right_radius(0);
   border-right-width: 0;
 }
 
-.input_group_append .button {
+.input_group_append .button,
+.input_group_append .button:hover {
   @include border_left_radius(0);
   border-left-width: 0;
 }
