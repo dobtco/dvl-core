@@ -8,15 +8,15 @@ $selectionBackground: $brandColor !default;
 $selectionColor: #fff !default;
 
 // Grayscale
-$black: #292929;
-$darkestGray: #474747;
-$darkerGray: #666;
-$darkGray: #b8b8b8;
-$gray: #d6d6d6;
-$lightGray:#e6e6e6;
-$lighterGray: #f5f5f5;
-$lightestGray: #fafafa;
-$white: #fff;
+$black: #292929 !default;
+$darkestGray: #474747 !default;
+$darkerGray: #666 !default;
+$darkGray: #b8b8b8 !default;
+$gray: #d6d6d6 !default;
+$lightGray:#e6e6e6 !default;
+$lighterGray: #f5f5f5 !default;
+$lightestGray: #fafafa !default;
+$white: #fff !default;
 
 // UI Colors
 
@@ -71,6 +71,8 @@ $blueLabelColor: #5bb7d9;
 $lightBlueLabelColor: #bfeef3;
 $purpleLabelColor: #6569f0;
 $lightPurpleLabelColor: #bec9f0;
+
+$iconSize: 1.5rem; // Streamline icons are drawn at 24px high
 
 
 // Corner radius
@@ -240,7 +242,7 @@ $z_flash: 900 !default;
 
 @mixin icon($unicode_id) {
   content: $unicode_id;
-  font-family: 'FontAwesome';
+  font-family: 'dvl-icons';
 }
 
 @mixin border_top_radius($radius) {

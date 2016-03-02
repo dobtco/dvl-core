@@ -295,7 +295,7 @@ class Views::Home::Forms < Views::Page
                 'data-container' => 'body',
                 title: 'Copy URL',
                 'aria-label' => 'Copy URL') {
-                i(class: 'fa fa-copy')
+                i(class: 'icon icon_copy')
               }
             }
           }
@@ -329,7 +329,7 @@ class Views::Home::Forms < Views::Page
                 'data-container' => 'body',
                 title: 'Copy URL',
                 'aria-label' => 'Copy URL') {
-                i(class: 'fa fa-copy')
+                i(class: 'icon icon_copy')
               }
             }
           }
@@ -339,7 +339,7 @@ class Views::Home::Forms < Views::Page
           div(class: 'input_group input_group_text') {
             div(class: 'input_group_prepend') {
               a(class: 'button small') {
-                i(class: 'fa fa-eye')
+                i(class: 'icon icon_eye')
               }
             }
             div(class: 'input_group_input') {
@@ -366,9 +366,9 @@ class Views::Home::Forms < Views::Page
     docs 'Filter form', %{
       form(class: 'filter_form input_group') {
         div(class: 'input_group_input') {
-          i(class: 'fa fa-search')
+          i(class: 'icon icon_search')
           a(href: '#') {
-            i(class: 'fa fa-times-circle filter_form_icon_right')
+            i(class: 'icon icon_close_circle filter_form_icon_right')
           }
           input(type: 'text', placeholder: 'Search your projects', 'aria-label' => 'Search your projects')
         }
@@ -432,24 +432,16 @@ class Views::Home::Forms < Views::Page
     docs 'Button with icons', %{
       div(class: 'dvlcore_button_array') {
         a(class: 'button info icon_l') {
-          i(class: 'fa fa-caret-left')
+          i(class: 'icon icon_arrow_left')
           text 'Previous'
         }
         a(class: 'button info icon_r') {
           text 'Next'
-          i(class: 'fa fa-caret-right')
-        }
-        a(class: 'button info icon_r') {
-          text 'Submit'
-          i(class: 'fa fa-long-arrow-right')
+          i(class: 'icon icon_arrow_right')
         }
         a(class: 'button primary icon_l') {
-          i(class: 'fa fa-eye')
+          i(class: 'icon icon_eye')
           text 'View'
-        }
-        a(class: 'button primary icon_r') {
-          text 'Go to site'
-          i(class: 'fa fa-external-link')
         }
       }
     }, sub: true

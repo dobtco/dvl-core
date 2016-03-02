@@ -24,6 +24,7 @@
   h4 {
     margin: $rhythm 0;
     @include fontH3;
+    font-weight: $weightBold;
   }
   // Subheader
   span {

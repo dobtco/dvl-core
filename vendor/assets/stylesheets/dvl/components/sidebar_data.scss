@@ -45,24 +45,19 @@
 
 .sidebar_data_icon {
   float: left;
-  width: 1rem;
+  width: $iconSize;
   text-align: center;
   i {
+    font-size: $iconSize;
     line-height: 1;
     color: $darkerGray;
-  }
-  @media screen and (min-width: $lapWidth) {
-    width: $rhythm * 5;
-    i {
-      font-size: $rhythm * 5;
-    }
   }
 }
 
 .sidebar_data_text {
-  margin-left: $lineHeight;
+  margin-left: $rhythm * 5;
   @media screen and (min-width: $lapWidth) {
-    margin-left: $rhythm * 8;
+    margin-left: $rhythm * 6;
   }
 }
 

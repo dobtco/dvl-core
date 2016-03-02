@@ -10,7 +10,7 @@ class Views::Home::Headers < Views::Page
         h2 {
           text 'Sales Leads'
           a(class: 'button subtle mini') {
-            i(class: 'fa fa-pencil')
+            i(class: 'icon icon_edit')
           }
         }
         div(class: 'page_header_secondary') {
@@ -32,7 +32,7 @@ class Views::Home::Headers < Views::Page
           ul {
             li {
               a {
-                i(class: 'fa fa-pencil')
+                i(class: 'icon icon_edit')
                 text 'Edit'
               }
             }
@@ -71,7 +71,7 @@ class Views::Home::Headers < Views::Page
           ul {
             li(class: 'active') {
               a {
-                i(class: 'fa fa-pencil')
+                i(class: 'icon icon_edit')
                 text 'Edit'
               }
             }
@@ -85,7 +85,7 @@ class Views::Home::Headers < Views::Page
 
           a(class: 'button mini info icon_r', href: '#') {
             text 'View '
-            i(class: 'fa fa-long-arrow-right')
+            i(class: 'icon icon_arrow_right_sm')
           }
         }
       }
@@ -94,7 +94,7 @@ class Views::Home::Headers < Views::Page
     docs 'Back Arrow and Button', %{
       div(class: 'page_header with_back_arrow') {
         a(class: 'page_header_back_arrow', title: 'Dashboard', 'data-toggle' => 'tooltip') {
-          i(class: 'fa fa-arrow-circle-o-left')
+          i(class: 'icon icon_back')
         }
 
         div(class: 'page_header_context') {
@@ -110,7 +110,7 @@ class Views::Home::Headers < Views::Page
     docs 'Back Arrow and Pagination', %{
       div(class: 'page_header with_back_arrow with_pagination') {
         a(class: 'page_header_back_arrow', title: 'All responses', 'data-toggle' => 'tooltip') {
-          i(class: 'fa fa-arrow-circle-o-left')
+          i(class: 'icon icon_back')
         }
 
         div(class: 'page_header_context'){
@@ -126,8 +126,8 @@ class Views::Home::Headers < Views::Page
           span "#94 of 566"
 
           ul {
-            li { span{text '&larr;'.html_safe}}
-            li { a(href: '#'){text '&rarr;'.html_safe}}
+            li { span{ i(class: 'icon icon_arrow_left_sm') }}
+            li { a(href: '#'){ i(class: 'icon icon_arrow_right_sm') }}
           }
         }
       }
@@ -166,7 +166,7 @@ class Views::Home::Headers < Views::Page
 
         div(class: 'page_subheader_actions') {
           a(class: 'page_subheader_link') {
-            i(class: 'fa fa-comments')
+            i(class: 'icon icon_activity')
             text ' 2 comments'
           }
           a 'Request a revision', class: 'button info'
@@ -177,7 +177,7 @@ class Views::Home::Headers < Views::Page
     docs 'Heading 4', %{
       div(class: 'page_subheader') {
         h4 {
-          i(class: 'fa fa-file-text')
+          i(class: 'icon icon_file')
           text ' '
           text 'Attachments'
         }
@@ -199,9 +199,9 @@ class Views::Home::Headers < Views::Page
         h2 'Your projects'
         form(class: 'filter_form input_group') {
           div(class: 'input_group_input') {
-            i(class: 'fa fa-search')
+            i(class: 'icon icon_search')
             a(href: '#') {
-              i(class: 'fa fa-times-circle filter_form_icon_right')
+              i(class: 'icon icon_close_circle filter_form_icon_right')
             }
             input(type: 'text', placeholder: 'Search your projects')
           }
@@ -217,9 +217,9 @@ class Views::Home::Headers < Views::Page
         h2 'Your projects'
         form(class: 'filter_form with_query input_group') {
           div(class: 'input_group_input') {
-            i(class: 'fa fa-search')
+            i(class: 'icon icon_search')
             a(href: '#') {
-              i(class: 'fa fa-times-circle filter_form_icon_right')
+              i(class: 'icon icon_close_circle filter_form_icon_right')
             }
             input(type: 'text', placeholder: 'Search your projects', value: 'Innovation Challenge')
           }

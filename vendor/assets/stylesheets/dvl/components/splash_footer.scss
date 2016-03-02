@@ -80,11 +80,13 @@ $footerBackground: #080F1F !default;
   }
   li:before {
     position: absolute;
-    left: (-3rem / 1.2);
-    color: rgba(#fff,0.5);
-    font-family: 'FontAwesome';
-    font-size: 1.2rem;
-    width: (3rem / 1.2);
+    color: rgba(#fff,0.7);
+    font-family: 'dvl-icons';
+    font-size: $iconSize;
+    width: $iconSize * 2;
+    left: $iconSize * -2;
+    padding-right: $rhythm;
+    top: $rhythm * -0.5;
     text-align: center;
     display: block;
     @include font-smoothing;
@@ -92,24 +94,29 @@ $footerBackground: #080F1F !default;
 }
 
 .public_footer_phone:before {
-  content: "\f095";
+  // .icon_phone
+  @include icon('\f18a');
   top: 0.125rem;
 }
 
 .public_footer_email:before {
-  content: "\f003";
+  // .icon_email
+  @include icon('\f124');
 }
 
 .public_footer_fb:before {
-  content: "\f09a";
+  // .icon_social_facebook
+  @include icon('\f191');
 }
 
 .public_footer_gplus:before {
-  content: "\f0d5";
+  // .icon_social_gplus
+  @include icon('\f1a0');
 }
 
 .public_footer_twitter:before {
-  content: "\f099";
+  // .icon_social_twitter
+  @include icon('\f194');
 }
 
 .newsletter_form {

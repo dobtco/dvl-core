@@ -161,8 +161,8 @@
   &, input { cursor: pointer; }
   &.input-active, &.input-active input { cursor: text; }
   &:after {
-    font-family: 'FontAwesome';
-    content: '\f0d7';
+    // caret_down
+    @include icon('\f162');
     line-height: 1;
     position: absolute;
     @include topCenter($inputHeight, 1rem);
@@ -172,7 +172,8 @@
     color: $darkerGray;
   }
   &.dropdown-active:after {
-    content: '\f0d8';
+    // caret_up
+    content: '\f165';
   }
 }
 

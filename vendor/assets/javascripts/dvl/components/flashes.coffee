@@ -18,7 +18,7 @@ Dvl.Flash = (flashType, message, linksHTML) ->
   $flash = $("""
     <div class="flash flash_#{flashType}">
       <span>#{message}</span>
-      <a class='flash_close' href='#'>&times;</a>
+      <a class='flash_close' href='#'><i class="icon icon_close_sm"></i></a>
     </div>
   """)
 

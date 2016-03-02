@@ -18,7 +18,7 @@ class Views::Home::Regression::Dropdown < Views::Layout
           li {
             a(href: 'mailto:support@dobt.co') {
               span 'Contact support&hellip;'.html_safe, class: 'drop_rt_item'
-              span(class: 'drop_rt_arrow') { i(class: 'fa fa-external-link') }
+              span(class: 'drop_rt_arrow') { i(class: 'icon icon_external_link') }
             }
           }
         }

@@ -26,9 +26,10 @@
       float: left;
     }
     .button {
-      font-size: 1rem;
+      font-size: $iconSize;
       margin-left: $rhythm * 2;
       vertical-align: middle;
+      color: $darkerGray;
     }
   }
   .pagination_compact {
@@ -116,8 +117,8 @@
     + span {
       margin-left: $rhythm * 2;
       &:before {
-        font-family: 'FontAwesome';
-        content: '\f0da';
+        // caret_down_sm
+        @include icon('\f1c2');
         position: absolute;
         color: $darkGray;
         top: 0;
@@ -232,7 +233,9 @@
       color: $darkerGray;
       // Add a space in between icon & text
       > i {
-        margin-right: 0.25rem;
+        margin-right: $rhythm;
+        font-size: $iconSize;
+        line-height: 1;
       }
     }
     &.active a {

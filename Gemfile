@@ -8,4 +8,9 @@ group :production do
   gem 'rails'
   gem 'simple_form'
   gem 'thin'
+  gem 'dvl-icons', git: if ENV['GITHUB_OAUTH_TOKEN']
+                        "https://#{ENV['GITHUB_OAUTH_TOKEN'] }:x-oauth-basic@github.com/dobtco/dvl-icons.git"
+                      else
+                        'git@github.com:dobtco/dvl-icons.git'
+                      end
 end

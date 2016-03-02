@@ -284,7 +284,7 @@ class Views::Home::Data < Views::Page
         ul(class: 'sidebar_data') {
           li {
             div(class: 'sidebar_data_icon') {
-              i(class: 'fa fa-pencil')
+              i(class: 'icon icon_edit')
             }
             div(class: 'sidebar_data_text') {
               div('Assigned to', class: 'sidebar_data_label')
@@ -296,7 +296,7 @@ class Views::Home::Data < Views::Page
           }
           li {
             div(class: 'sidebar_data_icon') {
-              i(class: 'fa fa-folder')
+              i(class: 'icon icon_status')
             }
             div(class: 'sidebar_data_text') {
               div('Status', class: 'sidebar_data_label')
@@ -312,7 +312,7 @@ class Views::Home::Data < Views::Page
           }
           li {
             div(class: 'sidebar_data_icon') {
-              i(class: 'fa fa-clock-o')
+              i(class: 'icon icon_time')
             }
             div(class: 'sidebar_data_text') {
               div('Revision History', class: 'sidebar_data_label')
@@ -328,7 +328,7 @@ class Views::Home::Data < Views::Page
       ul(class: 'sidebar_sub_actions') {
         li {
           div(class: 'dropdown') {
-            a "Grant permission to edit <i class='fa fa-caret-down'></i>".html_safe,
+            a "Grant permission to edit <i class='icon icon_caret_down_sm'></i>".html_safe,
               'data-toggle' => 'dropdown'
             div(class: 'dropdown_menu dropdown_right') {
               ul(class: 'dropdown_body') {

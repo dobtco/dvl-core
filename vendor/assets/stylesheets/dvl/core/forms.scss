@@ -302,8 +302,8 @@ input[type="checkbox"] {
       line-height: 1;
       @include topCenter (($rhythm * 3), 1rem);
       left: 0;
-      font-family: 'FontAwesome';
-      content: "\f00c";
+      // .icon_check_sm
+      @include icon('\f1c5');
       color: $primaryColor;
       width: ($rhythm * 3) - 0.125rem; // Subtracting widths of border
       text-align: center;
@@ -350,9 +350,10 @@ input[type="radio"] {
 .control_minus {
   input[type=checkbox] {
     + .control_styled:after {
-      content: "\f068";
+      // .icon_minus_sm
+      content: "\f1c7";
       line-height: 1;
-      top: 4px; // alignment
+      top: 3px; // alignment
     }
   }
 }
@@ -537,6 +538,18 @@ form {
       height: $smallInputHeight;
       line-height: $smallInputHeight - $rhythm;
     }
+    i,
+    &.small i {
+      font-size: $iconSize;
+      line-height: 1rem;
+      position: relative;
+    }
+    i {
+      top: $rhythm / -2;
+    }
+    &.small i {
+      top: $rhythm / -4;
+    }
   }
   span {
     display: inline-table;
@@ -597,8 +610,11 @@ form {
       padding: 0 $largeInputHeight 0 $largeInputPadding;
       line-height: $largeInputHeight;
       &:after {
-        line-height: 1rem;
-        @include topCenter($largeInputHeight, 1rem);
+        // .icon_caret_down
+        @include icon("\f162");
+        line-height: 1;
+        font-size: $iconSize;
+        @include topCenter($largeInputHeight, $iconSize);
         right: $largeInputPadding;
       }
     }
@@ -674,8 +690,8 @@ form {
   font-weight: $weightNormal;
   @include font_smoothing;
   &:after {
-    font-family: 'FontAwesome';
-    content: '\f0d7';
+    // .icon_caret_down_sm
+    @include icon('\f1c1');
     line-height: 1;
     position: absolute;
     @include topCenter($inputHeight, 1rem);

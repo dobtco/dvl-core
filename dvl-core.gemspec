@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'autoprefixer-rails', '6.3.1'
   s.add_development_dependency 'capybara', '2.6.2'
   s.add_development_dependency 'capybara-accessible', '0.2.1'
+  s.add_development_dependency 'dvl-icons'
   s.add_development_dependency 'capybara-webkit', '1.8.0'
   s.add_development_dependency 'fortitude', '0.9.4'
   s.add_development_dependency 'percy-capybara', '1.1.0'

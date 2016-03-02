@@ -11,7 +11,7 @@ class Views::Home::Navigation < Views::Page
         div(class: 'container') {
           div(class: 'navbar_header') {
             a 'DOBT Style Guide', class: 'navbar_brand', href: '#'
-            a "<i class='fa fa-reorder'></i>".html_safe, class: 'navbar_toggle'
+            a "<i class='icon icon_burger'></i>".html_safe, class: 'navbar_toggle'
           }
 
           div(class: 'navbar_content_wrapper') {
@@ -36,7 +36,7 @@ class Views::Home::Navigation < Views::Page
             a(class: 'navbar_brand', href: '#') {
               img src: 'https://www.dobt.co/img/dobt_logo.png'
             }
-            a "<i class='fa fa-reorder'></i>".html_safe, class: 'navbar_toggle'
+            a "<i class='icon icon_burger'></i>".html_safe, class: 'navbar_toggle'
           }
 
           div(class: 'navbar_content_wrapper') {
@@ -59,7 +59,7 @@ class Views::Home::Navigation < Views::Page
                 li {
                   a {
                     span(class: 'navbar_full_i') {
-                      i(class: 'fa fa-bolt navbar_icon')
+                      i(class: 'icon icon_notifications navbar_icon')
                     }
                     span(class: 'navbar_collapsed_i') {
                       text 'Notifications'
@@ -74,7 +74,7 @@ class Views::Home::Navigation < Views::Page
                     href: '#'
                   ) {
                     span(class: 'navbar_full_i') {
-                      i(class: 'fa fa-refresh navbar_icon')
+                      i(class: 'icon icon_sync navbar_icon')
                     }
                     span(class: 'navbar_collapsed_i') {
                       text 'Loading State'
@@ -85,9 +85,7 @@ class Views::Home::Navigation < Views::Page
                     h3 'Loading State'
                     ul(class: 'dropdown_body') {
                       li(class: 'dropdown_loading') {
-                        span {
-                          i(class: 'fa fa-spin fa-refresh')
-                        }
+                        span(class: 'loader')
                       }
                     }
                   }
@@ -98,7 +96,7 @@ class Views::Home::Navigation < Views::Page
                     href: '#'
                   ) {
                     span(class: 'navbar_full_i') {
-                      i(class: 'fa fa-file-text navbar_icon')
+                      i(class: 'icon icon_file navbar_icon')
                     }
                     span(class: 'navbar_collapsed_i') {
                       text 'Default Dropdown'
@@ -158,7 +156,7 @@ class Views::Home::Navigation < Views::Page
         li {
           a {
             text 'Billing'
-            i(class: 'fa fa-external-link')
+            i(class: 'icon icon_external_link')
           }
         }
       }

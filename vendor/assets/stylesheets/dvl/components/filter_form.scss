@@ -11,26 +11,26 @@
   .input_group_input {
     position: relative;
     input {
-      padding-left: 1.75rem;
+      padding-left: $rhythm * 4;
     }
-    .fa-search,
-    .fa-times-circle {
+    .icon_search,
+    .icon_close_circle {
       position: absolute;
       line-height: 1;
       @include topCenter($inputHeight, 1rem);
-      color: $darkGray;
+      color: $darkerGray;
     }
-    .fa-search {
-      width: 1.75rem;
+    .icon_search {
+      width: $rhythm * 3.5;
+      left: $rhythm * 0.5;
       text-align: center;
-      left: 0;
     }
-    .fa-times-circle {
+    .icon_close_circle {
       display: none;
       right: 7px;
       text-decoration: none;
       &:hover {
-        color: $darkerGray;
+        color: $darkestGray;
       }
     }
   }
@@ -38,7 +38,7 @@
     input {
       padding-right: 1.75rem;
     }
-    .fa-times-circle {
+    .icon_close_circle {
       display: inline;
     }
   }
@@ -52,10 +52,6 @@
     input {
       width: 100%;
       @include border_right_radius($radius);
-    }
-    // Hide the search button if it exists
-    .input_group_append {
-      display: none;
     }
   }
 }

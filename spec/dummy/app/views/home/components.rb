@@ -24,7 +24,7 @@ class Views::Home::Components < Views::Page
               li {
                 a(href: 'mailto:support@dobt.co') {
                   span 'Contact support&hellip;'.html_safe, class: 'drop_rt_item'
-                  span(class: 'drop_rt_arrow') { i(class: 'fa fa-external-link') }
+                  span(class: 'drop_rt_arrow') { i(class: 'icon icon_external_link') }
                 }
               }
             }
@@ -74,21 +74,21 @@ class Views::Home::Components < Views::Page
             ul(class: 'dropdown_body') {
               li {
                 a(href: '#') {
-                  span(class: 'drop_master') { i(class: 'fa fa-envelope') }
+                  span(class: 'drop_master') { i(class: 'icon icon_email') }
                   span 'Send a message', class: 'drop_detail'
                 }
               }
 
               li {
                 a(href: '#') {
-                  span(class: 'drop_master') { i(class: 'fa fa-pencil') }
+                  span(class: 'drop_master') { i(class: 'icon icon_edit') }
                   span 'Edit', class: 'drop_detail'
                 }
               }
 
               li {
                 a(href: '#') {
-                  span(class: 'drop_master') { i(class: 'fa fa-minus-circle') }
+                  span(class: 'drop_master') { i(class: 'icon icon_delete_circle') }
                   span 'Delete', class: 'drop_detail'
                 }
               }
@@ -201,7 +201,7 @@ class Views::Home::Components < Views::Page
                 a(
                   'data-dropdown-filter-action' => true
                 ) {
-                  span(class: 'drop_master') { i(class: 'fa fa-minus-circle') }
+                  span(class: 'drop_master') { i(class: 'icon icon_delete_circle') }
                   span 'Clear selection', class: 'drop_detail'
                 }
               }
@@ -265,9 +265,7 @@ class Views::Home::Components < Views::Page
             h3 'Loading State'
             ul(class: 'dropdown_body') {
               li(class: 'dropdown_loading') {
-                span {
-                  i(class: 'fa fa-spin fa-refresh')
-                }
+                span(class: 'loader')
               }
             }
           }
@@ -472,14 +470,14 @@ class Views::Home::Components < Views::Page
     docs 'Left Aligned', %{
       div(class: 'pagination') {
         ul {
-          li { a(href: '#'){text "&larr;".html_safe}}
+          li { a(href: '#'){ i(class: 'icon icon_arrow_left') }}
           li { a(href: '#'){text '1'}}
           li(class: 'active') { span '2' }
           li { a(href: '#'){text '3'}}
           li { span '&hellip;'.html_safe }
           li { a(href: '#'){text '19'}}
           li { a(href: '#'){text '20'}}
-          li { a(href: '#'){text "&rarr;".html_safe}}
+          li { a(href: '#'){ i(class: 'icon icon_arrow_right') }}
         }
       }
     }, sub: true
@@ -487,14 +485,14 @@ class Views::Home::Components < Views::Page
     docs 'Center Aligned', %{
       div(class: 'pagination pagination_centered') {
         ul {
-          li { a(href: '#'){text "&larr;".html_safe}}
+          li { a(href: '#'){ i(class: 'icon icon_arrow_left') }}
           li { a(href: '#'){text '1'}}
           li(class: 'active') { span '2' }
           li { a(href: '#'){text '3'}}
           li { span '&hellip;'.html_safe }
           li { a(href: '#'){text '19'}}
           li { a(href: '#'){text '20'}}
-          li { a(href: '#'){text "&rarr;".html_safe}}
+          li { a(href: '#'){ i(class: 'icon icon_arrow_right') }}
         }
       }
     }, sub: true
@@ -502,10 +500,10 @@ class Views::Home::Components < Views::Page
     docs 'With fewer links', %{
       div(class: 'pagination pagination_centered') {
         ul {
-          li { span '&larr;'.html_safe }
+          li { span { i(class: 'icon icon_arrow_left') }}
           li(class: 'active') { span '1' }
           li { a('2', href: '#') }
-          li { a '&rarr;'.html_safe }
+          li { a { i(class: 'icon icon_arrow_right') }}
         }
       }
     }
@@ -515,8 +513,8 @@ class Views::Home::Components < Views::Page
         span "#1 of 123".html_safe
 
         ul {
-          li { span{text '&larr;'.html_safe}}
-          li { a(href: '#'){text '&rarr;'.html_safe}}
+          li { span{ i(class: 'icon icon_arrow_left_sm') }}
+          li { a(href: '#'){ i(class: 'icon icon_arrow_right_sm') }}
         }
       }
     }, sub: true
@@ -540,19 +538,19 @@ class Views::Home::Components < Views::Page
         li(class: 'js_delete_1') {
           text 'Project 1'
           a(class: 'subtle_icon', 'data-confirm' => true, 'data-confirm-with' => 'popover', href: '/delete', 'data-method' => 'delete', 'data-remote' => true) {
-            i(class: 'fa fa-minus-circle')
+            i(class: 'icon icon_delete_circle')
           }
         }
         li(class: 'js_delete_2') {
           text 'Project 2'
           a(class: 'subtle_icon', 'data-confirm' => 'This is an important record. <strong>It will be destroyed forever.</strong>', 'data-confirm-with' => 'popover', href: '/delete', 'data-method' => 'delete', 'data-remote' => true) {
-            i(class: 'fa fa-minus-circle')
+            i(class: 'icon icon_delete_circle')
           }
         }
         li(class: 'js_delete_3') {
           text 'Project 3'
           a(class: 'subtle_icon', 'data-confirm' => true, 'data-confirm-with' => 'popover', 'data-confirmation-options' => { 't_delete' => 'Archive' }.to_json, href: '/delete', 'data-method' => 'delete', 'data-remote' => true) {
-            i(class: 'fa fa-minus-circle')
+            i(class: 'icon icon_delete_circle')
           }
         }
       }
@@ -562,7 +560,7 @@ class Views::Home::Components < Views::Page
       li(class: 'js_delete_5') {
         a(class: 'button_uppercase',
           href: "javascript: Dvl.Flash('info', 'You deleted the response.', '<a>Undo</a>')") {
-            i(class: 'fa fa-minus-circle')
+            i(class: 'icon icon_delete_circle')
             text 'Delete this response'
           }
       }

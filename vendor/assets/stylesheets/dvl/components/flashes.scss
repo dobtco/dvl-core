@@ -39,14 +39,14 @@
     padding-bottom: $rhythm * 2;
     position: relative;
     &:before {
-      font-family: 'FontAwesome';
-      content: '\f05a';
+      // .icon_info
+      @include icon('\f1bc');
       color: $white;
-      opacity: 0.7;
+      opacity: 0.9;
       position: absolute;
       left: $rhythm * 3;
       top: $rhythm * 2;
-      font-size: 1.5rem;
+      font-size: $iconSize;
     }
     a {
       color: $white;
@@ -76,15 +76,13 @@
     transform: translateY(-0.5rem);
   }
   .flash_close {
-    font-size: 2rem;
     position: absolute;
     line-height: 1;
     text-decoration: none;
     right: $rhythm * 2;
-    top: $rhythm;
+    top: $rhythm * 2;
     color: $white;
-    opacity: 0.7;
-
+    opacity: 0.9;
     &:hover,
     &:focus {
       opacity: 1;
@@ -127,13 +125,15 @@
 .flash_error {
   background-color: $errorColor;
   span:before {
-    content: '\f06a';
+    // .icon_warning_triangle
+    content: '\f19e';
   }
 }
 
 .flash_success {
   background-color: $successColor;
   span:before {
-    content: '\f058';
+    // .icon_check_circle
+    content: '\f168';
   }
 }

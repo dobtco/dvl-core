@@ -13,7 +13,7 @@
   font-weight: $weightNormal;
 
   @include ellipses;
-  @include button_color($lightGray, $bodyFontColor);
+  @include button_color($lighterGray, $bodyFontColor);
 
   // Overriding more default <a> styles
   &:hover,
@@ -45,23 +45,26 @@
   &.icon_l,
   &.icon_r {
     i {
-      font-size: $fontSmall;
+      font-size: $iconSize;
     }
   }
 
   &.icon_l i {
-    margin-right: $rhythm;
+    margin-right: $rhythm * 2;
   }
 
   &.icon_r i {
-    margin-left: $rhythm;
+    margin-left: $rhythm * 2;
   }
 
   &.toggle:after {
-    content: "\f0d7";
-    font-family: 'FontAwesome';
-    margin-left: $rhythm;
+    // .icon_caret_down_sm
+    @include icon("\f1c1");
+    margin-left: $rhythm * 2;
     opacity: 0.7;
+    vertical-align: middle;
+    position: relative;
+    top: -1px; // Optical alignment
   }
 
   // Colors
@@ -86,6 +89,14 @@
   }
 
   // Sizes
+
+  &.small,
+  &.mini {
+    i {
+      font-size: 1rem;
+    }
+  }
+
   &.small {
     padding: $rhythm / 2 $rhythm * 2;
     font-size: $fontSmall;

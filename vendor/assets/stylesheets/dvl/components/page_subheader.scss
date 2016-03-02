@@ -22,11 +22,11 @@
     margin-right: $rhythm;
     line-height: $inputHeight;
     i {
-      font-size: 1.5rem;
+      font-size: $iconSize;
       color: $darkestGray;
       vertical-align: middle;
       margin-right: $rhythm;
-      line-height: 1.3333rem;
+      line-height: 1;
     }
   }
 }
@@ -57,4 +57,10 @@
 .page_subheader_link {
   font-size: $fontSmaller;
   line-height: $inputHeight;
+  i {
+    font-size: $iconSize;
+    @include font_smoothing;
+    margin-right: $rhythm / 2;
+    text-decoration: none;
+  }
 }

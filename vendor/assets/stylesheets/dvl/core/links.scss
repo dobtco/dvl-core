@@ -59,8 +59,9 @@ a.uppercase,
     position: absolute;
     line-height: 1;
     @include topCenter($lineHeight, 1rem);
-    right: 0;
-    @include icon('\f0d7');
+    right: $rhythm * -1;
+    // icon_caret_down_sm
+    @include icon('\f1c1');
   }
 }
 
