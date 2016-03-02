@@ -99,7 +99,8 @@ textarea,
   color: $darkestGray;
 }
 
-label {
+label,
+legend {
   color: $darkerGray;
   @include font_smoothing;
 }
@@ -408,19 +409,23 @@ form {
   margin-bottom: $rhythm * 2;
 }
 
-.form_item_horiz_label {
+.form_item_horiz_label,
+.form_item_horiz legend {
   margin: $rhythm 0;
   @media screen and (min-width: $lapWidth) {
     margin-bottom: 0;
   }
-  .radio_buttons &,
-  .boolean &,
-  .check_boxes & {
-    margin-top: $rhythm / 2; // Vertically centering with .control_styled
-  }
 }
 
-.form_item_vert_label {
+.form_item_horiz legend,
+.radio_buttons .form_item_horiz_label,
+.boolean .form_item_horiz_label,
+.check_boxes .form_item_horiz_label {
+  margin-top: $rhythm / 2; // Vertically centering with .control_styled
+}
+
+.form_item_vert_label,
+.form_item legend {
   margin-bottom: $rhythm;
 }
 
@@ -431,24 +436,30 @@ form {
 }
 
 @media only screen and (min-width: $lapWidth) {
+  .form_item_horiz legend,
   .form_item_horiz_label,
   .form_item_horiz_input {
     display: inline-block;
     vertical-align: top;
   }
 
+  .form_item_horiz legend {
+    float: left;
+  }
+
+  .form_item_horiz legend,
   .form_item_horiz_label {
     text-align: right;
-    width: 25%;
-    padding-right: $rhythm * 4;
+    width: 30%;
+    padding-right: $lineHeight;
   }
 
   .form_item_horiz_input {
-    width: 75%;
+    width: 70%;
   }
 
   .form_actions.horizontal {
-    padding-left: 24.99999%;
+    padding-left: 30%;
   }
 }
 

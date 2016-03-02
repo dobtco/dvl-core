@@ -17,29 +17,39 @@ class Views::Home::Forms < Views::Page
                 label: 'Textarea',
                 input_html: { rows: 5, value:  sample_paragraph }
 
-        f.input :radio,
-                as: :radio_buttons,
-                collection: ['Enthusiastic', 'Indifferent', 'Antagonistic'],
-                label: 'What are your thoughts on the Bilderberg Group?',
-                checked: 'Indifferent'
-
-        f.input :checkbox,
-                as: :check_boxes,
-                collection: ['Animal', 'Augmented organism', 'Gaseous mass', 'Human', 'Robot', 'An unclassifiable entity, perhaps capable of emotion and rational thought, perhaps in possession of a soul, perhaps with the critical faculties necessary to appreciate a fine wine. Why bother to put a label on it?'],
-                label: 'Which of the group(s) below most accurately represent you?',
-                checked: 'Human'
-
-        f.input :boolean,
-                as: :boolean,
-                label: 'Do you agree to the Terms of Service?',
-                inline_label: 'Yes.',
-                hint: "Checkbox fields can contain a single answer option where appropriate.".html_safe
+        field_set_tag "Do you agree to the Terms of Service?", class: 'form_item form_item_vert' do
+          div(class: 'form_item_vert_input') {
+            f.input_field :boolean,
+                    as: :boolean,
+                    inline_label: 'Yes.'
+            p 'Checkbox fields can contain a single answer option where appropriate.',
+              class: 'form_hint'
+          }
+        end
 
         label(class: 'control control_minus') {
           input type: 'checkbox', checked: true
           text 'Select all items'
         }
         div 'This is a partially selected checkbox. In this example, only some items are selected.', class: 'form_hint'
+
+        field_set_tag "What's your preferred pronoun?", class: 'form_item form_item_vert' do
+          div(class: 'form_item_vert_input') {
+            f.input_field :pronoun,
+                    as: :radio_buttons,
+                    collection: ['He / Him', 'She / Her', 'They / Them'],
+                    checked: 'She / Her'
+          }
+        end
+
+        field_set_tag "What are your opinions on the Bilderberg Group? Select all that apply.", class: 'form_item form_item_vert' do
+          div(class: 'form_item_vert_input') {
+            f.input_field :bilderberg,
+                    as: :check_boxes,
+                    collection: ['Who?', 'I am fighting their insidious power every day.', 'I willingly submit to their rule.'],
+                    checked: 'Who?'
+          }
+        end
 
       end
       simple_form_for :selects do |f|
@@ -131,19 +141,25 @@ class Views::Home::Forms < Views::Page
                 input_html: { rows: 5, value:  sample_paragraph },
                 disabled: true
 
-        f.input :disabled_radio,
-                as: :radio_buttons,
-                label: 'Is the sky blue?',
-                collection: ['Yes', 'No'],
-                checked: 'Yes',
-                disabled: true
+        field_set_tag "What's your preferred pronoun?", class: 'form_item form_item_vert' do
+          div(class: 'form_item_vert_input') {
+            f.input_field :pronoun,
+                    as: :radio_buttons,
+                    collection: ['He / Him', 'She / Her', 'They / Them'],
+                    checked: 'She / Her',
+                    disabled: true
+          }
+        end
 
-        f.input :disabled_checkbox,
-                as: :check_boxes,
-                label: 'Which countries border the United States?',
-                collection: ['Canada', 'Mexico', 'Australia'],
-                checked: ['Canada', 'Mexico'],
-                disabled: true
+        field_set_tag "What are your opinions on the Bilderberg Group? Select all that apply.", class: 'form_item form_item_vert' do
+          div(class: 'form_item_vert_input') {
+            f.input_field :disabled_checkboxes,
+                    as: :check_boxes,
+                    collection: ['Who?', 'I am fighting their insidious power every day.', 'I willingly submit to their rule.'],
+                    checked: 'Who?',
+                    disabled: true
+          }
+        end
 
         f.input :select,
                 as: :select,
@@ -261,16 +277,28 @@ class Views::Home::Forms < Views::Page
                 label: 'Email Address',
                 input_html: { value: 'admin@dobt.co' }
 
-        f.input :radio,
-                as: :radio_buttons,
-                collection: ['Enthusiastic', 'Indifferent', 'Antagonistic'],
-                label: 'What are your thoughts on the Bilderberg Group?',
-                checked: 'Indifferent'
-
         f.input :text,
                 as: :text,
                 label: 'Description',
                 input_html: { rows: 5, value:  sample_paragraph }
+
+        field_set_tag "What's your preferred pronoun?", class: 'form_item form_item_horiz' do
+          div(class: 'form_item_horiz_input') {
+            f.input_field :pronoun,
+                    as: :radio_buttons,
+                    collection: ['He / Him', 'She / Her', 'They / Them'],
+                    checked: 'She / Her'
+          }
+        end
+
+        field_set_tag "What are your opinions on the Bilderberg Group? Select all that apply.", class: 'form_item form_item_horiz' do
+          div(class: 'form_item_horiz_input') {
+            f.input_field :bilderberg,
+                    as: :check_boxes,
+                    collection: ['Who?', 'I am fighting their insidious power every day.', 'I willingly submit to their rule.'],
+                    checked: 'Who?'
+          }
+        end
 
         div(class: 'form_actions horizontal') {
           f.button :button, 'Submit', class: 'primary'
