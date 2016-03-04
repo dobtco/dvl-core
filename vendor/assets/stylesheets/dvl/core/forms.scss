@@ -714,14 +714,13 @@ a.styled_select {
 
 .microcopy {
   background: $lighterGray;
-  span {
-    font-size: $fontSmaller;
-    display: block;
-    + .button {
-      margin-top: $rhythm;
-    }
-  }
   padding: $rhythm * 2;
   border-radius: $radius;
   max-width: 22rem;
+  font-size: $fontSmall;
+  @include font_smoothing;
+  margin-bottom: $lineHeight;
+  p {
+    margin-bottom: $rhythm * 2;
+  }
 }

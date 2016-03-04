@@ -67,7 +67,7 @@ class Views::Home::Index < Views::Home
       %{<h2>What happens if a respondent makes changes?</h2>}.html_safe,
       %{<strong>Don&#39;t</strong> use multiple lines of larger text. Either use the default font size, or truncate a single line of larger text with ellipses.}.html_safe
 
-    guide %{<h2>Headline</h2> <p>Main Content</p> <p class="microcopy">Explanation</p>}.html_safe,
+    guide %{<h2>Headline</h2> <p>Main Content</p> <div class="microcopy">Explanation</div>}.html_safe,
       %{<strong>Do</strong> use header styles, smaller text sizes, and <a href="/components#alerts">alerts</a> to establish hierarchy and call out bits of text.}.html_safe,
       %{<p><strong>We help governments deliver great digital services to the people who depend on them.</strong></p> <p class="microcopy" style="background-color: red;">Explanation goes here.</p>}.html_safe,
       %{<strong>Don&#39;t</strong> use boldface text for long sentences, or color the text to emphasize an action. This negatively impacts legibility.}.html_safe
