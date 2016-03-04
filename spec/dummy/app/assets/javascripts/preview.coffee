@@ -11,7 +11,7 @@ $(document).on 'click', '.docs_toggle_button', ->
 $(document).on 'update.dtpicker', '#datetime_picker_pick_a_date_and_time', (_, ts) ->
   $('.js_dt_result').html(ts || 'none')
 
-$(document).on 'ajax:beforeSend', '.delete_list .subtle_icon', ->
+$(document).on 'ajax:beforeSend', '.delete_list .icon_secondary', ->
   $(@).closest('li').remove()
 
 $(document).on 'ajax:beforeSend', '.js_delete_4 a', ->

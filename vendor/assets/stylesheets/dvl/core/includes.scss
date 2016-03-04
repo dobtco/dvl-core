@@ -314,6 +314,12 @@ $easeInOutBack:  cubic-bezier(0.680, -0.550, 0.265, 1.550);
   margin-top: ($parentHeight - $height) / 2;
 }
 
+@mixin topCenterAbsolute($height) {
+  position: absolute;
+  top: 50%;
+  margin-top: $height / -2;
+}
+
 @mixin monospace() {
   font-family: $fontFamilyMonospace;
 }

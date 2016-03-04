@@ -21,6 +21,14 @@ a {
   }
 }
 
+a.icon_secondary {
+  text-decoration: none;
+  color: $darkGray;
+  &:hover {
+    color: $darkerGray;
+  }
+}
+
 a.uppercase,
 .button_uppercase {
   text-transform: uppercase;

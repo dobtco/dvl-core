@@ -95,16 +95,6 @@ a.muted {
   }
 }
 
-// Replace this with an icon-specific class
-// or remove it altogether, recommend the use of smaller icons instead
-a.subtle_icon {
-  color: $darkerGray;
-  text-decoration: none;
-  &:hover {
-    color: darken($darkerGray,5%);
-  }
-}
-
 // Convert this to a fieldset
 
 .form_item_two_inputs {
