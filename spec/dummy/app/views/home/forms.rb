@@ -391,9 +391,9 @@ class Views::Home::Forms < Views::Page
 
       end
 
-      p(class: 'microcopy') {
-        span 'To accept payments, you must first sign in to your payment provider. '
-        a 'Connect to Stripe', class: 'button primary'
+      div(class: 'microcopy') {
+        p 'To accept payments, you must first sign in to your payment provider.'
+        a 'Connect to Stripe', class: 'button small info block'
       }
     }, hint: 'Use this to display additional actions that should be hidden until a setting is enabled.'
 
