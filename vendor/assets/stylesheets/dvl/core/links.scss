@@ -68,7 +68,7 @@ a.uppercase,
     line-height: 1;
     @include topCenter($lineHeight, 1rem);
     right: 0;
-    @include icon('\f0d7');
+    // @include icon('\f0d7');
   }
 }
 

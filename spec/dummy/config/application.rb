@@ -21,6 +21,7 @@ Bundler.require(*Rails.groups)
 require 'simple_form'
 require 'autoprefixer-rails'
 require 'sass'
+require 'dvl/icons'
 
 module Dummy
   class Application < Rails::Application
@@ -40,7 +41,8 @@ module Dummy
       'Headers' => '/headers',
       'Navigation' => '/navigation',
       'Components' => '/components',
-      'Splash Pages' => '/splash'
+      'Splash Pages' => '/splash',
+      'Icons' => '/icons'
     }
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
@@ -56,4 +58,3 @@ module Dummy
     config.autoload_paths += %W(#{config.root}/lib)
   end
 end
-

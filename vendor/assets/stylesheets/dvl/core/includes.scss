@@ -238,11 +238,6 @@ $z_flash: 900 !default;
   }
 }
 
-@mixin icon($unicode_id) {
-  content: $unicode_id;
-  font-family: 'FontAwesome';
-}
-
 @mixin border_top_radius($radius) {
   border-top-left-radius: $radius;
   border-top-right-radius: $radius;

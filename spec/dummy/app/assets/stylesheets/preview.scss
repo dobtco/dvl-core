@@ -258,3 +258,16 @@ hr {
 .docs_fontsmallest {
   font-size: $fontSmallest;
 }
+
+// Icons
+
+.docs_icons {
+  li {
+    margin-bottom: $rhythm * 2;
+
+    span {
+      width: 2.5rem;
+      display: inline-block;
+    }
+  }
+}

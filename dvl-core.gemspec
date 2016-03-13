@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'capybara-accessible', '0.2.1'
   s.add_development_dependency 'capybara-webkit', '1.8.0'
   s.add_development_dependency 'fortitude', '0.9.4'
+  s.add_development_dependency 'guard-livereload', '2.5.2'
   s.add_development_dependency 'percy-capybara', '1.1.0'
   s.add_development_dependency 'rails', '4.2.5.1'
   s.add_development_dependency 'rspec-rails', '3.4.2'

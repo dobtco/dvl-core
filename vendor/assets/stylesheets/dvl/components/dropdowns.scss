@@ -341,7 +341,7 @@
   border-bottom: ($rhythm / 2) solid $gray;
   @include border_top_radius($radius - 1);
   &:after {
-    @include icon('\f002');
+    // @include icon('\f002');
     position: absolute;
     line-height: 1;
     @include topCenter(($rhythm * 5), 1rem);
@@ -377,16 +377,16 @@
       color: $darkGray;
     }
     &.is_selected:after {
-      @include icon('\f00c');
+      // @include icon('\f00c');
     }
     &.is_partial:after {
-      @include icon('\f068'); // Partially selected options
+      // @include icon('\f068'); // Partially selected options
     }
     &.is_disabled {
       opacity: 0.6;
       &:after {
         color: $gray;
-        @include icon('\f00c');
+        // @include icon('\f00c');
       }
     }
   }
