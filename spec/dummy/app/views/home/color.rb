@@ -31,7 +31,12 @@ class Views::Home::Color < Views::Page
             <p><strong>Don&#39;t</strong> use lighter grayscale variables (like <code>$gray</code> or <code>$lightGray</code>) against white backgrounds. These will fail accessibility tests.</p>
           </div>
         </div>
-      }.html_safe
+      }.html_safe,
+      'hint': "All DOBT applications should pass WCAG 2.0 Level AA contrast guidelines.
+      If you&#39;re unsure whether a block of text has sufficient contrast
+      against its background, you can use
+      <a href='http://leaverou.github.io/contrast-ratio/'>Lea Verou's contrast ratio checker</a>
+      to confirm.".html_safe
 
     h3 'UI Colors'
 

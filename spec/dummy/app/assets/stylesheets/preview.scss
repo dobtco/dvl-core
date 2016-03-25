@@ -130,6 +130,10 @@ hr {
   margin-bottom: $lineHeight * 3;
   position: relative;
   max-width: 46rem;
+  + .form_hint {
+    margin-top: $lineHeight * -2;
+    margin-bottom: $lineHeight * 2;
+  }
 }
 
 .docs_guide_new header {
