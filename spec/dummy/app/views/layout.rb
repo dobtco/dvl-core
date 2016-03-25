@@ -92,20 +92,13 @@ class Views::Layout < Views::Base
 
   end
 
-  def guide(code_do, guide_do, code_dont, guide_dont)
-    h5 'Rule of Thumb'
-
-    div(class: 'docs_guide') {
-      div(class: 'docs_guide_col') {
-        div code_do, class: 'docs_guide_example'
-        p guide_do, class: 'docs_guide_explain'
+  def guide(dodont1, dodont2, content)
+    div(class: 'docs_guide_new') {
+      header {
+        div(class: dodont1)
+        div(class: dodont2)
       }
-      div(class: 'docs_guide_col') {
-        div code_dont, class: 'docs_guide_example'
-        p guide_dont, class: 'docs_guide_explain'
-      }
+      rawtext content
     }
-
-    hr
   end
 end

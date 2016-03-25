@@ -78,20 +78,25 @@ class Views::Home::Layout < Views::Page
       }
     }, hint: 'When there is no data to display in the current view, a well-designed blank state can prevent users from losing their momentum.'
 
-    guide %{ <div class="blank_slate">
-              <i class="fa fa-file-o"></i>
-              <h4>No attachments yet!</h4>
-              <span>Uploading videos and images to an amicus brief can help it stand out.</span>
-              <a class="button primary">Add an attachment</a>
-              <p class="blank_slate_alternative">or <a href="#">take a photo</a></p>
-              </div>
-        }.html_safe,
-      %{<strong>Do</strong> use blank states to help explain the purpose of a page, and show users how to add data to it.}.html_safe,
-      %{<div class="blank_slate">
-          <i class="fa fa-file-o"></i>
-          <h4>No attachments</h4>
-        </div>}.html_safe,
-      %{<strong>Don&#39;t</strong> turn a blank state into a dead end. Provide users with a way to move forward.}.html_safe
+    guide 'dont', 'do',
+      %{
+        <div class="docs_guide_row docs_guide_row_image">
+          <div>
+            <img src="/images/blankslate_dont.png">
+          </div>
+          <div>
+            <img src="/images/blankslate_do.png">
+          </div>
+        </div>
+        <div class="docs_guide_row">
+          <div>
+            <p><strong>Don&#39;t</strong> turn a blank state into a dead end. Provide users with a way to move forward.</p>
+          </div>
+          <div>
+            <p><strong>Do</strong> use blank states to help explain the purpose of a page, and show users how to add data to it.</p>
+          </div>
+        </div>
+      }.html_safe
 
     docs 'Footer', %{
       widget Dvl::Core::Views::Footer.new(application_name: 'DOBT Style Guide')

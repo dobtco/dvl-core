@@ -20,21 +20,32 @@ class Views::Home::Index < Views::Home
 
     hr
 
-    guide '',
-      %{<strong>Do</strong> use multiples of <code>$rhythm</code> and <code>$lineHeight</code> to specify the dimensions and padding of an item.}.html_safe,
-      '',
-      %{<strong>Don&#39;t</strong> use <code>px</code>, <code>em</code> or <code>rem</code> units to specify spacing or sizes.}.html_safe
+    guide 'do', 'dont',
+      %{
+        <div class="docs_guide_row">
+          <div>
+            <p><strong>Do</strong> use multiples of <code>$rhythm</code> and <code>$lineHeight</code> to specify the dimensions and padding of an item.</p>
+          </div>
+          <div>
+            <p><strong>Don&#39;t</strong> use <code>px</code>, <code>em</code> or <code>rem</code> units to specify spacing or sizes.</p>
+          </div>
+        </div>
+        <div class="docs_guide_row">
+          <div>
+            <p><strong>Do</strong> use multiples of <code>$rhythm</code> or <code>$lineHeight</code> when styling.</p>
+          </div>
+          <div>
+            <p>Unless you're centering elements within a container, <strong>avoid</strong> dividing <code>$rhythm</code> or <code>$lineHeight</code> into fractions, or multiplying them by non-whole numbers.</p>
+          </div>
+        </div>
+        }.html_safe
 
-    guide '',
-      %{<strong>Do</strong> multiply the vertical rhythm by whole numbers when styling the dimensions of new UI elements.}.html_safe,
-      '',
-      %{<strong>Don&#39;t</strong> divide <code>$rhythm</code> or <code>$lineHeight</code> into fractions, unless you are vertically centering text within its container.}.html_safe
 
     docs 'Headings', %{
       div(class: 'dvlcore_headings') {
         h1 'Heading 1 56/80px'
         h2 'Heading 2 36/56px'
-        h3 'Heading 3 23/32px'
+        h3 'Heading 3 23/36px'
         h4 'Heading 4 16/24px'
         h5 'Heading 5 13/24px'
       }
@@ -62,15 +73,45 @@ class Views::Home::Index < Views::Home
 
     hr
 
-    guide %{<p class="docs_fontsmaller">To enable electronic signatures for your project, click &ldquo;Edit project&rdquo; and select &ldquo;Responses&rdquo; from the Project Checklist. Then, check the &ldquo;Require signatures for responses&rdquo; box under &ldquo;Data collection.&rdquo;</p>}.html_safe,
-      %{<strong>Do</strong> use multiple lines of smaller text to provide UI microcopy or tertiary information.}.html_safe,
-      %{<h2>What happens if a respondent makes changes?</h2>}.html_safe,
-      %{<strong>Don&#39;t</strong> use multiple lines of larger text. Either use the default font size, or truncate a single line of larger text with ellipses.}.html_safe
+    guide 'dont', 'do',
+      %{
+        <div class="docs_guide_row docs_guide_row_image">
+          <div>
+            <img src="/images/largetype_dont.png">
+          </div>
+          <div>
+            <img src="/images/largetype_do.png">
+          </div>
+        </div>
+        <div class="docs_guide_row">
+          <div>
+            <p><strong>Don&#39;t</strong> use multiple lines of larger text. Either use the default font size, or truncate a single line of larger text with ellipses.</p>
+          </div>
+          <div>
+            <p><strong>Do</strong> use multiple lines of smaller text to provide UI microcopy or tertiary information.</p>
+          </div>
+        </div>}
+      .html_safe
 
-    guide %{<h2>Headline</h2> <p>Main Content</p> <div class="microcopy">Explanation</div>}.html_safe,
-      %{<strong>Do</strong> use header styles, smaller text sizes, and <a href="/components#alerts">alerts</a> to establish hierarchy and call out bits of text.}.html_safe,
-      %{<p><strong>We help governments deliver great digital services to the people who depend on them.</strong></p> <p class="microcopy" style="background-color: red;">Explanation goes here.</p>}.html_safe,
-      %{<strong>Don&#39;t</strong> use boldface text for long sentences, or color the text to emphasize an action. This negatively impacts legibility.}.html_safe
+    guide 'do', 'dont',
+      %{
+        <div class="docs_guide_row docs_guide_row_image">
+          <div>
+            <img src="/images/hierarchy_do.png">
+          </div>
+          <div>
+            <img src="/images/hierarchy_dont.png">
+          </div>
+        </div>
+        <div class="docs_guide_row">
+          <div>
+            <p><strong>Do</strong> use header styles, smaller text sizes, and <a href="/components#alerts">alerts</a> to establish hierarchy and call out bits of text.</p>
+          </div>
+          <div>
+            <p><strong>Don&#39;t</strong> use boldface text for long sentences, or color the text to emphasize an action. This negatively impacts legibility.</p>
+          </div>
+        </div>
+      }.html_safe
 
     docs 'Lists', %{
       ul(class: 'formatted_list') {
@@ -120,7 +161,7 @@ class Views::Home::Index < Views::Home
       p {
         button('Example', class: 'button_link')
       }
-    }, hint: %{Add the <code>.button_link</code> class to any <code>&lt;button&gt;</code> tag to make it appear like a link.}.html_safe, sub: true
+    }, hint: %{Add the <code>.button_link</code> class to any <code>&lt;button&gt;</code> tag to make it look like a link.}.html_safe, sub: true
 
   end
 end

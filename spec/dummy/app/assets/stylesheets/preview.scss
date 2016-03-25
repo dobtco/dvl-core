@@ -125,50 +125,170 @@ hr {
 
 // Guides
 
-.docs_guide {
+.docs_guide_new {
   @include cf;
-  margin-bottom: $lineHeight * 2;
-  display: table;
+  margin-bottom: $lineHeight * 3;
+  position: relative;
+  max-width: 46rem;
 }
 
-.docs_guide_col {
-  margin-bottom: $lineHeight;
-  @media screen and (min-width: $deskWidth) {
-    display: table-cell;
-    vertical-align: top;
-    width: 50%;
-    margin-bottom: 0;
-    &:first-of-type {
-      padding-right: 2%;
-    }
-    &:last-of-type {
-      padding-left: 2%;
-    }
-  }
-}
-
-.docs_guide_example,
-.docs_guide_explain {
-  padding: $rhythm $rhythm * 2;
-  border: 1px solid $lightGray;
-}
-
-.docs_guide_example {
-  min-height: $lineHeight * 9;
+.docs_guide_new header {
+  @include cf;
   @include border_top_radius($radius);
+  border: 1px solid $lightGray;
   border-bottom: 0;
-  &:empty {
-    display: none;
-    + .docs_guide_explain {
+  margin-top: $lineHeight;
+  div {
+    height: $rhythm;
+  }
+  @media screen and (min-width: $lapWidth) {
+    border: 0;
+    border-radius: 0;
+    div {
+      position: relative;
+      float: left;
+      width: 48%;
+      height: $lineHeight;
+      &:first-child {
+        margin-right: 4%;
+      }
       @include border_top_radius($radius);
+      border: 1px solid $lightGray;
+      border-bottom: 0;
+      &:before,
+      &:after {
+        position: absolute;
+        top: $rhythm * -2;
+        left: 10%;
+        height: $rhythm * 4;
+      }
+      &:before {
+        width: $rhythm * 4;
+        margin-left: $rhythm * -2;
+        border-radius: 50%;
+        color: $white;
+        z-index: 3;
+        font-family: 'FontAwesome';
+        line-height: $rhythm * 4;
+        text-align: center;
+        padding-top: 1px; // optical alignment
+      }
+      &:after {
+        content: '';
+        background: $white;
+        width: $rhythm * 6;
+        margin-left: $rhythm * -3;
+        z-index: 2;
+      }
+      &.do {
+        &:before {
+          background: rgba($successColor,0.7);
+          content: '\f00c';
+        }
+      }
+
+      &.dont {
+        &:before {
+          background: rgba($errorColor,0.7);
+          content: '\f00d';
+        }
+      }
     }
   }
 }
 
-.docs_guide_explain {
-  margin: 0;
-  background: $lightestGray;
-  @include border_bottom_radius($radius);
+.docs_guide_row {
+  @include cf;
+  position: relative;
+  div {
+    border-left: 1px solid $lightGray;
+    border-right: 1px solid $lightGray;
+    padding: $rhythm ($rhythm * 2);
+    font-size: $fontSmaller;
+    color: $darkerGray;
+  }
+  &.docs_guide_row_image {
+    display: none;
+    div {
+      padding: 0;
+    }
+  }
+  + .docs_guide_row {
+    border-top: 1px solid $lightGray;
+    p {
+      padding-top: $rhythm * 2;
+    }
+  }
+  p {
+    margin-bottom: 0;
+  }
+  strong {
+    color: $darkerGray;
+  }
+  code {
+    font-size: $fontSmallest;
+  }
+  &:last-child:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: $rhythm;
+    width: 100%;
+    border: 1px solid $lightGray;
+    border-top: 0;
+    @include border_bottom_radius($radius);
+  }
+  @media screen and (min-width: $lapWidth) {
+    display: flex;
+    align-items: stretch;
+    &.docs_guide_row_image {
+      display: block;
+    }
+    div {
+      float: left;
+      width: 48%;
+      &:first-of-type {
+        margin-right: 4%;
+      }
+    }
+    &:last-child {
+      &:after {
+        border: 0;
+        border-radius: 0;
+        padding: 0;
+      }
+      div {
+        padding-bottom: $lineHeight;
+        border: 1px solid $lightGray;
+        border-top: 0;
+        @include border_bottom_radius($radius);
+      }
+    }
+    + .docs_guide_row {
+      padding-top: 0;
+      border: 0;
+      p {
+        padding: 0;
+      }
+      div {
+        border-top: 1px solid $lightGray;
+        padding-top: $rhythm * 2;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $lapWidth) {
+  .docs_guide_row_image {
+    img {
+      margin: 0 auto;
+      display: block;
+    }
+    ~ .docs_guide_row div {
+      background: $lightestGray;
+    }
+  }
 }
 
 // Style-guide specific overrides
