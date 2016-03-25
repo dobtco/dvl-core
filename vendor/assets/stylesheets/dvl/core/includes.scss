@@ -92,8 +92,12 @@ $unitlessRhythm: 0.5 !default; // 8px @ 16px root
 $rhythm: $unitlessRhythm * 1rem !default;
 $unitlessLineHeight: $unitlessRhythm * 3 !default; // 24px
 $lineHeight: $unitlessLineHeight * 1rem !default;
-$unitlessLineHeightSmall: $unitlessRhythm * 2.25 !default; // 18px
+$unitlessLineHeightSmall: $unitlessRhythm * 2.75 !default; // 22px
 $lineHeightSmall: $unitlessLineHeightSmall * 1rem !default;
+$unitlessLineHeightSmaller: $unitlessRhythm * 2.5 !default; // 20px
+$lineHeightSmaller: $unitlessLineHeightSmaller * 1rem !default;
+$unitlessLineHeightSmallest: $unitlessRhythm * 2.25 !default; // 18px
+$lineHeightSmallest: $unitlessLineHeightSmallest * 1rem !default;
 $maxFontSize: 100% !default; // 16px
 
 $ratio: 1.5;
@@ -132,6 +136,23 @@ $fontLineHeightH3Mobile: 4 * $rhythm !default; // 32px
   font-weight: $weightLight;
   letter-spacing: -0.02em;
   font-feature-settings: 'tnum';
+}
+
+// Font size mixins
+
+@mixin fontSmall {
+  font-size: $fontSmall;
+  line-height: $lineHeightSmall;
+}
+
+@mixin fontSmaller {
+  font-size: $fontSmaller;
+  line-height: $lineHeightSmaller;
+}
+
+@mixin fontSmallest {
+  font-size: $fontSmallest;
+  line-height: $lineHeightSmallest;
 }
 
 // Used in addition to fontDefault
