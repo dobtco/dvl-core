@@ -41,7 +41,8 @@ ul {
 dt {
   color: $darkerGray;
   @include font_smoothing;
-  font-size: $fontSmall;
+  font-size: $fontSmaller;
+  font-weight: $weightBold;
 }
 
 dd {
