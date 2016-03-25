@@ -113,6 +113,26 @@ class Views::Home::Index < Views::Home
         </div>
       }.html_safe
 
+    guide 'do', 'dont',
+      %{
+        <div class="docs_guide_row docs_guide_row_image">
+          <div>
+            <img src="/images/smallcaps_do.png">
+          </div>
+          <div>
+            <img src="/images/smallcaps_dont.png">
+          </div>
+        </div>
+        <div class="docs_guide_row">
+          <div>
+            <p><strong>Do</strong> apply small caps to make actions or important data more visible at smaller font sizes.</p>
+          </div>
+          <div>
+            <p><strong>Never</strong> apply small caps to our display typeface.</p>
+          </div>
+        </div>}
+      .html_safe
+
     docs 'Lists', %{
       ul(class: 'formatted_list') {
         li 'Item 1'
