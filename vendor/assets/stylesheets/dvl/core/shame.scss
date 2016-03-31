@@ -127,7 +127,7 @@ a.muted {
   background: $lighterGray;
   color: $darkestGray;
   padding: $rhythm $rhythm * 2;
-  font-size: $fontSmaller;
+  @include fontSmaller;
   text-transform: uppercase;
   letter-spacing: $letterspaceSmaller;
   &:first-child {

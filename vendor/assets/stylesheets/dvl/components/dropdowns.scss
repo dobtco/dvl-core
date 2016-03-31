@@ -59,10 +59,9 @@
     background: $lighterGray;
     color: $darkestGray;
     padding: $rhythm $rhythm * 2;
-    font-size: $fontSmaller;
+    @include fontSmaller;
     text-transform: uppercase;
     letter-spacing: $letterspaceSmaller;
-    line-height: $lineHeight;
     margin: 0;
     &:first-child {
       @include border_top_radius($radius - 1);
@@ -220,13 +219,12 @@
     @include cf;
     padding: $rhythm $rhythm * 2;
     display: block;
-    line-height: $lineHeight;
     color: $darkerGray;
-    max-height: ($lineHeight * 3) + ($rhythm * 2);
+    max-height: ($lineHeightSmall * 3) + ($rhythm * 2);
     @include font_smoothing;
     overflow: hidden;
     border-bottom: 1px solid $lighterGray;
-    font-size: $fontSmall;
+    @include fontSmall;
     position: relative;
     &:after {
       position: absolute;

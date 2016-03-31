@@ -36,7 +36,7 @@
 }
 
 .blank_slate_alternative {
-  font-size: $fontSmaller;
+  @include fontSmaller;
   margin-top: $rhythm / 2;
 }
 

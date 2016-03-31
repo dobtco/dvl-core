@@ -99,13 +99,12 @@
 .page_header_context {
   width: 100%;
   position: relative;
-  top: $rhythm * 0.5;
+  top: $lineHeightSmall / 2;
   left: $fontOpticalMarginH2 * -1;
-  line-height: $rhythm * 2;
   a,
   span {
     color: $darkerGray;
-    font-size: $fontSmall;
+    @include fontSmall;
     text-transform: uppercase;
     font-family: $fontFamilyDefault;
     font-weight: $weightNormal;
@@ -124,7 +123,7 @@
         left: $rhythm * -2;
         width: $rhythm * 2;
         text-align: center;
-        line-height: $rhythm * 2;
+        line-height: $lineHeightSmall;
       }
     }
   }
@@ -137,9 +136,9 @@
   top: 0;
   left: 0;
   line-height: 1;
-  @include topCenter($fontLineHeightH2Mobile + ($rhythm * 4.5), 1.75rem);
+  @include topCenter($fontLineHeightH2Mobile + $lineHeight + $lineHeightSmall, 1.75rem);
   @media screen and (min-width: $lapWidth) {
-    @include topCenter($fontLineHeightH2 + ($rhythm * 4.5), 1.75rem);
+    @include topCenter($fontLineHeightH2 +  $lineHeight + $lineHeightSmall, 1.75rem);
   }
 }
 
@@ -153,7 +152,6 @@
     li > span {
       padding-bottom: $rhythm * 1.5;
       display: inline-block;
-      line-height: $lineHeight;
     }
     a {
       @media screen and (min-width: $lapWidth) {

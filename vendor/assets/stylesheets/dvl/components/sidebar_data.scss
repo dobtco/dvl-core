@@ -72,9 +72,8 @@
 }
 
 .sidebar_data_label {
-  font-size: $fontSmall;
+  @include fontSmall;
   font-weight: $weightBold;
-  line-height: $rhythm * 2;
   @include font_smoothing;
   color: $darkerGray;
 }
@@ -86,7 +85,6 @@
 
 .sidebar_data_value {
   @include cf;
-  line-height: $lineHeight;
   color: $darkestGray;
   form {
     margin-bottom: $rhythm;
@@ -94,8 +92,7 @@
 }
 
 .sidebar_data_details {
-  font-size: $fontSmaller;
-  line-height: $rhythm * 2.5;
+  @include fontSmaller;
   color: $darkerGray;
   @include font_smoothing;
 }

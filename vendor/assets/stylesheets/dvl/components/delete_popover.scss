@@ -11,7 +11,7 @@
 }
 
 .popover_delete_confirmation_message {
-  font-size: 1rem;
+  @include fontSmall;
   text-align: center;
   margin-bottom: $rhythm;
 }
