@@ -78,24 +78,15 @@ class Views::Home::Layout < Views::Page
       }
     }, hint: 'When there is no data to display in the current view, a well-designed blank state can prevent users from losing their momentum.'
 
-    guide 'dont', 'do',
+    guide 'dont',
       %{
-        <div class="docs_guide_row docs_guide_row_image">
-          <div>
-            <img src="/images/blankslate_dont.png">
-          </div>
-          <div>
-            <img src="/images/blankslate_do.png">
-          </div>
-        </div>
-        <div class="docs_guide_row">
-          <div>
-            <p><strong>Don&#39;t</strong> turn a blank state into a dead end. Provide users with a way to move forward.</p>
-          </div>
-          <div>
-            <p><strong>Do</strong> use blank states to help explain the purpose of a page, and show users how to add data to it.</p>
-          </div>
-        </div>
+        <img src="/images/blankslate_dont.png">
+        <p><strong>Don&#39;t</strong> turn a blank state into a dead end. Provide users with a way to move forward.</p>
+      }.html_safe,
+      'do',
+      %{
+        <img src="/images/blankslate_do.png">
+        <p><strong>Do</strong> use blank states to help explain the purpose of a page, and show users how to add data to it.</p>
       }.html_safe
 
     docs 'Footer', %{

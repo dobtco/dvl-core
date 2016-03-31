@@ -92,13 +92,18 @@ class Views::Layout < Views::Base
 
   end
 
-  def guide(dodont1, dodont2, content, opts = {})
+  def guide(dodont1, content1, dodont2, content2, opts = {})
     div(class: 'docs_guide_new') {
-      header {
-        div(class: dodont1)
-        div(class: dodont2)
+      div(class: 'docs_guide_row') {
+        div(class: dodont1) {
+          rawtext content1
+        }
       }
-      rawtext content
+      div(class: 'docs_guide_row') {
+        div(class: dodont2) {
+          rawtext content2
+        }
+      }
     }
     if opts[:hint]
       p opts[:hint], class: 'form_hint'

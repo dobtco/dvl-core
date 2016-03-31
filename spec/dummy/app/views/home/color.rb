@@ -2,16 +2,14 @@ class Views::Home::Color < Views::Page
   def main
     h2 'Color'
 
-    guide 'do', 'dont',
-      %{
-        <div class="docs_guide_row">
-          <div>
-            <p><strong>Do</strong> supplement color with text and icons to differentiate data or call out a UI element.</p>          </div>
-          <div>
-            <p><strong>Don&#39;t</strong> attempt to communicate something to users with only a change in color. This is inaccessible to color-blind users.</p>
-          </div>
-        </div>
-      }.html_safe
+    guide 'do',
+    %{
+      <p><strong>Do</strong> supplement color with text and icons to differentiate data or call out a UI element.</p>
+    }.html_safe,
+    'dont',
+    %{
+      <p><strong>Don&#39;t</strong> attempt to communicate something to users with only a change in color. This is inaccessible to color-blind users.</p>
+    }.html_safe
 
     h3 'Grayscale'
 
@@ -21,22 +19,19 @@ class Views::Home::Color < Views::Page
 
     hr
 
-    guide 'do', 'dont',
-      %{
-        <div class="docs_guide_row">
-          <div>
-            <p><strong>Do</strong> establish visual hierarchy with the <code>$black</code>, <code>$darkestGray</code> and <code>$darkerGray</code> color variables.</p>
-          </div>
-          <div>
-            <p><strong>Don&#39;t</strong> use lighter grayscale variables (like <code>$gray</code> or <code>$lightGray</code>) against white backgrounds. These will fail accessibility tests.</p>
-          </div>
-        </div>
-      }.html_safe,
-      'hint': "All DOBT applications should pass WCAG 2.0 Level AA contrast guidelines.
-      If you&#39;re unsure whether a block of text has sufficient contrast
-      against its background, you can use
-      <a href='http://leaverou.github.io/contrast-ratio/'>Lea Verou's contrast ratio checker</a>
-      to confirm.".html_safe
+    guide 'do',
+    %{
+      <p><strong>Do</strong> establish visual hierarchy with the <code>$black</code>, <code>$darkestGray</code> and <code>$darkerGray</code> color variables.</p>
+    }.html_safe,
+    'dont',
+    %{
+      <p><strong>Don&#39;t</strong> use lighter grayscale variables (like <code>$gray</code> or <code>$lightGray</code>) against white backgrounds. These will fail accessibility tests.</p>
+    }.html_safe,
+    'hint': "All DOBT applications should pass WCAG 2.0 Level AA contrast guidelines.
+    If you&#39;re unsure whether a block of text has sufficient contrast
+    against its background, you can use
+    <a href='http://leaverou.github.io/contrast-ratio/'>Lea Verou's contrast ratio checker</a>
+    to confirm.".html_safe
 
     h3 'UI Colors'
 

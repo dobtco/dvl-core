@@ -20,25 +20,23 @@ class Views::Home::Index < Views::Home
 
     hr
 
-    guide 'do', 'dont',
+    guide 'do',
       %{
-        <div class="docs_guide_row">
-          <div>
-            <p><strong>Do</strong> use multiples of <code>$rhythm</code> and <code>$lineHeight</code> to specify the dimensions and padding of an item.</p>
-          </div>
-          <div>
-            <p><strong>Don&#39;t</strong> use <code>px</code>, <code>em</code> or <code>rem</code> units to specify spacing or sizes.</p>
-          </div>
-        </div>
-        <div class="docs_guide_row">
-          <div>
-            <p><strong>Do</strong> use multiples of <code>$rhythm</code> or <code>$lineHeight</code> when styling.</p>
-          </div>
-          <div>
-            <p>Unless you're centering elements within a container, <strong>avoid</strong> dividing <code>$rhythm</code> or <code>$lineHeight</code> into fractions, or multiplying them by non-whole numbers.</p>
-          </div>
-        </div>
-        }.html_safe
+        <p><strong>Do</strong> use multiples of <code>$rhythm</code> and <code>$lineHeight</code> to specify the dimensions and padding of an item.</p>
+      }.html_safe,
+      'dont',
+      %{
+        <p><strong>Avoid</strong> using <code>px</code>, <code>em</code> or <code>rem</code> units to specify spacing or sizes.</p>
+      }.html_safe
+
+    guide 'dont',
+      %{
+        <p>Unless you're centering elements within a container, <strong>avoid</strong> dividing <code>$rhythm</code> or <code>$lineHeight</code> into fractions, or multiplying them by non-whole numbers.</p>
+      }.html_safe,
+      'do',
+      %{
+         <p><strong>Do</strong> use multiples of <code>$rhythm</code> or <code>$lineHeight</code> when styling.</p>
+      }.html_safe
 
 
     docs 'Headings', %{
@@ -73,65 +71,38 @@ class Views::Home::Index < Views::Home
 
     hr
 
-    guide 'dont', 'do',
-      %{
-        <div class="docs_guide_row docs_guide_row_image">
-          <div>
-            <img src="/images/largetype_dont.png">
-          </div>
-          <div>
-            <img src="/images/largetype_do.png">
-          </div>
-        </div>
-        <div class="docs_guide_row">
-          <div>
-            <p><strong>Don&#39;t</strong> use multiple lines of larger text. Either use the default font size, or truncate a single line of larger text with ellipses.</p>
-          </div>
-          <div>
-            <p><strong>Do</strong> use multiple lines of smaller text to provide UI microcopy or tertiary information.</p>
-          </div>
-        </div>}
-      .html_safe
+    guide 'dont',
+    %{
+      <img src="/images/largetype_dont.png">
+      <p><strong>Don&#39;t</strong> use multiple lines of larger text. Either use the default font size, or truncate a single line of larger text with ellipses.</p>
+    }.html_safe,
+    'do',
+    %{
+      <img src="/images/largetype_do.png">
+      <p><strong>Do</strong> use multiple lines of smaller text to provide UI microcopy or tertiary information.</p>
+    }.html_safe
 
-    guide 'do', 'dont',
-      %{
-        <div class="docs_guide_row docs_guide_row_image">
-          <div>
-            <img src="/images/hierarchy_do.png">
-          </div>
-          <div>
-            <img src="/images/hierarchy_dont.png">
-          </div>
-        </div>
-        <div class="docs_guide_row">
-          <div>
-            <p><strong>Do</strong> use header styles, smaller text sizes, and <a href="/components#alerts">alerts</a> to establish hierarchy and call out bits of text.</p>
-          </div>
-          <div>
-            <p><strong>Don&#39;t</strong> use boldface text for long sentences, or color the text to emphasize an action. This negatively impacts legibility.</p>
-          </div>
-        </div>
-      }.html_safe
+    guide 'do',
+    %{
+      <img src="/images/hierarchy_do.png">
+      <p><strong>Do</strong> use header styles, smaller text sizes, and <a href="/components#alerts">alerts</a> to establish hierarchy and call out bits of text.</p>
+    }.html_safe,
+    'dont',
+    %{
+      <img src="/images/hierarchy_dont.png">
+      <p><strong>Don&#39;t</strong> use boldface text for long sentences, or color the text to emphasize an action. This negatively impacts legibility.</p>
+    }.html_safe
 
-    guide 'do', 'dont',
-      %{
-        <div class="docs_guide_row docs_guide_row_image">
-          <div>
-            <img src="/images/smallcaps_do.png">
-          </div>
-          <div>
-            <img src="/images/smallcaps_dont.png">
-          </div>
-        </div>
-        <div class="docs_guide_row">
-          <div>
-            <p><strong>Do</strong> apply small caps to make actions or important data more visible at smaller font sizes.</p>
-          </div>
-          <div>
-            <p><strong>Never</strong> apply small caps to our display typeface.</p>
-          </div>
-        </div>}
-      .html_safe
+    guide 'do',
+    %{
+      <img src="/images/smallcaps_do.png">
+      <p><strong>Do</strong> apply small caps to make actions or important data more visible at smaller font sizes.</p>
+    },
+    'dont',
+    %{
+      <img src="/images/smallcaps_dont.png">
+      <p><strong>Never</strong> apply small caps to our display typeface.</p>
+    }.html_safe
 
     docs 'Lists', %{
       ul(class: 'formatted_list') {
