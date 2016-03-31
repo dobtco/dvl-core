@@ -82,7 +82,7 @@ class Views::Layout < Views::Base
 
       eval(code_string)
 
-      a 'Toggle source', class: 'button small docs_toggle_button'
+      a 'Toggle source', class: 'button_uppercase docs_toggle_button'
 
       div(class: 'docs_code', style: 'display:none;') {
         div 'Fortitude source code', class: 'docs_code_header'

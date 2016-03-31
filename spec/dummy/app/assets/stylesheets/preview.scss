@@ -301,3 +301,7 @@ hr {
 .docs_fontsmallest {
   font-size: $fontSmallest;
 }
+
+.docs_labels .label {
+  margin-right: $rhythm;
+}

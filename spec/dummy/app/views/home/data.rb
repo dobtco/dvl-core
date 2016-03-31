@@ -153,16 +153,10 @@ class Views::Home::Data < Views::Page
     hr
 
     docs 'Labels', %{
-      p {
+      p(class: 'docs_labels') {
         span 'Error', class: 'label label_error'
-      }
-      p {
         span 'Success', class: 'label label_success'
-      }
-      p {
         span 'Info', class: 'label label_info'
-      }
-      p {
         span 'Warning', class: 'label label_warning'
       }
     }
