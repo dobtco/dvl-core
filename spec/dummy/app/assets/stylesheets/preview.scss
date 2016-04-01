@@ -125,21 +125,27 @@ hr {
 
 // Guides
 
-.docs_guide_new {
-  margin: 0 0 ($lineHeight * 3) -2%;
+.docs_guide {
+  margin: $lineHeight 0;
   display: block;
-  + .form_hint {
-    margin-top: $lineHeight * -2;
-    margin-bottom: $lineHeight * 2;
+  + .docs_guide {
+    margin-top: $lineHeight * 2;
   }
-  @media screen and (min-width: $lapWidth) {
+  .form_hint {
+    margin-top: $rhythm * 2;
+  }
+}
+
+@media screen and (min-width: $lapWidth) {
+  .docs_guide_grid {
     display: table;
     width: 100%;
+    margin-left: -2%;
     max-width: 48rem;
   }
 }
 
-.docs_guide_row {
+.docs_guide_item {
   margin-top: $rhythm * 5;
   position: relative;
   p {

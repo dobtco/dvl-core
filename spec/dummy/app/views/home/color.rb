@@ -2,15 +2,6 @@ class Views::Home::Color < Views::Page
   def main
     h2 'Color'
 
-    guide 'do',
-    %{
-      <p><strong>Do</strong> supplement color with text and icons to differentiate data or call out a UI element.</p>
-    }.html_safe,
-    'dont',
-    %{
-      <p><strong>Don&#39;t</strong> attempt to communicate something to users with only a change in color. This is inaccessible to color-blind users.</p>
-    }.html_safe
-
     h3 'Grayscale'
 
     grayscale_colors.each do |key|
@@ -42,6 +33,16 @@ class Views::Home::Color < Views::Page
     end
 
     hr
+
+    guide 'do',
+    %{
+      <p><strong>Do</strong> supplement color with text and icons to differentiate data or call out a UI element.</p>
+    }.html_safe,
+    'dont',
+    %{
+      <p><strong>Don&#39;t</strong> attempt to communicate something to users with only a change in color. This is inaccessible to color-blind users.</p>
+    }.html_safe
+
 
     h3 'Label Colors'
     p 'When building a feature that allows users to add labels to their data, use this color palette for the suggested presets.'
