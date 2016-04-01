@@ -142,8 +142,8 @@ class Views::Home::Index < Views::Home
 
     docs 'Images and Captions', %{
       figure {
-        img(src: 'http://i.imgur.com/lAaFALg.jpg', alt: 'DOBT team photo')
-        text %{<figcaption class='formatted'>Did we mention we're hiring?</figcaption>}.html_safe
+        img(src: 'http://i.imgur.com/OW9eCju.jpg', alt: 'Mount Rushmore')
+        text %{<figcaption class='formatted'>Mount Rushmore, Keystone, South Dakota</figcaption>}.html_safe
       }
     }
 
