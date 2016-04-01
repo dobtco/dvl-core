@@ -1,9 +1,10 @@
 // Default and prose list styles
 
 @mixin formatted_list_ul {
+  margin-bottom: $rhythm * 2;
   li {
     position: relative;
-    margin: 0 0 $lineHeight ($rhythm * 3);
+    margin: 0 0 $rhythm ($rhythm * 3);
     &:before {
       position: absolute;
       top: $rhythm;
@@ -19,11 +20,12 @@
 }
 
 @mixin formatted_list_ol {
+  margin-bottom: $rhythm * 2;
   counter-reset: list;
   li {
     position: relative;
     counter-increment: list;
-    margin: 0 0 $lineHeight $rhythm * 4;
+    margin: 0 0 $rhythm ($rhythm * 4);
     &:before {
       position: absolute;
       content: counter(list) '.';

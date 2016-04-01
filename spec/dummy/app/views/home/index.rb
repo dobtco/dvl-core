@@ -105,24 +105,29 @@ class Views::Home::Index < Views::Home
     }.html_safe
 
     docs 'Lists', %{
-      ul(class: 'formatted_list') {
-        li 'Item 1'
-        li 'Item 2'
-        li 'Item 3'
-        li 'Item 4'
-        li 'Item 5'
-        li 'Item 6'
-        li 'Item 7'
-      }
-
-      ol(class: 'formatted_list') {
-        li 'Item 1'
-        li 'Item 2'
-        li 'Item 3'
-        li 'Item 4'
-        li 'Item 5'
-        li 'Item 6'
-        li 'Item 7'
+      div(class: 'grid') {
+        div(class: 'item lap_three_columns') {
+          ul(class: 'formatted_list') {
+            li 'Item 1'
+            li 'Item 2'
+            li 'Item 3'
+            li 'Item 4'
+            li 'Item 5'
+            li 'Item 6'
+            li 'Item 7'
+          }
+        }
+        div(class: 'item lap_three_columns') {
+          ol(class: 'formatted_list') {
+            li 'Item 1'
+            li 'Item 2'
+            li 'Item 3'
+            li 'Item 4'
+            li 'Item 5'
+            li 'Item 6'
+            li 'Item 7'
+          }
+        }
       }
     }, hint: %{By default, lists are unstyled. Use the <code>.formatted_list</code> class to create bulleted and numbered lists.}.html_safe
 
