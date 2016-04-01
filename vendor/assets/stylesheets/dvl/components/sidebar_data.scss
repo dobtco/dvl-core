@@ -33,6 +33,7 @@
   > li {
     border-bottom: 1px solid $lightGray;
     padding: ($rhythm * 2);
+    position: relative;
     &:first-of-type {
       padding-top: 0;
     }
@@ -44,15 +45,22 @@
 }
 
 .sidebar_data_icon {
-  float: left;
-  width: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: $rhythm * -3;
+  width: $rhythm * 5;
   text-align: center;
   i {
     line-height: 1;
-    color: $darkerGray;
+    color: $gray;
   }
   @media screen and (min-width: $lapWidth) {
     width: $rhythm * 5;
+    left: $rhythm * 2;
+    .sidebar_data li:last-of-type & {
+      margin-top: $rhythm * -1.5;
+    }
     i {
       font-size: $rhythm * 5;
     }
@@ -66,9 +74,9 @@
   }
 }
 
-.sidebar_data_icon,
-.sidebar_data_label {
-  margin: ($rhythm / 2) 0;
+.sidebar_data_label,
+.sidebar_data_value {
+  margin-bottom: $rhythm / 2;
 }
 
 .sidebar_data_label {

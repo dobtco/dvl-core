@@ -138,7 +138,7 @@
   line-height: 1;
   @include topCenter($fontLineHeightH2Mobile + $lineHeight + $lineHeightSmall, 1.75rem);
   @media screen and (min-width: $lapWidth) {
-    @include topCenter($fontLineHeightH2 +  $lineHeight + $lineHeightSmall, 1.75rem);
+    top: $rhythm * 5;
   }
 }
 

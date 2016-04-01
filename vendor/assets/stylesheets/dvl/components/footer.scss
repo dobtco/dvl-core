@@ -21,7 +21,7 @@
 
   > span,
   > ul {
-    @include fontSmaller;
+    font-size: $fontSmaller;
     color: $darkerGray;
   }
 

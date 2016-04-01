@@ -92,7 +92,7 @@ $unitlessRhythm: 0.5 !default; // 8px @ 16px root
 $rhythm: $unitlessRhythm * 1rem !default;
 $unitlessLineHeight: $unitlessRhythm * 3 !default; // 24px
 $lineHeight: $unitlessLineHeight * 1rem !default;
-$unitlessLineHeightSmall: $unitlessRhythm * 2.75 !default; // 22px
+$unitlessLineHeightSmall: $unitlessRhythm * 2.625 !default; // 21px
 $lineHeightSmall: $unitlessLineHeightSmall * 1rem !default;
 $unitlessLineHeightSmaller: $unitlessRhythm * 2.5 !default; // 20px
 $lineHeightSmaller: $unitlessLineHeightSmaller * 1rem !default;
