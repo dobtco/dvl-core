@@ -104,7 +104,7 @@
   a,
   span {
     color: $darkerGray;
-    @include fontSmall;
+    @include fontSmallBody;
     text-transform: uppercase;
     font-family: $fontFamilyDefault;
     font-weight: $weightNormal;

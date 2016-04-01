@@ -453,7 +453,7 @@ form {
 }
 
 .form_error {
-  @include fontSmall;
+  @include fontSmallBody;
   background-color: $errorColor;
   color: $white;
   padding: ($rhythm / 2) ($rhythm * 1.5);
@@ -465,7 +465,7 @@ form {
 }
 
 .form_hint {
-  @include fontSmaller;
+  @include fontSmallerBody;
   margin: $rhythm 0;
   font-style: italic;
   color: $darkerGray;
@@ -719,7 +719,7 @@ a.styled_select {
   padding: $rhythm * 2;
   border-radius: $radius;
   max-width: 22rem;
-  @include fontSmaller;
+  @include fontSmallerBody;
   @include font_smoothing;
   margin-bottom: $lineHeight;
   p {

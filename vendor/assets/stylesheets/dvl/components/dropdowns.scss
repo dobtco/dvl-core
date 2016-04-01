@@ -59,7 +59,7 @@
     background: $lighterGray;
     color: $darkestGray;
     padding: $rhythm $rhythm * 2;
-    @include fontSmaller;
+    @include fontSmallerBody;
     text-transform: uppercase;
     letter-spacing: $letterspaceSmaller;
     margin: 0;
@@ -224,7 +224,7 @@
     @include font_smoothing;
     overflow: hidden;
     border-bottom: 1px solid $lighterGray;
-    @include fontSmall;
+    @include fontSmallBody;
     position: relative;
     &:after {
       position: absolute;

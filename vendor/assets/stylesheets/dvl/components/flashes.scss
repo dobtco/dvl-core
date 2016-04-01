@@ -23,7 +23,7 @@
   color: $white;
   border-radius: $radius;
   transform-origin: 100% 0;
-  @include fontSmall;
+  @include fontSmallBody;
   box-shadow: 0 1px 0 rgba(#000,0.06);
   animation: flashIn 0.2s ease-out;
   width: 100%;

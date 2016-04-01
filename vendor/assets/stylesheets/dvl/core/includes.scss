@@ -138,19 +138,21 @@ $fontLineHeightH3Mobile: 4 * $rhythm !default; // 32px
   font-feature-settings: 'tnum';
 }
 
-// Font size mixins
+// Font size mixins, for when
+// an element spans multiple
+// lines of text
 
-@mixin fontSmall {
+@mixin fontSmallBody {
   font-size: $fontSmall;
   line-height: $lineHeightSmall;
 }
 
-@mixin fontSmaller {
+@mixin fontSmallerBody {
   font-size: $fontSmaller;
   line-height: $lineHeightSmaller;
 }
 
-@mixin fontSmallest {
+@mixin fontSmallestBody {
   font-size: $fontSmallest;
   line-height: $lineHeightSmallest;
 }

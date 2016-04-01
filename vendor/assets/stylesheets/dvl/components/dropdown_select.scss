@@ -33,7 +33,7 @@
 
 .drop_rich_subhead {
   color: $darkerGray;
-  @include fontSmaller;
+  @include fontSmallerBody;
   .active a & {
     color: rgba($white,0.7);
     @include font_smoothing(off);
