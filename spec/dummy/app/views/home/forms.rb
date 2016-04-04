@@ -360,7 +360,8 @@ class Views::Home::Forms < Views::Page
       simple_form_for :datetime_picker do |f|
         f.input :pick_a_date_and_time,
                 as: :datetime_picker,
-                clear_text: 'Clear'
+                clear_text: 'Clear',
+                wrapper: :vertical_fieldset
       end
 
       div {
