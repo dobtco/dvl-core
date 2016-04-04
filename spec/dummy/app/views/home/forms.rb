@@ -21,19 +21,22 @@ class Views::Home::Forms < Views::Page
                 as: :radio_buttons,
                 collection: ['Enthusiastic', 'Indifferent', 'Antagonistic'],
                 label: 'What are your thoughts on the Bilderberg Group?',
-                checked: 'Indifferent'
+                checked: 'Indifferent',
+                wrapper: :vertical_fieldset
 
         f.input :checkbox,
                 as: :check_boxes,
                 collection: ['Animal', 'Augmented organism', 'Gaseous mass', 'Human', 'Robot', 'An unclassifiable entity, perhaps capable of emotion and rational thought, perhaps in possession of a soul, perhaps with the critical faculties necessary to appreciate a fine wine. Why bother to put a label on it?'],
                 label: 'Which of the group(s) below most accurately represent you?',
-                checked: 'Human'
+                checked: 'Human',
+                wrapper: :vertical_fieldset
 
         f.input :boolean,
                 as: :boolean,
                 label: 'Do you agree to the Terms of Service?',
                 inline_label: 'Yes.',
-                hint: "Checkbox fields can contain a single answer option where appropriate.".html_safe
+                hint: "Checkbox fields can contain a single answer option where appropriate.".html_safe,
+                wrapper: :vertical_fieldset
 
         label(class: 'control control_minus') {
           input type: 'checkbox', checked: true
@@ -136,14 +139,16 @@ class Views::Home::Forms < Views::Page
                 label: 'Is the sky blue?',
                 collection: ['Yes', 'No'],
                 checked: 'Yes',
-                disabled: true
+                disabled: true,
+                wrapper: :vertical_fieldset
 
         f.input :disabled_checkbox,
                 as: :check_boxes,
                 label: 'Which countries border the United States?',
                 collection: ['Canada', 'Mexico', 'Australia'],
                 checked: ['Canada', 'Mexico'],
-                disabled: true
+                disabled: true,
+                wrapper: :vertical_fieldset
 
         f.input :select,
                 as: :select,
@@ -265,7 +270,8 @@ class Views::Home::Forms < Views::Page
                 as: :radio_buttons,
                 collection: ['Enthusiastic', 'Indifferent', 'Antagonistic'],
                 label: 'What are your thoughts on the Bilderberg Group?',
-                checked: 'Indifferent'
+                checked: 'Indifferent',
+                wrapper: :horizontal_fieldset
 
         f.input :text,
                 as: :text,

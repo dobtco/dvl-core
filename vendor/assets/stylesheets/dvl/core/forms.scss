@@ -99,7 +99,7 @@ textarea,
   color: $darkestGray;
 }
 
-label {
+label, legend {
   color: $darkerGray;
   @include font_smoothing;
 }
@@ -219,7 +219,7 @@ textarea {
   resize: vertical; // 3
 }
 
-label.required > abbr {
+.required > abbr {
   color: $errorColor;
   font-size: $fontSmaller;
   position: relative;

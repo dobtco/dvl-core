@@ -1,3 +1,12 @@
+module SimpleFormLegend
+  def legend(wrapper_options = nil)
+    label_options = merge_wrapper_options(label_html_options, wrapper_options)
+    template.content_tag(:legend, label_text, label_options)
+  end
+end
+
+SimpleForm::Inputs::Base.send :include, SimpleFormLegend
+
 SimpleForm::Inputs::Base.default_options = {
   # Add the 'control' class to radio/checkbox labels
   item_label_class: 'control'
@@ -20,6 +29,22 @@ SimpleForm.setup do |config|
     end
   end
 
+  config.wrappers :horizontal_fieldset, tag: 'fieldset', class: 'form_item form_item_horiz', error_class: 'error' do |b|
+    b.use :html5
+    b.use :placeholder
+    b.use(:judge) if defined?(Judge)
+
+    b.wrapper tag: 'div', class: 'form_item_horiz_label' do |ba|
+      ba.use :legend
+    end
+
+    b.wrapper tag: 'div', class: 'form_item_horiz_input' do |ba|
+      ba.use :input
+      ba.use :error, wrap_with: { tag: 'span', class: 'form_error' }
+      ba.use :hint,  wrap_with: { tag: 'div', class: 'form_hint' }
+    end
+  end
+
   config.wrappers :vertical, tag: 'div', class: 'form_item form_item_vert', error_class: 'error' do |b|
     b.use :html5
     b.use :placeholder
@@ -27,6 +52,22 @@ SimpleForm.setup do |config|
 
     b.wrapper tag: 'div', class: 'form_item_vert_label' do |ba|
       ba.use :label
+    end
+
+    b.wrapper tag: 'div', class: 'form_item_vert_input' do |ba|
+      ba.use :input
+      ba.use :error, wrap_with: { tag: 'span', class: 'form_error' }
+      ba.use :hint,  wrap_with: { tag: 'div', class: 'form_hint' }
+    end
+  end
+
+  config.wrappers :vertical_fieldset, tag: 'fieldset', class: 'form_item form_item_vert', error_class: 'error' do |b|
+    b.use :html5
+    b.use :placeholder
+    b.use(:judge) if defined?(Judge)
+
+    b.wrapper tag: 'div', class: 'form_item_vert_label' do |ba|
+      ba.use :legend
     end
 
     b.wrapper tag: 'div', class: 'form_item_vert_input' do |ba|
