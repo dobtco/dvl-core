@@ -363,11 +363,6 @@ class Views::Home::Forms < Views::Page
                 clear_text: 'Clear',
                 wrapper: :vertical_fieldset
       end
-
-      div {
-        text 'Date chosen: '
-        span 'none', class: 'js_dt_result'
-      }
     }, sub: true
 
     docs 'Filter form', %{
