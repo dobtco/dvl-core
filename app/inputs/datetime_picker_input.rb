@@ -17,7 +17,7 @@ class DatetimePickerInput < SimpleForm::Inputs::DateTimeInput
 
       content_tag(:div, class: 'input_group input_group_date') do
         content_tag(:div, class: 'input_group_input') do
-          tag(:input, type: 'text')
+          tag(:input, type: 'text', 'aria-label' => I18n.t('dvl_core.datepicker.labels.date'))
         end +
         content_tag(:div, class: 'input_group_append') do
           content_tag(:a, class: 'button small') do
@@ -28,7 +28,7 @@ class DatetimePickerInput < SimpleForm::Inputs::DateTimeInput
 
       content_tag(:div, class: 'input_group input_group_time') do
         content_tag(:div, class: 'input_group_input') do
-          tag(:input, type: 'text')
+          tag(:input, type: 'text', 'aria-label' => I18n.t('dvl_core.datepicker.labels.time'))
         end +
         content_tag(:div, class: 'input_group_append') do
           content_tag(:a, class: 'button small') do

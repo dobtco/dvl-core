@@ -4,37 +4,32 @@ SimpleForm::Inputs::Base.default_options = {
 }
 
 SimpleForm.setup do |config|
-  config.wrappers :horizontal, tag: 'div', class: 'form_item form_item_horiz', error_class: 'error' do |b|
-    b.use :html5
-    b.use :placeholder
-    b.use(:judge) if defined?(Judge)
+  def generate_wrapper(config, name, tag, mod)
+    config.wrappers name, tag: tag, class: "form_item form_item_#{mod}", error_class: 'error' do |b|
+      b.use :html5
+      b.use :placeholder
+      b.use(:judge) if defined?(Judge)
 
-    b.wrapper tag: 'div', class: 'form_item_horiz_label' do |ba|
-      ba.use :label
-    end
+      b.wrapper tag: 'div', class: "form_item_#{mod}_label" do |ba|
+        if tag == :div
+          ba.use :label
+        elsif tag == :fieldset
+          ba.use :legend
+        end
+      end
 
-    b.wrapper tag: 'div', class: 'form_item_horiz_input' do |ba|
-      ba.use :input
-      ba.use :error, wrap_with: { tag: 'span', class: 'form_error' }
-      ba.use :hint,  wrap_with: { tag: 'div', class: 'form_hint' }
-    end
-  end
-
-  config.wrappers :vertical, tag: 'div', class: 'form_item form_item_vert', error_class: 'error' do |b|
-    b.use :html5
-    b.use :placeholder
-    b.use(:judge) if defined?(Judge)
-
-    b.wrapper tag: 'div', class: 'form_item_vert_label' do |ba|
-      ba.use :label
-    end
-
-    b.wrapper tag: 'div', class: 'form_item_vert_input' do |ba|
-      ba.use :input
-      ba.use :error, wrap_with: { tag: 'span', class: 'form_error' }
-      ba.use :hint,  wrap_with: { tag: 'div', class: 'form_hint' }
+      b.wrapper tag: 'div', class: "form_item_#{mod}_input" do |ba|
+        ba.use :input
+        ba.use :error, wrap_with: { tag: 'span', class: 'form_error' }
+        ba.use :hint,  wrap_with: { tag: 'div', class: 'form_hint' }
+      end
     end
   end
+
+  generate_wrapper config, :horizontal, :div, 'horiz'
+  generate_wrapper config, :horizontal_fieldset, :fieldset, 'horiz'
+  generate_wrapper config, :vertical, :div, 'vert'
+  generate_wrapper config, :vertical_fieldset, :fieldset, 'vert'
 
   config.default_wrapper = :vertical
 

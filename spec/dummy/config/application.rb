@@ -19,6 +19,7 @@ end
 Bundler.require(*Rails.groups)
 
 require 'simple_form'
+require 'simple_form_legend'
 require 'autoprefixer-rails'
 require 'sass'
 
@@ -56,4 +57,3 @@ module Dummy
     config.autoload_paths += %W(#{config.root}/lib)
   end
 end
-
