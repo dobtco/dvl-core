@@ -273,6 +273,13 @@ class Views::Home::Forms < Views::Page
                 checked: 'Indifferent',
                 wrapper: :horizontal_fieldset
 
+        f.input :radio,
+                as: :radio_buttons,
+                collection: ['All formats', '.docx only'],
+                label: 'Include...',
+                checked: 'Indifferent',
+                wrapper: :horizontal_fieldset
+
         f.input :text,
                 as: :text,
                 label: 'Description',

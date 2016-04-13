@@ -415,6 +415,11 @@ form {
   margin: $rhythm 0;
   @media screen and (min-width: $lapWidth) {
     margin-bottom: 0;
+
+    // Legends are display: block, so they need a float
+    > legend {
+      float: right;
+    }
   }
   .radio_buttons &,
   .boolean &,
