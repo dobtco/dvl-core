@@ -416,9 +416,9 @@ form {
   @media screen and (min-width: $lapWidth) {
     margin-bottom: 0;
 
-    // Legends are display: block, so they need a float
+    // Reset default display: block; on legends
     > legend {
-      float: right;
+      display: inline-block;
     }
   }
   .radio_buttons &,
