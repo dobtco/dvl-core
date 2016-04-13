@@ -468,7 +468,7 @@ class Views::Home::Forms < Views::Page
 
     docs 'Button sizes', %{
       div(class: 'dvlcore_button_array') {
-        a 'Normal', class: 'button large'
+        a 'Large', class: 'button large'
         a 'Normal', class: 'button'
         a 'Small', class: 'button small'
         a 'Mini', class: 'button mini'
