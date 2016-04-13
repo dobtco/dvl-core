@@ -219,11 +219,14 @@ textarea {
   resize: vertical; // 3
 }
 
-.required > abbr {
-  color: $errorColor;
-  font-size: $fontSmaller;
-  position: relative;
-  top: -0.25rem;
+label,
+legend {
+  &.required > abbr {
+    color: $errorColor;
+    font-size: $fontSmaller;
+    position: relative;
+    top: -0.25rem;
+  }
 }
 
 select.datetime {
