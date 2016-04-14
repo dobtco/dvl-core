@@ -419,6 +419,7 @@ form {
     // Reset default display: block; on legends
     > legend {
       display: inline-block;
+      // Reset text alignment on IE9
       text-align: right;
     }
   }
