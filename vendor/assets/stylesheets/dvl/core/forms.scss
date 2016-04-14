@@ -419,6 +419,7 @@ form {
     // Reset default display: block; on legends
     > legend {
       display: inline-block;
+      text-align: right;
     }
   }
   .radio_buttons &,
