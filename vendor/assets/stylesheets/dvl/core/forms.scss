@@ -415,6 +415,13 @@ form {
   margin: $rhythm 0;
   @media screen and (min-width: $lapWidth) {
     margin-bottom: 0;
+
+    // Reset default styles on legends. Really hard to do!
+    > legend {
+      display: inline-block;
+      text-align: right;
+      float: right;
+    }
   }
   .radio_buttons &,
   .boolean &,
