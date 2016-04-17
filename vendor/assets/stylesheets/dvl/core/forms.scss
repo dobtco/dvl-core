@@ -416,11 +416,11 @@ form {
   @media screen and (min-width: $lapWidth) {
     margin-bottom: 0;
 
-    // Reset default display: block; on legends
+    // Reset default styles on legends. Really hard to do!
     > legend {
       display: inline-block;
-      // Reset text alignment on IE9
       text-align: right;
+      float: right;
     }
   }
   .radio_buttons &,
