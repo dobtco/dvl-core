@@ -11,7 +11,7 @@ class Views::Home::Index < Views::Home
       h2 'The Department of Better Technology'
       p 'We help governments deliver great digital services to the people who depend on them.'
       form {
-        input(type: 'text', placeholder: 'Enter your email address')
+        input(type: 'text', placeholder: 'Enter your email address', 'aria-label' => 'Email')
         button 'Subscribe', class: 'button info'
       }
     }

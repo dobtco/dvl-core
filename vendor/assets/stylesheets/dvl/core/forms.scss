@@ -655,11 +655,18 @@ form {
     &[readonly],
     &[disabled] {
       + div {
-        opacity: 0.6;
-        background: $lighterGray;
+        background: $lightestGray;
+        border-color: $gray;
+        &:after {
+          color: #888;
+        }
+        &.is_blank {
+          color: #888;
+        }
       }
       &:active + div {
-        background: $lighterGray;
+        background: $lightestGray;
+        color: #888;
       }
     }
   }
@@ -695,7 +702,7 @@ form {
     color: $darkerGray;
   }
   &.is_blank {
-    color: $darkGray;
+    @include lightestText;
   }
 }
 

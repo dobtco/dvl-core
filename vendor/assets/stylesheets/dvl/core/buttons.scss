@@ -66,19 +66,15 @@
 
   // Colors
   &.primary {
-    @include button_color($secondaryColor, $white);
-  }
-
-  &.success {
-    @include button_color($successColor, $white);
+    @include button_color($secondaryColor, $secondaryColorText);
   }
 
   &.error {
-    @include button_color($errorColor, $white);
+    @include button_color($errorColor, $errorColorText);
   }
 
   &.info {
-    @include button_color($primaryColor, $white);
+    @include button_color($primaryColor, $primaryColorText);
   }
 
   &.subtle {
