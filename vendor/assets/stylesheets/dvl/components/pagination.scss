@@ -22,21 +22,20 @@
       }
       &.active span {
         width: $rhythm * 5;
-        background-color: $darkBlue;
-        color: $white;
+        background-color: rgba($darkBlue,0.5);
         @include font_smoothing;
       }
       a {
         transition: background-color 100ms ease-out;
         &:hover,
         &:focus {
-          background-color: $blueHighlight;
+          background-color: rgba($darkBlue,0.1);
         }
         &:focus {
           outline: 0;
         }
         &:active {
-          background-color: darken($blueHighlight,5%);
+          background-color: rgba($darkBlue,0.2);
         }
       }
     }

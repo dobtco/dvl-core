@@ -38,6 +38,7 @@
   line-height: $rhythm * 2;
   @include font_smoothing(off);
   .active a & {
-    color: rgba($white,0.7);
+    color: $white;
+    @include font_smoothing;
   }
 }
