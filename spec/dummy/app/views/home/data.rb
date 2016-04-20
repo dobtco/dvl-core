@@ -318,7 +318,13 @@ class Views::Home::Data < Views::Page
               div('Revision History', class: 'sidebar_data_label')
               div(class: 'sidebar_data_value') {
                 simple_form_for :foo do |f|
-                  f.input_field :blah, as: :dropdown_select, collection: [['Edited 06/26/15 at 10:28pm', true, 'by Jean-Luc Godard'], ['Edited 06/23/15 at 05:59am', true, 'by Jean-Pierre Melville'], ['Edited 04/15/15 at 01:15pm', true, 'by Jean Cocteau']], selected: 'Edited 06/26/15 at 10:28pm', 'data-width' => '100%', 'aria-label' => 'Revision history'
+                  f.input_field :blah,
+                                as: :dropdown_select,
+                                collection: [['Edited 06/26/15 at 10:28pm', true, 'by Jean-Luc Godard'], ['Edited 06/23/15 at 05:59am', true, 'by Jean-Pierre Melville'], ['Edited 04/15/15 at 01:15pm', true, 'by Jean Cocteau']],
+                                selected: 'Edited 06/26/15 at 10:28pm',
+                                'data-width' => '100%',
+                                'aria-label' => 'Revision history',
+                                'data-no-blank-class' => true
                 end
               }
             }
