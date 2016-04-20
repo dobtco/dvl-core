@@ -22,10 +22,10 @@ $white: #fff;
 
 $primaryColor: $brandColor !default;
 $primaryColorText: $white !default;
-$secondaryColor: #ffbd9c !default;
-$secondaryColorText: #85411e !default;
-$successColor: #2e593d !default;
-$successColorText: #fff !default;
+$secondaryColor: #ffb38a !default;
+$secondaryColorText: #5c3b29 !default;
+$successColor: #5ee0ac !default;
+$successColorText: #204d3b !default;
 $warningColor: #dae376 !default;
 $warningColorText: #5C5a0a !default;
 $errorColor: #d63176 !default;
@@ -58,7 +58,7 @@ $qualColor6:  #e3e15f;
 $qualColor7:  #c2e172;
 $qualColor8:  #a1e085;
 $qualColor9:  #82e098;
-$qualColor10: #5ee0ac;
+$qualColor10: $successColor;
 
 // Label colors
 
@@ -68,7 +68,7 @@ $orangeLabelColor: #f79a68;
 $lightOrangeLabelColor: #f0ccbe;
 $yellowLabelColor: #e3e15f;
 $lightYellowLabelColor: #fcf4c3;
-$greenLabelColor: #5ee0ac;
+$greenLabelColor: $successColor;
 $lightGreenLabelColor: #dbf4bf;
 $blueLabelColor: #5bb7d9;
 $lightBlueLabelColor: #bfeef3;
