@@ -13,7 +13,7 @@ class Views::Layout < Views::Base
 
   def content
     rawtext '<!doctype html>'
-    html {
+    html(lang: 'en') {
       head {
         title 'DOBT Style Guide'
         meta(name: 'viewport', content: 'width=device-width')
@@ -82,7 +82,7 @@ class Views::Layout < Views::Base
 
       eval(code_string)
 
-      a 'Toggle source', class: 'button small docs_toggle_button'
+      a 'Toggle source', class: 'button small docs_toggle_button', href: '#'
 
       div(class: 'docs_code', style: 'display:none;') {
         div 'Fortitude source code', class: 'docs_code_header'
