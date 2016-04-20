@@ -69,10 +69,6 @@
     @include button_color($secondaryColor, $secondaryColorText);
   }
 
-  &.success {
-    @include button_color($successColor, $successColorText);
-  }
-
   &.error {
     @include button_color($errorColor, $errorColorText);
   }
