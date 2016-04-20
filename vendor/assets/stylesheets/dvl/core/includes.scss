@@ -228,6 +228,14 @@ $z_flash: 900 !default;
 
 // MIXINS
 
+// Lightest possible text color to meet Level AA
+// Fails contrast ratio if text isn't bold
+
+@mixin lightestText {
+  color: #959595;
+  font-weight: $weightBold;
+}
+
 // Utility mixins
 
 @mixin font_smoothing($sub: 'on') {

@@ -695,7 +695,7 @@ form {
     color: $darkerGray;
   }
   &.is_blank {
-    color: $darkGray;
+    @include lightestText;
   }
 }
 
