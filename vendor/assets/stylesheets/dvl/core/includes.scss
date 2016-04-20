@@ -3,7 +3,7 @@
 
 // App-specific colors
 $bodyBackgroundColor: #fff !default;
-$brandColor: #697182 !default;
+$brandColor: #555e6b !default;
 $selectionBackground: $brandColor !default;
 $selectionColor: #fff !default;
 
@@ -21,24 +21,27 @@ $white: #fff;
 // UI Colors
 
 $primaryColor: $brandColor !default;
-$secondaryColor: #f79a68 !default;
-$successColor: #20b57b !default;
-$warningColor: #e3e15f !default;
-$errorColor: #cf3353 !default;
+$primaryColorText: $white !default;
+$secondaryColor: #ffbd9c !default;
+$secondaryColorText: #85411e !default;
+$successColor: #70ffc1 !default;
+$successColorText: #2e593d !default;
+$warningColor: #dae376 !default;
+$warningColorText: #5C5a0a !default;
+$errorColor: #d63176 !default;
+$errorColorText: $white !default;
 $highlight: #dff5f7 !default;
 
 // Blues
 $logoBlue: #009ade;
 $blueGray: #6a6e75;
 $lighterBlueGray: #6a6e75;
-$linkColor: #2e8ad0;
+$linkColor: #426ca6;
 $linkSelectedColor: #0d2438;
 $bodyFontColor: $darkestGray;
 $darkBlue: #5bb7d9;
 
 // Other Colors
-$successColor: #5ee0ac !default;
-$errorColor: #d95b76 !default;
 $alertColor: $errorColor !default;
 $blueHighlight: #bfeef3;
 $mintHighlight: #dbf4bf;

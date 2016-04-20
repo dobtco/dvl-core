@@ -20,7 +20,7 @@
   @include font_smoothing;
   transition: opacity 0.15s ease-out;
   background: $primaryColor;
-  color: $white;
+  color: $primaryColorText;
   transform-origin: 100% 0;
   font-size: $fontSmall;
   line-height: $lineHeightSmall;
@@ -128,14 +128,26 @@
 
 .flash_error {
   background-color: $errorColor;
+  color: $errorColorText;
   span:before {
     content: '\f06a';
+  }
+  span:before,
+  a,
+  .flash_close {
+    color: $errorColorText;
   }
 }
 
 .flash_success {
   background-color: $successColor;
+  color: $successColorText;
   span:before {
     content: '\f058';
+  }
+  span:before,
+  a,
+  .flash_close {
+    color: $successColorText;
   }
 }
