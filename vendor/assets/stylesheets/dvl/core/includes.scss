@@ -417,6 +417,11 @@ $easeInOutBack:  cubic-bezier(0.680, -0.550, 0.265, 1.550);
   }
 }
 
+@mixin hero_color($bgColor, $leftColor, $leftOpacity, $rightColor, $rightOpacity) {
+  background-color: $bgColor;
+  background-image: radial-gradient(farthest-corner at bottom left, rgba($leftColor,$leftOpacity) 7%, rgba($leftColor,0) 58%), radial-gradient(farthest-corner at bottom right, rgba($rightColor,$rightOpacity) 10%, rgba($rightColor,0) 60%);
+}
+
 // Other grays
 
 $blankStateGray: $darkerGray;
