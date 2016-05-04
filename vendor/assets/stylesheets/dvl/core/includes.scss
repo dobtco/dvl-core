@@ -3,7 +3,7 @@
 
 // App-specific colors
 $bodyBackgroundColor: #fff !default;
-$brandColor: #697182 !default;
+$brandColor: #555e6b !default;
 $selectionBackground: $brandColor !default;
 $selectionColor: #fff !default;
 
@@ -20,25 +20,28 @@ $white: #fff;
 
 // UI Colors
 
-$primaryColor: $brandColor !default;
-$secondaryColor: #f79a68 !default;
-$successColor: #20b57b !default;
-$warningColor: #e3e15f !default;
-$errorColor: #cf3353 !default;
+$primaryColor: #5e708a !default;
+$primaryColorText: $white !default;
+$secondaryColor: #555e6b !default;
+$secondaryColorText: $white !default;
+$successColor: #5ee0ac !default;
+$successColorText: #204d3b !default;
+$warningColor: #dae376 !default;
+$warningColorText: #5C5a0a !default;
+$errorColor: #d63176 !default;
+$errorColorText: $white !default;
 $highlight: #dff5f7 !default;
 
 // Blues
 $logoBlue: #009ade;
 $blueGray: #6a6e75;
 $lighterBlueGray: #6a6e75;
-$linkColor: #2e8ad0;
-$linkSelectedColor: #0d2438;
+$linkColor: #426ca6;
+$linkSelectedColor: #304e78;
 $bodyFontColor: $darkestGray;
 $darkBlue: #5bb7d9;
 
 // Other Colors
-$successColor: #5ee0ac !default;
-$errorColor: #d95b76 !default;
 $alertColor: $errorColor !default;
 $blueHighlight: #bfeef3;
 $mintHighlight: #dbf4bf;
@@ -51,7 +54,7 @@ $qualColor2:  #e16d72;
 $qualColor3:  #ec846d;
 $qualColor4:  #f79a68;
 $qualColor5:  #efb765;
-$qualColor6:  $warningColor;
+$qualColor6:  #e3e15f;
 $qualColor7:  #c2e172;
 $qualColor8:  #a1e085;
 $qualColor9:  #82e098;
@@ -63,7 +66,7 @@ $redLabelColor: $errorColor;
 $lightRedLabelColor: #f0becf;
 $orangeLabelColor: #f79a68;
 $lightOrangeLabelColor: #f0ccbe;
-$yellowLabelColor: $warningColor;
+$yellowLabelColor: #e3e15f;
 $lightYellowLabelColor: #fcf4c3;
 $greenLabelColor: $successColor;
 $lightGreenLabelColor: #dbf4bf;
@@ -90,13 +93,13 @@ $fontFamilyDisplay: 'tablet-gothic-wide', 'HelveticaNeue-Light', Helvetica, Aria
 $fontFamilyMonospace: 'Consolas', 'Monaco', 'Lucida Console', monospace !default;
 $unitlessRhythm: 0.5 !default; // 8px @ 16px root
 $rhythm: $unitlessRhythm * 1rem !default;
-$unitlessLineHeight: $unitlessRhythm * 3 !default; // 24px
+$unitlessLineHeight: 1.5 !default; // 24px
 $lineHeight: $unitlessLineHeight * 1rem !default;
-$unitlessLineHeightSmall: $unitlessRhythm * 2.625 !default; // 21px
+$unitlessLineHeightSmall: 1.57 !default; // 22px
 $lineHeightSmall: $unitlessLineHeightSmall * 1rem !default;
-$unitlessLineHeightSmaller: $unitlessRhythm * 2.5 !default; // 20px
+$unitlessLineHeightSmaller: 1.55 !default; // 20px
 $lineHeightSmaller: $unitlessLineHeightSmaller * 1rem !default;
-$unitlessLineHeightSmallest: $unitlessRhythm * 2.25 !default; // 18px
+$unitlessLineHeightSmallest: 1.5 !default; // 18px
 $lineHeightSmallest: $unitlessLineHeightSmallest * 1rem !default;
 $maxFontSize: 100% !default; // 16px
 
@@ -144,17 +147,17 @@ $fontLineHeightH3Mobile: 4 * $rhythm !default; // 32px
 
 @mixin fontSmallBody {
   font-size: $fontSmall;
-  line-height: $lineHeightSmall;
+  line-height: $unitlessLineHeightSmall;
 }
 
 @mixin fontSmallerBody {
   font-size: $fontSmaller;
-  line-height: $lineHeightSmaller;
+  line-height: $unitlessLineHeightSmaller;
 }
 
 @mixin fontSmallestBody {
   font-size: $fontSmallest;
-  line-height: $lineHeightSmallest;
+  line-height: $unitlessLineHeightSmallest;
 }
 
 // Used in addition to fontDefault
@@ -247,6 +250,14 @@ $z_modal: 800 !default;
 $z_flash: 900 !default;
 
 // MIXINS
+
+// Lightest possible text color to meet Level AA
+// Fails contrast ratio if text isn't bold
+
+@mixin lightestText {
+  color: #959595;
+  font-weight: $weightBold;
+}
 
 // Utility mixins
 
@@ -427,6 +438,11 @@ $easeInOutBack:  cubic-bezier(0.680, -0.550, 0.265, 1.550);
       box-shadow: none;
     }
   }
+}
+
+@mixin hero_color($bgColor, $leftColor, $leftOpacity, $rightColor, $rightOpacity) {
+  background-color: $bgColor;
+  background-image: radial-gradient(farthest-corner at bottom left, rgba($leftColor,$leftOpacity) 7%, rgba($leftColor,0) 58%), radial-gradient(farthest-corner at bottom right, rgba($rightColor,$rightOpacity) 10%, rgba($rightColor,0) 60%);
 }
 
 // Other grays

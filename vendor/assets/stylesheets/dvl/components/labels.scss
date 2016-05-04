@@ -11,24 +11,22 @@
   color: $darkestGray;
 }
 
-.label_error,
-.label_success,
-.label_info {
-  color: $white;
-}
-
 .label_error {
   background-color: $errorColor;
+  color: $errorColorText;
 }
 
 .label_success {
   background-color: $successColor;
+  color: $successColorText;
 }
 
 .label_info {
-  background-color: $darkBlue;
+  background-color: $primaryColor;
+  color: $primaryColorText;
 }
 
 .label_warning {
   background-color: $warningColor;
+  color: $warningColorText;
 }

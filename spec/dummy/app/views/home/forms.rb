@@ -21,19 +21,22 @@ class Views::Home::Forms < Views::Page
                 as: :radio_buttons,
                 collection: ['Enthusiastic', 'Indifferent', 'Antagonistic'],
                 label: 'What are your thoughts on the Bilderberg Group?',
-                checked: 'Indifferent'
+                checked: 'Indifferent',
+                wrapper: :vertical_fieldset
 
         f.input :checkbox,
                 as: :check_boxes,
                 collection: ['Animal', 'Augmented organism', 'Gaseous mass', 'Human', 'Robot', 'An unclassifiable entity, perhaps capable of emotion and rational thought, perhaps in possession of a soul, perhaps with the critical faculties necessary to appreciate a fine wine. Why bother to put a label on it?'],
                 label: 'Which of the group(s) below most accurately represent you?',
-                checked: 'Human'
+                checked: 'Human',
+                wrapper: :vertical_fieldset
 
         f.input :boolean,
                 as: :boolean,
                 label: 'Do you agree to the Terms of Service?',
                 inline_label: 'Yes.',
-                hint: "Checkbox fields can contain a single answer option where appropriate.".html_safe
+                hint: "Checkbox fields can contain a single answer option where appropriate.".html_safe,
+                wrapper: :vertical_fieldset
 
         label(class: 'control control_minus') {
           input type: 'checkbox', checked: true
@@ -136,14 +139,16 @@ class Views::Home::Forms < Views::Page
                 label: 'Is the sky blue?',
                 collection: ['Yes', 'No'],
                 checked: 'Yes',
-                disabled: true
+                disabled: true,
+                wrapper: :vertical_fieldset
 
         f.input :disabled_checkbox,
                 as: :check_boxes,
                 label: 'Which countries border the United States?',
                 collection: ['Canada', 'Mexico', 'Australia'],
                 checked: ['Canada', 'Mexico'],
-                disabled: true
+                disabled: true,
+                wrapper: :vertical_fieldset
 
         f.input :select,
                 as: :select,
@@ -265,7 +270,15 @@ class Views::Home::Forms < Views::Page
                 as: :radio_buttons,
                 collection: ['Enthusiastic', 'Indifferent', 'Antagonistic'],
                 label: 'What are your thoughts on the Bilderberg Group?',
-                checked: 'Indifferent'
+                checked: 'Indifferent',
+                wrapper: :horizontal_fieldset
+
+        f.input :radio,
+                as: :radio_buttons,
+                collection: ['All formats', '.docx only'],
+                label: 'Include...',
+                checked: 'Indifferent',
+                wrapper: :horizontal_fieldset
 
         f.input :text,
                 as: :text,
@@ -354,13 +367,9 @@ class Views::Home::Forms < Views::Page
       simple_form_for :datetime_picker do |f|
         f.input :pick_a_date_and_time,
                 as: :datetime_picker,
-                clear_text: 'Clear'
+                clear_text: 'Clear',
+                wrapper: :vertical_fieldset
       end
-
-      div {
-        text 'Date chosen: '
-        span 'none', class: 'js_dt_result'
-      }
     }, sub: true
 
     docs 'Filter form', %{
@@ -401,13 +410,10 @@ class Views::Home::Forms < Views::Page
 
     docs 'Simple', %{
       div(class: 'dvlcore_button_array') {
-        a 'Yo!', href: '#', class: 'button'
-        a 'Info', href: '#', class: 'button info'
-        label 'Info', href: '#', class: 'button info'
+        a 'Default', href: '#', class: 'button'
         a 'Primary', href: '#', class: 'button primary'
-        a 'Success', href: '#', class: 'button success'
-        a 'Error', href: '#', class: 'button error'
-        a 'Subtle', href: '#', class: 'button subtle'
+        a 'Secondary', href: '#', class: 'button secondary'
+        a 'Destructive', href: '#', class: 'button error'
         a 'Subtle', href: '#', class: 'button subtle'
       }
     }, sub: true
@@ -466,7 +472,7 @@ class Views::Home::Forms < Views::Page
 
     docs 'Button sizes', %{
       div(class: 'dvlcore_button_array') {
-        a 'Normal', class: 'button large'
+        a 'Large', class: 'button large'
         a 'Normal', class: 'button'
         a 'Small', class: 'button small'
         a 'Mini', class: 'button mini'

@@ -5,7 +5,7 @@ class Views::Layout < Views::Base
   end
 
   def javascripts
-    script src: '//code.jquery.com/jquery-1.11.1.min.js'
+    script src: '//code.jquery.com/jquery-2.2.3.min.js'
     javascript_include_tag 'application'
     script src: '//use.typekit.net/ckb1dps.js'
     script 'try{Typekit.load();}catch(e){}'.html_safe
@@ -13,7 +13,7 @@ class Views::Layout < Views::Base
 
   def content
     rawtext '<!doctype html>'
-    html {
+    html(lang: 'en') {
       head {
         title 'DOBT Style Guide'
         meta(name: 'viewport', content: 'width=device-width')
@@ -82,7 +82,7 @@ class Views::Layout < Views::Base
 
       eval(code_string)
 
-      a 'Toggle source', class: 'button_uppercase docs_toggle_button'
+      a 'Toggle source', class: 'button_uppercase docs_toggle_button', href: '#'
 
       div(class: 'docs_code', style: 'display:none;') {
         div 'Fortitude source code', class: 'docs_code_header'

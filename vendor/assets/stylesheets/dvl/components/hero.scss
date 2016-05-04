@@ -34,8 +34,3 @@
     }
   }
 }
-
-@mixin hero_color($bgColor,$leftColor,$leftOpacity,$rightColor,$rightOpacity) {
-  background-color: $bgColor;
-  background-image: radial-gradient(farthest-corner at bottom left, rgba($leftColor,$leftOpacity) 7%, rgba($leftColor,0) 58%), radial-gradient(farthest-corner at bottom right, rgba($rightColor,$rightOpacity) 10%, rgba($rightColor,0) 60%);
-}

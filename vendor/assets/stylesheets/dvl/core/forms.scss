@@ -99,7 +99,7 @@ textarea,
   color: $darkestGray;
 }
 
-label {
+label, legend {
   color: $darkerGray;
   @include font_smoothing;
 }
@@ -219,11 +219,14 @@ textarea {
   resize: vertical; // 3
 }
 
-label.required > abbr {
-  color: $errorColor;
-  font-size: $fontSmaller;
-  position: relative;
-  top: -0.25rem;
+label,
+legend {
+  &.required > abbr {
+    color: $errorColor;
+    font-size: $fontSmaller;
+    position: relative;
+    top: -0.25rem;
+  }
 }
 
 select.datetime {
@@ -412,6 +415,13 @@ form {
   margin: $rhythm 0;
   @media screen and (min-width: $lapWidth) {
     margin-bottom: 0;
+
+    // Reset default styles on legends. Really hard to do!
+    > legend {
+      display: inline-block;
+      text-align: right;
+      float: right;
+    }
   }
   .radio_buttons &,
   .boolean &,
@@ -647,11 +657,18 @@ form {
     &[readonly],
     &[disabled] {
       + div {
-        opacity: 0.6;
-        background: $lighterGray;
+        background: $lightestGray;
+        border-color: $gray;
+        &:after {
+          color: #888;
+        }
+        &.is_blank {
+          color: #888;
+        }
       }
       &:active + div {
-        background: $lighterGray;
+        background: $lightestGray;
+        color: #888;
       }
     }
   }
@@ -687,7 +704,7 @@ form {
     color: $darkerGray;
   }
   &.is_blank {
-    color: $darkGray;
+    @include lightestText;
   }
 }
 

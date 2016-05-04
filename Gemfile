@@ -7,5 +7,6 @@ group :production do
   gem 'fortitude', github: 'ajb/fortitude'
   gem 'rails'
   gem 'simple_form'
+  gem 'simple_form_legend'
   gem 'thin'
 end

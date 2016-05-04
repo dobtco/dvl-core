@@ -7,3 +7,7 @@ en:
       legal: Legal
       help: Help
       contact: Contact
+    datepicker:
+      labels:
+        date: Choose a date
+        time: Choose a time

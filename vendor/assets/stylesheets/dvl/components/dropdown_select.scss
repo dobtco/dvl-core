@@ -23,7 +23,7 @@
   color: $black;
   font-weight: $weightNormal;
   .blank a & {
-    color: $darkGray;
+    @include lightestText;
   }
   .active a & {
     color: $white;
@@ -35,7 +35,7 @@
   color: $darkerGray;
   @include fontSmallerBody;
   .active a & {
-    color: rgba($white,0.7);
-    @include font_smoothing(off);
+    color: $white;
+    @include font_smoothing;
   }
 }

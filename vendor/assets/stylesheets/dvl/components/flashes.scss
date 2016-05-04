@@ -13,23 +13,25 @@
 
 .flash {
   position: fixed;
-  bottom: 1rem;
-  right: 1rem;
+  bottom: 0;
+  left: 0;
   z-index: $z_flash;
   opacity: 0;
   @include font_smoothing;
   transition: opacity 0.15s ease-out;
   background: $primaryColor;
-  color: $white;
-  border-radius: $radius;
+  color: $primaryColorText;
   transform-origin: 100% 0;
   @include fontSmallBody;
   box-shadow: 0 1px 0 rgba(#000,0.06);
   animation: flashIn 0.2s ease-out;
   width: 100%;
-  max-width: 22rem;
   @media screen and (min-width: 25rem) {
     width: 22rem;
+    border-radius: $radius;
+    left: auto;
+    right: $rhythm * 2;
+    bottom: $rhythm * 2;
   }
   span {
     display: inline-block;
@@ -125,14 +127,26 @@
 
 .flash_error {
   background-color: $errorColor;
+  color: $errorColorText;
   span:before {
     content: '\f06a';
+  }
+  span:before,
+  a,
+  .flash_close {
+    color: $errorColorText;
   }
 }
 
 .flash_success {
   background-color: $successColor;
+  color: $successColorText;
   span:before {
     content: '\f058';
+  }
+  span:before,
+  a,
+  .flash_close {
+    color: $successColorText;
   }
 }

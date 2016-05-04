@@ -292,7 +292,8 @@ li.ui-timepicker-selected {
     &.disabled:hover,
     &.old,
     &.new {
-      color: $darkGray;
+      color: $darkerGray;
+      background: $lightestGray;
     }
   }
 }
