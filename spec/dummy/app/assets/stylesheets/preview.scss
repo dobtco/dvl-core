@@ -187,7 +187,6 @@ hr {
       width: $rhythm * 4;
       margin-left: $rhythm * -2;
       border-radius: 50%;
-      color: $white;
       z-index: 3;
       font-family: 'FontAwesome';
       line-height: $rhythm * 4;
@@ -205,6 +204,7 @@ hr {
       &:before {
         background: rgba($successColor,0.7);
         content: '\f00c';
+        color: $successColorText;
       }
     }
 
@@ -212,6 +212,7 @@ hr {
       &:before {
         background: rgba($errorColor,0.7);
         content: '\f00d';
+        color: $errorColorText;
       }
     }
   }

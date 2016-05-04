@@ -148,6 +148,7 @@
 .page_header_tertiary {
   ul {
     margin-top: $rhythm * 0.5;
+    line-height: $lineHeight;
     a,
     li > span {
       padding-bottom: $rhythm * 1.5;

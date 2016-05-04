@@ -141,7 +141,7 @@
         color: $white;
         text-decoration: none;
         outline: 0;
-        background-color: $linkColor;
+        background-color: $primaryColor;
       }
     }
     &.disabled {
@@ -253,7 +253,7 @@
     border-bottom-width: ($rhythm / 2);
   }
   &.active a {
-    background-color: $linkColor;
+    background-color: $primaryColor;
     color: $white;
     &:after {
       background: linear-gradient(to right, rgba($linkColor,0), $linkColor 64%);

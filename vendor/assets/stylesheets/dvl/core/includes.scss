@@ -95,12 +95,12 @@ $unitlessRhythm: 0.5 !default; // 8px @ 16px root
 $rhythm: $unitlessRhythm * 1rem !default;
 $unitlessLineHeight: 1.5 !default; // 24px
 $lineHeight: $unitlessLineHeight * 1rem !default;
-$unitlessLineHeightSmall: 1.57 !default; // 22px
-$lineHeightSmall: $unitlessLineHeightSmall * 1rem !default;
-$unitlessLineHeightSmaller: 1.55 !default; // 20px
-$lineHeightSmaller: $unitlessLineHeightSmaller * 1rem !default;
+$unitlessLineHeightSmall: 1.64 !default; // 23px
+$lineHeightSmall: 1.4375rem !default;
+$unitlessLineHeightSmaller: 1.61 !default; // 21px
+$lineHeightSmaller: 1.3125rem !default;
 $unitlessLineHeightSmallest: 1.5 !default; // 18px
-$lineHeightSmallest: $unitlessLineHeightSmallest * 1rem !default;
+$lineHeightSmallest: 1.125rem !default;
 $maxFontSize: 100% !default; // 16px
 
 $ratio: 1.5;

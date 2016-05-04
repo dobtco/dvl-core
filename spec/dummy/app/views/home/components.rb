@@ -503,7 +503,7 @@ class Views::Home::Components < Views::Page
       }
     }, sub: true
 
-    docs 'With fewer links', %{
+    docs 'With fewer pages', %{
       div(class: 'pagination pagination_centered') {
         ul {
           li { span '&larr;'.html_safe }
@@ -512,7 +512,7 @@ class Views::Home::Components < Views::Page
           li { a '&rarr;'.html_safe }
         }
       }
-    }
+    }, sub: true
 
     docs 'Compact', %{
       div(class: 'pagination_compact') {
