@@ -1,7 +1,11 @@
 // Styles for the style guide
 
 .hero {
-  @include hero_color(#09152f,#ba9270,0.6,#0085fa,0.3);
+  @include hero_color(#09152f,#4b20ba,0.2,#fa4b00,0.2);
+}
+
+.hero_compact {
+  @include hero_color(#09152f,#4b20ba,0.1,#fa4b00,0.15);
 }
 
 .container {
