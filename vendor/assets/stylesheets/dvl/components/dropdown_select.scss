@@ -27,7 +27,6 @@
   }
   .active a & {
     color: $white;
-    @include font_smoothing(off);
   }
 }
 
@@ -36,6 +35,5 @@
   @include fontSmallerBody;
   .active a & {
     color: $white;
-    @include font_smoothing;
   }
 }
