@@ -75,6 +75,10 @@ class Views::Home::Layout < Views::Page
         h4 'No ratings yet!'
         span 'Ratings give you a standard set of criteria to judge responses.'
         a 'Add your first rating', class: 'button primary'
+        p(class: 'blank_slate_alternative') {
+          text 'or '
+          a 'remove ratings entirely', href: '#'
+        }
       }
     }, hint: 'When there is no data to display in the current view, a well-designed blank state can prevent users from losing their momentum.'
 
