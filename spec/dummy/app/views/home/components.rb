@@ -24,7 +24,10 @@ class Views::Home::Components < Views::Page
               li {
                 a(href: 'mailto:support@dobt.co') {
                   span 'Contact support&hellip;'.html_safe, class: 'drop_rt_item'
-                  span(class: 'drop_rt_arrow') { i(class: 'fa fa-external-link') }
+                  span(
+                    icon('external-link'),
+                    class: 'drop_rt_arrow'
+                  )
                 }
               }
             }
@@ -74,21 +77,21 @@ class Views::Home::Components < Views::Page
             ul(class: 'dropdown_body') {
               li {
                 a(href: '#') {
-                  span(class: 'drop_master') { i(class: 'fa fa-envelope') }
+                  span(icon('envelope'), class: 'drop_master')
                   span 'Send a message', class: 'drop_detail'
                 }
               }
 
               li {
                 a(href: '#') {
-                  span(class: 'drop_master') { i(class: 'fa fa-pencil') }
+                  span(icon('pencil'), class: 'drop_master')
                   span 'Edit', class: 'drop_detail'
                 }
               }
 
               li {
                 a(href: '#') {
-                  span(class: 'drop_master') { i(class: 'fa fa-minus-circle') }
+                  span(icon('minus-circle'), class: 'drop_master')
                   span 'Delete', class: 'drop_detail'
                 }
               }
@@ -201,7 +204,7 @@ class Views::Home::Components < Views::Page
                 a(
                   'data-dropdown-filter-action' => true
                 ) {
-                  span(class: 'drop_master') { i(class: 'fa fa-minus-circle') }
+                  span(icon('minus-circle'), class: 'drop_master')
                   span 'Clear selection', class: 'drop_detail'
                 }
               }
@@ -266,7 +269,7 @@ class Views::Home::Components < Views::Page
             ul(class: 'dropdown_body') {
               li(class: 'dropdown_loading') {
                 span {
-                  i(class: 'fa fa-spin fa-refresh')
+                  i(class: 'fa fa-spin fa-refresh', 'aria-label' => 'Loading...')
                 }
               }
             }
@@ -539,21 +542,15 @@ class Views::Home::Components < Views::Page
       ul(class: 'delete_list') {
         li(class: 'js_delete_1') {
           text 'Project 1'
-          a(class: 'icon_secondary', 'data-confirm' => true, 'data-confirm-with' => 'popover', href: '/delete', 'data-method' => 'delete', 'data-remote' => true) {
-            i(class: 'fa fa-minus-circle')
-          }
+          a(icon('minus-circle', 'aria-label' => 'Delete'), class: 'icon_secondary', 'data-confirm' => true, 'data-confirm-with' => 'popover', href: '/delete', 'data-method' => 'delete', 'data-remote' => true)
         }
         li(class: 'js_delete_2') {
           text 'Project 2'
-          a(class: 'icon_secondary', 'data-confirm' => 'This is an important record. <strong>It will be destroyed forever.</strong>', 'data-confirm-with' => 'popover', href: '/delete', 'data-method' => 'delete', 'data-remote' => true) {
-            i(class: 'fa fa-minus-circle')
-          }
+          a(icon('minus-circle', 'aria-label' => 'Delete'), class: 'icon_secondary', 'data-confirm' => 'This is an important record. <strong>It will be destroyed forever.</strong>', 'data-confirm-with' => 'popover', href: '/delete', 'data-method' => 'delete', 'data-remote' => true)
         }
         li(class: 'js_delete_3') {
           text 'Project 3'
-          a(class: 'icon_secondary', 'data-confirm' => true, 'data-confirm-with' => 'popover', 'data-confirmation-options' => { 't_delete' => 'Archive' }.to_json, href: '/delete', 'data-method' => 'delete', 'data-remote' => true) {
-            i(class: 'fa fa-minus-circle')
-          }
+          a(icon('minus-circle', 'aria-label' => 'Delete'), class: 'icon_secondary', 'data-confirm' => true, 'data-confirm-with' => 'popover', 'data-confirmation-options' => { 't_delete' => 'Archive' }.to_json, href: '/delete', 'data-method' => 'delete', 'data-remote' => true)
         }
       }
     }, sub: true, hint: 'Popovers can contain headers and alternate button text.'
@@ -562,7 +559,7 @@ class Views::Home::Components < Views::Page
       li(class: 'js_delete_5') {
         a(class: 'button_uppercase',
           href: "javascript: Dvl.Flash('info', 'You deleted the response.', '<a>Undo</a>')") {
-            i(class: 'fa fa-minus-circle')
+            text icon('minus-circle')
             text 'Delete this response'
           }
       }
