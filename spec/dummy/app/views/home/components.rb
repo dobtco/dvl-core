@@ -25,7 +25,7 @@ class Views::Home::Components < Views::Page
                 a(href: 'mailto:support@dobt.co') {
                   span 'Contact support&hellip;'.html_safe, class: 'drop_rt_item'
                   span(
-                    icon('external-link'),
+                    icon('external-link', 'aria-label' => 'Opens in email client'),
                     class: 'drop_rt_arrow'
                   )
                 }
