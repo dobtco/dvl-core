@@ -4,7 +4,6 @@
   @include cf;
   padding: $rhythm * 2 0;
   border-top: 1px solid $lightGray;
-  line-height: $lineHeight;
 
   .styled_select_wrapper {
     margin-top: $rhythm;
@@ -19,7 +18,11 @@
 .footer_inner {
   float: left;
 
-  > span,
+  > div {
+    margin-bottom: $rhythm;
+  }
+
+  > div,
   > ul {
     font-size: $fontSmaller;
     color: $darkerGray;

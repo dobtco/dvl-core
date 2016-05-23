@@ -5,7 +5,7 @@ class Dvl::Core::Views::Footer < Dvl::Core::Views.base_view_class.constantize
   def content
     footer(class: 'footer') {
       div(class: 'footer_inner') {
-        span {
+        div {
           if @application_name
             text @application_name
             rawtext t('dvl_core.footer.about')
