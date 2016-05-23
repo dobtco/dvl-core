@@ -13,14 +13,13 @@ require 'simple_form_legend'
 require 'percy/capybara'
 require 'percy/capybara/rspec'
 
-if ENV['RUN_ACCESSIBILITY_TESTS']
-  require 'capybara/accessible'
-  Capybara.default_driver = :accessible_webkit
-  Capybara.javascript_driver = :accessible_webkit
-else
-  Capybara.javascript_driver = :webkit
-end
+Capybara.javascript_driver = :webkit
 
 Capybara::Webkit.configure do |config|
   config.allow_unknown_urls
+end
+
+RSpec.configure do |config|
+  config.before(:suite) { Percy::Capybara.initialize_build }
+  config.after(:suite) { Percy::Capybara.finalize_build }
 end
