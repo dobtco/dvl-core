@@ -11,7 +11,7 @@ class Views::Home::Navigation < Views::Page
         div(class: 'container') {
           div(class: 'navbar_header') {
             a 'DOBT Style Guide', class: 'navbar_brand', href: '#'
-            a "<i class='fa fa-reorder'></i>".html_safe, class: 'navbar_toggle'
+            a(icon('reorder', 'aria-label' => 'Expand navigation'), class: 'navbar_toggle')
           }
 
           div(class: 'navbar_content_wrapper') {
@@ -36,7 +36,7 @@ class Views::Home::Navigation < Views::Page
             a(class: 'navbar_brand', href: '#') {
               img src: 'https://www.dobt.co/img/dobt_logo.png'
             }
-            a "<i class='fa fa-reorder'></i>".html_safe, class: 'navbar_toggle'
+            a(icon('reorder', 'aria-label' => 'Expand navigation'), class: 'navbar_toggle')
           }
 
           div(class: 'navbar_content_wrapper') {
@@ -59,7 +59,7 @@ class Views::Home::Navigation < Views::Page
                 li {
                   a {
                     span(class: 'navbar_full_i') {
-                      i(class: 'fa fa-bolt navbar_icon')
+                      i(class: 'fa fa-bolt navbar_icon', 'aria-label' => 'Notifications')
                     }
                     span(class: 'navbar_collapsed_i') {
                       text 'Notifications'
@@ -74,7 +74,7 @@ class Views::Home::Navigation < Views::Page
                     href: '#'
                   ) {
                     span(class: 'navbar_full_i') {
-                      i(class: 'fa fa-refresh navbar_icon')
+                      i(class: 'fa fa-refresh navbar_icon', 'aria-label' => 'Loading')
                     }
                     span(class: 'navbar_collapsed_i') {
                       text 'Loading State'
@@ -86,7 +86,7 @@ class Views::Home::Navigation < Views::Page
                     ul(class: 'dropdown_body') {
                       li(class: 'dropdown_loading') {
                         span {
-                          i(class: 'fa fa-spin fa-refresh')
+                          i(class: 'fa fa-spin fa-refresh', 'aria-label' => 'Loading')
                         }
                       }
                     }
