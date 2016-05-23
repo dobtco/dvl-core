@@ -42,6 +42,7 @@ dt {
   color: $darkerGray;
   @include font_smoothing;
   font-size: $fontSmall;
+  font-weight: $weightBold;
 }
 
 dd {
