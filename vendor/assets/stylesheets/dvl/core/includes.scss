@@ -95,12 +95,6 @@ $unitlessRhythm: 0.5 !default; // 8px @ 16px root
 $rhythm: $unitlessRhythm * 1rem !default;
 $unitlessLineHeight: 1.5 !default; // 24px
 $lineHeight: $unitlessLineHeight * 1rem !default;
-$unitlessLineHeightSmall: 1.64 !default; // 23px
-$lineHeightSmall: 1.4375rem !default;
-$unitlessLineHeightSmaller: 1.61 !default; // 21px
-$lineHeightSmaller: 1.3125rem !default;
-$unitlessLineHeightSmallest: 1.5 !default; // 18px
-$lineHeightSmallest: 1.125rem !default;
 $maxFontSize: 100% !default; // 16px
 
 $ratio: 1.5;
@@ -139,25 +133,6 @@ $fontLineHeightH3Mobile: 4 * $rhythm !default; // 32px
   font-weight: $weightLight;
   letter-spacing: -0.02em;
   font-feature-settings: 'tnum';
-}
-
-// Font size mixins, for when
-// an element spans multiple
-// lines of text
-
-@mixin fontSmallBody {
-  font-size: $fontSmall;
-  line-height: $unitlessLineHeightSmall;
-}
-
-@mixin fontSmallerBody {
-  font-size: $fontSmaller;
-  line-height: $unitlessLineHeightSmaller;
-}
-
-@mixin fontSmallestBody {
-  font-size: $fontSmallest;
-  line-height: $unitlessLineHeightSmallest;
 }
 
 // Used in addition to fontDefault

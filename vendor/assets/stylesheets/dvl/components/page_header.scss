@@ -99,12 +99,12 @@
 .page_header_context {
   width: 100%;
   position: relative;
-  top: $lineHeightSmall / 2;
+  top: $fontSmall * 0.75;
   left: $fontOpticalMarginH2 * -1;
   a,
   span {
     color: $darkerGray;
-    @include fontSmallBody;
+    font-size: $fontSmall;
     text-transform: uppercase;
     font-family: $fontFamilyDefault;
     font-weight: $weightNormal;
@@ -123,7 +123,6 @@
         left: $rhythm * -2;
         width: $rhythm * 2;
         text-align: center;
-        line-height: $lineHeightSmall;
       }
     }
   }
@@ -136,7 +135,7 @@
   top: 0;
   left: 0;
   line-height: 1;
-  @include topCenter($fontLineHeightH2Mobile + $lineHeight + $lineHeightSmall, 1.75rem);
+  @include topCenter($fontLineHeightH2Mobile + $lineHeight + ($fontSmall * $unitlessLineHeight), 1.75rem);
   @media screen and (min-width: $lapWidth) {
     top: $rhythm * 5;
   }

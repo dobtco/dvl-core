@@ -174,7 +174,7 @@ hr {
     border: 1px solid $lightGray;
     border-radius: $radius;
     padding: $lineHeight 0 0;
-    @include fontSmallerBody;
+    font-size: $fontSmaller;
     color: $darkerGray;
     &:before,
     &:after {

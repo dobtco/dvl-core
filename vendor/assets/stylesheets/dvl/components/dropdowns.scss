@@ -59,7 +59,7 @@
     background: $lighterGray;
     color: $darkestGray;
     padding: $rhythm $rhythm * 2;
-    @include fontSmallerBody;
+    font-size: $fontSmaller;
     text-transform: uppercase;
     letter-spacing: $letterspaceSmaller;
     margin: 0;
@@ -220,11 +220,12 @@
     padding: $rhythm $rhythm * 2;
     display: block;
     color: $darkerGray;
-    max-height: ($lineHeightSmall * 3) + ($rhythm * 2);
+    max-height: ($fontSmall * 4.5) + ($rhythm * 2);
     @include font_smoothing;
     overflow: hidden;
     border-bottom: 1px solid $lighterGray;
-    @include fontSmallBody;
+    font-size: $fontSmall;
+    line-height: $unitlessLineHeight;
     position: relative;
     &:after {
       position: absolute;

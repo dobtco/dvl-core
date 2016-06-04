@@ -22,7 +22,7 @@
   background: $primaryColor;
   color: $primaryColorText;
   transform-origin: 100% 0;
-  @include fontSmallBody;
+  font-size: $fontSmall;
   box-shadow: 0 1px 0 rgba(#000,0.06);
   animation: flashIn 0.2s ease-out;
   width: 100%;

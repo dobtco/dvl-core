@@ -110,8 +110,8 @@
   text-align: center;
   display: inline-block;
   padding: 0 $rhythm / 2;
-  height: $lineHeightSmallest;
-  @include fontSmallestBody;
+  height: $fontSmallest * $unitlessLineHeight;
+  font-size: $fontSmallest;
   border-radius: $rhythm;
   margin-left: $rhythm;
 }

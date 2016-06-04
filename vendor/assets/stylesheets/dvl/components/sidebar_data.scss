@@ -80,7 +80,7 @@
 }
 
 .sidebar_data_label {
-  @include fontSmallBody;
+  font-size: $fontSmall;
   font-weight: $weightBold;
   @include font_smoothing;
   color: $darkerGray;
@@ -100,7 +100,7 @@
 }
 
 .sidebar_data_details {
-  @include fontSmallerBody;
+  font-size: $fontSmaller;
   color: $darkerGray;
   @include font_smoothing;
 }

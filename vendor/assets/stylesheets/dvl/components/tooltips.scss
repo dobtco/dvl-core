@@ -4,7 +4,7 @@
   position: absolute;
   z-index: $z_tooltip;
   display: block;
-  @include fontSmallerBody;
+  font-size: $fontSmaller;
   opacity: 0;
   visibility: visible;
   min-width: 40px;

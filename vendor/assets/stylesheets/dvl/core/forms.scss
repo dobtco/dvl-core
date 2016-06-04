@@ -392,7 +392,7 @@ input[type="radio"] {
 
 .datetime_input_clear_wrapper {
   clear: both;
-  height: $lineHeightSmall; // preserve height when clear button is hidden
+  height: $fontSmall * $unitlessLineHeight; // preserve height when clear button is hidden
 }
 
 .datetime_input_clear {
@@ -463,7 +463,7 @@ form {
 }
 
 .form_error {
-  @include fontSmallBody;
+  font-size: $fontSmall;
   background-color: $errorColor;
   color: $white;
   padding: ($rhythm / 2) ($rhythm * 1.5);
@@ -475,7 +475,7 @@ form {
 }
 
 .form_hint {
-  @include fontSmallerBody;
+  font-size: $fontSmaller;
   margin: $rhythm 0;
   font-style: italic;
   color: $darkerGray;
@@ -736,7 +736,7 @@ a.styled_select {
   padding: $rhythm * 2;
   border-radius: $radius;
   max-width: 22rem;
-  @include fontSmallerBody;
+  font-size: $fontSmaller;
   @include font_smoothing;
   margin-bottom: $lineHeight;
   p {

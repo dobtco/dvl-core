@@ -32,7 +32,8 @@
 
 .drop_rich_subhead {
   color: $darkerGray;
-  @include fontSmallerBody;
+  line-height: $unitlessLineHeight;
+  font-size: $fontSmaller;
   .active a & {
     color: $white;
   }

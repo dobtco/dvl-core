@@ -34,7 +34,7 @@
     em {
       color: $darkerGray;
       font-style: normal;
-      @include fontSmallBody;
+      font-size: $fontSmall;
       display: block;
     }
   }
