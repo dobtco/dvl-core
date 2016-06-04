@@ -8,10 +8,7 @@ class HomeController < ActionController::Base
     elsif view_exists?
       render "home/#{params[:actual_action_name]}", layout: false
     else
-      render plain: %{
-        View not found! Expecting to see "class #{assumed_view_class_name}"
-        inside of app/views/home/#{params[:actual_action_name]}.rb.
-      }.squish
+      raise ActionController::RoutingError.new('Not Found')
     end
   end
 

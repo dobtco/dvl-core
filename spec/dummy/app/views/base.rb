@@ -15,4 +15,11 @@ class Views::Base < Fortitude::Widget
     transform: :output_return_value,
     output_yielded_methods: SIMPLE_FORM_FOR_YIELDED_METHODS_TO_OUTPUT
   )
+
+  # Don't emit content_tag
+  helper :content_tag
+
+  def icon(x, opts = {})
+    content_tag(:i, opts.merge(class: "fa fa-#{x} #{opts[:class]}")) { }
+  end
 end
