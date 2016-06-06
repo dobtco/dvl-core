@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'capybara', '2.7.1'
   s.add_development_dependency 'capybara-webkit', '1.11.1'
   s.add_development_dependency 'fortitude', '0.9.5'
-  s.add_development_dependency 'percy-capybara', '2.1.0'
+  s.add_development_dependency 'percy-capybara', '2.1.1'
   s.add_development_dependency 'rails', '4.2.6'
   s.add_development_dependency 'rspec-rails', '3.4.2'
   s.add_development_dependency 'simple_form', '3.2.1'

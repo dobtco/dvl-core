@@ -6,7 +6,6 @@
   border-top: 1px solid $lightGray;
   .styled_select_wrapper {
     margin-top: $rhythm;
-
     @media screen and (min-width: $lapWidth) {
       float: right;
       margin-top: $rhythm / 2; // vertically center over two lines
@@ -16,7 +15,9 @@
 
 .footer_inner {
   float: left;
-
+  > span {
+    margin-bottom: $rhythm / 2;
+  }
   > span,
   > ul {
     font-size: $fontSmaller;

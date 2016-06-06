@@ -110,18 +110,19 @@ class Views::Home::Index < Views::Home
           ul(class: 'formatted_list') {
             li 'Item 1'
             li 'Item 2'
-            li 'Item 3'
+            li "Item 3 is an example of a longer item that may occasionally wrap to multiple lines."
             li 'Item 4'
             li 'Item 5'
             li 'Item 6'
             li 'Item 7'
           }
         }
+
         div(class: 'item lap_three_columns') {
           ol(class: 'formatted_list') {
             li 'Item 1'
             li 'Item 2'
-            li 'Item 3'
+            li "Item 3 is an example of a longer item that may occasionally wrap to multiple lines."
             li 'Item 4'
             li 'Item 5'
             li 'Item 6'
