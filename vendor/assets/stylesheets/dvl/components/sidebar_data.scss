@@ -48,7 +48,7 @@
   position: absolute;
   top: 50%;
   left: 0;
-  margin-top: $rhythm * -3;
+  margin-top: $rhythm * -2.5;
   width: $rhythm * 5;
   text-align: center;
   i {
@@ -58,6 +58,9 @@
   @media screen and (min-width: $lapWidth) {
     width: $rhythm * 5;
     left: $rhythm * 2;
+    .sidebar_data li:first-of-type & {
+      margin-top: $rhythm * -3.5;
+    }
     .sidebar_data li:last-of-type & {
       margin-top: $rhythm * -1.5;
     }
