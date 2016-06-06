@@ -4,12 +4,13 @@
   position: absolute;
   z-index: $z_tooltip;
   display: block;
-  font-size: $fontSmaller;
   opacity: 0;
   visibility: visible;
   min-width: 40px;
   transition: transform 0.25s $easeOutBack, opacity 120ms ease-out;
+  font-size: $fontSmaller;
   // Override styles on parent links
+  line-height: $fontSmaller * 1.5;
   font-weight: $weightNormal;
   letter-spacing: normal;
   text-transform: none;
