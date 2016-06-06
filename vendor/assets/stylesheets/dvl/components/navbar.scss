@@ -114,6 +114,7 @@
   font-size: $fontSmallest;
   border-radius: $rhythm;
   margin-left: $rhythm;
+  line-height: $unitlessLineHeight;
 }
 
 @media only screen and (min-width: $navBreakpoint) {
