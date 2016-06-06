@@ -1,8 +1,10 @@
 #! /bin/sh
 
+# Removed for now:
+#
 # Disable Percy unless there's an open PR
-if [ -z "${CI_PULL_REQUEST}" ]; then
-  export PERCY_ENABLE=0
-fi
+# if [ -z "${CI_PULL_REQUEST}" ]; then
+#   export PERCY_ENABLE=0
+# fi
 
 bundle exec rspec

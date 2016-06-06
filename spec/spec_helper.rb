@@ -11,7 +11,6 @@ require 'dvl/core'
 require 'simple_form'
 require 'simple_form_legend'
 require 'percy/capybara'
-require 'percy/capybara/rspec'
 
 Capybara.javascript_driver = :webkit
 
