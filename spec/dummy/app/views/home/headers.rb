@@ -10,7 +10,7 @@ class Views::Home::Headers < Views::Page
         h2 {
           text 'Sales Leads'
           a(class: 'button subtle mini') {
-            i(class: 'fa fa-pencil')
+            i(class: 'fa fa-pencil', 'aria-label' => 'Edit title')
           }
         }
         div(class: 'page_header_secondary') {
@@ -201,7 +201,7 @@ class Views::Home::Headers < Views::Page
           div(class: 'input_group_input') {
             i(class: 'fa fa-search')
             a(href: '#') {
-              i(class: 'fa fa-times-circle filter_form_icon_right')
+              i(class: 'fa fa-times-circle filter_form_icon_right', 'aria-label' => 'Clear search')
             }
             input(type: 'text', placeholder: 'Search your projects')
           }
@@ -219,7 +219,7 @@ class Views::Home::Headers < Views::Page
           div(class: 'input_group_input') {
             i(class: 'fa fa-search')
             a(href: '#') {
-              i(class: 'fa fa-times-circle filter_form_icon_right')
+              i(class: 'fa fa-times-circle filter_form_icon_right', 'aria-label' => 'Clear search')
             }
             input(type: 'text', placeholder: 'Search your projects', value: 'Innovation Challenge')
           }
