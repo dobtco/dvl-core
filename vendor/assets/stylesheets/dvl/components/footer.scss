@@ -18,14 +18,15 @@
 .footer_inner {
   float: left;
 
-  > div {
-    margin-bottom: $rhythm;
+  > span {
+    margin-bottom: $rhythm / 2;
   }
 
-  > div,
+  > span,
   > ul {
     font-size: $fontSmaller;
     color: $darkerGray;
+    display: block;
   }
 
   li {
