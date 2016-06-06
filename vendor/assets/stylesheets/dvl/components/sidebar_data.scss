@@ -58,6 +58,8 @@
   @media screen and (min-width: $lapWidth) {
     width: $rhythm * 5;
     left: $rhythm * 2;
+    // Account for no top / bottom padding
+    // in first and last sidebar items
     .sidebar_data li:first-of-type & {
       margin-top: $rhythm * -3.5;
     }
