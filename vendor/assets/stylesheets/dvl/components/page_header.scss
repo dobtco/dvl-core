@@ -85,12 +85,12 @@
     }
     > .button,
     > form .button {
-      @include topCenter(($fontLineHeightH2 + $rhythm), $inputHeight);
+      @include topCenter(($fontLineHeightH2 + $rhythm * 1.5), $inputHeight);
       &.small {
-        @include topCenter(($fontLineHeightH2 + $rhythm), ($rhythm * 4));
+        @include topCenter(($fontLineHeightH2 + $rhythm * 1.5), ($rhythm * 4));
       }
       &.mini {
-         @include topCenter(($fontLineHeightH2 + $rhythm), ($rhythm * 3));
+         @include topCenter(($fontLineHeightH2 + $rhythm * 1.5), ($rhythm * 3));
       }
     }
   }
@@ -101,6 +101,7 @@
   position: relative;
   top: $fontSmall * 0.75;
   left: $fontOpticalMarginH2 * -1;
+  margin-bottom: $rhythm * 0.5;
   a,
   span {
     color: $darkerGray;
@@ -135,9 +136,9 @@
   top: 0;
   left: 0;
   line-height: 1;
-  @include topCenter($fontLineHeightH2Mobile + $lineHeight + ($fontSmall * $unitlessLineHeight), 1.75rem);
+  @include topCenter($fontLineHeightH2Mobile + ($rhythm * 5) + ($fontSmall * $unitlessLineHeight), 1.75rem);
   @media screen and (min-width: $lapWidth) {
-    top: $rhythm * 5;
+    top: $rhythm * 5.5;
   }
 }
 
