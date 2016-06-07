@@ -110,11 +110,11 @@
   text-align: center;
   display: inline-block;
   padding: 0 $rhythm / 2;
-  height: $fontSmallest * $unitlessLineHeight;
+  height: $rhythm * 2;
+  line-height: $rhythm * 2;
   font-size: $fontSmallest;
   border-radius: $rhythm;
   margin-left: $rhythm;
-  line-height: $unitlessLineHeight;
 }
 
 @media only screen and (min-width: $navBreakpoint) {
