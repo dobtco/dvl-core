@@ -93,10 +93,8 @@ $fontFamilyDisplay: 'tablet-gothic-wide', 'HelveticaNeue-Light', Helvetica, Aria
 $fontFamilyMonospace: 'Consolas', 'Monaco', 'Lucida Console', monospace !default;
 $unitlessRhythm: 0.5 !default; // 8px @ 16px root
 $rhythm: $unitlessRhythm * 1rem !default;
-$unitlessLineHeight: $unitlessRhythm * 3 !default; // 24px
+$unitlessLineHeight: 1.5 !default; // 24px
 $lineHeight: $unitlessLineHeight * 1rem !default;
-$unitlessLineHeightSmall: $unitlessRhythm * 2.25 !default; // 18px
-$lineHeightSmall: $unitlessLineHeightSmall * 1rem !default;
 $maxFontSize: 100% !default; // 16px
 
 $ratio: 1.5;

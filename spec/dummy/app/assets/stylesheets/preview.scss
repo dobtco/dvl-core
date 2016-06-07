@@ -1,7 +1,11 @@
 // Styles for the style guide
 
 .hero {
-  @include hero_color(#09152f,#ba9270,0.6,#0085fa,0.3);
+  @include hero_color(#09152f,#4b20ba,0.2,#fa4b00,0.2);
+}
+
+.hero_compact {
+  @include hero_color(#09152f,#4b20ba,0.1,#fa4b00,0.15);
 }
 
 .container {
@@ -126,49 +130,99 @@ hr {
 // Guides
 
 .docs_guide {
-  @include cf;
-  margin-bottom: $lineHeight * 2;
-  display: table;
+  margin: $lineHeight 0;
+  display: block;
+  + .docs_guide {
+    margin-top: $lineHeight * 2;
+  }
+  .form_hint {
+    margin-top: $rhythm * 2;
+  }
 }
 
-.docs_guide_col {
-  margin-bottom: $lineHeight;
-  @media screen and (min-width: $deskWidth) {
-    display: table-cell;
-    vertical-align: top;
-    width: 50%;
+@media screen and (min-width: $lapWidth) {
+  .docs_guide_grid {
+    display: table;
+    width: 100%;
+    margin-left: -2%;
+    max-width: 48rem;
+  }
+}
+
+.docs_guide_item {
+  margin-top: $rhythm * 5;
+  position: relative;
+  p {
     margin-bottom: 0;
-    &:first-of-type {
-      padding-right: 2%;
+    padding: $rhythm ($rhythm * 2) ($rhythm * 2);
+    @include border_bottom_radius($radius);
+  }
+  img + p {
+    background: $lightestGray;
+    border-top: 1px solid $lightGray;
+    padding-top: $rhythm * 1.5;
+    padding-bottom: $rhythm * 1.5;
+  }
+  strong {
+    color: $darkerGray;
+  }
+  code {
+    font-size: $fontSmallest;
+  }
+  div {
+    position: relative;
+    border: 1px solid $lightGray;
+    border-radius: $radius;
+    padding: $lineHeight 0 0;
+    font-size: $fontSmaller;
+    color: $darkerGray;
+    &:before,
+    &:after {
+      position: absolute;
+      top: $rhythm * -2;
+      left: 10%;
+      height: $rhythm * 4;
     }
-    &:last-of-type {
-      padding-left: 2%;
+    &:before {
+      width: $rhythm * 4;
+      margin-left: $rhythm * -2;
+      border-radius: 50%;
+      z-index: 3;
+      font-family: 'FontAwesome';
+      line-height: $rhythm * 4;
+      text-align: center;
+      padding-top: 1px; // optical alignment
+    }
+    &:after {
+      content: '';
+      background: $white;
+      width: $rhythm * 6;
+      margin-left: $rhythm * -3;
+      z-index: 2;
+    }
+    &.do {
+      &:before {
+        background: rgba($successColor,0.7);
+        content: '\f00c';
+        color: $successColorText;
+      }
+    }
+
+    &.dont {
+      &:before {
+        background: rgba($errorColor,0.7);
+        content: '\f00d';
+        color: $errorColorText;
+      }
     }
   }
-}
-
-.docs_guide_example,
-.docs_guide_explain {
-  padding: $rhythm $rhythm * 2;
-  border: 1px solid $lightGray;
-}
-
-.docs_guide_example {
-  min-height: $lineHeight * 9;
-  @include border_top_radius($radius);
-  border-bottom: 0;
-  &:empty {
-    display: none;
-    + .docs_guide_explain {
-      @include border_top_radius($radius);
-    }
+  @media screen and (min-width: $lapWidth) {
+    margin-top: $lineHeight;
+    display: table-cell;
+    width: 46%;
+    padding: 0 2%;
+    vertical-align: top;
   }
-}
-
-.docs_guide_explain {
-  margin: 0;
-  background: $lightestGray;
-  @include border_bottom_radius($radius);
 }
 
 // Style-guide specific overrides
@@ -257,4 +311,8 @@ hr {
 
 .docs_fontsmallest {
   font-size: $fontSmallest;
+}
+
+.docs_labels .label {
+  margin-right: $rhythm;
 }

@@ -82,7 +82,7 @@ class Views::Layout < Views::Base
 
       eval(code_string)
 
-      a 'Toggle source', class: 'button small docs_toggle_button', href: '#'
+      a 'Toggle source', class: 'button_uppercase docs_toggle_button', href: '#'
 
       div(class: 'docs_code', style: 'display:none;') {
         div 'Fortitude source code', class: 'docs_code_header'
@@ -92,20 +92,23 @@ class Views::Layout < Views::Base
 
   end
 
-  def guide(code_do, guide_do, code_dont, guide_dont)
-    h5 'Rule of Thumb'
-
+  def guide(dodont1, content1, dodont2, content2, opts = {})
     div(class: 'docs_guide') {
-      div(class: 'docs_guide_col') {
-        div code_do, class: 'docs_guide_example'
-        p guide_do, class: 'docs_guide_explain'
+      div(class: 'docs_guide_grid') {
+        div(class: 'docs_guide_item') {
+          div(class: dodont1) {
+            rawtext content1
+          }
+        }
+        div(class: 'docs_guide_item') {
+          div(class: dodont2) {
+            rawtext content2
+          }
+        }
       }
-      div(class: 'docs_guide_col') {
-        div code_dont, class: 'docs_guide_example'
-        p guide_dont, class: 'docs_guide_explain'
-      }
+      if opts[:hint]
+        p opts[:hint], class: 'form_hint'
+      end
     }
-
-    hr
   end
 end

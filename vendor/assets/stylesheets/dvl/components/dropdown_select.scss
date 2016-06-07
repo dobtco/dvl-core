@@ -27,18 +27,14 @@
   }
   .active a & {
     color: $white;
-    @include font_smoothing(off);
   }
 }
 
 .drop_rich_subhead {
   color: $darkerGray;
-  @include font_smoothing;
+  line-height: $unitlessLineHeight;
   font-size: $fontSmaller;
-  line-height: $rhythm * 2;
-  @include font_smoothing(off);
   .active a & {
     color: $white;
-    @include font_smoothing;
   }
 }

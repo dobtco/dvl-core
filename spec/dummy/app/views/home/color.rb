@@ -2,12 +2,6 @@ class Views::Home::Color < Views::Page
   def main
     h2 'Color'
 
-    guide '',
-      %{<strong>Do</strong> supplement color with text and icons to differentiate data or call out a UI element.}.html_safe,
-      '',
-      %{<strong>Don&#39;t</strong> attempt to communicate something to users with only a change in color. This is inaccessible to color-blind users.}.html_safe
-
-
     h3 'Grayscale'
 
     grayscale_colors.each do |key|
@@ -16,10 +10,19 @@ class Views::Home::Color < Views::Page
 
     hr
 
-    guide %{<h3>Black</h3> <p style="color: #424242">Gray</p> <p style="font-size: 0.875rem; color: #737373">Grayer</p>}.html_safe,
-      %{<strong>Do</strong> establish visual hierarchy with the <code>$black</code>, <code>$darkestGray</code> and <code>$darkerGray</code> color variables.}.html_safe,
-      %{<p style="color: #bfbfbf;">This text is too light.</p>}.html_safe,
-      %{<strong>Don&#39;t</strong> use lighter grayscale variables (like <code>$gray</code> or <code>$lightGray</code>) against white backgrounds. These will fail accessibility tests.}.html_safe
+    guide 'do',
+    %{
+      <p><strong>Do</strong> establish visual hierarchy with the <code>$black</code>, <code>$darkestGray</code> and <code>$darkerGray</code> color variables.</p>
+    }.html_safe,
+    'dont',
+    %{
+      <p><strong>Don&#39;t</strong> use lighter grayscale variables (like <code>$gray</code> or <code>$lightGray</code>) against white backgrounds. These will fail accessibility tests.</p>
+    }.html_safe,
+    'hint': "All DOBT applications should pass WCAG 2.0 Level AA contrast guidelines.
+    If you&#39;re unsure whether a block of text has sufficient contrast
+    against its background, you can use
+    <a href='http://leaverou.github.io/contrast-ratio/'>Lea Verou's contrast ratio checker</a>
+    to confirm.".html_safe
 
     h3 'UI Colors'
 
@@ -30,6 +33,16 @@ class Views::Home::Color < Views::Page
     end
 
     hr
+
+    guide 'do',
+    %{
+      <p><strong>Do</strong> supplement color with text and icons to differentiate data or call out a UI element.</p>
+    }.html_safe,
+    'dont',
+    %{
+      <p><strong>Don&#39;t</strong> attempt to communicate something to users with only a change in color. This is inaccessible to color-blind users.</p>
+    }.html_safe
+
 
     h3 'Label Colors'
     p 'When building a feature that allows users to add labels to their data, use this color palette for the suggested presets.'

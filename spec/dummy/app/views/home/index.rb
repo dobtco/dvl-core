@@ -20,15 +20,24 @@ class Views::Home::Index < Views::Home
 
     hr
 
-    guide '',
-      %{<strong>Do</strong> use multiples of <code>$rhythm</code> and <code>$lineHeight</code> to specify the dimensions and padding of an item.}.html_safe,
-      '',
-      %{<strong>Don&#39;t</strong> use <code>px</code>, <code>em</code> or <code>rem</code> units to specify spacing or sizes.}.html_safe
+    guide 'do',
+      %{
+        <p><strong>Do</strong> use multiples of <code>$rhythm</code> and <code>$lineHeight</code> to specify the dimensions and padding of an item.</p>
+      }.html_safe,
+      'dont',
+      %{
+        <p><strong>Avoid</strong> using <code>px</code>, <code>em</code> or <code>rem</code> units to specify spacing or sizes.</p>
+      }.html_safe
 
-    guide '',
-      %{<strong>Do</strong> multiply the vertical rhythm by whole numbers when styling the dimensions of new UI elements.}.html_safe,
-      '',
-      %{<strong>Don&#39;t</strong> divide <code>$rhythm</code> or <code>$lineHeight</code> into fractions, unless you are vertically centering text within its container.}.html_safe
+    guide 'dont',
+      %{
+        <p>Unless you're centering elements within a container, <strong>avoid</strong> dividing <code>$rhythm</code> or <code>$lineHeight</code> into fractions, or multiplying them by non-whole numbers.</p>
+      }.html_safe,
+      'do',
+      %{
+         <p><strong>Do</strong> use multiples of <code>$rhythm</code> or <code>$lineHeight</code> when styling.</p>
+      }.html_safe
+
 
     docs 'Headings', %{
       div(class: 'dvlcore_headings') {
@@ -62,15 +71,38 @@ class Views::Home::Index < Views::Home
 
     hr
 
-    guide %{<p class="docs_fontsmaller">To enable electronic signatures for your project, click &ldquo;Edit project&rdquo; and select &ldquo;Responses&rdquo; from the Project Checklist. Then, check the &ldquo;Require signatures for responses&rdquo; box under &ldquo;Data collection.&rdquo;</p>}.html_safe,
-      %{<strong>Do</strong> use multiple lines of smaller text to provide UI microcopy or tertiary information.}.html_safe,
-      %{<h2>What happens if a respondent makes changes?</h2>}.html_safe,
-      %{<strong>Don&#39;t</strong> use multiple lines of larger text. Either use the default font size, or truncate a single line of larger text with ellipses.}.html_safe
+    guide 'dont',
+    %{
+      <img src="/images/largetype_dont.png">
+      <p><strong>Don&#39;t</strong> use multiple lines of larger text. Either use the default font size, or truncate a single line of larger text with ellipses.</p>
+    }.html_safe,
+    'do',
+    %{
+      <img src="/images/largetype_do.png">
+      <p><strong>Do</strong> use multiple lines of smaller text to provide UI microcopy or tertiary information.</p>
+    }.html_safe
 
-    guide %{<h2>Headline</h2> <p>Main Content</p> <div class="microcopy">Explanation</div>}.html_safe,
-      %{<strong>Do</strong> use header styles, smaller text sizes, and <a href="/components#alerts">alerts</a> to establish hierarchy and call out bits of text.}.html_safe,
-      %{<p><strong>We help governments deliver great digital services to the people who depend on them.</strong></p> <p class="microcopy" style="background-color: red;">Explanation goes here.</p>}.html_safe,
-      %{<strong>Don&#39;t</strong> use boldface text for long sentences, or color the text to emphasize an action. This negatively impacts legibility.}.html_safe
+    guide 'do',
+    %{
+      <img src="/images/hierarchy_do.png">
+      <p><strong>Do</strong> use header styles, smaller text sizes, and <a href="/components#alerts">alerts</a> to establish hierarchy and call out bits of text.</p>
+    }.html_safe,
+    'dont',
+    %{
+      <img src="/images/hierarchy_dont.png">
+      <p><strong>Don&#39;t</strong> use boldface text for long sentences, or color the text to emphasize an action. This negatively impacts legibility.</p>
+    }.html_safe
+
+    guide 'do',
+    %{
+      <img src="/images/smallcaps_do.png">
+      <p><strong>Do</strong> apply small caps to make actions or important data more visible at smaller font sizes.</p>
+    },
+    'dont',
+    %{
+      <img src="/images/smallcaps_dont.png">
+      <p><strong>Never</strong> apply small caps to our display typeface.</p>
+    }.html_safe
 
     docs 'Lists', %{
       div(class: 'grid') {
@@ -78,7 +110,7 @@ class Views::Home::Index < Views::Home
           ul(class: 'formatted_list') {
             li 'Item 1'
             li 'Item 2'
-            li "Item 3 is a longer item. Let's see what happens with a looooong item that wraps."
+            li "Item 3 is an example of a longer item that may occasionally wrap to multiple lines."
             li 'Item 4'
             li 'Item 5'
             li 'Item 6'
@@ -90,7 +122,7 @@ class Views::Home::Index < Views::Home
           ol(class: 'formatted_list') {
             li 'Item 1'
             li 'Item 2'
-            li "Item 3 is a longer item. Let's see what happens with a looooong item that wraps."
+            li "Item 3 is an example of a longer item that may occasionally wrap to multiple lines."
             li 'Item 4'
             li 'Item 5'
             li 'Item 6'
@@ -126,7 +158,7 @@ class Views::Home::Index < Views::Home
       p {
         button('Example', class: 'button_link')
       }
-    }, hint: %{Add the <code>.button_link</code> class to any <code>&lt;button&gt;</code> tag to make it appear like a link.}.html_safe, sub: true
+    }, hint: %{Add the <code>.button_link</code> class to any <code>&lt;button&gt;</code> tag to make it look like a link.}.html_safe, sub: true
 
   end
 end

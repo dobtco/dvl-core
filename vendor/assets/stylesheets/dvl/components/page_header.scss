@@ -85,12 +85,12 @@
     }
     > .button,
     > form .button {
-      @include topCenter(($fontLineHeightH2 + $rhythm), $inputHeight);
+      @include topCenter(($fontLineHeightH2 + $rhythm * 1.5), $inputHeight);
       &.small {
-        @include topCenter(($fontLineHeightH2 + $rhythm), ($rhythm * 4));
+        @include topCenter(($fontLineHeightH2 + $rhythm * 1.5), ($rhythm * 4));
       }
       &.mini {
-         @include topCenter(($fontLineHeightH2 + $rhythm), ($rhythm * 3));
+         @include topCenter(($fontLineHeightH2 + $rhythm * 1.5), ($rhythm * 3));
       }
     }
   }
@@ -99,9 +99,9 @@
 .page_header_context {
   width: 100%;
   position: relative;
-  top: $rhythm * 0.5;
+  top: $fontSmall * 0.75;
   left: $fontOpticalMarginH2 * -1;
-  line-height: $rhythm * 2;
+  margin-bottom: $rhythm * 0.5;
   a,
   span {
     color: $darkerGray;
@@ -124,7 +124,6 @@
         left: $rhythm * -2;
         width: $rhythm * 2;
         text-align: center;
-        line-height: $rhythm * 2;
       }
     }
   }
@@ -137,9 +136,9 @@
   top: 0;
   left: 0;
   line-height: 1;
-  @include topCenter($fontLineHeightH2Mobile + ($rhythm * 4.5), 1.75rem);
+  @include topCenter($fontLineHeightH2Mobile + ($rhythm * 5) + ($fontSmall * $unitlessLineHeight), 1.75rem);
   @media screen and (min-width: $lapWidth) {
-    @include topCenter($fontLineHeightH2 + ($rhythm * 4.5), 1.75rem);
+    top: $rhythm * 5.5;
   }
 }
 
@@ -149,11 +148,11 @@
 .page_header_tertiary {
   ul {
     margin-top: $rhythm * 0.5;
+    line-height: $lineHeight;
     a,
     li > span {
       padding-bottom: $rhythm * 1.5;
       display: inline-block;
-      line-height: $lineHeight;
     }
     a {
       @media screen and (min-width: $lapWidth) {

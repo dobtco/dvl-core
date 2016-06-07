@@ -22,6 +22,9 @@ class Views::Home::Components < Views::Page
                 a 'Option 2, with divider', href: '#'
               }
               li {
+                a 'New project&hellip;'.html_safe, href: '#'
+              }
+              li {
                 a(href: 'mailto:support@dobt.co') {
                   span 'Contact support&hellip;'.html_safe, class: 'drop_rt_item'
                   span(
@@ -62,7 +65,8 @@ class Views::Home::Components < Views::Page
           }
         }
       }
-    }, sub: true
+    }, sub: true,
+    hint: "When linking to external sites from a dropdown, indicate this with an icon on the right side of the link.<br/><br/>If pressing a link in a dropdown triggers a user flow with additional steps, append an ellipsis to it.".html_safe
 
     docs 'Multi-Column', %{
       div(class: 'dvlcore_button_array') {
@@ -502,7 +506,7 @@ class Views::Home::Components < Views::Page
       }
     }, sub: true
 
-    docs 'With fewer links', %{
+    docs 'With fewer pages', %{
       div(class: 'pagination pagination_centered') {
         ul {
           li { span '&larr;'.html_safe }
@@ -511,7 +515,7 @@ class Views::Home::Components < Views::Page
           li { a '&rarr;'.html_safe }
         }
       }
-    }
+    }, sub: true
 
     docs 'Compact', %{
       div(class: 'pagination_compact') {

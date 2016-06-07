@@ -4,7 +4,6 @@ html {
 
 // 1. Remove default `margin`
 // 2. Inherits percentage declared on above <html> as root `font-size`
-// 3. Unitless `line-height`, which acts as multiple of root `font-size`
 
 body {
   margin: 0; // 1
@@ -13,7 +12,7 @@ body {
   font-size: 1rem; // 2
   font-family: $fontFamilyDefault;
   font-weight: $weightNormal;
-  line-height: $unitlessLineHeight; // 3
+  line-height: $unitlessLineHeight;
 }
 
 // Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome
@@ -41,7 +40,7 @@ ul {
 dt {
   color: $darkerGray;
   @include font_smoothing;
-  font-size: $fontSmall;
+  font-size: $fontSmaller;
   font-weight: $weightBold;
 }
 
