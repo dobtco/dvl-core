@@ -134,6 +134,7 @@
   }
   span:before,
   a,
+  span a,
   .flash_close {
     color: $errorColorText;
   }
@@ -147,6 +148,7 @@
   }
   span:before,
   a,
+  span a,
   .flash_close {
     color: $successColorText;
   }
