@@ -83,7 +83,7 @@ textarea {
     border-color: $primaryColor;
   }
   &[readonly], &[disabled] {
-    border-color: #ccc;
+    border-color: $lighterGray;
     color: $darkerGray;
     @include font_smoothing;
     background-color: $lightestGray;
@@ -658,7 +658,7 @@ form {
     &[disabled] {
       + div {
         background: $lightestGray;
-        border-color: $gray;
+        border-color: $lighterGray;
         &:after {
           color: #888;
         }
