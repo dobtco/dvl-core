@@ -90,3 +90,11 @@
 @media only screen and (min-width: $deskWidth) {
   @include build_grid("desk_");
 }
+
+// Grid styles for when .container is at maximum width
+
+@media only screen and (min-width: ($maxWidth / 0.9)) {
+  @include build_grid("max_");
+}
+
+
