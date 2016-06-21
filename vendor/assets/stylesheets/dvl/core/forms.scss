@@ -437,6 +437,7 @@ form {
 .input_sub_parent {
   font-weight: $weightBold;
   color: $darkerGray;
+  margin-bottom: $rhythm;
   @include font_smoothing;
 }
 
