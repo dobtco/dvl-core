@@ -434,10 +434,16 @@ form {
   margin-bottom: $rhythm;
 }
 
+.input_sub_parent {
+  font-weight: $weightBold;
+  color: $darkerGray;
+  margin-bottom: $rhythm;
+  @include font_smoothing;
+}
+
 .input_sub {
-  @media screen and (min-width: $lapWidth) {
-    margin-left: $rhythm * 3;
-  }
+  font-size: $fontSmall;
+  margin-left: $rhythm * 5;
 }
 
 @media only screen and (min-width: $lapWidth) {
