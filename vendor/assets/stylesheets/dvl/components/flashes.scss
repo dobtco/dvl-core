@@ -53,11 +53,6 @@
     a {
       color: $white;
       text-decoration: underline;
-      &:hover,
-      &:focus,
-      &:active {
-        color: $white;
-      }
       &:hover {
         opacity: 0.95;
       }
@@ -138,13 +133,6 @@
   .flash_close {
     color: $errorColorText;
   }
-  span a {
-    &:hover,
-    &:focus,
-    &:active {
-      color: $errorColorText;
-    }
-  }
 }
 
 .flash_success {
@@ -158,12 +146,5 @@
   span a,
   .flash_close {
     color: $successColorText;
-  }
-  span a {
-    &:hover,
-    &:focus,
-    &:active {
-      color: $successColorText;
-    }
   }
 }
