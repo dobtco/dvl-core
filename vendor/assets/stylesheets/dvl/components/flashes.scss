@@ -138,7 +138,7 @@
   .flash_close {
     color: $errorColorText;
   }
-  a {
+  span a {
     &:hover,
     &:focus,
     &:active {
@@ -159,7 +159,7 @@
   .flash_close {
     color: $successColorText;
   }
-  a {
+  span a {
     &:hover,
     &:focus,
     &:active {
