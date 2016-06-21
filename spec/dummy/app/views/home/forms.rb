@@ -38,6 +38,39 @@ class Views::Home::Forms < Views::Page
                 hint: "Checkbox fields can contain a single answer option where appropriate.".html_safe,
                 wrapper: :vertical_fieldset
 
+        fieldset(class: 'form_item form_item_vert') {
+          div(class: 'form_item_vert_label') {
+            legend 'This administrator can access&hellip;'.html_safe
+          }
+          div(class: 'form_item_vert_input') {
+            label(class: 'control input_sub_parent') {
+              input(type: 'checkbox')
+              text 'Everything'
+            }
+
+            div(class: 'input_sub') {
+              label(class: 'control') {
+                input(type: 'checkbox')
+                text 'Billing information'
+              }
+            }
+
+            div(class: 'input_sub') {
+              label(class: 'control') {
+                input(type: 'checkbox')
+                text 'Account preferences'
+              }
+            }
+
+            div(class: 'input_sub') {
+              label(class: 'control') {
+                input(type: 'checkbox')
+                text 'Data created by other users'
+              }
+            }
+          }
+        }
+
         label(class: 'control control_minus') {
           input type: 'checkbox', checked: true
           text 'Select all items'
