@@ -380,16 +380,16 @@ class Views::Home::Components < Views::Page
     docs 'Flashes', %{
       ul {
         li {
-          a 'Success notification', href: '#', onclick: 'javascript:Dvl.Flash("success", "You did it!")'
+          a 'Success notification', href: '#', onclick: 'javascript:Dvl.Flash("success", "You did it! <a href=#>Celebrate!</a>")'
         }
         li {
           a 'Neutral flash', href: '#', onclick: 'javascript:Dvl.Flash("info", "This is <a href=#>an informational message</a>.")'
         }
         li {
-          a 'Long error notification', href: '#', onclick: 'javascript:Dvl.Flash("error", "Oh dear lord, an error has occurred! I am not sure how to handle a quandary quite like this.")'
+          a 'Long error notification', href: '#', onclick: 'javascript:Dvl.Flash("error", "Oh dear lord, an error has occurred! I am not sure how to handle a quandary quite like this. <a href=#>Contact support</a>")'
         }
         li {
-          a 'Neutral with action', href: '#', onclick: 'javascript:Dvl.Flash("info", "Your item was deleted.", "<a href=#>Undo</a>")'
+          a 'Neutral with action', href: '#', onclick: 'javascript:Dvl.Flash("info", "<a href=#>Your item</a> was deleted.", "<a href=#>Undo</a>")'
         }
       }
     }
