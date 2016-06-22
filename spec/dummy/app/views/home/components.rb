@@ -380,16 +380,16 @@ class Views::Home::Components < Views::Page
     docs 'Flashes', %{
       ul {
         li {
-          a 'Success notification', href: 'javascript:Dvl.Flash("success", "You did it! <a href=#>Celebrate!</a>")'
+          a 'Success notification', href: '#', onclick: 'javascript:Dvl.Flash("success", "You did it! <a href=#>Celebrate!</a>")'
         }
         li {
-          a 'Neutral flash', href: 'javascript:Dvl.Flash("info", "This is <a href=#>an informational message</a>.")'
+          a 'Neutral flash', href: '#', onclick: 'javascript:Dvl.Flash("info", "This is <a href=#>an informational message</a>.")'
         }
         li {
-          a 'Long error notification', href: 'javascript:Dvl.Flash("error", "Oh dear lord, an error has occurred! I am not sure how to handle a quandary quite like this. <a href=#>Contact support</a>")'
+          a 'Long error notification', href: '#', onclick: 'javascript:Dvl.Flash("error", "Oh dear lord, an error has occurred! I am not sure how to handle a quandary quite like this. <a href=#>Contact support</a>")'
         }
         li {
-          a 'Neutral with action', href: 'javascript:Dvl.Flash("info", "<a href=#>Your item</a> was deleted.", "<a href=#>Undo</a>")'
+          a 'Neutral with action', href: '#', onclick: 'javascript:Dvl.Flash("info", "<a href=#>Your item</a> was deleted.", "<a href=#>Undo</a>")'
         }
       }
     }
@@ -561,11 +561,14 @@ class Views::Home::Components < Views::Page
 
     docs 'When the Delete button contains text, delete the item immediately, and let the user undo the action.', %{
       li(class: 'js_delete_5') {
-        a(class: 'button_uppercase',
-          href: "javascript: Dvl.Flash('info', 'You deleted the response.', '<a>Undo</a>')") {
-            text icon('minus-circle')
-            text 'Delete this response'
-          }
+        a(
+          class: 'button_uppercase',
+          href: '#',
+          onclick: "javascript: Dvl.Flash('info', 'You deleted the response.', '<a>Undo</a>')"
+        ) {
+          text icon('minus-circle')
+          text 'Delete this response'
+        }
       }
     }, sub: true, hint: 'The undo is usually implemented server-side.'
 
