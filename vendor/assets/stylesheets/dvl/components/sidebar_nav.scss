@@ -55,7 +55,7 @@
       }
     }
     .badge,
-    i {
+    .sidebar_nav_icon {
       position: absolute;
       right: $lineHeight;
       top: $rhythm * 2;
@@ -63,14 +63,10 @@
       padding: 0 $rhythm;
       border-radius: $radius;
     }
-    &.header i {
-      padding: 0;
-      position: static;
-    }
     .badge {
       background-color: $lightGray;
     }
-    i {
+    .sidebar_nav_icon {
       line-height: $lineHeight;
     }
     > a:focus,
@@ -85,7 +81,7 @@
         background: $darkestGray;
         color: $white;
       }
-      i {
+      .sidebar_nav_icon {
         color: $white;
       }
       .badge {

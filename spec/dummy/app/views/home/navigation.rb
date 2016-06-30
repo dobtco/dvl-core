@@ -158,7 +158,7 @@ class Views::Home::Navigation < Views::Page
         li {
           a(class: 'sidebar_nav_multi_item') {
             text 'Billing'
-            i(class: 'fa fa-external-link')
+            i(class: 'fa fa-external-link sidebar_nav_icon')
           }
         }
       }
