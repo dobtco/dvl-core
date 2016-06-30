@@ -156,7 +156,7 @@ class Views::Home::Navigation < Views::Page
           }
         }
         li {
-          a {
+          a(class: 'sidebar_nav_multi_item') {
             text 'Billing'
             i(class: 'fa fa-external-link')
           }
@@ -168,13 +168,13 @@ class Views::Home::Navigation < Views::Page
           text 'Statuses'
         }
         li {
-          a {
+          a(class: 'sidebar_nav_multi_item') {
             text 'Open'
             span '2', class: 'badge'
           }
         }
         li {
-          a {
+          a(class: 'sidebar_nav_multi_item') {
             text 'Rejected by the International Court of Justice in Hague, The Netherlands after a lengthy deliberation of multiple years'
             span '5,000', class: 'badge'
           }
@@ -186,13 +186,13 @@ class Views::Home::Navigation < Views::Page
           text 'Labels'
         }
         li {
-          a {
+          a(class: 'sidebar_nav_multi_item') {
             div "Label 1", class: 'label'
             span "15", class: 'badge'
           }
         }
         li {
-          a {
+          a(class: 'sidebar_nav_multi_item') {
             div "Label 2", class: 'label'
             span "27", class: 'badge'
           }

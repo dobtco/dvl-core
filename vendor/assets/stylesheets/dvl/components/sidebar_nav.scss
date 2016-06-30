@@ -34,9 +34,10 @@
       border-color: $lightGray;
       border-bottom-width: 0;
       padding: ($rhythm * 2) $lineHeight;
-      padding-right: 25%;
-      &.editing {
-        padding-right: $rhythm * 2;
+
+      // Add padding when there's a badge or icon
+      &.sidebar_nav_multi_item {
+        padding-right: 25%;
       }
     }
     &:first-child {
