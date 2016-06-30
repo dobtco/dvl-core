@@ -100,7 +100,7 @@
     line-height: $rhythm * 2;
     @include ellipses;
     display: block;
-    padding-right: 2.5rem; //
+    padding-right: 15%;
   }
   .dropdown-active & {
     float: left;
