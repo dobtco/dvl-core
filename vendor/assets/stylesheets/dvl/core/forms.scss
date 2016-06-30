@@ -501,8 +501,7 @@ form {
 }
 
 .input_group_input,
-.input_group_append,
-.input_group_prepend {
+.input_group_append {
   display: table-cell;
 }
 
@@ -510,22 +509,16 @@ form {
 
 .input_group_input input {
   @include border_right_radius(0);
-  .input_group_prepend + & {
-    @include border_right_radius($radius);
-    @include border_left_radius(0);
-  }
-}
-
-.input_group_prepend .button,
-.input_group_prepend .button:hover {
-  @include border_right_radius(0);
-  border-right-width: 0;
 }
 
 .input_group_append .button,
 .input_group_append .button:hover {
   @include border_left_radius(0);
   border-left-width: 0;
+
+  .input_group_disabled & {
+    border-left-width: 1px;
+  }
 }
 
 // Restore border radius if no buttons are adjacent
@@ -542,8 +535,7 @@ form {
   }
 }
 
-.input_group_append,
-.input_group_prepend {
+.input_group_append {
   width: 1%;
   display: table-cell;
   vertical-align: top;
@@ -570,12 +562,6 @@ form {
 .input_group_append {
   span {
     padding-left: $rhythm;
-  }
-}
-
-.input_group_prepend {
-  span {
-    padding-right: $rhythm;
   }
 }
 
