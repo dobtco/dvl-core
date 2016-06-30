@@ -100,7 +100,12 @@
     line-height: $rhythm * 2;
     @include ellipses;
     display: block;
-    padding-right: 2.5rem; // match styled select
+    padding-right: 2.5rem; //
+  }
+  .dropdown-active & {
+    float: left;
+    max-width: 85%;
+    padding-right: 0;
   }
   .single .input-active & {
     top: 0;
