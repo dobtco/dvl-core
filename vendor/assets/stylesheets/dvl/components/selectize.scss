@@ -26,6 +26,10 @@
   position: relative;
   z-index: 1;
 
+  @media screen and (min-width: 25rem) {
+    width: 20rem; // 272px
+  }
+
   // Match styled select's `is_blank` state
   ::placeholder {
     color: #888;

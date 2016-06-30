@@ -1,51 +1,71 @@
 class Views::Home::Regression::Selectize < Views::Layout
   def render_body
     div(class: "container") {
-      div(class: "form_item") {
-        label 'Native', for: 'select2'
+      div(class: "form_item form_item_vert") {
+        div(class: 'form_item_vert_label') {
+          label 'Native', for: 'select2'
+        }
 
-        select(id: 'select2', 'data-width' => 'full') {
-          option 'Select a page...', value: ''
-          Rails.configuration.x.pages.each do |name, path|
-            option(name, value: path)
-          end
+        div(class: 'form_item_vert_input') {
+          select(id: 'select2') {
+            option 'Select a page...', value: ''
+            Rails.configuration.x.pages.each do |name, path|
+              option(name, value: path)
+            end
+          }
         }
       }
 
-      div(class: "form_item") {
-        label 'Selectize (single)', for: 'select1'
+      div(class: "form_item form_item_vert") {
+        div(class: 'form_item_vert_label') {
+          label 'Selectize (single)', for: 'select1'
+        }
 
-        select('data-no-styled-select' => true, id: 'select1') {
-          option 'Select a page...', value: ''
-          option('Howdy howdy howdy howdyu howdy howdyho wdhiuwod', value: 'asdf', selected: true)
-          Rails.configuration.x.pages.each do |name, path|
-            option(name, value: path)
-          end
+        div(class: 'form_item_vert_input') {
+          select('data-no-styled-select' => true, id: 'select1') {
+            option 'Select a page...', value: ''
+            option('Howdy howdy howdy howdyu howdy howdyho wdhiuwod', value: 'asdf', selected: true)
+            Rails.configuration.x.pages.each do |name, path|
+              option(name, value: path)
+            end
+          }
         }
       }
 
-      div(class: "form_item") {
-        label 'Native', for: 'select2'
+      div(class: "form_item form_item_vert") {
+        div(class: 'form_item_vert_label') {
+          label 'Native', for: 'select2'
+        }
 
-        select(id: 'select2', 'data-width' => 'full') {
-          option 'Select a page...', value: ''
-          Rails.configuration.x.pages.each do |name, path|
-            option(name, value: path)
-          end
+        div(class: 'form_item_vert_input') {
+          select(id: 'select2') {
+            option 'Select a page...', value: ''
+            Rails.configuration.x.pages.each do |name, path|
+              option(name, value: path)
+            end
+          }
         }
       }
 
-      div(class: "form_item") {
-        label 'Selectize (multiple)', for: 'select3'
+      div(class: "form_item form_item_vert") {
+        div(class: 'form_item_vert_label') {
+          label 'Selectize (multiple)', for: 'select3'
+        }
 
-        input(id: 'select3', type: 'text', value: 'african,afar,grist')
+        div(class: 'form_item_vert_input') {
+          input(id: 'select3', type: 'text', value: 'african,afar,grist')
+        }
       }
 
-      div(class: "form_item") {
-        label 'Selectize (remote)', for: 'select5'
+      div(class: "form_item form_item_vert") {
+        div(class: 'form_item_vert_label') {
+          label 'Selectize (remote)', for: 'select5'
+        }
 
-        select('data-no-styled-select' => true, id: 'select5') {
-          option 'Select a site...', value: ''
+        div(class: 'form_item_vert_input') {
+          select('data-no-styled-select' => true, id: 'select5') {
+            option 'Select a site...', value: ''
+          }
         }
       }
 
