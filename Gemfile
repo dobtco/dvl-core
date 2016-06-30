@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 gemspec
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-autosize'
+end
+
 # Heroku...
 group :production do
   gem 'autoprefixer-rails'

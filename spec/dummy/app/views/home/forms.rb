@@ -17,6 +17,13 @@ class Views::Home::Forms < Views::Page
                 label: 'Textarea',
                 input_html: { rows: 5, value:  sample_paragraph }
 
+        f.input :autosize_text,
+                as: :text,
+                label: 'Textarea (with autosize)',
+                placeholder: 'Try typing some long content here…',
+                hint: "You must include <a href='https://github.com/jackmoore/autosize'>Autosize</a> to implement this functionality.".html_safe,
+                input_html: { 'data-autosize' => true }
+
         f.input :radio,
                 as: :radio_buttons,
                 collection: ['Enthusiastic', 'Indifferent', 'Antagonistic'],

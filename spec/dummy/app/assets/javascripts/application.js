@@ -27,4 +27,5 @@
 //= require dvl/datetime_picker
 //= require dvl/vendor/selectize
 //= require dvl/overrides/rails_allow_action
+//= require autosize
 //= require preview
