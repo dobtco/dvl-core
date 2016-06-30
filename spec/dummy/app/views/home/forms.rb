@@ -328,12 +328,13 @@ class Views::Home::Forms < Views::Page
       simple_form_for :input_groups do |f|
 
         f.input :permalink do
-          div(class: 'input_group') {
+          div(class: 'input_group input_group_disabled') {
             div(class: 'input_group_input') {
               f.input_field :input_group_with_copy,
                             as: :string,
                             value: 'http://dobt.forms.fm',
-                            'aria-label' => 'Permalink'
+                            'aria-label' => 'Permalink',
+                            disabled: true
             }
             div(class: 'input_group_append') {
               a(class: 'button small info',
@@ -398,21 +399,6 @@ class Views::Home::Forms < Views::Page
                 'aria-label' => 'Copy URL') {
                 i(class: 'fa fa-copy')
               }
-            }
-          }
-        end
-
-        f.input :example_of_prepended_input do
-          div(class: 'input_group input_group_text') {
-            div(class: 'input_group_prepend') {
-              a(class: 'button small') {
-                i(class: 'fa fa-eye')
-              }
-            }
-            div(class: 'input_group_input') {
-              f.input_field :input_group,
-                            as: :string,
-                            'aria-label' => 'Example of prepended button'
             }
           }
         end
