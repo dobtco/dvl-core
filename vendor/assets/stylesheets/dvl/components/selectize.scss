@@ -216,6 +216,11 @@
   }
 }
 
+.selectize-control.single.loading .selectize-input:after {
+  content: '\f021';
+  animation: fa-spin 2s infinite linear;
+}
+
 .selectize-control .selectize-input.disabled {
   opacity: 0.7;
   background-color: $lightestGray;

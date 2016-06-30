@@ -70,7 +70,13 @@ class Views::Home::Regression::Selectize < Views::Layout
           console.log(query);
           if (!query.length) return callback();
           if (query.match(/a/)) {
-            callback([{ value: 'foo', text: 'bar' }, { value: 'foo2', text: 'bar2' }, { value: 'foo3', text: 'bar3' }]);
+            setTimeout(function(){
+              callback([
+                { value: 'foo', text: 'bar' },
+                { value: 'foo2', text: 'bar2' },
+                { value: 'foo3', text: 'bar3' }
+              ]);
+            }, 1000);
           }
         }
       });
