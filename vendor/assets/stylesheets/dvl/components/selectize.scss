@@ -44,14 +44,25 @@
   .single & {
     height: $inputHeight;
     overflow: hidden;
+
+    > input {
+      margin-top: 1px; // Account for missing borders
+    }
   }
 
   .multi & {
     padding-top: $rhythm * 0.75;
     input[type="text"] {
-      height: $rhythm * 3;
+      height: auto;
       font-size: $fontSmaller;
       margin-left: $rhythm;
+      margin-right: ($rhythm / 2);
+      margin-bottom: $rhythm * 0.75;
+      border: 1px solid transparent !important; // match border on items
+      vertical-align: top;
+      border: 1px solid transparent;
+      line-height: 1rem;
+      padding: 0.25rem 0;
     }
   }
   &.disabled, &.disabled * {
@@ -76,17 +87,20 @@
     &::-ms-clear {
       display: none;
     }
-    height: $inputHeight - ($inputPadding / 2);
-    margin-top: 2px; // Account for missing borders
+
+    .single & {
+      border: 0 none !important;
+      height: $inputHeight - ($inputPadding / 2);
+      line-height: inherit !important;
+      padding: 0 !important;
+    }
+
     display: inline-block !important;
-    padding: 0 !important;
     min-height: 0 !important;
     max-height: none !important;
     max-width: 100% !important;
     text-indent: 0 !important;
-    border: 0 none !important;
     background: none !important;
-    line-height: inherit !important;
     -webkit-user-select: auto !important;
     box-shadow: none !important;
     &:focus { outline: none !important; }
@@ -102,7 +116,7 @@
     display: block;
     padding-right: 15%;
   }
-  .dropdown-active & {
+  .single .dropdown-active & {
     float: left;
     max-width: 85%;
     padding-right: 0;
@@ -111,6 +125,7 @@
     top: 0;
   }
   .multi & {
+    max-width: 100%;
     cursor: pointer;
     margin-right: ($rhythm / 2);
     margin-bottom: $rhythm * 0.75;
@@ -123,6 +138,7 @@
     line-height: $rhythm * 2;
     @include font_smoothing;
     box-shadow: 0 1px rgba(#000,0.02);
+    vertical-align: top;
     &:last-child {
       margin: 0;
     }
