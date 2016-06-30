@@ -11,11 +11,18 @@
   @include font_smoothing;
 }
 
+
+
 .selectize-input,
 .selectize-control.single .selectize-input.input-active {
   background: $white;
   cursor: text;
   display: inline-block;
+}
+
+.selectize-control.single .selectize-input,
+.selectize-control.single .selectize-input.input-active {
+  display: block;
 }
 
 .selectize-input {
@@ -27,6 +34,18 @@
   position: relative;
   z-index: 1;
   border-radius: $radius;
+
+  // Match styled select's `is_blank` state
+  ::placeholder {
+    color: #888;
+    font-weight: $weightBold;
+  }
+
+  .single & {
+    height: $inputHeight;
+    overflow: hidden;
+  }
+
   .multi & {
     padding-top: $rhythm * 0.75;
     input[type="text"] {
@@ -79,6 +98,9 @@
     position: relative;
     padding-top: $rhythm * 1.5;
     line-height: $rhythm * 2;
+    @include ellipses;
+    display: block;
+    padding-right: 2.5rem; // match styled select
   }
   .single .input-active & {
     top: 0;
@@ -170,9 +192,6 @@
     width: $inputHeight;
     text-align: center;
     color: $darkerGray;
-  }
-  &.dropdown-active:after {
-    content: '\f0d8';
   }
 }
 
