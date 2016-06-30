@@ -36,11 +36,19 @@ class Views::Home::Regression::Selectize < Views::Layout
       }
 
       div(class: "form_item") {
-
         label 'Selectize (multiple)', for: 'select3'
 
         input(id: 'select3', type: 'text', value: 'african,afar,grist')
       }
+
+      div(class: "form_item") {
+        label 'Selectize (remote)', for: 'select5'
+
+        select('data-no-styled-select' => true, id: 'select5') {
+          option 'Select a site...', value: ''
+        }
+      }
+
     }
 
     script %{
@@ -52,6 +60,17 @@ class Views::Home::Regression::Selectize < Views::Layout
           return {
               value: input,
               text: input
+          }
+        }
+      });
+      $('#select5').selectize({
+        delimiter: ',',
+        create: false,
+        load: function(query, callback) {
+          console.log(query);
+          if (!query.length) return callback();
+          if (query.match(/a/)) {
+            callback([{ value: 'foo', text: 'bar' }, { value: 'foo2', text: 'bar2' }, { value: 'foo3', text: 'bar3' }]);
           }
         }
       });
