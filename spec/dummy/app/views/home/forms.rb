@@ -381,6 +381,27 @@ class Views::Home::Forms < Views::Page
             }
           }
         end
+
+        f.input :large_input_group do
+          div(class: 'input_group') {
+            div(class: 'input_group_input') {
+              f.input_field :large_input_group,
+                            as: :string,
+                            value: 'http://dobt.forms.fm',
+                            'aria-label' => 'Large input group',
+                            class: 'large'
+            }
+            div(class: 'input_group_append') {
+              a(class: 'button large info',
+                'data-toggle' => 'tooltip',
+                'data-container' => 'body',
+                title: 'Copy URL',
+                'aria-label' => 'Copy URL') {
+                i(class: 'fa fa-copy')
+              }
+            }
+          }
+        end
       end
 
       simple_form_for :datetime_picker do |f|
