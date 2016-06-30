@@ -146,6 +146,25 @@ class Views::Home::Forms < Views::Page
                 collection: [['Option 1', 'action', 'Description'],
                 ['An example of a very long Option 2. This should not be a problem, because the text should wrap to multiple lines.', 'action', 'Description']],
                 include_blank: 'None selected'
+
+        f.input :long_dropdown_select,
+                as: :dropdown_select,
+                label: 'Rich-text dropdowns scroll when they contain many options.',
+                collection: [
+                  ['All', 'action', 'All activity on this project will trigger a new notification.'],
+                  ['Only when mentioned', 'action', 'You will be emailed when someone mentions you in a comment, or a response is assigned.'],
+                  ['None', 'action'],
+                  ['All1', 'action', 'All activity on this project will trigger a new notification.'],
+                  ['Only when mentioned1', 'action', 'You will be emailed when someone mentions you in a comment, or a response is assigned.'],
+                  ['None1', 'action'],
+                  ['All2', 'action', 'All activity on this project will trigger a new notification.'],
+                  ['Only when mentioned2', 'action', 'You will be emailed when someone mentions you in a comment, or a response is assigned.'],
+                  ['None2', 'action'],
+                  ['All3', 'action', 'All activity on this project will trigger a new notification.'],
+                  ['Only when mentioned3', 'action', 'You will be emailed when someone mentions you in a comment, or a response is assigned.'],
+                  ['None3', 'action5']
+                ],
+                input_html: { value: 'action5' }
       end
     }, hint: 'This component lets you add long answer options, or descriptive text to each option, while imitating the behavior of a native <code>&lt;select&gt;</code>.'.html_safe, sub: true
 
