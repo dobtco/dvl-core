@@ -22,6 +22,7 @@ require 'simple_form'
 require 'simple_form_legend'
 require 'autoprefixer-rails'
 require 'sass'
+require 'rails-assets-autosize'
 
 module Dummy
   class Application < Rails::Application
