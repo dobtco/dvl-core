@@ -4,7 +4,7 @@ class Views::Home::Forms < Views::Page
 
     h3 'Form elements'
 
-    docs 'Basic', %{
+    docs 'Text', %{
       simple_form_for :basic do |f|
         f.input :string,
                 as: :string,
@@ -19,11 +19,15 @@ class Views::Home::Forms < Views::Page
 
         f.input :autosize_text,
                 as: :text,
-                label: 'Textarea (with autosize)',
+                label: 'Automatically sized textarea',
                 placeholder: 'Try typing some long content here…',
                 hint: "You must include <a href='https://github.com/jackmoore/autosize'>Autosize</a> to implement this functionality.".html_safe,
                 input_html: { 'data-autosize' => true }
+      end
+    }, sub: true
 
+    docs 'Multiple Choice', %{
+      simple_form_for :multiple do |f|
         f.input :radio,
                 as: :radio_buttons,
                 collection: ['Enthusiastic', 'Indifferent', 'Antagonistic'],
@@ -85,6 +89,9 @@ class Views::Home::Forms < Views::Page
         div 'This is a partially selected checkbox. In this example, only some items are selected.', class: 'form_hint'
 
       end
+    }, sub: true
+
+    docs 'Basic dropdowns', %{
       simple_form_for :selects do |f|
         f.input :select,
                 as: :select,
