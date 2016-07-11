@@ -187,13 +187,13 @@ class Views::Home::Navigation < Views::Page
         }
         li {
           a(class: 'sidebar_nav_multi_item') {
-            div "Label 1", class: 'label'
+            div "Label 1", class: 'label label_success'
             span "15", class: 'badge'
           }
         }
         li {
           a(class: 'sidebar_nav_multi_item') {
-            div "Label 2", class: 'label'
+            div "Label 2", class: 'label label_info'
             span "27", class: 'badge'
           }
         }
