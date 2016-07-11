@@ -122,7 +122,11 @@ class Views::Home::Color < Views::Page
 
   def color_variables
     @color_variables ||= begin
-      engine = Sass::Engine.for_file("#{Gem.loaded_specs['dvl-core'].full_gem_path}/vendor/assets/stylesheets/dvl/core/includes.scss", syntax: :scss)
+      engine = Sass::Engine.for_file(
+        Rails.root.join("../../vendor/assets/stylesheets/dvl/core/includes.scss"),
+        syntax: :scss
+      )
+
       SassVariableEvaluator.visit(engine.to_tree).compact.inject({}) do |hash, arr|
         if arr.is_a?(Array) && arr.length == 2
           hash[arr[0]] = arr[1].inspect
