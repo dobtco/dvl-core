@@ -19,6 +19,8 @@ class DropdownSelectInput
 
     @setWidth()
     @$el.on 'click', 'a[data-value]', $.proxy(@_onClick, @)
+    @$el.on 'shown.bs.dropdown', ->
+      $(@).find('li.active a').last().focus()
 
     # Push to next frame in order to allow any other initializers to run
     # See https://github.com/dobtco/dvl-core/issues/96
