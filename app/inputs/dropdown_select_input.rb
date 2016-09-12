@@ -43,7 +43,7 @@ class DropdownSelectInput < SimpleForm::Inputs::CollectionInput
               }
             }
           end.join('').html_safe
-        }
+        } + options[:append]
       }
     end
   end
