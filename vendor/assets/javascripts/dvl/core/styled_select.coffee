@@ -14,6 +14,7 @@ class StyledSelect
 
     @initWrapper()
     @$el.on 'change', $.proxy(@_change, @)
+    @$el.on 'styled_select:refresh', $.proxy(@_change, @)
     @_change()
 
   initWrapper: ->
