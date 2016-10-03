@@ -269,8 +269,8 @@ class Views::Home::Components < Views::Page
             href: '#'
           )
           div(class: 'dropdown_menu') {
-            h3 'Loading State'
             ul(class: 'dropdown_body') {
+              li 'Loading State', class: 'dropdown_header'
               li(class: 'dropdown_loading') {
                 span {
                   i(class: 'fa fa-spin fa-refresh', 'aria-label' => 'Loading...')
