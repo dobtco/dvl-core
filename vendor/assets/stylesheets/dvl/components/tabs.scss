@@ -15,7 +15,8 @@
       border: 1px solid $primaryColor;
       border-bottom-width: 0;
       color: $primaryColor;
-      font-weight: normal;
+      font-weight: $weightBold;
+      @include font_smoothing;
       display: block;
       transition: background 120ms ease-out;
       padding: 0 $rhythm * 2;

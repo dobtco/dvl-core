@@ -62,8 +62,15 @@ h3,
 h4,
 h5 {
   padding: 0;
-  color: $black;
   text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3 {
+  color: $black;
+}
+
+h4, h5 {
+  color: $darkestGray;
 }
 
 h1,
@@ -90,8 +97,8 @@ h3 {
 }
 
 h4 {
-  font-size: 1rem;
-  font-weight: $weightBold;
+  font-size: 1.2rem;
+  font-weight: $weightNormal;
   line-height: $lineHeight;
 }
 
