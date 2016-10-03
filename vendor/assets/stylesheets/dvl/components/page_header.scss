@@ -7,7 +7,7 @@
     float: left;
     max-width: 100%;
     margin-right: $rhythm * 4;
-    margin-bottom: $rhythm;
+    margin-bottom: 0;
     position: relative;
     > a {
       color: $black;
@@ -100,18 +100,18 @@
   width: 100%;
   position: relative;
   top: $fontSmall * 0.75;
-  left: $fontOpticalMarginH2 * -1;
-  margin-bottom: $rhythm * 0.5;
+  left: 0;
   a,
   span {
     color: $darkerGray;
     font-size: $fontSmall;
     text-transform: uppercase;
     font-family: $fontFamilyDefault;
-    font-weight: $weightNormal;
+    font-weight: $weightBold;
     letter-spacing: $letterspaceSmall;
     display: inline-block;
     position: relative;
+    @include font_smoothing;
     + a,
     + span {
       margin-left: $rhythm * 2;
@@ -138,7 +138,7 @@
   line-height: 1;
   @include topCenter($fontLineHeightH2Mobile + ($rhythm * 5) + ($fontSmall * $unitlessLineHeight), 1.75rem);
   @media screen and (min-width: $lapWidth) {
-    top: $rhythm * 5.5;
+    top: $rhythm * 5;
   }
 }
 

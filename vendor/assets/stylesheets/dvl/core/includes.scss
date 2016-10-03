@@ -83,13 +83,13 @@ $radius: 3px !default;
 // TYPOGRAPHY
 
 // Font weights
-$weightLight: 200 !default;
+$weightLight: 700 !default;
 $weightNormal: 400 !default;
 $weightBold: 500 !default;
 
 // Typography
 $fontFamilyDefault: 'franklin-gothic-urw', 'Franklin Gothic Medium', 'Franklin Gothic', 'ITC Franklin Gothic', 'Helvetica Neue', Arial, sans-serif !default;
-$fontFamilyDisplay: 'tablet-gothic-wide', 'HelveticaNeue-Light', Helvetica, Arial, sans-serif !default;
+$fontFamilyDisplay: 'franklin-gothic-urw-cond', 'HelveticaNeue-Bold', Helvetica, Arial, sans-serif !default;
 $fontFamilyMonospace: 'Consolas', 'Monaco', 'Lucida Console', monospace !default;
 $unitlessRhythm: 0.5 !default; // 8px @ 16px root
 $rhythm: $unitlessRhythm * 1rem !default;
@@ -103,11 +103,9 @@ $ratio: 1.5;
 
 $fontSizeH1: 3.5rem !default; // 56px
 $fontLineHeightH1: (10 * $rhythm) !default; // 80px
-$fontOpticalMarginH1: -0.3125rem;
 
 $fontSizeH2: 2.25rem !default; // 36px
 $fontLineHeightH2: (7 * $rhythm) !default; // 56px
-$fontOpticalMarginH2: -0.125rem;
 
 $fontSizeH3: 1.4375rem !default; // 23px
 $fontLineHeightH3: (4.5 * $rhythm) !default; // 36px
@@ -131,7 +129,7 @@ $fontLineHeightH3Mobile: 4 * $rhythm !default; // 32px
 @mixin fontDisplay {
   font-family: $fontFamilyDisplay;
   font-weight: $weightLight;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   font-feature-settings: 'tnum';
 }
 
@@ -148,7 +146,6 @@ $fontLineHeightH3Mobile: 4 * $rhythm !default; // 32px
   line-height: $fontLineHeightH1Mobile;
   @include fontDisplay;
   @media screen and (min-width: $lapWidth) {
-    margin-left: $fontOpticalMarginH1; // Optically align Source Sans with body text
     font-size: $fontSizeH1;
     line-height: $fontLineHeightH1;
   }
@@ -159,7 +156,6 @@ $fontLineHeightH3Mobile: 4 * $rhythm !default; // 32px
   line-height: $fontLineHeightH2Mobile;
   font-weight: $weightNormal;
   @media screen and (min-width: $lapWidth) {
-    margin-left: $fontOpticalMarginH2; // Optically align Source Sans with body text
     font-size: $fontSizeH2;
     line-height: $fontLineHeightH2;
     @include fontDisplay;
@@ -169,7 +165,7 @@ $fontLineHeightH3Mobile: 4 * $rhythm !default; // 32px
 @mixin fontH3 {
   font-size: $fontSizeH3Mobile;
   line-height: $fontLineHeightH3Mobile;
-  font-weight: $weightNormal;
+  font-weight: $weightBold;
   @media screen and (min-width: $lapWidth) {
     font-size: $fontSizeH3;
     line-height: $fontLineHeightH3;
