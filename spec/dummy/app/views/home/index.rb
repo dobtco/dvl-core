@@ -143,7 +143,7 @@ class Views::Home::Index < Views::Home
 
     docs 'Images and Captions', %{
       figure {
-        img(src: 'http://i.imgur.com/OW9eCju.jpg', alt: 'Mount Rushmore')
+        img(src: 'https://i.imgur.com/OW9eCju.jpg', alt: 'Mount Rushmore')
         figcaption 'Mount Rushmore, Keystone, South Dakota', class: 'formatted'
       }
     }

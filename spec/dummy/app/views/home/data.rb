@@ -131,7 +131,7 @@ class Views::Home::Data < Views::Page
     docs 'Default', %{
       div(class: 'user_block') {
         figure {
-          img(src: 'http://i.imgur.com/2WkSV2N.png', alt: 'Steve McQueen')
+          img(src: 'https://i.imgur.com/2WkSV2N.png', alt: 'Steve McQueen')
           text %{<figcaption><p><strong>Steve McQueen</strong></p><p><em>steve@mcqueen.biz</em></p></figcaption>}.html_safe
         }
       }
@@ -140,7 +140,7 @@ class Views::Home::Data < Views::Page
     docs 'Header and Links', %{
       div(class: 'user_block user_block_rich') {
         figure {
-          img(src: 'http://i.imgur.com/2WkSV2N.png', alt: 'Steve McQueen')
+          img(src: 'https://i.imgur.com/2WkSV2N.png', alt: 'Steve McQueen')
           text %{<figcaption><p class="user_block_header">Responding as&hellip;</p><p><strong>Steve McQueen</strong></p><p><em>steve@mcqueen.biz</em></p></figcaption>}.html_safe
         }
         div(class: 'user_block_links') {

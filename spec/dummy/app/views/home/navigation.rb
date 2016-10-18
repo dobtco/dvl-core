@@ -143,7 +143,7 @@ class Views::Home::Navigation < Views::Page
       ul(class: 'sidebar_nav') {
         li(class: 'header') {
           text 'Steve McQueen'
-          img(src: 'http://i.imgur.com/2WkSV2N.png')
+          img(src: 'https://i.imgur.com/2WkSV2N.png')
         }
         li(class: 'active') {
           a {
