@@ -103,6 +103,13 @@
     display: block;
     width: 100%;
   }
+  &.long {
+    // Long buttons must have an explicit width
+    text-overflow: auto;
+    white-space: normal;
+    font-size: $fontSmall;
+    line-height: $unitlessLineHeight;
+  }
 }
 
 // Ensure label buttons look *exactly like* other buttons
