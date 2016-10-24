@@ -8,7 +8,7 @@ end
 # Heroku...
 group :production do
   gem 'autoprefixer-rails'
-  gem 'fortitude', github: 'ajb/fortitude'
+  gem 'fortitude'
   gem 'rails'
   gem 'rails_12factor'
   gem 'simple_form'
