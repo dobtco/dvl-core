@@ -552,6 +552,10 @@ class Views::Home::Forms < Views::Page
       }
     }, sub: true
 
+    docs 'Long buttons', %{
+      a 'When a button with a long CTA is inside a limited-width container, add the .long class to avoid truncation with ellipses', class: 'button long'
+    }, sub: true
+
     docs 'Tertiary buttons', %{
       p {
         a 'Contact Your Local Representative', class: 'uppercase'
