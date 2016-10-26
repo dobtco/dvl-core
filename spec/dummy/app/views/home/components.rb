@@ -546,15 +546,39 @@ class Views::Home::Components < Views::Page
       ul(class: 'delete_list') {
         li(class: 'js_delete_1') {
           text 'Project 1'
-          a(icon('minus-circle', 'aria-label' => 'Delete'), class: 'icon_secondary', 'data-confirm' => true, 'data-confirm-with' => 'popover', href: '/delete', 'data-method' => 'delete', 'data-remote' => true)
+          a(
+            icon('minus-circle', 'aria-label' => 'Delete'),
+            class: 'icon_secondary',
+            'data-confirm' => true,
+            'data-confirm-with' => 'popover',
+            href: '/delete',
+            'data-method' => 'delete',
+            'data-remote' => true
+          )
         }
         li(class: 'js_delete_2') {
           text 'Project 2'
-          a(icon('minus-circle', 'aria-label' => 'Delete'), class: 'icon_secondary', 'data-confirm' => 'This is an important record. <strong>It will be destroyed forever.</strong>', 'data-confirm-with' => 'popover', href: '/delete', 'data-method' => 'delete', 'data-remote' => true)
+          a(
+            icon('minus-circle', 'aria-label' => 'Delete'),
+            class: 'icon_secondary',
+            'data-confirm' => 'This is an important record. <strong>It will be destroyed forever.</strong>',
+            'data-confirm-with' => 'popover',
+            href: '/delete',
+            'data-method' => 'delete',
+            'data-remote' => true
+          )
         }
         li(class: 'js_delete_3') {
           text 'Project 3'
-          a(icon('minus-circle', 'aria-label' => 'Delete'), class: 'icon_secondary', 'data-confirm' => true, 'data-confirm-with' => 'popover', 'data-confirmation-options' => { 't_delete' => 'Archive' }.to_json, href: '/delete', 'data-method' => 'delete', 'data-remote' => true)
+          a(
+            icon('minus-circle', 'aria-label' => 'Delete'),
+            class: 'icon_secondary',
+            'data-confirm' => true,
+            'data-confirm-with' => 'popover',
+            'data-confirm-text' => 'Archive',
+            href: '/delete',
+            'data-method' => 'delete',
+            'data-remote' => true)
         }
       }
     }, sub: true, hint: 'Popovers can contain headers and alternate button text.'
