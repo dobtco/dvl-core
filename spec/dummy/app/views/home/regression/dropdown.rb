@@ -1,5 +1,17 @@
 class Views::Home::Regression::Dropdown < Views::Layout
   def render_body
+    simple_form_for :foo do |f|
+      f.input(
+        :bar,
+        as: :dropdown_select,
+        collection: [
+          ['baz booz baz', '1'],
+          ['feeez faow fozz', '2']
+        ],
+        include_blank: 'Blanky!'
+      )
+    end
+
     div(class: 'dropdown') {
       a(
         'Dropdown', class: 'button toggle',

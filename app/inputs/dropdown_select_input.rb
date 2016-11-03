@@ -7,11 +7,8 @@ class DropdownSelectInput < SimpleForm::Inputs::CollectionInput
   end
 
   def selected_option
-    if current_value
-      collection.find { |x| x[1] == current_value }
-    else
-      collection.first
-    end
+    (current_value && collection.detect { |x| x[1] == current_value }) ||
+    collection.first
   end
 
   def blank_option
@@ -26,8 +23,8 @@ class DropdownSelectInput < SimpleForm::Inputs::CollectionInput
     end
 
     content_tag(:div, class: 'styled_select_wrapper', 'data-dropdown-select' => true) do
-      @builder.hidden_field(attribute_name, input_html_options) +
-      content_tag(:a, class: 'styled_select', 'data-toggle' => 'dropdown', href: '#') { selected_option[0] } +
+      @builder.hidden_field(attribute_name, input_html_options.merge(value: selected_option[1])) +
+      content_tag(:a, class: 'styled_select', 'data-toggle' => 'dropdown', href: '#') { selected_option.try(&:first) } +
       content_tag(:div, class: 'dropdown_menu dropdown_menu_rich') {
         content_tag(:ul, class: 'dropdown_body') {
           collection.map do |x|
