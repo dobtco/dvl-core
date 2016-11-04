@@ -1,7 +1,7 @@
-dvl-core [![build_status]](https://circleci.com/gh/dobtco/dvl-core)
+dvl-core [![CircleCI](https://circleci.com/gh/dobtco/dvl-core.svg?style=svg&circle-token=87144b68eadac365d9368f5c62e68d3dfcad14bb)](https://circleci.com/gh/dobtco/dvl-core)
 ====
 
-DOBT's base styles. [Live demo](https://dvlcore.herokuapp.com/)
+DOBT's base styles. [Live demo](https://dvl-core.dobt.co/)
 
 ## Usage
 
@@ -37,5 +37,3 @@ Push to `master` and the demo site will be deployed.
 ## License
 
 [MIT](http://dobtco.mit-license.org/)
-
-[build_status]: https://circleci-badges.herokuapp.com/dobtco/dvl-core/87144b68eadac365d9368f5c62e68d3dfcad14bb
