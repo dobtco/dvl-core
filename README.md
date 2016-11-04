@@ -1,7 +1,7 @@
 dvl-core [![CircleCI](https://circleci.com/gh/dobtco/dvl-core.svg?style=svg&circle-token=87144b68eadac365d9368f5c62e68d3dfcad14bb)](https://circleci.com/gh/dobtco/dvl-core)
 ====
 
-DOBT's base styles. [Live demo](https://dvl-core.dobt.co/)
+DOBT's base styles. [Live demo](https://design.dobt.co/)
 
 ## Usage
 
