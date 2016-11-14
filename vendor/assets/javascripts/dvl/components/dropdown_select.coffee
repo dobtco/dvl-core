@@ -6,7 +6,7 @@ class DropdownSelectInput
     @$el = $el
     @options = $.extend({}, @defaults, options)
     @$input = $el.find('input')
-    @$toggle = $el.find('[data-toggle=dropdown]')
+    @$toggle = $el.find('.styled_select')
 
     for i in ['width']
       @options[i] = @$input.data(i) if @$input.data(i)?

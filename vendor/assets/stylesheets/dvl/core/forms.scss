@@ -583,6 +583,21 @@ form {
   vertical-align: top;
   max-width: 100%;
 
+  &.disabled {
+    .styled_select {
+      background: $lightestGray;
+      border-color: $lighterGray;
+
+      &:after {
+        color: #888;
+      }
+
+      &:active {
+        background: $lightestGray;
+      }
+    }
+  }
+
   &.auto {
     width: auto;
   }

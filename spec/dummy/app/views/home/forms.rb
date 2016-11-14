@@ -220,7 +220,16 @@ class Views::Home::Forms < Views::Page
                 as: :select,
                 label: 'What day is it?',
                 collection: [['Today']],
-                selected: 'Today',
+                include_blank: 'Choose a day...',
+                disabled: true
+
+        f.input :disabled_dropdown_select,
+                as: :dropdown_select,
+                label: 'What day is it?',
+                collection: [
+                  ['Today', 'today', 'Uhhhh today, yo.']
+                ],
+                include_blank: 'Choose a day...',
                 disabled: true
       end
     }, sub: true

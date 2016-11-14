@@ -22,9 +22,14 @@ class DropdownSelectInput < SimpleForm::Inputs::CollectionInput
       )
     end
 
-    content_tag(:div, class: 'styled_select_wrapper', 'data-dropdown-select' => true) do
+    content_tag(:div, class: "styled_select_wrapper#{options[:disabled] && ' disabled'}", 'data-dropdown-select' => true) do
       @builder.hidden_field(attribute_name, input_html_options.merge(value: selected_option[1])) +
-      content_tag(:a, class: 'styled_select', 'data-toggle' => 'dropdown', href: '#') { selected_option.try(&:first) } +
+      content_tag(
+        :a,
+        class: 'styled_select',
+        'data-toggle' => options[:disabled] || 'dropdown',
+        href: '#'
+      ) { selected_option.try(&:first) } +
       content_tag(:div, class: 'dropdown_menu dropdown_menu_rich') {
         content_tag(:ul, class: 'dropdown_body') {
           collection.map do |x|
