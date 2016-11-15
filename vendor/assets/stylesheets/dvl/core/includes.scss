@@ -409,7 +409,7 @@ $easeInOutBack:  cubic-bezier(0.680, -0.550, 0.265, 1.550);
     &:active {
       border: 1px solid darken($bg, 7%);
       background: $bg;
-      box-shadow: none;
+      box-shadow: 0 1px 0 darken($bg, 20%);
     }
   }
 }
