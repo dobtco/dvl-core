@@ -39,6 +39,7 @@
   line-height: $lineHeight;
   position: absolute;
   top: 100%;
+  margin-top: $rhythm;
   left: 0;
   z-index: $z_dropdown;
   background-clip: padding-box;
@@ -46,7 +47,7 @@
   max-width: 22rem;
   background-color: $white;
   box-shadow: 0 1px 0 rgba(#000,0.06);
-  border: 1px solid $lightGray;
+  border: 1px solid $gray;
   border-radius: $radius;
   @include font_smoothing;
   // Right-aligned menu
