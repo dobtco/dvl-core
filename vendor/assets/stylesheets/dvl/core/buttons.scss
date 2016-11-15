@@ -8,13 +8,11 @@
   cursor: pointer;
   border-radius: $radius;
   line-height: $lineHeight;
-
+  font-weight: $weightBold;
   // allow .button to be applied to other elements, e.g. labels
-  font-weight: $weightNormal;
-
   @include ellipses;
-  @include button_color($lightGray, $bodyFontColor);
-
+  @include button_color($lightestGray, $darkerGray);
+  @include font_smoothing;
   // Overriding more default <a> styles
   &:hover,
   &:focus {
