@@ -198,9 +198,9 @@ $largeInputPadding: $inputPadding * $ratio !default;
 $smallInputHeight: 2.125rem !default;
 
 // Grid
-$columnWidth: 8.333%;
-$gutterWidth: $lineHeight;
-$lapGutterWidth: $lineHeight * 2;
+$columnWidth: 8.333% !default;
+$gutterWidth: $lineHeight !default;
+$lapGutterWidth: $lineHeight * 2 !default;
 
 // Viewport widths
 $lapWidth: 640px;
