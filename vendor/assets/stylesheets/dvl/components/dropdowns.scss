@@ -291,6 +291,12 @@
     .drop_important & {
       color: $darkestGray;
     }
+
+    .dropdown_link:hover &,
+    .dropdown_link:focus & {
+      color: $blueHighlight;
+    }
+
     .active & {
       color: $white;
     }
@@ -375,6 +381,11 @@
       width: $lineHeight + ($rhythm * 2);
       text-align: center;
       color: $darkGray;
+
+      .dropdown_link:hover &,
+      .dropdown_link:focus & {
+        color: $blueHighlight;
+      }
     }
     &.is_selected:after {
       @include icon('\f00c');
