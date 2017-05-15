@@ -24,10 +24,23 @@ class Dvl::Core::Views::Footer < Dvl::Core::Views.base_view_class.constantize
 
         ul {
           @prepend_links.call if @prepend_links
-          li { a t('dvl_core.footer.status'),  href: @hrefs[:status] , target: '_blank' }
-          li { a t('dvl_core.footer.legal'),   href: @hrefs[:legal], target: '_blank' }
-          li { a t('dvl_core.footer.help'),    href: @hrefs[:help], target: '_blank' }
-          li { a t('dvl_core.footer.contact'), href: @hrefs[:contact] }
+
+          if @hrefs[:status].present?
+            li { a t('dvl_core.footer.status'),  href: @hrefs[:status] , target: '_blank' }
+          end
+
+          if @hrefs[:legal].present?
+            li { a t('dvl_core.footer.legal'),   href: @hrefs[:legal], target: '_blank' }
+          end
+
+          if @hrefs[:help].present?
+            li { a t('dvl_core.footer.help'),    href: @hrefs[:help], target: '_blank' }
+          end
+
+          if @hrefs[:contact].present?
+            li { a t('dvl_core.footer.contact'), href: @hrefs[:contact] }
+          end
+
           @append_links.call if @append_links
         }
       }
