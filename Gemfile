@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+ruby '2.3.1'
+
 gemspec
 
 source 'https://rails-assets.org' do
