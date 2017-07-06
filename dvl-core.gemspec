@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'autoprefixer-rails', '6.3.6.1'
   s.add_development_dependency 'capybara', '2.7.1'
-  s.add_development_dependency 'capybara-webkit', '1.11.1'
+  s.add_development_dependency 'poltergeist', '1.15.0'
   s.add_development_dependency 'fortitude', '0.9.6'
   s.add_development_dependency 'percy-capybara', '2.1.1'
   s.add_development_dependency 'rails', '4.2.6'
