@@ -1,6 +1,10 @@
 .dropdown {
   position: relative;
   display: inline-block;
+
+  .button {
+    display: block;
+  }
 }
 
 // Nav dropdowns
