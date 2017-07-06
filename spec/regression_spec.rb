@@ -7,6 +7,7 @@ describe 'Regression', type: :feature, js: true do
     it 'renders properly' do
       Rails.configuration.x.pages.each do |k, v|
         visit v
+        sleep(2)
         Percy::Capybara.snapshot(page, name: "Basic regression spec - #{k}")
       end
     end
