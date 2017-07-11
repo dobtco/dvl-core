@@ -1,6 +1,10 @@
 .dropdown {
   position: relative;
   display: inline-block;
+
+  .button {
+    display: block;
+  }
 }
 
 // Nav dropdowns
@@ -39,6 +43,7 @@
   line-height: $lineHeight;
   position: absolute;
   top: 100%;
+  margin-top: $rhythm / 2;
   left: 0;
   z-index: $z_dropdown;
   background-clip: padding-box;
@@ -77,7 +82,7 @@
 }
 
 .dropdown_body {
-  max-height: ($lineHeight * 15) + $rhythm; // Overlap a list item with the bottom edge
+  max-height: ($lineHeight * 15) + ($rhythm * 2.5); // Overlap a list item with the bottom edge
   overflow: auto;
   > li {
 
