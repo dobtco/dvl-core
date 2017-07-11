@@ -82,7 +82,7 @@
 }
 
 .dropdown_body {
-  max-height: ($lineHeight * 15) + ($rhythm * 1.5); // Overlap a list item with the bottom edge
+  max-height: ($lineHeight * 15) + ($rhythm * 2.5); // Overlap a list item with the bottom edge
   overflow: auto;
   > li {
 
