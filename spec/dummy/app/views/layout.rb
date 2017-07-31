@@ -7,8 +7,11 @@ class Views::Layout < Views::Base
   def javascripts
     script src: '//code.jquery.com/jquery-2.2.3.min.js'
     javascript_include_tag 'application'
-    script src: '//use.typekit.net/ckb1dps.js'
-    script 'try{Typekit.load();}catch(e){}'.html_safe
+
+    unless Rails.env.test?
+      script src: '//use.typekit.net/ckb1dps.js'
+      script 'try{Typekit.load();}catch(e){}'.html_safe
+    end
   end
 
   def content
