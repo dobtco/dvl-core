@@ -11,6 +11,7 @@ jobs:
     working_directory: ~/dobtco/dvl-core
     parallelism: 1
     docker:
+      # node-browsers gives us a js runtime and phantomjs
       # https://hub.docker.com/r/circleci/ruby/tags/
       - image: circleci/ruby:2.3.7-node-browsers
         environment:
@@ -35,18 +36,29 @@ jobs:
           name: Bundler version
           command: bundle --version
           background: true
+      # https://circleci.com/docs/2.0/caching/
+      # Restore bundle cache
       - restore_cache:
           key: dvl-core-cache-{{ checksum "Gemfile.lock" }}
       - run:
           name: Bundle install
           command: bundle check || bundle install
+      # Cache bundle
       - save_cache:
           key: dvl-core-cache-{{ checksum "Gemfile.lock" }}
           paths:
             - ./vendor/bundle
       - run:
-          name: Run cibuild script
-          command: script/cibuild
+          name: Rspec tests
+          command: |
+            bundle exec rspec --profile 10 \
+                              --format RspecJunitFormatter \
+                              --out test_results/rspec.xml \
+                              --format progress \
+                              $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+      # Save test results for timing analysis
+      - store_test_results:
+          path: test_results
       - run:
           name: test
           command: rake test
