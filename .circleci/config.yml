@@ -39,13 +39,13 @@ jobs:
       # https://circleci.com/docs/2.0/caching/
       # Restore bundle cache
       - restore_cache:
-          key: dvl-core-cache-{{ checksum "Gemfile.lock" }}
+          key: dvl-core-cache-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
       - run:
           name: Bundle install
           command: bundle check || bundle install
       # Cache bundle
       - save_cache:
-          key: dvl-core-cache-{{ checksum "Gemfile.lock" }}
+          key: dvl-core-cache-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
           paths:
             - ./vendor/bundle
       - run:
@@ -59,14 +59,6 @@ jobs:
       # Save test results for timing analysis
       - store_test_results:
           path: test_results
-      - run:
-          name: test
-          command: rake test
-      - store_artifacts:
-          path: test-results.xml
-          prefix: tests
-      - store_test_results:
-          path: test-results.xml
   deploy_production:
     docker:
       - image: docker:stable-git
