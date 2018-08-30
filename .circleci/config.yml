@@ -68,6 +68,8 @@ jobs:
       - store_test_results:
           path: test-results.xml
   deploy_production:
+    docker:
+      - image: docker:stable-git
     steps:
       - run:
           name: Deploy
