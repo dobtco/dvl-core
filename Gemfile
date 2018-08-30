@@ -18,3 +18,6 @@ group :production do
   gem 'thin'
 end
 
+group :development, :test do
+  gem 'rspec_junit_formatter'
+end
