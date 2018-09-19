@@ -13,7 +13,7 @@ jobs:
     docker:
       # node-browsers gives us a js runtime and phantomjs
       # https://hub.docker.com/r/circleci/ruby/tags/
-      - image: circleci/ruby:2.3.7-node-browsers
+      - image: circleci/ruby:2.3.7-node-browsers-legacy
         environment:
           BUNDLE_JOBS: 3
           BUNDLE_RETRY: 3
@@ -82,3 +82,4 @@ workflows:
             branches:
               only:
                 - production
+
