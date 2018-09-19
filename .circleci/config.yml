@@ -1,0 +1,84 @@
+version: 2
+# Only send alerts to slack for master and production branch builds
+# https://discuss.circleci.com/t/only-notify-for-some-branches/10244/3
+experimental:
+  notify:
+    branches:
+      only:
+        - master
+jobs:
+  build:
+    working_directory: ~/dobtco/dvl-core
+    parallelism: 1
+    docker:
+      # node-browsers gives us a js runtime and phantomjs
+      # https://hub.docker.com/r/circleci/ruby/tags/
+      - image: circleci/ruby:2.3.7-node-browsers
+        environment:
+          BUNDLE_JOBS: 3
+          BUNDLE_RETRY: 3
+          BUNDLE_PATH: vendor/bundle
+          PGHOST: 127.0.0.1
+          PGUSER: circleci
+          RAILS_ENV: test
+          PERCY_TOKEN: 2d6e1b63e2d182c22393d18c1c092bedf2405990d26969c74514b9c920c8f54e
+    steps:
+      - checkout
+      - run:
+          name: Environment Variables
+          command: printenv
+          background: true
+      - run:
+          name: RubyGems
+          command: gem env
+          background: true
+      - run:
+          name: Bundler version
+          command: bundle --version
+          background: true
+      # https://circleci.com/docs/2.0/caching/
+      # Restore bundle cache
+      - restore_cache:
+          key: dvl-core-cache-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
+      - run:
+          name: Bundle install
+          command: bundle check || bundle install
+      # Cache bundle
+      - save_cache:
+          key: dvl-core-cache-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - ./vendor/bundle
+      - run:
+          name: Rspec tests
+          command: |
+            bundle exec rspec --profile 10 \
+                              --format RspecJunitFormatter \
+                              --out test_results/rspec.xml \
+                              --format progress \
+                              $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+      # Save test results for timing analysis
+      - store_test_results:
+          path: test_results
+  deploy_production:
+    docker:
+      - image: docker:stable-git
+    steps:
+      - run:
+          name: Deploy
+          command: |
+            git config --global user.email "ops@dobt.co"
+            git config --global user.name "CircleCI"
+            git remote add heroku git@heroku.com:dvlcore.git
+            script/deploy
+workflows:
+  version: 2
+  build_and_maybe_deploy:
+    jobs:
+      - build
+      - deploy_production:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - production
