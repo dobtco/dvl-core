@@ -11,7 +11,7 @@ Dvl.FlashHide = ($flash) ->
   else
     $flash.remove()
 
-Dvl.Flash = (flashType, message, linksHTML) ->
+Dvl.Flash = (flashType, message, linksHTML, flashLength = FLASH_ALERT_LENGTH) ->
   # Remove existing flashes
   $('.flash').remove()
 
@@ -41,7 +41,7 @@ Dvl.Flash = (flashType, message, linksHTML) ->
   unless linksHTML
     setTimeout ->
       Dvl.FlashHide($flash)
-    , FLASH_ALERT_LENGTH
+    , flashLength
 
 $(document).on 'page:before-unload', ->
   $('.flash').remove()
