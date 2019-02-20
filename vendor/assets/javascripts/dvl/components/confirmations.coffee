@@ -75,6 +75,8 @@ class Dvl.Confirmations.Modal
     'title': 'Are you sure?'
     'cancel-text': 'Cancel'
     'confirm-text': 'Confirm'
+    'confirm-class': 'error'
+    'title-class': 'modal_confirm'
     # cancelCb:
 
   constructor: ($el, message, cb, opts = {}) ->
@@ -91,7 +93,7 @@ class Dvl.Confirmations.Modal
     )
 
     $modal.
-      addClass('modal_confirm').
+      addClass(@options['title-class']).
       find('.modal_content').
       append """
         <div class='modal_body'><p>#{message}</p></div>
@@ -100,7 +102,7 @@ class Dvl.Confirmations.Modal
             <a class='button white' data-dismiss='modal'>
               #{@options['cancel-text']}
             </a>
-            <button class='button error js-popover-confirm'>#{@options['confirm-text']}</button>
+            <button class='button #{@options['confirm-class']} js-popover-confirm'>#{@options['confirm-text']}</button>
           </div>
         </div>
       """
