@@ -7,7 +7,7 @@ class Dvl::Core::Views::Footer < Dvl::Core::Views.base_view_class.constantize
           status: 'http://status.dobt.co',
           legal: 'https://www.dobt.co/terms/',
           help: 'http://help.dobt.co',
-          contact: 'mailto:support@dobt.co',
+          contact: 'mailto:support@screendoor.zendesk.com',
         }
 
   def content
