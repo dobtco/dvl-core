@@ -25,7 +25,7 @@ class Views::Home::Components < Views::Page
                 a 'New project&hellip;'.html_safe, href: '#'
               }
               li {
-                a(href: 'mailto:support@dobt.co') {
+                a(href: 'mailto:support@screendoor.zendesk.com') {
                   span 'Contact support&hellip;'.html_safe, class: 'drop_rt_item'
                   span(
                     icon('external-link', 'aria-label' => 'Opens in email client'),

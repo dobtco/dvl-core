@@ -28,7 +28,7 @@ class Views::Home::Regression::Dropdown < Views::Layout
             a 'Option 2, with divider'
           }
           li {
-            a(href: 'mailto:support@dobt.co') {
+            a(href: 'mailto:support@screendoor.zendesk.com') {
               span 'Contact support&hellip;'.html_safe, class: 'drop_rt_item'
               span(class: 'drop_rt_arrow') { i(class: 'fa fa-external-link') }
             }
